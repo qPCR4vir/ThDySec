@@ -1,0 +1,41 @@
+>HendraKoSonde_312 HendraV	
+AACACACTAGTCGAGACACGTGA
+
+>HENDRA-N1510TFAM_64 HendraV	
+AACCGCCCTCAGGCAGACTCAGGA
+
+>HENDRA-N1572R_ HendraV	
+ATCATTTTGGGCAGGTTTGG
+
+>HENDRAN-1433F_62 HendraV	
+atctcagatccagattagctgcaa
+
+>HENDRA-N1433F_ HendraV	
+ATCTCAGATCCAGATTAGCTGCAA
+
+>Hendra-virus-R_267 HendraV	
+CCAGCTCGTCGGACAAAATT
+
+>Hendra-virus-F_266 HendraV	
+CTTCGACAAAGACGGAACCAA
+
+>HendraXmaIRk_ HendraV	
+gccccgggtcaactctctgaaca
+
+>HendraXmaIR_ HendraV	
+gccccgggtcaactctctgaacattgggc
+
+>HendraBamhI71Fk_ HendraV	
+gcggatcccaaaattacaccaga
+
+>HendraBamhI71F_ HendraV	
+gcggatcccaaaattacaccagaacgact
+
+>HenBamhI183Fk_ HendraV	
+gcggatccggactgccgaaccag
+
+>HendraBamhI183F_ HendraV	
+gcggatccggactgccgaaccagatctgt
+
+>Hendra-probe_268 HendraV	
+TGGCATCTTTCATGCTCCATCTCGG

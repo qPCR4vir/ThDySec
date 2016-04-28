@@ -1,0 +1,100 @@
+
+	------	Common parametrs for all functions 
+AlignMethd:	TAMeth_Tm		.	Optimized parametr during DynProg
+ConcSonden:	1e-007	M	.	Conc of the sondes
+ConcTarget:	1e-007	M	.	Conc of the targets
+ConcenSalt:	0.05	M	.	Conc of salt
+Exp_probes:	false		.	Programm option- re-export probes
+Exp_target:	false		.	Programm option- re-export targets
+FltrRecDir:	false		.	Recursively add all filtre PCR primer seq-files from all dir
+FltrStrOly:	true		.	Reproduce only the dir struct in filtre PCR primer
+LoadNNPara:	false		.	Programm option- Load NN parametr
+MaxSecuLen:	2001	nt	.	Limits of the length of the seq. to be useful. Maximal length
+MaxTgIdent:	99	%	.	Filtre Seq Target with more %id
+MinSecuLen:	20	nt	.	Limits of the length of the seq. to be useful. Minimal length
+NonTargetF:	
+						.	Imput file for non-Targets
+OutputFile:	..\..\ThDyResults\res1
+						.	Results output file
+PCRftrFile:	
+						.	Imput file with primers for filtering
+SaltCorrMt:	StLucia		.	Salt correction methode
+SavAlignTb:	true		.	Programm option- Save Table of aligns
+SavG_Plasm:	true		.	Programm option- Gtable for Plasmid
+SavPosTabl:	true		.	Programm option- Save Posicion Table
+SavProject:	true		.	Programm option- Save Project file
+SavTmPlasm:	true		.	Programm option- Tm table for Plasmid
+SavTmTable:	true		.	Programm option- Save Tm Table
+SaveGTable:	true		.	Programm option- Save free Enrgie Table
+SaveNNPara:	false		.	Programm option- save NN parametr
+Save_Logfi:	false		.	Programm option- save a log
+SecBeginng:	1	nt	.	Fragments of seq. to use. Beginng
+SecuencEnd:	0	nt	.	Fragments of seq. to use. End
+TOlyDirStr:	true		.	Reproduce only the dir struct in targets
+TRecursDir:	true		.	Recursively add all Target seq-files from all dir
+TargetFile:	..\ThDy\sequences\Virus
+						.	Imput file for Targets
+TempAnnelg:	55	°C	.	Temp anneling expected in exp
+iNNParFile:	
+						.	Imput file with NN parametrs
+nTRecurDir:	true		.	Recursively add all non-Target seq-files from all dir
+nTlyDirStr:	true		.	Reproduce only the dir struct in non-targets
+
+	------	Virtual microarray experiment 
+ProbDirStr:	true		.	Reproduce only the dir struct in probe
+ProbRecDir:	true		.	Recursively add all probe seq-files from all dir
+iSonde_uAr:	..\ThDy\sequences\probes
+						.	Imput file for Sondes
+
+	------	Check multiplex PCR 
+PrimDirStr:	false		.	Reproduce only the dir struct in primers
+PrimRecDir:	true		.	Recursively add all primers seq-files from all dir
+iSonde_PCR:	..\ThDy\sequences\primers
+						.	Imput file for primers
+
+	------	Find sondes 
+DesigVsCmp:	true		.	Make only design or full comp
+FindCommon:	true		.	Find probes common for most sequences
+FindUnique:	false		.	Find probes unique for a few sequences
+MaxSdSlfTm:	10	°C	.	Significative selfprobe Tm
+MaxSd_Tg_G:	10	kcal/mol	.	Significative G probe-target
+MaxSdnTgTm:	10	°C	.	Significative Tm probe-nontarget
+MaxSondeLn:	35	nt	.	Sondes to design limits. Length.  Max
+MaxSondeTm:	63	°C	.	Sondes to design limits. Perf.Match Tm.  Max
+MaxSonde_G:	-1	kcal/mol	.	Sondes to design limits. Perf.Match dG.  Max
+MinSdSlf_G:	10	kcal/mol	.	Significative selfprobe G
+MinSd_TgTm:	30	°C	.	Significative Tm probe-target
+MinSdnTg_G:	15	kcal/mol	.	Significative G probe-nontarget
+MinSondeLn:	20	nt	.	Sondes to design limits. Length.  Min
+MinSondeTm:	57	°C	.	Sondes to design limits. Perf.Match Tm.  Min
+MinSonde_G:	-5	kcal/mol	.	Sondes to design limits. Perf.Match dG.  Min
+PercCommon:	100	%	.	Find sondes with % of target coverage.  at last of the others (common probes)
+PercUnique:	0	%	.	Find sondes with % of target coverage.  less than of the others (unique probes)
+
+	------	Tm calculator 
+OligDirStr:	true		.	Reproduce only the dir struct in Oligos
+OligRecDir:	false		.	Recursively add all oligos seq-files from all dir
+TmC_Sec2Al:	
+						.	Primer to align
+TmCalc_Sec:	
+						.	Primer
+TmCsaveRes:	false		.	Save result to file
+TmUseAlign:	true		.	Align primers before Tm calc
+iOligo_TmC:	
+						.	Imput oligos for TmCalc
+
+	------	ThDy DNA Hybrid Project. 
+
+
+How to use? 
+ Each program´s parameter have an unique identificator or etiquette. 
+ While loading, the text between the beginning of a line and the first : will be taken as
+ an etiquette (discarding surrounding but not internal spaces). 
+IF the etiquette is know (valid), the rest of the line will be use to deduce the value of the parameter. 
+Some parameter (like file´s names) will assume this rest-line-text entirely as his valid value. 
+For such parameter please, add any comment in the next line. 
+Other parameter (like numeric or bool parameters) will only use the beginning of this rest-line-text and ignore the end. 
+Any line without a valid etiquette will be ignore (they are comments!).” 
+Only the last valid value of each parameter will be used
+For not defined parameters, the previous value (from the previously active project or from the program´s default) will be use.
+Direct questions please to ArielVina.Rodriguez@fli.bund.de
