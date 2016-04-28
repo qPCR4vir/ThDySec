@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="Lib.PropertySheet.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <NANA_include_dir>..\..\include</NANA_include_dir>
+    <NANA_src_dir>..\..\scr</NANA_src_dir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludePath>..\..\ExtLib\Nana\include;$(IncludePath)</IncludePath>
+    <OutDir>..\..\ExtLib\Nana\lib\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="NANA_include_dir">
+      <Value>$(NANA_include_dir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="NANA_src_dir">
+      <Value>$(NANA_src_dir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

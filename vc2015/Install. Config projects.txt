@@ -1,0 +1,73 @@
+
+For All configuration and all Platforms:
+
+
+
+COnfiguration properties-->General:
+
+Output Directory:
+..\..\lib\VC$(PlatformToolset)\
+..\..\bin\
+ 
+Intermediate Directory:
+..\..\..\temp\$(ProjectName)\$(Configuration)\$(Platform)\
+
+
+Target Name:
+$(ProjectName)_VC$(PlatformToolset)_$(Configuration)_$(Platform)   	// exe
+$(ProjectName)_$(Configuration)_$(Platform)				// lib
+
+
+
+Target Name: 
+$nana_$(Configuration)_$(Platform)
+$(ProjectName)_$(Configuration)_$(Platform)
+=>  									// examples
+nana lib name:
+nana_$(Configuration)_$(Platform).lib
+
+lib name:
+$(ProjectName)_$(Configuration)_$(Platform)  
+=>    									// examples
+FileChosser_$(Configuration)_$(Platform).lib
+ThDySec_$(Configuration)_$(Platform).lib
+ThDy_programs_$(Configuration)_$(Platform).lib
+
+
+
+
+COnfiguration properties-->Debugging:
+
+Command:
+$(TargetPath)
+
+Working Directory:
+
+$(ProjectDir)				// lib
+
+
+
+
+COnfiguration properties-->VC++ Directories:
+
+Include dir:
+..\..\include;$(IncludePath)
+
+Lib dir:
+..\..\lib\VC$(PlatformToolset);$(LibraryPath)
+
+Source Dir:
+..\..\src\ThDySec;..\..\src\ThDy_programs;$(SourcePath)   		// example for ThDySec
+
+
+
+
+COnfiguration properties-->Librarian / Linker -->General:
+
+Output File:
+$(OutDir)$(TargetName)$(TargetExt)
+
+Add Link Dep:
+ThDySec_$(Configuration)_$(Platform).lib;ThDy_programs_$(Configuration)_$(Platform).lib;%(AdditionalDependencies)
+..\..\lib\VC$(PlatformToolset);..\..\..\ExtLib\Nana\nana.win32\build\bin\vc11;$(LibraryPath)
+
