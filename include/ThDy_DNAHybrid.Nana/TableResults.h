@@ -178,11 +178,11 @@ class TableHybRes  : public nana::form, public EditableForm
 
 		auto& sch = _list.scheme();
 		sch.header_height = 20;
-		sch.ext_w         = 2;
+		sch.text_margin   = 2;
 		sch.item_height_ex= 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
 		sch.item_height   = sch.text_height + sch.item_height_ex;
-		sch.header_mouse_spliter_area_before = 4;
-		sch.header_mouse_spliter_area_after = 4 ; 
+		sch.header_splitter_area_before = 4;
+		sch.header_splitter_area_after = 4 ;
 
         InitMyLayout();
         SelectClickableWidget( _list);
