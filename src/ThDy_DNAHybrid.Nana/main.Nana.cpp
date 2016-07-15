@@ -163,23 +163,25 @@ int main(int argc, char *argv[])
 	_menuBar.at(2).append_splitter();
 	_menuBar.at(2).append("&About", [&](nana::menu::item_proxy& ip) 
 	{
-		(nana::msgbox(this->handle(), "About ThDy Hybrid", nana::msgbox::button_t::ok) << 
-R"(
-   Copyright (C) 2009-2016, Ariel Vina-Rodriguez 
-( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
+		(nana::msgbox(this->handle(), "About ThDy Hybrid", nana::msgbox::button_t::ok) <<
+			R"(               Copyright (C) 2009-2016, Ariel Vina-Rodriguez (qPCR4vir)
+                     (  arielvina@yahoo.es, ariel.rodriguez@fli.de )
+                                  http://qpcr4vir.github.io/
 
-   INNT-FLI:
+   At INNT-FLI (part of a PhD thesis):
    https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
 
    Program distributed under the GNU General Public License, see:
-           http://www.gnu.org/licenses/>.
+           http://www.gnu.org/licenses/
 
-   Compiled on:   )"    __DATE__   R"( / ")"   __TIME__        R"( 
+   Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.01.01-beta
 
-   Download and source code: https://bitbucket.org/qPCR4vir/thdysec/overview
-   
-   Powered by Nana C++ GUI library:  https://github.com/cnjinhao/nana
-   
+   Downloads and source code: https://github.com/qPCR4vir/ThDySec
+                       Wiki: https://github.com/qPCR4vir/ThDySec/wiki
+   ________________________________________________________________________________
+   Powered by Nana C++ GUI library:  http://nanapro.org/en-us/
+                                  Wiki:  https://github.com/qPCR4vir/nana-docs/wiki
+      Nana Version: 1.04 develop : https://github.com/qPCR4vir/nana/tree/develop
          )") ();
 			;
 	});
