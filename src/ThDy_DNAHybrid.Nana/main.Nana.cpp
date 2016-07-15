@@ -15,6 +15,8 @@
 
 #include "ThDy_DNAHybrid.Nana\main.Nana.h"
 
+extern std::string e_mail_firma = " arielvina@yahoo.es";
+
 //if you want to keep the Windows subsystem you can just hint at what your entry point is, 
 //because you haven't defined ___tmainCRTStartup. You can do this by adding the following 
 //to Properties -> Linker -> Command line:

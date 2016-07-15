@@ -286,7 +286,7 @@ void FindSondenPage::AsignWidgetToFields()
 	_gr_prob_ntg["options"] << _MinG << _MaxTm;
 	_gr_probself["options"] << _MinSelfG << _MaxSelfTm;
 
-	_place.field("Firma") << " ArielVina.Rodriguez@fli.bund.de";
+	_place.field("Firma") << e_mail_firma;
 
 }
 

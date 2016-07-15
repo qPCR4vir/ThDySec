@@ -452,7 +452,7 @@ void SeqExpl::AsignWidgetToFields()
 									<< numUpDw_SLenMin << numUpDw_SLenMax;
 
 		_place["statusbar"] << _statusbar;
-		_place.field("Firma") << " ArielVina.Rodriguez@fli.bund.de";
+		_place.field("Firma") << e_mail_firma;
 
 	}
 

@@ -193,7 +193,7 @@ void  SetupPage::AsignWidgetToFields ()
 	    _gr_salt["SMeth"      ]   << " Salt Correct. Method:"	   <<  comBoxSalMeth;
 	    _gr_salt["AMeth"      ]   << " ThDy Align. Method"       <<  comBoxTAMeth ;
 
-		_place.field("Firma") << " ArielVina.Rodriguez@fli.bund.de";
+		_place.field("Firma") << e_mail_firma;
 
     }
 void  SetupPage::MakeResponive()

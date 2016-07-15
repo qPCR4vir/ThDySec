@@ -32,6 +32,7 @@
 //#include "common_basics.h" 
 
 class ThDyNanaForm ;
+extern std::string e_mail_firma;
 
 class TmCalcPage : public CompoWidget
 {
@@ -100,7 +101,7 @@ public:
 	    primers["CopyBut"  ]<<  copy_f_s_2   << copy_s      << copy_s_a ;
 	    primers["error"    ]<< error_        ;
 	    primers["rev_compl"]<< chkBx_copy_rev << chkBx_copy_compl ;
-		_place.field("Firma") << " ArielVina.Rodriguez@fli.bund.de";
+		_place.field("Firma") << e_mail_firma;
 
 
 	    interaction["Table" ]<< ""          << "   min-" << u8"Tm(°C)"   << "-max"  << "   min-"  << "G(kJ)"    << "-max   "

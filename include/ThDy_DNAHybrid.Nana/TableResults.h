@@ -28,7 +28,7 @@
 
 
 using List = nana::listbox;
-
+extern std::string e_mail_firma;
 
 class TableHybRes  : public nana::form, public EditableForm
 {   
@@ -164,7 +164,7 @@ class TableHybRes  : public nana::form, public EditableForm
     {
  	    _place.field("toolbar"       ) <<_bTm << _bG << _bPos ;
  	    _place.field("_list"         ) <<_list;
-		_place.field("Firma") << " ArielVina.Rodriguez@fli.bund.de";
+		_place.field("Firma") << e_mail_firma;
 
      }
  public:

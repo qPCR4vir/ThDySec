@@ -28,7 +28,7 @@
 //#include <nana/gui/widgets/toolbar.hpp>
 //#include <nana/gui/widgets/progress.hpp>
 //#include <nana/gui/widgets/group.hpp>
-
+extern std::string e_mail_firma;
 
 #include <nana/gui/wvl.hpp>
 
@@ -41,7 +41,7 @@ class ThDyNanaForm : public nana::form, public EditableForm , public ThDyProject
     MplexPCR                   mPCR_       {*this};
     uArray                     uArr_       {*this}; 
     TmCalcPage                 tmCalc_     {*this}; 
-    nana::label                _firma     {*this, "ArielVina.Rodriguez@fli.bund.de"};
+    nana::label                _firma     {*this, e_mail_firma};
 
   public:    
     std::vector<std::unique_ptr<nana::form>> _results;

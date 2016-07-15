@@ -31,6 +31,7 @@
 //using namespace ParamGUIBind;
 //
 class ThDyNanaForm ;
+extern std::string e_mail_firma;
 // 
 //using List = nana::listbox;
 
@@ -55,7 +56,7 @@ class uArray : public CompoWidget
     void AsignWidgetToFields() override
     {
 	    _place.field("_do_uArray"         )<<_do_uArray;
-		_place.field("Firma") << " ArielVina.Rodriguez@fli.bund.de";
+		_place.field("Firma") << e_mail_firma;
     }
 
   private: void buttuArray_Click(); //	  Run      _IPrgPar_mPCR
@@ -82,7 +83,7 @@ class MplexPCR : public CompoWidget
     void AsignWidgetToFields() override
     {
 	    _place.field("_do_mPCR" ) << _do_mPCR;
-		_place.field("Firma"    ) << " ArielVina.Rodriguez@fli.bund.de";
+		_place.field("Firma"    ) << e_mail_firma;
 	}
 
   private: void buttPCR_Click(); //	  Run      _IPrgPar_mPCR
