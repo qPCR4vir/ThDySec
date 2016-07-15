@@ -30,10 +30,8 @@ using namespace std ;
 #include "ThDySec/common.h" 
 using namespace DegCod;
 
-//#define SEQUENCES_MAX_SIZE 100000
 char *DNAstrandName[]=	{""		, "(c)", ""		, "(r)"	, "(i)", "(c)"		} ;
 // enum DNAstrand		{plus	, minus, direct	, rev	, compl, rev_compl	} ;
-
 
 CSecBasInfo::~CSecBasInfo()
 {
@@ -63,37 +61,6 @@ std::string& CSecBasInfo::Copy_Seq  	(std::string &SecHier,  long InicBase, long
 	return  SecHier ;
 }
 
-/// Best just return sequence
-//Base  *	CSecBasInfo::Copy_charSec(Base *charSecHier,long InicBase, long EndBase, DNAstrand strnd)//DNAstrand strnd=direct)
-//{	if ( EndBase< 1 || Len() <EndBase ) EndBase= Len(); 
-//	long l=EndBase-InicBase+1 ; charSecHier[l]=0 ;
-//	if (l>=0) 
-//	//assert(l>=0);
-//	switch (strnd)
-//	{	case DNAstrand::plus :
-//		case DNAstrand::direct:		for(long i=0,   p=InicBase;  p<=EndBase;    i++, p++) 	charSecHier[i]=_c[p];				break;
-//		case DNAstrand::compl:		for(long i=0,   p=InicBase;  p<=EndBase;    i++, p++) 	charSecHier[i]=c_degbase[_c[p]];	break;
-//		case DNAstrand::rev:		for(long i=l-1, p=InicBase;  p<=EndBase;    i--, p++)	charSecHier[i]=_c[p];				break;
-//		case DNAstrand::minus:
-//		case DNAstrand::rev_compl:	for(long i=l-1, p=InicBase;  p<=EndBase;    i--, p++)	charSecHier[i]=c_degbase[_c[p]];	break;
-//
-//		default : return 0;
-//	}
-//	return charSecHier ;
-//}
-//Base  *	CSecBasInfo::GetCopy_charSec(DNAstrand strnd)
-//{	return GetCopy_charSec(1, Len(), strnd);
-//}
-//Base  *	CSecBasInfo::GetCopy_charSec(long InicBase, long EndBase, DNAstrand strnd)       // recuerde los $...$, aqui se cuentan, 
-//{	if ( InicBase< 1 )					InicBase=1;
-//	if ( EndBase< 1 || Len() <EndBase )	EndBase=Len();
-//	long l=EndBase-InicBase+1 ;
-//	assert(l>=0);
-//	Base *charSecHier=new Base[l+1];						 // asi como InicBase y EndBase inclusive!!
-//	assert(charSecHier);	
-//
-//	return Copy_charSec(charSecHier, InicBase, EndBase, strnd)  ;
-//}
 
 
 

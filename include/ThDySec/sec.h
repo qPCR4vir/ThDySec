@@ -27,7 +27,7 @@
 #include <memory>
 #include <vector>
 #include <filesystem>
-namespace filesystem = std::experimental::filesystem; /// \todo use nana filesystem selector    ::tr2::sys; //std::experimental::filesystem
+namespace filesystem = std::experimental::filesystem;  
 
 
 #include "sec_basic.h" 
@@ -40,7 +40,7 @@ class CMultSec    ;
 
                    // ---------------------------------------   CSec    ---------------------------------------------------
 
-/// To manipulate DNA sequences for simple thermodynamic modeling of hybridization.
+/// To manipulate DNA sequences (secuencias) for simple thermodynamic modeling of hybridization.
 
 /// Fundamental class to manipulate DNA sequences. Adapted exclusively to DNA and specifically for thermodynamic calculations.
 /// Have the sequence in "letter" or nt format, AND in "code" format to avoid millions of repeated conversions. 
@@ -65,8 +65,8 @@ class CMultSec    ;
 /// set sq.sq to some original "experimental" CSec if any
 ///
 /// set aln.sq to the parent CMultSec*
-///
-class CSec : public CLink, public CSecBasInfo    
+/// \deprecate CLink
+class CSec : public CSecBasInfo    
 {public:
         int                           x;            ///<  ????
         TemperatureRang               _Tm ;         // float        _Tm, _minTm, _maxTm ;            
