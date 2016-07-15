@@ -235,8 +235,7 @@ CSec::CSec (    const std::string&  sec,
 
 CSec *CSec::Clone   	(DNAstrand strnd 	 ) const   // std::unique_ptr<ISec> ?
 {	
-	string s; 
-	unique_ptr<CSec> newS {new CSec( Copy_Seq(s, strnd), 
+	unique_ptr<CSec> newS {new CSec( Copy_Seq(strnd), 
 						             NewS_ID(),				
 									_name + DNAstrandName[(int)strnd],
 									_NNpar	,
@@ -251,11 +250,10 @@ CSec *CSec::Clone   	(DNAstrand strnd 	 ) const   // std::unique_ptr<ISec> ?
 }
 
 CSec *CSec::Clone( long        InicBase,
-                                   long        EndBase, 
-                                   DNAstrand   strnd/* = DNAstrand::direct*/) const    
+                   long        EndBase, 
+                   DNAstrand   strnd/* = DNAstrand::direct*/) const    
 {
-	string s; 
-	unique_ptr<CSec> newS{ new CSec(    Copy_Seq (s, InicBase, EndBase, strnd),
+	unique_ptr<CSec> newS{ new CSec(    Copy_Seq (InicBase, EndBase, strnd),
 										NewS_ID(),
 										_name + DNAstrandName[(int)strnd],
 										_NNpar	,
@@ -295,7 +293,6 @@ CSec *CSec::Clone( long        InicBase,
 	//if (_aln_fragment)    // ??
 	//	std::cout << toString_Range(_aln_fragment->aln) << toString_Range(_aln_fragment->sq);
 	/// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 	return newS.release();
 }

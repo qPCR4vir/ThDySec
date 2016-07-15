@@ -36,38 +36,15 @@ class ISec	: public CLink		// Pure virtual class ?
 	virtual const sequence& Sequence(							  )	const=0 ;
 
 	// std::unique_ptr<ISec> ?
-	virtual ISec *Clone   	(DNAstrand   strnd = DNAstrand::direct )	const=0 ; ///< unique_ptr<ISec> crea una copia muy simple. CUIDADO con copias de CSecBLASTHit y otros derivados
-	
-	virtual ISec *Clone    ( long  InicBase,
-										 	 long  EndBase, 
-										 	 DNAstrand   strnd = DNAstrand::direct)	    const=0  ;
+	virtual ISec *Clone    ( DNAstrand   strnd = DNAstrand::direct )	const=0 ; ///< unique_ptr<ISec> crea una copia muy simple. CUIDADO con copias de CSecBLASTHit y otros derivados
+	virtual ISec *Clone    ( long        InicBase,
+							 long        EndBase, 
+							 DNAstrand   strnd = DNAstrand::direct)	    const=0  ;
 
-	/// \deprecate after implement the other
-	virtual std::string& Copy_Seq(std::string &SecHier,
-                                    DNAstrand strnd = DNAstrand::direct)	    const=0  ;
-
-	/// \deprecate after implement the other
-	virtual std::string& Copy_Seq(std::string &SecHier,
-                                         long InicBase, 
-                                         long EndBase, 
-                                    DNAstrand strnd = DNAstrand::direct)	    const=0  ;
-
-	virtual std::string Copy_Seq(DNAstrand   strnd = DNAstrand::direct)	    const
-	{
-		std::string cpy;
-		Copy_Seq(cpy, strnd);
-		return cpy;
-	}
-
+	virtual std::string Copy_Seq( DNAstrand   strnd = DNAstrand::direct)const=0;
 	virtual std::string Copy_Seq( long InicBase,
 		                          long  EndBase,
-		                          DNAstrand   strnd = DNAstrand::direct)	const
-	{
-		std::string cpy;
-		Copy_Seq(cpy, InicBase, EndBase, strnd);
-		return cpy;
-	}
-
+		                          DNAstrand   strnd = DNAstrand::direct)const=0;
 	virtual				~ISec			() { }
 };
 
@@ -132,26 +109,13 @@ public:
 			return _c ;
 		}
 
-	//std::string  Copy_Seq(DNAstrand   strnd = DNAstrand::direct)	    const override;
-
-	//std::string  Copy_Seq(long InicBase,
-	//	                  long  EndBase,
-	//	                  DNAstrand   strnd = DNAstrand::direct)	    const override;
-
-	/// \deprecate after implement the other
-	std::string& Copy_Seq  	(std::string &SecHier,  
-                                  long       InicBase, 
-                                  long        EndBase, 
-                                  DNAstrand   strnd = DNAstrand::direct)	const override ;
-
-	/// \deprecate after implement the other
-     std::string& Copy_Seq  	(std::string &SecHier,  
-                                  DNAstrand   strnd = DNAstrand::direct)	const override  
-     {
-         return Copy_Seq ( SecHier, 1, Len(), strnd ) ;
-     }
-
-
+	std::string  Copy_Seq(long InicBase,
+		                  long  EndBase,
+		                  DNAstrand   strnd = DNAstrand::direct)	    const override;
+	std::string  Copy_Seq(DNAstrand   strnd = DNAstrand::direct)	    const override
+	{
+		return Copy_Seq(1, Len(), strnd);
+	}
 
 	bool		 NotIdem		(CSecBasInfo *sec) {return false;}
 	DegCod::Base operator[]	(int i)const{return _c[i];}  /// i+1 ????

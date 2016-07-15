@@ -40,25 +40,27 @@ CSecBasInfo::~CSecBasInfo()
 			 delete _NonDegSet;
 	// en otro caso, donde borrar _NonDegSet ????. Lo borra la lista en la que esta insertado
 }
-	 
-std::string& CSecBasInfo::Copy_Seq  	(std::string &SecHier,  long InicBase, long EndBase, DNAstrand strnd) const
+
+std::string CSecBasInfo::Copy_Seq  	(long InicBase, 
+	                                 long EndBase, 
+	                                 DNAstrand strnd) const
 {	
-	SecHier.clear();
+	std::string SecHier;
 	if ( EndBase< 1 || Len() <EndBase ) EndBase= Len(); 
 	long l=EndBase-InicBase+1 ;  
 	if (l>=0) 	//assert(l>=0);
 	{
-		SecHier.reserve(l); /// \todo resize ?? and use [] directly instead of push_back 
+		SecHier.reserve(l); /// \todo resize ?? and use [] directly instead of += 
 		switch (strnd)
 		{	case DNAstrand::plus :
-			case DNAstrand::direct:		for(long p=InicBase;  p<=EndBase;    p++) 	SecHier.push_back ( _c[p] );  				    break;
-			case DNAstrand::compl:		for(long p=InicBase;  p<=EndBase;    p++) 	SecHier.push_back ( c_degbase[_c[p]]);      	break;
-			case DNAstrand::rev:		for(long p=EndBase ;  p>=InicBase;   p--)	SecHier.push_back ( _c[p] );  				    break;
+			case DNAstrand::direct:		for(long p=InicBase;  p<=EndBase;    p++) 	SecHier += _c[p] ;  		    break;
+			case DNAstrand::compl:		for(long p=InicBase;  p<=EndBase;    p++) 	SecHier += c_degbase[_c[p]];   	break;
+			case DNAstrand::rev:		for(long p=EndBase ;  p>=InicBase;   p--)	SecHier += _c[p] ;  		    break;
 			case DNAstrand::minus:
-			case DNAstrand::rev_compl:	for(long p=EndBase ;  p>=InicBase;   p--)	SecHier.push_back ( c_degbase[_c[p]]);      	break;
+			case DNAstrand::rev_compl:	for(long p=EndBase ;  p>=InicBase;   p--)	SecHier += c_degbase[_c[p]];   	break;
  		}
 	}
-	return  SecHier ;
+	return SecHier;
 }
 
 

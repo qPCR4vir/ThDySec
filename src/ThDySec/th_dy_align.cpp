@@ -907,9 +907,6 @@ void	CMSecCand::ExportCommonSonden(  bool             colpased,
 	NumRang<int> ExtrCov (static_cast<int>((n * ExtrCovPerc.Min()) /100.0)  , static_cast<int>((n * ExtrCovPerc.Max()) /100.0 )) ;
     
 
-	string cur_s,  cur_cs ; 
-	cur_s .reserve( _sL._L.Max() );
-	cur_cs.reserve( _sL._L.Max() );
 	set <string> CandSet;   //  grant no sequence repetition
 
 	//  perform self alignment to filter possible dimers 
@@ -933,10 +930,9 @@ std::cout << "\n EXPORTING...";
 			for (long pi=r->Min(); pi <=r->Max();pi++)    // for each candidate initial position in the rang
 			{	
 				assert(pi<l);
-				s._Sec.Copy_Seq(cur_s, pi, fi) ;        // extract the sequence
-			    int matchs=r->matchs[pi- r->Min()];
+				int matchs=r->matchs[pi- r->Min()];
 
-				if ( (colpased || !ExtrCov.isIntern (matchs) ) && CandSet.insert(cur_s).second )
+				if ( (colpased || !ExtrCov.isIntern (matchs) ) && CandSet.insert(s._Sec.Copy_Seq(pi, fi)).second )
 				{	
 					cand  .reset(s._Sec.Clone(pi, fi, DNAstrand::direct)); // (cur_s  , 1,"s", _TDATmC->_NNpar);     
 					c_cand.reset(s._Sec.Clone(pi, fi, DNAstrand::compl ));   
