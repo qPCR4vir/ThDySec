@@ -48,7 +48,9 @@ class CMultSec    ;
 /// Importantly have a sequence of the values of dH and dS from the beginning to each position,
 /// which make trivial and fast to find accumulated dH and dS and Tm of any fragment by a simple difference calculation.
 /// When degenerated it can have a NonDegSet with all the CSec with degeneracy 1 - each of the variants in the original
-/// It track some group to which it belongs.
+/// It track some group of sequences (a "parent" CMultSec) to which it belongs.
+/// It can be filtred and can be selected. Normally only selected sequences are used in calculations,
+/// and only if the parent group is also selected.
 ///
 /// Some variables have index base [1] while others have [0] in sec. 
 ///
@@ -100,8 +102,8 @@ class CSec : public CSecBasInfo
     void         CorrectSalt            () { if ( _NNpar->UseOwczarzy () ) CorrectSaltOwczarzy();};
     CSec *Clone(DNAstrand strnd=DNAstrand::direct     ) const override; /// unique_ptr<ISec> crea una copia muy simple. \todo CUIDADO con copias de CSecBLASTHit y otros derivados
     CSec *Clone( long  InicBase,
-                                 long  EndBase, 
-                                 DNAstrand   strnd = DNAstrand::direct) const override;
+                 long  EndBase, 
+                 DNAstrand   strnd = DNAstrand::direct) const override;
 
     //virtual CSec*CreateCopy        (DNAstrand strnd=direct) override;//< crea una copia muy simple. CUIDADO con copias de CSecBLASTHit y otros derivados
     //const char    *Get_charSec            ()const{return (const char*)_c.c_str();}  ///   ???????????

@@ -191,7 +191,11 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
 
 void SeqExpl::MakeResponive()
     {
-		_tree.events().selected ( [&]( const nana::arg_treebox &tbox_arg_info ) { if (tbox_arg_info.operated) RefreshList(tbox_arg_info.item); });
+		// the "selected" feature in the GUI have no efect in the data, it is a pure GUI feature,
+		// but the check status go to the data with the name Selected() !!!
+
+		_tree.events().selected ( [&]( const nana::arg_treebox &tbox_arg_info ) 
+		                         { if (tbox_arg_info.operated) RefreshList(tbox_arg_info.item); });
         _tree.events().checked  ( [&]( const nana::arg_treebox &tbox_arg_info )
         {                                              
             tbox_arg_info.item.value<CMultSec*>()->Selected(tbox_arg_info.operated);
@@ -201,9 +205,7 @@ void SeqExpl::MakeResponive()
 
         _list.events().checked  ( [&](  const nana::arg_listbox &lbox_arg_info )
         {                                               
-            lbox_arg_info.item.value<CSec*>()->Selected(lbox_arg_info.item.selected());
-            if ( ! _showAllseq && !lbox_arg_info.item.selected())
-                _list.erase(lbox_arg_info.item) ;
+            lbox_arg_info.item.value<CSec*>()->Selected(lbox_arg_info.item.checked());
         });
  
         _loadFile   .events().click([this]()

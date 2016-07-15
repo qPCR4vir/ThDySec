@@ -90,7 +90,8 @@ class CMultSec	 : public CLink
 
 
 	    bool	Selected(bool select)	{return _selected=select;} 			///< \todo make protected: ??
-	    bool	Selected(		) const {return _selected ;}				///< User-editable
+	    bool	Selected(		) const 
+		{return _selected && (_parentMS ? _parentMS->Selected() : true);  }				///< User-editable
 
 
         /// Construct a full-current path acording to the current tree
