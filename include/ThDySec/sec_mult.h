@@ -23,6 +23,7 @@
 #include <memory>
 #include <vector>
 #include <filesystem>
+#include <list>
 
 
 #include "sec.h" 
@@ -36,6 +37,9 @@
   /// Atention:  It owns and destroy the sequences: Use Remove() or Free() to prevent destruction fo sequences
 class CMultSec	 
 {	public:
+	using LSec  = std::list<std::shared_ptr<CSec    >>;
+	using LMSec = std::list<std::shared_ptr<CMultSec>>;
+
 		std::string			_name ;						///< 
         int					_ID       {NewMS_ID()};		///< Unique ID in each programm run
         LonSecPosRang       _SecLim   {1,0};			///< \todo: quitar de aqui?. Pertenece a CSec, o a un objeto "AddFromFile" 
@@ -360,8 +364,13 @@ class CMultSec
            }
 
 		CMultSec		*findComParent		( CMultSec	*ms	);
+		const LSec &  SecL() const { return  _LSec; }
+		const LMSec& MSecL() const { return _LMSec; }
 	private:
-        CList			_LSec, _LMSec;    
+		LSec  _LSec;
+        LMSec _LMSec;
+		//std::list<CSec    > _LSec;
+		//std::list<CMultSec> _LMSec;   
         //std::list<std::shared_ptr<CSec    >> _LSec;
         //std::list<std::shared_ptr<CMultSec>> _LMSec;
 		void			UpdateTotals		( CSec		*sec ) ;

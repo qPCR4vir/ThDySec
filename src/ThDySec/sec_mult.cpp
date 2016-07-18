@@ -690,39 +690,31 @@ CSec	*CMultSec::Idem ( CSec &sec )   // ------  CMultSec:: NotIdem  --- busqueda
 	            break ;
         }
         if (   Er <=  MaxEr   ) 
-	         return &s ;	
+	         return CurSec;
 	}
-	return nullptr ;
+	return _LSec.end();
 }
 
  CSec *	CMultSec::AddSec ( CSec *sec )
 {	if (!sec) return nullptr ;
-	_LSec.Add(sec);
+	_LSec.emplace_back(sec);
 	UpdateTotalsAdding ( sec );
 	return sec;
 }
- CSec *	CMultSec::InsertSec ( CSec *sec ) // insert 'link' sec ,  antes de 'Cur'
+ CSec *	CMultSec::InsertSec(LSec::const_iterator pos, CSec *sec) 
 {	if (!sec) return nullptr ;
-	_LSec.Insert(sec);
+	_LSec.emplace(pos, sec);
 	UpdateTotalsAdding ( sec );
 	return sec;
 }
- CSec *	CMultSec::InsertSecAfter	( CSec *sec , CSec *preSec )			// insert 'link' sec ,  after preSec
+ CSec *	CMultSec::InsertSecAfter(LSec::const_iterator preSec, CSec *sec)
 {	
-	if (!preSec) return AddSec (sec);
 	if (!sec) return nullptr ;
-	sec->InsertAfter( preSec);
+	_LSec.emplace(++preSec, sec);
 	UpdateTotalsAdding ( sec );
 	return sec;
 }
- CSec *	CMultSec::InsertBefore	( CSec *sec , CSec *preSec )			// insert 'link' sec ,  after preSec
-{	
-	if (!preSec) return AddSec (sec);
-	if (!sec) return nullptr ;
-	sec->InsertBefore( preSec);
-	UpdateTotalsAdding ( sec );
-	return sec;
-}
+
 void	CMultSec::UpdateTotalsAdding ( CSec *sec ) 
 {	
 	if (!sec || sec->_parentMS == this)										// no hay sec o ya estaba aqui
@@ -804,7 +796,7 @@ CMultSec   *CMultSec::findComParent( CMultSec *ms)
 
 CMultSec *	CMultSec::AddMultiSec ( CMultSec *ms )  //--------------------------------------    AddMultiSec    --------------------
 {	if (!ms) return nullptr;	
-	_LMSec.Add(ms);
+	_LMSec.emplace_back(ms);
 	UpdateTotalsAdding ( ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
 	return ms;
 }
@@ -832,6 +824,7 @@ void	    CMultSec::UpdateTotalsAdding ( CMultSec *msec )
 			}
 	}else
 		cp=nullptr;
+
 	Add2LocalExtreme(*msec);
 	for (My_parMS ; My_parMS!=cp && My_parMS; My_parMS=My_parMS->_parentMS)  // desde mi hacia arriba hasta el com parent anadiendo
 	{
@@ -848,9 +841,10 @@ void	    CMultSec::UpdateTotalsAdding ( CMultSec *msec )
 }
 
 		CMultSec::~CMultSec ()				// funciona bien solo si la lista es "lineal"
-{	_LSec.Destroy  ()	;
-	_LMSec.Destroy ()	;
-	Remove(); //? in ~CLink !
+{	
+	//_LSec.Destroy  ()	;
+	//_LMSec.Destroy ()	;
+	//Remove(); 
 	// CSec		*_Consenso ;
 }    
 
