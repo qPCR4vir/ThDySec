@@ -722,24 +722,24 @@ CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSe
  CSec *	CMultSec::AddSec ( CSec *sec )
 {	if (!sec) return nullptr ;
 	_LSec.emplace_back(sec);
-	UpdateTotalsAdding ( sec );
+	UpdateTotalsMoving ( sec );
 	return sec;
 }
  CSec *	CMultSec::InsertSec(LSec::const_iterator pos, CSec *sec) 
 {	if (!sec) return nullptr ;
 	_LSec.emplace(pos, sec);
-	UpdateTotalsAdding ( sec );
+	UpdateTotalsMoving ( sec );
 	return sec;
 }
  CSec *	CMultSec::InsertSecAfter(LSec::const_iterator preSec, CSec *sec)
 {	
 	if (!sec) return nullptr ;
 	_LSec.emplace(++preSec, sec);
-    UpdateTotalsAdding ( sec );
+    UpdateTotalsMoving ( sec );
 	return sec;
 }
 
-void	CMultSec::UpdateTotalsAdding ( CSec *sec ) 
+void	CMultSec::UpdateTotalsMoving ( CSec *sec ) 
 {	
 	if (!sec || sec->_parentMS == this)										// no hay sec o ya estaba aqui
 		return;
@@ -821,10 +821,10 @@ CMultSec   *CMultSec::findComParent( CMultSec *ms)
 CMultSec *	CMultSec::AddMultiSec ( CMultSec *ms )  //--------------------------------------    AddMultiSec    --------------------
 {	if (!ms) return nullptr;	
 	_LMSec.emplace_back(ms);
-	UpdateTotalsAdding ( ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
+	UpdateTotalsMoving ( ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
 	return ms;
 }
-void	    CMultSec::UpdateTotalsAdding ( CMultSec *msec ) 
+void	    CMultSec::UpdateTotalsMoving ( CMultSec *msec ) 
 {	
 	if (!msec || msec->_parentMS==this)					// no hay msec o ya estaba antes en una de mis subtrees inmediatas. 
 		return;

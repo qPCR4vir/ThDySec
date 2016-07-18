@@ -352,8 +352,8 @@ class CMultSec
         //std::list<std::shared_ptr<CSec    >> _LSec;
         //std::list<std::shared_ptr<CMultSec>> _LMSec;
 		//void			UpdateTotals		( CSec		*sec ) ;
-		void			UpdateTotalsAdding	( CSec		*sec ) ;
-		void			UpdateTotalsAdding	( CMultSec	*sec ) ;
+		void			UpdateTotalsMoving	( CSec		*sec ) ;
+		void			UpdateTotalsMoving	( CMultSec	*sec ) ;
 		//static void		RefreshExtremes		( CMultSec	*ms	);
 };
 
