@@ -113,7 +113,8 @@ void ThDyAlign::force_ResizeTable()						//	------------------------------------
 }
 
 void	ThDyAlign::Use (CSec  *sonde, CSec *target)    // antes hacia mas cosas.. porque?		//	---------------------	Use			---------
-{	_sd = sonde  ; 		_tg = target ;
+{	
+	_sd = sonde  ; 		_tg = target ;
 	ResizeTable();
 	_NNpar->UpdateGC( _sd->GCpercent(), _sd->Len() ,    _tg->GCpercent(), _tg->Len() );    // verificar 
 }
@@ -321,7 +322,7 @@ bool	ThDyAlign_TmHits::AddIfHit(LonSecPos fi, LonSecPos fj)   // ---fi y fj en l
 	}
 
 	if (i0==-1 && j0==-1) return false;
-	_Hits.Add( new CHit( fi, fj, i0, j0,l, H-H0,S-S0,Th_max,step(fi,fj) ) );		//	i,j ???? Th_max??
+	_Hits.emplace_back( /*new CHit(*/ fi, fj, i0, j0,l, H-H0,S-S0,Th_max,step(fi,fj) /*)*/ );		//	i,j ???? Th_max??
 	return true;
 }
 ThDyAlign::~ThDyAlign()

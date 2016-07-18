@@ -158,7 +158,7 @@ class ThDyAlign
 protected:
 	void			Use			(CSec  *sonde, CSec *target);            ///< \todo: take const ?
 	void			Run			(LonSecPos tg_j_StartPos =1);            ///< the actual calculation
-	void			ClearHits	()							{	_Hits.Destroy(); }
+	void			ClearHits	()							{	_Hits.clear(); }
 	virtual	bool	AddIfHit	(LonSecPos i, LonSecPos j)	{	return false;    }
 	void			ResizeTable	()							{	ResizeTable(_sd->Len() , _tg->Len() ) ;}
 private:
@@ -242,7 +242,7 @@ protected:
 	LonSecPos			_LenSond, _LenTarg,  _LenSondPlus1 ;
 	long				_TableSize;
 
-	               // Dynamic Programming (DP) Tables for Entropy and Enthalpy
+	               // Dynamic Programming (DP) Tables for Entropy and Enthalpy  - use vectors ?
 	Energy				*_dH0, ///< Enthalpy DP matrix for Enthalpy - for steps that will align x(i+1) with y(j+1) - diagonal, match, mismatch
 		                *_dH1, ///< Enthalpy DP matrix for Enthalpy - for steps that will align x(i+1) with a gap in the target  
 		                *_dH2; ///< Enthalpy DP matrix for Enthalpy - for steps that will align y(i+1) with a gap in the sonde            
@@ -253,7 +253,7 @@ protected:
 	Entropy		_optS;           ///< optimal value
 	Energy		_optH, _optG;    ///< optimal value
 	Temperature	_optTm ;         ///< optimal value
-	CList		_Hits ;         ///< the list of detected hits. \todo: make vector or std::list<CHit>
+	std::vector<CHit> _Hits ;    ///< the list of detected hits.  or better std::list<CHit>?
 
 
  protected:
@@ -277,8 +277,8 @@ protected:
 //Energy		 Getmaxglo_G()				const		{return Get_G (_maxgloi,_maxgloj);}			// a la Ta en que se calculo
 //Energy		 Getmaxglo_G(Temperature Ta)const		{return Get_G (_maxgloi,_maxgloj,Ta);}		// eliges a que Ta
 
-/// Hits "inside" of the dynamic programming Matrix, when the algorithm parameter pass the X_sig cut off. \todo: no CLink
-class CHit : public CLink 
+/// Hits "inside" of the dynamic programming Matrix, when the algorithm parameter pass the X_sig cut off. 
+class CHit 
 {	
 public: 	
 	LonSecPos		_i,_j, _i0, _j0, _l;   ///< begin, end and length of the local alignment hit in both strands
