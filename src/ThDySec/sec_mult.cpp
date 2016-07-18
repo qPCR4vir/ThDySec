@@ -52,12 +52,12 @@ bool    CMultSec::Export_from   ( CMultSec& base, bool only_selected)
     filesystem::path dir, file;
     auto s= path();
 
-    for (  base.goFirstMSec()   ; base.NotEndMSec() ;   base.goNextMSec())		// recorre todos las msec
+    for ( const auto& CurMSec : base.MSecL())		// recorre todos las msec
     {    
-        auto b= base.CurMSec()->path();
+        auto b= CurMSec->path();
         if ( b.empty() || s.find(b))  continue;    // finded OK only if s beging with p
 
-        file = dir = s.replace(0, b.length()-1, base.CurMSec()->_Path);
+        file = dir = s.replace(0, b.length()-1, CurMSec->_Path);
         file.remove_filename().replace_extension("fasta");
         dir.remove_filename().remove_filename();
 
@@ -144,14 +144,6 @@ int		CMultSec::AddFromFile (const std::string& file)	// return la cantidad de se
 	}
 
         return AddFromFile(ifile); /// \todo: retrow anadiendo el nombre del file
-
-	     //try 
-         //   {
-         //   }
-         //   catch (std::exception &e)
-         //   {
-         //       e.what(e.what);
-         //   }
 }
 
 int		CMultSec::AddFromFile (ifstream& ifile)		// return la cantidad de sec add -----------  AddFromFile   ---
@@ -247,21 +239,21 @@ int		CMultSec::AddFromFileFASTA (ifstream &ifile)  // -------------------    Add
 
 		sec->Description(trim_string(Descriptor));
 
-		CSec *idem=Idem(*sec);
+		auto idem=Idem(*sec);
 
-        if (idem) 
+        if (idem != SecL().end()) 
 		{
-		    if (idem->Len() >= sec->Len() ) 
+		    if ((*idem)->Len() >= sec->Len() ) 
             {
                 sec->Selected(false);
 			    sec->Filtered(true);
-		        InsertSecAfter (sec.release()  , idem) ;	
+		        InsertSecAfter (idem, sec.release() ) ;	
             }
             else
             {
-                idem->Selected(false);
-			    idem->Filtered(true);
-		        InsertBefore (sec.release()  , idem) ;	
+				(*idem)->Selected(false);
+				(*idem)->Filtered(true);
+		        InsertSec(idem, sec.release());
             }
 		}
         else
@@ -273,7 +265,10 @@ int		CMultSec::AddFromFileFASTA (ifstream &ifile)  // -------------------    Add
 }
 
 int		CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultSec::            AddFromFileBLAST  -----------------------------
-{	unsigned int _BlastOutput_query_len ;		// x todos los "hits"
+{	
+	///\todo adapt to multiquery BLAST
+
+	unsigned int _BlastOutput_query_len ;		// x todos los "hits"
 	int			 id=0;
 	string       li ;  //  xml_line
 
@@ -431,20 +426,20 @@ int		CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultSec::  
         }
         else
         {
-            CSec *idem=Idem(*secH);
-		    if (idem) 
+            auto idem=Idem(*secH);
+		    if (idem != SecL().end())
 		    {
-		        if (idem->Len() >= secH->Len() ) 
+		        if ((*idem)->Len() >= secH->Len() )
                 {
                     secH->Selected(false);
 			        secH->Filtered(true);
-		            InsertSecAfter (secH.release()  , idem) ;	
+		            InsertSecAfter(idem, secH.release());
                 }
                 else
                 {
-                    idem->Selected(false);
-			        idem->Filtered(true);
-		            InsertBefore (secH.release()  , idem) ;	
+					(*idem)->Selected(false);
+					(*idem)->Filtered(true);
+		            InsertSec(idem, secH.release());
                 }
 		    }
             else
@@ -589,14 +584,24 @@ int		CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMultSec:: 
 
 				if ( secGB->Len() >= _SecLenLim.Min()  )		
 				{	
-					CSec *idem=Idem(*secGB);
-					InsertSecAfter (secGB  , idem) ;	
-					if (idem) 
+					auto idem =Idem(*secGB);
+					if (idem != SecL().end())
+					{
+						if ((*idem)->Len() >= secGB->Len())
 					{
 						secGB->Selected(false);
 						secGB->Filtered(true);
+							InsertSecAfter(idem, secGB);
 					}
 					else
+						{
+							(*idem)->Selected(false);
+							(*idem)->Filtered(true);
+							InsertSec(idem, secGB);
+						}
+					}
+					else
+						AddSec(secGB);
 						id++;		
 				}
 				else delete secGB;
@@ -608,18 +613,18 @@ int		CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMultSec:: 
 int		CMultSec::AddFromFileODT (ifstream &ifileODT){return 0;}
 int		CMultSec::AddFromFileODS (ifstream &ifileODS){return 0;}
 
-CSec	*CMultSec::Idem ( CSec &sec )   // ------  CMultSec:: NotIdem  --- busqueda trivial de sec identicas -------------
+CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSec:: NotIdem  --- busqueda trivial de sec identicas -------------
 {	
     if ( _MaxTgId >= 100  ) //  no restriction on similarity
-        return nullptr ;    
+        return _LSec.end() ;    
 
 	long LenCandSec=sec.Len() ;     // Lenght of Candidate Sec (to be in the list, with MaxId)
 
 	long MaxErCS= long(ceil(float(LenCandSec*(100.0f-_MaxTgId) ) / 100.0f)); // min of not Id base to be in the list
 	
-    for (  goFirstSec()   ; NotEndSec()   ;   goNextSec() )		// recorre todos las primeras sec de esta misma ms
+	for (auto CurSec = _LSec.begin(); CurSec != _LSec.end(); ++CurSec)		// recorre todos las primeras sec de esta misma ms
 	{	
-        CSec &s = *CurSec() ; 
+        CSec &s = **CurSec ; 
 		if (s.Filtered()) 
             continue;
 
