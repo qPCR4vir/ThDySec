@@ -452,68 +452,87 @@ int		CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultSec::  
 }
 
 int		CMultSec::AddFromFileGBtxt (ifstream &ifile) // ----------------  CMultSec::            AddFromFileGBtxt  -----------------------------
-{	const int gb_descr_w=12 ;	char gb_descr[gb_descr_w+1]; gb_descr[gb_descr_w]=0;
+{	
+	/// \todo update !!
+
+	const int gb_descr_w=12 ;	
+	char      gb_descr[gb_descr_w+1]; 
+
+	gb_descr[gb_descr_w]=0;
+
 	size_t strl;
 	int	id	=0     ;
 	string txt_line ;
 
-	do {	char	*	LOCUS			=nullptr      ;
-			long		Seq_inst_length	=0		;	
-			char	*	DEFINITION		=nullptr     ;
-			char	*	ACCESSION		=nullptr     ;
-			char	*	ORGANISM		=nullptr     ;
-			// para CSec
-			char	*	sec		=nullptr     ;		//	char		*	nam,	DEFINITION	,	//	long			l=0,		Seq_inst_length
+	do {
+		char	*	LOCUS = nullptr;
+		long		Seq_inst_length = 0;
+		char	*	DEFINITION = nullptr;
+		char	*	ACCESSION = nullptr;
+		char	*	ORGANISM = nullptr;
+		// para CSec
+		char	*	sec = nullptr;		//	char		*	nam,	DEFINITION	,	//	long			l=0,		Seq_inst_length
 
-			do  {	ifile>>setw (gb_descr_w)>>gb_descr ;	if ( ! ifile.good() ) return id; } 	// LOCUS       AY702040               10675 bp    RNA     linear   VRL 24-MAR-2005
-			while  (strcmp(gb_descr,	"LOCUS"	) );
-			ifile>>setw (gb_descr_w)>>gb_descr ;				LOCUS=new char[1+(strl=strlen(gb_descr))] ;
-			strncpy(LOCUS,gb_descr,strl) ;						LOCUS	[strl]=0;
-			ifile>>Seq_inst_length ;	
+		do { ifile >> setw(gb_descr_w) >> gb_descr;	if (!ifile.good()) return id; } 	// LOCUS       AY702040               10675 bp    RNA     linear   VRL 24-MAR-2005
+		while (strcmp(gb_descr, "LOCUS"));
+		ifile >> setw(gb_descr_w) >> gb_descr;				LOCUS = new char[1 + (strl = strlen(gb_descr))];
+		strncpy(LOCUS, gb_descr, strl);						LOCUS[strl] = 0;
+		ifile >> Seq_inst_length;
 
-			do  {	ifile>>setw (gb_descr_w)>>gb_descr ;	if ( ! ifile.good() ) return id; } 	// DEFINITION  Dengue virus type 2 strain I348600, complete genome.
-			while  (strcmp(gb_descr,	"DEFINITION"	) );
-			getline (ifile, txt_line) ;								DEFINITION	=new char[txt_line.length()+1] ;
-			txt_line.copy(  DEFINITION  ,txt_line.length()) ;		DEFINITION	[txt_line.length()]=0;
+		do { ifile >> setw(gb_descr_w) >> gb_descr;	if (!ifile.good()) return id; } 	// DEFINITION  Dengue virus type 2 strain I348600, complete genome.
+		while (strcmp(gb_descr, "DEFINITION"));
+		getline(ifile, txt_line);								DEFINITION = new char[txt_line.length() + 1];
+		txt_line.copy(DEFINITION, txt_line.length());		DEFINITION[txt_line.length()] = 0;
 
-			do  {	ifile>>setw (gb_descr_w)>>gb_descr ;	if ( ! ifile.good() ) return id; } 	// ACCESSION   AY702040
-			while  (strcmp(gb_descr,	"ACCESSION"	) );
-			ifile>>setw (gb_descr_w)>>gb_descr ;			ACCESSION=new char[1+(strl=strlen(gb_descr))] ;
-			strncpy(ACCESSION,gb_descr,strl) ;						ACCESSION	[strl]=0;
+		do { ifile >> setw(gb_descr_w) >> gb_descr;	if (!ifile.good()) return id; } 	// ACCESSION   AY702040
+		while (strcmp(gb_descr, "ACCESSION"));
+		ifile >> setw(gb_descr_w) >> gb_descr;			ACCESSION = new char[1 + (strl = strlen(gb_descr))];
+		strncpy(ACCESSION, gb_descr, strl);						ACCESSION[strl] = 0;
 
-			do  {	ifile>>setw (gb_descr_w)>>gb_descr ;	if ( ! ifile.good() ) return id; } 	//   ORGANISM  Dengue virus 2
-			while  (strcmp(gb_descr,	"ORGANISM"	) );
-			getline (ifile, txt_line) ;							ORGANISM	=new char[txt_line.length()+1] ;
-			txt_line.copy(  ORGANISM  ,txt_line.length()) ;		ORGANISM	[txt_line.length()]=0;
+		do { ifile >> setw(gb_descr_w) >> gb_descr;	if (!ifile.good()) return id; } 	//   ORGANISM  Dengue virus 2
+		while (strcmp(gb_descr, "ORGANISM"));
+		getline(ifile, txt_line);							ORGANISM = new char[txt_line.length() + 1];
+		txt_line.copy(ORGANISM, txt_line.length());		ORGANISM[txt_line.length()] = 0;
 
-			do  {	ifile>>setw (gb_descr_w)>>gb_descr ;	if ( ! ifile.good() ) return id; } 	// ORIGIN      
-			while  (strcmp(gb_descr,	"ORIGIN"	) );
-			getline (ifile, txt_line,'/') ;							sec	=new char[txt_line.length()+1] ;
-			txt_line.copy(  sec  ,txt_line.length()) ;				sec	[txt_line.length()]=0;
+		do { ifile >> setw(gb_descr_w) >> gb_descr;	if (!ifile.good()) return id; } 	// ORIGIN      
+		while (strcmp(gb_descr, "ORIGIN"));
+		getline(ifile, txt_line, '/');							sec = new char[txt_line.length() + 1];
+		txt_line.copy(sec, txt_line.length());				sec[txt_line.length()] = 0;
 
-			CSecGBtxt *secGBtxt= new CSecGBtxt(	LOCUS       ,
-												Seq_inst_length,	
-												DEFINITION     ,
-												ACCESSION      ,
-												ORGANISM       ,
-												sec	,	
-												id,								//	char		*	nam,	DEFINITION	,	
-												_NNPar);
-				if ( secGBtxt->Len() >= _SecLenLim.Min()   )		
-				{	
-					CSec *idem=Idem(*secGBtxt);
-					InsertSecAfter (secGBtxt  , idem) ;	
-					if (idem) 
-					{
-						secGBtxt->Selected(false);
-						secGBtxt->Filtered(true);
-					}
-					else
-						id++;		
-				}
-				else delete secGBtxt;
-			delete []sec ;
+		std::unique_ptr<CSecGBtxt> secGBtxt
+		    { new CSecGBtxt(LOCUS       ,
+							Seq_inst_length,
+							DEFINITION     ,
+							ACCESSION      ,
+							ORGANISM       ,
+							sec	,
+							id,								//	char		*	nam,	DEFINITION	,	
+							_NNPar)
+		    };
+		if (secGBtxt->Len() >= _SecLenLim.Min())
+			continue;
+
+		auto idem = Idem(*secGBtxt);
+		if (idem != SecL().end())
+		{
+			if ((*idem)->Len() >= secGBtxt->Len())
+			{
+				secGBtxt->Selected(false);
+				secGBtxt->Filtered(true);
+				InsertSecAfter(idem, secGBtxt.release());
+			}
+			else
+			{
+				(*idem)->Selected(false);
+				(*idem)->Filtered(true);
+				InsertSec(idem, secGBtxt.release());
+			}
 		}
+		else
+			AddSec(secGBtxt.release());
+	
+	    id++;		
+	}
 	while (ifile.good() ); 
 	return id; 
 }
@@ -588,12 +607,12 @@ int		CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMultSec:: 
 					if (idem != SecL().end())
 					{
 						if ((*idem)->Len() >= secGB->Len())
-					{
-						secGB->Selected(false);
-						secGB->Filtered(true);
+						{
+							secGB->Selected(false);
+							secGB->Filtered(true);
 							InsertSecAfter(idem, secGB);
-					}
-					else
+						}
+						else
 						{
 							(*idem)->Selected(false);
 							(*idem)->Filtered(true);
@@ -602,7 +621,7 @@ int		CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMultSec:: 
 					}
 					else
 						AddSec(secGB);
-						id++;		
+					id++;		
 				}
 				else delete secGB;
 		}
@@ -625,7 +644,7 @@ CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSe
 	for (auto CurSec = _LSec.begin(); CurSec != _LSec.end(); ++CurSec)		// recorre todos las primeras sec de esta misma ms
 	{	
         CSec &s = **CurSec ; 
-		if (s.Filtered()) 
+		if (s.Filtered())
             continue;
 
         // sec:q           -------------------------------------------------------------------------
@@ -716,7 +735,7 @@ CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSe
 {	
 	if (!sec) return nullptr ;
 	_LSec.emplace(++preSec, sec);
-	UpdateTotalsAdding ( sec );
+    UpdateTotalsAdding ( sec );
 	return sec;
 }
 
