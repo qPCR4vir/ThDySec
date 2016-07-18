@@ -67,7 +67,6 @@ class CMultSec    ;
 /// set sq.sq to some original "experimental" CSec if any
 ///
 /// set aln.sq to the parent CMultSec*
-/// \deprecate CLink
 class CSec : public CSecBasInfo    
 {public:
         int                           x;            ///<  ????
@@ -296,11 +295,11 @@ class CSecGBtxt : public CSec // ---------------------------------------   CSecG
 
 /// ahora estos seran solo para mantener "copias" (punteros) de sec o msec en otras listas. 
 /// Cada sec o msec sabe en que lista esta
-class CSecLink   : public CLink    // NO es dueno de la sec, no la borra, no delete
-{    public:
-        CSecLink (CSec *s, CSecLink *p, CSecLink *n=nullptr) : _sec(s), CLink (n, p) {} ;
-        CSec *_sec ;
-};
+//class CSecLink     // NO es dueno de la sec, no la borra, no delete
+//{    public:
+//        CSecLink (CSec *s, CSecLink *p, CSecLink *n=nullptr) : _sec(s) {} ;
+//        CSec *_sec ;
+//};
         
 #endif
 

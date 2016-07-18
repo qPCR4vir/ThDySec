@@ -32,10 +32,9 @@
   /// Permite hacer grupos de sec o de MultiSec (para analisis por "especies"?)
 
   /// \todo add construction of concensus 
-  /// \todo no CLink 
   /// \todo make std with vector or list of std::shared_ptr<Csec> and CMultSec> ?
   /// Atention:  It owns and destroy the sequences: Use Remove() or Free() to prevent destruction fo sequences
-class CMultSec	 : public CLink	
+class CMultSec	 
 {	public:
 		std::string			_name ;						///< 
         int					_ID       {NewMS_ID()};		///< Unique ID in each programm run

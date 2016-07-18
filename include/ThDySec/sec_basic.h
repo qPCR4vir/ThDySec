@@ -26,7 +26,7 @@
 
 class CMultSec	;
 
-class ISec	: public CLink		// Pure virtual class ?
+class ISec		// Pure virtual class ?
 {public:			
 	using sequence = std::basic_string<DegCod::Base> ;
 

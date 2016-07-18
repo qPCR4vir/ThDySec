@@ -19,7 +19,6 @@
 #include <memory>
 #include <vector>
 
-#include "link.h"
 #include "common.h" 
 
 /// pretend to define a fragment from another sequence.
@@ -196,7 +195,7 @@ class CRang : public CRangBase// ---------------------------------------   CRang
 class CSec;
 //! -------------------------   CSecCand	-------------------------------
 /// destinado a formar parte de una lista en un busq de sondas.
-class CSecCand : public CLink 
+class CSecCand  
 {public:						
 	long _NumPosCand, _NumCand  , _NumPosCandIn, _NumCandIn  ,_NumCandExact ;	
 	CSec                             &_Sec ;	// ref a la sec, que ni se modifica ni se cambia de lugar
@@ -213,7 +212,7 @@ class CSecCand : public CLink
 
 
 /// destinado a formar parte de una lista en un alineamieto.  \todo REVISE!! EXPERIMENTAL
-class CSecAl : public CLink 
+class CSecAl  
 {public:
 	CSec                 &_Sec     ; ///< ref a la sec, que ni se modifica ni se cambia de lugar
 	std::vector<long> _inAlp_B ; ///< array que dice que base de la sec va en esa pos del Al (len=Al)
