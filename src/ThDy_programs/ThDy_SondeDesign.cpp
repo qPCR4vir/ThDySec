@@ -22,8 +22,8 @@ void FindSonden( CMultSec *tg, /*int& tgN,*/ int& compN, CMSecCand& msCand, CPro
 {
 	CProgParam_SondeDesign::targets_comp res;
 
-	for (  tg->goFirstSec(); tg->NotEndSec()   ;   tg->goNextSec() )  // recorre todos los        ----  targets  ------
-	{	CSec &nt = *tg->CurSec() ;
+	for ( auto &CurSec : tg->SecL() )  // recorre todos los        ----  targets  ------
+	{	CSec &nt = *CurSec ;
 		
 		if ( nt.Degeneracy() > 1 )  continue ; 		  // No analiza las target deg...por ahora.Facil de ampliar
 		if ( ! nt.Selected() )      continue ; 		  // No analiza las target non selected
@@ -56,9 +56,9 @@ void FindSonden( CMultSec *tg, /*int& tgN,*/ int& compN, CMSecCand& msCand, CPro
 			IPrgPar_SdDes->targets_comparitions.push_back( res  )	;	
 		}
 	}
-	for (  tg->goFirstMSec(); tg->NotEndMSec()   ;   tg->goNextMSec())  // recorre todos los targets
+	for (auto &CurMSec : tg->MSecL() )  // recorre todos los targets
 	{	
-        FindSonden(tg->CurMSec(), compN, msCand, IPrgPar_SdDes );
+        FindSonden(CurMSec.get(), compN, msCand, IPrgPar_SdDes );
 	}
 }
 std::vector<std::string> CProgParam_SondeDesign::targets_comp::headers

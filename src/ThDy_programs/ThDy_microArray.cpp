@@ -20,45 +20,51 @@ using namespace std; /// \todo temp?
 
 void	CreateColumns(CTable<TmGPos> &rtbl, CMultSec &pr, int MaxGrDeg, OutStr &os )
 {
-	for (  pr.goFirstSec()   ; pr.NotEndSec()   ;   pr.goNextSec() )				// recorre todos las sondas
-	{	CSec &s = *pr.CurSec() ;
+	for (auto &CurSec : pr.SecL()) 			// recorre todos las sondas
+	{	CSec &s = *CurSec ;
 		if(! s.Selected())
 			continue;		
-		if(	s.Degeneracy() > MaxGrDeg ) 							// sonda "demaciado" deg. No se analisa
+		if(	s.Degeneracy() > MaxGrDeg ) 				// sonda "demaciado" deg. No se analisa
 		{
 			s.Selected(false) ;
 			continue;		
 		}
 		const std::string path =CMultSec::Path(s._parentMS) ;
 		s.CreateNonDegSet ()  ;
-		if ( CMultSec *nds=s.NonDegSet() ) 
+		if ( CMultSec *nds=s.NonDegSet().get() ) 
 		{	
 			const std::string path =CMultSec::Path(s._parentMS) ;
-			for (  nds->goFirstSec()   ; nds->NotEndSec()   ;   nds->goNextSec() )// recorre todos las var no deg de la sonda
-			{	CSec &s = *nds->CurSec() ;
+			for (auto &ndsCurSec : nds->SecL()) 	// recorre todos las var no deg de la sonda
+			{	CSec &s = *ndsCurSec ;
 				const std::string name (path + s.Name() );
-				os.Tm	 <<sep << name		;	os.G		<<sep << name		;	os.Pos	<<sep <<name		;	
-				os.Pl_Tm <<"  "<< name		;	os.Pl_G		<<"  "<< name		;
+				os.Tm	 <<sep << name		;	
+				os.G	 <<sep << name		;	
+				os.Pos	 <<sep << name		;	
+				os.Pl_Tm <<"  "<< name		;	
+				os.Pl_G  <<"  "<< name		;
 				rtbl.AddColummnTit(/*name*/  s.Name()	);																						//s.x;
 			}
 		} else 
 			{	
 				const std::string name (path + s.Name() );
-				os.Tm	 <<sep << name		;	os.G		 <<sep << name		;	os.Pos	<<sep <<name		;	
-				os.Pl_Tm <<"  "<< name		;	os.Pl_G		 <<"  "<< name	;
+				os.Tm	 <<sep << name		;	
+				os.G	 <<sep << name		;	
+				os.Pos	 <<sep << name		;	
+				os.Pl_Tm <<"  "<< name		;	
+				os.Pl_G	 <<"  "<< name	    ;
 				rtbl.AddColummnTit(/*name*/  s.Name()	);
 			}
 	}
-	for (  pr.goFirstMSec(); pr.NotEndMSec()   ;   pr.goNextMSec())  
-        CreateColumns(rtbl, *pr.CurMSec(),MaxGrDeg,os );
+	for (auto &CurMSec : pr.MSecL()) 	 
+        CreateColumns(rtbl, *CurMSec,MaxGrDeg,os );
 }
 
 void	Hybrid(CTable<TmGPos> &rtbl, CMultSec &tg, CMultSec &pr, ThDyAlign	&Al, OutStr &os, int MAxGrDegTg=1)
 {
 	const std::string path =CMultSec::Path(&tg) 	 ;
-	for (  tg.goFirstSec()   ; tg.NotEndSec()   ;   tg.goNextSec() )  /// recorre todos los targets
+	for (auto &CurSec : tg.SecL())   /// recorre todos los targets
 	{	
-        CSec &t = *tg.CurSec() ;
+        CSec &t = *CurSec ;
 		if(! t.Selected())
 			continue;		
 		if(	t.Degeneracy() > MAxGrDegTg ) 							/// No analiza las target deg...por ahora.Facil de ampliar
@@ -67,17 +73,18 @@ void	Hybrid(CTable<TmGPos> &rtbl, CMultSec &tg, CMultSec &pr, ThDyAlign	&Al, Out
 			continue;		
 		}
 		const std::string name = path + t.Name()	 ;
-		os.Tm	 <<endl<< name			;		os.G		<<endl<< name			;	os.Pos	<<endl<< name		;	
-		os.Pl_Tm <<endl<< name<<" \t"	;		os.Pl_G		<<endl<< name<<" \t"	 ;		
+		os.Tm	<<endl<< name		;		
+		os.G	<<endl<< name		;	
+		os.Pos	<<endl<< name		;	
+		os.Pl_Tm<<endl<< name<<" \t";		
+		os.Pl_G	<<endl<< name<<" \t";		
 		rtbl.AddRow(t.Name());	
 		HybridPr (pr, t, 	Al, os.Tm, os.G,os.Pos,os.Pl_Tm,os.Pl_G,os.Al, &rtbl);
-        tg.RestoreCur(&t);
 	}
-	for (  tg.goFirstMSec(); tg.NotEndMSec()   ;   tg.goNextMSec())  
+	for (auto &CurMSec : tg.MSecL()) 	 
     {	
-        CMultSec *ct=tg.CurMSec();
+        CMultSec *ct= CurMSec.get();
         Hybrid(rtbl, *ct,  pr, Al,os, MAxGrDegTg);
-        ct->RestoreMCur(ct);
     }
 
 }

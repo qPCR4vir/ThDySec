@@ -24,26 +24,26 @@ int microArrayProg ( CProgParam_microArray *IPrgPar_uArr,
                     int MAxGrDegTg, 
                     const std::string& of_x =""	);
 
-void CreateComplProbes(	CMultSec		&pr	)
+void CreateComplProbes(	CMultSec		&pr	)   /// revise !!!!!!!!!!!!
 {
 	CMultSec *cms{nullptr};
 
-	for (pr.goFirstMSec(); pr.NotEndMSec(); pr.goNextMSec())    ///\todo recursive ?! use only selected   ?!!!
+	for (auto &CurMSec : pr.MSecL())   ///\todo recursive ?! use only selected   ?!!!
 	{
-		if (pr.CurMSec()->_name == "compl")        // if there was already one compl group
+		if (CurMSec->_name == "compl")        // if there was already one compl group
 		{
-			cms = pr.CurMSec();
-			cms->Destroy();                        // destroy to reuse  !!
+			cms = CurMSec.get();
+			cms->clear();                ///\todo uncount !!!!!        // destroy to reuse  !!
 		}
-		else if (pr.CurMSec()->Selected())         // recursively CreateComplProbes for all the other groups
-			CreateComplProbes(*pr.CurMSec());
+		else if (CurMSec->Selected())         // recursively CreateComplProbes for all the other groups
+			CreateComplProbes(*CurMSec);
 	}
 
 	if(!cms) 
         cms=pr.AddMultiSec("compl");
 
-	for (  pr.goFirstSec()   ; pr.NotEndSec()   ;   pr.goNextSec() )				// recorre todos las sondas
-	{	CSec &s = *pr.CurSec() ;
+	for (auto &CurSec : pr.SecL()) 			// recorre todos las sondas
+	{	CSec &s = *CurSec ;
 		if( s.Selected())
 		    cms->AddSec ( s.Clone(DNAstrand::rev_compl) ); 
 	}
