@@ -383,7 +383,7 @@ class ThDyAlign_TmCand			: public ThDyAlign_Tm  // -----------------------------
 };
 
 /// wrapper for CSec adding Rangs of hit in each position to track existing thermodynamic hits with the other sequences
-class CMSecCand : public CLink		//--------------------------------Tm------ CMSecCand --------------------------------
+class CMSecCand  	//--------------------------------Tm------ CMSecCand --------------------------------
 {public:
 	CMSecCand(	SondeLimits sL ,
 				float	Tm_sig		, float G_sig ,			// sonde  - target		: hace falta aqui?
@@ -402,8 +402,7 @@ class CMSecCand : public CLink		//--------------------------------Tm------ CMSec
 	void		Use(std::shared_ptr<CMultSec> MSec);//	void		Set_PaarComparExport(ofstream &osPaarComp){_osPaarComp=osPaarComp;};
 	CSecCand	*Add(CSec &sec);
 	CSecCand	&AddBeging	(CSec &sec) ;
-	CSecCand	&curTg		()		{return *((CSecCand *)_LSecCand.Cur());	}
-	bool		NotFinisch	();
+	bool        NotFinisch();
 	void		FindCommon	(CSecCand  &cand1, CSecCand &cand2, bool design=true)	;
 	CSecCand	*CompNext	();
 
@@ -423,8 +422,6 @@ class CMSecCand : public CLink		//--------------------------------Tm------ CMSec
 			    		fileFormat         format   = fileFormat::fasta);
 	
 	virtual ~CMSecCand(){	 
-							_LSecCand.Destroy() ; 
-							_LMSecCand.Destroy() ; 
 	                     }
 	SondeLimits _sL ;
 
@@ -442,7 +439,8 @@ class CMSecCand : public CLink		//--------------------------------Tm------ CMSec
 	std::shared_ptr<ThDyAlign_TmCand>	_TDATmC ;  // donde se crea y se borra???   _______________ PROBLEMA !!!!!!!!!!!!!!!!
 
 
-	CList	_LSecCand, _LMSecCand;
+	std::list<std::shared_ptr<CSecCand > >	_LSecCand;
+	std::list<std::shared_ptr<CMSecCand> >	_LMSecCand;
 };
 
 ///  the rector parameter for DP is G
@@ -519,7 +517,7 @@ void		print_ThDyAlign (std::ofstream &osTm,ThDyAlign &Al);
 //void		print_Tm		(ofstream &osTm, CMultSec	&pr, int MaxGrDeg=-1, char sep[]=";" );
 void print_Tm (std::ofstream &osTm, CMultSec	&pr, int MaxGrDeg, char sep[]);
 std::ofstream	&operator<<(std::ofstream &stream,	ThDyAlign_Tm	&TmAl) ;
-std::ofstream	&operator<<(std::ofstream &osTm,	ThDyAlign		&Al) ;
+//std::ofstream	&operator<<(std::ofstream &osTm,	ThDyAlign		&Al) ;
 std::ofstream	&operator<<(std::ofstream &stream,	ThDyAlign_G		&G_Al) ;
 std::ofstream	&operator<<(std::ofstream &stream,	FracTDAlign		&FrAl) ;
 #endif
