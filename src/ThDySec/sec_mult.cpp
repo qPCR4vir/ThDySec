@@ -824,6 +824,12 @@ CMultSec *	CMultSec::AddMultiSec ( CMultSec *ms )  //---------------------------
 	UpdateTotalsMoving ( ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
 	return ms;
 }
+CMultSec *	CMultSec::AddMultiSec (LMSec::value_type ms )  //--------------------------------------    AddMultiSec    --------------------
+{	if (!ms) return nullptr;	
+	_LMSec.push_back(ms);
+	UpdateTotalsMoving ( ms.get() );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
+	return ms.get();
+}
 void	    CMultSec::UpdateTotalsMoving ( CMultSec *msec ) 
 {	
 	if (!msec || msec->_parentMS==this)					// no hay msec o ya estaba antes en una de mis subtrees inmediatas. 

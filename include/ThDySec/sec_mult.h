@@ -327,10 +327,11 @@ class CMultSec
 			return AddMultiSec(new CMultSec (this, Name  ));
 		}
 		CMultSec	*AddMultiSec	(CMultSec *MultSec);
+		CMultSec	*AddMultiSec	(LMSec::value_type MultSec);
 
 //		CSec		CalculateConsenso	(double) ;
-//		void		Free			()	{_LSec.free(); _LMSec.free();}
-//		void		Destroy			()	{_LSec.Destroy(); _LMSec.Destroy();}
+//		void		release			()	{_LSec.release(); _LMSec.release();}
+		void		clear			()	{_LSec.clear(); _LMSec.clear();} ///\todo uncount !!!!!
 
 		virtual ~CMultSec ()  ;	
 
