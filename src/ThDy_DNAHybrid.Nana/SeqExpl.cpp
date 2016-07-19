@@ -482,8 +482,8 @@ void SeqExpl::InitTree()
         _tree.auto_draw(false);
 
         CMultSec *ms=_Pr._cp._pSeqTree.get();
-        for ( ms->goFirstMSec() ;  ms->NotEndMSec() ; ms->goNextMSec() )
-			populate( AddRoot( ms->CurMSec())) ;
+        for ( auto& CurMSec :  ms->MSecL() )
+			populate( AddRoot( CurMSec.get() )) ;
 
         _tree.find(("Target seq")).select(true);
         populate_list_recur(_Pr._cp._pSeqTree.get());
