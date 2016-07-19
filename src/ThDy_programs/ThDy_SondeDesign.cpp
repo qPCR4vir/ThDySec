@@ -33,9 +33,12 @@ void FindSonden( CMultSec *tg, /*int& tgN,*/ int& compN, CMSecCand& msCand, CPro
 		/// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// std::cout<<"\n"<<nt.Name();
 		/// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		for(CSecCand &newtg =msCand.AddBeging(nt)	;msCand.NotFinisch() ; msCand.CompNext())  // anade el curr tg y lo comp con todos los anteriormente anadidos
-		{	CSecCand &curtg =msCand.curTg();
+		
+		auto ntg = msCand.AddBeging(nt);
+		CSecCand &newtg = *ntg; // create current target
+		for( auto& curTg : msCand._LSecCand )    //  y lo comp con todos los anteriormente anadidos
+		{	
+			CSecCand &curtg = *curTg;
             
 			res.iteration_num = ++compN;
 			res.target_num    = msCand._NSecCand ;
@@ -55,6 +58,7 @@ void FindSonden( CMultSec *tg, /*int& tgN,*/ int& compN, CMSecCand& msCand, CPro
 
 			IPrgPar_SdDes->targets_comparitions.push_back( res  )	;	
 		}
+		msCand._LSecCand.emplace_back(ntg.release());    // add current target to the end of targets
 	}
 	for (auto &CurMSec : tg->MSecL() )  // recorre todos los targets
 	{	

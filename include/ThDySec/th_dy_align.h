@@ -372,13 +372,23 @@ class ThDyAlign_TmCand			: public ThDyAlign_Tm  // -----------------------------
 		:ThDyAlign_Tm(MaxLenSec, MaxLenSec, NNpar){}                            /*,	 _Tm_min(Tm_min), _Tm_max(Tm_max)*/
 
 	std::string   AlignMeth()  override {return "TmCand";}
+
 	virtual bool	AddIfHit	(long i, long j) override;
-	void	Use			(CSecCand  *cand1, CSecCand *cand2)	{	_cs=cand1; _ct=cand2; ThDyAlign_Tm::Use	( &_cs->_Sec, &_ct->_Sec);}
-	void	FindCommon	(CSecCand  *cand1, CSecCand *cand2, bool colapse=true) {	Use	(cand1, cand2);
-																					Align( &_cs->_Sec, &_ct->_Sec); 
-																					_cs->ColapseRangs(colapse);
-																					_ct->ColapseRangs(colapse);		}
-	CSecCand	*_cs, *_ct;
+
+	void	Use			(CSecCand  *cand1, CSecCand *cand2)	
+	                   {	_cs=cand1; 
+	                        _ct=cand2; 
+							ThDyAlign_Tm::Use	( &_cs->_Sec, &_ct->_Sec);
+	                    }
+
+	void	FindCommon	(CSecCand  *cand1, CSecCand *cand2, bool colapse=true) 
+	                   {	 Use	(cand1, cand2);
+							 Align( &_cs->_Sec, &_ct->_Sec); 
+							_cs->ColapseRangs(colapse);
+							_ct->ColapseRangs(colapse);		
+	                    }
+	CSecCand *_cs, *_ct;
+
 	//float  _Tm_min, _Tm_max ; //aqui se usan????????????????
 };
 
@@ -401,10 +411,8 @@ class CMSecCand  	//--------------------------------Tm------ CMSecCand ---------
 
 	void		Use(std::shared_ptr<CMultSec> MSec);//	void		Set_PaarComparExport(ofstream &osPaarComp){_osPaarComp=osPaarComp;};
 	CSecCand	*Add(CSec &sec);
-	CSecCand	&AddBeging	(CSec &sec) ;
-	bool        NotFinisch();
+	std::unique_ptr<CSecCand> AddBeging	(CSec &sec) ;
 	void		FindCommon	(CSecCand  &cand1, CSecCand &cand2, bool design=true)	;
-	CSecCand	*CompNext	();
 
 	/// Return probes with a percent of other-target coverage with is not intern to the range ExtrCovPerc.
 
