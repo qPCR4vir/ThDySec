@@ -132,8 +132,16 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
 
             CMultSec *ms = tn.value<CMultSec*>();
             CMultSec *pms = ms->_parentMS; // tn->owner.value<CMultSec*>();
-            ms->MoveBefore(_Pr._cp._pSeqNoUsed->goFirstMSec() );  /// \todo: hight level MoveMSec !! (actualize globals)
-            auto own = tn->owner();
+
+			/// \todo revise !!!?? temporal solutio. Save an iterator to shraed_ptr<CMSec> 
+			///          instead of CMSec* in the tree node?
+
+			auto it=std::find_if(pms->MSecL().begin(), pms->MSecL().end(), [](auto & sp_ms) {return ms == sp_ms.get(); });
+			if (it == pms->MSecL().end()) return;
+
+			_Pr._cp._pSeqNoUsed->MoveMSec(it);     // hight level MoveMSec !! (actualize globals)
+            
+			auto own = tn->owner();
 
             _tree.auto_draw(false);
             _list.auto_draw(false);
