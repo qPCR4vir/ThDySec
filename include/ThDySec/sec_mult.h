@@ -269,6 +269,14 @@ class CMultSec
 		CSec		*AddSec			( CSec *sec );
 		CSec		*InsertSec		( LSec::const_iterator pos, CSec *sec ) ;
 		CSec		*InsertSecAfter ( LSec::const_iterator pos, CSec *sec ) ;
+		CMultSec    *MoveMSec       (LMSec::const_iterator from) // revise design
+		{
+			CMultSec* p = (*from)->_parentMS;
+			if (p == this) return p;    // no-op ; mover al final?
+			LMSec::value_type s = std::move(*from);
+			p->_LMSec.erase(from);
+			return AddMultiSec(s);
+		}
 		int			CountSelectedSeq		()
 		{
             int count{0};
