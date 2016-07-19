@@ -26,18 +26,22 @@ int DegTmCalc ( CProgParam_TmCalc *IPrgPar_Calc)
         IPrgPar_Calc->_cp.Actualice_NNp ( );
 
 	Temperature Ta=  IPrgPar_Calc->_cp._pSaltCorrNNp->Ta() ; 
-	CSec			Sec		  (			IPrgPar_Calc->_Sec.get() ,		0, "Sec",		IPrgPar_Calc->_cp._pSaltCorrNNp); 
-	if (Sec.Len() < 1)  return 0 ; // Error :  no sec !!!!!!
-	Sec.CreateNonDegSet();	
 
-	if (CountDegBases(					IPrgPar_Calc->_Sec2Align.get().c_str())		< 1)				
-										IPrgPar_Calc->Update_Sec_Sec2Align(true,true);	
-	CSec			Sec2Align (			IPrgPar_Calc->_Sec2Align.get() ,	0, "Sec2Align",	IPrgPar_Calc->_cp._pSaltCorrNNp);
-	Sec2Align.CreateNonDegSet();
+	auto Sec = std::make_unique<CSec>(	IPrgPar_Calc->_Sec.get(), 0, "Sec", IPrgPar_Calc->_cp._pSaltCorrNNp); 
 
-	CMultSec	*pr,	*tg;			// Esto se puede hacer mejor
-	if   (      Sec.NonDegSet()) pr=      Sec.NonDegSet() ; 	else {pr =new CMultSec(IPrgPar_Calc->_cp._pSaltCorrNNp); pr->AddSec(      &Sec);}	
-	if   (Sec2Align.NonDegSet()) tg=Sec2Align.NonDegSet() ;		else {tg =new CMultSec(IPrgPar_Calc->_cp._pSaltCorrNNp); tg->AddSec(&Sec2Align);}	
+	if (Sec->Len() < 1)  return 0 ; // Error :  no sec !!!!!!
+	Sec->CreateNonDegSet();	
+
+	if (CountDegBases(			IPrgPar_Calc->_Sec2Align.get().c_str())		< 1)				
+								IPrgPar_Calc->Update_Sec_Sec2Align(true,true);	
+
+	std::unique_ptr<CSec> Sec2Align{ new CSec(IPrgPar_Calc->_Sec2Align.get() ,	0, "Sec2Align",	IPrgPar_Calc->_cp._pSaltCorrNNp) };
+	Sec2Align->CreateNonDegSet();
+
+	std::shared_ptr<CMultSec>	pr,	tg;			// Esto se puede hacer mejor
+
+	if   (      Sec->NonDegSet()) pr=      Sec->NonDegSet() ; else {pr.reset(new CMultSec(IPrgPar_Calc->_cp._pSaltCorrNNp)); pr->AddSec(      Sec.release());}	
+	if   (Sec2Align->NonDegSet()) tg=Sec2Align->NonDegSet() ; else {tg.reset(new CMultSec(IPrgPar_Calc->_cp._pSaltCorrNNp)); tg->AddSec(Sec2Align.release());}
 
 		
 	IPrgPar_Calc->_TmS  = KtoC(pr->_Local._Tm) ;// (    KtoC(pr->_minTm)   ,   KtoC(pr->_maxTm)   ) ; 
@@ -111,16 +115,14 @@ int DegTmCalc ( CProgParam_TmCalc *IPrgPar_Calc)
 		IPrgPar_Calc->Set_AlignedSec2Align( (char*)tg_maxTmH->Sequence().c_str()  );
 	}
 
-	if   (!      Sec.NonDegSet()) {pr->Free();		delete pr;}	
-	if   (!Sec2Align.NonDegSet()) {tg->Free();		delete tg;}	
 	//delete pAl;	
 	if (IPrgPar_Calc->save.get())	
 	{
-		CMultSec primers(IPrgPar_Calc->_cp._pSaltCorrNNp); primers.AddSec(      &Sec);
-								 primers.AddSec(&Sec2Align);
+		CMultSec primers(IPrgPar_Calc->_cp._pSaltCorrNNp); 
+		primers.AddMultiSec( pr);
+		primers.AddMultiSec( tg);
 
 		int t=MultiplexPCRProg ( IPrgPar_Calc, primers		)  ;
-		primers.Free();
 		return t;
 	}
 
