@@ -136,8 +136,16 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
 			/// \todo revise !!!?? temporal solutio. Save an iterator to shraed_ptr<CMSec> 
 			///          instead of CMSec* in the tree node?
 
-			auto it=std::find_if(pms->MSecL().begin(), pms->MSecL().end(), [](auto & sp_ms) {return ms == sp_ms.get(); });
+			auto it=std::find_if(pms->MSecL().begin(), pms->MSecL().end(), 
+				                 [&ms](auto & sp_ms) {return ms == sp_ms.get(); });
 			if (it == pms->MSecL().end()) return;
+
+			//auto it = pms->MSecL().begin();
+			//do {
+			//	if (it == pms->MSecL().end()) return;
+			//	if ( ms == it->get() ) break;
+			//	++it;
+			//} while (true);
 
 			_Pr._cp._pSeqNoUsed->MoveMSec(it);     // hight level MoveMSec !! (actualize globals)
             
