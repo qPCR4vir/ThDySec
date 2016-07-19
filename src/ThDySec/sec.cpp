@@ -322,7 +322,7 @@ float	CSec::G	(long pi, long pf) const
 
 		CSec::~CSec () 
 {	
-	Remove();
+//	Remove();
 }    
 
 void	CSec::CorrectSaltOwczarzy() 
@@ -338,25 +338,25 @@ CMultSec *CSec::CreateNonDegSet()
 {
 	if (! _NDB )					// La sec no tiene bases deg 
 	{	if (_NonDegSet)				// pero existia un ndgs !! no debe ser...pero por si...
-			{	delete _NonDegSet ;	// lo borramos 
-				_NonDegSet=nullptr;	// y ponemos en 0. Porque esto se usa para saber si existe.
+			{	               	    // lo borramos 
+				_NonDegSet.reset();	// y ponemos en 0. Porque esto se usa para saber si existe.
 			}
-		return _NonDegSet ;			// O sea, nullptr
+		return _NonDegSet.get() ;			// O sea, nullptr
 	}
 	else 	
 		{	if (_NonDegSet)			// La sec tiene bases deg y ya existia un ndgs. Lo respetamos.
-				return _NonDegSet ; // revisar si es el mismo PNNParams NNpar??
+				return _NonDegSet.get() ; // revisar si es el mismo PNNParams NNpar??
 			ForceNonDegSet() ;
 			//_Tm = _NonDegSet->_Tm ; //	_maxTm = _NonDegSet->_maxTm ; _minTm = _NonDegSet->_minTm ;	_Tm    = (_maxTm + _minTm )/2 ;
 		}
-	return _NonDegSet;
+	return _NonDegSet.get();
 }
 
 CMultSec *CSec::ForceNonDegSet()
 {
-		if (_NonDegSet)			// pero existia un ndgs !!
-			delete _NonDegSet ;	// lo borramos 
-		_NonDegSet= new CMultSec(_NNpar) ;
+		//if (_NonDegSet)			// pero existia un ndgs !!
+		_NonDegSet.reset(new CMultSec(_NNpar));	// lo borramos 
+		 
 		_NonDegSet->AddSec( GenerateNonDegVariant(this, 0, 0) ) ;
 		_Tm = _NonDegSet->_Local._Tm ; 
 
@@ -365,7 +365,7 @@ CMultSec *CSec::ForceNonDegSet()
 		//			 << " ("  << (_Tm - 273)     << " °C"  << ") "
 		//			          << (_maxTm - 273)  << " °C"  << "\n" ) , 1 ) ) ;
 
-	return _NonDegSet;
+	return _NonDegSet.get();
 }
 
 CSec *	CSec::CopyFirstBases(long pos) 
