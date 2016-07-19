@@ -158,7 +158,7 @@ class ThDyAlign
 protected:
 	void			Use			(CSec  *sonde, CSec *target);            ///< \todo: take const ?
 	void			Run			(LonSecPos tg_j_StartPos =1);            ///< the actual calculation
-	void			ClearHits	()							{	_Hits.Destroy(); }
+	void			ClearHits	()							{	_Hits.clear(); }
 	virtual	bool	AddIfHit	(LonSecPos i, LonSecPos j)	{	return false;    }
 	void			ResizeTable	()							{	ResizeTable(_sd->Len() , _tg->Len() ) ;}
 private:
@@ -242,7 +242,7 @@ protected:
 	LonSecPos			_LenSond, _LenTarg,  _LenSondPlus1 ;
 	long				_TableSize;
 
-	               // Dynamic Programming (DP) Tables for Entropy and Enthalpy
+	               // Dynamic Programming (DP) Tables for Entropy and Enthalpy  - use vectors ?
 	Energy				*_dH0, ///< Enthalpy DP matrix for Enthalpy - for steps that will align x(i+1) with y(j+1) - diagonal, match, mismatch
 		                *_dH1, ///< Enthalpy DP matrix for Enthalpy - for steps that will align x(i+1) with a gap in the target  
 		                *_dH2; ///< Enthalpy DP matrix for Enthalpy - for steps that will align y(i+1) with a gap in the sonde            
@@ -253,7 +253,7 @@ protected:
 	Entropy		_optS;           ///< optimal value
 	Energy		_optH, _optG;    ///< optimal value
 	Temperature	_optTm ;         ///< optimal value
-	CList		_Hits ;         ///< the list of detected hits. \todo: make vector or std::list<CHit>
+	std::vector<CHit> _Hits ;    ///< the list of detected hits.  or better std::list<CHit>?
 
 
  protected:
@@ -277,8 +277,8 @@ protected:
 //Energy		 Getmaxglo_G()				const		{return Get_G (_maxgloi,_maxgloj);}			// a la Ta en que se calculo
 //Energy		 Getmaxglo_G(Temperature Ta)const		{return Get_G (_maxgloi,_maxgloj,Ta);}		// eliges a que Ta
 
-/// Hits "inside" of the dynamic programming Matrix, when the algorithm parameter pass the X_sig cut off. \todo: no CLink
-class CHit : public CLink 
+/// Hits "inside" of the dynamic programming Matrix, when the algorithm parameter pass the X_sig cut off. 
+class CHit 
 {	
 public: 	
 	LonSecPos		_i,_j, _i0, _j0, _l;   ///< begin, end and length of the local alignment hit in both strands
@@ -372,18 +372,28 @@ class ThDyAlign_TmCand			: public ThDyAlign_Tm  // -----------------------------
 		:ThDyAlign_Tm(MaxLenSec, MaxLenSec, NNpar){}                            /*,	 _Tm_min(Tm_min), _Tm_max(Tm_max)*/
 
 	std::string   AlignMeth()  override {return "TmCand";}
+
 	virtual bool	AddIfHit	(long i, long j) override;
-	void	Use			(CSecCand  *cand1, CSecCand *cand2)	{	_cs=cand1; _ct=cand2; ThDyAlign_Tm::Use	( &_cs->_Sec, &_ct->_Sec);}
-	void	FindCommon	(CSecCand  *cand1, CSecCand *cand2, bool colapse=true) {	Use	(cand1, cand2);
-																					Align( &_cs->_Sec, &_ct->_Sec); 
-																					_cs->ColapseRangs(colapse);
-																					_ct->ColapseRangs(colapse);		}
-	CSecCand	*_cs, *_ct;
+
+	void	Use			(CSecCand  *cand1, CSecCand *cand2)	
+	                   {	_cs=cand1; 
+	                        _ct=cand2; 
+							ThDyAlign_Tm::Use	( &_cs->_Sec, &_ct->_Sec);
+	                    }
+
+	void	FindCommon	(CSecCand  *cand1, CSecCand *cand2, bool colapse=true) 
+	                   {	 Use	(cand1, cand2);
+							 Align( &_cs->_Sec, &_ct->_Sec); 
+							_cs->ColapseRangs(colapse);
+							_ct->ColapseRangs(colapse);		
+	                    }
+	CSecCand *_cs, *_ct;
+
 	//float  _Tm_min, _Tm_max ; //aqui se usan????????????????
 };
 
 /// wrapper for CSec adding Rangs of hit in each position to track existing thermodynamic hits with the other sequences
-class CMSecCand : public CLink		//--------------------------------Tm------ CMSecCand --------------------------------
+class CMSecCand  	//--------------------------------Tm------ CMSecCand --------------------------------
 {public:
 	CMSecCand(	SondeLimits sL ,
 				float	Tm_sig		, float G_sig ,			// sonde  - target		: hace falta aqui?
@@ -401,11 +411,8 @@ class CMSecCand : public CLink		//--------------------------------Tm------ CMSec
 
 	void		Use(std::shared_ptr<CMultSec> MSec);//	void		Set_PaarComparExport(ofstream &osPaarComp){_osPaarComp=osPaarComp;};
 	CSecCand	*Add(CSec &sec);
-	CSecCand	&AddBeging	(CSec &sec) ;
-	CSecCand	&curTg		()		{return *((CSecCand *)_LSecCand.Cur());	}
-	bool		NotFinisch	();
+	std::unique_ptr<CSecCand> AddBeging	(CSec &sec) ;
 	void		FindCommon	(CSecCand  &cand1, CSecCand &cand2, bool design=true)	;
-	CSecCand	*CompNext	();
 
 	/// Return probes with a percent of other-target coverage with is not intern to the range ExtrCovPerc.
 
@@ -423,8 +430,6 @@ class CMSecCand : public CLink		//--------------------------------Tm------ CMSec
 			    		fileFormat         format   = fileFormat::fasta);
 	
 	virtual ~CMSecCand(){	 
-							_LSecCand.Destroy() ; 
-							_LMSecCand.Destroy() ; 
 	                     }
 	SondeLimits _sL ;
 
@@ -442,7 +447,8 @@ class CMSecCand : public CLink		//--------------------------------Tm------ CMSec
 	std::shared_ptr<ThDyAlign_TmCand>	_TDATmC ;  // donde se crea y se borra???   _______________ PROBLEMA !!!!!!!!!!!!!!!!
 
 
-	CList	_LSecCand, _LMSecCand;
+	std::list<std::shared_ptr<CSecCand > >	_LSecCand;
+	std::list<std::shared_ptr<CMSecCand> >	_LMSecCand;
 };
 
 ///  the rector parameter for DP is G
@@ -519,7 +525,7 @@ void		print_ThDyAlign (std::ofstream &osTm,ThDyAlign &Al);
 //void		print_Tm		(ofstream &osTm, CMultSec	&pr, int MaxGrDeg=-1, char sep[]=";" );
 void print_Tm (std::ofstream &osTm, CMultSec	&pr, int MaxGrDeg, char sep[]);
 std::ofstream	&operator<<(std::ofstream &stream,	ThDyAlign_Tm	&TmAl) ;
-std::ofstream	&operator<<(std::ofstream &osTm,	ThDyAlign		&Al) ;
+//std::ofstream	&operator<<(std::ofstream &osTm,	ThDyAlign		&Al) ;
 std::ofstream	&operator<<(std::ofstream &stream,	ThDyAlign_G		&G_Al) ;
 std::ofstream	&operator<<(std::ofstream &stream,	FracTDAlign		&FrAl) ;
 #endif

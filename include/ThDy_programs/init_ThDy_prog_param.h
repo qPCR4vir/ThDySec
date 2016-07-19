@@ -159,20 +159,20 @@ class ThDyCommProgParam : public CCommProgParam
 	}
 	
 	///
-	void Actualize_NNp_recur(CMultSec *ms)
+	void Actualize_NNp_recur(CMultSec *ms)   // ?
 		{
 			Actualize_NNp(ms);
-            for ( ms->goFirstMSec() ;  ms->NotEndMSec() ; ms->goNextMSec() )
-                Actualize_NNp_recur(ms->CurMSec());
+            for (auto &CurMSec : ms->MSecL() ) 
+                Actualize_NNp_recur(CurMSec.get());
 		}
     
 	///
 	void Actualize_NNp(CMultSec*ms)
     {
         ms->_NNPar=_pSaltCorrNNp;
-		//for ( ms->goFirstSec() ;  ms->NotEndSec() ; ms->goNextSec() )
-  //          ms->_NNPar=_pSaltCorrNNp;
-    }
+		//for (auto &CurMSec : ms->MSecL())
+		//	Actualize_NNp_recur(CurMSec.get());
+	}
 
 	///
     ThDyCommProgParam(const std::string& titel,   CProject *proj)
@@ -291,7 +291,7 @@ void Check_NNp_Targets (/*ThDyCommProgParam& cp*/)
 	
 	virtual	~ThDyCommProgParam(void) override//;	
     {	/*delete []_ProgList;*/
-       _pSeqTree->Free();
+       //_pSeqTree->Free();     // ?????????
     }
 };
 

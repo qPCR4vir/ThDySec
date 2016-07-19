@@ -26,7 +26,7 @@
 
 class CMultSec	;
 
-class ISec	: public CLink		// Pure virtual class ?
+class ISec		// Pure virtual class ?
 {public:			
 	using sequence = std::basic_string<DegCod::Base> ;
 
@@ -62,7 +62,7 @@ class CSecBasInfo : public ISec
 	long			_NDB   {};			                  ///< cantidad de bases deg
 	std::string     _Clas ;		                          ///< clasificacion
     sequence	    _c=sequence{ DegCod::basek[DegCod::n_basek-1]};		  ///< sec char, comienzan y terminan con '$'0
-	CMultSec		*_NonDegSet{nullptr} ;                /// \todo: std::unique_ptr<>
+	std::shared_ptr<CMultSec>		_NonDegSet;         
 	static int	NewS_ID     ()	{static int last_ID{};	return ++last_ID;	}
 
 		CSecBasInfo (int id,     const std::string& nam    , const std::string& clas) 						
@@ -124,7 +124,7 @@ public:
 	long		Degeneracy	()const		{return _GrDeg;}
 	long		*BaseCount	()			{return _Count;}
 	long		BaseCount	(DegCod::Base b) const{ return  DegCod::is_degbase[b] ?  _Count[DegCod::db2nu[b]] : 0;}
-	CMultSec	*NonDegSet	()			{return _NonDegSet;}
+	std::shared_ptr<CMultSec>	NonDegSet	()			{return _NonDegSet;}   // ?
 	float		GCpercent	()const		{return	_GCp ;}		
 };
 

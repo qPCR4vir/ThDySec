@@ -22,8 +22,8 @@ void FindSonden( CMultSec *tg, /*int& tgN,*/ int& compN, CMSecCand& msCand, CPro
 {
 	CProgParam_SondeDesign::targets_comp res;
 
-	for (  tg->goFirstSec(); tg->NotEndSec()   ;   tg->goNextSec() )  // recorre todos los        ----  targets  ------
-	{	CSec &nt = *tg->CurSec() ;
+	for ( auto &CurSec : tg->SecL() )  // recorre todos los        ----  targets  ------
+	{	CSec &nt = *CurSec ;
 		
 		if ( nt.Degeneracy() > 1 )  continue ; 		  // No analiza las target deg...por ahora.Facil de ampliar
 		if ( ! nt.Selected() )      continue ; 		  // No analiza las target non selected
@@ -33,9 +33,12 @@ void FindSonden( CMultSec *tg, /*int& tgN,*/ int& compN, CMSecCand& msCand, CPro
 		/// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// std::cout<<"\n"<<nt.Name();
 		/// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		for(CSecCand &newtg =msCand.AddBeging(nt)	;msCand.NotFinisch() ; msCand.CompNext())  // anade el curr tg y lo comp con todos los anteriormente anadidos
-		{	CSecCand &curtg =msCand.curTg();
+		
+		auto ntg = msCand.AddBeging(nt);
+		CSecCand &newtg = *ntg; // create current target
+		for( auto& curTg : msCand._LSecCand )    //  y lo comp con todos los anteriormente anadidos
+		{	
+			CSecCand &curtg = *curTg;
             
 			res.iteration_num = ++compN;
 			res.target_num    = msCand._NSecCand ;
@@ -55,10 +58,11 @@ void FindSonden( CMultSec *tg, /*int& tgN,*/ int& compN, CMSecCand& msCand, CPro
 
 			IPrgPar_SdDes->targets_comparitions.push_back( res  )	;	
 		}
+		msCand._LSecCand.emplace_back(ntg.release());    // add current target to the end of targets
 	}
-	for (  tg->goFirstMSec(); tg->NotEndMSec()   ;   tg->goNextMSec())  // recorre todos los targets
+	for (auto &CurMSec : tg->MSecL() )  // recorre todos los targets
 	{	
-        FindSonden(tg->CurMSec(), compN, msCand, IPrgPar_SdDes );
+        FindSonden(CurMSec.get(), compN, msCand, IPrgPar_SdDes );
 	}
 }
 std::vector<std::string> CProgParam_SondeDesign::targets_comp::headers

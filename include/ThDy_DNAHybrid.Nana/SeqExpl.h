@@ -101,14 +101,14 @@ class SeqExpl : public CompoWidget
 		{
 			populate_list(ms);
             if ( _showAllseq )
-	            for ( ms->goFirstMSec() ;  ms->NotEndMSec() ; ms->goNextMSec() )
-                    populate_list_recur(ms->CurMSec());
+	            for ( auto& CurMSec : ms->MSecL() )
+                    populate_list_recur(CurMSec.get());
 		}
     void populate_list(CMultSec*ms)
     {
-        for ( ms->goFirstSec() ;  ms->NotEndSec() ; ms->goNextSec() )
-		  if ( _showFiltered || !ms->CurSec()->Filtered() ) 
-              AddSecToList(ms->CurSec());
+        for (auto& CurSec : ms->SecL()) 
+		  if ( _showFiltered || ! CurSec->Filtered() ) 
+              AddSecToList(CurSec.get());
     }
 
     List::item_proxy AddSecToList     (CSec* s)
@@ -140,8 +140,8 @@ class SeqExpl : public CompoWidget
             _tree.erase(node.child());
 
         CMultSec *ms = node.value<CMultSec*>(); //  msec(node);
-		for ( ms->goFirstMSec() ;  ms->NotEndMSec() ; ms->goNextMSec() )
-			populate( appendNewNode(node, ms->CurMSec())) ;
+		for (auto& CurMSec : ms->MSecL())  
+			populate( appendNewNode(node, CurMSec.get())) ;
         return node;
     }
 

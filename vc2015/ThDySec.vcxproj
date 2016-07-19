@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\ThDySec\cod_deg.cpp" />
-    <ClCompile Include="..\src\ThDySec\link.cpp" />
     <ClCompile Include="..\src\ThDySec\sec.cpp" />
     <ClCompile Include="..\src\ThDySec\sec_basic.cpp" />
     <ClCompile Include="..\src\ThDySec\sec_mult.cpp" />
@@ -63,7 +62,6 @@
   <ItemGroup>
     <ClInclude Include="..\include\ThDySec\cod_deg.h" />
     <ClInclude Include="..\include\ThDySec\common.h" />
-    <ClInclude Include="..\include\ThDySec\link.h" />
     <ClInclude Include="..\include\ThDySec\sec_mult.h" />
     <ClInclude Include="..\include\ThDySec\oligo.h" />
     <ClInclude Include="..\include\ThDySec\sec.h" />

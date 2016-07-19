@@ -52,12 +52,12 @@ bool    CMultSec::Export_from   ( CMultSec& base, bool only_selected)
     filesystem::path dir, file;
     auto s= path();
 
-    for (  base.goFirstMSec()   ; base.NotEndMSec() ;   base.goNextMSec())		// recorre todos las msec
+    for ( const auto& CurMSec : base.MSecL())		// recorre todos las msec
     {    
-        auto b= base.CurMSec()->path();
+        auto b= CurMSec->path();
         if ( b.empty() || s.find(b))  continue;    // finded OK only if s beging with p
 
-        file = dir = s.replace(0, b.length()-1, base.CurMSec()->_Path);
+        file = dir = s.replace(0, b.length()-1, CurMSec->_Path);
         file.remove_filename().replace_extension("fasta");
         dir.remove_filename().remove_filename();
 
@@ -144,14 +144,6 @@ int		CMultSec::AddFromFile (const std::string& file)	// return la cantidad de se
 	}
 
         return AddFromFile(ifile); /// \todo: retrow anadiendo el nombre del file
-
-	     //try 
-         //   {
-         //   }
-         //   catch (std::exception &e)
-         //   {
-         //       e.what(e.what);
-         //   }
 }
 
 int		CMultSec::AddFromFile (ifstream& ifile)		// return la cantidad de sec add -----------  AddFromFile   ---
@@ -247,21 +239,21 @@ int		CMultSec::AddFromFileFASTA (ifstream &ifile)  // -------------------    Add
 
 		sec->Description(trim_string(Descriptor));
 
-		CSec *idem=Idem(*sec);
+		auto idem=Idem(*sec);
 
-        if (idem) 
+        if (idem != SecL().end()) 
 		{
-		    if (idem->Len() >= sec->Len() ) 
+		    if ((*idem)->Len() >= sec->Len() ) 
             {
                 sec->Selected(false);
 			    sec->Filtered(true);
-		        InsertSecAfter (sec.release()  , idem) ;	
+		        InsertSecAfter (idem, sec.release() ) ;	
             }
             else
             {
-                idem->Selected(false);
-			    idem->Filtered(true);
-		        InsertBefore (sec.release()  , idem) ;	
+				(*idem)->Selected(false);
+				(*idem)->Filtered(true);
+		        InsertSec(idem, sec.release());
             }
 		}
         else
@@ -273,7 +265,10 @@ int		CMultSec::AddFromFileFASTA (ifstream &ifile)  // -------------------    Add
 }
 
 int		CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultSec::            AddFromFileBLAST  -----------------------------
-{	unsigned int _BlastOutput_query_len ;		// x todos los "hits"
+{	
+	///\todo adapt to multiquery BLAST
+
+	unsigned int _BlastOutput_query_len ;		// x todos los "hits"
 	int			 id=0;
 	string       li ;  //  xml_line
 
@@ -431,20 +426,20 @@ int		CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultSec::  
         }
         else
         {
-            CSec *idem=Idem(*secH);
-		    if (idem) 
+            auto idem=Idem(*secH);
+		    if (idem != SecL().end())
 		    {
-		        if (idem->Len() >= secH->Len() ) 
+		        if ((*idem)->Len() >= secH->Len() )
                 {
                     secH->Selected(false);
 			        secH->Filtered(true);
-		            InsertSecAfter (secH.release()  , idem) ;	
+		            InsertSecAfter(idem, secH.release());
                 }
                 else
                 {
-                    idem->Selected(false);
-			        idem->Filtered(true);
-		            InsertBefore (secH.release()  , idem) ;	
+					(*idem)->Selected(false);
+					(*idem)->Filtered(true);
+		            InsertSec(idem, secH.release());
                 }
 		    }
             else
@@ -457,68 +452,87 @@ int		CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultSec::  
 }
 
 int		CMultSec::AddFromFileGBtxt (ifstream &ifile) // ----------------  CMultSec::            AddFromFileGBtxt  -----------------------------
-{	const int gb_descr_w=12 ;	char gb_descr[gb_descr_w+1]; gb_descr[gb_descr_w]=0;
+{	
+	/// \todo update !!
+
+	const int gb_descr_w=12 ;	
+	char      gb_descr[gb_descr_w+1]; 
+
+	gb_descr[gb_descr_w]=0;
+
 	size_t strl;
 	int	id	=0     ;
 	string txt_line ;
 
-	do {	char	*	LOCUS			=nullptr      ;
-			long		Seq_inst_length	=0		;	
-			char	*	DEFINITION		=nullptr     ;
-			char	*	ACCESSION		=nullptr     ;
-			char	*	ORGANISM		=nullptr     ;
-			// para CSec
-			char	*	sec		=nullptr     ;		//	char		*	nam,	DEFINITION	,	//	long			l=0,		Seq_inst_length
+	do {
+		char	*	LOCUS = nullptr;
+		long		Seq_inst_length = 0;
+		char	*	DEFINITION = nullptr;
+		char	*	ACCESSION = nullptr;
+		char	*	ORGANISM = nullptr;
+		// para CSec
+		char	*	sec = nullptr;		//	char		*	nam,	DEFINITION	,	//	long			l=0,		Seq_inst_length
 
-			do  {	ifile>>setw (gb_descr_w)>>gb_descr ;	if ( ! ifile.good() ) return id; } 	// LOCUS       AY702040               10675 bp    RNA     linear   VRL 24-MAR-2005
-			while  (strcmp(gb_descr,	"LOCUS"	) );
-			ifile>>setw (gb_descr_w)>>gb_descr ;				LOCUS=new char[1+(strl=strlen(gb_descr))] ;
-			strncpy(LOCUS,gb_descr,strl) ;						LOCUS	[strl]=0;
-			ifile>>Seq_inst_length ;	
+		do { ifile >> setw(gb_descr_w) >> gb_descr;	if (!ifile.good()) return id; } 	// LOCUS       AY702040               10675 bp    RNA     linear   VRL 24-MAR-2005
+		while (strcmp(gb_descr, "LOCUS"));
+		ifile >> setw(gb_descr_w) >> gb_descr;				LOCUS = new char[1 + (strl = strlen(gb_descr))];
+		strncpy(LOCUS, gb_descr, strl);						LOCUS[strl] = 0;
+		ifile >> Seq_inst_length;
 
-			do  {	ifile>>setw (gb_descr_w)>>gb_descr ;	if ( ! ifile.good() ) return id; } 	// DEFINITION  Dengue virus type 2 strain I348600, complete genome.
-			while  (strcmp(gb_descr,	"DEFINITION"	) );
-			getline (ifile, txt_line) ;								DEFINITION	=new char[txt_line.length()+1] ;
-			txt_line.copy(  DEFINITION  ,txt_line.length()) ;		DEFINITION	[txt_line.length()]=0;
+		do { ifile >> setw(gb_descr_w) >> gb_descr;	if (!ifile.good()) return id; } 	// DEFINITION  Dengue virus type 2 strain I348600, complete genome.
+		while (strcmp(gb_descr, "DEFINITION"));
+		getline(ifile, txt_line);								DEFINITION = new char[txt_line.length() + 1];
+		txt_line.copy(DEFINITION, txt_line.length());		DEFINITION[txt_line.length()] = 0;
 
-			do  {	ifile>>setw (gb_descr_w)>>gb_descr ;	if ( ! ifile.good() ) return id; } 	// ACCESSION   AY702040
-			while  (strcmp(gb_descr,	"ACCESSION"	) );
-			ifile>>setw (gb_descr_w)>>gb_descr ;			ACCESSION=new char[1+(strl=strlen(gb_descr))] ;
-			strncpy(ACCESSION,gb_descr,strl) ;						ACCESSION	[strl]=0;
+		do { ifile >> setw(gb_descr_w) >> gb_descr;	if (!ifile.good()) return id; } 	// ACCESSION   AY702040
+		while (strcmp(gb_descr, "ACCESSION"));
+		ifile >> setw(gb_descr_w) >> gb_descr;			ACCESSION = new char[1 + (strl = strlen(gb_descr))];
+		strncpy(ACCESSION, gb_descr, strl);						ACCESSION[strl] = 0;
 
-			do  {	ifile>>setw (gb_descr_w)>>gb_descr ;	if ( ! ifile.good() ) return id; } 	//   ORGANISM  Dengue virus 2
-			while  (strcmp(gb_descr,	"ORGANISM"	) );
-			getline (ifile, txt_line) ;							ORGANISM	=new char[txt_line.length()+1] ;
-			txt_line.copy(  ORGANISM  ,txt_line.length()) ;		ORGANISM	[txt_line.length()]=0;
+		do { ifile >> setw(gb_descr_w) >> gb_descr;	if (!ifile.good()) return id; } 	//   ORGANISM  Dengue virus 2
+		while (strcmp(gb_descr, "ORGANISM"));
+		getline(ifile, txt_line);							ORGANISM = new char[txt_line.length() + 1];
+		txt_line.copy(ORGANISM, txt_line.length());		ORGANISM[txt_line.length()] = 0;
 
-			do  {	ifile>>setw (gb_descr_w)>>gb_descr ;	if ( ! ifile.good() ) return id; } 	// ORIGIN      
-			while  (strcmp(gb_descr,	"ORIGIN"	) );
-			getline (ifile, txt_line,'/') ;							sec	=new char[txt_line.length()+1] ;
-			txt_line.copy(  sec  ,txt_line.length()) ;				sec	[txt_line.length()]=0;
+		do { ifile >> setw(gb_descr_w) >> gb_descr;	if (!ifile.good()) return id; } 	// ORIGIN      
+		while (strcmp(gb_descr, "ORIGIN"));
+		getline(ifile, txt_line, '/');							sec = new char[txt_line.length() + 1];
+		txt_line.copy(sec, txt_line.length());				sec[txt_line.length()] = 0;
 
-			CSecGBtxt *secGBtxt= new CSecGBtxt(	LOCUS       ,
-												Seq_inst_length,	
-												DEFINITION     ,
-												ACCESSION      ,
-												ORGANISM       ,
-												sec	,	
-												id,								//	char		*	nam,	DEFINITION	,	
-												_NNPar);
-				if ( secGBtxt->Len() >= _SecLenLim.Min()   )		
-				{	
-					CSec *idem=Idem(*secGBtxt);
-					InsertSecAfter (secGBtxt  , idem) ;	
-					if (idem) 
-					{
-						secGBtxt->Selected(false);
-						secGBtxt->Filtered(true);
-					}
-					else
-						id++;		
-				}
-				else delete secGBtxt;
-			delete []sec ;
+		std::unique_ptr<CSecGBtxt> secGBtxt
+		    { new CSecGBtxt(LOCUS       ,
+							Seq_inst_length,
+							DEFINITION     ,
+							ACCESSION      ,
+							ORGANISM       ,
+							sec	,
+							id,								//	char		*	nam,	DEFINITION	,	
+							_NNPar)
+		    };
+		if (secGBtxt->Len() >= _SecLenLim.Min())
+			continue;
+
+		auto idem = Idem(*secGBtxt);
+		if (idem != SecL().end())
+		{
+			if ((*idem)->Len() >= secGBtxt->Len())
+			{
+				secGBtxt->Selected(false);
+				secGBtxt->Filtered(true);
+				InsertSecAfter(idem, secGBtxt.release());
+			}
+			else
+			{
+				(*idem)->Selected(false);
+				(*idem)->Filtered(true);
+				InsertSec(idem, secGBtxt.release());
+			}
 		}
+		else
+			AddSec(secGBtxt.release());
+	
+	    id++;		
+	}
 	while (ifile.good() ); 
 	return id; 
 }
@@ -589,15 +603,25 @@ int		CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMultSec:: 
 
 				if ( secGB->Len() >= _SecLenLim.Min()  )		
 				{	
-					CSec *idem=Idem(*secGB);
-					InsertSecAfter (secGB  , idem) ;	
-					if (idem) 
+					auto idem =Idem(*secGB);
+					if (idem != SecL().end())
 					{
-						secGB->Selected(false);
-						secGB->Filtered(true);
+						if ((*idem)->Len() >= secGB->Len())
+						{
+							secGB->Selected(false);
+							secGB->Filtered(true);
+							InsertSecAfter(idem, secGB);
+						}
+						else
+						{
+							(*idem)->Selected(false);
+							(*idem)->Filtered(true);
+							InsertSec(idem, secGB);
+						}
 					}
 					else
-						id++;		
+						AddSec(secGB);
+					id++;		
 				}
 				else delete secGB;
 		}
@@ -608,19 +632,19 @@ int		CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMultSec:: 
 int		CMultSec::AddFromFileODT (ifstream &ifileODT){return 0;}
 int		CMultSec::AddFromFileODS (ifstream &ifileODS){return 0;}
 
-CSec	*CMultSec::Idem ( CSec &sec )   // ------  CMultSec:: NotIdem  --- busqueda trivial de sec identicas -------------
+CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSec:: NotIdem  --- busqueda trivial de sec identicas -------------
 {	
     if ( _MaxTgId >= 100  ) //  no restriction on similarity
-        return nullptr ;    
+        return _LSec.end() ;    
 
 	long LenCandSec=sec.Len() ;     // Lenght of Candidate Sec (to be in the list, with MaxId)
 
 	long MaxErCS= long(ceil(float(LenCandSec*(100.0f-_MaxTgId) ) / 100.0f)); // min of not Id base to be in the list
 	
-    for (  goFirstSec()   ; NotEndSec()   ;   goNextSec() )		// recorre todos las primeras sec de esta misma ms
+	for (auto CurSec = _LSec.begin(); CurSec != _LSec.end(); ++CurSec)		// recorre todos las primeras sec de esta misma ms
 	{	
-        CSec &s = *CurSec() ; 
-		if (s.Filtered()) 
+        CSec &s = **CurSec ; 
+		if (s.Filtered())
             continue;
 
         // sec:q           -------------------------------------------------------------------------
@@ -690,40 +714,32 @@ CSec	*CMultSec::Idem ( CSec &sec )   // ------  CMultSec:: NotIdem  --- busqueda
 	            break ;
         }
         if (   Er <=  MaxEr   ) 
-	         return &s ;	
+	         return CurSec;
 	}
-	return nullptr ;
+	return _LSec.end();
 }
 
  CSec *	CMultSec::AddSec ( CSec *sec )
 {	if (!sec) return nullptr ;
-	_LSec.Add(sec);
-	UpdateTotalsAdding ( sec );
+	_LSec.emplace_back(sec);
+	UpdateTotalsMoving ( sec );
 	return sec;
 }
- CSec *	CMultSec::InsertSec ( CSec *sec ) // insert 'link' sec ,  antes de 'Cur'
+ CSec *	CMultSec::InsertSec(LSec::const_iterator pos, CSec *sec) 
 {	if (!sec) return nullptr ;
-	_LSec.Insert(sec);
-	UpdateTotalsAdding ( sec );
+	_LSec.emplace(pos, sec);
+	UpdateTotalsMoving ( sec );
 	return sec;
 }
- CSec *	CMultSec::InsertSecAfter	( CSec *sec , CSec *preSec )			// insert 'link' sec ,  after preSec
+ CSec *	CMultSec::InsertSecAfter(LSec::const_iterator preSec, CSec *sec)
 {	
-	if (!preSec) return AddSec (sec);
 	if (!sec) return nullptr ;
-	sec->InsertAfter( preSec);
-	UpdateTotalsAdding ( sec );
+	_LSec.emplace(++preSec, sec);
+    UpdateTotalsMoving ( sec );
 	return sec;
 }
- CSec *	CMultSec::InsertBefore	( CSec *sec , CSec *preSec )			// insert 'link' sec ,  after preSec
-{	
-	if (!preSec) return AddSec (sec);
-	if (!sec) return nullptr ;
-	sec->InsertBefore( preSec);
-	UpdateTotalsAdding ( sec );
-	return sec;
-}
-void	CMultSec::UpdateTotalsAdding ( CSec *sec ) 
+
+void	CMultSec::UpdateTotalsMoving ( CSec *sec ) 
 {	
 	if (!sec || sec->_parentMS == this)										// no hay sec o ya estaba aqui
 		return;
@@ -804,11 +820,17 @@ CMultSec   *CMultSec::findComParent( CMultSec *ms)
 
 CMultSec *	CMultSec::AddMultiSec ( CMultSec *ms )  //--------------------------------------    AddMultiSec    --------------------
 {	if (!ms) return nullptr;	
-	_LMSec.Add(ms);
-	UpdateTotalsAdding ( ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
+	_LMSec.emplace_back(ms);
+	UpdateTotalsMoving ( ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
 	return ms;
 }
-void	    CMultSec::UpdateTotalsAdding ( CMultSec *msec ) 
+CMultSec *	CMultSec::AddMultiSec (LMSec::value_type ms )  //--------------------------------------    AddMultiSec    --------------------
+{	if (!ms) return nullptr;	
+	_LMSec.push_back(ms);
+	UpdateTotalsMoving ( ms.get() );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
+	return ms.get();
+}
+void	    CMultSec::UpdateTotalsMoving ( CMultSec *msec ) 
 {	
 	if (!msec || msec->_parentMS==this)					// no hay msec o ya estaba antes en una de mis subtrees inmediatas. 
 		return;
@@ -832,6 +854,7 @@ void	    CMultSec::UpdateTotalsAdding ( CMultSec *msec )
 			}
 	}else
 		cp=nullptr;
+
 	Add2LocalExtreme(*msec);
 	for (My_parMS ; My_parMS!=cp && My_parMS; My_parMS=My_parMS->_parentMS)  // desde mi hacia arriba hasta el com parent anadiendo
 	{
@@ -848,9 +871,10 @@ void	    CMultSec::UpdateTotalsAdding ( CMultSec *msec )
 }
 
 		CMultSec::~CMultSec ()				// funciona bien solo si la lista es "lineal"
-{	_LSec.Destroy  ()	;
-	_LMSec.Destroy ()	;
-	Remove(); //? in ~CLink !
+{	
+	//_LSec.Destroy  ()	;
+	//_LMSec.Destroy ()	;
+	//Remove(); 
 	// CSec		*_Consenso ;
 }    
 

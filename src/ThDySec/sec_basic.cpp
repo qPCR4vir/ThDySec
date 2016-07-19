@@ -35,10 +35,14 @@ char *DNAstrandName[]=	{""		, "(c)", ""		, "(r)"	, "(i)", "(c)"		} ;
 
 CSecBasInfo::~CSecBasInfo()
 {
-	if (_NonDegSet) 
-	     if (!_NonDegSet->Prev() && !_NonDegSet->Next()) 
-			 delete _NonDegSet;
-	// en otro caso, donde borrar _NonDegSet ????. Lo borra la lista en la que esta insertado
+	//if (_NonDegSet && !_NonDegSet->_parentMS)
+	     //if (!_NonDegSet->Prev() && !_NonDegSet->Next()) 
+	//		 delete _NonDegSet;
+	/// \todo en otro caso, donde borrar _NonDegSet ????. 
+	// Lo borra la lista en la que esta insertado
+	// Pero como se que la otra lista lo borro?
+	// poner todo como shared_ptr ???
+	// por ahora entregar la "propiedad"
 }
 
 std::string CSecBasInfo::Copy_Seq  	(long InicBase, 

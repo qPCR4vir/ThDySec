@@ -113,7 +113,8 @@ void ThDyAlign::force_ResizeTable()						//	------------------------------------
 }
 
 void	ThDyAlign::Use (CSec  *sonde, CSec *target)    // antes hacia mas cosas.. porque?		//	---------------------	Use			---------
-{	_sd = sonde  ; 		_tg = target ;
+{	
+	_sd = sonde  ; 		_tg = target ;
 	ResizeTable();
 	_NNpar->UpdateGC( _sd->GCpercent(), _sd->Len() ,    _tg->GCpercent(), _tg->Len() );    // verificar 
 }
@@ -321,7 +322,7 @@ bool	ThDyAlign_TmHits::AddIfHit(LonSecPos fi, LonSecPos fj)   // ---fi y fj en l
 	}
 
 	if (i0==-1 && j0==-1) return false;
-	_Hits.Add( new CHit( fi, fj, i0, j0,l, H-H0,S-S0,Th_max,step(fi,fj) ) );		//	i,j ???? Th_max??
+	_Hits.emplace_back( /*new CHit(*/ fi, fj, i0, j0,l, H-H0,S-S0,Th_max,step(fi,fj) /*)*/ );		//	i,j ???? Th_max??
 	return true;
 }
 ThDyAlign::~ThDyAlign()
@@ -560,7 +561,6 @@ void CHitAligned::ReCalcule( std::shared_ptr<CSaltCorrNN>  NNpar )
 }
 
 
-
 void CMSecCand::Use(shared_ptr<CMultSec> MSec)
 {	_MSec=MSec; 
 	if (! _TDATmC ) 
@@ -574,32 +574,16 @@ void CMSecCand::Use(shared_ptr<CMultSec> MSec)
 }
 
 
-CSecCand	&CMSecCand::AddBeging(CSec &sec)
+std::unique_ptr<CSecCand> CMSecCand::AddBeging(CSec &sec)
 {	
-	CSecCand *newtg = new CSecCand( sec ,	_sL		);
-
+	auto newtg = std::make_unique<CSecCand>(sec, _sL);
 	_TNumCand	+=newtg->_NumCand;    // sobreestima la cantidad total de candidatos (porque se pueden repetir en varias sec.)
 	_TNumPosCand+=newtg->_NumPosCand;
 	_NumCand	+=newtg->_NumCand;    // sobreestima la cantidad total de candidatos (porque se pueden repetir en varias sec.)
 	_NumPosCand +=newtg->_NumPosCand;
-	_LSecCand.goBeging() ;		// cur = first
-	_TDATmC->_cs=newtg;
     ++_NSecCand ;
-	return *newtg;
+	return newtg;
 }
-// _TNumPosCand= _TNumCand = 0;
-bool		CMSecCand::NotFinisch() 
-{	if (_LSecCand.NotEnd())
-		return true;
-	CSecCand *newtg = _TDATmC->_cs ;
-	//_TNumCand	+=newtg->_NumCand;    // sobreestima la cantidad total de candidatos (porque se pueden repetir en varias sec.)
-	//_TNumPosCand+=newtg->_NumPosCand;
-	_LSecCand.Add(newtg);
-	return false  ;
-}
-
-CSecCand	*CMSecCand::CompNext() {return (CSecCand *)_LSecCand.goNext() 	;}
-
 
 void   CMSecCand::FindCommon	(CSecCand  &newtg, CSecCand &curtg, bool design)	
 {	long 	dec_NumCand		= newtg._NumCand	+ curtg._NumCand ; 
@@ -621,6 +605,7 @@ void   CMSecCand::FindCommon	(CSecCand  &newtg, CSecCand &curtg, bool design)
 		//_TNumPosCand+=curtg._NumPosCand;
 }
 
+/// use sec to create a new CSecCand, compare it with all the previous and the append to the list
 CSecCand *CMSecCand::Add(CSec &sec)
 {	
 	CSecCand *newtg = new CSecCand( sec ,	_sL		);/*			_G_min,		_G_max, 								
@@ -632,13 +617,10 @@ CSecCand *CMSecCand::Add(CSec &sec)
 	_NumCand	+=newtg->_NumCand;    // sobreestima la cantidad total de candidatos (porque se pueden repetir en varias sec.)
 	_NumPosCand +=newtg->_NumPosCand;
 
-	for ( _LSecCand.goBeging() ;  _LSecCand.NotEnd() ;   _LSecCand.goNext()  )	
-	{	CSecCand *tg=(CSecCand *)_LSecCand.Cur();
+	for ( auto &Cur:  _LSecCand ) 	
+		_TDATmC->FindCommon(newtg, Cur.get() );
 
-		_TDATmC->FindCommon(newtg, tg );
-
-	}
-	_LSecCand.Add(newtg);
+	_LSecCand.emplace_back(newtg);
 
 	return newtg;
 }
@@ -847,17 +829,17 @@ void	ThDyAlign::Export_Hits(ofstream &osHits, char *sep)		// mientras estan cone
 			<< sep		<< "j0"			<< sep	<< "j "			<< sep  <<"Tm tgt" 	;
 
 
-	for ( CHit *h=(CHit *)_Hits.goBeging() ; _Hits.NotEnd() ; h=(CHit *)_Hits.goNext())	
+	for ( const CHit &h : _Hits ) //(CHit *)_Hits.goBeging() ; _Hits.NotEnd() ; h=(CHit *)_Hits.goNext())	
 	{	
-		osHits	<< endl	<< h->_l		<< sep << KtoC(h->_max)	
-				<< sep 	<< h->_i0 -1	<< sep << h->_i -2		<< sep  ;
+		osHits	<< endl	<< h._l		<< sep << KtoC(h._max)	
+				<< sep 	<< h._i0 -1	<< sep << h._i -2		<< sep  ;
 				
-				if (h->_i0<1)									osHits	<< "No Tm!!" ;
-				else											osHits	<<   KtoC(_sd->Tm(h->_i0+1 -2, h->_i -2 )) ;
+				if (h._i0<1)									osHits	<< "No Tm!!" ;
+				else											osHits	<<   KtoC(_sd->Tm(h._i0+1 -2, h._i -2 )) ;
 
-		osHits	<< sep 	<< h->_j0 -1	<< sep << h->_j -2		<< sep ;
-				if (h->_j0<1)									osHits	<< "No Tm!!" ;
-				else											osHits	<<   KtoC(_tg->Tm(h->_j0+1 -2, h->_j -2 )) ;				 
+		osHits	<< sep 	<< h._j0 -1	<< sep << h._j -2		<< sep ;
+				if (h._j0<1)									osHits	<< "No Tm!!" ;
+				else											osHits	<<   KtoC(_tg->Tm(h._j0+1 -2, h._j -2 )) ;				 
 	}
 }
 
@@ -919,9 +901,9 @@ void	CMSecCand::ExportCommonSonden(  bool             colpased,
 std::cout << "\n EXPORTING...";
 /// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	for ( _LSecCand.goBeging() ;  _LSecCand.NotEnd() ;  _LSecCand.goNext()   )	// all targets
+    for (auto &Cur : _LSecCand)	// all targets
 	{	
-		CSecCand &s=*((CSecCand *)_LSecCand.Cur());
+		CSecCand &s=*Cur ;
 		long l= s._Sec.Len() ;
 		for (long fi=1 ; fi<=l;fi++)           // for each position in the target (were the probe candidate end in each rang)
 		{	
@@ -1014,8 +996,9 @@ ofstream &operator<<(ofstream &stream, FracTDAlign &FrAl)
 void print_Tm		(ofstream &osTm, CMultSec	&pr, int MaxGrDeg=-1, char sep[]=";" )
 //void print_Tm (ofstream &osTm, CMultSec	&pr, int MaxGrDeg, char sep[])
 {	
-	for (  pr.goFirstSec()   ; pr.NotEndSec()   ;   pr.goNextSec() )
-	{	CSec *s = pr.CurSec() ;
+	for ( auto& CurSec : pr.SecL() ) 
+	{	
+		CSec *s = CurSec.get() ;
 		if (MaxGrDeg!=-1 && MaxGrDeg < s->Degeneracy() ) continue;
 		pr.AddMultiSec (  s->CreateNonDegSet () ) ;
 	

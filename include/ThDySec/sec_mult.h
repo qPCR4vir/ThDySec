@@ -23,6 +23,7 @@
 #include <memory>
 #include <vector>
 #include <filesystem>
+#include <list>
 
 
 #include "sec.h" 
@@ -32,11 +33,13 @@
   /// Permite hacer grupos de sec o de MultiSec (para analisis por "especies"?)
 
   /// \todo add construction of concensus 
-  /// \todo no CLink 
   /// \todo make std with vector or list of std::shared_ptr<Csec> and CMultSec> ?
   /// Atention:  It owns and destroy the sequences: Use Remove() or Free() to prevent destruction fo sequences
-class CMultSec	 : public CLink	
+class CMultSec	 
 {	public:
+	using LSec  = std::list<std::shared_ptr<CSec    >>;
+	using LMSec = std::list<std::shared_ptr<CMultSec>>;
+
 		std::string			_name ;						///< 
         int					_ID       {NewMS_ID()};		///< Unique ID in each programm run
         LonSecPosRang       _SecLim   {1,0};			///< \todo: quitar de aqui?. Pertenece a CSec, o a un objeto "AddFromFile" 
@@ -191,21 +194,14 @@ class CMultSec	 : public CLink
 		void RecalExtremes()
 		{
 			_Local.Clear();
-
-			CSec &to_rest = *CurSec() ; 	
-			for (  goFirstSec()   ; NotEndSec()   ;   goNextSec() )		// recorre todos las primeras sec
-				Add2LocalExtreme( *CurSec()) ; 
-			RestoreCur( &to_rest);
-			RecalGlobExtremes();
+			for (  auto &CurSec :  _LSec )		// recorre todos las primeras sec
+				Add2LocalExtreme( *CurSec) ; 
 		}
 		void RecalGlobExtremes()
 		{
 			_Global=_Local;
-
-			CMultSec &to_rest = *CurMSec() ; 	
-			for (  goFirstMSec()   ; NotEndMSec()   ;   goNextMSec() )		// recorre todos las primeras sec
-				Add2LocalExtreme( *CurMSec()) ; 
-			RestoreMCur( &to_rest);
+            for (auto &CurMSec : _LMSec)  		// recorre todos las primeras sec
+				Add2LocalExtreme( *CurMSec) ; 
 		}
 		bool isGlobExtreme(const CSec     *s ){return _Global.isExtreme( *s				) ;}
 		bool isGlobExtreme(const CMultSec *ms){return _Global.isExtreme( ms->_Global	) ;}
@@ -260,47 +256,54 @@ class CMultSec	 : public CLink
         }
         void   Export(std::ofstream& ofile, bool only_selected)
         {
-        	for (  goFirstSec()   ; NotEndSec()   ;   goNextSec() )		// recorre todos las sec locales
-				if (CurSec()->Selected() || !only_selected)
-                    CurSec()->ExportFASTA(ofile) ; 
+        	for ( auto& CurSec : _LSec   )		// recorre todos las sec locales
+				if (CurSec->Selected() || !only_selected)
+                    CurSec->ExportFASTA(ofile) ; 
 
-            for (  goFirstMSec()   ; NotEndMSec() ;   goNextMSec())		// recorre todos las msec
-			    CurMSec()->Export(ofile, only_selected);
+            for (auto& CurMSec : _LMSec  )		// recorre todos las msec
+			    CurMSec->Export(ofile, only_selected);
         }
 
 
-		CSec		*Idem			(CSec &sec);  //		CConsParam	_ConsPar ;
+		LSec::const_iterator Idem (CSec &sec);  //		CConsParam	_ConsPar ;
 		CSec		*AddSec			( CSec *sec );
-		CSec		*InsertSec		( CSec *sec ) ;
-		CSec		*InsertSecAfter	( CSec *sec , CSec *refSec ) ;
-		CSec		*InsertBefore	( CSec *sec , CSec *reftSec ) ;
+		CSec		*InsertSec		( LSec::const_iterator pos, CSec *sec ) ;
+		CSec		*InsertSecAfter ( LSec::const_iterator pos, CSec *sec ) ;
+		CMultSec    *MoveMSec       (LMSec::const_iterator from) // revise design
+		{
+			CMultSec* p = (*from)->_parentMS;
+			if (p == this) return p;    // no-op ; mover al final?
+			LMSec::value_type s = std::move(*from);
+			p->_LMSec.erase(from);
+			return AddMultiSec(s);
+		}
 		int			CountSelectedSeq		()
 		{
             int count{0};
-			for (  goFirstSec()   ; NotEndSec()   ;   goNextSec() )		// recorre todos las primeras sec de esta misma ms
-				 count += (CurSec()->Selected()) ;
+			for (auto& CurSec : _LSec)		// recorre todos las primeras sec de esta misma ms
+				 count += (CurSec->Selected()) ;
 			return count;
 		}
 		int			CountSelectedSeqRec		()
 		{
             int count{0};
 				 count += CountSelectedSeq() ;
-			for (  goFirstMSec()   ; NotEndMSec()   ;   goNextMSec() )		// recorre todos las primeras sec
-				 count += (CurMSec()->CountSelectedSeqRec());
+			for (auto& CurMSec : _LMSec)			// recorre todos las primeras sec
+				 count += (CurMSec->CountSelectedSeqRec());
 			return count;
 		}
 		int			CountSelectedNDegSeq	(int MaxGrDeg=0)
 		{
 			int count(0);
-			for (  goFirstSec()   ; NotEndSec()   ;   goNextSec() )		// recorre todos las primeras sec de esta misma ms
-				if( CurSec()->Filtered() ) 
-					if(CurSec()->NonDegSet())
+			for (auto& CurSec : _LSec)		// recorre todos las primeras sec de esta misma ms
+				if( CurSec->Filtered() ) 
+					if(CurSec->NonDegSet())
 					{	
 						if (!MaxGrDeg)
-							count += CurSec()->NonDegSet()->_Global._NSec ;
+							count += CurSec->NonDegSet()->_Global._NSec ;
 						else	
-							if( MaxGrDeg > CurSec()->NonDegSet()->_Global._NSec)
-								count += CurSec()->NonDegSet()->_Global._NSec ;
+							if( MaxGrDeg > CurSec->NonDegSet()->_Global._NSec)
+								count += CurSec->NonDegSet()->_Global._NSec ;
 					}
 					else ++count;
 			return count;
@@ -309,21 +312,21 @@ class CMultSec	 : public CLink
 		{
 			int count(0);
 				 count += CountSelectedNDegSeq( MaxGrDeg) ;
-			for (  goFirstMSec()   ; NotEndMSec()   ;   goNextMSec() )		// recorre todos las primeras sec
-				 count += CurMSec()->CountSelectedNDegSeqRec( MaxGrDeg);
+			for (auto& CurMSec : _LMSec)		// recorre todos las primeras sec
+				 count += CurMSec->CountSelectedNDegSeqRec( MaxGrDeg);
 			return count;
 		}
 
 		void			CreateNonDegSet	( )
 		{
-			for (  goFirstSec()   ; NotEndSec()   ;   goNextSec() )		// recorre todos las primeras sec de esta misma ms
-			  CurSec()->CreateNonDegSet();
+			for (auto& CurSec : _LSec)		// recorre todos las primeras sec de esta misma ms
+			  CurSec->CreateNonDegSet();
 		}
 		void			CreateNonDegSetRec	( )
 		{
 			CreateNonDegSet( ) ;
-			for (  goFirstMSec()   ; NotEndMSec()   ;   goNextMSec() )		// recorre todos las primeras sec
-				 CurMSec()->CreateNonDegSetRec( );
+			for (auto& CurMSec : _LMSec)		// recorre todos las primeras sec
+				 CurMSec->CreateNonDegSetRec( );
 		}
 
 
@@ -332,24 +335,11 @@ class CMultSec	 : public CLink
 			return AddMultiSec(new CMultSec (this, Name  ));
 		}
 		CMultSec	*AddMultiSec	(CMultSec *MultSec);
+		CMultSec	*AddMultiSec	(LMSec::value_type MultSec);
 
-		CSec		CalculateConsenso	(double) ;
-		void		Free			()	{_LSec.free(); _LMSec.free();}
-		void		Destroy			()	{_LSec.Destroy(); _LMSec.Destroy();}
-
-		CSec *goFirstSec() {return (CSec *)_LSec.goBeging(); }
-		CSec *goNextSec () {return (CSec *)_LSec.goNext  (); }
-		CSec *CurSec    () {return (CSec *)_LSec.Cur	 (); }
-		CSec *GetLast	() {return (CSec *)_LSec.Last	 (); }
-		bool  NotEndSec () {return         _LSec.NotEnd  (); }
-		bool     EndSec () {return         _LSec.End     (); }
-		void  RestoreCur(CSec *cur){       _LSec.SetCur(cur);}
-
-		CMultSec *goFirstMSec() {return (CMultSec *)_LMSec.goBeging(); }
-		CMultSec *goNextMSec () {return (CMultSec *)_LMSec.goNext  (); }
-		CMultSec *CurMSec    () {return (CMultSec *)_LMSec.Cur	   (); }
-		bool	  NotEndMSec () {return _LMSec.NotEnd  (); }
-		void  RestoreMCur(CMultSec *cur){       _LMSec.SetCur(cur);}
+//		CSec		CalculateConsenso	(double) ;
+//		void		release			()	{_LSec.release(); _LMSec.release();}
+		void		clear			()	{_LSec.clear(); _LMSec.clear();} ///\todo uncount !!!!!
 
 		virtual ~CMultSec ()  ;	
 
@@ -361,40 +351,21 @@ class CMultSec	 : public CLink
            }
 
 		CMultSec		*findComParent		( CMultSec	*ms	);
+		const LSec &  SecL() const { return  _LSec; }
+		const LMSec& MSecL() const { return _LMSec; }
 	private:
-        CList			_LSec, _LMSec;    
+		LSec  _LSec;
+        LMSec _LMSec;
+		//std::list<CSec    > _LSec;
+		//std::list<CMultSec> _LMSec;   
         //std::list<std::shared_ptr<CSec    >> _LSec;
         //std::list<std::shared_ptr<CMultSec>> _LMSec;
-		void			UpdateTotals		( CSec		*sec ) ;
-		void			UpdateTotalsAdding	( CSec		*sec ) ;
-		void			UpdateTotalsAdding	( CMultSec	*sec ) ;
-		static void		RefreshExtremes		( CMultSec	*ms	);
+		//void			UpdateTotals		( CSec		*sec ) ;
+		void			UpdateTotalsMoving	( CSec		*sec ) ;
+		void			UpdateTotalsMoving	( CMultSec	*sec ) ;
+		//static void		RefreshExtremes		( CMultSec	*ms	);
 };
 
-class CMultAlign   // EXPERIMENTAL
-{public:
-		CList _LASec;
-		long _LenAlign ;
-		int _fLenEx;
-		void Set_fLenEx(int fLenEx) {_fLenEx=fLenEx;}
-		CMultAlign () :  _fLenEx(3){};
-		explicit CMultAlign (long LenAlign) : _LenAlign(LenAlign), _fLenEx(3){};
-		CMultAlign (CMultSec &MultSec, int fLenEx=3) 
-			: _LenAlign(MultSec._Global._Len.Max() *fLenEx), _fLenEx(fLenEx){};//implementsr   !!!!!!!!
-	
-		void AddFromMultiSec(CMultSec *MultSec);
-		void AddSec ( CSec *sec );
-
-};
-
-    // ahora estos seran solo para mantener "copias" (punteros) de sec o msec en otras listas. 
-    // Cada sec o msec sabe en que lista esta
-
-class CMSecLink    : public CLink     /// NO es dueno de la sec, no la borra, no delete
-{	public:
-		CMSecLink (CMultSec *ms, CMSecLink *p, CMSecLink *n=nullptr) : _msec(ms), CLink (n, p) {} ;
-		CMultSec *_msec ;
-};
 #endif
 
 
