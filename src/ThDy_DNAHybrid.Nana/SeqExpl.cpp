@@ -25,13 +25,13 @@
 		sch.header_height = 20;
 		sch.text_margin   = 2;
 		sch.item_height_ex= 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
-		sch.item_height   = sch.text_height + sch.item_height_ex;
+		//sch.item_height   = sch.text_height + sch.item_height_ex;
 		sch.header_splitter_area_before = 4;
 		sch.header_splitter_area_after  = 4 ; 
 
 		auto& tree_sch = _list.scheme();
 		tree_sch.item_height_ex = 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
-		tree_sch.item_height = tree_sch.text_height + tree_sch.item_height_ex;
+		//tree_sch.item_height = tree_sch.text_height + tree_sch.item_height_ex;
 
 		_statusbar.format(true).bgcolor(nana::colors::turquoise );
 		
@@ -523,7 +523,7 @@ List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
     nana::color tc{static_cast<nana::color_rgb>(0xFFFFFFFF)} , 
                 bc = nana::color(nana::colors::red).blend( nana::colors::blue, fade_rate); 
 
-    ores <<  List::cell {val, bc , tc};                             //case 2: Tm 
+	ores << List::cell{ val, {bc , tc} };                             //case 2: Tm 
 
     snprintf(val,blen,     ("%*d")  , 5,           sec->Degeneracy());
 

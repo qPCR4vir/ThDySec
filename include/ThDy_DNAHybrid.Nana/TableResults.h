@@ -180,7 +180,7 @@ class TableHybRes  : public nana::form, public EditableForm
 		sch.header_height = 20;
 		sch.text_margin   = 2;
 		sch.item_height_ex= 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
-		sch.item_height   = sch.text_height + sch.item_height_ex;
+//		sch.item_height   = sch.text_height + sch.item_height_ex;
 		sch.header_splitter_area_before = 4;
 		sch.header_splitter_area_after = 4 ;
 
@@ -278,8 +278,8 @@ class TableHybRes  : public nana::form, public EditableForm
             if  (v.return_bg() )
                 for (int col=0; col< t.totalCol() ; ++col)
                     ores<< List::cell{ v.str     (i.row, col),
-                                       v.bg_color(i.row, col, l),
-                                       nana::colors::white};
+									  { v.bg_color(i.row, col, l),
+									   nana::colors::white} };
             else 
                 for (int col=0; col< t.totalCol() ; ++col)
                     ores<< v.str(i.row, col)  ;
