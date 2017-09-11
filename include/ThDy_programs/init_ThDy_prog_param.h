@@ -289,7 +289,7 @@ void Check_NNp_Targets (/*ThDyCommProgParam& cp*/)
 	void    TargetFile(const std::string &InputTargetFile){	_InputTargetFile.set( trim_string(InputTargetFile));	}
 	void    NNParaFile(const std::string &InputNNFile)	  {	_InputNNFile    .set( trim_string(InputNNFile    ))	;	}
 	
-	virtual	~ThDyCommProgParam(void) override//;	
+	~ThDyCommProgParam(void) override//;	
     {	/*delete []_ProgList;*/
        //_pSeqTree->Free();     // ?????????
     }
@@ -357,7 +357,7 @@ class CProgParam_microArray : public CEspThDyProgParam
 	virtual int Run (){	return microArrayProg ( this )  ;}
 
 	// cuando se corre un proceso paralelo ver donde es mejor hacer estos delete.
-	virtual ~CProgParam_microArray()	override	;
+	~CProgParam_microArray()	override	;
 };
  
 //,_tlG(nullptr),_tlPos(nullptr), UpDate(nullptr)
@@ -597,8 +597,8 @@ class ThDyProject : public CProject /// Permite manejar todo el projecto: con un
 
  explicit	ThDyProject():	CProject("ThDy DNA Hybrid Project.","Def.ThDy.txt","Def.ThDy.txt")
 					{}
- 	virtual std::ofstream &saveTMP() const     override       // Se me habia olvidado redefinir esta funcion para usar _cp.OutF
-	{	return saveToFile(   ( _cp._OutputFile.get() + ".ThDy.txt" ).c_str()   );	}
+ 	virtual void saveTMP() const     override       // Se me habia olvidado redefinir esta funcion para usar _cp.OutF
+	{	  saveToFile(   ( _cp._OutputFile.get() + ".ThDy.txt" ).c_str()   );	}
 };  
 
 
