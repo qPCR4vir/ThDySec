@@ -72,7 +72,7 @@ int MultiplexPCRProg ( CProgParam_MultiplexPCR *IPrgPar_uArr, CMultSec		&pr)
 
 	auto res= microArrayProg ( IPrgPar_uArr, 
                                pr	, 
-                               *IPrgPar_uArr->_cp._pSeqTargets.get(), 
+                               *IPrgPar_uArr->_cp._pSeqTargets, 
                                t_0  , 300 
                               )  ;
 
@@ -84,9 +84,9 @@ int MultiplexPCRProg ( CProgParam_MultiplexPCR *IPrgPar_uArr, CMultSec		&pr)
 	int MultiplexPCRProg ( CProgParam_MultiplexPCR *IPrgPar_uArr)  
 {
 
-    IPrgPar_uArr->Check_NNp_Targets_probes (IPrgPar_uArr->_probesMS.get());
+    IPrgPar_uArr->Check_NNp_Targets_probes (IPrgPar_uArr->_probesMS);
 
-	return MultiplexPCRProg ( IPrgPar_uArr, *IPrgPar_uArr->_probesMS.get())  ;
+	return MultiplexPCRProg ( IPrgPar_uArr, *IPrgPar_uArr->_probesMS)  ;
 
 	
 }

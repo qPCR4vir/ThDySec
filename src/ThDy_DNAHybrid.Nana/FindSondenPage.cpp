@@ -295,7 +295,7 @@ void FindSondenPage::Run_Design(bool design)
     _Pr._SdDes._design	 = design ;		
 		 
 	try{                                   
-			_Pr._SdDes.probes=  _Pr._mPCR._probesMS.get();  /// Use _Pr._SdDes.probes to attach the results
+			_Pr._SdDes.probes=  _Pr._mPCR._probesMS;  /// Use _Pr._SdDes.probes to attach the results
 
             _Pr.Run(_Pr._SdDes);	                        ///  Why not   _Pr._SdDes.Run ();? \todo make paralel with nana::progres
 

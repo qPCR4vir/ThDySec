@@ -561,7 +561,7 @@ void CHitAligned::ReCalcule( std::shared_ptr<CSaltCorrNN>  NNpar )
 }
 
 
-void CMSecCand::Use(shared_ptr<CMultSec> MSec)
+void CMSecCand::Use(CMultSec* MSec)
 {    _MSec=MSec; 
     if (! _TDATmC ) 
         _TDATmC.reset(new ThDyAlign_TmCand(_MSec->_Global._Len.Max(), _MSec->_NNPar));  // Por  que????

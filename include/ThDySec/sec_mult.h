@@ -274,7 +274,7 @@ class CMultSec
 			CMultSec* p = (*from)->_parentMS;
 			if (p == this) return p;    // no-op ; mover al final?
 			LMSec::value_type s = std::move(*from);
-			p->_LMSec.erase(from);
+			if (p) p->_LMSec.erase(from);
 			return AddMultiSec(s);
 		}
 		int			CountSelectedSeq		()

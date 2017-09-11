@@ -161,7 +161,7 @@ int SondeDesignProg ( CProgParam_SondeDesign *IPrgPar_SdDes)
 
     int /*tgN(0),*/ compN=0;
 
-    FindSonden(IPrgPar_SdDes->_cp._pSeqTargets.get(), /*tgN,*/ compN, msCand, IPrgPar_SdDes );
+    FindSonden(IPrgPar_SdDes->_cp._pSeqTargets, /*tgN,*/ compN, msCand, IPrgPar_SdDes );
 
     NumRang<float> ExtrCovPerc(IPrgPar_SdDes->Coverage.get());
     if (! IPrgPar_SdDes->common.get())         ExtrCovPerc.SetMax(101.0f);

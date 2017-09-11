@@ -110,6 +110,8 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
 
             CMultSec *ms = tn.value<CMultSec*>();
             CMultSec *pms = ms->_parentMS; // tn->owner.value<CMultSec*>();
+			assert(ms);
+			assert(pms);
             _Pr._cp._pSeqNoUsed->AddMultiSec(ms);
 			_Pr._cp.AddSeqFromFile	( pms, fb.file(), false	);
             Refresh(tn->owner());
@@ -132,6 +134,8 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
 
             CMultSec *ms = tn.value<CMultSec*>();
             CMultSec *pms = ms->_parentMS; // tn->owner.value<CMultSec*>();
+			assert(ms);
+			assert(pms);
 
 			/// \todo revise !!!?? temporal solutio. Save an iterator to shraed_ptr<CMSec> 
 			///          instead of CMSec* in the tree node?
@@ -305,6 +309,9 @@ void SeqExpl::MakeResponive()
             }
             CMultSec *ms = tn.value<CMultSec*>();
             CMultSec *pms = ms->_parentMS;  
+			assert(ms);
+			assert(pms);
+
             _Pr._cp._pSeqNoUsed->AddMultiSec(ms);
             _dragMSec.push_back(ms);
             //ms->MoveBefore(_Pr._cp._pSeqNoUsed->goFirstMSec() );  /// \todo: higth level MoveMSec !! (actualize globals)
@@ -330,7 +337,10 @@ void SeqExpl::MakeResponive()
                 return;
             }
             CMultSec *ms = tn.value<CMultSec*>();
-            CMultSec *pms = ms->_parentMS;           
+            CMultSec *pms = ms->_parentMS;     
+			assert(ms);
+			assert(pms);
+
             _Pr._cp._pSeqNoUsed->AddMultiSec(ms); //ms->MoveBefore(_Pr._cp._pSeqNoUsed->goFirstMSec() );  /// \todo: higth level MoveMSec !! (actualize globals)
             auto own = tn->owner();
 
@@ -383,6 +393,9 @@ SeqExpl::Node SeqExpl::Replace      (Tree::item_proxy& tn, CMultSec *ms, const s
 try{ 
         Tree::item_proxy   own = tn->owner();
         CMultSec          *pms = ms->_parentMS;  
+		assert(ms);
+		assert(pms);
+
 
 		CMultSec* newms = _Pr._cp.AddSeqFromFile	( pms, Path, all_in_dir	);
 

@@ -142,12 +142,12 @@ class ThDyCommProgParam : public CCommProgParam
 					 st_ExpTarg {this, "Program option- re-export targets",	 "Exp_target",   false };
 
    	std::set<CMultSec*>           _primersGr  ;
-    std::shared_ptr<CSaltCorrNN>  _pSaltCorrNNp{Create_NNpar( )};
-	std::shared_ptr<CMultSec>     _pSeqTree         {CreateRoot() } ;  ///<  The root of the sequences tree
-	std::shared_ptr<CMultSec>     _pSeqNoUsed       {AddSeqGroup(_pSeqTree.get(), "Don t use"  ) } ;
-	std::shared_ptr<CMultSec>     _pSeqTargets      {AddSeqGroup(_pSeqTree.get(), "Target seq") } ; 
-	std::shared_ptr<CMultSec>     _pSeqNonTargets   {AddSeqGroup(_pSeqTree.get(), "Non Target seq")  } ; 
-	std::shared_ptr<CMultSec>     _pPCRfiltrePrimers{ AddPrimerGroup(_pSeqTree.get(), "PCR Primers to <filtre> sequences")  } ;
+    std::shared_ptr<CSaltCorrNN>  _pSaltCorrNNp     {Create_NNpar( )};
+	std::shared_ptr<CMultSec>     _pSeqTree      = CreateRoot()  ;  ///<  The root of the sequences tree
+	CMultSec*     _pSeqNoUsed       {AddSeqGroup(_pSeqTree.get(), "Don t use"  ) } ;
+	CMultSec*     _pSeqTargets      {AddSeqGroup(_pSeqTree.get(), "Target seq") } ;
+	CMultSec*     _pSeqNonTargets   {AddSeqGroup(_pSeqTree.get(), "Non Target seq")  } ;
+	CMultSec*     _pPCRfiltrePrimers{ AddPrimerGroup(_pSeqTree.get(), "PCR Primers to <filtre> sequences")  } ;
 
 	///
 	void Actualize_All_NNp()
@@ -238,10 +238,10 @@ void Check_NNp_Targets (/*ThDyCommProgParam& cp*/)
 
     assert( _pSeqTargets );
     if ( !  _pSeqTargets->_Global._NSec)
-		    AddSeqFromFile (    _pSeqTargets.get (), 
+		    AddSeqFromFile (    _pSeqTargets, 
                                 _InputTargetFile.get()  );
 }
-    CMultSec* CreateRoot	();
+    std::shared_ptr<CMultSec>  CreateRoot	();
 	CMultSec *AddSeqGroup	(CMultSec *parentGr, const std::string&     Name);
 	CMultSec *AddPrimerGroup(CMultSec *parentGr, const std::string&     Name)
 	{
@@ -259,28 +259,28 @@ void Check_NNp_Targets (/*ThDyCommProgParam& cp*/)
     }
     void      LoadSequences ()
     {
-        if (!_InputTargetFile.get().empty())   AddSeqFromFile(_pSeqTargets      .get(), _InputTargetFile.get(), _TRecurDir   .get() , _TDirStrOnly .get() );
-        if (!_NonTargetFile  .get().empty())   AddSeqFromFile(_pSeqNonTargets   .get(), _NonTargetFile  .get(), _nTRecurDir  .get() , _nTDirStrOnly.get() );
-        if (!_PCRfiltrPrFile .get().empty())   AddSeqFromFile(_pPCRfiltrePrimers.get(), _PCRfiltrPrFile .get(), _FiltrRecuDir.get() , _FiltrStrOnly.get() );
+        if (!_InputTargetFile.get().empty())   AddSeqFromFile(_pSeqTargets       , _InputTargetFile.get(), _TRecurDir   .get() , _TDirStrOnly .get() );
+        if (!_NonTargetFile  .get().empty())   AddSeqFromFile(_pSeqNonTargets    , _NonTargetFile  .get(), _nTRecurDir  .get() , _nTDirStrOnly.get() );
+        if (!_PCRfiltrPrFile .get().empty())   AddSeqFromFile(_pPCRfiltrePrimers , _PCRfiltrPrFile .get(), _FiltrRecuDir.get() , _FiltrStrOnly.get() );
     }
     void      CopyStructFromDir ()
     {
-        if (!_InputTargetFile.get().empty())   CopyStructFromDir(_pSeqTargets      .get(), _InputTargetFile.get());
-        if (!_NonTargetFile  .get().empty())   CopyStructFromDir(_pSeqNonTargets   .get(), _NonTargetFile  .get());
-        if (!_PCRfiltrPrFile .get().empty())   CopyStructFromDir(_pPCRfiltrePrimers.get(), _PCRfiltrPrFile .get());
+        if (!_InputTargetFile.get().empty())   CopyStructFromDir(_pSeqTargets      , _InputTargetFile.get());
+        if (!_NonTargetFile  .get().empty())   CopyStructFromDir(_pSeqNonTargets   , _NonTargetFile  .get());
+        if (!_PCRfiltrPrFile .get().empty())   CopyStructFromDir(_pPCRfiltrePrimers, _PCRfiltrPrFile .get());
     }
 
     CMultSec *AddTargetFromFile(const std::string& FileName)
 	{
-		return AddSeqFromFile(_pSeqTargets.get(),FileName);
+		return AddSeqFromFile(_pSeqTargets,FileName);
 	}
 	CMultSec *AddNoTargetFromFile(const std::string& FileName)
 	{
-		return AddSeqFromFile(_pSeqNonTargets.get(),FileName);
+		return AddSeqFromFile(_pSeqNonTargets,FileName);
 	}
 	CMultSec *AddPCRfiltreFromFile(const std::string& FileName)
 	{
-		return AddSeqFromFile(_pPCRfiltrePrimers.get(),FileName);
+		return AddSeqFromFile(_pPCRfiltrePrimers,FileName);
 	}
 
 
@@ -313,7 +313,7 @@ class CEspThDyProgParam : public CEspProg
 
 class CProgParam_microArray : public CEspThDyProgParam
 {public:	
-    std::shared_ptr<CMultSec>   _probesMS      { _cp.AddPrimerGroup(_cp._pSeqTree.get(), "Probes of Virtual uArr")};
+    CMultSec*   _probesMS      { _cp.AddPrimerGroup(_cp._pSeqTree.get(), "Probes of Virtual uArr")};
     CParamString	            _InputSondeFile{ this, "Input file for probes", "iSonde_uAr", "" };
     CParamBool       _PrRecurDir    {this, "Recursively add all probe seq-files from all dir", "ProbRecDir", false} ;
     CParamBool       _PrDirStrOnly  {this, "Reproduce only the dir struct in probe"          , "ProbDirStr", true } ;
@@ -332,15 +332,15 @@ class CProgParam_microArray : public CEspThDyProgParam
     void RenameSondesMS(const std::string& name);
     void      LoadSequences ()
     {
-        if (!_InputSondeFile.get().empty())   _cp.AddSeqFromFile(_probesMS .get(), _InputSondeFile.get(), _PrRecurDir   .get() , _PrDirStrOnly .get() );
+        if (!_InputSondeFile.get().empty())   _cp.AddSeqFromFile(_probesMS , _InputSondeFile.get(), _PrRecurDir   .get() , _PrDirStrOnly .get() );
     }
     void CopyStructFromDir ()
     {
-        if (!_InputSondeFile.get().empty())   _cp.CopyStructFromDir(_probesMS      .get(), _InputSondeFile.get());
+        if (!_InputSondeFile.get().empty())   _cp.CopyStructFromDir(_probesMS      , _InputSondeFile.get());
     }
     CMultSec *AdduArrFromFile(const std::string& FileName)
 	{
-		return _cp.AddSeqFromFile(_probesMS.get(),FileName);
+		return _cp.AddSeqFromFile(_probesMS,FileName);
     }
 
     void Check_NNp_Targets_probes      (CMultSec *probes) 

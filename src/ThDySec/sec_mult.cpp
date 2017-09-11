@@ -781,7 +781,7 @@ void    CMultSec::UpdateTotalsMoving ( CSec *sec )
             My_parMS->Add2GlobalExtreme(*sec);
         else
         {
-            parMS->_Global._NSec ++;                                // sumo sus s a este total.
+            if (parMS) parMS->_Global._NSec ++;                                // sumo sus s a este total.
         }
     }    
     sec->_parentMS = (this) ;                            //* std::weak_ptr<CMultSec> */
@@ -841,7 +841,7 @@ void        CMultSec::UpdateTotalsMoving ( CMultSec *msec )
     CMultSec   *cp;
     if (parMS)                                        // no es imprescindible. Anadido solo por claridad de intencion
     {    cp=findComParent( msec);
-        for ( parMS;  parMS != cp   ;  parMS=parMS->_parentMS)            // desde localizacion orig subiendo hasta parent comun
+        for ( parMS;  parMS != cp  && parMS ;  parMS=parMS->_parentMS)            // desde localizacion orig subiendo hasta parent comun
             {
                 parMS->_Global._NSec -= msec->_Global._NSec ;            // elimino sus s de este total.
                 parMS->_Global._NMSec-= msec->_Global._NMSec + 1;        // elimino sus ms de este total.

@@ -409,7 +409,7 @@ class CMSecCand  	//--------------------------------Tm------ CMSecCand ---------
 					_osPaarComp(0)	  */	
 		{} 
 
-	void		Use(std::shared_ptr<CMultSec> MSec);//	void		Set_PaarComparExport(ofstream &osPaarComp){_osPaarComp=osPaarComp;};
+	void		Use(CMultSec* MSec);//	void		Set_PaarComparExport(ofstream &osPaarComp){_osPaarComp=osPaarComp;};
 	CSecCand	*Add(CSec &sec);
 	std::unique_ptr<CSecCand> AddBeging	(CSec &sec) ;
 	void		FindCommon	(CSecCand  &cand1, CSecCand &cand2, bool design=true)	;
@@ -443,7 +443,7 @@ class CMSecCand  	//--------------------------------Tm------ CMSecCand ---------
 
 	std::ofstream _osPaarComp;
 
-	std::shared_ptr<CMultSec>            _MSec ;
+	CMultSec*            _MSec ;
 	std::shared_ptr<ThDyAlign_TmCand>	_TDATmC ;  // donde se crea y se borra???   _______________ PROBLEMA !!!!!!!!!!!!!!!!
 
 

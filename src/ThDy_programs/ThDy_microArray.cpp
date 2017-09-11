@@ -157,7 +157,7 @@ int microArrayProg ( CProgParam_microArray *IPrgPar_uArr)
 {
 	time_t t_0 = time(nullptr);
 
-    IPrgPar_uArr->Check_NNp_Targets_probes (IPrgPar_uArr->_probesMS.get());
+    IPrgPar_uArr->Check_NNp_Targets_probes (IPrgPar_uArr->_probesMS);
 
 	//assert(("IPrgPar_uArr->_probesMS - debiera existir siempre",IPrgPar_uArr->_probesMS));
 	//CMultSec  &pr(		*IPrgPar_uArr->_probesMS.get() ); 
@@ -165,8 +165,8 @@ int microArrayProg ( CProgParam_microArray *IPrgPar_uArr)
 	//	pr.AddFromFile ( IPrgPar_uArr->_InputSondeFile.Get() );	
 
 	auto res=microArrayProg (  IPrgPar_uArr, 
-                            *IPrgPar_uArr->_probesMS.get()	, 
-                            *IPrgPar_uArr->_cp._pSeqTargets.get() , 
+                            *IPrgPar_uArr->_probesMS, 
+                            *IPrgPar_uArr->_cp._pSeqTargets , 
                              t_0 ,
                              300)  ; 
     IPrgPar_uArr->_rtbl->TitTable(IPrgPar_uArr->_rtbl->TitTable()+ ". Virtual microArray.");

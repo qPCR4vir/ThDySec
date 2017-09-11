@@ -24,9 +24,9 @@ using namespace std;
 
 CProgParam_microArray::~CProgParam_microArray()		{ /*delete _tlTm;*/}
 
-CMultSec* ThDyCommProgParam::CreateRoot	() 
+std::shared_ptr<CMultSec>  ThDyCommProgParam::CreateRoot	()
 {
-	return new CMultSec(_pSaltCorrNNp,"All seq");
+	return std::make_shared<CMultSec> (_pSaltCorrNNp, "All seq") ;
 }
 
 CMultSec* ThDyCommProgParam::AddSeqGroup		(CMultSec   *parentGr, const std::string&     Name)
