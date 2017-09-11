@@ -545,7 +545,7 @@ void CHitAligned::ReCalcule( std::shared_ptr<CSaltCorrNN>  NNpar )
     _Hr= 0; 
     _Sr= NNpar->GetInitialEntropy();
 
-    for (_i=_j= _i0= _j0=0 ;  _i+LonSecPos( 1 ) <_sd.length() && _j+1<_tg.length()    ;  ++_i, ++_j )
+    for (_i=_j= _i0= _j0=0 ;  _i+LonSecPos( 1 ) <_sd.length() && _j+ LonSecPos(1)<_tg.length()    ;  ++_i, ++_j )
     {    
         a_1 = a; 
         a   = bk2nu  [ _sd[_i+1] ];    
