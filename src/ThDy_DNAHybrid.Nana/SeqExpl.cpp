@@ -15,26 +15,26 @@
 #include "ThDy_DNAHybrid.Nana\main.Nana.h"
 
 #include <algorithm>
-
+    
 SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         : _Pr             (tdForm), 
           CompoWidget     (tdForm, ("Seq Explorer"), ("SeqExpl.lay.txt"))
     {
-		auto& sch = _list.scheme();
-		sch.header_height = 20;
-		sch.text_margin   = 2;
-		sch.item_height_ex= 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
-		//sch.item_height   = sch.text_height + sch.item_height_ex;
-		sch.header_splitter_area_before = 4;
-		sch.header_splitter_area_after  = 4 ; 
+        auto& sch = _list.scheme();
+        sch.header_height = 20;
+        sch.text_margin   = 2;
+        sch.item_height_ex= 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
+        //sch.item_height   = sch.text_height + sch.item_height_ex;
+        sch.header_splitter_area_before = 4;
+        sch.header_splitter_area_after  = 4 ; 
 
-		auto& tree_sch = _list.scheme();
-		tree_sch.item_height_ex = 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
-		//tree_sch.item_height = tree_sch.text_height + tree_sch.item_height_ex;
+        auto& tree_sch = _list.scheme();
+        tree_sch.item_height_ex = 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
+        //tree_sch.item_height = tree_sch.text_height + tree_sch.item_height_ex;
 
-		_statusbar.format(true).bgcolor(nana::colors::turquoise );
-		
-		InitMyLayout();
+        _statusbar.format(true).bgcolor(nana::colors::turquoise );
+        
+        InitMyLayout();
         SelectClickableWidget( _tree);
         SelectClickableWidget( *this);
         _tree.checkable(true);
@@ -58,30 +58,30 @@ SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
     }
 
 SeqExpl::Node SeqExpl::AddNewSeqGr  (Tree::item_proxy& node) 
-		{	try{    
-					return appendNewNode(node, _Pr._cp.AddSeqGroup(node.value<CMultSec*>(),"New group")).expand(true);
-		        }
-				catch ( std::exception& e)
-		        { 
-				  (nana::msgbox ( ("Error adding new group" ) )<< e.what()).show() ;
+        {    try{    
+                    return appendNewNode(node, _Pr._cp.AddSeqGroup(node.value<CMultSec*>(),"New group")).expand(true);
+                }
+                catch ( std::exception& e)
+                { 
+                  (nana::msgbox ( ("Error adding new group" ) )<< e.what()).show() ;
                   return node;
-		        }		
-		}
+                }        
+        }
 
 SeqExpl::Node SeqExpl::AddMSeqFiles (const std::string &file, bool  all_in_dir) 
-	{	 
+    {     
     try{ 
-			auto      tn    = _tree.selected();
+            auto      tn    = _tree.selected();
             CMultSec* ms    = tn.value<CMultSec*>();
-            CMultSec* newms = _Pr._cp.AddSeqFromFile	(ms , file, all_in_dir	);
-			return Refresh(   tn);
-		}
-		catch ( std::exception& e)
-		{ 
-			(nana::msgbox ( ("Error adding sequences" ) )<< e.what()).show() ;
+            CMultSec* newms = _Pr._cp.AddSeqFromFile    (ms , file, all_in_dir    );
+            return Refresh(   tn);
+        }
+        catch ( std::exception& e)
+        { 
+            (nana::msgbox ( ("Error adding sequences" ) )<< e.what()).show() ;
             return _tree.selected();
- 		}		 
-	}
+         }         
+    }
 
 void SeqExpl::AddMenuItems(nana::menu& menu)
     {
@@ -98,7 +98,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
         menu.append(("Reload from the original directory"), [&](nana::menu::item_proxy& ip) {  ReloadDir(_tree.selected());     });
         menu.append(("Replace from a file . . ." )  , [&](nana::menu::item_proxy& ip) 
         {
-			auto tn= _tree.selected();
+            auto tn= _tree.selected();
             if (isRoot(tn))
             {
                 nana::msgbox ( ("Sorry, you can´t replace group " + tn.text()) ).show() ;
@@ -111,10 +111,10 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
 
             CMultSec *ms = tn.value<CMultSec*>();
             CMultSec *pms = ms->_parentMS; // tn->owner.value<CMultSec*>();
-			assert(ms);
-			assert(pms);
+            assert(ms);
+            assert(pms);
             _Pr._cp._pSeqNoUsed->AddMultiSec(ms);
-			_Pr._cp.AddSeqFromFile	( pms, fb.file(), false	);
+            _Pr._cp.AddSeqFromFile    ( pms, fb.file(), false    );
             Refresh(tn->owner());
             //_tree.auto_draw(false);
             //_tree.erase(tn);
@@ -124,7 +124,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
 
         menu.append(("Replace from directory . . ."), [&](nana::menu::item_proxy& ip) 
         {
-			auto tn= _tree.selected();
+            auto tn= _tree.selected();
             if (tn->owner()->owner().empty())
             {
                 nana::msgbox ( ("Sorry, you can´t replace group " + tn->text()) ) ;
@@ -136,31 +136,31 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
 
             CMultSec *ms = tn.value<CMultSec*>();
             CMultSec *pms = ms->_parentMS; // tn->owner.value<CMultSec*>();
-			assert(ms);
-			assert(pms);
+            assert(ms);
+            assert(pms);
 
-			/// \todo revise !!!?? temporal solutio. Save an iterator to shraed_ptr<CMSec> 
-			///          instead of CMSec* in the tree node?
+            /// \todo revise !!!?? temporal solutio. Save an iterator to shraed_ptr<CMSec> 
+            ///          instead of CMSec* in the tree node?
 
-			auto it=std::find_if(pms->MSecL().begin(), pms->MSecL().end(), 
-				                 [&ms](auto & sp_ms) {return ms == sp_ms.get(); });
-			if (it == pms->MSecL().end()) return;
+            auto it=std::find_if(pms->MSecL().begin(), pms->MSecL().end(), 
+                                 [&ms](auto & sp_ms) {return ms == sp_ms.get(); });
+            if (it == pms->MSecL().end()) return;
 
-			//auto it = pms->MSecL().begin();
-			//do {
-			//	if (it == pms->MSecL().end()) return;
-			//	if ( ms == it->get() ) break;
-			//	++it;
-			//} while (true);
+            //auto it = pms->MSecL().begin();
+            //do {
+            //    if (it == pms->MSecL().end()) return;
+            //    if ( ms == it->get() ) break;
+            //    ++it;
+            //} while (true);
 
-			_Pr._cp._pSeqNoUsed->MoveMSec(it);     // hight level MoveMSec !! (actualize globals)
+            _Pr._cp._pSeqNoUsed->MoveMSec(it);     // hight level MoveMSec !! (actualize globals)
             
-			auto own = tn->owner();
+            auto own = tn->owner();
 
             _tree.auto_draw(false);
             _list.auto_draw(false);
 
-			CMultSec* newms = _Pr._cp.AddSeqFromFile	( pms, fb.file(), true	);
+            CMultSec* newms = _Pr._cp.AddSeqFromFile    ( pms, fb.file(), true    );
             _tree.erase(tn);
             populate(appendNewNode  (own, newms) );
             own.expand(true);
@@ -213,11 +213,11 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
 
 void SeqExpl::MakeResponive()
     {
-		// the "selected" feature in the GUI have no efect in the data, it is a pure GUI feature,
-		// but the check status go to the data with the name Selected() !!!
+        // the "selected" feature in the GUI have no efect in the data, it is a pure GUI feature,
+        // but the check status go to the data with the name Selected() !!!
 
-		_tree.events().selected ( [&]( const nana::arg_treebox &tbox_arg_info ) 
-		                         { if (tbox_arg_info.operated) RefreshList(tbox_arg_info.item); });
+        _tree.events().selected ( [&]( const nana::arg_treebox &tbox_arg_info ) 
+                                 { if (tbox_arg_info.operated) RefreshList(tbox_arg_info.item); });
         _tree.events().checked  ( [&]( const nana::arg_treebox &tbox_arg_info )
         {                                              
             tbox_arg_info.item.value<CMultSec*>()->Selected(tbox_arg_info.operated);
@@ -265,16 +265,16 @@ void SeqExpl::MakeResponive()
 
                             auto      tn    = _tree.selected();
                             CMultSec* ms    = tn.value<CMultSec*>();
-                            CMultSec* newms = _Pr._cp.CopyStructFromDir	( ms, fb.file()	);
+                            CMultSec* newms = _Pr._cp.CopyStructFromDir    ( ms, fb.file()    );
                             _tree.auto_draw(false);
-			                populate(  appendNewNode  (tn, newms) );
+                            populate(  appendNewNode  (tn, newms) );
                             tn.expand(true);
                             _tree.auto_draw(true);
                         });
         _paste      .tooltip(("Paste sequences"))
                     .events().click([this]()
         {
-			auto       tn = _tree.selected();
+            auto       tn = _tree.selected();
             CMultSec *pms = tn.value<CMultSec*>();
 
             for (auto ms : _dragMSec)
@@ -300,7 +300,7 @@ void SeqExpl::MakeResponive()
         _cut        .tooltip(("Cut a group of sequences"))
                     .events().click([this]()
         {
-			auto tn= _tree.selected(); 
+            auto tn= _tree.selected(); 
             if (tn->owner()->owner().empty())    //   ???  if( tn->level() < 2 );
             {
                 (nana::msgbox ( _tree , ("Cut a group of sequences " + tn->text()) )
@@ -311,8 +311,8 @@ void SeqExpl::MakeResponive()
             }
             CMultSec *ms = tn.value<CMultSec*>();
             CMultSec *pms = ms->_parentMS;  
-			assert(ms);
-			assert(pms);
+            assert(ms);
+            assert(pms);
 
             _Pr._cp._pSeqNoUsed->AddMultiSec(ms);
             _dragMSec.push_back(ms);
@@ -326,13 +326,13 @@ void SeqExpl::MakeResponive()
             populate(appendNewNode (_tree.find(("Don t use") ), ms ));
             own.select(true).expand(true);
 
-			_tree.auto_draw(true);
-			_list.auto_draw(true);
-		});
+            _tree.auto_draw(true);
+            _list.auto_draw(true);
+        });
         _del        .tooltip(("Delete a group of sequences "))
                     .events().click([this]()
         {
-			auto tn= _tree.selected();
+            auto tn= _tree.selected();
             if (tn->owner()->owner().empty())
             {
                 (nana::msgbox ( _tree , ("Deleting a group of sequences " + tn->text()) )
@@ -343,8 +343,8 @@ void SeqExpl::MakeResponive()
             }
             CMultSec *ms = tn.value<CMultSec*>();
             CMultSec *pms = ms->_parentMS;     
-			assert(ms);
-			assert(pms);
+            assert(ms);
+            assert(pms);
 
             _Pr._cp._pSeqNoUsed->AddMultiSec(ms); //ms->MoveBefore(_Pr._cp._pSeqNoUsed->goFirstMSec() );  /// \todo: higth level MoveMSec !! (actualize globals)
             auto own = tn->owner();
@@ -357,33 +357,33 @@ void SeqExpl::MakeResponive()
 
             own.select(true).expand(true);
 
-			_tree.auto_draw(true);
-			_list.auto_draw(true);
-		});
+            _tree.auto_draw(true);
+            _list.auto_draw(true);
+        });
 
         _cutSec     .tooltip(("Cut selected sequences from list"))
                     .events().click([this]()
         {
-			auto sel =	_list.selected() ; 
-			for (auto i : sel)
-			{
-				auto s=_list.at(i ).value<CSec*>();
+            auto sel =    _list.selected() ; 
+            for (auto i : sel)
+            {
+                auto s=_list.at(i ).value<CSec*>();
                 _Pr._cp._pSeqNoUsed->AddSec( s );
                 _dragSec.push_back(s);
-			}
-			RefreshList();
+            }
+            RefreshList();
         });
 
         _delSec     .tooltip(("Delete selected sequences from list"))
                     .events().click([this]()
         {
-			auto sel =	_list.selected() ; 
-			for (auto i : sel)
-			{
-				auto s=_list.at(i ).value<CSec*>();
+            auto sel =    _list.selected() ; 
+            for (auto i : sel)
+            {
+                auto s=_list.at(i ).value<CSec*>();
                 _Pr._cp._pSeqNoUsed->AddSec( s );
-			}
-			RefreshList();
+            }
+            RefreshList();
         });
 
         _show_locals_s.enable_pushed(true)
@@ -402,32 +402,32 @@ SeqExpl::Node SeqExpl::Replace      (Tree::item_proxy& tn, CMultSec *ms, const s
 try{ 
         Tree::item_proxy   own = tn->owner();
         CMultSec          *pms = ms->_parentMS;  
-		assert(ms);
-		assert(pms);
+        assert(ms);
+        assert(pms);
 
 
-		CMultSec* newms = _Pr._cp.AddSeqFromFile	( pms, Path, all_in_dir	);
+        CMultSec* newms = _Pr._cp.AddSeqFromFile    ( pms, Path, all_in_dir    );
 
         _Pr._cp._pSeqNoUsed->AddMultiSec(ms); 
         _tree.erase(tn);
         populate(_tree.find( _Pr._cp._pSeqNoUsed->_name));
         return appendNewNode(own, newms).expand(true).select(true) ;
-	}
-	catch ( std::exception& e)
-	{ 
-		(nana::msgbox ( ("Error replacing sequences: " ) ).icon(nana::msgbox::icon_error)
+    }
+    catch ( std::exception& e)
+    { 
+        (nana::msgbox ( ("Error replacing sequences: " ) ).icon(nana::msgbox::icon_error)
             << "into group:    "  << tn.key()                                 
             << "\n from " << (all_in_dir?"directory: " : "file: ") << Path     <<"\n"<< e.what()
         ).show() ;
- 	}		
-	catch(...)
-	{
+     }        
+    catch(...)
+    {
             (nana::msgbox(("An uncaptured exception during replacing sequences: "))
                 .icon(nana::msgbox::icon_error) 
             << "into "<< tn.key()                                
             << "from "<< (all_in_dir?"directory ":"file ") << Path    
             ).show();
-	}
+    }
     return tn;
 }
 
@@ -435,7 +435,7 @@ void SeqExpl::ShowFindedProbes_in_mPCR(bool show_/*=true*/)
 {
     //auto idp = _Pr._cp.MaxTgId.get();
     //_Pr._cp.MaxTgId.set(100);
-    //CMultSec *ms= _Pr._cp.AddSeqFromFile	(_Pr._mPCR._probesMS.get() , _Pr._cp._OutputFile.get() + ".sonden.fasta", false	);
+    //CMultSec *ms= _Pr._cp.AddSeqFromFile    (_Pr._mPCR._probesMS.get() , _Pr._cp._OutputFile.get() + ".sonden.fasta", false    );
     //_Pr._cp.MaxTgId.set(idp);
 
     RefreshProbes_mPCR( show_ );
@@ -452,65 +452,65 @@ void SeqExpl::RefreshProbes_mPCR(bool show_/*=true*/)
 
 void SeqExpl::SetDefLayout()
 {
-	_DefLayout =
-		"vertical                                                 \n\t"
-		"		  <weight=23 <toolbar weight=680 margin=2 ><>>    \n\t"
-		"		  <      <Tree  > |75% <List >   >      		  \n\t"
+    _DefLayout =
+        "vertical                                                 \n\t"
+        "          <weight=23 <toolbar weight=680 margin=2 ><>>    \n\t"
+        "          <      <Tree  > |75% <List >   >                \n\t"
 
-		"	      <weight=21 <weight=5> <weight=80 tflab> <min=640 max=1000  TargetsOptions   >  <weight=5>>  \n\t"
-		"		  <weight=20 <statusbar margin=1  min=700 > <Firma max=180> <weight=3 > >   \n\t"
-		;
+        "          <weight=21 <weight=5> <weight=80 tflab> <min=640 max=1000  TargetsOptions   >  <weight=5>>  \n\t"
+        "          <weight=20 <statusbar margin=1  min=700 > <Firma max=180> <weight=3 > >   \n\t"
+        ;
 
-	numUpDwMaxTgId.ResetLayout(60, 40, 30);
-	numUpDw_TgBeg.ResetLayout(35, 40, 30);
-	numUpDw_TgEnd.ResetLayout(35, 40, 30);
-	numUpDw_SLenMin.ResetLayout(60, 40, 30);
-	numUpDw_SLenMax.ResetLayout(60, 70, 30);
+    numUpDwMaxTgId.ResetLayout(60, 40, 30);
+    numUpDw_TgBeg.ResetLayout(35, 40, 30);
+    numUpDw_TgEnd.ResetLayout(35, 40, 30);
+    numUpDw_SLenMin.ResetLayout(60, 40, 30);
+    numUpDw_SLenMax.ResetLayout(60, 70, 30);
 }
 
 void SeqExpl::AsignWidgetToFields()
-	{
-		using ParamGUIBind::link;
+    {
+        using ParamGUIBind::link;
 
-		_commPP << link(_Pr._cp.MaxTgId, numUpDwMaxTgId)
-			<< link(_Pr._cp.SecLim, numUpDw_TgBeg, numUpDw_TgEnd)
-			<< link(_Pr._cp.SecLenLim, numUpDw_SLenMin, numUpDw_SLenMax)
-			;
+        _commPP << link(_Pr._cp.MaxTgId, numUpDwMaxTgId)
+            << link(_Pr._cp.SecLim, numUpDw_TgBeg, numUpDw_TgEnd)
+            << link(_Pr._cp.SecLenLim, numUpDw_SLenMin, numUpDw_SLenMax)
+            ;
 
 
-		_place["toolbar"] << "   Files:" << _loadFile << _re_loadFile << _paste
-			<< "      Dir:" << _loadDir << _re_loadDir << _scanDir << _cut << _del
-			<< "      Seq:" << _show_locals_s << _show_filt_s << _cutSec << _delSec
-			;
-		_place["Tree"  ] << _tree;
-		_place["List"  ] << _list;
-		_place["tflab"] << "Targets filters: ";
-		_place["TargetsOptions"]	<< numUpDwMaxTgId
-									<< numUpDw_TgBeg << numUpDw_TgEnd
-									<< numUpDw_SLenMin << numUpDw_SLenMax;
+        _place["toolbar"] << "   Files:" << _loadFile << _re_loadFile << _paste
+            << "      Dir:" << _loadDir << _re_loadDir << _scanDir << _cut << _del
+            << "      Seq:" << _show_locals_s << _show_filt_s << _cutSec << _delSec
+            ;
+        _place["Tree"  ] << _tree;
+        _place["List"  ] << _list;
+        _place["tflab"] << "Targets filters: ";
+        _place["TargetsOptions"]    << numUpDwMaxTgId
+                                    << numUpDw_TgBeg << numUpDw_TgEnd
+                                    << numUpDw_SLenMin << numUpDw_SLenMax;
 
-		_place["statusbar"] << _statusbar;
-		_place.field("Firma") << e_mail_firma;
+        _place["statusbar"] << _statusbar;
+        _place.field("Firma") << e_mail_firma;
 
-	}
+    }
 
 void SeqExpl::RefreshStatusInfo(CMultSec *ms)
 {
-	_statusbar.caption("  <bold>Local</> (sq: " + std::to_string(ms->_Local._NSec)
-		+ ", gr: " + std::to_string(ms->_Local._NMSec) + "),"
-		+ (ms->_Local._NSec ? "    Length[" + std::to_string(ms->_Local._Len.Min())
-			+ "-" + std::to_string(ms->_Local._Len.Max()) + "]"
-			+ ", Tm[ " + temperature_to_string(ms->_Local._Tm.Min()) + "-"
-			+ temperature_to_string(ms->_Local._Tm.Max()) + "]  "
-			: "")
-		+ ".        <bold>Global</> (sq: " + std::to_string(ms->_Global._NSec)
-		+ ", gr: " + std::to_string(ms->_Global._NMSec) + "),"
-		+ (ms->_Global._NSec ? "    Length[" + std::to_string(ms->_Global._Len.Min())
-			+ "-" + std::to_string(ms->_Global._Len.Max()) + "]"
-			+ ", Tm[ " + temperature_to_string(ms->_Global._Tm.Min()) + "-"
-			+ temperature_to_string(ms->_Global._Tm.Max()) + " ]  "
-			: "")
-	);
+    _statusbar.caption("  <bold>Local</> (sq: " + std::to_string(ms->_Local._NSec)
+        + ", gr: " + std::to_string(ms->_Local._NMSec) + "),"
+        + (ms->_Local._NSec ? "    Length[" + std::to_string(ms->_Local._Len.Min())
+            + "-" + std::to_string(ms->_Local._Len.Max()) + "]"
+            + ", Tm[ " + temperature_to_string(ms->_Local._Tm.Min()) + "-"
+            + temperature_to_string(ms->_Local._Tm.Max()) + "]  "
+            : "")
+        + ".        <bold>Global</> (sq: " + std::to_string(ms->_Global._NSec)
+        + ", gr: " + std::to_string(ms->_Global._NMSec) + "),"
+        + (ms->_Global._NSec ? "    Length[" + std::to_string(ms->_Global._Len.Min())
+            + "-" + std::to_string(ms->_Global._Len.Max()) + "]"
+            + ", Tm[ " + temperature_to_string(ms->_Global._Tm.Min()) + "-"
+            + temperature_to_string(ms->_Global._Tm.Max()) + " ]  "
+            : "")
+    );
 }
 
 
@@ -521,7 +521,7 @@ void SeqExpl::InitTree()
 
         CMultSec *ms=_Pr._cp._pSeqTree.get();
         for ( auto& CurMSec :  ms->MSecL() )
-			populate( AddRoot( CurMSec.get() )) ;
+            populate( AddRoot( CurMSec.get() )) ;
 
         _tree.find(("Target seq")).select(true);
         populate_list_recur(_Pr._cp._pSeqTree.get());
@@ -538,21 +538,21 @@ List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
     ores <<  sec->Name()                                         // col 0: name  
          <<  val  ;                                              // col 1: len
 
-	Temperature t=KtoC( sec->NonDegSet() ? sec->NonDegSet()->_Local._Tm.Ave() : sec->_Tm.Ave());
-	snprintf(val,blen, (u8"% *.*f °C"), 6, 1,   t );
+    Temperature t=KtoC( sec->NonDegSet() ? sec->NonDegSet()->_Local._Tm.Ave() : sec->_Tm.Ave());
+    snprintf(val,blen, (u8"% *.*f °C"), 6, 1,   t );
     Temperature min=57.0, max=63.0;
     double fade_rate=  t<min? 0.0 : t>max? 1.0 : (t-min)/(max-min);
     nana::color tc{static_cast<nana::color_rgb>(0xFFFFFFFF)} , 
                 bc = nana::color(nana::colors::red).blend( nana::colors::blue, fade_rate); 
 
-	ores << List::cell{ val, {bc , tc} };                             //case 2: Tm 
+    ores << List::cell{ val, {bc , tc} };                             //case 2: Tm 
 
     snprintf(val,blen,     ("%*d")  , 5,           sec->Degeneracy());
 
 
-	std::string desc = sec->Description();
-	if (nana::review_utf8(desc))
-		sec->Description(desc);
+    std::string desc = sec->Description();
+    if (nana::review_utf8(desc))
+        sec->Description(desc);
     ores <<  val                                                     // case 3: deg    
          <<  desc   ;                                                // case 4: descr  
 
@@ -564,14 +564,14 @@ List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
         snprintf(val,blen,     ("%*d")  , 6,           sec->_aln_fragment ->aln.Max()       );
         ores <<  val                       ;                                                    // case 6: end in aln    
     }
-	else if (sec->_aln_fragment && sec->_aln_fragment->sq.lenght())
-	{
-		snprintf(val, blen, ("%*d"), 6, sec->_aln_fragment->sq.Min());
-		ores << val;                                                                            // case 5: beg in aln   
-		snprintf(val, blen, ("%*d"), 6, sec->_aln_fragment->sq.Max());
-		ores << val;                                                                            // case 6: end in aln    
-	}
-	else
+    else if (sec->_aln_fragment && sec->_aln_fragment->sq.lenght())
+    {
+        snprintf(val, blen, ("%*d"), 6, sec->_aln_fragment->sq.Min());
+        ores << val;                                                                            // case 5: beg in aln   
+        snprintf(val, blen, ("%*d"), 6, sec->_aln_fragment->sq.Max());
+        ores << val;                                                                            // case 6: end in aln    
+    }
+    else
 
         ores  << " - "      << " - "        ;                                                   // no pos in aln 
 
