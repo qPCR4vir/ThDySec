@@ -16,7 +16,7 @@
 
 #include <algorithm>
 
-         SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
+SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         : _Pr             (tdForm), 
           CompoWidget     (tdForm, ("Seq Explorer"), ("SeqExpl.lay.txt"))
     {
@@ -56,7 +56,8 @@
         _tree.auto_draw(true);
         _list.auto_draw(true);
     }
-         SeqExpl::Node SeqExpl::AddNewSeqGr  (Tree::item_proxy& node) 
+
+SeqExpl::Node SeqExpl::AddNewSeqGr  (Tree::item_proxy& node) 
 		{	try{    
 					return appendNewNode(node, _Pr._cp.AddSeqGroup(node.value<CMultSec*>(),"New group")).expand(true);
 		        }
@@ -66,7 +67,8 @@
                   return node;
 		        }		
 		}
-         SeqExpl::Node SeqExpl::AddMSeqFiles (const std::string &file, bool  all_in_dir) 
+
+SeqExpl::Node SeqExpl::AddMSeqFiles (const std::string &file, bool  all_in_dir) 
 	{	 
     try{ 
 			auto      tn    = _tree.selected();
@@ -119,6 +121,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             //Refresh(appendNewNode  (own, newms) );
             //_tree.auto_draw(true);
         });
+
         menu.append(("Replace from directory . . ."), [&](nana::menu::item_proxy& ip) 
         {
 			auto tn= _tree.selected();
@@ -291,8 +294,8 @@ void SeqExpl::MakeResponive()
             populate_list_recur(tn);
             tn.select(true).expand(true);
 
-            _tree.auto_draw(false);
-            _list.auto_draw(false);
+            _tree.auto_draw(true);
+            _list.auto_draw(true);
         });
         _cut        .tooltip(("Cut a group of sequences"))
                     .events().click([this]()
@@ -322,7 +325,10 @@ void SeqExpl::MakeResponive()
             _tree.erase(tn);
             populate(appendNewNode (_tree.find(("Don t use") ), ms ));
             own.select(true).expand(true);
-        });
+
+			_tree.auto_draw(true);
+			_list.auto_draw(true);
+		});
         _del        .tooltip(("Delete a group of sequences "))
                     .events().click([this]()
         {
@@ -351,7 +357,10 @@ void SeqExpl::MakeResponive()
 
             own.select(true).expand(true);
 
-        });
+			_tree.auto_draw(true);
+			_list.auto_draw(true);
+		});
+
         _cutSec     .tooltip(("Cut selected sequences from list"))
                     .events().click([this]()
         {
@@ -364,6 +373,7 @@ void SeqExpl::MakeResponive()
 			}
 			RefreshList();
         });
+
         _delSec     .tooltip(("Delete selected sequences from list"))
                     .events().click([this]()
         {
