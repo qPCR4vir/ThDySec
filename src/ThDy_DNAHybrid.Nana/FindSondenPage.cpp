@@ -189,7 +189,10 @@ FindSondenPage::FindSondenPage(ThDyNanaForm& tdForm)    try
 	}
 catch (std::exception & e)
 {
-	throw std::runtime_error(std::string("An error occurred during initialization of the Find probes page window:\n") + e.what());
+	std::string msg = std::string("An error occurred during initialization of the Find probes page window:\n") + e.what();
+	auto re = std::runtime_error(msg);
+	throw re;
+
 }
 catch (...)
 {

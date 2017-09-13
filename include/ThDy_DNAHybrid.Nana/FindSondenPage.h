@@ -1,6 +1,6 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2017, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
+*  https://www.fli.de/en/institutes/institute-of-novel-and-emerging-infectious-diseases-innt/scientists/prof-dr-m-h-groschup/
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @autor Ariel Vina-Rodriguez (qPCR4vir)
@@ -17,6 +17,7 @@
 #include "thdy_programs\init_thdy_prog_param.h"
 #include "../../nana.ext/include/nanaBind.hpp"
 #include <../../nana.ext/include/EditableForm.hpp>
+#include <Units.hpp>
 
 #include <nana/gui/tooltip.hpp>
 #include <nana/gui/widgets/checkbox.hpp>
@@ -36,21 +37,21 @@ class FindSondenPage : public CompoWidget
                         _gr_probself{*this, ("<bold=true> Probe-self: </>"      ), true};
 
     nana::NumUnitUpDown _Gmin     {_gr_probes, ("G : "    ), -5, -10 , 10, "kcal/mol"},   _Gmax   {_gr_probes,  (""), -1, -10, 10,   "kcal/mol"}, 
-                        _Tmmin    {_gr_probes, ("Tm : "   ), 57,  40 , 60,  u8"캜"   },  _Tmmax   {_gr_probes,  (""), 63,  45, 75,   u8"캜"    },
+                        _Tmmin    {_gr_probes, ("Tm : "   ), 57,  40 , 60,  RTunits::CUnit::grC },  _Tmmax   {_gr_probes,  (""), 63,  45, 75,   RTunits::CUnit::grC },
                         _Lengthmin{_gr_probes, ("Length: "), 20,  15 , 35,  "nt"     }, _Lengthmax{_gr_probes,  (""), 35,  15, 40,   "nt"      },
-                        _MaxG     {_gr_prob_tg, ("Max G: " ), 10, -10, 30, "kcal/mol"},  _MinTm   {_gr_prob_tg, ("Tm: "  ), 30,  10 , 60,  u8"캜"},
-                        _MinG     {_gr_prob_ntg,("Min G: " ), 15, -10 , 30,"kcal/mol"},  _MaxTm   {_gr_prob_ntg,("Max Tm: "), 10, -10, 75, u8"캜"},
-                        _MinSelfG {_gr_probself,("Min G: " ), 10, -10 , 30,"kcal/mol"}, _MaxSelfTm{_gr_probself,("Max Tm: "), 10, -10, 75, u8"캜"},
+                        _MaxG     {_gr_prob_tg, ("Max G: " ), 10, -10, 30, "kcal/mol"},  _MinTm   {_gr_prob_tg, ("Tm: "  ), 30,  10 , 60,  RTunits::CUnit::grC },
+                        _MinG     {_gr_prob_ntg,("Min G: " ), 15, -10 , 30,"kcal/mol"},  _MaxTm   {_gr_prob_ntg,("Max Tm: "), 10, -10, 75, RTunits::CUnit::grC },
+                        _MinSelfG {_gr_probself,("Min G: " ), 10, -10 , 30,"kcal/mol"}, _MaxSelfTm{_gr_probself,("Max Tm: "), 10, -10, 75, RTunits::CUnit::grC },
                         numUpDw_MinTargCov{ _gr_find_prb, ("max."),   0.0, 0.0 , 100.0,"%" }, 
                         numUpDw_MaxTargCov{ _gr_find_prb, ("min."), 100.0, 0.0 , 100.0,"%" } ;
 
     nana::tooltip _Gmintt     {_Gmin, ("Only probes with stronger interaction with target (smaller G by selected Ta) will be included"    ) }
 		               /*,   _Gmax   {*this, (""), -1, -10, 10, "kcal/mol"}, 
-                             _Tmmin    {*this, ("Tm :"   ), 57,  40 , 60,u8"캜"      },  _Tmmax   {*this, (""), 63,  45, 75, u8"캜"      }, 
+                             _Tmmin    {*this, ("Tm :"   ), 57,  40 , 60,u8"째C"      },  _Tmmax   {*this, (""), 63,  45, 75, u8"째C"      }, 
                              _Lengthmin{*this, ("Length:"), 20,  15 , 35,"nt"      }, _Lengthmax{*this, (""), 35,  15, 40, "nt"      },
-                             _MaxG     {*this, ("Max G" ), 10, -10, 30, "kcal/mol" },  _MinTm   {*this, ("Tm :"  ), 30,  10 , 60,u8"캜"}, 
-                             _MinG     {*this, ("Min G" ), 15, -10 , 30,"kcal/mol" }, _MaxTm    {*this, ("Max Tm"), 10, -10, 75, u8"캜"}, 
-                             _MinSelfG {*this, ("Min G" ), 10, -10 , 30,"kcal/mol" }, _MaxSelfTm{*this, ("Max Tm"), 10, -10, 75, u8"캜"}, 	
+                             _MaxG     {*this, ("Max G" ), 10, -10, 30, "kcal/mol" },  _MinTm   {*this, ("Tm :"  ), 30,  10 , 60,u8"째C"}, 
+                             _MinG     {*this, ("Min G" ), 15, -10 , 30,"kcal/mol" }, _MaxTm    {*this, ("Max Tm"), 10, -10, 75, u8"째C"}, 
+                             _MinSelfG {*this, ("Min G" ), 10, -10 , 30,"kcal/mol" }, _MaxSelfTm{*this, ("Max Tm"), 10, -10, 75, u8"째C"}, 	
                              numUpDw_MinTargCov{ *this, ("Min. target coverage:"), 100.0, 0.0 , 100.0,"%" }, 
                              numUpDw_MaxTargCov{ *this, ("Max. target coverage:"),   0.0, 0.0 , 100.0,"%" }*/ ;
 
