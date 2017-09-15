@@ -28,8 +28,8 @@ SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         sch.header_splitter_area_before = 4;
         sch.header_splitter_area_after  = 4 ; 
 
-        auto& tree_sch = _list.scheme();
-        tree_sch.item_height_ex = 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
+        //auto& tree_sch = _list.scheme();
+        //tree_sch.item_height_ex = 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
         //tree_sch.item_height = tree_sch.text_height + tree_sch.item_height_ex;
 
         _statusbar.format(true).bgcolor(nana::colors::turquoise );
@@ -525,6 +525,9 @@ void SeqExpl::InitTree()
 
         _tree.find(("Target seq")).select(true);
         populate_list_recur(_Pr._cp._pSeqTree.get());
+
+		_list.auto_draw(true);
+		_tree.auto_draw(true);
 
     }
 

@@ -167,11 +167,10 @@ int main(int argc, char *argv[])
 	{
 		(nana::msgbox(this->handle(), "About ThDy Hybrid", nana::msgbox::button_t::ok) <<
 			R"(               Copyright (C) 2009-2016, Ariel Vina-Rodriguez (qPCR4vir)
-                     (  arielvina@yahoo.es, ariel.rodriguez@fli.de )
+                                  (  arielvina@yahoo.es  )
                                   http://qpcr4vir.github.io/
 
-   At INNT-FLI (part of a PhD thesis):
-   https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+   This work is mentioned in my PhD thesis at INNT-FLI.
 
    Program distributed under the GNU General Public License, see:
            http://www.gnu.org/licenses/
@@ -183,7 +182,7 @@ int main(int argc, char *argv[])
    ________________________________________________________________________________
    Powered by Nana C++ GUI library:  http://nanapro.org/en-us/
                                   Wiki:  https://github.com/qPCR4vir/nana-docs/wiki
-      Nana Version: 1.04 develop : https://github.com/qPCR4vir/nana/tree/develop
+      Nana Version: 1.5.5 hotfix : https://github.com/qPCR4vir/nana/tree/develop
          )") ();
 			;
 	});
