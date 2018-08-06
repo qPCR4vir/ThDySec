@@ -1,11 +1,12 @@
-MSVS12/ipch/
-*.cache
-*.suo
-bin/
+# This .gitignore was created by qPCR4vir
+
 
 #ignore thumbnails created by windows
 Thumbs.db
+
 #Ignore files build by Visual Studio
+MSVS12/ipch/
+*.cache
 *.obj
 *.pdb
 *.user
@@ -19,7 +20,6 @@ Thumbs.db
 *.tlb
 *.tlh
 *.bak
-*.cache
 *.ilk
 *.log
 [Bb]in
@@ -31,6 +31,7 @@ obj/
 _ReSharper*/
 [Tt]est[Rr]esult*
 .vs/
+*.VC.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -47,6 +48,8 @@ develop-eggs/
 dist/
 eggs/
 lib/
+bin/
+*.opendb
 lib64/
 parts/
 sdist/
@@ -55,3 +58,12 @@ var/
 .installed.cfg
 *.egg
 *.db
+
+
+# cmake bulids, CLion
+cmake-build*/
+.idea/
+
+# codelite
+.codelite/
+
