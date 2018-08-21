@@ -52,7 +52,7 @@ enum SaltCorrecP	{NoSMSelect=-1 , SMStLucia=0 , SMOwczarzy=1 }; ///< \todo Unifi
 
 enum AlignMeth		{TAMeth_Tm =0  , TAMeth_G    , TAMeth_Fract };
 
-enum class	 DNAstrand		{plus	, minus, direct	, rev	, compl, rev_compl	} ;
+enum class	 DNAstrand		{plus	, minus, direct	, rev	, complem, rev_compl	} ;
 extern char *DNAstrandName[];//	{""		, "(c)", ""		, "(r)"	, "(i)", "(c)"		} ; //defined in : sec.cpp: 
 
 enum  fileFormat   {fasta =1 , csv =1<<1, f2 =1<<2, f3 =1<<3} ; ///< for OUTPUT !!!! they can be combined with "OR" 
