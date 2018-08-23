@@ -96,8 +96,8 @@ class CInit_Cod_Deg
 
 extern	CInit_Cod_Deg Init_Cod_Deg;
 long	CountDegBases  ( const char *sec);
-Base    *Generate_DegSec( const char *sec, bool rev, bool compl, long l=0) ;// , long l=0) ;
-inline char *Generate_DegSec_char( const char *sec, bool rev, bool compl, long l=0){return (char *)Generate_DegSec(sec, rev,  compl,  l);};
+Base    *Generate_DegSec( const char *sec, bool rev, bool complem, long l=0) ;// , long l=0) ;
+inline char *Generate_DegSec_char( const char *sec, bool rev, bool complem, long l=0){return (char *)Generate_DegSec(sec, rev,  complem,  l);};
 
 }
 //class CBase	// inventar algo para lograr que las converciones sean automaticas: Base - char

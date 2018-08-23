@@ -171,12 +171,12 @@ long CountDegBases (const char *sec)
 	for (long i=0 ; sec[i] ; i++) if( is_degbase	[Base (sec[i])] ) cb++ ;
 	return cb;
 }
-Base *Generate_DegSec( const char *sec, bool rev, bool compl, long l/*=0*/)  
+Base *Generate_DegSec( const char *sec, bool rev, bool complem, long l/*=0*/)
 {	if ( ! l ) l=CountDegBases (sec);
 	Base *DegSec=new Base[l+1], b;			 DegSec[l]=0 ;
-	if (rev && compl) { for(long p=l-1, i=0;  b=Base (sec[i]) ;  i++)	if (b=is_degbase[b]) DegSec[p--]=c_degbase[b]; return DegSec;	}
+	if (rev && complem) { for(long p=l-1, i=0;  b=Base (sec[i]) ;  i++)	if (b=is_degbase[b]) DegSec[p--]=c_degbase[b]; return DegSec;	}
 	if (rev         ) { for(long p=l-1, i=0;  b=Base (sec[i]) ;  i++)	if (b=is_degbase[b]) DegSec[p--]=          b ; return DegSec;	}
-	if (       compl) { for(long p=0,   i=0;  b=Base (sec[i]) ;  i++)	if (b=is_degbase[b]) DegSec[p++]=c_degbase[b]; return DegSec;	}
+	if (       complem) { for(long p=0,   i=0;  b=Base (sec[i]) ;  i++)	if (b=is_degbase[b]) DegSec[p++]=c_degbase[b]; return DegSec;	}
                         for(long p=0,   i=0;  b=Base (sec[i]) ;  i++)	if (b=is_degbase[b]) DegSec[p++]=          b ; return DegSec;	
 }
 

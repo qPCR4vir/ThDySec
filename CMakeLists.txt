@@ -117,7 +117,7 @@ elseif (NANA_CMAKE_FIND_BOOST_FILESYSTEM OR NANA_CMAKE_BOOST_FILESYSTEM_FORCE)
     endif (Boost_FOUND)
     set(Boost_USE_STATIC_LIBS ON)
     set(Boost_USE_STATIC_RUNTIME ON)  # ??
-endif (NANA_CMAKE_NANA_FILESYSTEM_FORCE)
+endif (1) #NANA_CMAKE_NANA_FILESYSTEM_FORCE)
 
 
 ######## Nana options
@@ -209,15 +209,14 @@ message("nana_include= " ${nana_include})
 
 
 
-add_executable(${PROJECT_NAME}
-        ../ExtLib/nana.ext/src/CompoWidget.cpp
-        ../ExtLib/nana.ext/src/EditableForm.cpp
-        ../ExtLib/nana.ext/src/EditLayot_Form_Demo.cpp
-        ../ExtLib/nana.ext/src/number.cpp
-
+add_executable(    ${PROJECT_NAME}
         ../ProgParam/src/init_prog_param.cpp
         ../ProgParam/src/ParamGUIBind.cpp
         ../ProgParam/src/Units.cpp
+
+        ../ExtLib/nana.ext/src/CompoWidget.cpp
+        ../ExtLib/nana.ext/src/EditableForm.cpp
+        ../ExtLib/nana.ext/src/number.cpp
 
         src/ThDySec/cod_deg.cpp
         src/ThDySec/sec.cpp
