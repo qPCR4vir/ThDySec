@@ -21,7 +21,7 @@ SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
           CompoWidget     (tdForm, ("Seq Explorer"), ("SeqExpl.lay.txt"))
     {
         auto& sch = _list.scheme();
-        sch.header_height = 20;
+		sch.header_padding_bottom = sch.header_padding_top = 1;//sch.header_height = 20;
         sch.text_margin   = 2;
         sch.item_height_ex= 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
         //sch.item_height   = sch.text_height + sch.item_height_ex;
