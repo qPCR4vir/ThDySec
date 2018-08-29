@@ -21,6 +21,8 @@
 #include <nana/gui/widgets/treebox.hpp>
 #include <nana/gui/widgets/listbox.hpp>
 #include <nana/gui/tooltip.hpp>
+#include <nana/gui/widgets/toolbar.hpp>
+
 
 
 class ThDyNanaForm ;
@@ -35,6 +37,7 @@ class SeqExpl : public CompoWidget
     ThDyNanaForm       &_Pr;
     Tree                _tree{ *this };
     List                _list{ *this };
+	nana::toolbar       _tbar{ *this };
     bool				_showAllseq{true}, _showFiltered{true};
     std::vector<CSec*>      _dragSec;
     std::vector<CMultSec*>  _dragMSec;

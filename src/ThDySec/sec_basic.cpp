@@ -58,7 +58,7 @@ std::string CSecBasInfo::Copy_Seq  	(long InicBase,
 		switch (strnd)
 		{	case DNAstrand::plus :
 			case DNAstrand::direct:		for(long p=InicBase;  p<=EndBase;    p++) 	SecHier += _c[p] ;  		    break;
-			case DNAstrand::compl:		for(long p=InicBase;  p<=EndBase;    p++) 	SecHier += c_degbase[_c[p]];   	break;
+			case DNAstrand::complem:	for(long p=InicBase;  p<=EndBase;    p++) 	SecHier += c_degbase[_c[p]];   	break;
 			case DNAstrand::rev:		for(long p=EndBase ;  p>=InicBase;   p--)	SecHier += _c[p] ;  		    break;
 			case DNAstrand::minus:
 			case DNAstrand::rev_compl:	for(long p=EndBase ;  p>=InicBase;   p--)	SecHier += c_degbase[_c[p]];   	break;
