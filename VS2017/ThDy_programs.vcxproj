@@ -66,7 +66,7 @@
     <ProjectGuid>{81368A1D-39A6-41E2-9294-777D2F94D0F5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>nana</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
