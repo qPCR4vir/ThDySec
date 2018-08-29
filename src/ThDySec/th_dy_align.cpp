@@ -917,7 +917,7 @@ std::cout << "\n EXPORTING...";
                 if ( (colpased || !ExtrCov.isIntern (matchs) ) && CandSet.insert(s._Sec.Copy_Seq(pi, fi)).second )
                 {    
                     cand  .reset(s._Sec.Clone(pi, fi, DNAstrand::direct)); // (cur_s  , 1,"s", _TDATmC->_NNpar);     
-                    c_cand.reset(s._Sec.Clone(pi, fi, DNAstrand::compl ));   
+                    c_cand.reset(s._Sec.Clone(pi, fi, DNAstrand::complem ));   
                     
                     fAl.Align(cand.get(), c_cand.get() );
                     ++Num;

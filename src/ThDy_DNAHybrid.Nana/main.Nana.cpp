@@ -175,7 +175,7 @@ int main(int argc, char *argv[])
    Program distributed under the GNU General Public License, see:
            http://www.gnu.org/licenses/
 
-   Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.01.02
+   Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.01.03
 
    Downloads and source code: https://github.com/qPCR4vir/ThDySec
                        Wiki: https://github.com/qPCR4vir/ThDySec/wiki
