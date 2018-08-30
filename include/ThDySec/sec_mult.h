@@ -22,7 +22,11 @@
 #include <string>
 #include <memory>
 #include <vector>
-#include <filesystem>
+#ifdef BOOST_FILESYSTEM_FORCE
+#  include <nana/filesystem/filesystem_ext.hpp>
+#else
+#  include <filesystem>
+#endif
 #include <list>
 
 
