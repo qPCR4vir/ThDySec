@@ -30,7 +30,6 @@ using namespace std ;
 #include "ThDySec/common.h" 
 using namespace DegCod;
 
-char *DNAstrandName[]=	{""		, "(c)", ""		, "(r)"	, "(i)", "(c)"		} ;
 // enum DNAstrand		{plus	, minus, direct	, rev	, compl, rev_compl	} ;
 
 CSecBasInfo::~CSecBasInfo()
