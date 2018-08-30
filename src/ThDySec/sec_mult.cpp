@@ -29,8 +29,8 @@
 
 //using namespace std ; 
 
-#include "ThDySec/sec_mult.h"
-#include "ThDySec/common.h" 
+#include <ThDySec/sec_mult.h>
+#include <ThDySec/common.h>
 using namespace DegCod;
 using namespace std;   // temp
 

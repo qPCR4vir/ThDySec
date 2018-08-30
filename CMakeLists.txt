@@ -94,7 +94,7 @@ endif ()
 
 
 # Find/Select filesystem
-if (1) #NANA_CMAKE_NANA_FILESYSTEM_FORCE)
+if (NANA_CMAKE_NANA_FILESYSTEM_FORCE) #NANA_CMAKE_NANA_FILESYSTEM_FORCE)
     add_definitions(-DNANA_FILESYSTEM_FORCE)
 elseif (NANA_CMAKE_STD_FILESYSTEM_FORCE)
     add_definitions(-DSTD_FILESYSTEM_FORCE)
@@ -117,7 +117,7 @@ elseif (NANA_CMAKE_FIND_BOOST_FILESYSTEM OR NANA_CMAKE_BOOST_FILESYSTEM_FORCE)
     endif (Boost_FOUND)
     set(Boost_USE_STATIC_LIBS ON)
     set(Boost_USE_STATIC_RUNTIME ON)  # ??
-endif (1) #NANA_CMAKE_NANA_FILESYSTEM_FORCE)
+endif (NANA_CMAKE_NANA_FILESYSTEM_FORCE) #NANA_CMAKE_NANA_FILESYSTEM_FORCE)
 
 
 ######## Nana options
@@ -242,6 +242,10 @@ add_executable(    ${PROJECT_NAME}
         src/ThDy_DNAHybrid.Nana/uArray.cpp
 
         )
+
+include_directories(include)
+include_directories(../ProgParam/include)
+
 
 set_property( TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 14 )
 #target_include_directories(${PROJECT_NAME} PUBLIC src)
