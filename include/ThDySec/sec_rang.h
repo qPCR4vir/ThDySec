@@ -179,7 +179,7 @@ class CRang : public CRangBase// ---------------------------------------   CRang
 	CRang (long i,long f) : CRangBase ( i, f),	 matchs(length()+1)    
         { } 
 
-    CRang (CRangBase  &R) : CRangBase ( R ),	 matchs(length()+1)    
+    CRang (const CRangBase  &R) : CRangBase ( R ),	 matchs(length()+1)
         { } 
 
     void  IncrMatchs() 

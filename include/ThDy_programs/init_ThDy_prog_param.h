@@ -522,10 +522,10 @@ class CProgParam_TmCalc : public CProgParam_MultiplexPCR
 	void	Set_AlignedSec		 (const std::string& Sec){_AlignedSec      =Sec	;	  }
 	void	Set_AlignedSec2Align (const std::string& Sec){_AlignedSec2Align=Sec ;     }
 
-	void	Update_Sec			(bool rev, bool compl)	{ Set_Sec      ( Generate_DegSec_char( _Sec.get().c_str(),	     rev, compl)  ); }
-	void	Update_Sec_Sec2Align(bool rev, bool compl)	{ Set_Sec2Align( Generate_DegSec_char( _Sec.get().c_str(),	     rev, compl)  ); }
-	void	Update_Sec2Align	(bool rev, bool compl)	{ Set_Sec2Align( Generate_DegSec_char( _Sec2Align.get().c_str(), rev, compl)  ); }
-	void	Update_Sec2Align_Sec(bool rev, bool compl)	{ Set_Sec	   ( Generate_DegSec_char( _Sec2Align.get().c_str(), rev, compl)  ); }
+	void	Update_Sec			(bool rev, bool complem)	{ Set_Sec      ( Generate_DegSec_char( _Sec.get().c_str(),	     rev, complem)  ); }
+	void	Update_Sec_Sec2Align(bool rev, bool complem)	{ Set_Sec2Align( Generate_DegSec_char( _Sec.get().c_str(),	     rev, complem)  ); }
+	void	Update_Sec2Align	(bool rev, bool complem)	{ Set_Sec2Align( Generate_DegSec_char( _Sec2Align.get().c_str(), rev, complem)  ); }
+	void	Update_Sec2Align_Sec(bool rev, bool complem)	{ Set_Sec	   ( Generate_DegSec_char( _Sec2Align.get().c_str(), rev, complem)  ); }
 
 	~CProgParam_TmCalc(){}
 	int		Run		()
