@@ -993,6 +993,8 @@ ofstream &operator<<(ofstream &stream, FracTDAlign &FrAl)
     stream    << FrAl.IterationNum();//
     return stream;
 }
+
+#ifdef USE_print_Tm
 void print_Tm        (ofstream &osTm, CMultSec    &pr, int MaxGrDeg=-1, char sep[]=";" )
 //void print_Tm (ofstream &osTm, CMultSec    &pr, int MaxGrDeg, char sep[])
 {    
@@ -1011,11 +1013,12 @@ void print_Tm        (ofstream &osTm, CMultSec    &pr, int MaxGrDeg=-1, char sep
         //            ) , 1 ) ) ;
     }
 }
+#endif
 
 void    ThDyAlign::Export_DPMz_Tm(ofstream &osDP_mz, char *sep)
 {    
-    register long  i_1,  i,   j_1,  j ;        // las posiciones
-    register Base  a_1,  a,   b_1,  b ;        // las bases en esas posiciones ?? exactamente como ?? de la pos anterior?
+    long  i_1,  i,   j_1,  j ;        // las posiciones
+    Base  a_1,  a,   b_1,  b ;        // las bases en esas posiciones ?? exactamente como ?? de la pos anterior?
 //    register float S0, S1, S2, H0, H1, H2 ;
     long ls = _sd->Len() + 2 , lt = _tg->Len() + 2 ;    // ponerlo como miembro ??  incluye 2x'$'
     float forbidden_enthalpy = _NNpar->forbidden_enthalpy,
