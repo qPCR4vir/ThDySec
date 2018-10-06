@@ -397,7 +397,7 @@ void SeqExpl::MakeResponive()
                     .events().click([this]() { ShowFiltered( _show_filt_s.pushed());  });
     }
 
-SeqExpl::Node SeqExpl::Replace      (Tree::item_proxy& tn, CMultSec *ms, const std::string& Path, bool all_in_dir)
+SeqExpl::Node SeqExpl::Replace      (Tree::item_proxy tn, CMultSec *ms, const std::string& Path, bool all_in_dir)
 {        
 try{ 
         Tree::item_proxy   own = tn->owner();
