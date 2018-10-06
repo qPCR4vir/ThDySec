@@ -195,7 +195,7 @@ CSec::CSec (    const std::string&  sec,
 		_SdS.reserve(fltr_len +1)   ;  /// initialized _SdS= std::vector<Entropy>{ _NNpar->GetInitialEntropy()};	
 		_SdH.reserve(fltr_len +1)   ;
 
-		register Base a_1, a;
+		Base a_1, a;
 		for (a=0; a<n_dgba; a++)	_Count[a]=0 ;
 
 		//_c  .push_back( basek[n_basek-1] ); // '$' principio y fin de Kadelari.=" TGCA$"   in fltr_pos=0   ??
