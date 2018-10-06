@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 project(ThDy_DNAHybrid VERSION      0.02.00
         DESCRIPTION "Thermo Dynamic DNA Hybridizations"
         HOMEPAGE_URL https://github.com/qPCR4vir/ThDySec
@@ -9,7 +9,7 @@ project(ThDy_DNAHybrid VERSION      0.02.00
 add_executable(   ThDy_DNAHybrid)
 
 target_include_directories(ThDy_DNAHybrid PUBLIC include)
-target_compile_features   (ThDy_DNAHybrid PUBLIC cxx_std_14)
+target_compile_features   (ThDy_DNAHybrid PUBLIC cxx_std_17)
 target_sources            (ThDy_DNAHybrid PRIVATE
         src/ThDySec/cod_deg.cpp
         src/ThDySec/sec.cpp
@@ -35,14 +35,17 @@ target_sources            (ThDy_DNAHybrid PRIVATE
         src/ThDy_DNAHybrid.Nana/uArray.cpp)
 
 
-include(../ExtLib/nana.ext/CMakeLists.txt)
+add_subdirectory(../ExtLib/nana.ext  ../ExtLib/cmake-nana_ext-build-${CMAKE_BUILD_TYPE} )
 target_link_libraries(ThDy_DNAHybrid PRIVATE nana_ext )
 
 
 install(TARGETS ThDy_DNAHybrid RUNTIME DESTINATION "ThDy")
 
-include(CMakePrintHelpers)
-cmake_print_properties(TARGETS ThDy_DNAHybrid  PROPERTIES
-        COMPILE_DEFINITIONS   COMPILE_OPTIONS    COMPILE_FLAGS  LINK_LIBRARIES
-        INCLUDE_DIRECTORIES   INSTALL_NAME_DIR   LINK_FLAGS     VERSION)
+if (NANA_CMAKE_VERBOSE_PREPROCESSOR)
 
+    include(CMakePrintHelpers)
+    cmake_print_properties(TARGETS ThDy_DNAHybrid  PROPERTIES
+            COMPILE_DEFINITIONS   COMPILE_OPTIONS    COMPILE_FLAGS  LINK_LIBRARIES
+            INCLUDE_DIRECTORIES   INSTALL_NAME_DIR   LINK_FLAGS     VERSION)
+
+endif()
