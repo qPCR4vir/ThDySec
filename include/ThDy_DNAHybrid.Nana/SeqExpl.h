@@ -72,7 +72,7 @@ class SeqExpl : public CompoWidget
     void AsignWidgetToFields() override;
     void MakeResponive();
 
-    Node &Refresh(Tree::item_proxy& node)
+    Node Refresh(Tree::item_proxy node)
     {
             _tree.auto_draw(false);
 
@@ -84,7 +84,7 @@ class SeqExpl : public CompoWidget
             return node;
     }
     void RefreshList(                      ) { RefreshList(_tree.selected());         }
-    void RefreshList(Tree::item_proxy& node) { RefreshList( node.value<CMultSec*>()); }
+    void RefreshList(const Tree::item_proxy node) { RefreshList( node.value<CMultSec*>()); }
     void RefreshList(CMultSec*ms)
     {
             _list.auto_draw(false);
@@ -95,7 +95,7 @@ class SeqExpl : public CompoWidget
             _list.auto_draw(true);
 			RefreshStatusInfo(ms);
     }
-    void populate_list_recur(Tree::item_proxy& node)
+    void populate_list_recur(Tree::item_proxy node)
     {
         populate_list_recur(node.value<CMultSec*>()); // msec(node)  );
     }
@@ -127,16 +127,16 @@ class SeqExpl : public CompoWidget
         std::string name = ms->_name;
         return _tree.insert(name, name).value(ms).check(ms->Selected());
     }
-    bool isRoot(Node &node)
+    bool isRoot(const Node &node)
     {
         return node.level() == 1;
     }
- static Node appendNewNode(Node &node, CMultSec*ms) /// Add a new node to the child of node.
+ static Node appendNewNode(Node node, CMultSec*ms) /// Add a new node to the child of node.
     {
         std::string name = ms->_name;
         return node->append(name, name, ms).check(ms->Selected());
     }
-    Node &populate     (Node &node)  /// crea y add to the child of node un nodo nuevo por cada seq in ms. Asume el nodo estaba vacio
+    Node populate     ( Node node)  /// crea y add to the child of node un nodo nuevo por cada seq in ms. Asume el nodo estaba vacio
     {
         while(node.size()) 
             _tree.erase(node.child());
@@ -147,10 +147,10 @@ class SeqExpl : public CompoWidget
         return node;
     }
 
-    Node AddNewSeqGr  (Tree::item_proxy& node) ;
+    Node AddNewSeqGr  (Tree::item_proxy node) ;
     Node AddMSeqFiles (const std::string &file, bool  all_in_dir) ;
-    Node Replace      (Tree::item_proxy& tn, CMultSec *ms, const std::string& Path, bool all_in_dir);
-    Node ReloadDir    (Tree::item_proxy& tn)
+    Node  Replace    (Tree::item_proxy tn, CMultSec *ms, const std::string& Path, bool all_in_dir);
+    Node ReloadDir    (Tree::item_proxy tn)
     {            
         CMultSec *ms = tn.value<CMultSec*>();
         if (ms->_Path.empty()) 
@@ -161,7 +161,7 @@ class SeqExpl : public CompoWidget
         }
         else return Refresh(Replace(tn, ms, ms->_Path,true)).expand(true).select(true);//true
     }
-    Node ReloadFile   (Tree::item_proxy& tn)
+    Node ReloadFile   (Tree::item_proxy tn)
     {            
         CMultSec *ms = tn.value<CMultSec*>();
         if (ms->_Path.empty())  

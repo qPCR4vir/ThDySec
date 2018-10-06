@@ -57,7 +57,7 @@ SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         _list.auto_draw(true);
     }
 
-SeqExpl::Node SeqExpl::AddNewSeqGr  (Tree::item_proxy& node) 
+SeqExpl::Node SeqExpl::AddNewSeqGr  (Tree::item_proxy node)
         {    try{    
                     return appendNewNode(node, _Pr._cp.AddSeqGroup(node.value<CMultSec*>(),"New group")).expand(true);
                 }
