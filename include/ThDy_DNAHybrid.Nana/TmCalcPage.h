@@ -153,27 +153,27 @@ public:
     void Copy()
     {
         //_Pr._TmCal._Sec.CopyTrim (std::string(nana::charset (   sec_.caption ())).c_str() );
-         bool rev  =  chkBx_copy_rev.checked(), compl=  chkBx_copy_compl.checked() ;	
+         bool rev {chkBx_copy_rev.checked()}, complem { chkBx_copy_compl.checked()} ;
 
-		_Pr._TmCal.Update_Sec_Sec2Align	(rev, compl) ;
+		_Pr._TmCal.Update_Sec_Sec2Align	(rev, complem) ;
 
         //sec2align_.caption (nana::charset (_Pr._TmCal._Sec2Align.Get() ));
     }
     void Self()
     {
         //_Pr._TmCal._Sec.CopyTrim (std::string(nana::charset (  sec_.caption ())).c_str() );
-         bool rev  =  chkBx_copy_rev.checked(), compl=  chkBx_copy_compl.checked() ;	
+         bool rev  =  chkBx_copy_rev.checked(), complem=  chkBx_copy_compl.checked() ;
 
-		_Pr._TmCal.Update_Sec	(rev, compl) ;
+		_Pr._TmCal.Update_Sec	(rev, complem) ;
 
         //sec_.caption (nana::charset (_Pr._TmCal._Sec   .Get() ));
     }
     void Rev()
     {
         //_Pr._TmCal._Sec2Align.CopyTrim (std::string(nana::charset (  sec2align_.caption ())).c_str() );
-         bool rev  =  chkBx_copy_rev.checked(), compl=  chkBx_copy_compl.checked() ;	
+         bool rev  =  chkBx_copy_rev.checked(), complem=  chkBx_copy_compl.checked() ;
 
-		_Pr._TmCal.Update_Sec2Align	(rev, compl) ;
+		_Pr._TmCal.Update_Sec2Align	(rev, complem) ;
 
         //sec2align_.caption (nana::charset (_Pr._TmCal._Sec2Align  .Get() ));
     }
