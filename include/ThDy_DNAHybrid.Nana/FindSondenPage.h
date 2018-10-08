@@ -1,6 +1,5 @@
 /**
-* Copyright (C) 2009-2017, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institute-of-novel-and-emerging-infectious-diseases-innt/scientists/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @autor Ariel Vina-Rodriguez (qPCR4vir)
@@ -37,11 +36,11 @@ class FindSondenPage : public CompoWidget
                         _gr_probself{*this, ("<bold=true> Probe-self: </>"      ), true};
 
     nana::NumUnitUpDown _Gmin     {_gr_probes, ("G : "    ), -5, -10 , 10, "kcal/mol"},   _Gmax   {_gr_probes,  (""), -1, -10, 10,   "kcal/mol"}, 
-                        _Tmmin    {_gr_probes, ("Tm : "   ), 57,  40 , 60,  RTunits::CUnit::grC },  _Tmmax   {_gr_probes,  (""), 63,  45, 75,   RTunits::CUnit::grC },
+                        _Tmmin    {_gr_probes, ("Tm : "   ), 57,  40 , 60,  RTunits::grC },  _Tmmax   {_gr_probes,  (""), 63,  45, 75,   RTunits::grC },
                         _Lengthmin{_gr_probes, ("Length: "), 20,  15 , 35,  "nt"     }, _Lengthmax{_gr_probes,  (""), 35,  15, 40,   "nt"      },
-                        _MaxG     {_gr_prob_tg, ("Max G: " ), 10, -10, 30, "kcal/mol"},  _MinTm   {_gr_prob_tg, ("Tm: "  ), 30,  10 , 60,  RTunits::CUnit::grC },
-                        _MinG     {_gr_prob_ntg,("Min G: " ), 15, -10 , 30,"kcal/mol"},  _MaxTm   {_gr_prob_ntg,("Max Tm: "), 10, -10, 75, RTunits::CUnit::grC },
-                        _MinSelfG {_gr_probself,("Min G: " ), 10, -10 , 30,"kcal/mol"}, _MaxSelfTm{_gr_probself,("Max Tm: "), 10, -10, 75, RTunits::CUnit::grC },
+                        _MaxG     {_gr_prob_tg, ("Max G: " ), 10, -10, 30, "kcal/mol"},  _MinTm   {_gr_prob_tg, ("Tm: "  ), 30,  10 , 60,  RTunits::grC },
+                        _MinG     {_gr_prob_ntg,("Min G: " ), 15, -10 , 30,"kcal/mol"},  _MaxTm   {_gr_prob_ntg,("Max Tm: "), 10, -10, 75, RTunits::grC },
+                        _MinSelfG {_gr_probself,("Min G: " ), 10, -10 , 30,"kcal/mol"}, _MaxSelfTm{_gr_probself,("Max Tm: "), 10, -10, 75, RTunits::grC },
                         numUpDw_MinTargCov{ _gr_find_prb, ("max."),   0.0, 0.0 , 100.0,"%" }, 
                         numUpDw_MaxTargCov{ _gr_find_prb, ("min."), 100.0, 0.0 , 100.0,"%" } ;
 

@@ -41,7 +41,7 @@ SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         _list.checkable(true);
         _list.append_header(("Name")  , 120);     // col 0: name  
         _list.append_header(("Length"), 50);      // col 1: len
-        _list.append_header((u8"Tm °C") , 60);      //case 2: Tm 
+        _list.append_header((u8"Tm ï¿½C") , 60);      //case 2: Tm 
         _list.append_header(("Deg")   , 50);      // case 3: deg   
         _list.append_header(("Description")   , 220);   // case 4: descr  
         _list.append_header(("Beg"), 50);         // case 5: beg in aln 
@@ -101,7 +101,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             auto tn= _tree.selected();
             if (isRoot(tn))
             {
-                nana::msgbox ( ("Sorry, you can´t replace group " + tn.text()) ).show() ;
+                nana::msgbox ( ("Sorry, you canï¿½t replace group " + tn.text()) ).show() ;
                 return;
             }
             nana::filebox  fb{ *this, true };
@@ -127,7 +127,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             auto tn= _tree.selected();
             if (tn->owner()->owner().empty())
             {
-                nana::msgbox ( ("Sorry, you can´t replace group " + tn->text()) ) ;
+                nana::msgbox ( ("Sorry, you canï¿½t replace group " + tn->text()) ) ;
                 return;
             }
             nana::filebox  fb{ *this, true };
@@ -304,7 +304,7 @@ void SeqExpl::MakeResponive()
             if (tn->owner()->owner().empty())    //   ???  if( tn->level() < 2 );
             {
                 (nana::msgbox ( _tree , ("Cut a group of sequences " + tn->text()) )
-                          << ("Sorry, you can´t cut the group: ") + tn->text() )
+                          << ("Sorry, you canï¿½t cut the group: ") + tn->text() )
                           .icon(nana::msgbox::icon_error )
                           .show() ;
                 return;
@@ -336,7 +336,7 @@ void SeqExpl::MakeResponive()
             if (tn->owner()->owner().empty())
             {
                 (nana::msgbox ( _tree , ("Deleting a group of sequences " + tn->text()) )
-                          << ("Sorry, you can´t delete the group: ") + tn->text() )
+                          << ("Sorry, you canï¿½t delete the group: ") + tn->text() )
                           .icon(nana::msgbox::icon_error )
                           .show() ;
                 return;
@@ -542,7 +542,7 @@ List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
          <<  val  ;                                              // col 1: len
 
     Temperature t=KtoC( sec->NonDegSet() ? sec->NonDegSet()->_Local._Tm.Ave() : sec->_Tm.Ave());
-    snprintf(val,blen, (u8"% *.*f °C"), 6, 1,   t );
+    snprintf(val,blen, (u8"% *.*f ï¿½C"), 6, 1,   t );
     Temperature min=57.0, max=63.0;
     double fade_rate=  t<min? 0.0 : t>max? 1.0 : (t-min)/(max-min);
     nana::color tc{static_cast<nana::color_rgb>(0xFFFFFFFF)} , 

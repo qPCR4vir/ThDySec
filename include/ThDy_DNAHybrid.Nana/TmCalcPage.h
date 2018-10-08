@@ -104,7 +104,7 @@ public:
 		_place.field("Firma") << e_mail_firma;
 
 
-	    interaction["Table" ]<< ""          << "   min-" << u8"Tm(°C)"   << "-max"  << "   min-"  << "G(kJ)"    << "-max   "
+	    interaction["Table" ]<< ""          << "   min-" << u8"Tm(ï¿½C)"   << "-max"  << "   min-"  << "G(kJ)"    << "-max   "
 	                         << "Up"        << Tm_min_Up << Tm_Up        << Tm_max_Up<<G_min_Up   <<  G_Up      <<  G_max_Up   
 	                         << "Down"      << Tm_min_Dw << Tm_Dw        << Tm_max_Dw<<G_min_Dw   <<  G_Dw      <<  G_max_Dw   
 	                         << "Interact"  << Tm_min_In << Tm_In        << Tm_max_In<<G_min_In   <<  G_In      <<  G_max_In  ;
