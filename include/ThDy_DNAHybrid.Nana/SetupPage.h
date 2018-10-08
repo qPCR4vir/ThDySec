@@ -22,6 +22,7 @@
 #include <../../nana.ext/include/EditableForm.hpp>
 #include <../../nana.ext/include/number.hpp>
 #include "../../nana.ext/include/nanaBind.hpp"
+#include <Units.hpp>
 
 #include <nana/gui/widgets/group.hpp>
 //#include <nana/gui/widgets/progress.hpp>
@@ -78,8 +79,8 @@ class SetupPage : public CompoWidget
                         comBoxTAMeth        { _gr_salt};
     nana::NumUnitUpDown numUpDowTgConc      { _gr_salt, ("Target Conctr:"      ), 50, 0.1    , 1000000,  "nM"}, 
                         numUpDowSalConc     { _gr_salt, ("Salt Conc [Cations]:"), 50, 0.0001 , 10000,    "mM"} , 
-                        numUpDowTa          { _gr_salt, ("Temp. Anneling:"     ), 55, 40     , 75,       u8"°C"},
-                        numUpDowSdConc      { _gr_salt, ("Sonde Conctr:"       ), 0.8, 0.001 , 1000,     u8"µM"}  ;
+                        numUpDowTa          { _gr_salt, ("Temp. Anneling:"     ), 55, 40     , 75,       RTunits::grC},
+                        numUpDowSdConc      { _gr_salt, ("Sonde Conctr:"       ), 0.8, 0.001 , 1000,     RTunits::uM}  ;
 
     nana::button        _set_def_proj       { *this,("Set as Def. project") },
                         _load_def_proj      { *this,("ReLoad Def. project") };
