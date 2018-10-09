@@ -29,6 +29,15 @@ class ThDyNanaForm ;
  
 using List = nana::listbox;
 
+inline std::string temperature_to_string(Temperature t)
+{
+	int w = 10;  // -250,0 �C
+	std::string s(w, 0);
+
+	std::snprintf(&s[0], w + 1, (u8"% *.*f \u00B0C"), w - 4, 1, KtoC(t));
+	return s;
+}
+
 class SeqExpl : public CompoWidget
 {
     using Tree = nana::treebox;
@@ -190,14 +199,7 @@ class SeqExpl : public CompoWidget
         _list.auto_draw(true);
     }
 	void RefreshStatusInfo(CMultSec *ms);
-	std::string temperature_to_string(Temperature t)
-	{
-		int w = 10;  // -250,0 �C
-		std::string s(w, 0);
 
-		std::snprintf( &s[0],  w+1, (u8"% *.*f \u00B5C"), w-4, 1, KtoC(t) );
-		return s;
-	}
 
 public:
     SeqExpl(ThDyNanaForm& tdForm);
