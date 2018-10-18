@@ -1,0 +1,84 @@
+>E9391_f     Lambert et al. 2003. EEEV. 9391-9411 (s)
+ACACCGCACCCTGATTTTACA
+
+>E9459c_r    Lambert et al. 2003. EEEV. 9459-9439 (as)
+CTTCCAAGTGACCTGGTCGTC
+
+>E9414_p     Lambert et al. 2003. EEEV. 9414-9434 (s)
+TGCACCCGGACCATCCGACCT
+
+
+
+>W10248_f    Lambert et al. 2003. WEEV. 10248-10267 (s)
+CTGAAAGTCGGCCTGCGTAT
+
+>W10314c_r   Lambert et al. 2003. WEEV. 10314-10295 (as)
+CGCCATTGACGAACGTATCC
+
+>W10271_p    Lambert et al. 2003. WEEV. 10271-10293 (s)
+ATACGGCAATACCACCGCGCACC
+
+
+
+
+>A_VIR966_f   Vina-Rodriguez et al. 2015. Modif Eshoo. PanAlpha  (58-62°C)
+TCCATGCTAATGCYAGAGCGTTTTCGCA
+
+>V_p          Vina-Rodriguez et al. 2015. Modif Eshoo. VEEV      (25-63°C)
+TGATCGARACGGAGGTRGAMCCATCC
+
+>A_VIR966.R   Vina-Rodriguez et al. 2015. Modif Eshoo. PanAlpha  (28-49°C)
+TGGCGCACTTCCAATGTCHAGGAT
+
+>A_VIR966.Rc   Vina-Rodriguez et al. 2015. Modif Eshoo. PanAlpha (28-49°C)
+ATCCTDGACATTGGAAGTGCGCCA
+
+
+
+>VIR966-F	Eshoo. PanAlpha   (54-62°c)
+TCCATGCTAATGCTAGAGCGTTTTCGCA
+
+>VIR966.R	Eshoo. PanAlpha   (23-45°C)	
+ATCCTGGACATTGGAAGTGCGCCA
+
+>VIR966.R_c	Eshoo. PanAlpha   (23-45°C) 	
+TGGCGCACTTCCAATGTCCAGGAT
+
+
+>V_TC83_f Julander 2008. 7931–8005 nt  (0-55°C) 
+TCTGACAAGACGTTCCCAATCA
+
+>V_TC83_p Julander 2008. 7931–8005 nt  (0-62°C) 
+TGTTGGAAGGGAAGATAAACGGCTACGC
+
+>V_TC83_r Julander 2008. 7931–8005 nt  (0-45°C) 
+GAATAACTTCCCTCCGACCACA
+
+
+
+>Vn_f                        (55-64°C)
+ATGCTAAYGCYAGAGCGTTTTCGCA
+
+>Vn_r                        (47-63°C)
+GGCGCACTTCCAATGTCHARGATCGT
+
+
+>V_f                         (56-66°C)
+CCATGCTAAYGCYAGAGCGTTTTCGCA
+
+>V_r                         (51-63°C)
+ACGATYCTWGACATWGGAAGTGCGCC
+
+
+>f.116                       (51-61°C)
+CCATGCTAAYGCYAGAGCGTTTT
+
+
+>r.118_c                     (38-56°C)
+CACTTCCWATGTCWAGRATCGT
+
+
+
+
+
+
