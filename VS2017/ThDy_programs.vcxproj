@@ -211,18 +211,42 @@
     <Import Project="..\PropertySheet\AddThDySecLib.PropertySheet.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MTd|Win32'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MDd|Win32'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MTd|x64'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MDd|x64'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MTr|Win32'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MDr|Win32'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MTr|x64'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MDr|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MTd|Win32'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MDd|Win32'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MTd|x64'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MDd|x64'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MTr|Win32'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MDr|Win32'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MTr|x64'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MDr|x64'">
+    <IncludePath>..\..\ExtLib\nana\include;..\..\ProgParam\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>

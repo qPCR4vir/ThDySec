@@ -53,9 +53,9 @@ enum SaltCorrecP	{NoSMSelect=-1 , SMStLucia=0 , SMOwczarzy=1 }; ///< \todo Unifi
 enum AlignMeth		{TAMeth_Tm =0  , TAMeth_G    , TAMeth_Fract };
 
 enum class	 DNAstrand		{plus	, minus, direct	, rev	, complem, rev_compl	} ;
-extern char *DNAstrandName[];//	{""		, "(c)", ""		, "(r)"	, "(i)", "(c)"		} ; //defined in : sec.cpp: 
+constexpr const char *DNAstrandName[]=	{""		, "(c)", ""		, "(r)"	, "(i)", "(c)"		} ;
 
-enum  fileFormat   {fasta =1 , csv =1<<1, f2 =1<<2, f3 =1<<3} ; ///< for OUTPUT !!!! they can be combined with "OR" 
+enum  fileFormat   {fasta =1 , csv =1u<<1, f2 =1u<<2, f3 =1u<<3} ; ///< for OUTPUT !!!! they can be combined with "OR"
 
 
 struct TmGPos 
@@ -68,8 +68,7 @@ struct TmGPos
         :_Tm(Tm), _G(G), _Pos(Pos) 
     {}
 
-	TmGPos() 
-    {} 
+	TmGPos() = default ;
 };
 
 extern const 	EnergyRang		G_def  ;	//  G_def (-5,-1), 

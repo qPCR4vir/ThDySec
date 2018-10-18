@@ -195,7 +195,7 @@ CSec::CSec (    const std::string&  sec,
 		_SdS.reserve(fltr_len +1)   ;  /// initialized _SdS= std::vector<Entropy>{ _NNpar->GetInitialEntropy()};	
 		_SdH.reserve(fltr_len +1)   ;
 
-		register Base a_1, a;
+		Base a_1, a;
 		for (a=0; a<n_dgba; a++)	_Count[a]=0 ;
 
 		//_c  .push_back( basek[n_basek-1] ); // '$' principio y fin de Kadelari.=" TGCA$"   in fltr_pos=0   ??
@@ -361,9 +361,9 @@ CMultSec *CSec::ForceNonDegSet()
 		_Tm = _NonDegSet->_Local._Tm ; 
 
 		//assert ( ( (cout << "Post Deg set generation: "<< _name << "\t" << _c << "\t" 
-		//			 << "Tm=" << (_minTm - 273)  << " °C"
-		//			 << " ("  << (_Tm - 273)     << " °C"  << ") "
-		//			          << (_maxTm - 273)  << " °C"  << "\n" ) , 1 ) ) ;
+		//			 << "Tm=" << (_minTm - 273)  << " ï¿½C"
+		//			 << " ("  << (_Tm - 273)     << " ï¿½C"  << ") "
+		//			          << (_maxTm - 273)  << " ï¿½C"  << "\n" ) , 1 ) ) ;
 
 	return _NonDegSet.get();
 }
@@ -483,11 +483,11 @@ CSec *	CSec::GenerateNonDegVariant ( CSec *s, long pos, Base ndb) /// \todo: cre
 
 	return sec ;
 }
-//	assert ( ( (cout << sec->_name << "\t" << sec->_c << "\t" << (sec->_Tm - 273) << " °C" << "\n" ) , 1 ) ) ;
+//	assert ( ( (cout << sec->_name << "\t" << sec->_c << "\t" << (sec->_Tm - 273) << " ï¿½C" << "\n" ) , 1 ) ) ;
 	//assert ( ( (cout << "Ultima mutacion: " << b_or << ndb << "\t"<< sec->_name << "\t" << sec->_c << "\t" 
-	//				 << "Tm=" << (sec->_minTm - 273)  << " °C"
-	//				 << " ("  << (sec->_Tm - 273)     << " °C" << ") "
-	//				          << (sec->_maxTm - 273)  << " °C" << "\n" ) , 1 ) ) ;
+	//				 << "Tm=" << (sec->_minTm - 273)  << " ï¿½C"
+	//				 << " ("  << (sec->_Tm - 273)     << " ï¿½C" << ") "
+	//				          << (sec->_maxTm - 273)  << " ï¿½C" << "\n" ) , 1 ) ) ;
 
 
 

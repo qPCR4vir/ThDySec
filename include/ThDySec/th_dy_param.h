@@ -1,10 +1,9 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2018, Ariel Vina Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @autor Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2016
+* 2012-2018
 *
 * @file  ThDySec\include\ThDySec\th_dy_param.h
 *
@@ -50,8 +49,8 @@
 #ifndef _TH_DY_PARAM_H
 #define _TH_DY_PARAM_H
 
-#include <math.h>
-#include <string.h>
+#include <cmath>
+#include <cstring>
 #include <fstream>
 #include <iostream>
 
@@ -91,7 +90,7 @@ class COriNN
 	
 	bool LoadNNParam(std::istream &isTDP)  ;
 
-		COriNN						(float C1 = 50e-9,  ///< Concentration of strain 1, in \todo introdudce members C1, C2
+	explicit COriNN					(float C1 = 50e-9,  ///< Concentration of strain 1, in \todo introdudce members C1, C2
 			                         float C2 = 50e-9, const std::string &NNfileName="" ) 
 		:		_RlogC				( R * (float)log( (C1>C2)?C1-C2/2:C2-C1/2  )	),
 				forbidden_entropy	(_RlogC	)		///< OJO !! dependencia de parte de la matriz dS de las conc ADN
@@ -127,7 +126,7 @@ class COriNN
 	Temperature	_Ta{ 0     };		///< ineficiente? si se deja asi, ponerla lo mas parecido, ?pero menor que lo esperado?
 									///< se usa para calcular G -free energia
 		  virtual ~COriNN(){}	    ///< Hace falta ????
-private:		  COriNN& operator=(const COriNN& ){} /*= delete*/ ;
+          COriNN& operator=(const COriNN& ) = delete  ;
 };
 
 //enum SaltCorrection {NoSelect=-1,StLucia=0, Owczarzy=1};

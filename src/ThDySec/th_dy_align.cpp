@@ -80,7 +80,7 @@ ThDyAlign::ThDyAlign(LonSecPos MaxLenSond, LonSecPos MaxLenTarg, std::shared_ptr
 void ThDyAlign::ResizeTable(LonSecPos LenSond, LonSecPos LenTarg)        //    --------------------------------------------------------------    ResizeTable    ---------
 {    
     bool initBorder = (LenSond+2 > _LenSond) ;    // Si la nueva sonda es mayor que las anteriores (tabla mas "ancha") ajustar los bordes
-    _LenSond     = LenSond +2 ;                    // Para que incluya los ´$´    ?
+    _LenSond     = LenSond +2 ;                    // Para que incluya los ï¿½$ï¿½    ?
     _LenTarg     = LenTarg +2 ;                    //     inline float &dS0(long i, long j)const{return _dS0[i +j*_LenSondPlus1]; }
 
     if (_TableSize >= (_LenSond+1)*(_LenTarg+1) )     // la tabla actual alcanza (debe ser la regla). No cambio tamano. Inicializo solo si es mas ancha que antes
@@ -142,11 +142,11 @@ void    ThDyAlign::Run(LonSecPos tg_j_StartPos /*= 1*/) // tg_j_StartPos    :  p
     _THits    = _HitsOK =0;        // Aqui ???
 
     
-    register LonSecPos  i_1,  i,   j_1,  j ;        //  i y j en la DPMz usan las pos i-2 y j-2 en la sec !!!!!! 
-    register Base        a_2,  a_1,   b_2,  b_1 ;    // las bases en esas posiciones -- exactamente como -- de la pos anterior
-             Base        gap= bk2nu[ basek[0] ];        // basek[]="-ACGT$"            ,  // las 4 bases en el orden K. ?Coservar este orden  => b+cb=5 ??
-    register float S0, S1, S2, H0, H1, H2 ;
-//    long ls = _sd->_len + 2 , lt = _tg->_len + 2 ;    // lo mismo que _LenSond= LenSond +2 ;// Para que incluya los ´$´ ? y _LenTarg= LenTarg +2 ;
+    LonSecPos   i_1,  i,   j_1,  j ;           //  i y j en la DPMz usan las pos i-2 y j-2 en la sec !!!!!!
+    Base        a_2,  a_1,   b_2,  b_1 ;       // las bases en esas posiciones -- exactamente como -- de la pos anterior
+    Base        gap= bk2nu[ basek[0] ];        // basek[]="-ACGT$"            ,  // las 4 bases en el orden K. ?Coservar este orden  => b+cb=5 ??
+    float       S0, S1, S2, H0, H1, H2 ;
+//    long ls = _sd->_len + 2 , lt = _tg->_len + 2 ;    // lo mismo que _LenSond= LenSond +2 ;// Para que incluya los ï¿½$ï¿½ ? y _LenTarg= LenTarg +2 ;
     Energy  forbidden_enthalpy = _NNpar->forbidden_enthalpy/10;        // MUY grande:  1e+18
     Entropy    forbidden_entropy  = _NNpar->forbidden_entropy/10 ;        // forbidden_entropy    = (_RlogC    ),    comparar con  IniEnt =     -5.9f+_RlogC;
     Entropy IniEnt = _NNpar->GetInitialEntropy();                    //     -5.9f+_RlogC;    
@@ -917,7 +917,7 @@ std::cout << "\n EXPORTING...";
                 if ( (colpased || !ExtrCov.isIntern (matchs) ) && CandSet.insert(s._Sec.Copy_Seq(pi, fi)).second )
                 {    
                     cand  .reset(s._Sec.Clone(pi, fi, DNAstrand::direct)); // (cur_s  , 1,"s", _TDATmC->_NNpar);     
-                    c_cand.reset(s._Sec.Clone(pi, fi, DNAstrand::compl ));   
+                    c_cand.reset(s._Sec.Clone(pi, fi, DNAstrand::complem ));   
                     
                     fAl.Align(cand.get(), c_cand.get() );
                     ++Num;
@@ -993,6 +993,8 @@ ofstream &operator<<(ofstream &stream, FracTDAlign &FrAl)
     stream    << FrAl.IterationNum();//
     return stream;
 }
+
+#ifdef USE_print_Tm
 void print_Tm        (ofstream &osTm, CMultSec    &pr, int MaxGrDeg=-1, char sep[]=";" )
 //void print_Tm (ofstream &osTm, CMultSec    &pr, int MaxGrDeg, char sep[])
 {    
@@ -1003,19 +1005,20 @@ void print_Tm        (ofstream &osTm, CMultSec    &pr, int MaxGrDeg=-1, char sep
         pr.AddMultiSec (  s->CreateNonDegSet () ) ;
     
         //assert (( (osTm  << endl<< s->_c                 << sep//     << "Tm=" <<'\b'    
-        //                 << (s->_Tm.Min() - 273.15) << sep // << " °C"             << " ("  
-        //                 << (s->_Tm.Ave() - 273.15)    << sep //  << " °C"  << ") "
-        //                 << (s->_Tm.Max() - 273.15) << sep //  << " °C"  
+        //                 << (s->_Tm.Min() - 273.15) << sep // << " ï¿½C"             << " ("  
+        //                 << (s->_Tm.Ave() - 273.15)    << sep //  << " ï¿½C"  << ") "
+        //                 << (s->_Tm.Max() - 273.15) << sep //  << " ï¿½C"  
         //                 << s->Name()              << endl //    
         //                                                //     << "\n" 
         //            ) , 1 ) ) ;
     }
 }
+#endif
 
 void    ThDyAlign::Export_DPMz_Tm(ofstream &osDP_mz, char *sep)
 {    
-    register long  i_1,  i,   j_1,  j ;        // las posiciones
-    register Base  a_1,  a,   b_1,  b ;        // las bases en esas posiciones ?? exactamente como ?? de la pos anterior?
+    long  i_1,  i,   j_1,  j ;        // las posiciones
+    Base  a_1,  a,   b_1,  b ;        // las bases en esas posiciones ?? exactamente como ?? de la pos anterior?
 //    register float S0, S1, S2, H0, H1, H2 ;
     long ls = _sd->Len() + 2 , lt = _tg->Len() + 2 ;    // ponerlo como miembro ??  incluye 2x'$'
     float forbidden_enthalpy = _NNpar->forbidden_enthalpy,
@@ -1072,8 +1075,8 @@ void    ThDyAlign::Export_DPMz_Tm(ofstream &osDP_mz, char *sep)
 }
 void    ThDyAlign::Export_DPMz_S(ofstream &osDP_mz, char *sep)
 {    
-    register long  i_1,  i,   j_1,  j ;        // las posiciones
-    register Base  a_1,  a,   b_1,  b ;        // las bases en esas posiciones ?? exactamente como ?? de la pos anterior?
+    long  i_1,  i,   j_1,  j ;        // las posiciones
+    Base  a_1,  a,   b_1,  b ;        // las bases en esas posiciones ?? exactamente como ?? de la pos anterior?
 //    register float S0, S1, S2, H0, H1, H2 ;
     long ls = _sd->Len() + 2 , lt = _tg->Len() + 2 ;    // ponerlo como miembro ??  incluye 2x'$'
     float forbidden_enthalpy = _NNpar->forbidden_enthalpy,
@@ -1119,8 +1122,8 @@ void    ThDyAlign::Export_DPMz_S(ofstream &osDP_mz, char *sep)
     }
 }
 void    ThDyAlign::Export_DPMz_H(ofstream &osDP_mz, char *sep)
-{    register long  i_1,  i,   j_1,  j ;        // las posiciones
-    register Base  a_1,  a,   b_1,  b ;        // las bases en esas posiciones ?? exactamente como ?? de la pos anterior?
+{    long  i_1,  i,   j_1,  j ;        // las posiciones
+     Base  a_1,  a,   b_1,  b ;        // las bases en esas posiciones ?? exactamente como ?? de la pos anterior?
 //    register float S0, S1, S2, H0, H1, H2 ;
     long ls = _sd->Len() + 2 , lt = _tg->Len() + 2 ;    // ponerlo como miembro ??  incluye 2x'$'
     float forbidden_enthalpy = _NNpar->forbidden_enthalpy,
@@ -1167,9 +1170,9 @@ void    ThDyAlign::Export_DPMz_H(ofstream &osDP_mz, char *sep)
     }
 }
 void    ThDyAlign::Export_DPMz_Pre(ofstream &osDP_mz)
-{    register long  i,  j ;        //  i y j en la DPMz usan las pos i-2 y j-2 en la sec !!!!!! 
-    register Base  a,   b ;        // las bases en esas posiciones -- exactamente como -- de la pos anterior
-    long ls = _sd->Len() + 2 , lt = _tg->Len() + 2 ;    // lo mismo que _LenSond= LenSond +2 ;// Para que incluya los ´$´ ? y _LenTarg= LenTarg +2 ;
+{    long  i,  j ;        //  i y j en la DPMz usan las pos i-2 y j-2 en la sec !!!!!!
+     Base  a,   b ;        // las bases en esas posiciones -- exactamente como -- de la pos anterior
+    long ls = _sd->Len() + 2 , lt = _tg->Len() + 2 ;    // lo mismo que _LenSond= LenSond +2 ;// Para que incluya los ï¿½$ï¿½ ? y _LenTarg= LenTarg +2 ;
         
     osDP_mz<<endl<<"-"<<sep ;
     for ( i  = 0 ; i<= ls ; i++ )

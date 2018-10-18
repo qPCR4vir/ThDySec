@@ -22,7 +22,11 @@
 #include <string>
 #include <memory>
 #include <vector>
-#include <filesystem>
+#ifdef BOOST_FILESYSTEM_FORCE
+#  include <nana/filesystem/filesystem_ext.hpp>
+#else
+#  include <filesystem>
+#endif
 #include <list>
 
 
@@ -296,8 +300,9 @@ class CMultSec
 		{
 			int count(0);
 			for (auto& CurSec : _LSec)		// recorre todos las primeras sec de esta misma ms
+			{
 				if( CurSec->Filtered() ) 
-					if(CurSec->NonDegSet())
+				{	if(CurSec->NonDegSet())
 					{	
 						if (!MaxGrDeg)
 							count += CurSec->NonDegSet()->_Global._NSec ;
@@ -306,6 +311,8 @@ class CMultSec
 								count += CurSec->NonDegSet()->_Global._NSec ;
 					}
 					else ++count;
+				}
+			}
 			return count;
 		}
 		int			CountSelectedNDegSeqRec	(int MaxGrDeg=0)

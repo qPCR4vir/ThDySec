@@ -1,5 +1,5 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
+* Copyright (C) 2009-2017, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
 *  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
@@ -15,7 +15,7 @@
 
 #include "ThDy_DNAHybrid.Nana\main.Nana.h"
 
-extern std::string e_mail_firma = " arielvina@yahoo.es";
+ std::string e_mail_firma = " arielvina@yahoo.es";
 
 //if you want to keep the Windows subsystem you can just hint at what your entry point is, 
 //because you haven't defined ___tmainCRTStartup. You can do this by adding the following 
@@ -166,7 +166,7 @@ int main(int argc, char *argv[])
 	_menuBar.at(2).append("&About", [&](nana::menu::item_proxy& ip) 
 	{
 		(nana::msgbox(this->handle(), "About ThDy Hybrid", nana::msgbox::button_t::ok) <<
-			R"(               Copyright (C) 2009-2016, Ariel Vina-Rodriguez (qPCR4vir)
+			R"(               Copyright (C) 2009-2018, Ariel Vina-Rodriguez (qPCR4vir)
                                   (  arielvina@yahoo.es  )
                                   http://qpcr4vir.github.io/
 
@@ -175,14 +175,14 @@ int main(int argc, char *argv[])
    Program distributed under the GNU General Public License, see:
            http://www.gnu.org/licenses/
 
-   Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.01.01-beta
+   Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.01.03
 
    Downloads and source code: https://github.com/qPCR4vir/ThDySec
                        Wiki: https://github.com/qPCR4vir/ThDySec/wiki
    ________________________________________________________________________________
    Powered by Nana C++ GUI library:  http://nanapro.org/en-us/
                                   Wiki:  https://github.com/qPCR4vir/nana-docs/wiki
-      Nana Version: 1.5.5 hotfix : https://github.com/qPCR4vir/nana/tree/develop
+      Nana Version: 1.6.1 hotfix : https://github.com/qPCR4vir/nana/
          )") ();
 			;
 	});

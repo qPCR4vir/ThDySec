@@ -1,10 +1,9 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @author Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2016
+* 2012-2018
 *
 * @file  ThDySec\include\ThDy_programs\init_ThDy_prog_param.h
 *
@@ -15,20 +14,23 @@
 #ifndef _INIT_ThDy_PROG_PARAM_H
 #define _INIT_ThDy_PROG_PARAM_H
 
-#include "init_prog_param.h" 
+#include <init_prog_param.h>       // from ../ProgParam/include
+#include <Units.hpp>
 #include <memory>
 #include "ThDySec/sec_mult.h"
-#include <filesystem>
+
+#  include <nana/filesystem/filesystem_ext.hpp>   // std filesystem ?
+
 #include <set>
 
-const SecPos MAX_SEQ_LEN_ALIGN{ 2001 };
+const SecPos MAX_SEQ_LEN_ALIGN{ 2001 };     // ?
 
 class CParamSondeLimits: public IBParam  /// \todo Use delegating constructor to limit code duplication
 {   SondeLimits sL;
  public: 
-    CParamNumMinMax<Energy> G; 
+    CParamNumMinMax<Energy>      G;
     CParamNumMinMax<Temperature> T; 
-    CParamNumMinMax<SecPos> L; 
+    CParamNumMinMax<SecPos>      L;
 	 /// Acepta un parametro y por tanto no usa _v. Por compatibilidad.
     CParamSondeLimits (IProg *pp, const std::string& titel, SondeLimits &parRef, 
 		             const std::string& etiqGmin, Energy minGmin,        Energy maxGmin,         Energy defValueGmin,
@@ -37,7 +39,7 @@ class CParamSondeLimits: public IBParam  /// \todo Use delegating constructor to
 		             const std::string& etiqTmax, Temperature minTmax,   Temperature maxTmax,    Temperature defValueTmax,
 		             const std::string& etiqLmin, SecPos minLmin,        SecPos maxLmin,         SecPos defValueLmin,
 		             const std::string& etiqLmax, SecPos minLmax,        SecPos maxLmax,         SecPos defValueLmax,
-                           std::string  UnitG="kcal/mol", std::string UnitT= u8"°C", std::string UnitL="nt"
+                           std::string  UnitG="kcal/mol", std::string UnitT= RTunits::grC, std::string UnitL="nt"
 
 					) : IBParam ( titel), 
 					    G(pp, titel+". Perf.Match dG", parRef._G,
@@ -62,7 +64,7 @@ class CParamSondeLimits: public IBParam  /// \todo Use delegating constructor to
 		             const std::string& etiqTmax, Temperature minTmax,   Temperature maxTmax,    Temperature defValueTmax,
 		             const std::string& etiqLmin, SecPos minLmin,        SecPos maxLmin,         SecPos defValueLmin,
 		             const std::string& etiqLmax, SecPos minLmax,        SecPos maxLmax,         SecPos defValueLmax,
-                     const std::string& UnitG="kcal/mol", const std::string& UnitT= u8"°C", const std::string& UnitL="nt"
+                     const std::string& UnitG="kcal/mol", const std::string& UnitT= RTunits::grC, const std::string& UnitL="nt"
 
 					) : IBParam ( titel), 
 					    G(pp, titel+". Perf.Match dG", sL._G,
@@ -112,7 +114,7 @@ class ThDyCommProgParam : public CCommProgParam
                              ConcSalt{this,    "Concentration of salt",						"ConcenSalt", _ConcSalt,0.0f,1.0f,    50e-3f ,"M" } ;
 
 	Temperature		               _Ta  {55.0f }  ;				
-    CParamNumRange <Temperature>	Ta  {this, "Temp annealing expected in exp",		"TempAnnelg", _Ta,  20.0f, 90.0f, 55.0f, u8"°C"  }  ;
+    CParamNumRange <Temperature>	Ta  {this, "Temp annealing expected in exp",		"TempAnnelg", _Ta,  20.0f, 90.0f, 55.0f, RTunits::grC  }  ;
 	AlignMeth		           _TAMeth  {TAMeth_Tm }  ;			
     CParamEnumRange<AlignMeth>	TAMeth  {this, "Optimized parameter during DynProg",	"AlignMethd", _TAMeth, TAMeth_Tm, TAMeth_Fract, TAMeth_Tm }  ;	
 
@@ -422,16 +424,16 @@ class CProgParam_SondeDesign : public CEspThDyProgParam			//  .-----------------
 		        "MaxSondeTm",  -270.0f,    99.0f,	63.0f,
 		        "MinSondeLn",  3,         200,		20,
 		        "MaxSondeLn",  4,         200,		35,
-                /*UnitG=*/"kcal/mol",  /*UnitT=*/u8"°C",  /*UnitL=*/"nt"
+                /*UnitG=*/"kcal/mol",  /*UnitT=*/RTunits::grC,  /*UnitL=*/"nt"
 		   ),
 		_G_sig (10),		  G_sig  (this, "Significant G probe-target",		"MaxSd_Tg_G",    _G_sig,  -15.0f, 30.0f,	10.0f, "kcal/mol" ),	
-		_Tm_sig (30)	, 	  Tm_sig (this, "Significant Tm probe-target",	"MinSd_TgTm",    _Tm_sig, -0.0f,  80.0f,	30.0f, u8"°C" ),
+		_Tm_sig (30)	, 	  Tm_sig (this, "Significant Tm probe-target",	"MinSd_TgTm",    _Tm_sig, -0.0f,  80.0f,	30.0f, RTunits::grC ),
 
 		_MinSd_nTgG (15) , MinSd_nTgG(this, "Significant G probe-non target",	"MinSdnTg_G", _MinSd_nTgG,  0.0f, 30.0f,	15.0f, "kcal/mol" ),		
-		_MaxSd_nTgTm (10),MaxSd_nTgTm(this, "Significant Tm probe-non target",	"MaxSdnTgTm",_MaxSd_nTgTm, -0.0f,  70.0f,	10.0f, u8"°C" ),
+		_MaxSd_nTgTm (10),MaxSd_nTgTm(this, "Significant Tm probe-non target",	"MaxSdnTgTm",_MaxSd_nTgTm, -0.0f,  70.0f,	10.0f, RTunits::grC ),
 
 		_MinSelfG (10),		 MinSelfG(this, "Significant self probe G",		"MinSdSlf_G", _MinSelfG,  0.0f, 30.0f,		10.0f, "kcal/mol" ),		
-		_MaxSelfTm (10),    MaxSelfTm(this, "Significant self probe Tm",		"MaxSdSlfTm",_MaxSelfTm, -0.0f,  70.0f,		10.0f, u8"°C" )
+		_MaxSelfTm (10),    MaxSelfTm(this, "Significant self probe Tm",		"MaxSdSlfTm",_MaxSelfTm, -0.0f,  70.0f,		10.0f, RTunits::grC )
 		//_MinTgCov (100),	MinTgCov (this, "Find probes with more % coverage",	"Min_Tg_Cov",  _MinTgCov,  0.0f,100.0f,		99.0f  ,"%")							
         {
 	    }  // revisar cuales deben ser estos valores !!!!	
@@ -520,10 +522,10 @@ class CProgParam_TmCalc : public CProgParam_MultiplexPCR
 	void	Set_AlignedSec		 (const std::string& Sec){_AlignedSec      =Sec	;	  }
 	void	Set_AlignedSec2Align (const std::string& Sec){_AlignedSec2Align=Sec ;     }
 
-	void	Update_Sec			(bool rev, bool compl)	{ Set_Sec      ( Generate_DegSec_char( _Sec.get().c_str(),	     rev, compl)  ); }
-	void	Update_Sec_Sec2Align(bool rev, bool compl)	{ Set_Sec2Align( Generate_DegSec_char( _Sec.get().c_str(),	     rev, compl)  ); }
-	void	Update_Sec2Align	(bool rev, bool compl)	{ Set_Sec2Align( Generate_DegSec_char( _Sec2Align.get().c_str(), rev, compl)  ); }
-	void	Update_Sec2Align_Sec(bool rev, bool compl)	{ Set_Sec	   ( Generate_DegSec_char( _Sec2Align.get().c_str(), rev, compl)  ); }
+	void	Update_Sec			(bool rev, bool complem)	{ Set_Sec      ( Generate_DegSec_char( _Sec.get().c_str(),	     rev, complem)  ); }
+	void	Update_Sec_Sec2Align(bool rev, bool complem)	{ Set_Sec2Align( Generate_DegSec_char( _Sec.get().c_str(),	     rev, complem)  ); }
+	void	Update_Sec2Align	(bool rev, bool complem)	{ Set_Sec2Align( Generate_DegSec_char( _Sec2Align.get().c_str(), rev, complem)  ); }
+	void	Update_Sec2Align_Sec(bool rev, bool complem)	{ Set_Sec	   ( Generate_DegSec_char( _Sec2Align.get().c_str(), rev, complem)  ); }
 
 	~CProgParam_TmCalc(){}
 	int		Run		()

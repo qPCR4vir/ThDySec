@@ -48,7 +48,7 @@ class TableCandRes : public nana::form, public EditableForm
 			EditableForm(nullptr, *this, std::string("Target comparison & candidate probes: ") + name, "TableCand.lay.txt" )
 	{ 
 		auto& sch = list.scheme();
-		sch.header_height = 20;
+		sch.header_padding_bottom = sch.header_padding_top = 1;//.header_height = 20;
 		sch.text_margin = 2;
 		sch.item_height_ex = 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
 		//sch.item_height = sch.text_height + sch.item_height_ex;

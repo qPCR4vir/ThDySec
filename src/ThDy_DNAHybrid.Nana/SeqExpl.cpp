@@ -21,7 +21,7 @@ SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
           CompoWidget     (tdForm, ("Seq Explorer"), ("SeqExpl.lay.txt"))
     {
         auto& sch = _list.scheme();
-        sch.header_height = 20;
+		sch.header_padding_bottom = sch.header_padding_top = 1;//sch.header_height = 20;
         sch.text_margin   = 2;
         sch.item_height_ex= 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
         //sch.item_height   = sch.text_height + sch.item_height_ex;
@@ -41,7 +41,7 @@ SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         _list.checkable(true);
         _list.append_header(("Name")  , 120);     // col 0: name  
         _list.append_header(("Length"), 50);      // col 1: len
-        _list.append_header((u8"Tm °C") , 60);      //case 2: Tm 
+        _list.append_header(std::string("Tm ")+RTunits::grC , 60);      //case 2: Tm 
         _list.append_header(("Deg")   , 50);      // case 3: deg   
         _list.append_header(("Description")   , 220);   // case 4: descr  
         _list.append_header(("Beg"), 50);         // case 5: beg in aln 
@@ -57,7 +57,7 @@ SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         _list.auto_draw(true);
     }
 
-SeqExpl::Node SeqExpl::AddNewSeqGr  (Tree::item_proxy& node) 
+SeqExpl::Node SeqExpl::AddNewSeqGr  (Tree::item_proxy node)
         {    try{    
                     return appendNewNode(node, _Pr._cp.AddSeqGroup(node.value<CMultSec*>(),"New group")).expand(true);
                 }
@@ -101,7 +101,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             auto tn= _tree.selected();
             if (isRoot(tn))
             {
-                nana::msgbox ( ("Sorry, you can´t replace group " + tn.text()) ).show() ;
+                nana::msgbox ( ("Sorry, you canï¿½t replace group " + tn.text()) ).show() ;
                 return;
             }
             nana::filebox  fb{ *this, true };
@@ -127,7 +127,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             auto tn= _tree.selected();
             if (tn->owner()->owner().empty())
             {
-                nana::msgbox ( ("Sorry, you can´t replace group " + tn->text()) ) ;
+                nana::msgbox ( ("Sorry, you canï¿½t replace group " + tn->text()) ) ;
                 return;
             }
             nana::filebox  fb{ *this, true };
@@ -304,7 +304,7 @@ void SeqExpl::MakeResponive()
             if (tn->owner()->owner().empty())    //   ???  if( tn->level() < 2 );
             {
                 (nana::msgbox ( _tree , ("Cut a group of sequences " + tn->text()) )
-                          << ("Sorry, you can´t cut the group: ") + tn->text() )
+                          << ("Sorry, you canï¿½t cut the group: ") + tn->text() )
                           .icon(nana::msgbox::icon_error )
                           .show() ;
                 return;
@@ -336,7 +336,7 @@ void SeqExpl::MakeResponive()
             if (tn->owner()->owner().empty())
             {
                 (nana::msgbox ( _tree , ("Deleting a group of sequences " + tn->text()) )
-                          << ("Sorry, you can´t delete the group: ") + tn->text() )
+                          << ("Sorry, you canï¿½t delete the group: ") + tn->text() )
                           .icon(nana::msgbox::icon_error )
                           .show() ;
                 return;
@@ -397,7 +397,7 @@ void SeqExpl::MakeResponive()
                     .events().click([this]() { ShowFiltered( _show_filt_s.pushed());  });
     }
 
-SeqExpl::Node SeqExpl::Replace      (Tree::item_proxy& tn, CMultSec *ms, const std::string& Path, bool all_in_dir)
+SeqExpl::Node SeqExpl::Replace      (Tree::item_proxy tn, CMultSec *ms, const std::string& Path, bool all_in_dir)
 {        
 try{ 
         Tree::item_proxy   own = tn->owner();
@@ -542,13 +542,13 @@ List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
          <<  val  ;                                              // col 1: len
 
     Temperature t=KtoC( sec->NonDegSet() ? sec->NonDegSet()->_Local._Tm.Ave() : sec->_Tm.Ave());
-    snprintf(val,blen, (u8"% *.*f °C"), 6, 1,   t );
+    //snprintf(val,blen, (u8"% *.*f ï¿½C"), 6, 1,   t );
     Temperature min=57.0, max=63.0;
     double fade_rate=  t<min? 0.0 : t>max? 1.0 : (t-min)/(max-min);
     nana::color tc{static_cast<nana::color_rgb>(0xFFFFFFFF)} , 
                 bc = nana::color(nana::colors::red).blend( nana::colors::blue, fade_rate); 
 
-    ores << List::cell{ val, {bc , tc} };                             //case 2: Tm 
+    ores << List::cell{ temperature_to_string(t), {bc , tc} };                             //case 2: Tm 
 
     snprintf(val,blen,     ("%*d")  , 5,           sec->Degeneracy());
 
