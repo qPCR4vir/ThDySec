@@ -493,22 +493,23 @@ void SeqExpl::AsignWidgetToFields()
         _place.field("Firma") << e_mail_firma;
 
     }
-
+std::string K2s(Temperature t) { return temperature_to_string(KtoC(t)); }
 void SeqExpl::RefreshStatusInfo(CMultSec *ms)
 {
+	//std::string local = 
     _statusbar.caption("  <bold>Local</> (sq: " + std::to_string(ms->_Local._NSec)
         + ", gr: " + std::to_string(ms->_Local._NMSec) + "),"
         + (ms->_Local._NSec ? "    Length[" + std::to_string(ms->_Local._Len.Min())
             + "-" + std::to_string(ms->_Local._Len.Max()) + "]"
-            + ", Tm[ " + temperature_to_string(ms->_Local._Tm.Min()) + "-"
-            + temperature_to_string(ms->_Local._Tm.Max()) + "]  "
+            + ", Tm[ " + K2s(ms->_Local._Tm.Min()) + "-"
+            + K2s(ms->_Local._Tm.Max()) + "]  "
             : "")
         + ".        <bold>Global</> (sq: " + std::to_string(ms->_Global._NSec)
         + ", gr: " + std::to_string(ms->_Global._NMSec) + "),"
         + (ms->_Global._NSec ? "    Length[" + std::to_string(ms->_Global._Len.Min())
             + "-" + std::to_string(ms->_Global._Len.Max()) + "]"
-            + ", Tm[ " + temperature_to_string(ms->_Global._Tm.Min()) + "-"
-            + temperature_to_string(ms->_Global._Tm.Max()) + " ]  "
+            + ", Tm[ " + K2s(ms->_Global._Tm.Min()) + "-"
+            + K2s(ms->_Global._Tm.Max()) + " ]  "
             : "")
     );
 }

@@ -29,12 +29,12 @@ class ThDyNanaForm ;
  
 using List = nana::listbox;
 
-inline std::string temperature_to_string(Temperature t)
+inline std::string temperature_to_string(Temperature t) // use KtoC to convert from Kelvin to Centigr
 {
 	int w = 10;  // -250,0 �C
 	std::string s(w, 0);
 
-	std::snprintf(&s[0], w + 1, (u8"% *.*f \u00B0C"), w - 4, 1, KtoC(t));
+	std::snprintf(&s[0], w + 1, (u8"% *.*f \u00B0C"), w - 4, 1, t);
 	return s;
 }
 
