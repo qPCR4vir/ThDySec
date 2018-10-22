@@ -323,6 +323,8 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
         long           l=0;
         std::string       clas;
 
+		auto scan = [&](char const*s) {while (getline(fi, li, '>') && string::npos == li.find(s)); };
+		 
         while(getline(fi,li,'>')&& string::npos==li.find("Hit_num"      ) ) ;  fi>>_Hit_num;                                //  <Hit_num>1</Hit_num>
         while(getline(fi,li,'>')&& string::npos==li.find("Hit_id"       ) ) ; if(!getline(fi, _Hit_id, '<') ) return id;    //<Hit_id>gi|84028434|gb|DQ318020.1|</Hit_id> 
         while(getline(fi,li,'>')&& string::npos==li.find("Hit_def"      ) ) ; if(!getline(fi, _Hit_def,'<') ) return id;    //<Hit_def>Wets NIle virus strain ArB3573/82, complete genome</Hit_def>
