@@ -25,6 +25,53 @@
 //
 //This way you get rid of the console window.
 
+ class About : public nana::form, public EditableForm
+ {
+	 nana::label  copy_r{ *this, R"(               Copyright (C) 2009-2018, Ariel Vina-Rodriguez (qPCR4vir)
+                                  (  arielvina@yahoo.es  )
+                                  http://qpcr4vir.github.io/)" };
+
+
+	 nana::label  comments{ *this,R"(This work is mentioned in my PhD thesis at INNT-FLI.
+
+		 Program distributed under the GNU General Public License, see:
+ http://www.gnu.org/licenses/)" };
+	 
+	 
+
+	 nana::label  compiled{ *this, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.01.04
+
+   Downloads and source code: https://github.com/qPCR4vir/ThDySec
+                       Wiki: https://github.com/qPCR4vir/ThDySec/wiki
+   ________________________________________________________________________________
+   Powered by Nana C++ GUI library:  http://nanapro.org/en-us/
+                                  Wiki:  https://github.com/qPCR4vir/nana-docs/wiki
+      Nana Version: 1.6.2 cmake-dev : https://github.com/qPCR4vir/nana/
+         )" };
+
+	 
+ nana::button close { *this, "Close" };
+	 
+
+ public:
+	 About() : nana::form   ( nana::rectangle(nana::point(50, 5), nana::size(500, 350)) ),
+	           EditableForm ( nullptr, *this, "About ThDy Hybrid" , "about.lay.txt") 
+	 {
+		 InitMyLayout();
+		 SelectClickableWidget(copy_r);
+
+	 }
+
+ void SetDefLayout() override
+	 {
+		 _DefLayout = 	 "vertical      gap=2 margin=2    	all"	 ;
+	 }
+ void AsignWidgetToFields()
+ {
+	 _place.field("all") << copy_r << comments << compiled << close ;
+ }
+ };
+
 
 int main(int argc, char *argv[]) 
 {
@@ -165,6 +212,11 @@ int main(int argc, char *argv[])
 	_menuBar.at(2).append_splitter();
 	_menuBar.at(2).append("&About", [&](nana::menu::item_proxy& ip) 
 	{
+
+		About ab;
+		ab.show();
+
+
 		(nana::msgbox(this->handle(), "About ThDy Hybrid", nana::msgbox::button_t::ok) <<
 			R"(               Copyright (C) 2009-2018, Ariel Vina-Rodriguez (qPCR4vir)
                                   (  arielvina@yahoo.es  )
