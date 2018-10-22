@@ -231,6 +231,7 @@ CSec::CSec (    const std::string&  sec,
 		_b.push_back(       n_basek-1  ); 	  	
 		_GCp	= _GCp*100/this->Len() ;	
 		_Tm.Set( NNpar->CalcTM( _SdS.back(), _SdH.back()) ) ;      //_maxTm = _minTm =
+		CreateNonDegSet();
 }
 
 CSec *CSec::Clone   	(DNAstrand strnd 	 ) const   // std::unique_ptr<ISec> ?

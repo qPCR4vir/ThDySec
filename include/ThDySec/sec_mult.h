@@ -128,11 +128,10 @@ class CMultSec
 
 		struct CExtremes
 		{
-		    int			_NSec, _NMSec	;
+			int			_NSec{}, _NMSec{};
 		    NumRang<LonSecPos> _Len		;		
 		    NumRang<Temperature> _Tm	;
-		    CExtremes():_NSec(0), _NMSec(0)	{
-										    }
+		    // CExtremes():_NSec(0), _NMSec(0)	{    }
 		    void Set   (const CSec& s)	{	 
 										    _Len.Set(s.Len());		_Tm.Set(s._Tm)	;
 									    }
@@ -143,7 +142,9 @@ class CMultSec
 											    _Len.Set(e._Len);		_Tm.Set(e._Tm)	;
 										    }
 		    bool Expand(const CExtremes& e)	{	
-											    bool ex=_Len.Expand(e._Len);  return (_Tm.Expand(e._Tm) || ex );
+											    bool L =_Len.Expand(e._Len);  
+												bool T = _Tm.Expand(e._Tm);
+												return ( T || L );
 										    }
 		    void Clear(){_NSec=0, _NMSec=0;}
 

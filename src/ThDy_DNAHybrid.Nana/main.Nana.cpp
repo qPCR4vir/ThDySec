@@ -175,14 +175,14 @@ int main(int argc, char *argv[])
    Program distributed under the GNU General Public License, see:
            http://www.gnu.org/licenses/
 
-   Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.01.03
+   Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.01.04
 
    Downloads and source code: https://github.com/qPCR4vir/ThDySec
                        Wiki: https://github.com/qPCR4vir/ThDySec/wiki
    ________________________________________________________________________________
    Powered by Nana C++ GUI library:  http://nanapro.org/en-us/
                                   Wiki:  https://github.com/qPCR4vir/nana-docs/wiki
-      Nana Version: 1.6.1 hotfix : https://github.com/qPCR4vir/nana/
+      Nana Version: 1.6.2 cmake-dev : https://github.com/qPCR4vir/nana/
          )") ();
 			;
 	});
