@@ -1,10 +1,9 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @autor Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2016
+* 2012-2018
 *
 * @file  ThDySec\include\ThDy_DNAHybrid.Nana\SetupPage.h
 *
@@ -15,13 +14,9 @@
 #ifndef SetupPage_H
 #define SetupPage_H
 
-//#include "thdy_programs\init_thdy_prog_param.h"
-//#include "matrix.h" 
-//#include "common_basics.h" 
-
-#include <../../nana.ext/include/EditableForm.hpp>
-#include <../../nana.ext/include/number.hpp>
-#include "../../nana.ext/include/nanaBind.hpp"
+#include <EditableForm.hpp>    // todo: <nana_ext/EditableForm.hpp>
+#include <number.hpp>
+#include <nanaBind.hpp>
 #include <Units.hpp>
 
 #include <nana/gui/widgets/group.hpp>
@@ -45,16 +40,16 @@ class ThDyNanaForm ;
 class SetupPage : public CompoWidget
 {
     ThDyNanaForm       &_Pr;
-    nana::group         _gr_dir				{*this, (" <bold=true> Directories: </>"          ), true};
+    nana::group         _gr_dir				{*this,    (" <bold=true> Directories: </>"               ), true};
     FilePickBox         _results            { _gr_dir, ("Results: ") } ;
 
-    nana::group         _gr_seq         {_gr_dir, (" <bold=true> Sequences </>File or Directory"      ), true};
-    nana::group         _gr_targ        {_gr_seq, (""                                                 ), true};
+    nana::group         _gr_seq             {_gr_dir, (" <bold=true> Sequences </>File or Directory"      ), true};
+    nana::group         _gr_targ            {_gr_seq, (""                                                 ), true};
     FilePickBox         _targets            { _gr_targ, ("Targets: ") }  ;
     nana::checkbox      _chkTargRecDir      { _gr_targ, ("Targets - Recur Dir") },
                         _chkTargOnlyStruct  { _gr_targ, ("Only reproduce Dir Structure") };
 
-    nana::group         _gr_ntarg       {_gr_seq, (""                                                 ), true};
+    nana::group         _gr_ntarg           {_gr_seq, (""                                                 ), true};
     FilePickBox         _nTsec              { _gr_ntarg, ("Non targets: "),("FindSonden-OSB.NonTarg.lay.txt")};
     nana::checkbox      _chk_nTgRecDir      { _gr_ntarg, ("Non Targets - Recur Dir") },
                         _chk_nTgOnlyStruct  { _gr_ntarg, ("Only reproduce Dir Structure") };

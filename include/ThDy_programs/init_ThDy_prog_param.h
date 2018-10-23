@@ -14,16 +14,17 @@
 #ifndef _INIT_ThDy_PROG_PARAM_H
 #define _INIT_ThDy_PROG_PARAM_H
 
-#include <init_prog_param.h>       // from ../ProgParam/include
-#include <Units.hpp>
 #include <memory>
-#include "ThDySec/sec_mult.h"
+#include <set>
 
 #  include <nana/filesystem/filesystem_ext.hpp>   // std filesystem ?
 
-#include <set>
+#include <init_prog_param.h>       // from ../ProgParam/include
+#include <Units.hpp>
+#include "ThDySec/sec_mult.h"
 
-const SecPos MAX_SEQ_LEN_ALIGN{ 2001 };     // ?
+
+const SecPos MAX_SEQ_LEN_ALIGN{ 4001 };     // ?
 
 class CParamSondeLimits: public IBParam  /// \todo Use delegating constructor to limit code duplication
 {   SondeLimits sL;
@@ -544,12 +545,6 @@ class ThDyProject : public CProject /// Permite manejar todo el projecto: con un
 		CProgParam_SondeDesign	_SdDes{"Find probes"                       ,_cp }  ;
 		CProgParam_TmCalc		_TmCal{"Tm calculator"                     ,_cp }  ;
 
-        //void   CopyStructFromDir()
-        //{
-        //    _cp  .CopyStructFromDir();
-        //    _uArr.CopyStructFromDir();
-        //    _mPCR.CopyStructFromDir();
-        //}
         void LoadSequences()
         {
             _cp  .LoadSequences();
