@@ -22,7 +22,7 @@
 #include <nana/gui/widgets/group.hpp>
 //#include <nana/gui/widgets/progress.hpp>
 //#include <nana/gui/widgets/tabbar.hpp>
-//#include <nana/gui/widgets/checkbox.hpp>
+#include <nana/gui/widgets/checkbox.hpp>
 //#include <nana/gui/widgets/treebox.hpp>
 //#include <nana/gui/widgets/listbox.hpp>
 //#include <nana/gui/widgets/toolbar.hpp>
@@ -40,24 +40,24 @@ class ThDyNanaForm ;
 class SetupPage : public CompoWidget
 {
     ThDyNanaForm       &_Pr;
-    nana::group         _gr_dir				{*this,    (" <bold=true> Directories: </>"               ), true};
+    nana::group         _gr_dir			{*this,    (" <bold=true> Directories: </>"               ), true};
     FilePickBox         _results            { _gr_dir, ("Results: ") } ;
 
-    nana::group         _gr_seq             {_gr_dir, (" <bold=true> Sequences </>File or Directory"      ), true};
+    nana::group         _gr_seq         {_gr_dir, (" <bold=true> Sequences </>File or Directory"      ), true};
     nana::group         _gr_targ            {_gr_seq, (""                                                 ), true};
     FilePickBox         _targets            { _gr_targ, ("Targets: ") }  ;
     nana::checkbox      _chkTargRecDir      { _gr_targ, ("Targets - Recur Dir") },
                         _chkTargOnlyStruct  { _gr_targ, ("Only reproduce Dir Structure") };
 
-    nana::group         _gr_ntarg           {_gr_seq, (""                                                 ), true};
+    nana::group         _gr_ntarg       {_gr_seq, (""                                                 ), true};
     FilePickBox         _nTsec              { _gr_ntarg, ("Non targets: "),("FindSonden-OSB.NonTarg.lay.txt")};
     nana::checkbox      _chk_nTgRecDir      { _gr_ntarg, ("Non Targets - Recur Dir") },
                         _chk_nTgOnlyStruct  { _gr_ntarg, ("Only reproduce Dir Structure") };
 
-    nana::group         _gr_PCRfiltre       {_gr_seq, (""                                             ), true};
+    nana::group         _gr_PCRfiltre   {_gr_seq, (""                                             ), true};
     FilePickBox         _PCRfiltre          { _gr_PCRfiltre, ("PCR-filtre: ")};
 
-    nana::group         _gr_PrimersFilePCR  {_gr_seq, (""                                                 ), true};
+    nana::group         _gr_PrimersFilePCR{_gr_seq, (""                                                 ), true};
     FilePickBox         _PrimersFilePCR     { _gr_PrimersFilePCR, ("Primers: ") };
     nana::checkbox      _chkPrimRecDir      { _gr_PrimersFilePCR, ("Primers - Recur Dir") },
                         _chkPrOnlyStruct    { _gr_PrimersFilePCR, ("Only reproduce Dir Structure") };
@@ -69,7 +69,7 @@ class SetupPage : public CompoWidget
 
     OpenSaveBox         _NNParamFile        { _gr_dir, ("NN param: ")};
 
-    nana::group         _gr_salt {*this, (" <bold=true> Input & analisis parameters: </>"                 ), true};
+    nana::group         _gr_salt        {*this, (" <bold=true> Input & analisis parameters: </>"                 ), true};
     nana::combox        comBoxSalMeth       { _gr_salt}, 
                         comBoxTAMeth        { _gr_salt};
     nana::NumUnitUpDown numUpDowTgConc      { _gr_salt, ("Target Conctr:"      ), 50, 0.1    , 1000000,  "nM"}, 

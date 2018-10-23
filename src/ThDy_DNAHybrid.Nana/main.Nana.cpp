@@ -151,7 +151,7 @@ int main(int argc, char *argv[])
 
     tabbar_.activated (1);
 
-    setup_._proj.FileNameOnly( ProjetFile()  );
+    setup_._proj.FileNameOnly( ProjectFile()  );
     try{ 
 			if ( argc > 1 )
 				setup_._proj.FileNameOpen( argv[1])    ;

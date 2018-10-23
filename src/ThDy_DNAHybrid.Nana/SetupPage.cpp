@@ -234,7 +234,7 @@ void  SetupPage::MakeResponive()
 void  SetupPage::SaveProj()
 	{	 
         if(  _proj.Canceled () )  return;
-        _Pr.save (nana::charset ( _proj.FileName())); 
+        _Pr.save ( _proj.FileName());
 	}
 void  SetupPage::setAsDefProject()
     {
@@ -268,26 +268,18 @@ void  SetupPage::RestDefPr	 ( )		// Restore (USE) Deff  Proj File
 }
 void  SetupPage::AddMenuItems(nana::menu& menu)
 {
-//      		_menuFile.append  (("&Open..."   ),[this](nana::menu::item_proxy& ip){ this->_OSbx.open(std::string(nana::charset(this->_textBox.filename())));this->OpenFile()  ;}                );
-//      _menuFile.append  (("&Save"      ),[&](nana::menu::item_proxy& ip){  ForceSave(std::string(nana::charset(_textBox.filename())) ) ;}   );
-	//_menuFile.append  (("Save &As..."),[&](nana::menu::item_proxy& ip){ _OSbx.save(std::string(nana::charset(_textBox.filename())));SaveFile() ;} );
-
-    menu.append(("New"    )  , [&](nana::menu::item_proxy& ip)  {  ;  } );
+    menu.append(("New"    )  , [&](nana::menu::item_proxy& ip)  {  ;  } );// ??
     menu.append(("Open...")  , [&](nana::menu::item_proxy& ip)  
     { 
-        _proj.open(_proj.FileName()); /*OpenProj() ;*/   
+        _proj.open(_proj.FileName());
         if (!_proj.Canceled())
             LoadProject( _proj.FileName());
-        //this->_OSbx.open(std::string(nana::charset(this->_textBox.filename())));this->OpenFile()  ;}                );
-
     } );
     menu.append(("Save...")  , [&](nana::menu::item_proxy& ip)  
     { 
         _proj.save(_proj.FileName()); 
         if( ! _proj.Canceled () )   
-            _Pr.save (nana::charset ( _proj.FileName())); 
-
-        //SaveProj() ;  
+            _Pr.save ( _proj.FileName());
     } );
     menu.append_splitter();
     menu.append(("Set as default") , [&](nana::menu::item_proxy& ip)  {;  });
@@ -305,7 +297,7 @@ void  SetupPage::LoadProject(std::string file)
 	{
 		try
 		{
-			_Pr.load(  nana::charset (  file ));
+			_Pr.load( file );
  		}
 		catch (std::exception& e)
 		{
@@ -323,13 +315,13 @@ void  SetupPage::LoadProject(std::string file)
 			{
 				case  nana::msgbox::pick_yes :  
 					    _Pr.load_defPr();
-                        _proj.FileName(nana::charset ( _Pr.ProjetFile ()  ));
+                        _proj.FileName(_Pr.ProjectFile ()  );
 					return;
 
 				case  nana::msgbox::pick_no:    
                         _proj.open (nana::charset (file));
                         if ( !  _proj.Canceled() )
-                                LoadProject(nana::charset (  _proj.FileName()));
+                                LoadProject( _proj.FileName());
                         return;
 			}
 		}

@@ -16,7 +16,7 @@
 #include "thdy_programs\init_thdy_prog_param.h"
 #include "ThDy_programs\prog_comm_functions.h"
 #include "ThDySec/sec.h"
-#include <assert.h>
+#include <cassert>
 using namespace std;
 
 
