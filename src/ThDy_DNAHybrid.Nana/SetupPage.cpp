@@ -331,7 +331,11 @@ SetupPage::SetupPage          (ThDyNanaForm& tdForm) try
         : _Pr           (tdForm), 
           CompoWidget   (tdForm, ("Setup"), ("Setup.lay.txt"))
     {
-        InitMyLayout();
+		_results.folder = true;
+		_targets.folder = true;
+		_nTsec.folder   = true;
+
+	    InitMyLayout();
         SelectClickableWidget( _set_def_proj);
         SelectClickableWidget( *this);
 
