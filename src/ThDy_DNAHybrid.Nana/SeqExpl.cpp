@@ -130,9 +130,10 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
                 nana::msgbox ( ("Sorry, you can�t replace group " + tn->text()) ) ;
                 return;
             }
-            nana::filebox  fb{ *this, true };
-            fb.title(("Replace/reload a group of sequences from a directory"));
-            if (!fb()) return;
+            nana::folderbox  fb{ *this};
+            //fb.title(("Replace/reload a group of sequences from a directory"));
+            auto p=fb();
+            if (!p) return;
 
             CMultSec *ms = tn.value<CMultSec*>();
             CMultSec *pms = ms->_parentMS; // tn->owner.value<CMultSec*>();
@@ -160,7 +161,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             _tree.auto_draw(false);
             _list.auto_draw(false);
 
-            CMultSec* newms = _Pr._cp.AddSeqFromFile    ( pms, fb.file(), true    );
+            CMultSec* newms = _Pr._cp.AddSeqFromFile    ( pms, p->string(), true    );
             _tree.erase(tn);
             populate(appendNewNode  (own, newms) );
             own.expand(true);
