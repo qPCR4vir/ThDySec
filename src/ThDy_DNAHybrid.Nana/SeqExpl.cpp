@@ -15,7 +15,9 @@
 #include "ThDy_DNAHybrid.Nana\main.Nana.h"
 
 #include <algorithm>
-    
+
+namespace fs = std::experimental::filesystem ;
+
 SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         : _Pr             (tdForm), 
           CompoWidget     (tdForm, ("Seq Explorer"), ("SeqExpl.lay.txt"))
@@ -101,25 +103,24 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             auto tn= _tree.selected();
             if (isRoot(tn))
             {
-                nana::msgbox ( ("Sorry, you can�t replace group " + tn.text()) ).show() ;
+                nana::msgbox ( ("Sorry, you can't replace group " + tn.text()) ).show() ;
                 return;
             }
+            CMultSec *ms = tn.value<CMultSec*>();
+            CMultSec *pms = ms->_parentMS;
+            assert(ms);
+            assert(pms);
+            fs::path pt{ms->_Path};
+            pt= fs::canonical(pt).make_preferred();
             nana::filebox  fb{ *this, true };
-            fb .add_filter ( SetupPage::FastaFiltre( )                   )
+            fb .add_filter ( SetupPage::FastaFiltre( )   )
+               .init_file(pt.string())
                .title(("Replace/reload a group of sequences from a file"));
             if (!fb()) return;
 
-            CMultSec *ms = tn.value<CMultSec*>();
-            CMultSec *pms = ms->_parentMS; // tn->owner.value<CMultSec*>();
-            assert(ms);
-            assert(pms);
             _Pr._cp._pSeqNoUsed->AddMultiSec(ms);
             _Pr._cp.AddSeqFromFile    ( pms, fb.file(), false    );
             Refresh(tn->owner());
-            //_tree.auto_draw(false);
-            //_tree.erase(tn);
-            //Refresh(appendNewNode  (own, newms) );
-            //_tree.auto_draw(true);
         });
 
         menu.append(("Replace from directory . . ."), [&](nana::menu::item_proxy& ip) 
@@ -142,7 +143,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             /// \todo revise !!!?? temporal solutio. Save an iterator to shraed_ptr<CMSec> 
             ///          instead of CMSec* in the tree node?
 
-            auto it=std::find_if(pms->MSecL().begin(), pms->MSecL().end(), 
+            auto it=std::find_if(pms->MSecL().begin(), pms->MSecL().end(),
                                  [&ms](auto & sp_ms) {return ms == sp_ms.get(); });
             if (it == pms->MSecL().end()) return;
 
@@ -232,9 +233,15 @@ void SeqExpl::MakeResponive()
  
         _loadFile   .events().click([this]()
                         {
+                            auto      tn    = _tree.selected();
+                            CMultSec* ms    = tn.value<CMultSec*>();
+                            fs::path pt{ms->_Path};
+                            pt= fs::canonical(pt).make_preferred();
+
                             nana::filebox  fb{ *this, true };
                             fb .add_filter ( SetupPage::FastaFiltre( )                   )
-                               .title      ( ("File load: Add a group of sequences from a file") );
+                                    .init_file(pt.string())
+                                    .title      ( ("File load: Add a group of sequences from a file") );
 
                             if (fb()) 
                                AddMSeqFiles(fb.file(), false);
