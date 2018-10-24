@@ -127,18 +127,17 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             auto tn= _tree.selected();
             if (tn->owner()->owner().empty())
             {
-                nana::msgbox ( ("Sorry, you can�t replace group " + tn->text()) ) ;
+                nana::msgbox ( ("Sorry, you can't replace group " + tn->text()) ) ;
                 return;
             }
-            nana::folderbox  fb{ *this};
-            //fb.title(("Replace/reload a group of sequences from a directory"));
-            auto p=fb();
-            if (!p) return;
-
             CMultSec *ms = tn.value<CMultSec*>();
             CMultSec *pms = ms->_parentMS; // tn->owner.value<CMultSec*>();
             assert(ms);
             assert(pms);
+			nana::folderbox  fb{ *this, pms->path() };
+            //fb.title(("Replace/reload a group of sequences from a directory"));
+            auto p=fb();
+            if (!p) return;
 
             /// \todo revise !!!?? temporal solutio. Save an iterator to shraed_ptr<CMSec> 
             ///          instead of CMSec* in the tree node?
