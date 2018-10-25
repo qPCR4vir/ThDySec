@@ -94,7 +94,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
         menu.append(("Replace from a file . . ." )  , [&](nana::menu::item_proxy& ip) 
         {
             auto tn= _tree.selected();
-            if (isRoot(tn) or isRoot(tn->owner()) )
+            if (isRoot(tn) || isRoot(tn->owner()) )
             {
                 nana::msgbox ( ("Sorry, you can't replace group " + tn.text()) ).show() ;
                 return;
@@ -119,7 +119,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
         menu.append(("Replace from directory . . ."), [&](nana::menu::item_proxy& ip) 
         {
             auto tn= _tree.selected();
-            if (isRoot(tn) or isRoot(tn->owner()) )
+            if (isRoot(tn) || isRoot(tn->owner()) )
             {
                 nana::msgbox ( ("Sorry, you can't replace group " + tn->text()) ) ;
                 return;
