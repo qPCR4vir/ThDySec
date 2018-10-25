@@ -20,9 +20,10 @@
 #include <Units.hpp>
 
 #include <nana/gui/widgets/group.hpp>
+#include <nana/gui/widgets/checkbox.hpp>
+
 //#include <nana/gui/widgets/progress.hpp>
 //#include <nana/gui/widgets/tabbar.hpp>
-#include <nana/gui/widgets/checkbox.hpp>
 //#include <nana/gui/widgets/treebox.hpp>
 //#include <nana/gui/widgets/listbox.hpp>
 //#include <nana/gui/widgets/toolbar.hpp>

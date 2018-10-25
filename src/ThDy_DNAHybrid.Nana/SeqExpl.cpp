@@ -23,16 +23,11 @@ SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
           CompoWidget     (tdForm, ("Seq Explorer"), ("SeqExpl.lay.txt"))
     {
         auto& sch = _list.scheme();
-		sch.header_padding_bottom = sch.header_padding_top = 1;//sch.header_height = 20;
+		sch.header_padding_bottom = sch.header_padding_top = 1;
         sch.text_margin   = 2;
-        sch.item_height_ex= 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
-        //sch.item_height   = sch.text_height + sch.item_height_ex;
+        sch.item_height_ex= 1;
         sch.header_splitter_area_before = 4;
         sch.header_splitter_area_after  = 4 ; 
-
-        //auto& tree_sch = _list.scheme();
-        //tree_sch.item_height_ex = 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
-        //tree_sch.item_height = tree_sch.text_height + tree_sch.item_height_ex;
 
         _statusbar.format(true).bgcolor(nana::colors::turquoise );
         
@@ -49,8 +44,6 @@ SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         _list.append_header(("Beg"), 50);         // case 5: beg in aln 
         _list.append_header(("End"), 50);         // case 6: end in aln    
         _list.append_header(("Seq")   , 420);
-        //_list.resolver(ListSeqMaker());
-
 
         AddMenuItems(_menuProgram);
         MakeResponive();
@@ -101,7 +94,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
         menu.append(("Replace from a file . . ." )  , [&](nana::menu::item_proxy& ip) 
         {
             auto tn= _tree.selected();
-            if (isRoot(tn))
+            if (isRoot(tn) or isRoot(tn->owner()) )
             {
                 nana::msgbox ( ("Sorry, you can't replace group " + tn.text()) ).show() ;
                 return;
@@ -126,7 +119,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
         menu.append(("Replace from directory . . ."), [&](nana::menu::item_proxy& ip) 
         {
             auto tn= _tree.selected();
-            if (tn->owner()->owner().empty())
+            if (isRoot(tn) or isRoot(tn->owner()) )
             {
                 nana::msgbox ( ("Sorry, you can't replace group " + tn->text()) ) ;
                 return;
@@ -135,8 +128,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             CMultSec *pms = ms->_parentMS;
             assert(ms);
             assert(pms);
-            std::cout<<"\n Replacing "<< ms->_Path << " from "  << pms->_Path ;
-
+            
             fs::path pt{ms->_Path};
             nana::folderbox  fb{ *this, pt.parent_path() , "Replace/reload a group of sequences from a directory" };
             auto p=fb();
@@ -244,25 +236,27 @@ void SeqExpl::MakeResponive()
         _loadDir    .tooltip(("Directory load: Add a tree of groups of sequences from a directory."))
                     .events().click([this]()
                         {
-                            nana::filebox  fb{ *this, true };
-                            fb .add_filter ( SetupPage::FastaFiltre( )                   )
-                               .title(("Directory load: Add a tree of groups of sequences from a directory"));
-                            if (fb()) 
-                                AddMSeqFiles(fb.file(), true);
+                            auto tn= _tree.selected();
+                            CMultSec *ms = tn.value<CMultSec*>();
+                            fs::path pt{ms->_Path};
+                            nana::folderbox  fb{ *this, pt, "Directory load: Add a tree of groups of sequences from a directory" };
+                            auto p=fb();
+                            if (!p) return;
+                            AddMSeqFiles(p->string(), true);
                         });
         _re_loadDir .tooltip(("Directory reload: Reload a tree of groups of sequences from a directory,\nposible using new filtres."))
                     . events().click([this]()  {  ReloadDir (_tree.selected());    });
         _scanDir    .tooltip(("Directory scan: Reproduce the structure of directory..."))
                     .events().click([this]()
                         {
-                            nana::filebox  fb{ *this, true };
-                            fb .add_filter ( SetupPage::FastaFiltre( )                   )
-                               .title(("Directory scan: Reproduce the structure of directory..."));
-                            if (!fb()) return;
+                            auto tn= _tree.selected();
+                            CMultSec *ms = tn.value<CMultSec*>();
+                            fs::path pt{ms->_Path};
+                            nana::folderbox  fb{ *this, pt, "Directory scan: Reproduce the structure of directory..." };
+                            auto p=fb();
+                            if (!p) return;                            
 
-                            auto      tn    = _tree.selected();
-                            CMultSec* ms    = tn.value<CMultSec*>();
-                            CMultSec* newms = _Pr._cp.CopyStructFromDir    ( ms, fb.file()    );
+                            CMultSec* newms = _Pr._cp.CopyStructFromDir    ( ms, p->string()   );
                             _tree.auto_draw(false);
                             populate(  appendNewNode  (tn, newms) );
                             tn.expand(true);
