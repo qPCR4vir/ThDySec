@@ -217,7 +217,9 @@ int        CMultSec::AddFromFileFASTA (ifstream &ifile)  // ------------------- 
         Descriptor=Descriptor.substr(Fasta_NAME.length());
 
           string Fasta_SEC ;                    
-        if (!getline (ifile, Fasta_SEC,'>'))         break ;        
+        if (!getline (ifile, Fasta_SEC,'>'))         break ;
+        if (!ifile.eof() && !Fasta_SEC.empty() && Fasta_SEC.back()!= '\n')
+            std::cout << "\n Warning: simbol > do not begin the line. Previous seq:" << Fasta_SEC;
 
         if (     Fasta_SEC.length() < static_cast<std::size_t>( secBeg + lmin -1 )   )    
              continue;
@@ -315,12 +317,12 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
         LonSecPos         _Hsp_positive=0 ;
         LonSecPos         _Hsp_gaps=0 ;
         LonSecPos         _Hsp_align_len=0 ;
-        std::string        _Hsp_midline ;
-        bool            _FormatOK=0 ;
+        std::string     _Hsp_midline ;
+        bool            _FormatOK=false ;
 
         std::string       sec;                        // para CSec
         std::string       nam;
-        long           l=0;
+        long              l=0;
         std::string       clas;
 
 		auto scan = [&](char const*s) {while (getline(fi, li, '>') && string::npos == li.find(s)); };
