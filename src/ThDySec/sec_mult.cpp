@@ -264,7 +264,7 @@ int        CMultSec::AddFromFileFASTA (ifstream &ifile)  // ------------------- 
     return NumSeq;    
 }
 
-int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultSec::            AddFromFileBLAST  -----------------------------
+int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultSec::     AddFromFileBLAST  format XML---
 {    
     ///\todo adapt to multiquery BLAST
 
@@ -324,26 +324,26 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
         std::string       clas;
 
 		auto scan = [&](char const*s) {while (getline(fi, li, '>') && string::npos == li.find(s)); };
-		 
-        while(getline(fi,li,'>')&& string::npos==li.find("Hit_num"      ) ) ;  fi>>_Hit_num;                                //  <Hit_num>1</Hit_num>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hit_id"       ) ) ; if(!getline(fi, _Hit_id, '<') ) return id;    //<Hit_id>gi|84028434|gb|DQ318020.1|</Hit_id> 
-        while(getline(fi,li,'>')&& string::npos==li.find("Hit_def"      ) ) ; if(!getline(fi, _Hit_def,'<') ) return id;    //<Hit_def>Wets NIle virus strain ArB3573/82, complete genome</Hit_def>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hit_accession") ) ; if(!getline(fi, _Hit_accession,'<'))return id;//<Hit_def>Wets NIle virus strain ArB3573/82, complete genome</Hit_def>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hit_len"      ) ) ;  fi>>_Hit_len;                //  <Hit_len>11048</Hit_len> 
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_bit-score") ) ;  fi>>_Hsp_bit_score;            //  <Hsp_bit-score>482.786</Hsp_bit-score>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_score"    ) ) ;  fi>>_Hsp_score;              //  <Hsp_score>534</Hsp_score>        
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_evalue"   ) ) ;  fi>>_Hsp_evalue;                //  <Hsp_evalue>3.71782e-133</Hsp_evalue>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_query-from")) ;  fi>>_Hsp_query_from;            //  <Hsp_query-from>1</Hsp_query-from>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_query-to" ) ) ;  fi>>_Hsp_query_to;            //  <Hsp_query-to>267</Hsp_query-to>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_hit-from" ) ) ;  fi>>_Hsp_hit_from;            //  <Hsp_hit-from>9043</Hsp_hit-from>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_hit-to"   ) ) ;  fi>>_Hsp_hit_to;                //  <Hsp_hit-to>9309</Hsp_hit-to>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_query-frame"));  fi>>_Hsp_query_frame;        //  <Hsp_query-frame>1</Hsp_query-frame>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_identity" ) ) ;  fi>>_Hsp_identity;            //  <Hsp_identity>267</Hsp_identity>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_positive" ) ) ;  fi>>_Hsp_positive;            //  <Hsp_positive>267</Hsp_positive>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_gaps"     ) ) ;  fi>>_Hsp_gaps;                 //  <Hsp_gaps>0</Hsp_gaps>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_align-len") ) ;  fi>>_Hsp_align_len;            //  <Hsp_align-len>267</Hsp_align-len>
-        while(getline(fi,li,'>')&& string::npos==li.find("Hsp_hseq"     ) ) ; if(!getline(fi, sec,'<'))         return id;//<Hsp_hseq>TACAACATGATGGGAAAGAGAGAGAAGAAG 
-         while(getline(fi,li,'>')&& string::npos==li.find("Hsp_midline"  ) ) ; if(!getline(fi, _Hsp_midline,'<'))return id;//<Hsp_midline>|||||||||||||||||||||||||||||||||||||||||
+
+        scan("Hit_num"      )  ;  fi>>_Hit_num;                                //  <Hit_num>1</Hit_num>
+        scan("Hit_id"       )  ; if(!getline(fi, _Hit_id, '<') ) return id;    //<Hit_id>gi|84028434|gb|DQ318020.1|</Hit_id>
+        scan("Hit_def"      )  ; if(!getline(fi, _Hit_def,'<') ) return id;    //<Hit_def>Wets NIle virus strain ArB3573/82, complete genome</Hit_def>
+        scan("Hit_accession")  ; if(!getline(fi, _Hit_accession,'<'))return id;//<Hit_def>Wets NIle virus strain ArB3573/82, complete genome</Hit_def>
+        scan("Hit_len"      )  ;  fi>>_Hit_len;                //  <Hit_len>11048</Hit_len>
+        scan("Hsp_bit-score")  ;  fi>>_Hsp_bit_score;            //  <Hsp_bit-score>482.786</Hsp_bit-score>
+        scan("Hsp_score"    )  ;  fi>>_Hsp_score;              //  <Hsp_score>534</Hsp_score>
+        scan("Hsp_evalue"   )  ;  fi>>_Hsp_evalue;                //  <Hsp_evalue>3.71782e-133</Hsp_evalue>
+        scan("Hsp_query-from") ;  fi>>_Hsp_query_from;            //  <Hsp_query-from>1</Hsp_query-from>
+        scan("Hsp_query-to" )  ;  fi>>_Hsp_query_to;            //  <Hsp_query-to>267</Hsp_query-to>
+        scan("Hsp_hit-from" )  ;  fi>>_Hsp_hit_from;            //  <Hsp_hit-from>9043</Hsp_hit-from>
+        scan("Hsp_hit-to"   )  ;  fi>>_Hsp_hit_to;                //  <Hsp_hit-to>9309</Hsp_hit-to>
+        scan("Hsp_query-frame");  fi>>_Hsp_query_frame;        //  <Hsp_query-frame>1</Hsp_query-frame>
+        scan("Hsp_identity" )  ;  fi>>_Hsp_identity;            //  <Hsp_identity>267</Hsp_identity>
+        scan("Hsp_positive" )  ;  fi>>_Hsp_positive;            //  <Hsp_positive>267</Hsp_positive>
+        scan("Hsp_gaps"     )  ;  fi>>_Hsp_gaps;                 //  <Hsp_gaps>0</Hsp_gaps>
+        scan("Hsp_align-len")  ;  fi>>_Hsp_align_len;            //  <Hsp_align-len>267</Hsp_align-len>
+        scan("Hsp_hseq"     )  ; if(!getline(fi, sec,'<'))         return id;//<Hsp_hseq>TACAACATGATGGGAAAGAGAGAGAAGAAG
+        scan("Hsp_midline"  )  ; if(!getline(fi, _Hsp_midline,'<'))return id;//<Hsp_midline>|||||||||||||||||||||||||||||||||||||||||
                                                             
 
         LonSecPos  secHitBeg {secBeg - _Hsp_query_from +1};  // omitir estas primeras bases del Hit (de la parte del hit que tenemos)
