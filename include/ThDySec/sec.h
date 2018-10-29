@@ -157,26 +157,26 @@ class CSecBLASTHit : public CSec // ---------------------------------------   CS
                     std::string&&   Hit_def ,                
                     std::string&&   Hit_accession    ,
                     long            Hit_len ,                
-                    float            Hsp_bit_score ,
+                    float           Hsp_bit_score ,
                     unsigned int    Hsp_score ,
-                    double            Hsp_evalue ,
-                    unsigned int    Hsp_query_from ,
-                    unsigned int    Hsp_query_to ,
-                    unsigned int    Hsp_hit_from ,
-                    unsigned int    Hsp_hit_to ,
+                    double          Hsp_evalue ,
+                    LonSecPos       Hsp_query_from ,
+                    LonSecPos       Hsp_query_to ,
+                    LonSecPos       Hsp_hit_from ,
+                    LonSecPos       Hsp_hit_to ,
                     unsigned int    Hsp_query_frame ,
                     unsigned int    Hsp_hit_frame ,
-                    unsigned int    Hsp_identity ,
-                    unsigned int    Hsp_positive ,
-                    unsigned int    Hsp_gaps ,
-                    unsigned int    Hsp_align_len ,
+                    LonSecPos       Hsp_identity ,
+                    LonSecPos       Hsp_positive ,
+                    LonSecPos       Hsp_gaps ,
+                    LonSecPos       Hsp_align_len ,
                     std::string&&   Hsp_midline ,
                     bool            FormatOK ,
                     std::string&&   sec    ,    
                     LonSecPos       lmax,                            //long    SecBeg,long    SecEnd,
                     LonSecPos       secBeg,                          //long    SecBeg,long    SecEnd,
-                    int                id,                           //    Hit_num    char    *    nam,    Hit_def
-                    std::shared_ptr<CSaltCorrNN>  NNpar,             //    long  l=0,    Hit_len ------> _Hsp_align_len
+                    int             id,                             //    Hit_num    char    *    nam,    Hit_def
+                    std::shared_ptr<CSaltCorrNN>  NNpar,            //    long  l=0,    Hit_len ------> _Hsp_align_len
                     std::string        clas="", 
                     float            conc=-1
                 )  :
@@ -296,29 +296,9 @@ class CSecGBtxt : public CSec // ---------------------------------------   CSecG
     virtual ~CSecGBtxt() {                }    
 };
 
-/// ahora estos seran solo para mantener "copias" (punteros) de sec o msec en otras listas. 
-/// Cada sec o msec sabe en que lista esta
-//class CSecLink     // NO es dueno de la sec, no la borra, no delete
-//{    public:
-//        CSecLink (CSec *s, CSecLink *p, CSecLink *n=nullptr) : _sec(s) {} ;
-//        CSec *_sec ;
-//};
-        
 #endif
 
-
-//class CConsParam 
-//{    public:
-//        double _min ;
-//};
-//enum DNAstrand                        {plus    , minus, direct    , rev    , compl, rev_compl    } ;
-//// extern char *DNAstrandName[]=    {""        , "(c)", ""        , "(r)"    , "(i)", "(c)"        } ;
-//extern char *DNAstrandName[];
 //enum fileFormat {fasta=1 , csv=1<<1, f2=1<<2, f3=1<<3} ; // se pueden "OR" los formatos : OUTPUT !!!!!!
-//
-//char *AttachToCharStr       (const char *CharStr, const char *Attach)    ;
-//char *ChangeCharStrAttaching(char *&CharStrToChange, const char *Attach); // CharStrToChange : debe ser una cadena que se creo con new, 
-//char *ChangeCharStrAttaching(char *&CharStrToChange, const int Attach);// y que sera borrada y vuelta a crear !!!
 
 ///\todo ?? anadir funcion de compactar cod (eliminar los gap y bases deg?). SdH y S se recalculan.
 ///\todo ?? anadir funcion para regenerar cod no compactado, recordar estado comp/no comp

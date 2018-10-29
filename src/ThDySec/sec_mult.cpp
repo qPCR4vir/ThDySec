@@ -300,23 +300,23 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
     do 
     {    
         unsigned int    _Hit_num=0 ;            // para cada hit
-        std::string        _Hit_id  ;                
-        std::string        _Hit_def ;                // descriptor ??
-        std::string        _Hit_accession     ;
+        std::string     _Hit_id  ;
+        std::string     _Hit_def ;                // descriptor ??
+        std::string     _Hit_accession     ;
         long            _Hit_len=0 ;                
-        float            _Hsp_bit_score=0 ;
+        float           _Hsp_bit_score=0 ;
         unsigned int    _Hsp_score=0 ;
-        double            _Hsp_evalue=0 ;
-        LonSecPos        _Hsp_query_from=0 ;    // dejar signed or unsigned !!!!????
-        LonSecPos        _Hsp_query_to=0 ;
-        LonSecPos         _Hsp_hit_from=0 ;
-        LonSecPos         _Hsp_hit_to=0 ;
-        int                _Hsp_query_frame=0 ;
-        int                _Hsp_hit_frame=0 ;
-        LonSecPos         _Hsp_identity=0 ; // revisar type --- no sera %  : float??
-        LonSecPos         _Hsp_positive=0 ;
-        LonSecPos         _Hsp_gaps=0 ;
-        LonSecPos         _Hsp_align_len=0 ;
+        double          _Hsp_evalue=0 ;
+        LonSecPos       _Hsp_query_from=0 ;    // dejar signed or unsigned !!!!????
+        LonSecPos       _Hsp_query_to=0 ;
+        LonSecPos       _Hsp_hit_from=0 ;
+        LonSecPos       _Hsp_hit_to=0 ;
+        int             _Hsp_query_frame=0 ;
+        int             _Hsp_hit_frame=0 ;
+        LonSecPos       _Hsp_identity=0 ; // revisar type --- no sera %  : float??
+        LonSecPos       _Hsp_positive=0 ;
+        LonSecPos       _Hsp_gaps=0 ;
+        LonSecPos       _Hsp_align_len=0 ;
         std::string     _Hsp_midline ;
         bool            _FormatOK=false ;
 
@@ -325,7 +325,7 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
         long              l=0;
         std::string       clas;
 
-		auto scan = [&](char const*s) {while (getline(fi, li, '>') && string::npos == li.find(s)); };
+		auto scan = [&](char const*s) { while (getline(fi, li, '>') && li.find(s) == std::string::npos);     };
 
         scan("Hit_num"      )  ;  fi>>_Hit_num;                                //  <Hit_num>1</Hit_num>
         scan("Hit_id"       )  ; if(!getline(fi, _Hit_id, '<') ) return id;    //<Hit_id>gi|84028434|gb|DQ318020.1|</Hit_id>
