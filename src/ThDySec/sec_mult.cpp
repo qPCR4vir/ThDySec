@@ -463,6 +463,25 @@ int        CMultSec::AddFromFileGBtxt (ifstream &fi) // ----------------  CMultS
     int         id=0;
     auto        all =std::numeric_limits<std::streamsize>::max();
 
+    LonSecPos secBeg = _SecLim.Min()  ;   // here beginig to read, set to 1 if originaly <1
+    if (secBeg < 1) secBeg = 1;
+
+    LonSecPos secEnd = _SecLim.Max()  ;   // here end to read, set to 0 to ignore it, and if < secBeg
+    if (secEnd <= secBeg) secEnd = 0;
+
+    LonSecPos lmin = _SecLenLim.Min() ;   // read at least this # of bases, always >=1
+    if (lmin < 1 ) lmin = 1;
+
+    LonSecPos lmax = _SecLenLim.Max() ;   // read at most this # of bases, ignore if =0
+    if (lmax < lmin ) lmax = 0;
+
+    if (secEnd)
+        if (lmax == 0 || lmax > secEnd - secBeg +1)
+            lmax = secEnd - secBeg +1;
+
+    if (lmax && lmin > lmax)
+        return 0;
+
     do {
         CSecGBtxt::Info inf;
         std::string ORIGIN ;
@@ -508,17 +527,22 @@ int        CMultSec::AddFromFileGBtxt (ifstream &fi) // ----------------  CMultS
             fi.ignore(all, '\n');
         } while (ORIGIN!="ORIGIN");  std::cout<< "ORIGIN: "<<ORIGIN<<std::endl;
         if (!getline(fi, sec, '/')) return id;
-        fi.ignore(all, '\n');
-std::cout<< "sec: "<<sec<<std::endl;
+        fi.ignore(all, '\n');     std::cout<< "sec: "<<sec.length()<<std::endl;
         auto secGBtxt = std::make_unique<CSecGBtxt>(std::move(inf),
                                                     std::move(sec),
                                                     id,           //    char        *    nam,    DEFINITION    ,
                                                     _NNPar);
 
-        if (secGBtxt->Len() >= _SecLenLim.Min())
+        std::cout<<"Created. Degeneracy: "<<secGBtxt->Degeneracy() << std::endl;
+
+        if (secGBtxt->Len() < lmin)
             continue;
 
         auto idem = Idem(*secGBtxt);
+
+        std::cout<<"Idem check: "<< std::endl;
+
+
         if (idem != SecL().end())
         {
             if ((*idem)->Len() >= secGBtxt->Len())

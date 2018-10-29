@@ -205,7 +205,7 @@ CSec::CSec (    const std::string&  sec,
 
 	    a_1=is_degbase	[ base(sec[sec_beging]) ] ;   // we read sepparate the first base, in fltr_pos=1 when sec_pos=sec_beging
 		_GCp	+= is_GC	[a_1] ;                   // it will be always OK (we just tested that)
-		_GrDeg	*= grad_deg	[a_1] ;
+		if (grad_deg	[a_1]>1) _GrDeg	*= grad_deg	[a_1];
 		_Count  [  db2nu	[a_1]]++ ;
 		if (grad_deg[a_1] >1) _NDB++ ;
 		_c.push_back( a_1  );
@@ -218,7 +218,7 @@ CSec::CSec (    const std::string&  sec,
                    
                 fltr_pos++ ;  
 				_GCp	+= is_GC		[a] ;						// 1-G or C, 0-lo demas.      Y que con las bases deg ??????????????????
-				_GrDeg	*= grad_deg		[a] ;
+				if (grad_deg	[a]>1) _GrDeg	*= grad_deg	[a] ;
 				_Count  [  db2nu		[a] ]++ ;
 				if (grad_deg[a] >1) _NDB++ ;
 				_c  .push_back( a                     );
