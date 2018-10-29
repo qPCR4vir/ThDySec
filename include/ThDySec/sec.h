@@ -270,28 +270,26 @@ class CSecGB : public CSec // ---------------------------------------   CSecGB  
 
 class CSecGBtxt : public CSec // ---------------------------------------   CSecGBtxt    ------------------------------------------------
 {public:
-    std::string    _LOCUS         ;
-    long         _Seq_inst_length ;    
-    std::string  _DEFINITION      ;
-    std::string  _ACCESSION       ;
-    std::string  _ORGANISM        ;            // ORIGIN      
-    CSecGBtxt(      std::string        LOCUS          ,
-                    long               Seq_inst_length,    
-                    std::string        DEFINITION     ,
-                    std::string        ACCESSION      ,
-                    std::string        ORGANISM       ,
-                    const char    *    sec    ,    
-                    int                id,                        //    char        *    nam,    DEFINITION    ,    
+    struct Info
+    {
+        std::string  LOCUS           ;
+        LonSecPos    Seq_inst_length ;
+        std::string  DEFINITION      ;
+        std::string  ACCESSION       ;
+        std::string  ORGANISM        ;            // ORIGIN
+    };
+    Info info;
+
+    CSecGBtxt(      Info&&             inf,
+                    std::string&&      sec,
+                    int                id,                        //    char        *    nam,
                     std::shared_ptr<CSaltCorrNN>  NNpar,                  //    long            l=0,        Seq_inst_length
                     std::string        clas="", 
                     float              conc=-1
-                ):        CSec (sec, id, LOCUS, NNpar, 0,1, clas, conc ), // actualizar Beg-End
-                            _LOCUS          ( std::move(LOCUS )) ,
-                            _Seq_inst_length( Seq_inst_length ) ,
-                            _DEFINITION     ( std::move(DEFINITION) ) ,                
-                            _ACCESSION      ( std::move(ACCESSION) )     ,            
-                            _ORGANISM       ( std::move(ORGANISM ))                 {}    
-    virtual std::string    Description ()const override    {return _description.length() ? _description : _DEFINITION ; }
+                ):        CSec (std::move(sec), id, inf.LOCUS, NNpar, 0,1, clas, conc ), // actualizar Beg-End
+                          info(std::move(inf))       {}
+
+    virtual std::string    Description ()const override    {return info.DEFINITION.empty() ? _description : info.DEFINITION ; }
     
     virtual ~CSecGBtxt() {                }    
 };

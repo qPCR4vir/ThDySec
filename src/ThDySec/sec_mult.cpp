@@ -455,64 +455,66 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
     return id; 
 }
 
-int        CMultSec::AddFromFileGBtxt (ifstream &ifile) // ----------------  CMultSec::            AddFromFileGBtxt  -----------------------------
+int        CMultSec::AddFromFileGBtxt (ifstream &fi) // ----------------  CMultSec::            AddFromFileGBtxt  -----------------------------
 {    
     /// \todo update !!
 
-    const int gb_descr_w=12 ;    
-    char      gb_descr[gb_descr_w+1]; 
-
-    gb_descr[gb_descr_w]=0;
-
-    size_t strl;
-    int    id    =0     ;
-    string txt_line ;
+    std::string li ;
+    int         id=0;
+    auto        all =std::numeric_limits<std::streamsize>::max();
 
     do {
-        char    *    LOCUS = nullptr;
-        long        Seq_inst_length = 0;
-        char    *    DEFINITION = nullptr;
-        char    *    ACCESSION = nullptr;
-        char    *    ORGANISM = nullptr;
-        // para CSec
-        char    *    sec = nullptr;        //    char        *    nam,    DEFINITION    ,    //    long            l=0,        Seq_inst_length
+        CSecGBtxt::Info inf;
+        std::string ORIGIN ;
+        std::string sec ;
 
-        do { ifile >> setw(gb_descr_w) >> gb_descr;    if (!ifile.good()) return id; }     // LOCUS       AY702040               10675 bp    RNA     linear   VRL 24-MAR-2005
-        while (strcmp(gb_descr, "LOCUS"));
-        ifile >> setw(gb_descr_w) >> gb_descr;                LOCUS = new char[1 + (strl = strlen(gb_descr))];
-        strncpy(LOCUS, gb_descr, strl);                        LOCUS[strl] = 0;
-        ifile >> Seq_inst_length;
+        /*auto scan = [&](std::string& v, char const*s)
+                        { do {  if (!(fi >> v)) return id;
+                                fi.ignore(all, '\n');
+                             } while (v!=s);
+                        };*/
+        // LOCUS       X14383                  6875 bp    RNA     linear   VRL 30-JUL-1991
+        do {
+            if (!(fi >> inf.LOCUS)) return id;   if (inf.LOCUS=="LOCUS") break;
+            fi.ignore(all, '\n');
+        } while (true);
+        if (!(fi>>inf.LOCUS)) return id;     std::cout<< "\nLOCUS: "<<inf.LOCUS<<std::endl;
+        if (!(fi>>inf.Seq_inst_length)) continue;         // log error ?
+              fi.ignore(all, '\n');
 
-        do { ifile >> setw(gb_descr_w) >> gb_descr;    if (!ifile.good()) return id; }     // DEFINITION  Dengue virus type 2 strain I348600, complete genome.
-        while (strcmp(gb_descr, "DEFINITION"));
-        getline(ifile, txt_line);                                DEFINITION = new char[txt_line.length() + 1];
-        txt_line.copy(DEFINITION, txt_line.length());        DEFINITION[txt_line.length()] = 0;
+        // Bunyamwera virus L protein RNA, complete cds.
+        if (!(fi>>inf.DEFINITION)) return id;       if ( inf.DEFINITION!="DEFINITION" ) continue; // blank before ? log error ?
+        if (!std::getline(fi, inf.DEFINITION)) return id;  std::cout<< "DEFINITION: "<<inf.DEFINITION<<std::endl;
 
-        do { ifile >> setw(gb_descr_w) >> gb_descr;    if (!ifile.good()) return id; }     // ACCESSION   AY702040
-        while (strcmp(gb_descr, "ACCESSION"));
-        ifile >> setw(gb_descr_w) >> gb_descr;            ACCESSION = new char[1 + (strl = strlen(gb_descr))];
-        strncpy(ACCESSION, gb_descr, strl);                        ACCESSION[strl] = 0;
+        // ACCESSION   X14383
+        do {
+            if (!(fi >> inf.ACCESSION)) return id;   if (inf.ACCESSION=="ACCESSION") break;
+            inf.DEFINITION += " " + inf.ACCESSION;
+            if (!std::getline(fi, inf.ACCESSION)) return id;
+            inf.DEFINITION += " " + inf.ACCESSION;
+        } while (true);
+        if (!(fi>>inf.ACCESSION)) return id;             std::cout<< "ACCESSION: "<<inf.ACCESSION<<std::endl;
 
-        do { ifile >> setw(gb_descr_w) >> gb_descr;    if (!ifile.good()) return id; }     //   ORGANISM  Dengue virus 2
-        while (strcmp(gb_descr, "ORGANISM"));
-        getline(ifile, txt_line);                            ORGANISM = new char[txt_line.length() + 1];
-        txt_line.copy(ORGANISM, txt_line.length());        ORGANISM[txt_line.length()] = 0;
+        // ORGANISM  Bunyamwera virus
+        do {
+            if (!(fi >> inf.ORGANISM)) return id;   if (inf.ORGANISM=="ORGANISM") break;
+            fi.ignore(all, '\n');
+        } while (true);
+        if (!std::getline(fi, inf.ORGANISM)) return id;               std::cout<< "ORGANISM: "<<inf.ORGANISM<<std::endl;
 
-        do { ifile >> setw(gb_descr_w) >> gb_descr;    if (!ifile.good()) return id; }     // ORIGIN      
-        while (strcmp(gb_descr, "ORIGIN"));
-        getline(ifile, txt_line, '/');                            sec = new char[txt_line.length() + 1];
-        txt_line.copy(sec, txt_line.length());                sec[txt_line.length()] = 0;
+        // ORIGIN
+        do {
+            if (!(fi >> ORIGIN)) return id;
+            fi.ignore(all, '\n');
+        } while (ORIGIN!="ORIGIN");  std::cout<< "ORIGIN: "<<ORIGIN<<std::endl;
+        if (!getline(fi, sec, '/')) return id;
+        fi.ignore(all, '\n');
+std::cout<< "sec: "<<sec<<std::endl;
+        auto secGBtxt = std::make_unique<CSecGBtxt>(std::move(inf),
+                                                    std::move(sec),
+                                                    id,           //    char        *    nam,    DEFINITION    ,
+                                                    _NNPar);
 
-        std::unique_ptr<CSecGBtxt> secGBtxt
-            { new CSecGBtxt(LOCUS       ,
-                            Seq_inst_length,
-                            DEFINITION     ,
-                            ACCESSION      ,
-                            ORGANISM       ,
-                            sec    ,
-                            id,                                //    char        *    nam,    DEFINITION    ,    
-                            _NNPar)
-            };
         if (secGBtxt->Len() >= _SecLenLim.Min())
             continue;
 
@@ -537,7 +539,7 @@ int        CMultSec::AddFromFileGBtxt (ifstream &ifile) // ----------------  CMu
     
         id++;        
     }
-    while (ifile.good() ); 
+    while (fi.good() );
     return id; 
 }
 
