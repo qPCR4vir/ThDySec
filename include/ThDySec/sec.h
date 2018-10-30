@@ -150,95 +150,78 @@ class CSec : public CSecBasInfo
 
 class CSecBLASTHit : public CSec // ---------------------------------------   CSecBLASTHit    ------------------------------------------------
 {public:
-    CSecBLASTHit(    unsigned int    BlastOutput_query_len ,
-                    // para cada hit
-                    unsigned int    Hit_num ,
-                    std::string&&   Hit_id ,                
-                    std::string&&   Hit_def ,                
-                    std::string&&   Hit_accession    ,
-                    long            Hit_len ,                
-                    float           Hsp_bit_score ,
-                    unsigned int    Hsp_score ,
-                    double          Hsp_evalue ,
-                    LonSecPos       Hsp_query_from ,
-                    LonSecPos       Hsp_query_to ,
-                    LonSecPos       Hsp_hit_from ,
-                    LonSecPos       Hsp_hit_to ,
-                    unsigned int    Hsp_query_frame ,
-                    unsigned int    Hsp_hit_frame ,
-                    LonSecPos       Hsp_identity ,
-                    LonSecPos       Hsp_positive ,
-                    LonSecPos       Hsp_gaps ,
-                    LonSecPos       Hsp_align_len ,
-                    std::string&&   Hsp_midline ,
-                    bool            FormatOK ,
-                    std::string&&   sec    ,    
-                    LonSecPos       lmax,                            //long    SecBeg,long    SecEnd,
-                    LonSecPos       secBeg,                          //long    SecBeg,long    SecEnd,
-                    int             id,                             //    Hit_num    char    *    nam,    Hit_def
+    struct Info
+    {
+        unsigned int    BlastOutput_query_len ;
+        unsigned int    Hit_num=0 ;            // para cada hit
+        std::string     Hit_id  ;
+        std::string     Hit_def ;                // descriptor ??
+        std::string     Hit_accession     ;
+        long            Hit_len=0 ;
+        float           Hsp_bit_score=0 ;
+        unsigned int    Hsp_score=0 ;
+        double          Hsp_evalue=0 ;
+        LonSecPos       Hsp_query_from=0 ;    // dejar signed or unsigned !!!!????
+        LonSecPos       Hsp_query_to=0 ;
+        LonSecPos       Hsp_hit_from=0 ;
+        LonSecPos       Hsp_hit_to=0 ;
+        int             Hsp_query_frame=0 ;
+        int             Hsp_hit_frame=0 ;
+        LonSecPos       Hsp_identity=0 ; // revisar type --- no sera %  : float??
+        LonSecPos       Hsp_positive=0 ;
+        LonSecPos       Hsp_gaps=0 ;
+        LonSecPos       Hsp_align_len=0 ;
+        std::string     Hsp_midline ;
+        bool            FormatOK=false ;
+    };
+    Info info;
+
+    CSecBLASTHit(   CSecBLASTHit::Info  &&info,
+                    std::string         &&sec,
+                    LonSecPos           lmax,                       //long    SecBeg,long    SecEnd,
+                    LonSecPos           secBeg,                     //long    SecBeg,long    SecEnd,
+                    int                 id,                         //    Hit_num    char    *    nam,    Hit_def
                     std::shared_ptr<CSaltCorrNN>  NNpar,            //    long  l=0,    Hit_len ------> _Hsp_align_len
                     std::string        clas="", 
                     float            conc=-1
                 )  :
                         CSec (  std::move(sec),             // sec
                                 id,                         // 
-                                std::move(Hit_accession),   // name 
+                                std::move(info.Hit_accession),   // name
                                 NNpar,                      //  . maxlen . secBeg .
                                 lmax, 
                                 secBeg, 
                                 clas,
                                 conc ),
-                            _BlastOutput_query_len( BlastOutput_query_len ) ,
-                            // para cada hit
-                            _Hit_num        ( Hit_num ) ,
-                            _Hit_id         ( std::move(Hit_id) ) ,                
-                            _Hit_def        ( std::move(Hit_def) ) ,                
-                            _Hit_accession  ( std::move(Hit_accession) )    ,
-                            _Hit_len        ( Hit_len ) ,                
-                            _Hsp_bit_score  ( Hsp_bit_score ) ,
-                            _Hsp_score      ( Hsp_score ) ,
-                            _Hsp_evalue     ( Hsp_evalue ) ,
-                            _Hsp_query_from ( Hsp_query_from ) ,
-                            _Hsp_query_to   ( Hsp_query_to ) ,
-                            _Hsp_hit_from   ( Hsp_hit_from ) ,
-                            _Hsp_hit_to     ( Hsp_hit_to ) ,
-                            _Hsp_query_frame( Hsp_query_frame ) ,
-                            _Hsp_hit_frame  ( Hsp_hit_frame ) ,
-                            _Hsp_identity   ( Hsp_identity ) ,
-                            _Hsp_positive   ( Hsp_positive ) ,
-                            _Hsp_gaps       ( Hsp_gaps ) ,
-                            _Hsp_align_len  ( Hsp_align_len ) ,
-                            _Hsp_midline    ( std::move(Hsp_midline) ) ,
-                            _FormatOK       ( FormatOK ) /*,
-                            _SecLim         ( SecLim )    *//*,_SecBeg    (SecBeg),     _SecEnd        (SecEnd)*/
-                            {
-                        }            
+                        info(std::move(info)) /*, _SecLim( SecLim ) */
+                                               /*,_SecBeg    (SecBeg),     _SecEnd        (SecEnd)*/
+                {
+                    if ( this->_aln_fragment)   ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
+                    {
+                        if(this->_aln_fragment->sq.Max())
+                            info.Hsp_query_to    = info.Hsp_query_from + this->_aln_fragment->sq.Max()  -1;
+                        else
+                            info.Hsp_query_to    = info.Hsp_query_from + this->Len() -1;
+                        info.Hsp_query_from  = info.Hsp_query_from + this->_aln_fragment->sq.Min()-1;
+                    }
+                    else
+                    {
+                        this->_aln_fragment.reset(new Aligned_fragment);      ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
+                        info.Hsp_query_to    = info.Hsp_query_from + secHitBeg + this->Len() -1;
+                        info.Hsp_query_from  = info.Hsp_query_from + secHitBeg-1;
+                    }
+
+                    this->_aln_fragment->sq_ref.Set(       i.Hsp_query_from, i.Hsp_query_to);    ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
+                    this->_aln_fragment->aln   .set(*this, i.Hsp_query_from, i.Hsp_query_to);
+                    this->_aln_fragment->sq    .Set(       i.Hsp_hit_from,   i.Hsp_hit_to  );
+
+                }
 
 
-    unsigned int    _BlastOutput_query_len ;
+
     // para cada hit
-    unsigned int    _Hit_num ;
-    std::string     _Hit_id ;                
-    std::string     _Hit_def ;                
-    std::string     _Hit_accession    ;
-    long            _Hit_len ;                
-    float           _Hsp_bit_score ;
-    unsigned int    _Hsp_score ;
-    double          _Hsp_evalue ;
-    unsigned int    _Hsp_query_from ;
-    unsigned int    _Hsp_query_to ;
-    unsigned int    _Hsp_hit_from ;
-    unsigned int    _Hsp_hit_to ;
-    unsigned int    _Hsp_query_frame ;
-    unsigned int    _Hsp_hit_frame ;
-    unsigned int    _Hsp_identity ;
-    unsigned int    _Hsp_positive ;
-    unsigned int    _Hsp_gaps ;
-    unsigned int    _Hsp_align_len ;
-    std::string     _Hsp_midline ;
-    bool            _FormatOK ;
     //NumRang<long>    _SecLim;                                     //long    _SecBeg;    //long    _SecEnd;
-    std::string    Description ()const    override {return _description.length() ? _description : _Hit_def ; }
+    std::string    Description ()const    override {return _description.length() ? _description : info.Hit_def ; }
 };
 
 class CSecGB : public CSec // ---------------------------------------   CSecGB    ------------------------------------------------

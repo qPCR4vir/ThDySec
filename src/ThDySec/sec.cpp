@@ -231,7 +231,7 @@ CSec::CSec (    const std::string&  sec,
 		_b.push_back(       n_basek-1  ); 	  	
 		_GCp	= _GCp*100/this->Len() ;	
 		_Tm.Set( NNpar->CalcTM( _SdS.back(), _SdH.back()) ) ;      //_maxTm = _minTm =
-		if (Len()>1000 || Len()*Degeneracy() > 32*4*4*4*4*4*4*4*4*4*4) return;
+		if (Len()>1000 || Len()*Degeneracy() > 32*4*4*4*4*4*4*4*4*4*4) return; // oligo with 10 n
 		CreateNonDegSet();
 }
 
