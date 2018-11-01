@@ -361,26 +361,7 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
         if ( secH->Len() < lmin  )    
             continue;
 
-        if ( secH->_aln_fragment)   ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
-        {
-            if(secH->_aln_fragment->sq.Max())
-                i.Hsp_query_to    = i.Hsp_query_from + secH->aln_fragment->sq.Max()  -1;
-            else
-                i.Hsp_query_to    = i.Hsp_query_from + secH->Len() -1;
-            i.Hsp_query_from  = i.Hsp_query_from + secH->_aln_fragment->sq.Min()-1;
-        }
-        else
-        {
-            secH->_aln_fragment.reset(new Aligned_fragment);      ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
-            i.Hsp_query_to    = i.Hsp_query_from + secHitBeg + secH->Len() -1;
-            i.Hsp_query_from  = i.Hsp_query_from + secHitBeg-1;
-        }
-
-        secH->_aln_fragment->sq_ref.Set(       i.Hsp_query_from, i.Hsp_query_to);    ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
-        secH->_aln_fragment->aln   .set(*this, i.Hsp_query_from, i.Hsp_query_to);
-        secH->_aln_fragment->sq    .Set(       i.Hsp_hit_from,   i.Hsp_hit_to  );
-
-        long MaxIdem= long(ceil((i.Hsp_align_len*_MaxTgId)/100.0f));    // max of Id base
+        long MaxIdem= long(ceil((secH->info.Hsp_align_len*_MaxTgId)/100.0f));    // max of Id base
 
         if( _Hsp_identity > MaxIdem )
         {

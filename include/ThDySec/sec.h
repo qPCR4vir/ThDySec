@@ -207,13 +207,13 @@ class CSecBLASTHit : public CSec // ---------------------------------------   CS
                     else
                     {
                         this->_aln_fragment.reset(new Aligned_fragment);      ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
-                        info.Hsp_query_to    = info.Hsp_query_from + secHitBeg + this->Len() -1;
-                        info.Hsp_query_from  = info.Hsp_query_from + secHitBeg-1;
+                        info.Hsp_query_to    = info.Hsp_query_from + secBeg + this->Len() -1;
+                        info.Hsp_query_from  = info.Hsp_query_from + secBeg-1;
                     }
 
-                    this->_aln_fragment->sq_ref.Set(       i.Hsp_query_from, i.Hsp_query_to);    ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
-                    this->_aln_fragment->aln   .set(*this, i.Hsp_query_from, i.Hsp_query_to);
-                    this->_aln_fragment->sq    .Set(       i.Hsp_hit_from,   i.Hsp_hit_to  );
+                    this->_aln_fragment->sq_ref.Set(       info.Hsp_query_from, info.Hsp_query_to);    ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
+                    this->_aln_fragment->aln   .set(*this, info.Hsp_query_from, info.Hsp_query_to);
+                    this->_aln_fragment->sq    .Set(       info.Hsp_hit_from,   info.Hsp_hit_to  );
 
                 }
 
