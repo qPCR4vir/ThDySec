@@ -39,18 +39,19 @@
 	 
 	 
 
-	 nana::label  compiled{ *this, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.01.04
+	 nana::label  compiled{ *this, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.00     )" };
 
-   Downloads and source code: https://github.com/qPCR4vir/ThDySec
+     nana::label  downloads{ *this, R"(Downloads and source code: https://github.com/qPCR4vir/ThDySec
                        Wiki: https://github.com/qPCR4vir/ThDySec/wiki
-   ________________________________________________________________________________
-   Powered by Nana C++ GUI library:  http://nanapro.org/en-us/
+   ________________________________________________________________________________)" };
+
+     nana::label  GUI_lib{ *this, R"(Powered by Nana C++ GUI library:  http://nanapro.org/en-us/
                                   Wiki:  https://github.com/qPCR4vir/nana-docs/wiki
-      Nana Version: 1.6.2 cmake-dev : https://github.com/qPCR4vir/nana/
-         )" };
+      Nana Version: 1.6.2 cmake-dev : https://github.com/qPCR4vir/nana/)" };
+
 
 	 
- nana::button close { *this, "Close" };
+ nana::button bclose { *this, "Close" };
 	 
 
  public:
@@ -59,7 +60,7 @@
 	 {
 		 InitMyLayout();
 		 SelectClickableWidget(copy_r);
-
+		 bclose.events().click([&](){this->close();});
 	 }
 
  void SetDefLayout() override
@@ -68,7 +69,7 @@
 	 }
  void AsignWidgetToFields()
  {
-	 _place.field("all") << copy_r << comments << compiled << close ;
+	 _place.field("all") << copy_r << comments << compiled << downloads << GUI_lib << bclose ;
  }
  };
 
@@ -212,31 +213,9 @@ int main(int argc, char *argv[])
 	_menuBar.at(2).append_splitter();
 	_menuBar.at(2).append("&About", [&](nana::menu::item_proxy& ip) 
 	{
-
 		About ab;
-		ab.show();
-
-
-		(nana::msgbox(this->handle(), "About ThDy Hybrid", nana::msgbox::button_t::ok) <<
-			R"(               Copyright (C) 2009-2018, Ariel Vina-Rodriguez (qPCR4vir)
-                                  (  arielvina@yahoo.es  )
-                                  http://qpcr4vir.github.io/
-
-   This work is mentioned in my PhD thesis at INNT-FLI.
-
-   Program distributed under the GNU General Public License, see:
-           http://www.gnu.org/licenses/
-
-   Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.01.04
-
-   Downloads and source code: https://github.com/qPCR4vir/ThDySec
-                       Wiki: https://github.com/qPCR4vir/ThDySec/wiki
-   ________________________________________________________________________________
-   Powered by Nana C++ GUI library:  http://nanapro.org/en-us/
-                                  Wiki:  https://github.com/qPCR4vir/nana-docs/wiki
-      Nana Version: 1.6.2 cmake-dev : https://github.com/qPCR4vir/nana/
-         )") ();
-			;
+		ab.modality();
+		//ab.show();
 	});
 
     SelectClickableWidget( _menuBar);
