@@ -326,7 +326,7 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
         scan("Hsp_gaps"     )  ;  fi>>i.Hsp_gaps;                 //  <Hsp_gaps>0</Hsp_gaps>
         scan("Hsp_align-len")  ;  fi>>i.Hsp_align_len;            //  <Hsp_align-len>267</Hsp_align-len>
         scan("Hsp_hseq"     )  ; if(!getline(fi, sec,'<'))         return id;//<Hsp_hseq>TACAACATGATGGGAAAGAGAGAGAAGAAG
-        scan("Hsp_midline"  )  ; if(!getline(fi, i._Hsp_midline,'<'))return id;//<Hsp_midline>|||||||||||||||||||||||||||||||||||||||||
+        scan("Hsp_midline"  )  ; if(!getline(fi, i.Hsp_midline,'<'))return id;//<Hsp_midline>|||||||||||||||||||||||||||||||||||||||||
                                                             
 
         LonSecPos  secHitBeg {secBeg - i.Hsp_query_from +1};  // omitir estas primeras bases del Hit (de la parte del hit que tenemos)
@@ -362,8 +362,9 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
             continue;
 
         long MaxIdem= long(ceil((secH->info.Hsp_align_len*_MaxTgId)/100.0f));    // max of Id base
+        secH->_aln_fragment->aln   .set(*this, secH->info.Hsp_query_from, secH->info.Hsp_query_to);
 
-        if( _Hsp_identity > MaxIdem )
+        if( secH->info.Hsp_identity > MaxIdem )
         {
             secH->Selected(false);
             secH->Filtered(true);
@@ -390,7 +391,7 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
             else
                AddSec(secH.release() );
         }
-        id++;        
+        id++;
     }
     while (fi.good() ); 
     return id; 
@@ -501,7 +502,7 @@ int        CMultSec::AddFromFileGBtxt (ifstream &fi) // ----------------  CMultS
         }
         else
             AddSec(secGBtxt.release());
-    
+
         id++;        
     }
     while (fi.good() );

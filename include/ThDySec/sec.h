@@ -212,7 +212,7 @@ class CSecBLASTHit : public CSec // ---------------------------------------   CS
                     }
 
                     this->_aln_fragment->sq_ref.Set(       info.Hsp_query_from, info.Hsp_query_to);    ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
-                    this->_aln_fragment->aln   .set(*this, info.Hsp_query_from, info.Hsp_query_to);
+                    //this->_aln_fragment->aln   .set(*this, info.Hsp_query_from, info.Hsp_query_to);
                     this->_aln_fragment->sq    .Set(       info.Hsp_hit_from,   info.Hsp_hit_to  );
 
                 }
