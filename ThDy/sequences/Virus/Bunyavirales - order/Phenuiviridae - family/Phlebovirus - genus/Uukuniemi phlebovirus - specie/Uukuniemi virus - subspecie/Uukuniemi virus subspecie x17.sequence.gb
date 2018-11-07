@@ -1,0 +1,1947 @@
+LOCUS       NC_005221               1720 bp ss-RNA     linear   VRL 13-AUG-2018
+DEFINITION  Uukuniemi virus, complete genome.
+ACCESSION   NC_005221
+VERSION     NC_005221.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 1720)
+  AUTHORS   Simons,J.F. and Pettersson,R.F.
+  TITLE     Host-derived 5' ends and overlapping complementary 3' ends of the
+            two mRNAs transcribed from the ambisense S segment of Uukuniemi
+            virus
+  JOURNAL   J. Virol. 65 (9), 4741-4748 (1991)
+   PUBMED   1831239
+REFERENCE   2  (bases 1 to 1720)
+  AUTHORS   Simons,J.F., Hellman,U. and Pettersson,R.F.
+  TITLE     Uukuniemi virus S RNA segment: ambisense coding strategy, packaging
+            of complementary strands into virions, and homology to members of
+            the genus Phlebovirus
+  JOURNAL   J. Virol. 64 (1), 247-255 (1990)
+   PUBMED   2136709
+REFERENCE   3  (bases 1 to 1720)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (18-NOV-2003) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to M33551.
+            Reference [1] reports nucleotides
+            12 through 1720.  Reference [2]
+            reports nucleotides 1 through 11.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1720
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /strain="S23"
+                     /db_xref="taxon:11591"
+     gene            35..799
+                     /locus_tag="UUKVsSgp1"
+                     /db_xref="GeneID:6457835"
+     CDS             35..799
+                     /locus_tag="UUKVsSgp1"
+                     /note="(nucleocapsid) N protein"
+                     /codon_start=1
+                     /product="hypothetical protein"
+                     /protein_id="NP_941980.1"
+                     /db_xref="GeneID:6457835"
+                     /translation="MAMPENWVRFAIEISDAQWEEEEIREFINLFQYQGFDAAVVLSR
+                     IFELAKKADLSRDQMLRDIRALITLHLTRGNKLSSIEKRLSEEGKKEFALLKARYQLV
+                     DKAKEAADLTLSRIAIANAGLTCRILPQVVAHTAVTRSRMESLSADYPVCMMHNAFAG
+                     LIDETLPEDSIKALVDAHRLYLLEFSRTINVKHRGMEAKEILDANDSALQAGLASSFL
+                     TPSQKRAYLLSFKLVDGNGKVNKAVQQAATVLRSLI"
+     gene            complement(874..1695)
+                     /gene="NS"
+                     /locus_tag="UUKVsSgp2"
+                     /db_xref="GeneID:2654010"
+     CDS             complement(874..1695)
+                     /gene="NS"
+                     /locus_tag="UUKVsSgp2"
+                     /codon_start=1
+                     /product="nonstructural protein"
+                     /protein_id="NP_941981.1"
+                     /db_xref="GeneID:2654010"
+                     /translation="MSYFTIQNEDLPQGFTFRPHDKIYDSLWEMMDDGYFPSTIPLKT
+                     TINGVDMPSVGWLEVDEGLYDILIDGLDVLRPTDEEMIVSATGWPLEKNRALILNFFR
+                     NLRMDIIGTYTLQRSFITIMSIVLFGDQNPRLRRKKRSRVSLGKMLFDLALRMRSKIR
+                     RMKLTEVQVTGQNLVKDLCLLHILDLQKRLVTRGTIAEKRFFTAIEQAPCNYEPKRYG
+                     MKKKHMNFMFESDRKNLTVHPTLVNLEEHWITFESARERLLDTTFTKDWPVVGSL"
+ORIGIN      
+        1 acacaaagac ctccaactta gctatcgata gatcatggct atgccggaga attgggtgcg
+       61 ctttgcgatt gaaatctcgg atgctcagtg ggaggaggaa gagatccgag agttcatcaa
+      121 tctcttccag tatcaaggct ttgatgcagc cgtggtgctg agcaggattt ttgagttggc
+      181 caaaaaggct gatctctccc gggaccagat gctgagggac atcagggctc tgatcaccct
+      241 ccatctgacc agaggtaaca agctctccag cattgagaag aggctgtctg aggagggcaa
+      301 gaaagaattc gccctgctga aggccaggta ccagcttgtg gacaaggcca aggaggctgc
+      361 agatctgaca ctctcccgca ttgcgatcgc caatgccggg ctgacgtgcc gcattctgcc
+      421 gcaagtggtg gcccacacag ccgtgactag gtcacggatg gagagtctga gcgcagacta
+      481 tccagtgtgc atgatgcaca atgcctttgc tggcctgatc gatgagaccc tccctgagga
+      541 ctccatcaag gccctggtcg atgcccacag gctctatctg ctggagttct ccaggaccat
+      601 caacgtgaag caccgcggaa tggaggccaa ggagatcttg gatgccaatg actctgctct
+      661 gcaggctggt ctggcaagct ccttcctgac tcccagtcag aagagagctt acctgctgag
+      721 cttcaagctg gtggacggaa atggcaaagt gaataaagcc gtccagcagg ctgcaactgt
+      781 cctcagatca ttgatctgag gtgttttgga atttgattta attcggccaa attaaaactc
+      841 tctaattgga ctctaaaagg gcttcggccc aaactacagt gatcctacga ctggccaatc
+      901 cttggtgaat gtggtgtcca gcagtcgctc cctagcactc tcaaaggtga tccagtgctc
+      961 ctcaaggttg actagagttg gatggacagt aaggttcttc cgatctgatt caaacatgaa
+     1021 gttcatgtgc ttcttcttca tcccataacg cttaggttca tagttgcaag gtgcttgctc
+     1081 aattgcagtg aagaaccttt tctctgcaat ggtccccctt gtgactagtc ttttctggag
+     1141 atcaagaatg tggagaaggc acagatcctt caccagattc tgcccagtga cctgaacctc
+     1201 agtgagcttc attctcctta tttttgatct cattctgaga gcgagatcaa acagcatctt
+     1261 cccaagagag accctggatc tcttcttccg tctcagcctg gggttctgat caccgaacaa
+     1321 aacaatgctc atgatcgtta tgaaggacct ttgcaaagta taagtcccga tgatatccat
+     1381 tctcaagttc ctgaagaaat tgaggatgag agctcgattc ttctccagag gccatccagt
+     1441 tgctgacaca atcatttctt catcagtcgg tctaaggaca tctaaaccat caatcaggat
+     1501 gtcatacagg ccctcatcca cctcaagcca acccactgac ggcatatcca caccgttgat
+     1561 ggtagtcttc agaggaattg tgctaggaaa gtagccatca tccatcatct cccagagcga
+     1621 gtcgtagatc ttgtcatgag gacgaaaagt gaagccctgg gggagatcct cgttctggat
+     1681 agtgaagtaa gacatgctta atgttggagg gtctttgtgt
+//
+
+LOCUS       NC_005220               3229 bp ss-RNA     linear   VRL 13-AUG-2018
+DEFINITION  Uukuniemi virus chromosome segment M, complete genome.
+ACCESSION   NC_005220
+VERSION     NC_005220.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 3229)
+  AUTHORS   Ronnholm,R.
+  TITLE     Localization to the Golgi complex of Uukuniemi virus glycoproteins
+            G1 and G2 expressed from cloned cDNAs
+  JOURNAL   J. Virol. 66 (7), 4525-4531 (1992)
+   PUBMED   1602557
+REFERENCE   2  (bases 1 to 3229)
+  AUTHORS   Ronnholm,R. and Pettersson,R.F.
+  TITLE     Complete nucleotide sequence of the M RNA segment of Uukuniemi
+            virus encoding the membrane glycoproteins G1 and G2
+  JOURNAL   Virology 160 (1), 191-202 (1987)
+   PUBMED   3629974
+REFERENCE   3  (bases 1 to 3229)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (18-NOV-2003) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to M17417.
+            Draft entry and computer-readable sequence for [1] kindly provided
+            by R.Roennholm, 14-DEC-1987.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..3229
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /strain="S23"
+                     /db_xref="taxon:11591"
+                     /chromosome="segment M"
+                     /clone="pUM[40,187]"
+                     /note="passed in secondary chicken embryo fibroblasts"
+     gene            18..3044
+                     /locus_tag="UUKVsMgp1"
+                     /db_xref="GeneID:2943072"
+     CDS             18..3044
+                     /locus_tag="UUKVsMgp1"
+                     /codon_start=1
+                     /product="membrane glycoprotein polyprotein"
+                     /protein_id="NP_941979.1"
+                     /db_xref="GeneID:2943072"
+                     /translation="MVRTYLLLLLLCGPATPFFNHLMDVTRRLLDSSNATWQRDQPDT
+                     HRLSRLDAHVMSMLGVGSHIDEVSVNHSQHLHNFRSYNCEEGRRTLTMMDPKSGKFKR
+                     LKCNENQTLSKDCASCIEKKSSIMKSEHLVYDDAICQSDYSSPEAMPDHETHLCRIGP
+                     LHIQHCTHEAKRVQHVSWFWIDGKLRVYDDFSVSWTEGKFLSLFDCLNETSKDHNCNK
+                     AVCLEGRCSGDLQFCTEFTCSYAKADCNCKRNQVSGVAVVHTKHGSFMPECMGQSLWS
+                     VRKPLSKRSVTVQQPCMDCESDCKVDHILVIVRHFYPDHYQACLGSTCLTGRAKDKEF
+                     KIPFKMADRLSDSHFEIRIWDKERSNEYFLESRCESVDACAAITCWFCRANWANIHCF
+                     SKEQVLILVAVSSLCILLLASVLRALKVIATFTWKIIKPFWWILSLLCRTCSKRLNKR
+                     AERLKESIHSLEEGLNNVDEGPREQNNPARAVARPNVRQKMFNLTRLSPVVVGMLCLA
+                     CPVESCSDSISVTASSQRCSTSSDGVNSCFVSTSSLLQVSPKGQESCLILKGPTGTAV
+                     DSIRIKTTDIKLECVRRDLYWVPRVTHRCIGTRRCHLMGACKGEACSEFKINDYSPEW
+                     GHEEELMAQLGWSYCVEQCGGALCQCFNMRPSCFYLRKTFSHLSQDAFNIYECSEWSY
+                     RINVLVSTNSTHSNLTLKLGVPDSIPHGLISLSSVSQPPAIAYSECFGEDLHGTKFHT
+                     VCNRRTDYTLGRIGEIQCPTKADALAVSKRCISSDSIIFSKVHKDSVDCQSSIIDPMT
+                     IRNRNKLPSTVGSVTFWPTETSVEAAIPDLASATMLIRLDGYTIQFRSDSNKCSPRFL
+                     SLSGCYNCEAGAKLELEHVTDFGTALGILECPSLGYTTYYEVKNTLEKSIRTMHLNGS
+                     HVEAKCYFRCPNSESQLTIRGELIYLFNDDIRHHNQTLSPGLSPKSGSGWDPFGWFKA
+                     SWLRAIWAILGGTVSLIIGVVIIYMVFTLCLKVKKS"
+     sig_peptide     18..68
+                     /locus_tag="UUKVsMgp1"
+                     /note="membrane glycoprotein G1 signal peptide"
+     mat_peptide     69..1505
+                     /locus_tag="UUKVsMgp1"
+                     /product="membrane glycoprotein G1"
+                     /protein_id="NP_941985.1"
+     sig_peptide     1506..1556
+                     /locus_tag="UUKVsMgp1"
+                     /note="membrane glycoprotein G2 signal peptide"
+     mat_peptide     1557..3041
+                     /locus_tag="UUKVsMgp1"
+                     /product="membrane glycoprotein G2"
+                     /protein_id="NP_941986.1"
+ORIGIN      
+        1 acacaaagac ggctaacatg gtaaggacat atctcttgct tttgctcctg tgcgggccag
+       61 caacgccttt cttcaatcac ctgatggatg tgacccgtcg cttactagac tccagcaacg
+      121 caacctggca gagagaccag cctgacacgc accgattgtc aaggctggat gctcatgtca
+      181 tgtcaatgtt aggggttggt tcacacattg atgaagtcag tgtcaatcac agccagcacc
+      241 tccacaactt taggtcctac aattgtgaag agggaaggag gactttaacc atgatggatc
+      301 ccaaatcagg aaagttcaag cgcctgaaat gtaatgaaaa ccagactctg tccaaggatt
+      361 gtgcctcttg catagaaaag aagtcctcca tcatgaagag tgagcatctg gtctatgacg
+      421 acgccatttg ccaatctgat tacagcagtc ctgaggcaat gccagaccat gagacacatc
+      481 tttgcaggat cgggccattg cacatccagc attgcactca cgaggctaag agggttcagc
+      541 atgtctcttg gttttggatt gatgggaaac tgagggtgta tgatgacttc tcagtctcct
+      601 ggactgaggg gaaattcctg tctctctttg attgcttaaa tgaaacatcc aaggaccaca
+      661 actgcaataa agcagtctgt ttggagggca gatgttctgg agatcttcag ttttgcacag
+      721 aattcacatg ctcatatgca aaggctgact gcaactgcaa gagaaaccag gtttctgggg
+      781 tggcagtagt gcataccaag cacggctcct tcatgccaga gtgtatgggt cagtctcttt
+      841 ggtcagtgcg aaagcctttg tctaagagat cagtaacagt gcagcaacct tgcatggatt
+      901 gcgaaagtga ctgcaaagta gaccacattt tggtgatagt caggcacttc tacccagacc
+      961 attaccaggc atgtctgggc tccacatgtc tcactggtcg agcaaaggac aaggaattca
+     1021 agatcccatt taagatggca gacaggctct cagattcaca cttcgagata cgtatctggg
+     1081 ataaggagag gtccaacgaa tatttcttag aatctaggtg tgagtcagtt gatgcctgtg
+     1141 ctgccattac atgctggttt tgtagagcaa attgggccaa cattcactgc ttttctaaag
+     1201 agcaggttct aattctagtt gcagtgagct ccttgtgcat tttactgcta gctagtgttc
+     1261 tgagggctct caaagtcatt gccaccttca cctggaaaat aataaagccc ttttggtgga
+     1321 tcctttccct gttgtgcaga acttgctcca aaagactgaa caaacgggca gagcgactaa
+     1381 aggagagcat ccactccctg gaagaaggac tgaataatgt ggatgaagga cccagagagc
+     1441 agaacaaccc tgcaagagca gtggcaaggc ccaatgttcg acaaaagatg tttaacttga
+     1501 ccagactaag cccagttgtt gtaggcatgc tgtgtctggc ttgcccagtt gaaagttgct
+     1561 cagactccat ctctgtaaca gcctccagtc agaggtgctc tactagctca gatggagtga
+     1621 actcctgttt tgtcagcact agctctctgc ttcaggtcag tcctaagggg caagagagct
+     1681 gtctgatcct aaaggggcca actggaacag cagtggactc tattaggatc aagaccactg
+     1741 acatcaagct ggagtgtgtc aggcgagatc tgtattgggt ccccagggta acccataggt
+     1801 gcatagggac caggcgatgc catctcatgg gagcctgcaa gggagaggcc tgctctgagt
+     1861 ttaagataaa cgattattct ccggagtggg gtcatgaaga ggagttgatg gctcagctag
+     1921 gctggagcta ctgtgttgag cagtgtggcg gagccctttg tcaatgcttc aacatgaggc
+     1981 cctcttgctt ctacttgagg aaaacatttt ctcatctatc ccaggatgct ttcaacatct
+     2041 atgaatgctc agaatggtca taccggataa atgtgcttgt atcgacaaat tcaactcact
+     2101 caaatttaac attaaagctt ggtgtcccag actctatccc tcatggtctg attagcttgt
+     2161 ctagcgtgtc ccaaccgcca gccatagcat actcagagtg ctttggggag gatctacacg
+     2221 gcacaaagtt ccacacagtc tgcaacagaa ggactgatta cactctaggc agaatagggg
+     2281 agatacagtg ccccaccaaa gctgatgccc tggcagtctc taagagatgc attagcagcg
+     2341 actccataat tttctccaag gtccacaagg attcagtgga ttgtcaatca tcaatcatag
+     2401 atcccatgac aatcaggaat cggaacaaat tgccatccac tgtaggttca gtcactttct
+     2461 ggccaacaga aaccagtgtt gaggcagcca tccctgactt ggcatctgcc accatgttaa
+     2521 tcaggttaga tggttatacc attcagttca gatctgattc caataagtgt agcccaagat
+     2581 tcttatcatt atcaggctgt tacaactgtg aggctggagc aaagctggaa ctggaacatg
+     2641 taacagactt tggaacagcc ttgggaatcc tcgaatgccc aagcctaggc tacacaacat
+     2701 attatgaggt gaagaacacg cttgaaaagt ccataaggac aatgcattta aacggatcac
+     2761 acgtggaggc caagtgctac tttcggtgcc ctaactctga gagtcagcta actataagag
+     2821 gagaactgat ctatcttttc aatgatgaca tcagacacca caatcagacc ttgtccccag
+     2881 gcctgagtcc gaagtcaggg tctggatggg atccttttgg ttggttcaaa gcctcctggt
+     2941 tgagagcaat ttgggccatc ctgggtggga ctgtgtctct gataattgga gtggtgatca
+     3001 tatacatggt gttcacactc tgcttgaaag ttaaaaaatc gtgaagtccc cctattcccc
+     3061 atccccctct acccctttcc cttatccccc cctcatcctc taagagggtg agggcctctg
+     3121 ccgcacgacg ccgctggagc attcattact aagtggtgtt atccagggtg gtccttagca
+     3181 gtgcccgtga ataccatatt tgttgttcca tgtagccgtg tctttgtgt
+//
+
+LOCUS       NC_005214               6423 bp    RNA     linear   VRL 13-AUG-2018
+DEFINITION  Uukuniemi virus segment L, complete sequence.
+ACCESSION   NC_005214
+VERSION     NC_005214.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 6423)
+  AUTHORS   Elliott,R.M., Dunn,E., Simons,J.F. and Pettersson,R.F.
+  TITLE     Nucleotide sequence and coding strategy of the Uukuniemi virus L
+            RNA segment
+  JOURNAL   J. Gen. Virol. 73 (PT 7), 1745-1752 (1992)
+   PUBMED   1629699
+REFERENCE   2  (bases 1 to 6423)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-DEC-2007) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence was derived from D10759.
+            Submitted (21-Mar-1992) to DDBJ by:
+            Rechard M. Elliott
+            Institute of Virology
+            University of Glasgow
+            Church Street
+            Glasgow G11 5JR. Scotland
+            U.K.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..6423
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /db_xref="taxon:11591"
+                     /segment="L"
+     gene            17..6328
+                     /locus_tag="UUKVsLgp1"
+                     /db_xref="GeneID:2943071"
+     CDS             17..6328
+                     /locus_tag="UUKVsLgp1"
+                     /codon_start=1
+                     /product="RNA polymerase"
+                     /protein_id="NP_941973.1"
+                     /db_xref="GeneID:2943071"
+                     /translation="MLLAICSRTIRQQGLNCPPAVTFTSSHMRPPIPSFLLWTEGSDV
+                     LMDFDLDTIPAGSVTGSSIGPKFKIKTQAASSFVHDFTFAHWCDASDMPLRDHFPLVN
+                     DTFDHWTPDFISQRLDGSKVVVEFTTNRSDQEQSLISAFNTKVGKYEVALHNRSTTSS
+                     ILFGVVVVSETTVVTNLNLNQQEVDELCFRFLVARAVHLEMTTKMIIPEYDDEDEDKR
+                     SREVKAAFHSVQPDWNVTEANFAPFSRRMFSNFAQMEPDKEYLAHIILDSLKQAQADL
+                     DGNHYLNESLTEQARLDRNREESLNMVKDFERDFNNAAQRSAWSHKSTVPFPGVIPKV
+                     SGDTTSLSRLVELPVITGGSDATIRAWRSAYGSVSNGTVERCDEDVERERRAALCSLT
+                     VEELEESKALRMKYHRCKIDNGMMDKLDLAMQGVEAKEFKNHPSIIKKRSKSKKTFPL
+                     TADTRDIDLFLHHDDLMFNNEHSQTPPAAMIEAVKAGADAQSLHGLDKSANPWYASAL
+                     WFLGLPIGLWLFMCTCIGVELSISLKQHCGRQKFIIKKLRFFDIFLLIKPTNSGSHVF
+                     YSIAFPESAILGKLHRSQCFKGLQFEDGWFWTEFSSFKMSKLTNVVKCLSTGFNLFWF
+                     WRDYYEVPFWAGNEKDFQTGKQRANKMFKFCLLMLLEDKARTEEIATLSRYVMMEGFV
+                     SPPCIPKPQKMIEKLPNLARTKFQVWLISRMLQTIIRVSDYPFKITAGHKSANWTGMF
+                     NWVTGEPIESTQKLISLFYLGYLKNKEESPERNASIGMYKKILEYEDKHPGRYTYLGL
+                     GDPPSDDTRFHEYSISLLKHLCIHAEHDLRRNWGESFKAMISRDIVDAIASLDLERLA
+                     TLKASSNFNEEWYQKRGDGKTYHRSKVLEKVSKYVKKSSSHVHHIMEECLRKVESQGC
+                     MHVCLFKKPQHGGLREIYVLGFEERVVQLVIETIARQICKRFKSETLTNPKQKLAIPE
+                     THGLRAVKTCGIHHETVATSDDAAKWNQCHHVTKFALMLCHFTDPLFHGFIIRGCSMF
+                     MKKRIMIDQSLIDIIDSHTTLETSDAYLQKIHRGYHGSLDDQPRWISRGGAFVQTETG
+                     MMQGILHYTSSLLHTLLQEWLRTFSQRFIRTRVSVDQRPDVLVDVLQSSDDSGMMISF
+                     PSTDKGATGKYRYLSALIFKYKKVIGKYLGIYSSVKSTNNTLHLLEFNSEFFFHINHN
+                     RPLLRWITACDTISEQESLASRQEEMYNNLTSVLEGGGSFSLVSFCQFGQLLLHYTLL
+                     GMTVSPLFLEYIKLVSEIKDPSLGYFLMDHPFGSGLSGFKYNVWVAVQNSILGSRYRS
+                     LLEAIQNSDSAAPKKTLDTTTSGTFVQSTIIRFGDRKKWQRLVDRLNLPEDWLDVIDK
+                     NPEIVYRRPRDGFEVSLRIAEKVHSPGVSNSLSKGNCIIRVISSSVYILSRSILSDGL
+                     AWLYDEEEEVKRPLLYKVMNQPELDLHSRLTPAQLSTLFPMMAEFEKLQTHLRSYMKI
+                     EGEFISKKKVITQTRVNILETERFLRARPEDLIADKWFGFTRTRMTPRTFKEEWENLT
+                     SVFPWLTGNPSETLELSPFQHHVQLRNFFSRLDLKGRDIRIIGAPIKKSSGVSNVSTA
+                     IRDNFFPRFVLTHIPDEAAMERIEAAGILKHALFLTVTGPYTDQSKLDMCRDFITSSE
+                     PITLKPNHGKTRTNVLSLFQDYFSKRGPDIIFNRIQMANCGVIGGFTSPQKPKEVDGK
+                     IVYTGDGVWRGIVDGFQIQLVITYMPKQKSNELKSITVNSDRCISALSSFCQSWCKEM
+                     GVFNTEDFSKTQRFSKASFFMHKFKISGSKQTLGAPIFIVSEKIFRPICWDPSKLEFR
+                     VRGNTLNLTYKEVNPGAGQRMFNILSYTVKDTDVSDENAFKLMSLSPRHKFHGREPST
+                     SWICMRALPISTIDKLLERILNRERISGSIDNERLAECFKNVMESTLRRKGVFLSEFS
+                     RATQKMLDGLSRDMLDFFAEAGLNDDLLLEEEPWLSGLDTFMLDDEAYLEEYNLGPFG
+                     VFSVEQEMNTKYYHHLLLDSLVEDVIQKLSLDGLRKLFQEEEAPLEYKKEVIRLLNIL
+                     QRDASQIKWKSRDLLSENMGLDVDDDMFG"
+ORIGIN      
+        1 acacaaagac gccaagatgc ttttagcgat ttgctcgagg accatccgac aacagggtct
+       61 taactgccct ccagctgtga cctttacctc cagccatatg agaccgccaa ttccatcatt
+      121 tctgctctgg actgaggggt ctgatgttct gatggatttt gatttggaca ccatcccagc
+      181 tggatcagtt actggatcat ccattggtcc aaagttcaaa atcaaaacac aggctgcttc
+      241 atcttttgtg catgatttca cctttgccca ctggtgcgat gcgtccgaca tgcccctcag
+      301 agaccacttc ccgctggtca atgacacttt tgaccactgg actcctgatt tcatctcgca
+      361 gaggctagat ggaagcaagg tggtggttga gtttacaacc aaccggtcag accaggaaca
+      421 atctctgatc agtgctttca acaccaaagt aggaaagtac gaggttgctc ttcacaatcg
+      481 atcgactacc agcagcatac tatttggagt ggttgtggtc agtgagacaa cagtagtcac
+      541 caacttgaac ttaaatcagc aagaggtaga tgagctctgc tttaggttct tagttgctag
+      601 agctgttcac ctggagatga ccaccaagat gatcattcca gagtatgatg atgaggatga
+      661 agacaagaga agccgagaag tgaaggcagc cttccactct gtacagccag attggaatgt
+      721 gacagaagcc aactttgccc ctttctccag aaggatgttc tccaactttg cccaaatgga
+      781 gccagacaag gagtacctgg ctcacatcat attggactct ctgaagcaag cacaggcgga
+      841 tctggatggc aatcattacc tcaatgagag tttgactgag caagccagac ttgataggaa
+      901 cagagaggag agcttgaaca tggttaagga cttcgaacga gacttcaaca atgcagccca
+      961 gcggtcagct tggagccaca agtccactgt gccttttcca ggagtgatcc cgaaggtgag
+     1021 cggagacacc acatcccttt ctagacttgt cgagctacca gtgatcaccg ggggatcaga
+     1081 cgcaacaatc agggcttgga ggtcagccta tggatcagtg agcaacggaa cagttgaaag
+     1141 gtgtgatgag gatgtggaaa gagaaaggag ggcagccctg tgctctctca ctgtggagga
+     1201 gctagaagag tccaaggctc tgaggatgaa ataccacagg tgcaagatag acaatggaat
+     1261 gatggacaag ttggatttag caatgcaagg ggttgaggct aaagagttca agaatcaccc
+     1321 atccatcatc aagaagagat caaagtcgaa gaagaccttt cctctgactg cagacactcg
+     1381 agacatcgac ttgttcctcc atcatgatga cttgatgttc aacaatgagc actcccagac
+     1441 acctccagca gccatgattg aggctgtcaa ggctggggct gatgcacaat cactgcatgg
+     1501 gttggacaag agtgcaaatc catggtacgc ctcagctctc tggttccttg ggctccccat
+     1561 aggactatgg cttttcatgt gcacctgcat cggagtggag ttaagcatca gtctgaaaca
+     1621 acactgtggc aggcaaaagt tcatcattaa gaagctaagg ttctttgaca tcttcctcct
+     1681 gatcaagccc acgaattctg gaagtcacgt cttctactca attgcatttc cagagtcagc
+     1741 cattcttggg aagttgcaca gatcccagtg ttttaagggc ttgcagtttg aggatgggtg
+     1801 gttctggact gagttcagct cctttaaaat gtcaaaactg actaatgttg tgaaatgcct
+     1861 gtccactggg ttcaacttgt tttggttctg gagagattac tatgaagtac ccttctgggc
+     1921 tgggaatgag aaagacttcc aaacagggaa acagagagcc aacaaaatgt tcaagttttg
+     1981 cttgctaatg ctgttagagg acaaagccag gacagaggaa attgctacgc tgtctaggta
+     2041 tgtcatgatg gaagggtttg tcagtccccc ttgcattcca aaaccccaga agatgatcga
+     2101 gaagttgcct aatctggcta ggactaagtt ccaggtgtgg ctgatatcca gaatgctgca
+     2161 gacaattatt agagtgtcag attacccgtt caaaatcaca gcaggacaca aatcagccaa
+     2221 ctggacaggc atgttcaact gggtcacagg agaaccaatt gaatcaacgc agaagctaat
+     2281 ttccctgttc tacttgggtt accttaagaa caaagaggag tcccctgaga gaaatgcaag
+     2341 cattggaatg tacaagaaga tactggagta tgaggacaag caccccggaa ggtacaccta
+     2401 cctagggctt ggggaccctc ctagtgatga cactcgtttc cacgagtact ccattagctt
+     2461 attgaagcat ctctgcatcc atgctgagca tgatttgagg cggaattggg gggaatcttt
+     2521 caaagccatg atttctcgag atattgtgga tgccattgcc agcttggatc tggagagact
+     2581 ggcaactctg aaggcttcca gcaacttcaa tgaagagtgg tatcagaaga ggggtgatgg
+     2641 aaagacctac catcggagca aggttctgga aaaagtcagc aagtatgtca agaagagtag
+     2701 ctcacatgtc caccatatca tggaagaatg tcttcggaag gttgagagcc aaggttgtat
+     2761 gcatgtgtgt ctgttcaaga aaccgcagca tggtggtctg agagagatat atgttcttgg
+     2821 atttgaagag agagtggtcc agctggtgat agagaccatt gcaaggcaaa tctgtaaacg
+     2881 gttcaaatct gaaaccttga ccaacccaaa gcaaaaactg gccattcctg aaacacatgg
+     2941 tcttagggct gtcaagacat gtggcattca tcatgaaaca gtggcgacat cagacgatgc
+     3001 tgccaaatgg aatcagtgcc atcatgtcac gaagtttgct ttaatgctct gccatttcac
+     3061 agatcctttg tttcatgggt tcatcattag aggatgttcc atgttcatga agaaacgcat
+     3121 aatgattgat cagagtctga ttgatatcat agactcccac accacactgg agacatctga
+     3181 tgcatacctc caaaagatcc acagagggta ccatgggagt cttgatgacc agcctagatg
+     3241 gatctctaga ggcggggcct ttgtgcagac ggaaactggt atgatgcaag gcatacttca
+     3301 ttacacctct agtctactcc acaccttgct ccaggagtgg cttagaactt tctcacaaag
+     3361 attcatcagg acaagggttt cagtcgacca gcgcccagat gtcctagtgg atgtcttgca
+     3421 gagctcagat gattctggca tgatgatctc cttcccgtca acagacaagg gagccactgg
+     3481 gaagtacaga tacttgtctg cccttatttt caagtacaaa aaagtcattg gcaagtacct
+     3541 tggcatctac tcatctgtaa agtccactaa caacaccctc cacctactag aattcaactc
+     3601 agagtttttc tttcacatca accacaacag gcctctacta aggtggatca cagcttgtga
+     3661 caccatctca gagcaagaat ctctggcttc aaggcaagaa gagatgtaca acaatctgac
+     3721 atcagttctc gagggtggtg gcagcttttc tctggtttcc ttttgccagt ttggtcagtt
+     3781 gctcctacac tacactctat taggcatgac agtttcccca ctgttccttg agtacataaa
+     3841 gttggtgtca gaaataaagg acccttccct gggctacttc ctgatggatc acccgttcgg
+     3901 gtctggtcta tcaggattca agtacaatgt ctgggtggct gttcaaaaca gcatactagg
+     3961 atccagatat agatccttgc tggaggctat acagaattct gacagtgctg ctccaaagaa
+     4021 aaccttggat acaacaactt ctgggacttt cgtgcagtcc acaatcatca ggtttggaga
+     4081 tagaaagaaa tggcagagac tggtggacag gttgaacctc ccagaggact ggctggatgt
+     4141 gattgacaag aatcctgaga ttgtgtatcg tcgaccccga gatggctttg aagtgagcct
+     4201 gaggattgca gagaaggtcc attctccagg agtctctaac tccctgtcca agggcaactg
+     4261 catcatcagg gtcatctcat catcagtgta catcctgagc aggagcattc taagtgatgg
+     4321 tctggcttgg ctctatgatg aagaagagga ggtcaaacgc cctctgctgt acaaggttat
+     4381 gaatcagcct gagctggacc tccattccag gttgactccg gcacagctgt caacgttgtt
+     4441 tcccatgatg gctgaatttg agaagttgca gacccatctt aggagttata tgaaaattga
+     4501 aggtgagttc atatcaaaga agaaggtcat aactcagact agggtcaaca ttcttgagac
+     4561 tgagagattc cttagagcac gacctgagga cttgattgcg gataaatggt ttggcttcac
+     4621 cagaacaaga atgactccaa ggactttcaa agaggagtgg gagaatctga cttctgtgtt
+     4681 tccatggcta acaggaaacc cctctgagac tctggaactt tctcctttcc agcaccatgt
+     4741 ccagctaaga aatttcttca gtagactgga cctcaagggg agagacatca gaattatagg
+     4801 agctcctata aagaagtcta gtggtgtgag caacgtctct acagccatta gggacaactt
+     4861 cttccccagg tttgtcctga ctcacatacc agatgaagct gcaatggaaa gaattgaagc
+     4921 agcaggcatt ctgaaacatg ctctcttcct cacagtgaca ggaccttaca ccgatcagtc
+     4981 aaagctggat atgtgcaggg attttatcac tagctcagag cccatcactc ttaaacctaa
+     5041 ccacggaaaa accaggacca acgtgctttc cctttttcag gattacttct ccaagagggg
+     5101 gccagacatc atcttcaaca gaattcagat ggctaactgt ggagtgatcg gaggattcac
+     5161 atctcctcag aagccaaagg aggttgacgg caagattgtc tacactggtg atggtgtgtg
+     5221 gcgaggaatt gttgacggtt ttcagatcca gctggtcatt acctacatgc caaagcagaa
+     5281 gtcaaatgag ctaaaatcca taactgtcaa ctcagacaga tgcatctctg ccttgagcag
+     5341 cttctgccag tcgtggtgca aagaaatggg agtgttcaac accgaggatt tttccaagac
+     5401 ccagagattc tcaaaagcgt ccttcttcat gcacaagttc aagatctctg gttcaaagca
+     5461 gactctaggt gctccgatct tcatcgtcag tgagaagatc ttccgaccca tctgctggga
+     5521 cccatcgaag ctggaattta gagtgcgcgg gaacactcta aatctcactt acaaggaagt
+     5581 caatccaggt gctggccaga gaatgttcaa cattctcagt tacactgtca aggatacaga
+     5641 tgtctctgat gagaatgctt tcaagctcat gtcattgtcg cctagacaca agttccatgg
+     5701 gcgggagccg agcacttctt ggatctgcat gagagccctg cctatcagca ccattgacaa
+     5761 gctgctagag agaatattga acagggagag aataagtgga tcaatcgaca acgaacgcct
+     5821 ggctgagtgt ttcaagaatg tgatggagtc aaccttgagg cgtaagggag tgtttctatc
+     5881 tgaattctca agggccactc aaaagatgct ggatggtctc agcagagata tgttggactt
+     5941 ttttgctgag gctggcctca atgatgatct cctgctggaa gaggagccat ggctgagcgg
+     6001 tttagacact tttatgctgg atgatgaggc atacctggaa gagtacaatc ttggtccttt
+     6061 cggtgtgttc agtgtggagc aggagatgaa caccaagtac taccaccact tgcttctgga
+     6121 ctccctggtt gaggatgtaa tccagaaatt gtccctggac gggttgagga agttgtttca
+     6181 ggaggaagaa gctccattgg aatacaagaa agaggtgatt cgactgctca acatcttgca
+     6241 aagggatgcg agtcagataa agtggaagag cagagacctt ttgtcagaga acatgggtct
+     6301 tgacgttgat gatgacatgt ttggttgagt gacttttctt tgggttggat gctggcattg
+     6361 cttttactat ctctctctct ttgaatgtat cttcctttac ttccatcttg gcggactttg
+     6421 tgt
+//
+
+LOCUS       KX219594                3229 bp    RNA     linear   VRL 31-MAY-2016
+DEFINITION  Uukuniemi virus strain HRS segment M, complete sequence.
+ACCESSION   KX219594
+VERSION     KX219594.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 3229)
+  AUTHORS   Mazelier,M., Rouxel,R.N., Zumstein,M., Mancini,R., Bell-Sakyi,L.
+            and Lozach,P.Y.
+  TITLE     Uukuniemi virus as a tick-borne virus model
+  JOURNAL   J. Virol. (2016) In press
+   PUBMED   27194760
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 3229)
+  AUTHORS   Mazelier,M., Rouxel,R.N., Zumstein,M., Mancini,R., Moutailler,S.,
+            Chirico,J., Bell-Sakyi,L. and Lozach,P.-Y.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (06-MAY-2016) Infectious Diseases, University Hospital
+            Heidelberg, Im Neuenheimer Feld 324, Heidelberg 69120, Germany
+FEATURES             Location/Qualifiers
+     source          1..3229
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /strain="HRS"
+                     /host="tick"
+                     /db_xref="taxon:11591"
+                     /segment="M"
+                     /country="Sweden"
+                     /collection_date="2013"
+     CDS             18..3044
+                     /codon_start=1
+                     /product="polyprotein"
+                     /protein_id="ANG84007.1"
+                     /translation="MVRTYLLLLLLCGPATPFFNHLMDVTRRILDSSNATWQRDQPDA
+                     HRLSRLDAHVMSMLGVGSHIDEVSVNHSQHLHNFRSYNCEEGRRTLTMMDPKSGKFKR
+                     LKCNENQTLSKDCASCIEKKSTIMKSEHLVYDDAICQSDYSSPEAMPDHETHLCRIGP
+                     LHIQHCSHEAKRVQHVSWFWIDGKLRVYDDFSVSWTEGKFLSLFDCVNETSKDHNCNK
+                     TVCLEGRCSGDLQFCTEFTCSYAKADCNCKRNQVSGVAVVHTKHGSFMPECMGQSLWS
+                     VRKPLTKRSVAVQQPCMDCESDCKVDHILVIVRHFYPDHYQACLGSTCLTGRAKDKEF
+                     KIPFKMADRLSDSHFEIRIWDKERSNEYFLESRCESVDACAAITCWFCRANWANIHCF
+                     SKEQVLILVAVSSLCILLLASVLRALKVIATFTWKIIKPFWWILSLLCRTCSKRLNKR
+                     AERLKESIHSLEEGLNNVDEGPREQKQPCRAVARPNVRQKMFNLTRLSPVVVGMLCLT
+                     CPVESCSDSISVTASSQRCSTSSDGVNSCFVSTSSLLQVSPKGQESCLILKGPTGTAV
+                     DSIRIKTTDIRLECVRRDLYWVPRVTHRCIGTRRCHLMGACKGEACSEFKINDYSPEW
+                     GHEEELMAQLGWSYCVEQCGGALCQCFNMRPSCFYLRKTFSHLSQDAFNIYECSEWSY
+                     RINVLVSTNSTHSNLTLKLGVPDSIPHGLISLSSVSQPPAIAYSECFGEDLHGTKFHT
+                     VCNRRTDYTLGRIGEIQCPTKADALAVSKRCISSDSIIFSKVHKDSVDCRSSIIDPMT
+                     IRNRNKLPSTVGSVTFWPTETSVEAAIPDLASATMLIRLDGYSIQFRSDSNKCSPRFL
+                     SLSGCYNCEAGAKLELEHVTDFGTALGILECPSLGYTTYYEVKNTLEKSIRTMHLNGS
+                     HVEAKCYFRCPNSESQLTIRGELIYLFNDDIRHHNQTLSPGLSPKSGSGWDPFGWFKA
+                     SWLRAIWAILGGTVSLIIGVVIIYMVFTLCFKVKKS"
+     sig_peptide     18..68
+     mat_peptide     69..1505
+                     /product="membrane glycoprotein GN"
+     sig_peptide     1506..1556
+     mat_peptide     1557..3041
+                     /product="membrane glycoprotein GC"
+ORIGIN      
+        1 acacaaagac ggctaacatg gtaaggacat atctcttgct tttgctcctg tgcgggccgg
+       61 caacgccttt cttcaaccac ctgatggatg tcacccgtcg catcctagac tccagcaacg
+      121 cgacctggca gagagaccag cctgacgcac acagattgtc aaggctggat gctcacgtca
+      181 tgtcaatgct aggggttggt tcacacattg atgaggtcag tgtcaatcac agccaacatc
+      241 tccacaactt caggtcctac aattgtgaag agggaaggag gactttgacc atgatggacc
+      301 ccaaatcagg taagtttaag cgcctaaaat gtaatgagaa ccagactctg tccaaggatt
+      361 gtgcctcttg catagaaaag aagtccacta ttatgaagag tgagcatctg gtctacgatg
+      421 acgccatttg ccagtctgat tacagtagtc ctgaggcaat gccagaccat gagacacatc
+      481 tttgcaggat cgggccatta catatccagc attgctctca cgaggccaag agggttcagc
+      541 atgtttcttg gttttggatt gatgggaagc tgagggtgta tgatgacttt tcagtctcct
+      601 ggactgaggg gaagttcctg tctctctttg attgcgtaaa tgagacttcc aaggaccaca
+      661 actgcaacaa gactgtttgc ctggagggca gatgctctgg ggaccttcag ttttgcacag
+      721 agttcacatg ctcatatgca aaggctgact gcaactgtaa gagaaatcag gtttctgggg
+      781 tggcagtggt tcacaccaag catggctcct tcatgccaga gtgcatgggt cagtctcttt
+      841 ggtctgtacg aaagccttta actaagagat cagtggcagt gcagcaaccc tgcatggatt
+      901 gtgaaagtga ctgtaaggta gaccatattc tggtgatagt taggcacttc tacccagatc
+      961 attaccaagc atgtctgggc tccacttgcc tcactggtag agctaaggac aaggaattca
+     1021 agatcccatt taagatggct gaccggcttt cagattcaca cttcgagata cgtatctggg
+     1081 ataaggagag atccaatgaa tatttcttag aatctaggtg tgaatcagtt gatgcctgtg
+     1141 ctgctatcac atgctggttt tgcagagcaa attgggccaa cattcactgc ttttctaagg
+     1201 agcaggttct gattctagtt gcagtgagct ctttgtgcat tttattgctg gctagtgttc
+     1261 tgagagctct caaagtcatt gccaccttca cctggaaaat aataaagccc ttttggtgga
+     1321 tcctttccct gttgtgcaga acttgctcca aaagactgaa caagcgggca gagcgtctaa
+     1381 aggagagcat ccactctctg gaagaaggac tgaataatgt ggatgaaggg cccagagagc
+     1441 agaaacaacc ctgcagagca gtggcaagac ccaatgttcg acaaaaaatg ttcaacttaa
+     1501 ccagactaag ccctgtcgtt gtgggcatgc tgtgtctgac ttgcccagtt gagagttgct
+     1561 cagactccat ctctgtaaca gcctccagtc agagatgctc cacaagctca gatggagtga
+     1621 actcctgctt tgttagcacc agctctctac ttcaggttag tcccaagggg caagagagct
+     1681 gtctgatcct aaaggggcca actggaacag cagtggactc tattaggatc aagaccactg
+     1741 acataagact ggagtgtgtc aggcgagatc tgtattgggt ccccagggtg acccataggt
+     1801 gtatagggac caggcgatgc catctcatgg gagcctgcaa gggagaggcc tgctctgagt
+     1861 ttaagataaa tgattactca ccggagtggg gccatgaaga agagttgatg gctcagctag
+     1921 gctggagcta ctgtgttgag cagtgcggtg gcgctctctg tcagtgcttc aacatgaggc
+     1981 cctcttgctt ctacctgagg aaaacatttt ctcatctctc ccaggatgct ttcaacatct
+     2041 atgagtgctc tgaatggtca taccggatta atgtgcttgt atcgacaaat tcaactcact
+     2101 ctaatctaac attaaagctt ggagtcccag actctatccc acatggtctg attagcttgt
+     2161 caagtgtgtc ccaaccgcca gccatagcat actcagaatg ctttggggaa gatctgcacg
+     2221 gcacaaagtt ccatacagtc tgcaatagaa gaactgacta cactctaggt agaatagggg
+     2281 agatacagtg tcccaccaaa gctgatgccc tggcagtctc taagaggtgc attagcagcg
+     2341 actccataat cttctccaag gtgcacaagg attcggtgga ctgtcggtca tcaatcattg
+     2401 atcccatgac aatcaggaat cggaacaaat tgccatccac agtaggttca gtcactttct
+     2461 ggccaactga aaccagtgtt gaggcagcca tccccgactt ggcatctgcc actatgttga
+     2521 tcaggttaga tggttactcc attcagttca gatctgattc caacaagtgc agcccgagat
+     2581 tcttatcatt atctggctgt tacaactgtg aggctggtgc caagctggaa ctggaacatg
+     2641 taacagactt tgggacagcc ttgggcatcc tcgaatgccc gagcctaggc tacacgactt
+     2701 actatgaggt gaagaataca cttgaaaagt ctataagaac catgcattta aacggatcac
+     2761 acgtggaggc taaatgctac ttccggtgcc ctaactctga gagtcagcta accataagag
+     2821 gagaactaat ctatcttttc aatgatgaca tcaggcacca caatcagact ttgtccccag
+     2881 gcctgagtcc gaagtcaggg tctggatggg acccttttgg ttggttcaaa gcctcctggt
+     2941 tgagagcgat ttgggctatc ctgggtggaa cagtgtcttt gataattgga gtggtgatca
+     3001 tatacatggt cttcacactc tgctttaaag taaaaaaatc gtgaagctcc tctcttcccc
+     3061 atccccctca acccctttcc cttctccccc cctcatcctc tcagagggtg agggcctctg
+     3121 ccgcacgacg ccgctggagc atttattact aagtggtgtc attcggggtg gtccctagta
+     3181 gtgcctgtga ataccatatt tgttgttcca tgtagccgtg tctttgtgt
+//
+
+LOCUS       KX219593                3229 bp    RNA     linear   VRL 31-MAY-2016
+DEFINITION  Uukuniemi virus strain RVS segment M, complete sequence.
+ACCESSION   KX219593
+VERSION     KX219593.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 3229)
+  AUTHORS   Mazelier,M., Rouxel,R.N., Zumstein,M., Mancini,R., Bell-Sakyi,L.
+            and Lozach,P.Y.
+  TITLE     Uukuniemi virus as a tick-borne virus model
+  JOURNAL   J. Virol. (2016) In press
+   PUBMED   27194760
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 3229)
+  AUTHORS   Mazelier,M., Rouxel,R.N., Zumstein,M., Mancini,R., Moutailler,S.,
+            Chirico,J., Bell-Sakyi,L. and Lozach,P.-Y.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (06-MAY-2016) Infectious Diseases, University Hospital
+            Heidelberg, Im Neuenheimer Feld 324, Heidelberg 69120, Germany
+FEATURES             Location/Qualifiers
+     source          1..3229
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /strain="RVS"
+                     /host="tick"
+                     /db_xref="taxon:11591"
+                     /segment="M"
+                     /country="Sweden"
+                     /collection_date="2013"
+     CDS             18..3044
+                     /codon_start=1
+                     /product="polyprotein"
+                     /protein_id="ANG84006.1"
+                     /translation="MVRTYLLILLLCGPATPFFNHLMDVTRRILDSSNATWQRDQPDT
+                     HRLSRLDAHVMSMLGVGSHIDEVSVNHSQHLHNFRSYNCEEGRRTLTMMDPKSGKFKR
+                     LKCNENQTLSKDCASCIEKKSTIMKSEHLVYDDAICQSDYSSPEAMPDHETHLCRIGP
+                     LHIQHCSHEAKRVQHVSWFWIDGKLRVYDDFSVSWTEGKFLSLFDCVNETSKDHNCNK
+                     TVCLEGRCSGDLQFCTEFACSYAKADCNCKRNQVSGVAVVHTKHGSFMPECMGQSLWS
+                     VRKPLSKRSVTVQQPCMDCESDCKVDHILVIVRHFYPDHYQACLGSTCLTGRAKDKEF
+                     KIPFKMADRLSDSHFEIRIWDKERSNEYFLESRCESVDACAAITCWFCRANWANIHCF
+                     SKEQVLILVAVSSLCILLLASVLRALKVIATFTWKIIKPFWWILSLLCRTCSKRLNKR
+                     AERLKESIHSLEEGLNNVDEGPREQNNPARAVARPNVRQKMFNLTRLSPVVVGMLCLA
+                     CPVESCSDSISVTASSQRCSTSSDGVNSCFVSTSSLLQVSPKGQESCLILKGPTGTAV
+                     DSIRIKTTDIKLECVRRDLYWVPRVTHRCIGTRRCHLMGACKGEACSEFKINDYSPEW
+                     GHEEELMAQLGWSYCVEQCGGALCQCFNMRPSCFYLRKTFSHLSQDAFNIYECSEWSY
+                     RINVLVSTNSTHTNLTLKLGVPDSIPHGLISLSSVSQPPAIAYSECFGEDLHGTKFHT
+                     VCNRRTDYTLGRIGEIQCPTKADALAVSKRCISSDSIIFSKVHKDSVDCRSSIIDPMT
+                     IRNRNKLPSTVGSVTFWPTETSVEAAIPDLASATMLIRLDGYTIQFRSDSNKCSPRFL
+                     SLSGCYNCEAGAKLELEHVTDFGTALGILECPSLGYTTYYEVKNTLEKSIRTMHLNGS
+                     HVEAKCYFRCPNSESQLTIRGELIYLFNDDIRHHNQTLSPGLSPKSGSGWDPFGWFKA
+                     SWLRAIWAILGGTVSLIIGVVIIYMVFTLCLKVKKS"
+     sig_peptide     18..68
+     mat_peptide     69..1505
+                     /product="membrane glycoprotein GN"
+     sig_peptide     1506..1556
+     mat_peptide     1557..3041
+                     /product="membrane glycoprotein GC"
+ORIGIN      
+        1 acacaaagac ggctaacatg gtaaggacat atctcttgat tttgctcctg tgcgggccgg
+       61 caacgccttt cttcaaccac ctgatggatg tcacccgtcg catcctggac tccagcaatg
+      121 cgacctggca gagagaccag cctgacacac acagattgtc aaggctggat gctcatgtca
+      181 tgtcaatgct aggggttggt tcacacattg atgaggtcag tgtcaatcac agccaacatc
+      241 tccacaactt caggtcctac aattgtgagg agggaaggag gactttaacc atgatggacc
+      301 ccaaatcagg taagtttaag cgcctgaaat gtaatgagaa ccagactctg tccaaggact
+      361 gtgcctcttg catagaaaag aagtccacta ttatgaagag tgagcatctg gtctacgatg
+      421 acgccatttg ccagtctgat tacagcagtc ctgaggcaat gccagaccat gagacacatc
+      481 tttgcaggat cgggccatta catatccagc attgctctca cgaggccaag agggttcagc
+      541 atgtttcttg gttttggatt gatgggaagc tgagggtgta tgatgacttt tcagtctcct
+      601 ggactgaggg gaagttcctg tctctctttg attgcgtaaa tgagacttcc aaggaccaca
+      661 actgcaacaa gactgtttgc ctggagggca gatgctctgg ggaccttcag ttttgcacag
+      721 agtttgcatg ctcatatgca aaggctgact gcaactgcaa gagaaaccag gtttctgggg
+      781 tggcagtagt gcataccaag cacggctcct tcatgccaga gtgtatgggt cagtctcttt
+      841 ggtcagtgcg aaagcctttg tctaagagat cagtaacagt gcagcaacct tgcatggatt
+      901 gcgaaagtga ctgcaaagta gaccacattt tggtgatagt caggcacttc tacccagacc
+      961 attaccaggc atgtctgggc tccacatgtc tcactggtcg agcaaaggac aaggaattca
+     1021 agatcccatt taagatggca gacaggctct cagattcaca cttcgagata cgtatctggg
+     1081 ataaggagag gtccaacgaa tatttcttag aatctaggtg tgagtcagtt gatgcctgtg
+     1141 ctgccattac atgctggttt tgtagagcaa attgggccaa cattcactgc ttttctaaag
+     1201 agcaggttct aattctagtt gcagtgagct ccttgtgcat tttactgcta gctagtgttc
+     1261 tgagggctct caaagtcatt gccaccttca cctggaaaat aataaagccc ttttggtgga
+     1321 tcctttccct gttgtgcaga acttgctcca aaagactgaa caaacgggca gagcgactaa
+     1381 aggagagcat ccactccctg gaagaaggac tgaataatgt ggatgaagga cccagagagc
+     1441 agaacaaccc tgcaagagca gtggcaaggc ccaatgttcg acaaaagatg tttaacttga
+     1501 ccagactaag cccagttgtt gtaggcatgc tgtgtctggc ttgcccagtt gaaagttgct
+     1561 cagactccat ctctgtaaca gcctccagtc agaggtgctc tactagctca gatggagtga
+     1621 actcctgttt tgtcagcact agctctctgc ttcaggtcag tcctaagggg caagagagct
+     1681 gtctgatcct aaaggggcca actggaacag cagtggactc tattaggatc aagaccactg
+     1741 acatcaagct ggagtgtgtc aggcgagatc tgtattgggt ccccagggta acccataggt
+     1801 gcatagggac caggcgatgc catctcatgg gagcctgcaa gggagaggcc tgctctgagt
+     1861 ttaagataaa cgattattct ccggagtggg gccatgaaga agagttaatg gcccagctag
+     1921 gctggagcta ctgtgttgag cagtgcggtg gcgctctctg tcagtgcttc aacatgaggc
+     1981 cctcttgctt ctacctgagg aaaacatttt ctcatctctc ccaggatgct ttcaacatct
+     2041 atgagtgctc agaatggtca taccggatta atgtgcttgt atcgacaaac tcaactcaca
+     2101 ctaatctaac attaaagctt ggagttccag actctattcc acatggtctg attagcttgt
+     2161 ctagtgtgtc ccaaccacca gccatagcat actcagaatg ctttggggaa gatctgcacg
+     2221 gcaccaagtt ccatacagtc tgcaatagaa ggactgacta cactctaggt agaatagggg
+     2281 agatacagtg tcccaccaaa gctgatgccc tggcagtctc taagaggtgc attagcagtg
+     2341 actccataat cttctccaag gtccacaagg attcggtaga ttgtcgatca tcaatcattg
+     2401 atcccatgac aatcaggaat cggaacaaat tgccatccac agtaggttca gtcactttct
+     2461 ggccaactga aaccagtgtt gaggcagcca tccctgactt ggcatctgcc actatgttga
+     2521 ttaggttaga tggttacacc atccagttca gatctgattc caacaagtgc agcccgagat
+     2581 tcttgtcatt atctggctgt tacaactgtg aggctggtgc caagctggaa ctggaacatg
+     2641 taacagactt tgggacagcc ttgggcatcc tcgaatgccc gagcctaggc tacacgactt
+     2701 attatgaggt gaagaatacg cttgaaaagt ctataagaac catgcattta aacggatcac
+     2761 acgtggaggc caaatgctac ttccggtgcc ccaactctga aagtcagctg accataagag
+     2821 gagaactaat ctatcttttc aatgatgaca tcaggcacca caatcagacc ttatccccag
+     2881 gcctgagtcc gaagtcaggg tctgggtggg acccttttgg ttggttcaaa gcctcctggt
+     2941 tgagagcgat ttgggctatc ctgggtggga cagtatctct gataattgga gtggtgatca
+     3001 tatacatggt tttcacactc tgcttaaaag taaaaaaatc gtgaagctcc tctaatcccc
+     3061 atccccctct acccctttcc cttctccccc cctcatcctc tcagaggatg agggcctctg
+     3121 ccgcacgacg ccgctggagc atttattact aagtggtgtc attcggggtg gtccctagta
+     3181 gtgcccgtga ataccatatt tgttgttcca tgtagccgtg tctttgtgt
+//
+
+LOCUS       KM114247                3227 bp ss-RNA     linear   VRL 30-OCT-2014
+DEFINITION  Uukuniemi virus isolate Potepli 63 segment M, complete sequence.
+ACCESSION   KM114247
+VERSION     KM114247.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 3227)
+  AUTHORS   Matsuno,K., Weisend,C., Kajihara,M., Matysiak,C., Williamson,B.N.,
+            Simuunza,M., Mweene,A.S., Takada,A., Tesh,R.B. and Ebihara,H.
+  TITLE     Comprehensive Molecular Detection of Tick-Borne Phleboviruses Leads
+            to the Retrospective Identification of Taxonomically Unassigned
+            Bunyaviruses and the Discovery of a Novel Member of the Genus
+            Phlebovirus
+  JOURNAL   J. Virol. (2014) In press
+   PUBMED   25339769
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 3227)
+  AUTHORS   Matsuno,K., Dahlstrom,E., Porcella,S.F. and Ebihara,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-JUL-2014) Laboratory of Virology, NIAID - Rocky
+            Mountain Labs, NIH, 903 South 4th street, Hamilton, MT 59840, USA
+COMMENT     GenBank Accession Numbers KM114246-KM114248 represent sequences
+            from the 3 segments of Uukuniemi virus Potepli 63.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: GS De Novo Assembler v. 2.6; SeqMan Pro v.
+                                     11.0
+            Sequencing Technology :: Sanger dideoxy sequencing; 454
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..3227
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /serotype="Uukuniemi"
+                     /isolate="Potepli 63"
+                     /host="Ixodes ricinus"
+                     /db_xref="taxon:11591"
+                     /segment="M"
+                     /country="Czech Republic"
+                     /collection_date="1963"
+     CDS             18..3044
+                     /codon_start=1
+                     /product="glycoprotein precursor"
+                     /protein_id="AIU95042.1"
+                     /translation="MVRTYLLLLLLCGPATPFFNHLMDVTRRILDSSNATWQRDQPDT
+                     HRLSRLDAHVMSMLGVGSHIDEVSANHSQHLHNFRSYNCEEGRRTLTMMDPKSGKFKR
+                     LKCNENQTLSKDCASCIEKKSTIMKSEHLVYDDAICQSDYSSPEAMPDHETHLCRIGP
+                     LHIQHCSHKAKRVQHVSWFWIDGKLRVYDDFSVSWTEGKFLSLFDCVNETSKDHNCNK
+                     TVCLEGRCSGDLQFCTEFTCSYAKADCNCKRNQVSGVAVVHTKHGSFMPECMGQSLWS
+                     VRKPLTKRSVAVQQPCMDCETDCKVDHILVIVRHFYPDHYQACLGSTCLTGRAKDKEF
+                     KIPFKMADRLSDSHFEIRIWDKERSNEYFLESRCESVDACAAITCWFCRANWANIHCF
+                     SKEQVLILVAVSSLCILVLASVLRALKVIATFTWKIIKPFWWILSLLCRTCSKRLNKR
+                     AERLKESIHSLEEGLNNVDEGPREQNNPVRAVARPNVRQKMFNLTRLSPVVVGMLCLT
+                     CPVESCSDSITVTASSQRCSTNSDGVNSCFVSTSSLLQVSPKGQESCLILKGPTGTAV
+                     DSIRIKTTDIKLECVRRDLYWVPRVTHRCIGTRRCHLMGACKGEACSEFKINDYSPEW
+                     GHEEELMAQLGWSYCVEQCGGALCQCFNMRPSCFYLRKTFSHLSQDAFNIYECSEWSY
+                     RINVLVSTNTTHSNLTLKLGVPDSIPHGLISLSSVSQPPAIAYSECFGEDLHGTKFHT
+                     VCNRRTDYTLGRIGEIQCPTKADALAVSKRCISSDSIIFSKVHKDSVDCRSSIIDPMT
+                     IRNRNKLPSTVGSVTFWPTETSVEAAIPDLASATMLIRLDGYTIQFRSDSNKCSPRFL
+                     SLSGCYNCEAGAKLELEHVTDFGTALGILECPSLGYTTYYEVKNMLEKSIRTMHLNGS
+                     HVEAKCYFRCPNSESQLTIRGELIYLFNDDIRHHNQTLSPGLSPKSGSGWDPFGWFKA
+                     SWLRAIWAILGGTVSLIIGVVIIYMAFTLCLKVKKS"
+ORIGIN      
+        1 acacaaagaa ggctaacatg gtaaggacat atctcttgct tttgctcctg tgcgggccgg
+       61 caacgccttt cttcaatcac ctgatggatg tcacccgtcg catcctggac tccagcaacg
+      121 caacctggca gagagaccag cccgacacac acagactgtc aaggctggat gctcatgtca
+      181 tgtcaatgct tggggttggt tcacacattg atgaggtcag tgccaatcac agccagcatc
+      241 tccacaactt caggtcctac aattgtgaag aggggaggag gactctaacc atgatggacc
+      301 ccaaatcagg caagtttaag cgcctgaaat gtaatgaaaa ccagactctg tccaaggatt
+      361 gtgcctcttg catagaaaag aagtccacta tcatgaagag tgagcatctg gtctacgatg
+      421 acgccatttg tcagtctgat tacagcagtc ctgaggcaat gccagaccat gagacacacc
+      481 tttgcaggat cgggccacta catatccagc attgctctca caaagccaag agggttcagc
+      541 atgtttcttg gttttggatt gatgggaaac tgagggtgta tgatgacttc tccgtctcct
+      601 ggaccgaggg gaagttcctg tccctctttg attgcgtgaa tgagacttcc aaggaccaca
+      661 actgcaacaa gactgtctgc ctggagggga gatgctctgg ggaccttcag ttttgcacag
+      721 agttcacatg ctcatatgca aaggctgact gcaactgcaa gagaaatcag gtttctgggg
+      781 tggcagtggt acacaccaag cacggctcct tcatgcctga gtgcatgggt cagtctcttt
+      841 ggtctgtacg aaaaccttta actaagagat cggtagcagt gcagcaaccc tgcatggatt
+      901 gtgaaactga ctgcaaggtg gaccacattc tggtgatagt aaggcacttc tacccagacc
+      961 attaccaagc ttgtctgggc tccacttgcc tcactggtcg agctaaggac aaggaattca
+     1021 agatcccatt taagatggct gaccggcttt cagattcaca cttcgagata cgtatctggg
+     1081 ataaggagag atccaatgaa tatttcttag aatctaggtg tgagtcagtt gatgcctgtg
+     1141 ctgccatcac atgctggttt tgcagagcaa attgggccaa cattcactgc ttttctaagg
+     1201 agcaggtcct gattcttgtt gcagtgagct ctctgtgcat attagtgctg gctagcgttc
+     1261 tgagagctct caaagtcatt gccaccttca cctggaaaat aataaagccc ttttggtgga
+     1321 tcctttccct attatgcaga acttgctcca aaagactgaa caaacgggca gagcgtctaa
+     1381 aggagagcat ccactccctg gaagaaggac tgaataatgt tgatgaaggg cccagagagc
+     1441 agaacaaccc tgtaagagca gtggcaagac ctaatgttcg acaaaaaatg ttcaacttaa
+     1501 ccagattgag ccctgttgtt gtgggcatgc tgtgtctgac ttgtcctgtt gagagttgct
+     1561 cagactccat cactgtgaca gcttccagtc agagatgctc cacaaactca gatggagtga
+     1621 actcctgctt tgtcagcact agctctctgc ttcaggttag tcccaagggg caagagagct
+     1681 gtttgatcct aaaggggcca actggaacag cagtggactc tattaggatc aagaccaccg
+     1741 acattaagct ggagtgtgtc aggcgagatc tgtattgggt tcccagggtg acccataggt
+     1801 gtatagggac caggcgatgc catctcatgg gagcatgcaa gggagaggcc tgctctgagt
+     1861 ttaagataaa tgattattca ccggaatggg gccatgagga ggagttgatg gctcagctag
+     1921 gttggagcta ctgtgttgag cagtgcggtg gtgccctctg tcagtgcttc aacatgaggc
+     1981 cctcttgctt ctacctgagg aaaacatttt ctcatctctc ccaggacgct ttcaacatct
+     2041 atgagtgctc agaatggtca taccggataa atgtgcttgt ctcgacaaat acaactcact
+     2101 ctaatctaac tctaaagctt ggagtccctg actctatccc tcatggtctg attagcttat
+     2161 ctagtgtgtc ccagcctcca gcaatagcat actcagaatg ctttggggaa gatctgcacg
+     2221 gcacaaaatt ccacacagtc tgcaatagaa ggactgacta cactctaggt agaatagggg
+     2281 agatacagtg ccccaccaaa gctgatgccc tggcagtctc taagaggtgc attagcagcg
+     2341 actcaataat cttctccaag gtccacaagg attcggtaga ttgtcgatca tcaatcatag
+     2401 atcccatgac aatcaggaat cggaacaagt tgccatccac agtaggttca gtcactttct
+     2461 ggccaactga aaccagtgtt gaggcagcca tccctgactt ggcatctgcc actatgttaa
+     2521 tcaggttaga tggttacacc attcagttca gatcagattc caacaagtgc agcccaagat
+     2581 tcttgtcatt atctggatgt tacaactgcg aggctggagc caagctagag ctggaacatg
+     2641 tgacagactt tgggacagcc ttgggcatcc tcgaatgccc gagcctaggc tacacgacat
+     2701 attatgaggt taagaacatg cttgaaaagt ccataagaac catgcactta aacggatcac
+     2761 acgtggaggc caaatgctac ttccggtgcc ccaattctga gagtcagcta accataagag
+     2821 gagaactaat ctatctcttc aatgatgaca tcaggcacca taatcagacc ttgtccccag
+     2881 gcctgagtcc gaagtcaggg tctggatggg atccttttgg ttggttcaaa gcctcctggc
+     2941 tgagagcgat ttgggccatt ctgggtggaa cggtgtcttt gataattgga gtggtgatca
+     3001 tatacatggc cttcacactc tgcttaaaag ttaaaaaatc gtgaagctcc tcttttcccc
+     3061 atccccctca accccttccc ttctcccccc ctcatcctct cagagggtga gggcctctgc
+     3121 cgcacgacgc cgctggagca ttaattacta aatggtgtca ttcggggtgg tccttggtag
+     3181 tgtccgtgaa taccatattt gttgttccat gtagccggtc ttagtgt
+//
+
+LOCUS       KM114246                6422 bp ss-RNA     linear   VRL 30-OCT-2014
+DEFINITION  Uukuniemi virus isolate Potepli 63 segment L, complete sequence.
+ACCESSION   KM114246
+VERSION     KM114246.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 6422)
+  AUTHORS   Matsuno,K., Weisend,C., Kajihara,M., Matysiak,C., Williamson,B.N.,
+            Simuunza,M., Mweene,A.S., Takada,A., Tesh,R.B. and Ebihara,H.
+  TITLE     Comprehensive Molecular Detection of Tick-Borne Phleboviruses Leads
+            to the Retrospective Identification of Taxonomically Unassigned
+            Bunyaviruses and the Discovery of a Novel Member of the Genus
+            Phlebovirus
+  JOURNAL   J. Virol. (2014) In press
+   PUBMED   25339769
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 6422)
+  AUTHORS   Matsuno,K., Dahlstrom,E., Porcella,S.F. and Ebihara,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-JUL-2014) Laboratory of Virology, NIAID - Rocky
+            Mountain Labs, NIH, 903 South 4th street, Hamilton, MT 59840, USA
+COMMENT     GenBank Accession Numbers KM114246-KM114248 represent sequences
+            from the 3 segments of Uukuniemi virus Potepli 63.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: GS De Novo Assembler v. 2.6; SeqMan Pro v.
+                                     11.0
+            Sequencing Technology :: Sanger dideoxy sequencing; 454
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..6422
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /serotype="Uukuniemi"
+                     /isolate="Potepli 63"
+                     /host="Ixodes ricinus"
+                     /db_xref="taxon:11591"
+                     /segment="L"
+                     /country="Czech Republic"
+                     /collection_date="1963"
+     CDS             17..6328
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AIU95041.1"
+                     /translation="MLLAICSRTNRQQGLNCPPAVTFTSSHMRPPIPSFLLWTEGSDV
+                     LMDFDLDTIPAGSVTGSSIGPKFKIKTQAASSFVHDFTFAHWCDASDMPLRDHFPLVN
+                     DTFDHWTPDFISQRLDGSKVVVEFTTNRSDQEQSLISAFNTKVGKYEVALHNRSTTSS
+                     ILFGVVVVSETTVVTNLNLNQQEVDELCFRFLVARAVHLEMTTKMIIPEYDDEDEDKR
+                     SREVKAAFHSVQPDWNVTEANFAPFSRRMFSNFAQMEPDKEYLAHIILDSLKQAQADL
+                     DGNHYLNESLTEQARLDRNREESLNMVKDFERDFNNAAQRSAWSHKSTVPFPGVIPKV
+                     SGDTTSLSRLVELPVITGGSDATIRAWRSAYGSVSNGTVERCDEDVERERRAALCSLT
+                     VEELEESKALRMKYHRCKIDNGMMDKLDLAMQGVEAKEFKNHPSIIKKRSESKKTFPL
+                     TADTRDIDLFLHHDDLMFNNEHSQTPPAAMIEAVKAGADAQSLHGLDKSANPWYASAL
+                     WFLGLPIGLWLFMCTCIGVELSISLKQHCGRQKFIIKKLRFFDIFLLIKPTNSGSHVF
+                     YSIAFPESAILGKLHRSQCFKGLQFEDGWFWTEFSSFKMSKLTNVVKCLSTGFNLFWF
+                     WRDYYEVPFWAGNEKDFQTGKQRANKMFKFCLLMLLEDKARTEEIATLSRYVMMEGFV
+                     SPPCIPKPQKMIEKLPNLARTKFQVWLISRMLQTIIRVSDYPFKITAGHKSANWTGMF
+                     NWVTGEPIESTQKLISLFYLGYLKNKEESPERNASIGMYKKILEYEDKHPGRYTYLGL
+                     GDPPSDDTRFHEYSISLLKHLCIHAEHDLRRNWGESFKAMISRDIVDAIASLDLERLA
+                     TLKASSNFNEEWYQKRGDGKIYHRSKVLEKVSKYVKKSSSHVHHIMEECLRKVESQGC
+                     MHVCLFKKPQHGGLREIYVLGFEERVVQLVIETIARQICKRFKSETLTNPKQKLAIPE
+                     THGLRAVKTCGIHHETVATSDDAAKWNQCHHVTKFALMLCHFTDPLFHGFIIRGCSMF
+                     MKKRIMIDQSLIDIIDSHTTLETSDAYLQKIHRGYHGSLDDQPRWISRGGAFVQTETG
+                     MMQGILHYTSSLLHTLLQEWLRTFSQRFIRTRVSVDQRPDVLVDVLQSSDDSGMMISF
+                     PSTDKGATGKYRYLSALIFKYKKVIGKYLGIYSSVKSTNNTLHLLEFNSEFFFHINHN
+                     RPLLRWITACDTISEQESLASRQEEMYNNLTSVLEGGGSFSLVSFCQFGQLLLHYTLL
+                     GMTVSPLFLEYIKLVSEIKDPSLGYFLMDHPFGSGLSGFKYNVWVAVQNSILGSRYRS
+                     LLEAIQNSDSAAPKKTLDTTTSGTFVQSTIIRFGDRKKWQRLVDRLNLPEDWLDVIDK
+                     NPEIVYRRPRDGFEVSLRIAEKVHSPGVSNSLSKGNCIIRVISSSVYILSRSILSDGL
+                     AWLYDEEEEVKRPLLYKVMNQPELDLHSRLTPAQLSTLFPMMAEFEKLQTHLRSYMKI
+                     EGEFISKKKVITQTRVNILETERFLRARPEDLIADKWFGFTRTRMTPRTFKEEWENLT
+                     SVFPWLTGNPSETLELSPFQHHVQLRNFFSRLDLKGRDIRIIGAPIKKSSGVSNVSTA
+                     IRDNFFPRFVLTHIPDEAAMERIEAAGILKHALFLTVTGPYTDQSKLEMCRDFITSSE
+                     PITLKPNHGKTRTNVLSLFQDYFSKRGPDIIFNRIQMANCGVIGGFTSPQKPKEVDGK
+                     IVYTGDGVWRGIVDGFQIQLVITYMPKQKSNELKSITVNSDRCISALSSFCQSWCKEM
+                     GVFNTEDFSKTQRFSKASFFMHKFKISGSKQTLGAPIFIVSEKIFRPICWDPSKLEFR
+                     VRGNTLNLTYKEVNPGAGQRMFNILSYTVKDTDVSDENAFKLMSLSPRHKFHGREPST
+                     SWICMRALPISTIDKLLERILNRERISGSIDNERLAECFKNVMESTLRRKGVFLSEFS
+                     RATQKMLDGLSRDMLDFFAEAGLNDDLLLEEEPWLSGLDTFTLDDEAYLEEYNLGPFG
+                     VFSVEQEMNTKYYHHLLLDSLVEDVIQKLSLDGLRKLFQEEEAPLEYKKEVIRLLNIL
+                     QRDASQIKWKSRDLLSENMGLDVDDDMFG"
+ORIGIN      
+        1 acacaaagac gccaagatgc ttttagcgat ttgctcgagg accaaccgac aacagggtct
+       61 taactgccct ccagctgtga cctttacctc cagccacatg agaccgccaa ttccatcatt
+      121 tctgctctgg actgaggggt ctgatgttct gatggatttt gatttggaca ccatcccagc
+      181 tggatcagtt actggatcat ccattggtcc aaagttcaaa atcaaaacac aggctgcttc
+      241 atcttttgtg catgatttca cctttgccca ctggtgcgat gcatcagaca tgcccctcag
+      301 agaccacttc ccgctggtca atgacacttt tgaccactgg actcctgatt tcatctcgca
+      361 gaggctagat ggaagcaagg tggtggttga gtttacaacc aaccgttcag accaggaaca
+      421 atctctgatc agtgccttca acaccaaagt aggaaagtac gaggttgcac ttcacaatcg
+      481 atcgactacc agcagcatac tatttggagt ggttgtggtc agtgagacaa cagtagtcac
+      541 taacttgaac ttaaatcagc aagaggtaga tgagctctgc tttaggttct tagttgctag
+      601 agctgttcac ctggaaatga ccaccaagat gatcattcca gagtatgatg atgaggatga
+      661 agacaagagg agccgagaag tgaaggcagc cttccactct gtacagccag attggaatgt
+      721 gacagaagcc aactttgccc ctttctccag aaggatgttc tccaactttg cccaaatgga
+      781 gccagacaag gagtacctgg ctcacatcat attggactct ctgaagcaag cacaagcgga
+      841 tctggatggc aatcattacc tcaatgagag tttgactgag caagccagac ttgataggaa
+      901 cagagaggag agcttgaata tggttaagga cttcgaacga gacttcaaca atgcagccca
+      961 gcggtcagct tggagccaca agtccactgt gccttttcca ggagtgatcc cgaaggtgag
+     1021 cggagacacc acatcccttt ctagacttgt cgagctacca gtgatcaccg gggggtcaga
+     1081 tgcaacaatc agggcttgga ggtcagccta tggatcagtg agcaacggaa cagttgaaag
+     1141 gtgtgatgag gacgtggaaa gagaaaggag ggcagccctg tgctctctca ctgtggagga
+     1201 gctagaagag tccaaggctc tgaggatgaa ataccacagg tgcaagatag acaatggaat
+     1261 gatggacaag ttggatttag caatgcaagg ggttgaggct aaagagttca agaatcaccc
+     1321 atccatcatc aagaagagat cagagtcgaa gaagaccttt cctctgactg cagacactcg
+     1381 agacatcgac ttgttcctcc atcatgatga cttgatgttc aacaatgagc actcccagac
+     1441 acctccagca gccatgattg aggctgtcaa ggctggggct gatgcacaat cactgcatgg
+     1501 gttggacaag agtgcaaatc catggtacgc ttcagctctc tggttccttg ggctccccat
+     1561 aggactatgg cttttcatgt gcacctgcat cggagtggag ttaagcatca gtctgaaaca
+     1621 acactgtggc aggcaaaagt tcatcattaa gaagctaagg ttctttgaca tcttcctcct
+     1681 gatcaagccc acgaattctg gaagtcacgt cttctactcg attgcatttc cagagtcagc
+     1741 cattcttggg aagttgcaca gatcccaatg ttttaaaggc ttgcagtttg aggatgggtg
+     1801 gttttggact gagttcagct cctttaaaat gtcaaaactg actaacgttg tgaaatgcct
+     1861 gtccactggg ttcaacttgt tttggttctg gagagattac tatgaagtac ccttctgggc
+     1921 tgggaatgaa aaagacttcc aaacagggaa gcagagagcc aacaaaatgt tcaagttttg
+     1981 cttgctaatg ctgctagagg acaaagccag gacagaggaa attgctacgc tgtctaggta
+     2041 tgtcatgatg gaagggtttg tcagtccccc ttgcattcca aagccccaga agatgatcga
+     2101 gaagttgcct aatctggcta ggactaagtt ccaggtgtgg ctaatatcca gaatgctgca
+     2161 gacgattatc agagtgtcag attacccgtt caaaatcaca gcaggacaca aatcagccaa
+     2221 ctggacaggc atgttcaact gggtcacagg agaaccaatt gaatcaacgc agaagctaat
+     2281 ttccctgttc tacttgggtt accttaagaa caaagaggag tcccctgaga gaaatgcaag
+     2341 cattggaatg tacaagaaga tactggagta tgaggacaag caccccggaa ggtacaccta
+     2401 cctagggctt ggggaccctc ctagtgatga cacacgtttc cacgagtact ccattagctt
+     2461 attaaagcat ctctgcatcc atgctgagca tgatttgagg cggaattggg gggaatcttt
+     2521 caaagccatg atttctcgag atattgtgga tgccattgcc agcttggatc tggagagact
+     2581 ggcaactctg aaggcttcca gcaatttcaa tgaagagtgg tatcagaaga ggggtgatgg
+     2641 aaagatctac catcggagca aggttctgga aaaagtcagc aagtatgtca agaagagtag
+     2701 ctcacatgtc caccatatca tggaagaatg tcttcggaag gttgagagcc aaggttgtat
+     2761 gcatgtgtgt ctgttcaaga aaccgcagca tggtggtctg agagagatat atgttcttgg
+     2821 atttgaagag agagtggtcc agctggtgat agagaccatt gcaaggcaaa tctgtaaacg
+     2881 gttcaaatct gaaaccttga ccaacccaaa gcaaaaactg gccattccag aaacacatgg
+     2941 tcttagggct gtcaagacat gtggcattca tcatgaaaca gtggcgacat cagacgatgc
+     3001 tgccaaatgg aatcagtgcc atcatgttac aaagtttgct ttaatgctct gccatttcac
+     3061 agatcctttg tttcatgggt tcatcattag aggatgttcc atgttcatga agaagcgcat
+     3121 aatgattgat cagagcctga ttgatatcat agactcccac accacactgg agacatctga
+     3181 tgcatacctc caaaagatcc acagagggta ccatgggagt cttgatgacc agcctagatg
+     3241 gatctctaga ggcggggcct ttgtgcaaac ggaaactggt atgatgcaag gcatacttca
+     3301 ttacacctct agtctactcc acaccttgct ccaggagtgg cttagaactt tctcacaaag
+     3361 attcatcagg acaagggttt cagtcgacca gcgcccagat gtcctagtgg atgtgttgca
+     3421 gagctcagat gattctggca tgatgatctc cttcccgtca acagacaagg gagccactgg
+     3481 gaagtacaga tacttgtctg cccttatttt caagtacaaa aaagtcattg gcaagtacct
+     3541 tggcatctac tcatctgtaa agtccactaa caacaccctc cacctactag aattcaactc
+     3601 agagtttttc tttcacatca accacaacag gcctctgcta aggtggatca cagcttgtga
+     3661 caccatctca gagcaagaat ctctggcttc aaggcaagaa gagatgtaca acaatctgac
+     3721 gtcagttctc gagggtggtg gcagcttttc tctggtatcc ttttgccagt ttggtcagtt
+     3781 gctcctacac tacactctat taggcatgac agtttcccca ctgttccttg agtacataaa
+     3841 gttggtgtca gaaataaagg acccttccct gggctacttc ctgatggatc acccgttcgg
+     3901 gtctggtcta tctggattca agtacaatgt ctgggtggca gttcaaaaca gtatactagg
+     3961 atccagatat agatccttgc tggaggctat acagaattct gacagtgctg ctccaaagaa
+     4021 aaccttggat acaacaactt ctgggacttt cgtgcagtcc acaatcatca ggtttggaga
+     4081 tagaaagaaa tggcagagac tggtggacag gttgaacctc ccagaggact ggctggatgt
+     4141 gattgacaag aatcctgaga ttgtgtatcg tcgaccccga gatggctttg aagtgagcct
+     4201 gaggattgca gagaaggtcc attctccggg agtctctaac tccctgtcca agggcaactg
+     4261 catcatcagg gtcatctcat catcagtgta catcctgagc aggagcattc taagtgatgg
+     4321 tctggcttgg ctctatgatg aggaagagga ggtcaaacgc cctctgctgt acaaggttat
+     4381 gaatcagcct gaactggacc tccattccag gttgactccg gcacagctgt caacgctgtt
+     4441 tcccatgatg gctgaatttg agaagctgca gacccatctt aggagttata tgaaaattga
+     4501 aggcgagttc atatcaaaga agaaggtcat aactcagact agggtcaaca ttcttgagac
+     4561 tgagagattc cttagagcac gacctgagga cttgattgcg gataaatggt ttggcttcac
+     4621 cagaacaaga atgactccaa ggactttcaa agaggagtgg gagaatctga cttctgtgtt
+     4681 tccatggcta acaggaaacc cctctgagac tctggaactt tcccctttcc agcaccatgt
+     4741 ccagctaaga aatttcttca gtagactgga cctcaagggg agagacatca gaattatagg
+     4801 tgctcctata aagaagtcta gtggtgtgag caacgtctct acagccatta gggacaactt
+     4861 cttcccaagg ttcgtcctga ctcacatacc agatgaagct gcaatggaaa gaattgaagc
+     4921 agcaggcatt ctgaaacatg ctctcttcct cacagtgaca ggaccttaca ccgatcagtc
+     4981 aaagctggaa atgtgcaggg attttatcac tagctcagag cccatcactc ttaaacctaa
+     5041 ccacggaaaa accaggacca acgtgctttc cctgtttcag gattacttct ccaagagagg
+     5101 gccagacatc atcttcaaca gaattcagat ggctaactgt ggagtgatcg gaggattcac
+     5161 atctcctcag aagccaaagg aggttgacgg caagattgtc tacactggtg atggtgtgtg
+     5221 gcgaggcatt gttgacggtt ttcagatcca gctggtcatt acctacatgc caaagcagaa
+     5281 gtcaaatgag ctaaaatcca taactgtcaa ctcagacaga tgcatctctg ccttgagcag
+     5341 cttctgccag tcgtggtgca aagaaatggg agtgttcaac accgaggatt tctccaagac
+     5401 ccagagattc tcaaaagcat ccttcttcat gcacaagttc aagatctctg gttcaaagca
+     5461 gactctaggt gccccgatct tcatcgtcag tgagaagatc ttccgaccca tctgctggga
+     5521 tccatcgaag ctggaattta gagtgcgcgg gaacactcta aatctcactt acaaggaagt
+     5581 caatccgggt gctggccaga gaatgttcaa cattctcagt tacactgtca aggatacaga
+     5641 tgtctctgat gagaatgctt tcaagctcat gtccttgtcg cctagacaca agttccatgg
+     5701 gcgggagccg agcacttctt ggatctgcat gagagccctg cctatcagca ccattgacaa
+     5761 gctgctagag agaatattga acagggagag aataagtgga tcaatcgaca acgaacgcct
+     5821 ggcagagtgt ttcaagaatg tgatggagtc aaccttgagg cgtaagggag tgtttctatc
+     5881 tgaattctca agggccactc aaaagatgct ggatggtctt agcagagata tgttggattt
+     5941 ttttgctgag gctggcctca atgatgatct cctgctggaa gaggagccat ggctgagcgg
+     6001 tttagacact tttacactgg atgatgaggc atacctggaa gagtacaatc ttggtccttt
+     6061 cggtgtgttc agtgtggagc aggagatgaa caccaagtac taccaccact tgcttttgga
+     6121 ctccctggtt gaggatgtaa tccagaaatt gtccctggac gggttgagga agttgtttca
+     6181 ggaggaagaa gcaccattgg aatacaagaa agaggtgatt cgactgctca acatcttgca
+     6241 gagggatgcg agtcagataa agtggaagag cagagacctt ttgtcagaga acatgggtct
+     6301 tgacgttgat gatgacatgt ttggttgagt gacttttctt tgggttggat gctggcattg
+     6361 cttttactat ctctctctct ttgaatgtat cttcctttac ttccatcttg gcgactttgt
+     6421 gt
+//
+
+LOCUS       KM114250                3289 bp    RNA     linear   VRL 30-OCT-2014
+DEFINITION  Uukuniemi virus isolate SCOT FT 254 segment M, complete sequence.
+ACCESSION   KM114250
+VERSION     KM114250.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 3289)
+  AUTHORS   Matsuno,K., Weisend,C., Kajihara,M., Matysiak,C., Williamson,B.N.,
+            Simuunza,M., Mweene,A.S., Takada,A., Tesh,R.B. and Ebihara,H.
+  TITLE     Comprehensive Molecular Detection of Tick-Borne Phleboviruses Leads
+            to the Retrospective Identification of Taxonomically Unassigned
+            Bunyaviruses and the Discovery of a Novel Member of the Genus
+            Phlebovirus
+  JOURNAL   J. Virol. (2014) In press
+   PUBMED   25339769
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 3289)
+  AUTHORS   Matsuno,K., Dahlstrom,E., Porcella,S.F. and Ebihara,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-JUL-2014) Laboratory of Virology, NIAID - Rocky
+            Mountain Labs, NIH, 903 South 4th street, Hamilton, MT 59840, USA
+COMMENT     GenBank Accession Numbers KM114249-KM114251 represent sequences
+            from the 3 segments of Uukuniemi virus SCOT FT 254.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: GS De Novo Assembler v. 2.6; SeqMan Pro v.
+                                     11.0
+            Sequencing Technology :: Sanger dideoxy sequencing; 454
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..3289
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /serotype="Uukuniemi"
+                     /isolate="SCOT FT 254"
+                     /host="Ixodes uriae"
+                     /db_xref="taxon:11591"
+                     /segment="M"
+                     /country="United Kingdom"
+                     /collection_date="1974"
+     CDS             18..3044
+                     /codon_start=1
+                     /product="glycoprotein precursor"
+                     /protein_id="AIU95038.1"
+                     /translation="MVRTYLLVLLLCGPVTPFFNQLMDVTRRILDSSNTTWLRDQPDS
+                     HKLSRWDNHLMSILGLGTHVDEISLNHSQHLHNFRAYDCGEGRRTLTMLDPKSGKFKR
+                     LACMKNQTLSRDCGSCTNRKPTILKSEHLVYDDGICQSDYSSITSMPEHSTHFCRVGS
+                     LHIKHCSHDTKRVQHVPWFWIEGRIRIYDDYSISWTEGRFLSLFDCLNDTTKIYDCVK
+                     AACLEGKCTGDIQFCTEFPCSYSKPECTCKRNQIPGVAVVHTKHGSFMPECFGQSLWA
+                     VRKPVAKRSVSVQQTCMDCESNCKSDHILVIVRHFDPDHYQACLGSTCLTGRASGKEF
+                     RVPFKMADRLSDSNFEIRMWDKERSNEYSLTSKCESVDACDAITCWFCRANWANIHCF
+                     SKEQVIILVIVCSMCILVISSIFKALRVIAVTVWRVLKPFWWLMSLLLRACSRRINRK
+                     AERIKESIHSLEEGLAENNPMTPLNQIPSQSVVRPNVRQKMFNLTRLSPAVVGIICLL
+                     NPASGCSDSMSITASSQRCSTSSDGLSTCFISTSSLLQVSPKGQESCLIIKTPTGTAV
+                     DYIKIKTTDIRLECVRRDLYWVPRVTHRCVGSRRCHLMGACQGDACSEFKIQDYSPEW
+                     GHEEELMAQLGWSYCIEQCGGPLCQCFNVRPSCFYLRKTFSPLSQDAFNIYECSEWSY
+                     RINVVATTNSSRTNLTLKLGVPDSIPHGLISLSSVSQPPAVSYAECFGEDLHGVKFHT
+                     VCNKRTDYSLGRIGEIQCPTKADALSISKRCISTDSIIFSKVHRDSVDCRSSITDPMT
+                     IRNRNKLPSTVGSVTFWPTETSVEAAIPDLASATMLIRLDGYILQYRSDSNKCNARFL
+                     SLTGCYNCETGARLEIEHVTNFGTALAILECPSIKYTTYYEAKNTLEKSVRTIHVNGS
+                     HVEAKCSFRCPNSESELIIKGELVYLFNDDVRHHNQTLSPGLSPKTGLGWDPFGWFRA
+                     SWLRAIWAILGGTVSIIIGAIVIYIVINLCMKAKKS"
+ORIGIN      
+        1 acacaaagga ggctaacatg gtaaggacat atctcctggt tttgctcctt tgtgggcctg
+       61 ttacgccctt cttcaatcaa ttgatggatg tcacaagaag gattcttgac tccagcaata
+      121 ctacttggct aagagatcag ccagatagtc acaagctttc cagatgggac aaccacctga
+      181 tgtctatcct gggtttgggg actcatgttg atgagatctc cctgaatcac agtcagcatc
+      241 tccacaactt cagagcctat gactgcggag aaggcagaag aactctgaca atgctggacc
+      301 caaaatctgg aaagttcaag agactggcct gcatgaagaa tcagaccttg tctagagact
+      361 gtgggagctg cacgaataga aaacccacca tcttgaagag tgaacacctg gtatacgatg
+      421 acggaatttg ccagtctgat tatagcagca tcacctcaat gccagagcac agcacccatt
+      481 tttgcagagt tgggtcactg catataaaac attgctcgca cgacacaaag agggtccagc
+      541 atgtcccctg gttctggatt gaaggccgca tcagaattta cgacgactac tcaatctcct
+      601 ggacagaagg cagatttctc tctctgtttg actgtttaaa tgacaccact aaaatttatg
+      661 attgtgtgaa ggctgcctgt ctggagggaa aatgcactgg tgacattcag ttctgcactg
+      721 agttcccatg ttcatattca aagcctgaat gcacctgcaa gaggaatcag atccctggag
+      781 ttgctgttgt tcacacaaag cacgggtctt ttatgccaga atgttttggc cagtctctgt
+      841 gggcagtgag gaaaccagtg gccaaaagat cagtgtctgt acagcaaaca tgcatggatt
+      901 gtgaaagcaa ttgcaagtct gatcacattc tggttattgt caggcacttt gatccagatc
+      961 actatcaggc ttgtcttggc tcaacttgtc tgacagggcg cgcttcaggg aaggaattca
+     1021 gagtgccctt caaaatggct gatagactct cagactcaaa ctttgagatt agaatgtggg
+     1081 acaaagagcg atccaatgag tattctctca catcaaaatg tgaatctgtt gacgcctgtg
+     1141 atgcaataac ctgctggttt tgcagagcca attgggcaaa catccattgt ttttccaaag
+     1201 aacaagtcat aatactggtc attgtttgct caatgtgcat attagtgatc tccagcattt
+     1261 ttaaagcctt gagagtcatt gcagtgacag tctggagagt tctgaaacct ttctggtggc
+     1321 ttatgtctct cctcctcagg gcatgcagca ggagaatcaa taggaaggca gaacggataa
+     1381 aggagagcat tcattctctg gaggaaggat tagcagaaaa taatcctatg acacctctta
+     1441 atcagattcc ctctcaatct gtggtaagac ccaatgtaag acaaaaaatg tttaacctga
+     1501 caagattgag cccggcagtg gttggaatca tctgcctgct gaatccagcg tctgggtgct
+     1561 cagactccat gtcaattact gcatccagcc agagatgttc gaccagctca gatggcttaa
+     1621 gcacctgctt tattagcacc agctctcttc tacaggtcag ccctaagggt caggaaagct
+     1681 gcttgatcat aaaaactcca actggcactg cagttgacta tataaaaata aaaactactg
+     1741 acataagact ggaatgcgtt cgcagagacc tatactgggt gccacgagtc actcatcggt
+     1801 gtgttggctc gaggagatgt catctcatgg gggcttgcca gggtgatgct tgttcagaat
+     1861 tcaaaattca ggattactca cctgaatggg gacacgaaga agaactgatg gcacagttgg
+     1921 gctggagtta ctgcattgag caatgtggag ggccattgtg ccaatgtttt aacgtcagac
+     1981 catcttgctt ctacctgagg aaaacatttt ctcccttgtc tcaggatgct ttcaacatct
+     2041 atgagtgttc tgagtggtct tatcgaatta atgtagttgc aaccactaat tcctccagaa
+     2101 caaacttgac tttgaaatta ggagtgccag actccatccc tcatggcctc atcagtcttt
+     2161 caagtgtctc tcagccacca gctgtctctt atgcagagtg ttttggagag gatctgcatg
+     2221 gagtgaaatt ccatacagtc tgcaacaaga gaactgatta ttcacttggc agaataggtg
+     2281 agatacagtg cccgacgaag gcagatgccc tttccatctc aaagagatgt atcagtacag
+     2341 acagcataat tttctccaaa gtccacaggg attctgtgga ctgtagatct tcaatcacag
+     2401 acccaatgac catcagaaac agaaacaaac tgccttccac tgttggttca gtcacgttct
+     2461 ggccgactga aaccagtgtt gaggcagcaa taccggattt agcatcagca actatgttga
+     2521 ttcgactgga tggatacatc ctgcagtaca ggtctgactc caacaagtgc aatgccagat
+     2581 tcctatcctt aacaggctgt tacaattgtg aaacaggtgc cagactggaa attgaacatg
+     2641 tcactaactt cggaacagct ttggcaattc tagagtgccc cagcataaag tatacgacat
+     2701 attatgaagc taaaaacact cttgaaaaat cagtcaggac cattcatgta aatggatctc
+     2761 atgtggaagc aaaatgcagc ttcaggtgcc ccaattcaga gtctgaattg ataatcaaag
+     2821 gagagcttgt ataccttttt aatgatgatg tccgacatca caatcagacg ctctctccag
+     2881 ggctgagtcc aaagactgga ctaggctggg atccctttgg atggttcagg gcttcttggc
+     2941 tgagagccat ctgggcaatc ctaggtggca ctgtttccat catcatcgga gccattgtca
+     3001 tttacattgt catcaatctg tgtatgaaag caaaaaaatc ttaaggcact caaatcccca
+     3061 ccctctctct ccacctttgt agattcccta taatccccca ttcccttccc ctcccttata
+     3121 gattccctat aaatccctat cctcttcccc acctcaactc cttttggagt tggggtttca
+     3181 gccacacgac tttgctggtg tattgggtac tgcactgttg cactcagaga catccctgtc
+     3241 agtgtcttgg gatgatttgt ttgtttttcc atgtagccgg tcttagtgt
+//
+
+LOCUS       KM114249                6424 bp    RNA     linear   VRL 30-OCT-2014
+DEFINITION  Uukuniemi virus isolate SCOT FT 254 segment L, complete sequence.
+ACCESSION   KM114249
+VERSION     KM114249.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 6424)
+  AUTHORS   Matsuno,K., Weisend,C., Kajihara,M., Matysiak,C., Williamson,B.N.,
+            Simuunza,M., Mweene,A.S., Takada,A., Tesh,R.B. and Ebihara,H.
+  TITLE     Comprehensive Molecular Detection of Tick-Borne Phleboviruses Leads
+            to the Retrospective Identification of Taxonomically Unassigned
+            Bunyaviruses and the Discovery of a Novel Member of the Genus
+            Phlebovirus
+  JOURNAL   J. Virol. (2014) In press
+   PUBMED   25339769
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 6424)
+  AUTHORS   Matsuno,K., Dahlstrom,E., Porcella,S.F. and Ebihara,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-JUL-2014) Laboratory of Virology, NIAID - Rocky
+            Mountain Labs, NIH, 903 South 4th street, Hamilton, MT 59840, USA
+COMMENT     GenBank Accession Numbers KM114249-KM114251 represent sequences
+            from the 3 segments of Uukuniemi virus SCOT FT 254.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: GS De Novo Assembler v. 2.6; SeqMan Pro v.
+                                     11.0
+            Sequencing Technology :: Sanger dideoxy sequencing; 454
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..6424
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /serotype="Uukuniemi"
+                     /isolate="SCOT FT 254"
+                     /host="Ixodes uriae"
+                     /db_xref="taxon:11591"
+                     /segment="L"
+                     /country="United Kingdom"
+                     /collection_date="1974"
+     CDS             17..6328
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AIU95037.1"
+                     /translation="MLLAICSRTNPQRGLNCPPAVTYASSHMRPPIPSFLLWTEGSDV
+                     FMDFDLDSIPAGSVTGSSIGPKFRVKTQAASSFVHDFTFAHWCDASDMPLKDHFPLIN
+                     DTFDHWTPDFISQRLDGSKVVVEFTTNRSDQEQSLISAFNTKVGKYEVALHNRSSATP
+                     ILFGVVVVSETTVVTNLNLNQQEVDELCFRFLVSRAVHLEMTTKMIIPEYDDVDEDKR
+                     SREVKAAFHSVQPDWEMTEATFAPFSKRMFSNFSQMEPDKEYLAHIVVDSIRAAQEDL
+                     DKNHYLSESLTEQNRLDKNRDESLKMVRNYETEFNKGAERSAWGHKSTIPFPGIIPKV
+                     SGDTTSLSRLTELPVITGGSDATIRAWRTAYGSVSNGTVERCDEDVERERRAALCSLT
+                     VEEIEESKALRVKYHRCKIDNGMMDKLDLALQGVEAKEFRNHPTIIKKREESKKTFPL
+                     TTDTRDLDMFLHKDESMFNPDLVQTPPAAMIEAVKAGAEAQSLHGLEKADNPWYHSAL
+                     RFLSLPIGIWLFMCTCIGVELSISLKQHCGRQKFIIKKLRFFDIFLLIKPTNSGSHVF
+                     YSIAFPESAILGKIHNSQCFKGVQFEDGWFWTEFNSFKMSKLTNVVKCLSTGFNLFWF
+                     WRDFYEVPFWAGSEKDYLAGKQRANKMFKFCLLMFLEDKARTEEIATLSRYIMMEGFV
+                     SPPCIPKPQKMIEKLPELARTKFQVWLINRMLQTIIRISDFPFKITAGHKSASWSGMF
+                     NWVTGEPIESTQKLISLFYLGYLKNKEESPERNASVGMYKKILEYEDKHPGRYDYLGL
+                     GDPPAEDTRFHEYSVSLLKHLCIHAEHNLRQNWGESFKAMISRDIIDAIASLDLERLA
+                     TLKASSNFNEEWYQKRTDGKVYHRSKVLEKVSKYVKKSSSHVHHIMEECLKKVEKQGC
+                     MHICLFKKPQHGGLREIYVLGFEERVVQLVIETIARQICKRFKSETLTNPKQKLAIPE
+                     THGLRAVKTCGIHHETVATSDDAAKWNQCHHVTKFALMLCHFTDPLFHGFIIRGCSMF
+                     MKKRIMIDQSLINIIDAHTTLDTSNRYLQLIHRGYHGSLEDQPKWMTRGGAFVQTETG
+                     MMQGILHYTSSLLHTVLQEWLRSFSQRFIRSKVSIDQRPDVLVDVLQSSDDSGMMISF
+                     PSTDKNSTGKYRYLSALIFKFKKVIGKYLGIYSSIKSTNNTLHLLEFNSEFFFHINHN
+                     RPLLRWITACDTISEQESLASRQEEMYNNLTSVLEGGGSFSLVSFCQYGQLLLHYTLL
+                     GMTVSPLFLEYIKMVSEIKDPSLGFFLMDHPFGSGLSGFKYNVWVAVQNSILGSRYRC
+                     LLEAIQNSDSPAPKKTLDTTTSGTFVQSTIIRFGDRKKWQRLVERLNLPENWLEIIDQ
+                     NPEIVYRRPRDGTEVGLRIAEKIHSPGVSNSLSKGNCIIRVISSSVYILSRNILSDGL
+                     AWLYDEEEEVKRPLLFKVMNQPELDCHSRLTPSQLSTLFPMMAEFEKLQTHLRSYMKI
+                     DGEFISKKKIITQTRINILETERFLRARPEDLIADMWFGFTRTRMTPRTFKEEWNHLT
+                     AVFPWLKPNPEETLELSPFQHHVQLRNFFSRLDLKGRDIRIIGAPIKKSSGISNVSTA
+                     IRDNFFPRFVLTHIPDEAALERIEAAGILKHALFLTVTGPYTDNTKLEMCRDFIMSSE
+                     EILLKPNHGKTRSNVLSLFQDFFSMRGPDIIFNRIEMANCGVVGGFTSPQVPKEIDGR
+                     IVYTGDGVWRGIVDGFQIQLVITYIPRQKVNQLKSITVNSDRSIATLSSFCHSWCKEM
+                     GVFNTEDFSKTQRFTKASFFMFNFKISGSRQTLGAPIFIVSERIFRPICWDPSNLEFK
+                     IRGNTLNLTYKESLPKAGQRMFNILSYTVKDTDVSDENAFKLMSLSPRHKFHGREPST
+                     SWICMRALPITTIDRLLERILNHERISASIDNDRLAECFKSVLESALRRKGVFLSEFS
+                     RATQKMLDSLSRDMLDFFAEAGLNDDLELEEEPWLGGLDSFSLDDEDYLEEYNLGPFG
+                     MFSVEQEMNTKYYHHLLLDSLVEDIIQKLSLDGLRKLFQENEAPIEYKKEVCRLFSIL
+                     QKDASYITWKSRDLLSENMGLDVEDDMFG"
+ORIGIN      
+        1 acacaaagac gccaagatgc ttttagcgat atgctcgaga acaaaccctc aaagaggact
+       61 gaactgtcct ccagctgtga cctatgcatc gagtcacatg agaccaccaa tcccatcttt
+      121 cctgctgtgg actgaaggat ctgatgtttt catggatttt gatcttgact ccattccagc
+      181 aggatcagta actggatctt ctattggacc aaagtttaga gtgaagactc aggctgcgtc
+      241 ttcttttgtc catgatttca cttttgctca ctggtgcgat gcttctgaca tgccacttaa
+      301 ggatcacttc ccgctgatca atgacacttt tgatcactgg actcctgact ttatctctca
+      361 gagattggat ggcagcaagg ttgtggtgga gttcactacc aatcgttctg atcaagaaca
+      421 gtctctgatt agtgctttca acacaaaggt tggcaagtat gaagtggcac tgcacaatag
+      481 gtcatctgcc actccaatcc tctttggtgt tgtggtggta agtgagacga ctgttgtgac
+      541 caacctaaat ctgaatcagc aagaagttga tgaattgtgc ttcagatttc tggtttccag
+      601 agcggtgcac ctggagatga ccactaaaat gatcatccct gagtacgacg atgttgatga
+      661 ggacaaaagg agcagagaag tgaaagcagc cttccattca gttcaaccag actgggaaat
+      721 gacagaagcc accttcgctc cgttttctaa gcgaatgttc tcgaacttct ctcagatgga
+      781 accagacaag gagtatttgg cacatatagt ggttgactcc atcagggcag ctcaagagga
+      841 tcttgataaa aaccactacc tttctgaaag cttgacagaa caaaacaggc ttgacaagaa
+      901 cagggacgag agcttaaaaa tggtgagaaa ttatgaaact gagttcaata agggagcaga
+      961 gagatctgca tggggccaca agtcaaccat tccatttcct ggaatcatcc caaaagtctc
+     1021 tggtgacaca acttccttat ccagactcac tgagctaccg gtgatcacag gaggatctga
+     1081 tgcaactatc agggcttgga gaacagccta tgggtctgtg agcaatggga ctgtggaaag
+     1141 atgtgatgaa gatgtggaaa gagaacggag ggctgctcta tgctcactta ccgttgagga
+     1201 gatagaagag tcaaaggctc tgagggtgaa gtatcatcgc tgtaaaattg acaacggaat
+     1261 gatggacaag ctggacttgg ctctccaggg agttgaggca aaggagttca ggaatcatcc
+     1321 taccatcatc aaaaagaggg aggagtccaa aaagacattc cctctgacaa cggatacaag
+     1381 agacttggac atgtttctgc ataaagatga atccatgttc aaccctgact tggtgcagac
+     1441 ccctccagca gccatgatag aagcggtgaa agctggtgca gaggctcaat ccctgcatgg
+     1501 acttgaaaag gctgacaacc cttggtatca ttctgctctg agattcttga gtctccctat
+     1561 tggaatctgg ttattcatgt gtacgtgcat tggagtggag ttaagcatca gtctgaaaca
+     1621 gcactgtgga cgacaaaagt ttataatcaa gaagctaagg ttctttgaca tcttccttct
+     1681 gattaagcca acaaactcag gaagccatgt cttttactcc attgcattcc ctgaatccgc
+     1741 catcttggga aagatccata actctcaatg cttcaagggt gttcagtttg aagatggttg
+     1801 gttttggaca gaatttaact ccttcaagat gtccaagctg acaaatgtgg tcaagtgtct
+     1861 atccacaggc tttaaccttt tttggttttg gcgagacttt tatgaagttc ccttctgggc
+     1921 tggatcagag aaggattatc tagctggaaa acaaagggcc aacaagatgt tcaagttctg
+     1981 cttgctaatg tttctggaag acaaagccag gacagaggaa attgccacac tctctcgata
+     2041 catcatgatg gagggttttg tgagtcctcc ttgcatcccc aagccccaga agatgataga
+     2101 aaagcttcca gaactagcta gaactaaatt tcaagtctgg ttgatcaata ggatgctaca
+     2161 gacaataatt agaatatctg acttcccttt caagatcact gcaggtcaca agtcagcaag
+     2221 ttggtctgga atgttcaact gggtgacagg tgaacctatc gagtcaactc agaagttgat
+     2281 atcactattt tatctgggat atctgaaaaa caaagaggaa tcaccagaac ggaatgccag
+     2341 tgtaggaatg tacaaaaaga tactagagta tgaagacaag caccctggaa gatatgatta
+     2401 tcttggactg ggagacccac cagcagagga cactaggttt catgaatact cagtcagtct
+     2461 tctcaaacac ctttgcatcc acgcagaaca taatttgaga cagaactggg gagagtcgtt
+     2521 taaggcaatg atctctcgag acatcattga tgcaatagcc agcttggatc tggaaaggct
+     2581 agctactctc aaagcatcaa gtaatttcaa tgaagaatgg tatcaaaagc gaacagatgg
+     2641 caaggtatac cacagaagca aagttttaga gaaagtcagc aaatatgtca agaaaagcag
+     2701 ttcccatgtt caccatatca tggaggaatg tttaaagaag gtggagaagc agggctgcat
+     2761 gcacatttgc ttattcaaga aacctcaaca tggtggtctt cgggagatct atgttcttgg
+     2821 ttttgaggaa agagttgtgc agcttgtcat cgagaccata gcaagacaga tatgcaaacg
+     2881 attcaagtct gagaccctga cgaatcctaa gcaaaaactt gcaatccctg aaacccatgg
+     2941 ccttagagct gtcaaaacct gtggaatcca tcatgagact gttgctacct ctgatgatgc
+     3001 tgctaaatgg aaccaatgcc atcatgtaac aaagtttgca ctgatgttgt gtcacttcac
+     3061 tgaccctcta ttccatggat ttatcattcg gggttgctcc atgttcatga agaagaggat
+     3121 catgattgat caaagcttaa ttaacataat agatgcccac acgaccctgg acacttccaa
+     3181 tcgatacctt cagctaatcc acagaggtta tcatgggagc ctggaagacc aacctaaatg
+     3241 gatgacacga gggggagcat ttgttcagac agaaactgga atgatgcaag gaatcttgca
+     3301 ttacacctcc agcttgttgc acactgttct ccaagagtgg ttgaggtcct tttctcaaag
+     3361 gttcatcaga tccaaagttt ccatagatca gcgtccagat gtcctagtag atgttcttca
+     3421 aagttcagat gactctggaa tgatgatatc ctttccttca actgacaaga actccacagg
+     3481 aaagtataga tatctatcag ctctaatctt taagtttaag aaggtcattg gaaagtatct
+     3541 cggaatctat tcatcaatta aatctaccaa caacacgttg catctccttg agttcaactc
+     3601 tgagttcttc tttcacatca accacaatcg gcctttgttg agatggataa cagcttgtga
+     3661 tactatctct gagcaggaat ctcttgcttc ccgacaagag gaaatgtaca acaatctgac
+     3721 atcagtgctt gaaggaggag gaagcttctc attagtttcc ttctgccagt atggtcaact
+     3781 cttgctccac tacacccttc ttggaatgac agtatccccc ctatttcttg agtacattaa
+     3841 gatggtctca gagatcaaag atccctccct tggcttcttt ctgatggatc accctttcgg
+     3901 aagtggacta tctggtttca agtacaatgt gtgggttgcc gtgcaaaaca gcatacttgg
+     3961 gtctagatac agatgtcttc tagaagccat tcagaattca gacagccctg ccccaaagaa
+     4021 gacccttgac accacaacat ctggaacttt tgttcagtcc accatcatta ggtttggaga
+     4081 cagaaaaaaa tggcaaagat tggtagaacg cttgaatctg ccagagaact ggcttgagat
+     4141 cattgatcag aacccagaga ttgtttacag gcgtcctaga gatgggactg aagtgggact
+     4201 gagaattgct gagaagatac actcacctgg ggtgtcaaac tcattgtcca agggaaactg
+     4261 catcatcaga gttatttctt cttcagttta catcctgagc agaaatattc taagcgatgg
+     4321 cctggcttgg ctatatgatg aagaagagga agtgaagaga cctctcctat tcaaggtgat
+     4381 gaaccagccg gagctagact gtcactctcg actcactccc tctcagctat caactctatt
+     4441 tccaatgatg gcagaatttg aaaaactcca aactcatctg aggagttaca tgaagattga
+     4501 tggagaattt atttcaaaga agaaaatcat cacgcagacc agaataaaca tcttggagac
+     4561 tgaaagattc ctcagagcca ggccagaaga cctgattgct gacatgtggt tcggtttcac
+     4621 cagaactagg atgactccca gaacattcaa agaagaatgg aatcatctca ctgctgtgtt
+     4681 tccctggtta aagcctaatc ccgaagaaac tcttgaacta tctccatttc aacatcacgt
+     4741 gcagctcagg aatttcttca gtcgacttga tctcaagggg agagacatta gaatcattgg
+     4801 tgctccaatc aaaaagtcaa gcggaattag caatgtgtcc actgcaatta gagacaattt
+     4861 cttccctagg ttcgttctaa cgcacatccc agatgaggca gctctggagc gcatagaagc
+     4921 agcaggaatt ttgaagcatg cgctgttctt gactgttaca ggtccataca cagataacac
+     4981 aaaattagag atgtgcagag atttcatcat gagctcagaa gaaattctcc tcaaaccaaa
+     5041 ccatggaaaa acaaggagca atgtgctgtc cctgttccag gatttctttt ccatgagagg
+     5101 accagacatc atcttcaacc gaattgagat ggctaactgc ggtgttgtag gaggtttcac
+     5161 atctcctcag gttcccaaag agattgatgg tcgcattgtc tacactggag atggagtttg
+     5221 gagaggaatt gtagatggtt tccaaatcca gcttgtcata acctacattc caaggcagaa
+     5281 agttaaccaa ttgaagtcca tcaccgtgaa ctcagataga agcattgcca ctctcagcag
+     5341 tttttgtcat tcttggtgca aagaaatggg tgtgttcaat acagaggatt tctccaaaac
+     5401 acagagattc acaaaggctt ctttcttcat gttcaacttc aaaatttcag gatcaaggca
+     5461 gactctggga gctccaattt tcattgtcag tgaaaggatt ttcaggccaa tctgctggga
+     5521 tccatccaac ctggagttca agataagagg caacaccctg aatctgacct acaaagagtc
+     5581 tttgccaaag gcaggtcaaa gaatgttcaa catcctgagc tacactgtaa aagatacaga
+     5641 tgtttctgat gagaacgcct tcaaactcat gtcattgtct ccgagacaca aatttcatgg
+     5701 aagagagcca agcacttcct ggatctgtat gagagcactg cccatcacca caatagacag
+     5761 actcctagag cgaattctca atcatgaaag aatcagtgcc tcgattgaca atgacagact
+     5821 tgctgagtgc ttcaaaagtg ttcttgaatc agccctcaga cggaaaggag tcttcttgtc
+     5881 agaattttct agagcaactc agaagatgct ggatagcctg agtagagaca tgctggattt
+     5941 ctttgcagag gctggcctga atgatgatct cgaacttgaa gaagaacctt ggctgggagg
+     6001 cctggattcc ttctccctag atgatgagga ttatctggag gagtacaatc tgggaccatt
+     6061 tgggatgttc agcgtggagc aggagatgaa cacaaagtat tatcatcacc tcctattaga
+     6121 ctctctggtt gaagacatca ttcagaagct ttctcttgat ggtctacgaa aactgttcca
+     6181 ggagaatgaa gcccctattg agtacaaaaa agaggtttgt cgattgttct caatcctgca
+     6241 gaaagatgca agctacatca cctggaagag cagggatctt ctgtcagaga acatgggtct
+     6301 tgacgttgag gatgacatgt ttggataaaa gacatgttct tgggttggat attgctatca
+     6361 aagtccttaa atctctttct ttatctttgt tcttctttta cttccatctt ggcgaacttt
+     6421 gtgt
+//
+
+LOCUS       UUKGPM                  3229 bp ss-RNA     linear   VRL 03-JUN-2011
+DEFINITION  Uukuniemi virus segment M membrane glycoproteins G1 and G2 gene,
+            complete cds.
+ACCESSION   M17417
+VERSION     M17417.1
+KEYWORDS    glycoprotein.
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 3229)
+  AUTHORS   Ronnholm,R. and Pettersson,R.F.
+  TITLE     Complete nucleotide sequence of the M RNA segment of Uukuniemi
+            virus encoding the membrane glycoproteins G1 and G2
+  JOURNAL   Virology 160 (1), 191-202 (1987)
+   PUBMED   3629974
+REFERENCE   2  (bases 1 to 3229)
+  AUTHORS   Ronnholm,R.
+  TITLE     Localization to the Golgi complex of Uukuniemi virus glycoproteins
+            G1 and G2 expressed from cloned cDNAs
+  JOURNAL   J. Virol. 66 (7), 4525-4531 (1992)
+   PUBMED   1602557
+COMMENT     Draft entry and computer-readable sequence kindly provided by
+            R.Roennholm, 14-DEC-1987.
+FEATURES             Location/Qualifiers
+     source          1..3229
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /strain="S23"
+                     /db_xref="taxon:11591"
+                     /segment="M"
+                     /clone="pUM[40,187]"
+                     /note="passed in secondary chicken embryo fibroblasts"
+     CDS             18..3044
+                     /codon_start=1
+                     /product="membrane glycoprotein polyprotein"
+                     /protein_id="AAA79512.1"
+                     /translation="MVRTYLLLLLLCGPATPFFNHLMDVTRRLLDSSNATWQRDQPDT
+                     HRLSRLDAHVMSMLGVGSHIDEVSVNHSQHLHNFRSYNCEEGRRTLTMMDPKSGKFKR
+                     LKCNENQTLSKDCASCIEKKSSIMKSEHLVYDDAICQSDYSSPEAMPDHETHLCRIGP
+                     LHIQHCTHEAKRVQHVSWFWIDGKLRVYDDFSVSWTEGKFLSLFDCLNETSKDHNCNK
+                     AVCLEGRCSGDLQFCTEFTCSYAKADCNCKRNQVSGVAVVHTKHGSFMPECMGQSLWS
+                     VRKPLSKRSVTVQQPCMDCESDCKVDHILVIVRHFYPDHYQACLGSTCLTGRAKDKEF
+                     KIPFKMADRLSDSHFEIRIWDKERSNEYFLESRCESVDACAAITCWFCRANWANIHCF
+                     SKEQVLILVAVSSLCILLLASVLRALKVIATFTWKIIKPFWWILSLLCRTCSKRLNKR
+                     AERLKESIHSLEEGLNNVDEGPREQNNPARAVARPNVRQKMFNLTRLSPVVVGMLCLA
+                     CPVESCSDSISVTASSQRCSTSSDGVNSCFVSTSSLLQVSPKGQESCLILKGPTGTAV
+                     DSIRIKTTDIKLECVRRDLYWVPRVTHRCIGTRRCHLMGACKGEACSEFKINDYSPEW
+                     GHEEELMAQLGWSYCVEQCGGALCQCFNMRPSCFYLRKTFSHLSQDAFNIYECSEWSY
+                     RINVLVSTNSTHSNLTLKLGVPDSIPHGLISLSSVSQPPAIAYSECFGEDLHGTKFHT
+                     VCNRRTDYTLGRIGEIQCPTKADALAVSKRCISSDSIIFSKVHKDSVDCQSSIIDPMT
+                     IRNRNKLPSTVGSVTFWPTETSVEAAIPDLASATMLIRLDGYTIQFRSDSNKCSPRFL
+                     SLSGCYNCEAGAKLELEHVTDFGTALGILECPSLGYTTYYEVKNTLEKSIRTMHLNGS
+                     HVEAKCYFRCPNSESQLTIRGELIYLFNDDIRHHNQTLSPGLSPKSGSGWDPFGWFKA
+                     SWLRAIWAILGGTVSLIIGVVIIYMVFTLCLKVKKS"
+     sig_peptide     18..68
+                     /note="membrane glycoprotein G1 signal peptide"
+     mat_peptide     69..1505
+                     /product="membrane glycoprotein G1"
+     sig_peptide     1506..1556
+                     /note="membrane glycoprotein G2 signal peptide"
+     mat_peptide     1557..3041
+                     /product="membrane glycoprotein G2"
+ORIGIN      
+        1 acacaaagac ggctaacatg gtaaggacat atctcttgct tttgctcctg tgcgggccag
+       61 caacgccttt cttcaatcac ctgatggatg tgacccgtcg cttactagac tccagcaacg
+      121 caacctggca gagagaccag cctgacacgc accgattgtc aaggctggat gctcatgtca
+      181 tgtcaatgtt aggggttggt tcacacattg atgaagtcag tgtcaatcac agccagcacc
+      241 tccacaactt taggtcctac aattgtgaag agggaaggag gactttaacc atgatggatc
+      301 ccaaatcagg aaagttcaag cgcctgaaat gtaatgaaaa ccagactctg tccaaggatt
+      361 gtgcctcttg catagaaaag aagtcctcca tcatgaagag tgagcatctg gtctatgacg
+      421 acgccatttg ccaatctgat tacagcagtc ctgaggcaat gccagaccat gagacacatc
+      481 tttgcaggat cgggccattg cacatccagc attgcactca cgaggctaag agggttcagc
+      541 atgtctcttg gttttggatt gatgggaaac tgagggtgta tgatgacttc tcagtctcct
+      601 ggactgaggg gaaattcctg tctctctttg attgcttaaa tgaaacatcc aaggaccaca
+      661 actgcaataa agcagtctgt ttggagggca gatgttctgg agatcttcag ttttgcacag
+      721 aattcacatg ctcatatgca aaggctgact gcaactgcaa gagaaaccag gtttctgggg
+      781 tggcagtagt gcataccaag cacggctcct tcatgccaga gtgtatgggt cagtctcttt
+      841 ggtcagtgcg aaagcctttg tctaagagat cagtaacagt gcagcaacct tgcatggatt
+      901 gcgaaagtga ctgcaaagta gaccacattt tggtgatagt caggcacttc tacccagacc
+      961 attaccaggc atgtctgggc tccacatgtc tcactggtcg agcaaaggac aaggaattca
+     1021 agatcccatt taagatggca gacaggctct cagattcaca cttcgagata cgtatctggg
+     1081 ataaggagag gtccaacgaa tatttcttag aatctaggtg tgagtcagtt gatgcctgtg
+     1141 ctgccattac atgctggttt tgtagagcaa attgggccaa cattcactgc ttttctaaag
+     1201 agcaggttct aattctagtt gcagtgagct ccttgtgcat tttactgcta gctagtgttc
+     1261 tgagggctct caaagtcatt gccaccttca cctggaaaat aataaagccc ttttggtgga
+     1321 tcctttccct gttgtgcaga acttgctcca aaagactgaa caaacgggca gagcgactaa
+     1381 aggagagcat ccactccctg gaagaaggac tgaataatgt ggatgaagga cccagagagc
+     1441 agaacaaccc tgcaagagca gtggcaaggc ccaatgttcg acaaaagatg tttaacttga
+     1501 ccagactaag cccagttgtt gtaggcatgc tgtgtctggc ttgcccagtt gaaagttgct
+     1561 cagactccat ctctgtaaca gcctccagtc agaggtgctc tactagctca gatggagtga
+     1621 actcctgttt tgtcagcact agctctctgc ttcaggtcag tcctaagggg caagagagct
+     1681 gtctgatcct aaaggggcca actggaacag cagtggactc tattaggatc aagaccactg
+     1741 acatcaagct ggagtgtgtc aggcgagatc tgtattgggt ccccagggta acccataggt
+     1801 gcatagggac caggcgatgc catctcatgg gagcctgcaa gggagaggcc tgctctgagt
+     1861 ttaagataaa cgattattct ccggagtggg gtcatgaaga ggagttgatg gctcagctag
+     1921 gctggagcta ctgtgttgag cagtgtggcg gagccctttg tcaatgcttc aacatgaggc
+     1981 cctcttgctt ctacttgagg aaaacatttt ctcatctatc ccaggatgct ttcaacatct
+     2041 atgaatgctc agaatggtca taccggataa atgtgcttgt atcgacaaat tcaactcact
+     2101 caaatttaac attaaagctt ggtgtcccag actctatccc tcatggtctg attagcttgt
+     2161 ctagcgtgtc ccaaccgcca gccatagcat actcagagtg ctttggggag gatctacacg
+     2221 gcacaaagtt ccacacagtc tgcaacagaa ggactgatta cactctaggc agaatagggg
+     2281 agatacagtg ccccaccaaa gctgatgccc tggcagtctc taagagatgc attagcagcg
+     2341 actccataat tttctccaag gtccacaagg attcagtgga ttgtcaatca tcaatcatag
+     2401 atcccatgac aatcaggaat cggaacaaat tgccatccac tgtaggttca gtcactttct
+     2461 ggccaacaga aaccagtgtt gaggcagcca tccctgactt ggcatctgcc accatgttaa
+     2521 tcaggttaga tggttatacc attcagttca gatctgattc caataagtgt agcccaagat
+     2581 tcttatcatt atcaggctgt tacaactgtg aggctggagc aaagctggaa ctggaacatg
+     2641 taacagactt tggaacagcc ttgggaatcc tcgaatgccc aagcctaggc tacacaacat
+     2701 attatgaggt gaagaacacg cttgaaaagt ccataaggac aatgcattta aacggatcac
+     2761 acgtggaggc caagtgctac tttcggtgcc ctaactctga gagtcagcta actataagag
+     2821 gagaactgat ctatcttttc aatgatgaca tcagacacca caatcagacc ttgtccccag
+     2881 gcctgagtcc gaagtcaggg tctggatggg atccttttgg ttggttcaaa gcctcctggt
+     2941 tgagagcaat ttgggccatc ctgggtggga ctgtgtctct gataattgga gtggtgatca
+     3001 tatacatggt gttcacactc tgcttgaaag ttaaaaaatc gtgaagtccc cctattcccc
+     3061 atccccctct acccctttcc cttatccccc cctcatcctc taagagggtg agggcctctg
+     3121 ccgcacgacg ccgctggagc attcattact aagtggtgtt atccagggtg gtccttagca
+     3181 gtgcccgtga ataccatatt tgttgttcca tgtagccgtg tctttgtgt
+//
+
+LOCUS       UUKNNSA                 1720 bp ss-RNA     linear   VRL 03-AUG-1993
+DEFINITION  Uukuniemi virus S RNA containing nucleocapsid N protein mRNA,
+            complete cds and non-structural (NS-s) protein mRNA, complete cds.
+ACCESSION   M33551
+VERSION     M33551.1
+KEYWORDS    N gene; NS-s protein; nonstructural protein; nucleocapsid protein.
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 1720)
+  AUTHORS   Simons,J.F., Hellman,U. and Pettersson,R.F.
+  TITLE     Uukuniemi virus S RNA segment: ambisense coding strategy, packaging
+            of complementary strands into virions, and homology to members of
+            the genus Phlebovirus
+  JOURNAL   J. Virol. 64 (1), 247-255 (1990)
+   PUBMED   2136709
+REFERENCE   2  (bases 1 to 1720)
+  AUTHORS   Simons,J.F. and Pettersson,R.F.
+  TITLE     Host-derived 5' ends and overlapping complementary 3' ends of the
+            two mRNAs transcribed from the ambisense S segment of Uukuniemi
+            virus
+  JOURNAL   J. Virol. 65 (9), 4741-4748 (1991)
+   PUBMED   1831239
+COMMENT     Original source text: Uukuniemi virus (strain S23) cDNA to genomic
+            RNA.
+            Reference [1] reports nucleotides
+            12 through 1720.  Reference [2]
+            reports nucleotides 1 through 11.
+FEATURES             Location/Qualifiers
+     source          1..1720
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /strain="S23"
+                     /db_xref="taxon:11591"
+     CDS             35..799
+                     /note="(nucleocapsid) N protein"
+                     /codon_start=1
+                     /protein_id="AAA47958.1"
+                     /translation="MAMPENWVRFAIEISDAQWEEEEIREFINLFQYQGFDAAVVLSR
+                     IFELAKKADLSRDQMLRDIRALITLHLTRGNKLSSIEKRLSEEGKKEFALLKARYQLV
+                     DKAKEAADLTLSRIAIANAGLTCRILPQVVAHTAVTRSRMESLSADYPVCMMHNAFAG
+                     LIDETLPEDSIKALVDAHRLYLLEFSRTINVKHRGMEAKEILDANDSALQAGLASSFL
+                     TPSQKRAYLLSFKLVDGNGKVNKAVQQAATVLRSLI"
+     gene            complement(874..1695)
+                     /gene="NS"
+     CDS             complement(874..1695)
+                     /gene="NS"
+                     /codon_start=1
+                     /product="nonstructural protein"
+                     /protein_id="AAA47959.1"
+                     /translation="MSYFTIQNEDLPQGFTFRPHDKIYDSLWEMMDDGYFPSTIPLKT
+                     TINGVDMPSVGWLEVDEGLYDILIDGLDVLRPTDEEMIVSATGWPLEKNRALILNFFR
+                     NLRMDIIGTYTLQRSFITIMSIVLFGDQNPRLRRKKRSRVSLGKMLFDLALRMRSKIR
+                     RMKLTEVQVTGQNLVKDLCLLHILDLQKRLVTRGTIAEKRFFTAIEQAPCNYEPKRYG
+                     MKKKHMNFMFESDRKNLTVHPTLVNLEEHWITFESARERLLDTTFTKDWPVVGSL"
+ORIGIN      
+        1 acacaaagac ctccaactta gctatcgata gatcatggct atgccggaga attgggtgcg
+       61 ctttgcgatt gaaatctcgg atgctcagtg ggaggaggaa gagatccgag agttcatcaa
+      121 tctcttccag tatcaaggct ttgatgcagc cgtggtgctg agcaggattt ttgagttggc
+      181 caaaaaggct gatctctccc gggaccagat gctgagggac atcagggctc tgatcaccct
+      241 ccatctgacc agaggtaaca agctctccag cattgagaag aggctgtctg aggagggcaa
+      301 gaaagaattc gccctgctga aggccaggta ccagcttgtg gacaaggcca aggaggctgc
+      361 agatctgaca ctctcccgca ttgcgatcgc caatgccggg ctgacgtgcc gcattctgcc
+      421 gcaagtggtg gcccacacag ccgtgactag gtcacggatg gagagtctga gcgcagacta
+      481 tccagtgtgc atgatgcaca atgcctttgc tggcctgatc gatgagaccc tccctgagga
+      541 ctccatcaag gccctggtcg atgcccacag gctctatctg ctggagttct ccaggaccat
+      601 caacgtgaag caccgcggaa tggaggccaa ggagatcttg gatgccaatg actctgctct
+      661 gcaggctggt ctggcaagct ccttcctgac tcccagtcag aagagagctt acctgctgag
+      721 cttcaagctg gtggacggaa atggcaaagt gaataaagcc gtccagcagg ctgcaactgt
+      781 cctcagatca ttgatctgag gtgttttgga atttgattta attcggccaa attaaaactc
+      841 tctaattgga ctctaaaagg gcttcggccc aaactacagt gatcctacga ctggccaatc
+      901 cttggtgaat gtggtgtcca gcagtcgctc cctagcactc tcaaaggtga tccagtgctc
+      961 ctcaaggttg actagagttg gatggacagt aaggttcttc cgatctgatt caaacatgaa
+     1021 gttcatgtgc ttcttcttca tcccataacg cttaggttca tagttgcaag gtgcttgctc
+     1081 aattgcagtg aagaaccttt tctctgcaat ggtccccctt gtgactagtc ttttctggag
+     1141 atcaagaatg tggagaaggc acagatcctt caccagattc tgcccagtga cctgaacctc
+     1201 agtgagcttc attctcctta tttttgatct cattctgaga gcgagatcaa acagcatctt
+     1261 cccaagagag accctggatc tcttcttccg tctcagcctg gggttctgat caccgaacaa
+     1321 aacaatgctc atgatcgtta tgaaggacct ttgcaaagta taagtcccga tgatatccat
+     1381 tctcaagttc ctgaagaaat tgaggatgag agctcgattc ttctccagag gccatccagt
+     1441 tgctgacaca atcatttctt catcagtcgg tctaaggaca tctaaaccat caatcaggat
+     1501 gtcatacagg ccctcatcca cctcaagcca acccactgac ggcatatcca caccgttgat
+     1561 ggtagtcttc agaggaattg tgctaggaaa gtagccatca tccatcatct cccagagcga
+     1621 gtcgtagatc ttgtcatgag gacgaaaagt gaagccctgg gggagatcct cgttctggat
+     1681 agtgaagtaa gacatgctta atgttggagg gtctttgtgt
+//
+
+LOCUS       GN358807                  60 bp    DNA     linear   PAT 12-MAY-2009
+DEFINITION  Sequence 8571 from Patent WO2007130519.
+ACCESSION   GN358807
+VERSION     GN358807.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1
+  AUTHORS   Baptista,C.S., Wu,X. and Munroe,D.J.
+  TITLE     Viral nucleic acid microarray and method of use
+  JOURNAL   Patent: WO 2007130519-A2 8571 15-NOV-2007;
+            DEPARTMENT OF HEALTH AND HUMAN SERVICES (US)
+FEATURES             Location/Qualifiers
+     source          1..60
+                     /organism="Uukuniemi virus"
+                     /mol_type="unassigned DNA"
+                     /db_xref="taxon:11591"
+ORIGIN      
+        1 ctgagagaga tctatgtgat gggtgcagag gaaagaattg ttcaatcggt ggtggagaca
+//
+
+LOCUS       GN358804                  60 bp    DNA     linear   PAT 12-MAY-2009
+DEFINITION  Sequence 8568 from Patent WO2007130519.
+ACCESSION   GN358804
+VERSION     GN358804.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1
+  AUTHORS   Baptista,C.S., Wu,X. and Munroe,D.J.
+  TITLE     Viral nucleic acid microarray and method of use
+  JOURNAL   Patent: WO 2007130519-A2 8568 15-NOV-2007;
+            DEPARTMENT OF HEALTH AND HUMAN SERVICES (US)
+FEATURES             Location/Qualifiers
+     source          1..60
+                     /organism="Uukuniemi virus"
+                     /mol_type="unassigned DNA"
+                     /db_xref="taxon:11591"
+ORIGIN      
+        1 ctggcagcca tgatacagca ctgccagtcg tcaattcatt acatgctcat ggggttgggt
+//
+
+LOCUS       GN358802                  60 bp    DNA     linear   PAT 12-MAY-2009
+DEFINITION  Sequence 8566 from Patent WO2007130519.
+ACCESSION   GN358802
+VERSION     GN358802.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1
+  AUTHORS   Baptista,C.S., Wu,X. and Munroe,D.J.
+  TITLE     Viral nucleic acid microarray and method of use
+  JOURNAL   Patent: WO 2007130519-A2 8566 15-NOV-2007;
+            DEPARTMENT OF HEALTH AND HUMAN SERVICES (US)
+FEATURES             Location/Qualifiers
+     source          1..60
+                     /organism="Uukuniemi virus"
+                     /mol_type="unassigned DNA"
+                     /db_xref="taxon:11591"
+ORIGIN      
+        1 aatgcggctg acacccttga cagagtgatg gtgtccctgc cagggttccc ttctttcaac
+//
+
+LOCUS       UUKLRNAP                6423 bp    RNA     linear   VRL 18-DEC-2007
+DEFINITION  Uukuniemi virus L RNA segment for RNA polymerase, complete cds.
+ACCESSION   D10759
+VERSION     D10759.1
+KEYWORDS    RNA polymerase.
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 6423)
+  AUTHORS   Elliott,R.M., Dunn,E., Simons,J.F. and Pettersson,R.F.
+  TITLE     Nucleotide sequence and coding strategy of the Uukuniemi virus L
+            RNA segment
+  JOURNAL   J. Gen. Virol. 73 (PT 7), 1745-1752 (1992)
+   PUBMED   1629699
+REFERENCE   2  (bases 1 to 6423)
+  AUTHORS   Elliott,R.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (21-MAR-1992) Contact:Rechard M. Elliott University of
+            Glasgow, Institute of Virology, Institute of Virology; Church
+            Street, Glasgow G11 5JR. Scotland, U.K
+FEATURES             Location/Qualifiers
+     source          1..6423
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /db_xref="taxon:11591"
+     CDS             17..6328
+                     /codon_start=1
+                     /product="RNA polymerase"
+                     /protein_id="BAA01590.1"
+                     /translation="MLLAICSRTIRQQGLNCPPAVTFTSSHMRPPIPSFLLWTEGSDV
+                     LMDFDLDTIPAGSVTGSSIGPKFKIKTQAASSFVHDFTFAHWCDASDMPLRDHFPLVN
+                     DTFDHWTPDFISQRLDGSKVVVEFTTNRSDQEQSLISAFNTKVGKYEVALHNRSTTSS
+                     ILFGVVVVSETTVVTNLNLNQQEVDELCFRFLVARAVHLEMTTKMIIPEYDDEDEDKR
+                     SREVKAAFHSVQPDWNVTEANFAPFSRRMFSNFAQMEPDKEYLAHIILDSLKQAQADL
+                     DGNHYLNESLTEQARLDRNREESLNMVKDFERDFNNAAQRSAWSHKSTVPFPGVIPKV
+                     SGDTTSLSRLVELPVITGGSDATIRAWRSAYGSVSNGTVERCDEDVERERRAALCSLT
+                     VEELEESKALRMKYHRCKIDNGMMDKLDLAMQGVEAKEFKNHPSIIKKRSKSKKTFPL
+                     TADTRDIDLFLHHDDLMFNNEHSQTPPAAMIEAVKAGADAQSLHGLDKSANPWYASAL
+                     WFLGLPIGLWLFMCTCIGVELSISLKQHCGRQKFIIKKLRFFDIFLLIKPTNSGSHVF
+                     YSIAFPESAILGKLHRSQCFKGLQFEDGWFWTEFSSFKMSKLTNVVKCLSTGFNLFWF
+                     WRDYYEVPFWAGNEKDFQTGKQRANKMFKFCLLMLLEDKARTEEIATLSRYVMMEGFV
+                     SPPCIPKPQKMIEKLPNLARTKFQVWLISRMLQTIIRVSDYPFKITAGHKSANWTGMF
+                     NWVTGEPIESTQKLISLFYLGYLKNKEESPERNASIGMYKKILEYEDKHPGRYTYLGL
+                     GDPPSDDTRFHEYSISLLKHLCIHAEHDLRRNWGESFKAMISRDIVDAIASLDLERLA
+                     TLKASSNFNEEWYQKRGDGKTYHRSKVLEKVSKYVKKSSSHVHHIMEECLRKVESQGC
+                     MHVCLFKKPQHGGLREIYVLGFEERVVQLVIETIARQICKRFKSETLTNPKQKLAIPE
+                     THGLRAVKTCGIHHETVATSDDAAKWNQCHHVTKFALMLCHFTDPLFHGFIIRGCSMF
+                     MKKRIMIDQSLIDIIDSHTTLETSDAYLQKIHRGYHGSLDDQPRWISRGGAFVQTETG
+                     MMQGILHYTSSLLHTLLQEWLRTFSQRFIRTRVSVDQRPDVLVDVLQSSDDSGMMISF
+                     PSTDKGATGKYRYLSALIFKYKKVIGKYLGIYSSVKSTNNTLHLLEFNSEFFFHINHN
+                     RPLLRWITACDTISEQESLASRQEEMYNNLTSVLEGGGSFSLVSFCQFGQLLLHYTLL
+                     GMTVSPLFLEYIKLVSEIKDPSLGYFLMDHPFGSGLSGFKYNVWVAVQNSILGSRYRS
+                     LLEAIQNSDSAAPKKTLDTTTSGTFVQSTIIRFGDRKKWQRLVDRLNLPEDWLDVIDK
+                     NPEIVYRRPRDGFEVSLRIAEKVHSPGVSNSLSKGNCIIRVISSSVYILSRSILSDGL
+                     AWLYDEEEEVKRPLLYKVMNQPELDLHSRLTPAQLSTLFPMMAEFEKLQTHLRSYMKI
+                     EGEFISKKKVITQTRVNILETERFLRARPEDLIADKWFGFTRTRMTPRTFKEEWENLT
+                     SVFPWLTGNPSETLELSPFQHHVQLRNFFSRLDLKGRDIRIIGAPIKKSSGVSNVSTA
+                     IRDNFFPRFVLTHIPDEAAMERIEAAGILKHALFLTVTGPYTDQSKLDMCRDFITSSE
+                     PITLKPNHGKTRTNVLSLFQDYFSKRGPDIIFNRIQMANCGVIGGFTSPQKPKEVDGK
+                     IVYTGDGVWRGIVDGFQIQLVITYMPKQKSNELKSITVNSDRCISALSSFCQSWCKEM
+                     GVFNTEDFSKTQRFSKASFFMHKFKISGSKQTLGAPIFIVSEKIFRPICWDPSKLEFR
+                     VRGNTLNLTYKEVNPGAGQRMFNILSYTVKDTDVSDENAFKLMSLSPRHKFHGREPST
+                     SWICMRALPISTIDKLLERILNRERISGSIDNERLAECFKNVMESTLRRKGVFLSEFS
+                     RATQKMLDGLSRDMLDFFAEAGLNDDLLLEEEPWLSGLDTFMLDDEAYLEEYNLGPFG
+                     VFSVEQEMNTKYYHHLLLDSLVEDVIQKLSLDGLRKLFQEEEAPLEYKKEVIRLLNIL
+                     QRDASQIKWKSRDLLSENMGLDVDDDMFG"
+ORIGIN      
+        1 acacaaagac gccaagatgc ttttagcgat ttgctcgagg accatccgac aacagggtct
+       61 taactgccct ccagctgtga cctttacctc cagccatatg agaccgccaa ttccatcatt
+      121 tctgctctgg actgaggggt ctgatgttct gatggatttt gatttggaca ccatcccagc
+      181 tggatcagtt actggatcat ccattggtcc aaagttcaaa atcaaaacac aggctgcttc
+      241 atcttttgtg catgatttca cctttgccca ctggtgcgat gcgtccgaca tgcccctcag
+      301 agaccacttc ccgctggtca atgacacttt tgaccactgg actcctgatt tcatctcgca
+      361 gaggctagat ggaagcaagg tggtggttga gtttacaacc aaccggtcag accaggaaca
+      421 atctctgatc agtgctttca acaccaaagt aggaaagtac gaggttgctc ttcacaatcg
+      481 atcgactacc agcagcatac tatttggagt ggttgtggtc agtgagacaa cagtagtcac
+      541 caacttgaac ttaaatcagc aagaggtaga tgagctctgc tttaggttct tagttgctag
+      601 agctgttcac ctggagatga ccaccaagat gatcattcca gagtatgatg atgaggatga
+      661 agacaagaga agccgagaag tgaaggcagc cttccactct gtacagccag attggaatgt
+      721 gacagaagcc aactttgccc ctttctccag aaggatgttc tccaactttg cccaaatgga
+      781 gccagacaag gagtacctgg ctcacatcat attggactct ctgaagcaag cacaggcgga
+      841 tctggatggc aatcattacc tcaatgagag tttgactgag caagccagac ttgataggaa
+      901 cagagaggag agcttgaaca tggttaagga cttcgaacga gacttcaaca atgcagccca
+      961 gcggtcagct tggagccaca agtccactgt gccttttcca ggagtgatcc cgaaggtgag
+     1021 cggagacacc acatcccttt ctagacttgt cgagctacca gtgatcaccg ggggatcaga
+     1081 cgcaacaatc agggcttgga ggtcagccta tggatcagtg agcaacggaa cagttgaaag
+     1141 gtgtgatgag gatgtggaaa gagaaaggag ggcagccctg tgctctctca ctgtggagga
+     1201 gctagaagag tccaaggctc tgaggatgaa ataccacagg tgcaagatag acaatggaat
+     1261 gatggacaag ttggatttag caatgcaagg ggttgaggct aaagagttca agaatcaccc
+     1321 atccatcatc aagaagagat caaagtcgaa gaagaccttt cctctgactg cagacactcg
+     1381 agacatcgac ttgttcctcc atcatgatga cttgatgttc aacaatgagc actcccagac
+     1441 acctccagca gccatgattg aggctgtcaa ggctggggct gatgcacaat cactgcatgg
+     1501 gttggacaag agtgcaaatc catggtacgc ctcagctctc tggttccttg ggctccccat
+     1561 aggactatgg cttttcatgt gcacctgcat cggagtggag ttaagcatca gtctgaaaca
+     1621 acactgtggc aggcaaaagt tcatcattaa gaagctaagg ttctttgaca tcttcctcct
+     1681 gatcaagccc acgaattctg gaagtcacgt cttctactca attgcatttc cagagtcagc
+     1741 cattcttggg aagttgcaca gatcccagtg ttttaagggc ttgcagtttg aggatgggtg
+     1801 gttctggact gagttcagct cctttaaaat gtcaaaactg actaatgttg tgaaatgcct
+     1861 gtccactggg ttcaacttgt tttggttctg gagagattac tatgaagtac ccttctgggc
+     1921 tgggaatgag aaagacttcc aaacagggaa acagagagcc aacaaaatgt tcaagttttg
+     1981 cttgctaatg ctgttagagg acaaagccag gacagaggaa attgctacgc tgtctaggta
+     2041 tgtcatgatg gaagggtttg tcagtccccc ttgcattcca aaaccccaga agatgatcga
+     2101 gaagttgcct aatctggcta ggactaagtt ccaggtgtgg ctgatatcca gaatgctgca
+     2161 gacaattatt agagtgtcag attacccgtt caaaatcaca gcaggacaca aatcagccaa
+     2221 ctggacaggc atgttcaact gggtcacagg agaaccaatt gaatcaacgc agaagctaat
+     2281 ttccctgttc tacttgggtt accttaagaa caaagaggag tcccctgaga gaaatgcaag
+     2341 cattggaatg tacaagaaga tactggagta tgaggacaag caccccggaa ggtacaccta
+     2401 cctagggctt ggggaccctc ctagtgatga cactcgtttc cacgagtact ccattagctt
+     2461 attgaagcat ctctgcatcc atgctgagca tgatttgagg cggaattggg gggaatcttt
+     2521 caaagccatg atttctcgag atattgtgga tgccattgcc agcttggatc tggagagact
+     2581 ggcaactctg aaggcttcca gcaacttcaa tgaagagtgg tatcagaaga ggggtgatgg
+     2641 aaagacctac catcggagca aggttctgga aaaagtcagc aagtatgtca agaagagtag
+     2701 ctcacatgtc caccatatca tggaagaatg tcttcggaag gttgagagcc aaggttgtat
+     2761 gcatgtgtgt ctgttcaaga aaccgcagca tggtggtctg agagagatat atgttcttgg
+     2821 atttgaagag agagtggtcc agctggtgat agagaccatt gcaaggcaaa tctgtaaacg
+     2881 gttcaaatct gaaaccttga ccaacccaaa gcaaaaactg gccattcctg aaacacatgg
+     2941 tcttagggct gtcaagacat gtggcattca tcatgaaaca gtggcgacat cagacgatgc
+     3001 tgccaaatgg aatcagtgcc atcatgtcac gaagtttgct ttaatgctct gccatttcac
+     3061 agatcctttg tttcatgggt tcatcattag aggatgttcc atgttcatga agaaacgcat
+     3121 aatgattgat cagagtctga ttgatatcat agactcccac accacactgg agacatctga
+     3181 tgcatacctc caaaagatcc acagagggta ccatgggagt cttgatgacc agcctagatg
+     3241 gatctctaga ggcggggcct ttgtgcagac ggaaactggt atgatgcaag gcatacttca
+     3301 ttacacctct agtctactcc acaccttgct ccaggagtgg cttagaactt tctcacaaag
+     3361 attcatcagg acaagggttt cagtcgacca gcgcccagat gtcctagtgg atgtcttgca
+     3421 gagctcagat gattctggca tgatgatctc cttcccgtca acagacaagg gagccactgg
+     3481 gaagtacaga tacttgtctg cccttatttt caagtacaaa aaagtcattg gcaagtacct
+     3541 tggcatctac tcatctgtaa agtccactaa caacaccctc cacctactag aattcaactc
+     3601 agagtttttc tttcacatca accacaacag gcctctacta aggtggatca cagcttgtga
+     3661 caccatctca gagcaagaat ctctggcttc aaggcaagaa gagatgtaca acaatctgac
+     3721 atcagttctc gagggtggtg gcagcttttc tctggtttcc ttttgccagt ttggtcagtt
+     3781 gctcctacac tacactctat taggcatgac agtttcccca ctgttccttg agtacataaa
+     3841 gttggtgtca gaaataaagg acccttccct gggctacttc ctgatggatc acccgttcgg
+     3901 gtctggtcta tcaggattca agtacaatgt ctgggtggct gttcaaaaca gcatactagg
+     3961 atccagatat agatccttgc tggaggctat acagaattct gacagtgctg ctccaaagaa
+     4021 aaccttggat acaacaactt ctgggacttt cgtgcagtcc acaatcatca ggtttggaga
+     4081 tagaaagaaa tggcagagac tggtggacag gttgaacctc ccagaggact ggctggatgt
+     4141 gattgacaag aatcctgaga ttgtgtatcg tcgaccccga gatggctttg aagtgagcct
+     4201 gaggattgca gagaaggtcc attctccagg agtctctaac tccctgtcca agggcaactg
+     4261 catcatcagg gtcatctcat catcagtgta catcctgagc aggagcattc taagtgatgg
+     4321 tctggcttgg ctctatgatg aagaagagga ggtcaaacgc cctctgctgt acaaggttat
+     4381 gaatcagcct gagctggacc tccattccag gttgactccg gcacagctgt caacgttgtt
+     4441 tcccatgatg gctgaatttg agaagttgca gacccatctt aggagttata tgaaaattga
+     4501 aggtgagttc atatcaaaga agaaggtcat aactcagact agggtcaaca ttcttgagac
+     4561 tgagagattc cttagagcac gacctgagga cttgattgcg gataaatggt ttggcttcac
+     4621 cagaacaaga atgactccaa ggactttcaa agaggagtgg gagaatctga cttctgtgtt
+     4681 tccatggcta acaggaaacc cctctgagac tctggaactt tctcctttcc agcaccatgt
+     4741 ccagctaaga aatttcttca gtagactgga cctcaagggg agagacatca gaattatagg
+     4801 agctcctata aagaagtcta gtggtgtgag caacgtctct acagccatta gggacaactt
+     4861 cttccccagg tttgtcctga ctcacatacc agatgaagct gcaatggaaa gaattgaagc
+     4921 agcaggcatt ctgaaacatg ctctcttcct cacagtgaca ggaccttaca ccgatcagtc
+     4981 aaagctggat atgtgcaggg attttatcac tagctcagag cccatcactc ttaaacctaa
+     5041 ccacggaaaa accaggacca acgtgctttc cctttttcag gattacttct ccaagagggg
+     5101 gccagacatc atcttcaaca gaattcagat ggctaactgt ggagtgatcg gaggattcac
+     5161 atctcctcag aagccaaagg aggttgacgg caagattgtc tacactggtg atggtgtgtg
+     5221 gcgaggaatt gttgacggtt ttcagatcca gctggtcatt acctacatgc caaagcagaa
+     5281 gtcaaatgag ctaaaatcca taactgtcaa ctcagacaga tgcatctctg ccttgagcag
+     5341 cttctgccag tcgtggtgca aagaaatggg agtgttcaac accgaggatt tttccaagac
+     5401 ccagagattc tcaaaagcgt ccttcttcat gcacaagttc aagatctctg gttcaaagca
+     5461 gactctaggt gctccgatct tcatcgtcag tgagaagatc ttccgaccca tctgctggga
+     5521 cccatcgaag ctggaattta gagtgcgcgg gaacactcta aatctcactt acaaggaagt
+     5581 caatccaggt gctggccaga gaatgttcaa cattctcagt tacactgtca aggatacaga
+     5641 tgtctctgat gagaatgctt tcaagctcat gtcattgtcg cctagacaca agttccatgg
+     5701 gcgggagccg agcacttctt ggatctgcat gagagccctg cctatcagca ccattgacaa
+     5761 gctgctagag agaatattga acagggagag aataagtgga tcaatcgaca acgaacgcct
+     5821 ggctgagtgt ttcaagaatg tgatggagtc aaccttgagg cgtaagggag tgtttctatc
+     5881 tgaattctca agggccactc aaaagatgct ggatggtctc agcagagata tgttggactt
+     5941 ttttgctgag gctggcctca atgatgatct cctgctggaa gaggagccat ggctgagcgg
+     6001 tttagacact tttatgctgg atgatgaggc atacctggaa gagtacaatc ttggtccttt
+     6061 cggtgtgttc agtgtggagc aggagatgaa caccaagtac taccaccact tgcttctgga
+     6121 ctccctggtt gaggatgtaa tccagaaatt gtccctggac gggttgagga agttgtttca
+     6181 ggaggaagaa gctccattgg aatacaagaa agaggtgatt cgactgctca acatcttgca
+     6241 aagggatgcg agtcagataa agtggaagag cagagacctt ttgtcagaga acatgggtct
+     6301 tgacgttgat gatgacatgt ttggttgagt gacttttctt tgggttggat gctggcattg
+     6361 cttttactat ctctctctct ttgaatgtat cttcctttac ttccatcttg gcggactttg
+     6421 tgt
+//
+
+LOCUS       KM114248                1720 bp    RNA     linear   VRL 30-OCT-2014
+DEFINITION  Uukuniemi virus isolate Potepli 63 segment S, complete sequence.
+ACCESSION   KM114248
+VERSION     KM114248.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 1720)
+  AUTHORS   Matsuno,K., Weisend,C., Kajihara,M., Matysiak,C., Williamson,B.N.,
+            Simuunza,M., Mweene,A.S., Takada,A., Tesh,R.B. and Ebihara,H.
+  TITLE     Comprehensive Molecular Detection of Tick-Borne Phleboviruses Leads
+            to the Retrospective Identification of Taxonomically Unassigned
+            Bunyaviruses and the Discovery of a Novel Member of the Genus
+            Phlebovirus
+  JOURNAL   J. Virol. (2014) In press
+   PUBMED   25339769
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 1720)
+  AUTHORS   Matsuno,K., Dahlstrom,E., Porcella,S.F. and Ebihara,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-JUL-2014) Laboratory of Virology, NIAID - Rocky
+            Mountain Labs, NIH, 903 South 4th street, Hamilton, MT 59840, USA
+COMMENT     GenBank Accession Numbers KM114246-KM114248 represent sequences
+            from the 3 segments of Uukuniemi virus Potepli 63.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: GS De Novo Assembler v. 2.6; SeqMan Pro v.
+                                     11.0
+            Sequencing Technology :: Sanger dideoxy sequencing; 454
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1720
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /serotype="Uukuniemi"
+                     /isolate="Potepli 63"
+                     /host="Ixodes ricinus"
+                     /db_xref="taxon:11591"
+                     /segment="S"
+                     /country="Czech Republic"
+                     /collection_date="1963"
+     CDS             35..799
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="AIU95043.1"
+                     /translation="MAMPENWVRFAIEISDAQWEEDEIREFINLFQYQGFDAAVVLSR
+                     IFELAKKADLSRDQMLRDIRALITLHLTRGNKLSSIEKRLSEEGKKEFALLKARYQLV
+                     DKAKEAADLTLSRIAIANAGLTCRILPQVVAHTAVTRSRMESLSADYPVCMMHNAFAG
+                     LIDETLPEESIKALVDAHRLYLLEFSRTINVKHRGMEAKEILDANDSALQAGLASSFL
+                     TPSQKRAYLLSFKLVDGNGKVNKAVQQAATVLRSLI"
+     CDS             complement(874..1695)
+                     /codon_start=1
+                     /product="nonstructural protein"
+                     /protein_id="AIU95044.1"
+                     /translation="MSYFTIQNEDLPQGFTLRPHDKFYDSLWEMMDDGYFPSTIPLKT
+                     TINGVDMPSVGWLEVDEGLYDILIDGLDVLRPTDEEMIVSATGWPLEKNRALILNFFR
+                     NLRMDIIGTYTLQRSFITIMSIVLFGDQNPRLRRKKRSRVSLGKMLFDLALRMRSKIR
+                     RMKLTEVQVTGQNLVKDLCLLHILDLQKRLVTRGTIAEKRFFTTFEQAPCNYGPKRYG
+                     MKKKHMNFMFESDLKNLTVHPTLVNLEEHWITFESARERLLDTTFTKDWPVVGSL"
+ORIGIN      
+        1 acacaaagac ctccaactaa gctatcgata gatcatggct atgccggaga attgggtgcg
+       61 ctttgcgatt gaaatctcgg atgctcagtg ggaggaggac gagatccgag agttcatcaa
+      121 tctcttccag taccaaggct ttgatgcagc cgtggtgctg agcaggattt ttgagttggc
+      181 caaaaaggct gacctctccc gggaccagat gctgagggac atcagggctc tgatcactct
+      241 ccacctgacc agaggtaaca agctctccag cattgagaag aggctgtctg aggagggcaa
+      301 gaaagagttt gccctgctga aggccagata ccagcttgtg gacaaggcca aggaggctgc
+      361 agatctgaca ctctcccgca ttgcgattgc caatgccggg ctgacgtgcc gcattctgcc
+      421 gcaggtggtg gcacacacag ccgtgactcg atcacggatg gagagtctga gtgcagacta
+      481 tccagtgtgc atgatgcaca atgcctttgc tggcctgatc gatgagaccc tcccagagga
+      541 atccatcaag gccctggtcg atgcccacag gctctacctg ctggagttct ccaggaccat
+      601 caacgtgaag caccgcggaa tggaggccaa agagatcttg gatgccaatg actctgccct
+      661 gcaggctggc ctggcaagct cctttctgac tcctagtcag aagagagctt acctgctgag
+      721 cttcaagctg gtggacggaa atggcaaggt gaacaaagcc gtccagcagg ctgcaactgt
+      781 cctcagatct ttgatctgag gtgttttgga atttgattta attcggccaa attaaaactc
+      841 actaattgga ctctaaaagg gcttaggccc aaactacagt gatcctacga ctggccagtc
+      901 cttggtgaat gtggtgtcca gcagtcgctc ccttgcactc tcaaaggtga tccagtgctc
+      961 ctcaaggttg actagagtag gatggacagt aaggttcttc agatctgatt caaacatgaa
+     1021 gttcatatgc ttcttcttca tcccataacg cttgggtcca tagttgcaag gtgcttgctc
+     1081 aaatgtggtg aagaaccttt tctctgcaat ggtccccctt gtgactagtc ttttctggag
+     1141 atcaagtatg tggagaaggc acagatcctt caccagattc tgcccagtga cctgaacctc
+     1201 agtgagcttc attctcctta tttttgatct cattctgagt gcaaggtcaa acagcatctt
+     1261 cccaagggag accctggatc tcttcttccg tctcagcctg ggattctgat caccgaacaa
+     1321 gacaatgctc atgatcgtta tgaaggacct ttgcaaagta taagtcccga tgatgtccat
+     1381 tctcaagttc ctgaagaaat tgaggatgag agctcgattc ttctccagag gccatccagt
+     1441 cgctgacaca atcatctctt catcagtcgg tctaaggaca tctaaaccat caatcaggat
+     1501 gtcatacagg ccctcatcca cctcaagcca acccactgac ggcatatcca caccgttaat
+     1561 ggttgtcttc agaggaatgg tgctagggaa gtagccatca tccatcatct cccaaagcga
+     1621 gtcgtagaac ttgtcatgag gacgcaaagt gaagccctga gggagatcct cgttctggat
+     1681 agtgaagtaa gacatgctta atgttggagg gtctttgtgt
+//
+
+LOCUS       KM114251                1720 bp    RNA     linear   VRL 30-OCT-2014
+DEFINITION  Uukuniemi virus isolate SCOT FT 254 segment S, complete sequence.
+ACCESSION   KM114251
+VERSION     KM114251.1
+KEYWORDS    .
+SOURCE      Uukuniemi virus
+  ORGANISM  Uukuniemi virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Phenuiviridae; Phlebovirus.
+REFERENCE   1  (bases 1 to 1720)
+  AUTHORS   Matsuno,K., Weisend,C., Kajihara,M., Matysiak,C., Williamson,B.N.,
+            Simuunza,M., Mweene,A.S., Takada,A., Tesh,R.B. and Ebihara,H.
+  TITLE     Comprehensive Molecular Detection of Tick-Borne Phleboviruses Leads
+            to the Retrospective Identification of Taxonomically Unassigned
+            Bunyaviruses and the Discovery of a Novel Member of the Genus
+            Phlebovirus
+  JOURNAL   J. Virol. (2014) In press
+   PUBMED   25339769
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 1720)
+  AUTHORS   Matsuno,K., Dahlstrom,E., Porcella,S.F. and Ebihara,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-JUL-2014) Laboratory of Virology, NIAID - Rocky
+            Mountain Labs, NIH, 903 South 4th street, Hamilton, MT 59840, USA
+COMMENT     GenBank Accession Numbers KM114249-KM114251 represent sequences
+            from the 3 segments of Uukuniemi virus SCOT FT 254.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: GS De Novo Assembler v. 2.6; SeqMan Pro v.
+                                     11.0
+            Sequencing Technology :: Sanger dideoxy sequencing; 454
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1720
+                     /organism="Uukuniemi virus"
+                     /mol_type="genomic RNA"
+                     /serotype="Uukuniemi"
+                     /isolate="SCOT FT 254"
+                     /host="Ixodes uriae"
+                     /db_xref="taxon:11591"
+                     /segment="S"
+                     /country="United Kingdom"
+                     /collection_date="1974"
+     CDS             35..799
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="AIU95039.1"
+                     /translation="MAVPEDWVRFAIEISEAAWEEDEIKEFINLFQYQGFDAAVVLKR
+                     LFELAQKAGLDKDQMMRDIRALITLHLTRGNKLSSIEKRLSEAGKKEFALLKARYQLV
+                     DKAKEASDLTLSRIAIANAGLTCRILPQVVAHTAVTKARMDGLSADYPVHMMHNAFAG
+                     LVDETLPEESIKALVDAHRLYLLEFSRTINVKHRGMEPKDILEANDSALQAGLASSFL
+                     TSRQKRAYLQSFKLVDGNGKATKAVIQAATTLRSMI"
+     CDS             complement(874..1695)
+                     /codon_start=1
+                     /product="nonstructural protein"
+                     /protein_id="AIU95040.1"
+                     /translation="MSYYIISEKDLPKGYSLSPINKFYNTLWDMMDDGLFPKIIPLKS
+                     SIPGVDLPSTGWLEVDEGLYDTIISGFYIVDSSTEQRIVNATGWPLEKKRALILNFFR
+                     FLKLDMVWTKTLRDAFLTIVSIALFGDQNSKKRRKQKAKLSAGTLLFMFALKLRSKIN
+                     KMRLSERQITGKNLVKDLCLIHILNLQERLVLRRAMVDKRFFTHFEQSPPGTKANKHG
+                     NKPKHLQLLFDSDMSNLKVHPDHVKLDEHWEAFESVRERMLDTSFQKDWPVVGTQ"
+ORIGIN      
+        1 acacaaagac ctccaactaa gctaacgatt catcatggcg gttccggagg actgggtgcg
+       61 ctttgcgatc gaaatctctg aggcagcgtg ggaggaggac gagatcaaag agttcatcaa
+      121 tctcttccag tatcaaggat ttgatgctgc tgtggtcttg aagagattgt ttgaactggc
+      181 acagaaagct gggctggaca aggaccagat gatgagggac atcagggctc tgatcaccct
+      241 gcatctcacc agagggaaca agctctccag cattgagaag aggctgtctg aagctggtaa
+      301 gaaggagttt gccttgctta aggcgagata ccagctggtg gacaaagcca aggaagcatc
+      361 tgacctgacc ctctcccgca tagccattgc taatgctggg ctgacgtgtc gcatcctccc
+      421 tcaggtggtg gcacacactg cagtgacaaa ggcaaggatg gatggtctca gtgctgacta
+      481 tccagtgcac atgatgcaca atgcctttgc tggactggta gacgagactc taccagagga
+      541 atccatcaag gctttggtgg atgctcaccg gctctatctc ctggagttct ccagaaccat
+      601 caacgtgaag cacaggggaa tggagccaaa ggacatcttg gaggcaaacg actctgccct
+      661 ccaagctggc ctggcaagct cttttctgac atcccgccag aaaagagcat acctccagag
+      721 cttcaagctc gtggacggta atggcaaggc aacaaaggca gtcatccagg ctgccacgac
+      781 tcttagatca atgatctaag agtcaatttg gaatttggaa attcggccaa aattaaaaac
+      841 ctctaattgg attctaaaag ggcttcggcc cacctactgg gttcctacga ctggccagtc
+      901 cttttggaaa gacgtgtcca gcattctttc cctcacactc tcaaatgcct cccagtgctc
+      961 atccagcttg acatgatctg gatggacttt caggttactc atgtcagagt caaagagaag
+     1021 ctgcagatgt tttggcttgt taccatgctt gttggctttg gttccaggtg ggctttgctc
+     1081 gaaatgagtg aagaaccttt tatccaccat ggctcttctc agaactagcc gttcctgaag
+     1141 gttcaagatg tggatcaagc aaagatcttt cactagattc tttccagtga tctgtctttc
+     1201 ggacagcctc attttgttga tctttgatcg caatttcaat gcaaacatga agagcaaagt
+     1261 cccagcagat agctttgcct tttgctttct gcgtttcttt gagttctgat caccaaacag
+     1321 ggcaatgctc actatggtga gaaaagcatc tctcagagtt ttagtccaaa ccatgtctag
+     1381 cttcagaaac ctaaagaaat tcagaatcaa agccctcttt ttctcaagag gccatccagt
+     1441 ggcattgaca atcctctgct cagtagagga gtcaactatg tagaaaccac taatgatggt
+     1501 gtcatacaag ccttcatcca cttcaagcca cccagttgag ggaaggtcca cacctggaat
+     1561 agaactcttc aggggaatga ttttagggaa aagaccgtca tccatcatgt cccagagagt
+     1621 gttgtagaac ttgttgattg gacttaggga ataaccctta ggaaggtcct tctccgaaat
+     1681 gatgtagtat gacatgctta atgttggagg gtctttgtgt
+//
+
