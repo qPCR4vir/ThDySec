@@ -204,7 +204,7 @@ void SeqExpl::MakeResponive()
         _tree.events().checked  ( [&]( const nana::arg_treebox &tbox_arg_info )
         {                                              
             tbox_arg_info.item.value<CMultSec*>()->Selected(tbox_arg_info.operated);
-            if (tbox_arg_info.item== _tree.selected())  
+            if (tbox_arg_info.item== _tree.selected())
                 RefreshList(tbox_arg_info.item);                //  ??????? Only RefreschList
         });
 
@@ -535,7 +535,18 @@ List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
 
     Temperature t=KtoC( sec->NonDegSet() ? sec->NonDegSet()->_Local._Tm.Ave() : sec->_Tm.Ave());
     //snprintf(val,blen, (u8"% *.*f �C"), 6, 1,   t );
-    constexpr Temperature min=57.0, max=63.0;
+    Temperature min=57.0, max=63.0;   // def
+    if (sec->Len() > 50)
+    {
+        min = 76.0;
+        max = 82.0;
+    }
+    else
+    {
+        min = 45.0;
+        max = 65.0;
+    }
+
     double fade_rate=  t<min? 0.0 : t>max? 1.0 : (t-min)/(max-min);
     nana::color tc{static_cast<nana::color_rgb>(0xFFFFFFFF)} , 
                 bc = nana::color(nana::colors::blue).blend( nana::colors::red, fade_rate); 
