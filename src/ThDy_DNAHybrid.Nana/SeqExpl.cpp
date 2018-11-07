@@ -525,7 +525,7 @@ void SeqExpl::InitTree()
 
 List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
 {
-    static const long    blen{ 50 }, slen{ 1000 };
+    static const long    blen{ 50 }, slen{ 20000 };
     char val[blen];
 
     snprintf(val,blen,     ("%*d")  , 6,           sec->Len()       );
