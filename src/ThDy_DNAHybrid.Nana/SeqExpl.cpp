@@ -535,10 +535,10 @@ List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
 
     Temperature t=KtoC( sec->NonDegSet() ? sec->NonDegSet()->_Local._Tm.Ave() : sec->_Tm.Ave());
     //snprintf(val,blen, (u8"% *.*f �C"), 6, 1,   t );
-    Temperature min=57.0, max=63.0;
+    constexpr Temperature min=57.0, max=63.0;
     double fade_rate=  t<min? 0.0 : t>max? 1.0 : (t-min)/(max-min);
     nana::color tc{static_cast<nana::color_rgb>(0xFFFFFFFF)} , 
-                bc = nana::color(nana::colors::red).blend( nana::colors::blue, fade_rate); 
+                bc = nana::color(nana::colors::blue).blend( nana::colors::red, fade_rate); 
 
     ores << List::cell{ temperature_to_string(t), {bc , tc} };                             //case 2: Tm 
 

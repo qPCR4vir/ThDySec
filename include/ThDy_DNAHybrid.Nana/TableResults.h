@@ -73,10 +73,10 @@ class TableHybRes  : public nana::form, public EditableForm
         {
             Temperature t=val(row,col);
 
-            Temperature min=20.0, max=63.0;
+			constexpr Temperature min=20.0, max=63.0;
             double fade_rate=  t<min? 0.0 : t>max? 1.0 : (t-min)/(max-min);
-            nana::color bgc(nana::colors::red);
-            return bgc.blend(nana::colors::blue, fade_rate) ;
+            nana::color bgc(nana::colors::blue);
+            return bgc.blend(nana::colors::red, fade_rate) ;
         }
     };
     struct G : value
