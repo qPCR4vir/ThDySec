@@ -120,7 +120,8 @@ int microArrayProg ( CProgParam_microArray *IPrgPar_uArr,
 	time_t t_sec = time(nullptr);
 
 	std::unique_ptr<ThDyAlign> apAl; 	
-	apAl= Create_ThDyAlign(		IPrgPar_uArr->_cp, pr._Global._Len.Max() , tg._Global._Len.Max(), NNpar);	ThDyAlign	&Al=*apAl ;
+	apAl= Create_ThDyAlign(		IPrgPar_uArr->_cp, pr._Global._Len.Max() , tg._Global._Len.Max(), NNpar);
+	ThDyAlign	&Al=*apAl ;
 
 	string TableName = IPrgPar_uArr->_cp._OutputFile.get() + ": Target / Probe (align method: " + Al.AlignMeth() +  " )" ;
 
