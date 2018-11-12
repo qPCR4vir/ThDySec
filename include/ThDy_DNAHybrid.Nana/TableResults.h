@@ -16,6 +16,7 @@
 #ifndef TableResults_H
 #define TableResults_H
 
+#include <algorithm>
 #include "thdy_programs\init_thdy_prog_param.h"
 #include "matrix.h" 
 #include <../../nana.ext/include/EditableForm.hpp>
@@ -117,6 +118,7 @@ class TableHybRes  : public nana::form, public EditableForm
     nana::button           _bTm  {*this,("Tm" )},       //nana::toolbar     _tbar { *this };
                            _bG   {*this,("G"  )},   
                            _bPos {*this,("Pos")},
+                           _byCol{*this,("<--")},
                            _mix  {*this, ("Consolidate")}; 
 
     Tm                     _Tm;
@@ -150,6 +152,26 @@ class TableHybRes  : public nana::form, public EditableForm
                        v2{ val->val( nana::any_cast<Index>( row2_)->row , col-1) };
                 return reverse?  v2<v1 : v1<v2 ;
     }
+    bool comp(nana::any* row, index col1_, index col2_, bool reverse)
+    {
+        float  v1{ val->val( nana::any_cast<Index>( row)->row , col1_-1) },
+               v2{ val->val( nana::any_cast<Index>( row)->row , col2_-1) };
+        return reverse?  v2<v1 : v1<v2 ;
+    }
+    void order_col(index first_col, index last_col, nana::any* row)
+    {
+        if (first_col<0 || last_col<=first_col)
+            return;
+        if (last_col>=_list.column_size())
+            return;
+
+        std::vector<index> new_idx;
+        for(index i=first_col; i<=last_col; ++i) new_idx.push_back(i);
+        std::sort(new_idx.begin(), new_idx.end());
+        for(index i=first_col; i<=last_col; ++i)
+            _list.move_column(i,new_idx[i]);
+
+    }
     void SetDefLayout   () override
     {
         _DefLayout= 
@@ -162,7 +184,7 @@ class TableHybRes  : public nana::form, public EditableForm
     }
     void AsignWidgetToFields() override
     {
- 	    _place.field("toolbar"       ) <<_bTm << _bG << _bPos ;
+ 	    _place.field("toolbar"       ) <<_bTm << _bG << _bPos << _byCol ;
  	    _place.field("_list"         ) <<_list;
 		_place.field("Firma") << e_mail_firma;
 
@@ -236,6 +258,23 @@ class TableHybRes  : public nana::form, public EditableForm
                             _bPos.pushed(true );
                             _menuProgram.checked(mP, true);
                         });
+
+        _byCol.events().click([&]()
+                              {
+                                  auto sel = _list.selected();
+                                  if (sel.size() != 1 ) return;
+                                  _list.order_col<Index>(1,                      // size_type first_col
+                                                         table->totalCol()-1,    // size_type last_col
+                                                         sel[0], false,          // index_pair row, bool reverse ,
+                                          [&](const std::string& cell1, List::size_type col1,
+                                              const std::string& cell2, List::size_type col2,
+                                              const Index& rowval, bool reverse)->bool
+                                          {
+                                              auto &v = *rowval.table->val;
+                                              bool r = (v.val(rowval.row, col1) <= v.val(rowval.row, col2));
+                                              return reverse ? !r : r;
+                                          });
+                              });
 
         _bTm .enable_pushed(true).pushed(true);
         _bG  .enable_pushed(true).pushed(false);
