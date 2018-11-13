@@ -259,21 +259,23 @@ class TableHybRes  : public nana::form, public EditableForm
                         });
 
         _byCol.events().click([&]()
-                              {
-                                  auto sel = _list.selected();
-                                  if (sel.size() != 1 ) return;
-                                  _list.order_col<Index>(1,                      // size_type first_col
-                                                         table->totalCol()-1,    // size_type last_col
-                                                         sel[0], false,          // index_pair row, bool reverse ,
-                                          [&](const std::string& cell1, List::size_type col1,
-                                              const std::string& cell2, List::size_type col2,
-                                              const Index& rowval, bool reverse)->bool
-                                          {
-                                              auto &v = *rowval.table->val;
-                                              bool r = (v.val(rowval.row, col1) <= v.val(rowval.row, col2));
-                                              return reverse ? !r : r;
-                                          });
-                              });
+          {
+              auto sel = _list.selected();
+              std::cout<<"\n Primer order "<< sel.size();
+              if (sel.size() != 1 ) return;
+              _list.reorder_columns(1,                      // size_type first_col
+                                    _table->totalCol(),    // size_type last_col
+                                    sel[0], true,          // index_pair row, bool reverse ,
+                                    [&](const std::string &cell1, List::size_type col1,
+                                        const std::string &cell2, List::size_type col2,
+                                        const nana::any *rowval,
+                                        bool reverse) -> bool {
+                                        const Index *I = nana::any_cast<Index>(rowval);
+                                        auto &v = *I->table->val;
+                                        bool r = (v.val(I->row, col1 - 1) <= v.val(I->row, col2 - 1));
+                                        return reverse ? !r : r;
+                                    });
+          });
 
         _bTm .enable_pushed(true).pushed(true);
         _bG  .enable_pushed(true).pushed(false);
