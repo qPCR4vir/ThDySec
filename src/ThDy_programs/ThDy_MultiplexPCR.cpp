@@ -66,9 +66,9 @@ int MultiplexPCRProg ( CProgParam_MultiplexPCR *IPrgPar_uArr, CMultSec		&pr)
                                  "_self"	
                                )  ;
 
-   IPrgPar_uArr->_rtbl_self = IPrgPar_uArr->_rtbl;
-   IPrgPar_uArr->_rtbl->TitTable( IPrgPar_uArr->_cp._OutputFile.get()  + ": Primers / Primers (align method: " 
+   IPrgPar_uArr->_rtbl->TitTable( IPrgPar_uArr->_cp._OutputFile.get()  + ": Primers / Primers (align method: "
 	                             +IPrgPar_uArr->_cp.TAMeth.ToString() +  " ). Multiplex PCR.") ;
+    IPrgPar_uArr->_rtbl_self = std::move(IPrgPar_uArr->_rtbl);
 
 	auto res= microArrayProg ( IPrgPar_uArr, 
                                pr	, 

@@ -41,7 +41,7 @@ class TableHybRes  : public nana::form, public EditableForm
         int      n_len{ 6 }, n_dec{ 1 }  ;
 
         virtual ~value(        ){}
-        value (Table &t) :table {&t}{}
+        value (Table *t) :table {t}{}
 
         virtual float val  (index row,  index col)const =0 ;
                 float operator()(index row,  index col){return val(row,col);}
@@ -68,7 +68,7 @@ class TableHybRes  : public nana::form, public EditableForm
         {
             return table->at(row,col )._Tm;
         }
-        Tm(Table &t) :value {t}{};
+        Tm(Table *t) :value {t}{};
         bool return_bg() override {return true;}
         nana::color bg_color(index row,  index col, List &lst) override
         {
@@ -87,7 +87,7 @@ class TableHybRes  : public nana::form, public EditableForm
             return table->at(row,col )._G;
         }
 
-        G(Table &t) :value {t}{};
+        G(Table *t) :value {t}{};
 
 		bool return_bg() override { return true; }
 
@@ -109,21 +109,21 @@ class TableHybRes  : public nana::form, public EditableForm
         {
             return static_cast<float>( table->at(row,col)._Pos );
         }
-        Pos(Table &t) :value {t} {n_dec=0;};
+        Pos(Table *t) :value {t} {n_dec=0;};
    };
 
-    std::shared_ptr<Table> _table;
     List                   _list { *this };
 
     nana::button           _bTm  {*this,("Tm" )},       //nana::toolbar     _tbar { *this };
                            _bG   {*this,("G"  )},   
                            _bPos {*this,("Pos")},
                            _byCol{*this,("<--")},
-                           _mix  {*this, ("Consolidate")}; 
+                           _mix  {*this, ("Consolidate")};
 
-    Tm                     _Tm;
-    G                      _G;
-    Pos                    _Pos;
+    std::shared_ptr<Table> _table;
+    Tm                     _Tm {_table.get()};
+    G                      _G  {_table.get()};
+    Pos                    _Pos{_table.get()};
     value                  *val { &_Tm} ;
     std::size_t            mTm, mG, mP;
  
@@ -190,12 +190,11 @@ class TableHybRes  : public nana::form, public EditableForm
 
      }
  public:
-     TableHybRes    (std::shared_ptr<CTable<TmGPos>> table)  : 
-                            _table(table), 
-                            _Tm{*table.get()}, _G{*table.get()}, _Pos{*table.get()},  
+     explicit TableHybRes    (std::shared_ptr<CTable<TmGPos>>& table)  :
                             nana::form (nana::rectangle( nana::point(50,5), nana::size(1000,650) )),
-                            EditableForm    (nullptr, *this,  table->TitTable(), "TableTm.lay.txt") 
-   {
+                            EditableForm    (nullptr, *this,  table->TitTable(), "TableTm.lay.txt"),
+                            _table(table)
+    {
         caption( std::string(("Table Tm: ")) +  _Titel);
 
 		auto& sch = _list.scheme();
@@ -213,16 +212,16 @@ class TableHybRes  : public nana::form, public EditableForm
         _list.auto_draw(false);
                 
         _list.append_header(("Seq")  , 120);
-        for (index col = 1; col <= table->totalCol(); ++col)
+        for (index col = 1; col <= _table->totalCol(); ++col)
         {    
-            _list.append_header(   table->TitColumn(col-1)   , 100);
+            _list.append_header(   _table->TitColumn(col-1)   , 100);
             _list.set_sort_compare(col,[col,this](const std::string&, nana::any* row1_, const std::string&, nana::any*row2_, bool reverse)
             {
                  return comp(col,row1_,row2_,reverse);
             });
         }
 
-        for (index row = 0; row < table->totalRow(); ++row)
+        for (index row = 0; row < _table->totalRow(); ++row)
             _list.at(0).append( Index{this,row}, true );
 
         _list.auto_draw(true);

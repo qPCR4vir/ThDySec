@@ -133,7 +133,7 @@ int microArrayProg ( CProgParam_microArray *IPrgPar_uArr,
 
 	IPrgPar_uArr->_rtbl.reset( new	CTable<TmGPos> ( TableName/*,	tg->CountSelectedSeqRec(),
 																	pr->CountSelectedNDegSeqRec(MaxGrDeg)  */)  ); ;
-	CTable<TmGPos> &rtbl = *(  IPrgPar_uArr->_rtbl  );
+	CTable<TmGPos> &rtbl = *(  IPrgPar_uArr->_rtbl.get()  );
 
 	// Primero creamos non deg set y el primer renglon de las tablas con el nombre de las sondas
 
