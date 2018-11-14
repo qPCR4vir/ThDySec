@@ -261,7 +261,6 @@ class TableHybRes  : public nana::form, public EditableForm
         _byCol.events().click([&]()
           {
               auto sel = _list.selected();
-              std::cout<<"\n Primer order "<< sel.size();
               if (sel.size() != 1 ) return;
               _list.reorder_columns(1,                      // size_type first_col
                                     _table->totalCol(),    // size_type last_col
