@@ -27,19 +27,17 @@
 
  class About : public nana::form, public EditableForm
  {
-	 nana::label  copy_r{ *this, R"(               Copyright (C) 2009-2018, Ariel Vina-Rodriguez (qPCR4vir)
-                                  (  arielvina@yahoo.es  )
-                                  http://qpcr4vir.github.io/)" };
+	 nana::label  copy_r{ *this, " Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es, <bold> qPCR4vir</> at <bold blue url=\"https://qpcr4vir.github.io/\"> GitHub</>)" };
 
 
 	 nana::label  comments{ *this,R"(This work is mentioned in my PhD thesis at INNT-FLI.
 
 		 Program distributed under the GNU General Public License, see:
- http://www.gnu.org/licenses/)" };
+ https://www.gnu.org/licenses/)" };
 	 
 	 
 
-	 nana::label  compiled{ *this, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.00     )" };
+	 nana::label  compiled{ *this, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.01     )" };
 
      nana::label  downloads{ *this, R"(Downloads and source code: https://github.com/qPCR4vir/ThDySec
                        Wiki: https://github.com/qPCR4vir/ThDySec/wiki
@@ -47,7 +45,7 @@
 
      nana::label  GUI_lib{ *this, R"(Powered by Nana C++ GUI library:  http://nanapro.org/en-us/
                                   Wiki:  https://github.com/qPCR4vir/nana-docs/wiki
-      Nana Version: 1.6.2 cmake-dev : https://github.com/qPCR4vir/nana/)" };
+      Nana Version: 1.6.2 dev : https://github.com/qPCR4vir/nana/)" };
 
 
 	 
@@ -58,6 +56,8 @@
 	 About() : nana::form   ( nana::rectangle(nana::point(50, 5), nana::size(500, 350)) ),
 	           EditableForm ( nullptr, *this, "About ThDy Hybrid" , "about.lay.txt") 
 	 {
+		 copy_r.format(true);
+			  // .caption(" Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es, <bold> qPCR4vir</> at <bold blue url=\"https://qpcr4vir.github.io/\"> GitHub</>)");
 		 InitMyLayout();
 		 SelectClickableWidget(copy_r);
 		 bclose.events().click([&](){this->close();});
@@ -65,11 +65,14 @@
 
  void SetDefLayout() override
 	 {
-		 _DefLayout = 	 "vertical      gap=2 margin=2    	all"	 ;
+		 _DefLayout = R"(vertical  gap=2 margin=2  
+                            <CR vfit=248 height=60 margin=[5,20,3,20] >  	
+                            <all vert  margin=[3,20,3,20] >)"	 ;
 	 }
  void AsignWidgetToFields()
  {
-	 _place.field("all") << copy_r << comments << compiled << downloads << GUI_lib << bclose ;
+	 _place.field("all") << comments << compiled << downloads << GUI_lib << bclose ;
+	 _place["CR"] << copy_r;
  }
  };
 
