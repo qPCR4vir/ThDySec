@@ -1,11 +1,11 @@
 /**
-* Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @author Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2018
+* 2012-2019
 *
-* @file  ThDySec\include\ThDy_programs\init_ThDy_prog_param.h
+* @file  ThDySec/include/ThDy_programs/init_ThDy_prog_param.h
 *
 * @brief 
 *
@@ -316,7 +316,7 @@ class CEspThDyProgParam : public CEspProg
 
 class CProgParam_microArray : public CEspThDyProgParam
 {public:	
-    CMultSec*   _probesMS      { _cp.AddPrimerGroup(_cp._pSeqTree.get(), "Probes of Virtual uArr")};
+    CMultSec*   _probesMS      { _cp.AddPrimerGroup(_cp._pSeqTree.get(), "Probes for Virtual uArr")};
     CParamString	            _InputSondeFile{ this, "Input file for probes", "iSonde_uAr", "" };
     CParamBool       _PrRecurDir    {this, "Recursively add all probe seq-files from all dir", "ProbRecDir", false} ;
     CParamBool       _PrDirStrOnly  {this, "Reproduce only the dir struct in probe"          , "ProbDirStr", true } ;

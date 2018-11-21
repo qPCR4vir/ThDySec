@@ -111,7 +111,7 @@ CProgParam_MultiplexPCR::CProgParam_MultiplexPCR(const string& titel, ThDyCommPr
 	{	
         _InputSondeFile.SetTitel("Imput file for primers"); 
 		_InputSondeFile.SetEtiq("iSonde_PCR", this); 
-        _probesMS->_name="Primers of Multiplex PCR";
+        _probesMS->_name="Primers for Multiplex PCR";
 
         _PrRecurDir.SetTitel("Recursively add all primers seq-files from all dir"); 
 		_PrRecurDir.SetEtiq("PrimRecDir", this); 
