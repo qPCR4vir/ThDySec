@@ -20,7 +20,8 @@ namespace fs = std::experimental::filesystem ;
 
 SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         : _Pr             (tdForm), 
-          CompoWidget     (tdForm, ("Seq Explorer"), ("SeqExpl.lay.txt"))
+          CompoWidget     (tdForm, ("Seq Explorer"), ("SeqExpl.lay.txt")),
+          _firma{*this, _Pr .e_mail_firma}
     {
         auto& sch = _list.scheme();
 		sch.header_padding_bottom = sch.header_padding_top = 1;
@@ -481,7 +482,7 @@ void SeqExpl::AsignWidgetToFields()
                                     << numUpDw_SLenMin << numUpDw_SLenMax;
 
         _place["statusbar"] << _statusbar;
-        _place.field("Firma") << e_mail_firma;
+        _place.field("Firma") << _firma;
 
     }
 std::string K2s(Temperature t) { return temperature_to_string(KtoC(t)); }

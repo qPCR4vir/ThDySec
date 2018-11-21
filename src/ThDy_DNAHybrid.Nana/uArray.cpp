@@ -18,13 +18,10 @@
 #include "ThDy_DNAHybrid.Nana\main.Nana.h"
 
 
-
-
-
-
 MplexPCR::MplexPCR            (ThDyNanaForm& tdForm) 
 try     : _Pr             (tdForm), 
-          CompoWidget     (tdForm, ("MplexPCR"), ("MplexPCR.lay.txt"))
+          CompoWidget     (tdForm, ("MplexPCR"), ("MplexPCR.lay.txt")),
+          _firma{*this, _Pr .e_mail_firma}
     {
 
         _do_mPCR      .events().click([&](){buttPCR_Click ();});
@@ -61,17 +58,13 @@ catch ( std::exception& e)
                                             nana::msgbox::button_t::ok)   <<e.what()) (  ) ;
 		return;
 	}
-    //ShowResTbl(_Pr._mPCR._rtbl );
-    //_Pr._uArr._rtbl = nullptr;
-
-    //ShowResTbl(_Pr._mPCR._rtbl_self );
-    //_Pr._mPCR._rtbl_self = nullptr;
 
 }
 
    uArray::uArray            (ThDyNanaForm& tdForm) try
         : _Pr             (tdForm), 
-          CompoWidget     (tdForm, ("uArray"), ("uArray.lay.txt"))
+          CompoWidget     (tdForm, ("uArray"), ("uArray.lay.txt")),
+          _firma{*this, _Pr .e_mail_firma}
     {
 
         _do_uArray      .events().click([&](){buttuArray_Click ();});

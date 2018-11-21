@@ -1,10 +1,9 @@
 /**
-* Copyright (C) 2009-2017, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @author Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2016
+* 2012-2019
 *
 * @file  ThDySec\src\ThDy_DNAHybrid.Nana\main.Nana.cpp
 *
@@ -15,7 +14,6 @@
 
 #include "ThDy_DNAHybrid.Nana\main.Nana.h"
 
- std::string e_mail_firma = " arielvina@yahoo.es";
 
 //if you want to keep the Windows subsystem you can just hint at what your entry point is, 
 //because you haven't defined ___tmainCRTStartup. You can do this by adding the following 
@@ -76,40 +74,13 @@
 
 int main(int argc, char *argv[]) 
 {
-
-    //std::ifstream in("in.txt");
-    //std::streambuf *cinbuf = std::cin.rdbuf(); //save old buf
-    //std::cin.rdbuf(in.rdbuf()); //redirect std::cin to in.txt!
-	//
-    //std::ofstream out("out.txt");
-    //std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
-    //std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
-	//
-    //std::string word;
-    //std::cin >> word;           //input from the file in.txt
-    //std::cout << word << "  ";  //output to the file out.txt
-	//
-    //f(); //call function
-	//
-	//
-    //std::cin.rdbuf(cinbuf);   //reset to standard input again
-	///\todo What about custom colors in nana GUI?
-	//nana::color::current_schema[nana::color::schema::list_header_border]=nana::color::Red;
-	//nana::color::current_schema[nana::color::schema::list_header_bg]=nana::color::Yellow;    // 0xF1F2F4 
-	//nana::color::current_schema[nana::color::schema::list_header_highlighted_bg]=nana::color::Rose;    // 0xFFFFFF 
-	//nana::color::current_schema[nana::color::schema::list_header_pressed_bg]=nana::color::AliceBlue;  
-	//nana::color::current_schema[nana::color::schema::list_header_grabed_bg]=nana::color::Ash_Gray;    // 0x8BD6F6 
-	//nana::color::current_schema[nana::color::schema::list_header_floated_bg]=nana::color::Aztech_Purple;	   // 0xBABBBC 
-	//nana::widget_colors::background ;   ::current_schema[nana::color::schema::list_header_floated_bg]=nana::color::Aztech_Purple;	   // 0xBABBBC 
-	//nana::form::scheme_type().background = nana::colors::light_sky_blue;
   try	
   {
     using namespace ParamGUIBind;
-
     IParBind::SetDef(PriorizeDefault::Parametr );
+
     ThDyNanaForm tdForm(  argc,  argv);
-    //tdForm.ReCollocate();
-	tdForm.show();
+    tdForm.show();
 	nana::exec();
 	return 0;
   }
@@ -133,7 +104,8 @@ int main(int argc, char *argv[])
 
     ThDyNanaForm::ThDyNanaForm (int argc, char *argv[]) try
                   :nana::form (nana::rectangle( nana::point(50,5), nana::size(1000,650) )),
-                   EditableForm    (nullptr, *this,  "ThDy DNA Hybrid" " (" __DATE__ " / " __TIME__")" , "ThDy.lay.txt")  
+                   EditableForm    (nullptr, *this,  "ThDy DNA Hybrid" " (" __DATE__ " / " __TIME__")" , "ThDy.lay.txt"),
+				   e_mail_firma (" arielvina@yahoo.es")
 {
     //nana::API::zoom_window(*this, true);
     //nana::pixel_rgb_t bk;
@@ -271,5 +243,30 @@ void     ThDyNanaForm::add_page(widget& w)
     tabbar_.push_back (                    w.caption());
     tabbar_.attach    (tabbar_.length()-1, w          );
 	_place.field("Pages"   ).fasten( w)  ;
-}         
- 
+}
+
+//std::ifstream in("in.txt");
+//std::streambuf *cinbuf = std::cin.rdbuf(); //save old buf
+//std::cin.rdbuf(in.rdbuf()); //redirect std::cin to in.txt!
+//
+//std::ofstream out("out.txt");
+//std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
+//std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
+//
+//std::string word;
+//std::cin >> word;           //input from the file in.txt
+//std::cout << word << "  ";  //output to the file out.txt
+//
+//f(); //call function
+//
+//
+//std::cin.rdbuf(cinbuf);   //reset to standard input again
+///\todo What about custom colors in nana GUI?
+//nana::color::current_schema[nana::color::schema::list_header_border]=nana::color::Red;
+//nana::color::current_schema[nana::color::schema::list_header_bg]=nana::color::Yellow;    // 0xF1F2F4
+//nana::color::current_schema[nana::color::schema::list_header_highlighted_bg]=nana::color::Rose;    // 0xFFFFFF
+//nana::color::current_schema[nana::color::schema::list_header_pressed_bg]=nana::color::AliceBlue;
+//nana::color::current_schema[nana::color::schema::list_header_grabed_bg]=nana::color::Ash_Gray;    // 0x8BD6F6
+//nana::color::current_schema[nana::color::schema::list_header_floated_bg]=nana::color::Aztech_Purple;	   // 0xBABBBC
+//nana::widget_colors::background ;   ::current_schema[nana::color::schema::list_header_floated_bg]=nana::color::Aztech_Purple;	   // 0xBABBBC
+//nana::form::scheme_type().background = nana::colors::light_sky_blue;

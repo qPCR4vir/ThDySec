@@ -38,6 +38,7 @@ extern std::string e_mail_firma;
 class uArray : public CompoWidget
 { public: 
     ThDyNanaForm      &_Pr;
+    nana::label       _firma;
     nana::button  _do_uArray{*this, (" uArray ! ")};
     ParamGUIBind::BindGroup          _uArray;
 
@@ -56,7 +57,7 @@ class uArray : public CompoWidget
     void AsignWidgetToFields() override
     {
 	    _place.field("_do_uArray"         )<<_do_uArray;
-		_place.field("Firma") << e_mail_firma;
+		_place.field("Firma") << _firma;
     }
 
   private: void buttuArray_Click(); //	  Run      _IPrgPar_mPCR
@@ -66,6 +67,7 @@ class uArray : public CompoWidget
 class MplexPCR : public CompoWidget
 { public: 
     ThDyNanaForm      &_Pr;
+    nana::label       _firma;
     nana::button  _do_mPCR{*this, (" PCR ! ")};
     ParamGUIBind::BindGroup          _mPCR;
 
@@ -83,7 +85,7 @@ class MplexPCR : public CompoWidget
     void AsignWidgetToFields() override
     {
 	    _place.field("_do_mPCR" ) << _do_mPCR;
-		_place.field("Firma"    ) << e_mail_firma;
+		_place.field("Firma"    ) << _firma;
 	}
 
   private: void buttPCR_Click(); //	  Run      _IPrgPar_mPCR

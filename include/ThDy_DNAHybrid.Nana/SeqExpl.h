@@ -74,7 +74,8 @@ class SeqExpl : public CompoWidget
 
     nana::tooltip    _loadFileTT {_loadFile,("File load: Add a group of sequences from a file")},
                           _re_loadFileTT ;  
-	nana::label     _statusbar    { *this };
+	nana::label     _statusbar    { *this },
+                    _firma ;
 
     using pSec = CSec*;
     void SetDefLayout() override;

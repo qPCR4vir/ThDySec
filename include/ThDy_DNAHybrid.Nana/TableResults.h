@@ -1,6 +1,5 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @autor Ariel Vina-Rodriguez (qPCR4vir)
@@ -17,19 +16,14 @@
 #define TableResults_H
 
 #include <algorithm>
-#include "thdy_programs\init_thdy_prog_param.h"
-#include "matrix.h" 
-#include <../../nana.ext/include/EditableForm.hpp>
 #include <nana/gui/widgets/listbox.hpp>
+#include <EditableForm.hpp>
+#include "ThDy_programs/init_ThDy_prog_param.h"
+#include "matrix.h" 
 //#include <nana/gui/tooltip.hpp>
-
-//#include <nana/gui/widgets/checkbox.hpp>
 //#include <nana/gui/widgets/toolbar.hpp>
 
-
-
 using List = nana::listbox;
-extern std::string e_mail_firma;
 
 class TableHybRes  : public nana::form, public EditableForm
 {   
@@ -186,9 +180,7 @@ class TableHybRes  : public nana::form, public EditableForm
     {
  	    _place.field("toolbar"       ) <<_bTm << _bG << _bPos << _byCol ;
  	    _place.field("_list"         ) <<_list;
-		_place.field("Firma") << e_mail_firma;
-
-     }
+	}
  public:
      explicit TableHybRes    (std::shared_ptr<CTable<TmGPos>>& table)  :
                             nana::form (nana::rectangle( nana::point(50,5), nana::size(1000,650) )),
@@ -200,8 +192,7 @@ class TableHybRes  : public nana::form, public EditableForm
 		auto& sch = _list.scheme();
 		sch.header_padding_bottom = sch.header_padding_top = 1;//sch.header_height = 20;
 		sch.text_margin   = 2;
-		sch.item_height_ex= 1;  ///< Set !=0 !!!!  def=6. item_height = text_height + item_height_ex
-//		sch.item_height   = sch.text_height + sch.item_height_ex;
+		sch.item_height_ex= 1;
 		sch.header_splitter_area_before = 4;
 		sch.header_splitter_area_after = 4 ;
 

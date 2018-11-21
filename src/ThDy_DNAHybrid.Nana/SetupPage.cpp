@@ -181,7 +181,7 @@ void  SetupPage::AsignWidgetToFields ()
 	    _gr_salt["SMeth"      ]   << " Salt Correct. Method:"	   <<  comBoxSalMeth;
 	    _gr_salt["AMeth"      ]   << " ThDy Align. Method"       <<  comBoxTAMeth ;
 
-		_place.field("Firma") << e_mail_firma;
+		_place.field("Firma") << _firma;
 
     }
 void  SetupPage::MakeResponive()
@@ -329,7 +329,8 @@ void  SetupPage::LoadProject(std::string file)
    
 SetupPage::SetupPage          (ThDyNanaForm& tdForm) try
         : _Pr           (tdForm), 
-          CompoWidget   (tdForm, ("Setup"), ("Setup.lay.txt"))
+          CompoWidget   (tdForm, ("Setup"), ("Setup.lay.txt")),
+		  _firma{*this, _Pr .e_mail_firma}
     {
 		_results.folder = true;
 		_targets.folder = true;

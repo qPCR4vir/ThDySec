@@ -14,41 +14,37 @@
 #ifndef main_nana_H
 #define main_nana_H
 
-#include "SetupPage.h"
-#include "SeqExpl.h"
-#include "FindSondenPage.h"
-//#include "MplexPCR.h"
-#include "uArray.h"
-#include "TmCalcPage.h"
+#include <nana/gui/wvl.hpp>
+#include <nana/gui/widgets/tabbar.hpp>
 
 #include "thdy_programs\init_thdy_prog_param.h"
 
-#include <nana/gui/widgets/tabbar.hpp>
-//#include <nana/gui/tooltip.hpp>
-//#include <nana/gui/widgets/toolbar.hpp>
-//#include <nana/gui/widgets/progress.hpp>
-//#include <nana/gui/widgets/group.hpp>
-extern std::string e_mail_firma;
-
-#include <nana/gui/wvl.hpp>
+#include "SetupPage.h"
+#include "SeqExpl.h"
+#include "FindSondenPage.h"
+#include "uArray.h"
+#include "TmCalcPage.h"
 
 class ThDyNanaForm : public nana::form, public EditableForm , public ThDyProject
 {
+  public:
+    const std::string          e_mail_firma;
+
+  private:
     using tabbar = nana::tabbar<std::string> ;
-	tabbar                     tabbar_     {*this};
+    tabbar                     tabbar_     {*this};
     SetupPage                  setup_      {*this};
     FindSondenPage             findSond_   {*this};
     MplexPCR                   mPCR_       {*this};
     uArray                     uArr_       {*this}; 
     TmCalcPage                 tmCalc_     {*this}; 
-    nana::label                _firma     {*this, e_mail_firma};
+    nana::label                _firma     {*this, this->e_mail_firma};
 
   public:    
     std::vector<std::unique_ptr<nana::form>> _results;
     SeqExpl                         mExpl_      {*this};
 
     ThDyNanaForm (int argc, char *argv[])  ;
-    //~ThDyNanaForm();
 
     void SetDefLayout       () override;
     void AsignWidgetToFields() override;

@@ -1,6 +1,5 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @author Ariel Vina-Rodriguez (qPCR4vir)
@@ -11,8 +10,8 @@
 * @brief 
 */
 
-#include "ThDy_DNAHybrid.Nana\FindSondenPage.h"
-#include "ThDy_DNAHybrid.Nana\main.Nana.h"
+#include "ThDy_DNAHybrid.Nana/FindSondenPage.h"
+#include "ThDy_DNAHybrid.Nana/main.Nana.h"
 
 int      n_len{ 6 }, n_dec{ 1 };
 
@@ -167,7 +166,8 @@ class TableCandRes : public nana::form, public EditableForm
 
 FindSondenPage::FindSondenPage(ThDyNanaForm& tdForm)    try
         : _Pr        (tdForm), 
-          CompoWidget(tdForm, "Find probes", "FindSonden.lay.txt")
+          CompoWidget(tdForm, "Find probes", "FindSonden.lay.txt"),
+		  _firma{*this, _Pr .e_mail_firma}
 	{
 		bgcolor (static_cast<nana::color_rgb>(0xAAAAAA));  ///\todo: use code
 
@@ -289,7 +289,7 @@ void FindSondenPage::AsignWidgetToFields()
 	_gr_prob_ntg["options"] << _MinG << _MaxTm;
 	_gr_probself["options"] << _MinSelfG << _MaxSelfTm;
 
-	_place.field("Firma") << e_mail_firma;
+	_place.field("Firma") << _firma;
 
 }
 

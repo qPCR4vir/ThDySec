@@ -27,6 +27,7 @@ class ThDyNanaForm ;
 class FindSondenPage : public CompoWidget
 {    
 	ThDyNanaForm &_Pr;
+    nana::label       _firma;
     ParamGUIBind::BindGroup   _findSond;
 
     nana::group         _gr_probes  {*this, ("<bold=true> Probes: </>"          ), true},

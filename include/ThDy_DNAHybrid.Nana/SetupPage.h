@@ -41,6 +41,7 @@ class ThDyNanaForm ;
 class SetupPage : public CompoWidget
 {
     ThDyNanaForm       &_Pr;
+    nana::label       _firma;
     nana::group         _gr_dir			{*this,    (" <bold=true> Directories: </>"               ), true};
     FilePickBox         _results            { _gr_dir, ("Results: ") } ;
 
