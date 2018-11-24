@@ -47,7 +47,7 @@ iSonde_uAr:	..\ThDy\sequences\probes
 						.	Input file for probes
 
 	------	Check multiplex PCR 
-PrimDirStr:	false		.	Reproduce only the dir struct in primers
+PrimDirStr:	true		.	Reproduce only the dir struct in primers
 PrimRecDir:	true		.	Recursively add all primers seq-files from all dir
 iSonde_PCR:	..\ThDy\sequences\primers
 						.	Imput file for primers
@@ -91,10 +91,10 @@ How to use?
  While loading, the text between the beginning of a line and the first : will be taken as
  an etiquette (discarding surrounding but not internal spaces). 
 IF the etiquette is know (valid), the rest of the line will be use to deduce the value of the parameter. 
-Some parameter (like file´s names) will assume this rest-line-text entirely as his valid value. 
+Some parameter (like fileï¿½s names) will assume this rest-line-text entirely as his valid value. 
 For such parameter please, add any comment in the next line. 
 Other parameter (like numeric or bool parameters) will only use the beginning of this rest-line-text and ignore the end. 
-Any line without a valid etiquette will be ignore (they are comments!).” 
+Any line without a valid etiquette will be ignore (they are comments!).ï¿½ 
 Only the last valid value of each parameter will be used
-For not defined parameters, the previous value (from the previously active project or from the program´s default) will be use.
+For not defined parameters, the previous value (from the previously active project or from the programï¿½s default) will be use.
 Direct questions please to ArielVina.Rodriguez@fli.bund.de
