@@ -1,12 +1,12 @@
 
->Uu_nf2.566.588_561  Pan-Uuk	
+>Uu_nf2.566.588_561  Pan-Uuk. Vina-Rodriguez	
 CACMGGCTCTACCTCCTGGAGTT
 
->Uu_nr1.874.900_560  Pan-Uuk	
+>Uu_nr1.874.900_560  Pan-Uuk. Vina-Rodriguez		
 GATTGGCCAGTCGTAGGAWCACWGTAG
 
->Uu_nr2.844.869_562  Pan-Uuk	
+>Uu_nr2.844.869_562  Pan-Uuk. Vina-Rodriguez		
 GGCCGAAGCCCTTTTRGAGTCCAATT
 
->Uu_nf1.486.510_559  Pan-Uuk	
+>Uu_nf1.486.510_559  Pan-Uuk. Vina-Rodriguez		
 TGCASATGATGCACAAYGCCTTTGC
