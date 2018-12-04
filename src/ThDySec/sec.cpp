@@ -34,7 +34,7 @@ using namespace DegCod;
 
 CSec::CSec ( long l, std::shared_ptr<CSaltCorrNN> NNpar) 		
 			:	CSecBasInfo ( l ) ,			
-				_NNpar(NNpar)
+				_NNpar(std::move(NNpar))
 {	
 			_b  .reserve(l+3);
 			_SdS.reserve(l+3);
@@ -73,8 +73,8 @@ CSec::CSec (    const std::string&  sec,
                 LonSecPos           origBeg, // base [1] in sec. The first letter in sec to be read. 
                 const std::string&  clas, 
                 float               conc        ) 
-:	CSecBasInfo ( id, nam, clas) ,		
-	_NNpar	    ( NNpar),
+:	CSecBasInfo ( id, nam, clas) ,
+	 _NNpar(std::move(NNpar)),
 	_Conc	    ( conc )
 {		
 		if (origBeg<1) 
@@ -222,14 +222,14 @@ CSec::CSec (    const std::string&  sec,
 				if (grad_deg[a] >1) _NDB++ ;
 				_c  .push_back( a                     );
 				_b  .push_back( a =bk2nu[is_base[a]]  );				// que hacer si en la sec hay bases deg que Kadelari no considera?
-				_SdS.push_back( _SdS.back() + NNpar->GetSelfEntr (	a_1 , a)  );
-				_SdH.push_back( _SdH.back() + NNpar->GetSelfEnth (	a_1 , a)  );
+				_SdS.push_back( _SdS.back() + _NNpar->GetSelfEntr (	a_1 , a)  );
+				_SdH.push_back( _SdH.back() + _NNpar->GetSelfEnth (	a_1 , a)  );
 				a_1 = a ;
 			}	
 		_c.push_back( basek[n_basek-1] ); // '$' principio y fin de Kadelari.=" TGCA$", + '\0'
 		_b.push_back(       n_basek-1  ); 	  	
 		_GCp	= _GCp*100/this->Len() ;	
-		_Tm.Set( NNpar->CalcTM( _SdS.back(), _SdH.back()) ) ;      //_maxTm = _minTm =
+		_Tm.Set( _NNpar->CalcTM( _SdS.back(), _SdH.back()) ) ;      //_maxTm = _minTm =
 		if (Len()>1000 || Len()*Degeneracy() > 32*4*4*4*4*4*4*4*4*4*4) return; // oligo with 10 n
 		CreateNonDegSet();
 }
