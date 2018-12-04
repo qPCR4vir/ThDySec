@@ -1,12 +1,11 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2019, Ariel Vina Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @autor Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2015
+* 2012-2019
 *
-* @file  ThDySec\src\ThDySec\sec_mult.cpp
+* @file  ThDySec/src/ThDySec/sec_mult.cpp
 *
 * @brief 
 */
@@ -131,50 +130,50 @@ CMultSec::CMultSec (    const std::string &path    ,
                AddFromFile(path);  /// will throw if not a file
             return;
         }
-    throw std::ios_base::failure(string("No such sequence file: ")+ path );
+    throw std::ios_base::failure(std::string("No such sequence file: ")+ path );
     // throw "request a non recursive load from a non regular file";
 }
 
 int        CMultSec::AddFromFile (const std::string& file)    // return la cantidad de sec add ------  AddFromFile   ---
 {    
-    ifstream ifile( file ); 
+    std::ifstream ifile( file );
     if ( ! ifile ) 
     {
-        throw std::ios_base::failure(string("Could not open the sequence file: ")+ file );
+        throw std::ios_base::failure(std::string("Could not open the sequence file: ")+ file );
     }
 
         return AddFromFile(ifile); /// \todo: retrow anadiendo el nombre del file
 }
 
-int        CMultSec::AddFromFile (ifstream& ifile)        // return la cantidad de sec add -----------  AddFromFile   ---
+int        CMultSec::AddFromFile (std::ifstream& ifile)        // return la cantidad de sec add -----------  AddFromFile   ---
 {        
     //if (  _SecLim.Max() <= _SecLim.Min() ) 
     //    _SecLim.SetMax(0) ;                      // if ( _SecEnd<=_SecBeg) _SecEnd=0 ;
 
     int j=0;
     char c1;
-    ifile>>skipws  >> c1;
+    ifile>>std::skipws  >> c1;
     if ( ! ifile.good() )     
     {
-        throw std::ios_base::failure(string("Could not read the sequence file: ")/*+ file */);
+        throw std::ios_base::failure(std::string("Could not read the sequence file: ")/*+ file */);
     }
 
     if( c1 =='>' )                                                                         
         return AddFromFileFASTA (ifile);
                     // esto es FASTA, si no  BLAST o GB o ...
     if (c1 =='<' )
-    {    
-        string xml_DOCTYPE ;
+    {
+        std::string xml_DOCTYPE ;
                             // <?xml version="1.0"?>
                             // <!DOCTYPE BlastOutput PUBLIC "-//NCBI//NCBI BlastOutput/EN" "NCBI_BlastOutput.dtd">
-        if ( ! getline (ifile, xml_DOCTYPE,'>')  ||  ! getline (ifile, xml_DOCTYPE,'>') )     
+        if ( ! std::getline (ifile, xml_DOCTYPE,'>')  ||  ! std::getline (ifile, xml_DOCTYPE,'>') )
         {    
-            throw std::ios_base::failure(string("Could not open the sequence file: ")/*+ file*/ );        
+            throw std::ios_base::failure(std::string("Could not open the sequence file: ")/*+ file*/ );
         }
 
-        if        (string::npos != xml_DOCTYPE.find("DOCTYPE BlastOutput") )                
+        if        (std::string::npos != xml_DOCTYPE.find("DOCTYPE BlastOutput") )
             return AddFromFileBLAST (ifile);
-        else if (string::npos != xml_DOCTYPE.find("DOCTYPE Bioseq-set" ) )                
+        else if (std::string::npos != xml_DOCTYPE.find("DOCTYPE Bioseq-set" ) )
             return AddFromFileGB (ifile);
         return 0;
     }
@@ -186,7 +185,7 @@ int        CMultSec::AddFromFile (ifstream& ifile)        // return la cantidad 
     return 0;   // cerr unknow format        
 }     
 
-int        CMultSec::AddFromFileFASTA (ifstream &ifile)  // -------------------    AddFromFileFASTA   ------------
+int        CMultSec::AddFromFileFASTA (std::ifstream &ifile)  // -------------------    AddFromFileFASTA   ------------
 {    
     LonSecPos secBeg = _SecLim.Min()  ;   // here beginig to read, set to 1 if originaly <1
     if (secBeg < 1) secBeg = 1;
@@ -208,23 +207,23 @@ int        CMultSec::AddFromFileFASTA (ifstream &ifile)  // ------------------- 
         return 0;
     
     int NumSeq = 0;   // number os sequences
-    string Descriptor  ;
-    while (getline (ifile, Descriptor) )
+    std::string Descriptor  ;
+    while (std::getline (ifile, Descriptor) )
     {
         size_t name_end=Descriptor.find_first_not_of(
                                 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890!#$()*+-./<=>@[]^_{|}~"    );
-        string Fasta_NAME = Descriptor.substr(0,name_end );
+        std::string Fasta_NAME = Descriptor.substr(0,name_end );
         Descriptor=Descriptor.substr(Fasta_NAME.length());
 
-          string Fasta_SEC ;                    
-        if (!getline (ifile, Fasta_SEC,'>'))         break ;
+        std::string Fasta_SEC ;
+        if (!std::getline (ifile, Fasta_SEC,'>'))         break ;
         if (!ifile.eof() && !Fasta_SEC.empty() && Fasta_SEC.back()!= '\n')
             std::cout << "\n Warning: simbol > do not begin the line. Previous seq:" << Fasta_SEC;
 
         if (     Fasta_SEC.length() < static_cast<std::size_t>( secBeg + lmin -1 )   )    
              continue;
 
-        unique_ptr<CSec> sec (  new CSec(   Fasta_SEC , 
+        std::unique_ptr<CSec> sec (  new CSec(   Fasta_SEC ,
                                             _Local._NSec, 
                                             Fasta_NAME , 
                                             _NNPar,
@@ -266,13 +265,13 @@ int        CMultSec::AddFromFileFASTA (ifstream &ifile)  // ------------------- 
     return NumSeq;    
 }
 
-int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultSec::     AddFromFileBLAST  format XML---
+int        CMultSec::AddFromFileBLAST (std::ifstream &fi) // ----------------  CMultSec::     AddFromFileBLAST  format XML---
 {    
     ///\todo adapt to multiquery BLAST
 
     unsigned int _BlastOutput_query_len ;        // x todos los "hits"
     int             id=0;
-    string       li ;  //  xml_line
+    std::string       li ;  //  xml_line
 
     LonSecPos secBeg = _SecLim.Min()  ;   // here beginig to read, set to 1 if originaly <1
     if (secBeg < 1) secBeg = 1;
@@ -294,8 +293,8 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
         return 0;
   
 
-    do  {    if ( !getline (fi, li,'>') )  return 0; }   // BLAST format error
-    while  (string::npos==li.find("BlastOutput_query-len") ); fi>>_BlastOutput_query_len;//  <BlastOutput_query-len>267</BlastOutput_query-len>
+    do  {    if ( !std::getline (fi, li,'>') )  return 0; }   // BLAST format error
+    while  (std::string::npos==li.find("BlastOutput_query-len") ); fi>>_BlastOutput_query_len;//  <BlastOutput_query-len>267</BlastOutput_query-len>
     
     do 
     {
@@ -397,7 +396,7 @@ int        CMultSec::AddFromFileBLAST (ifstream &fi) // ----------------  CMultS
     return id; 
 }
 
-int        CMultSec::AddFromFileGBtxt (ifstream &fi) // ----------------  CMultSec::            AddFromFileGBtxt  -----------------------------
+int        CMultSec::AddFromFileGBtxt (std::ifstream &fi) // ----------------  CMultSec::            AddFromFileGBtxt  -----------------------------
 {    
     /// \todo update !!
 
@@ -509,9 +508,9 @@ int        CMultSec::AddFromFileGBtxt (ifstream &fi) // ----------------  CMultS
     return id; 
 }
 
-int        CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMultSec::            AddFromFileGB  -----------------------------
+int        CMultSec::AddFromFileGB (std::ifstream &ifile)  // ----------------  CMultSec::            AddFromFileGB  -----------------------------
 {    int        id=0;
-    string xml_line ;
+    std::string xml_line ;
 
     do {    char        *    _Textseq_id_accession    =0 ;    
             char        *    _Org_ref_taxname        =0 ;
@@ -521,12 +520,12 @@ int        CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMult
             char        *sec=0;            //char        *nam=0;        //long         l=0;        //char        *clas=0;
 
             do  {    getline (ifile, xml_line,'>') ;    if ( ! ifile.good() ) return id; }     // <Textseq-id_accession>DQ318020</Textseq-id_accession>
-            while  (string::npos==xml_line.find(    "Textseq-id_accession"    ) );
+            while  (std::string::npos==xml_line.find(    "Textseq-id_accession"    ) );
             getline (ifile, xml_line,'<') ;                _Textseq_id_accession=new char[xml_line.length()+1] ;
             xml_line.copy(_Textseq_id_accession,xml_line.length()) ;    _Textseq_id_accession    [xml_line.length()]=0;
 
             do  {    getline (ifile, xml_line,'>') ;    if ( ! ifile.good() ) return id; } // <Org-ref_taxname>West Nile virus</Org-ref_taxname>
-            while  (string::npos==xml_line.find(    "Org-ref_taxname"    ) );
+            while  (std::string::npos==xml_line.find(    "Org-ref_taxname"    ) );
             getline (ifile, xml_line,'<') ;                                _Org_ref_taxname    =new char[xml_line.length()+1] ;
             xml_line.copy(  _Org_ref_taxname  ,xml_line.length()) ;        _Org_ref_taxname    [xml_line.length()]=0;
         // <Dbtag_db>taxon</Dbtag_db>
@@ -542,7 +541,7 @@ int        CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMult
         // <SubSource_subtype value="other">255</SubSource_subtype>
         // <SubSource_name>lineage 2; SMB pass 4, C6/36 pass 1</SubSource_name>
             do  {    getline (ifile, xml_line,'>') ;    if ( ! ifile.good() ) return id; }        // <Seqdesc_title>Wets NIle virus strain ArB3573/82, complete genome</Seqdesc_title>
-            while  (string::npos==xml_line.find(    "Seqdesc_title"    ) );
+            while  (std::string::npos==xml_line.find(    "Seqdesc_title"    ) );
             getline (ifile, xml_line,'<') ;                                _Seqdesc_title    =new char[xml_line.length()+1] ;
             xml_line.copy(  _Seqdesc_title  ,xml_line.length()) ;        _Seqdesc_title    [xml_line.length()]=0;
         // <MolInfo_biomol value="mRNA">3</MolInfo_biomol>
@@ -552,13 +551,13 @@ int        CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMult
         // <Date-std_day>1</Date-std_day>
         // <Seq-inst_mol value="rna"/>
 
-            do  {    getline (ifile, xml_line,'>') ;    if ( ! ifile.good() ) return id; }  // GB format error
-            while  (string::npos==xml_line.find("Seq-inst_length") ) ; ifile>>_Seq_inst_length;        // <Seq-inst_length>11048</Seq-inst_length>
+            do  {    std::getline (ifile, xml_line,'>') ;    if ( ! ifile.good() ) return id; }  // GB format error
+            while  (std::string::npos==xml_line.find("Seq-inst_length") ) ; ifile>>_Seq_inst_length;        // <Seq-inst_length>11048</Seq-inst_length>
             
         // <Seq-inst_strand value="ss"/>
 
             do  {    getline (ifile, xml_line,'>') ;    if ( ! ifile.good() ) return id; }    // <IUPACna>AGTAGTTCGCCTGTGTGAGCTGACA.... GGTGCTAGAACACAGGATCT</IUPACna>
-            while  (string::npos==xml_line.find(  "IUPACna"  ) );
+            while  (std::string::npos==xml_line.find(  "IUPACna"  ) );
             getline (ifile, xml_line,'<') ;         sec=new char[xml_line.length()+1] ;
             xml_line.copy(sec,xml_line.length()) ;    sec[xml_line.length()]=0;    
 
@@ -601,8 +600,8 @@ int        CMultSec::AddFromFileGB (ifstream &ifile)  // ----------------  CMult
     return id; 
 }
     
-int        CMultSec::AddFromFileODT (ifstream &ifileODT){return 0;}
-int        CMultSec::AddFromFileODS (ifstream &ifileODS){return 0;}
+int        CMultSec::AddFromFileODT (std::ifstream &ifileODT){return 0;}
+int        CMultSec::AddFromFileODS (std::ifstream &ifileODS){return 0;}
 
 CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSec:: NotIdem  --- busqueda trivial de sec identicas -------------
 {    

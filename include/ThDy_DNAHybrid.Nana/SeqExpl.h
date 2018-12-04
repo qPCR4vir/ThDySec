@@ -1,11 +1,11 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @author Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2016
+* 2009-2019
 *
-* @file  ThDySec\include\ThDy_DNAHybrid.Nana\SeqExpl.h
+* @file  ThDySec/include/ThDy_DNAHybrid.Nana/SeqExpl.h
 *
 * @brief GUI to explore sequences
 *
@@ -14,16 +14,15 @@
 #ifndef SeqExpl_H
 #define SeqExpl_H
 
-#include "thdy_programs\init_thdy_prog_param.h"
-#include "../../nana.ext/include/nanaBind.hpp"
-#include <../../nana.ext/include/EditableForm.hpp>
-
 #include <nana/gui/widgets/treebox.hpp>
 #include <nana/gui/widgets/listbox.hpp>
 #include <nana/gui/tooltip.hpp>
 #include <nana/gui/widgets/toolbar.hpp>
 
+#include <nanaBind.hpp>
+#include <EditableForm.hpp>
 
+#include "ThDy_programs/init_ThDy_prog_param.h"
 
 class ThDyNanaForm ;
  
@@ -72,8 +71,8 @@ class SeqExpl : public CompoWidget
                         numUpDw_SLenMin {*this, "Min.Len.:"           ,  0,   0 , 100000,"nt"},
                         numUpDw_SLenMax {*this, "Max.Len.:"           ,  0,   0 , 100000,"nt"};
 
-    nana::tooltip    _loadFileTT {_loadFile,("File load: Add a group of sequences from a file")},
-                          _re_loadFileTT ;  
+    nana::tooltip   _loadFileTT {_loadFile,("File load: Add a group of sequences from a file")},
+                    _re_loadFileTT ;
 	nana::label     _statusbar    { *this },
                     _firma ;
 

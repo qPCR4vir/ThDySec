@@ -1,5 +1,5 @@
 /**
-* Copyright (C) 2009-2015, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *
 * @autor Ariel Vina-Rodriguez (qPCR4vir)
 *
@@ -9,12 +9,10 @@
 *
 */
 
+#include <cassert>
 
-
-//#include "StdAfx.h"
-#pragma unmanaged
-#include "thdy_programs\init_thdy_prog_param.h"
-#include "ThDy_programs\prog_comm_functions.h"
+#include "ThDy_programs/init_ThDy_prog_param.h"
+#include "ThDy_programs/prog_comm_functions.h"
 #include "ThDySec/sec.h"
 #include <cassert>
 using namespace std;

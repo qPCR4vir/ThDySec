@@ -1,9 +1,9 @@
 /**
-* Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @autor Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2018
+* 2009-2019
 *
 * @file  ThDySec\include\ThDy_DNAHybrid.Nana\SetupPage.h
 *
@@ -14,13 +14,13 @@
 #ifndef SetupPage_H
 #define SetupPage_H
 
+#include <nana/gui/widgets/group.hpp>
+#include <nana/gui/widgets/checkbox.hpp>
+
 #include <EditableForm.hpp>    // todo: <nana_ext/EditableForm.hpp>
 #include <number.hpp>
 #include <nanaBind.hpp>
 #include <Units.hpp>
-
-#include <nana/gui/widgets/group.hpp>
-#include <nana/gui/widgets/checkbox.hpp>
 
 //#include <nana/gui/widgets/progress.hpp>
 //#include <nana/gui/widgets/tabbar.hpp>

@@ -1,6 +1,5 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @author Ariel Vina-Rodriguez (qPCR4vir)
@@ -17,7 +16,7 @@
 #include <nana/gui/wvl.hpp>
 #include <nana/gui/widgets/tabbar.hpp>
 
-#include "thdy_programs\init_thdy_prog_param.h"
+#include "ThDy_programs/init_ThDy_prog_param.h"
 
 #include "SetupPage.h"
 #include "SeqExpl.h"

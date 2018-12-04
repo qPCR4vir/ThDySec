@@ -1,11 +1,11 @@
 /**
-* Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @autor Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2016
+* 2009-2019
 *
-* @file  ThDySec\include\ThDy_DNAHybrid.Nana\FindSondenPage.h
+* @file  ThDySec/include/ThDy_DNAHybrid.Nana/FindSondenPage.h
 *
 * @brief 
 */
@@ -13,15 +13,17 @@
 #ifndef FindSondenPage_H
 #define FindSondenPage_H
 
-#include "thdy_programs\init_thdy_prog_param.h"
-#include "../../nana.ext/include/nanaBind.hpp"
-#include <../../nana.ext/include/EditableForm.hpp>
-#include <Units.hpp>
-
 #include <nana/gui/tooltip.hpp>
 #include <nana/gui/widgets/checkbox.hpp>
 #include <nana/gui/widgets/group.hpp>
- 
+
+#include <nanaBind.hpp>
+#include <EditableForm.hpp>
+#include <Units.hpp>
+
+#include "ThDy_programs/init_ThDy_prog_param.h"
+
+
 class ThDyNanaForm ;
 
 class FindSondenPage : public CompoWidget

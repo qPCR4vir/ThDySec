@@ -1,22 +1,22 @@
 /**
-* Copyright (C) 2009-2017, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @author Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2016
+* 2012-2019
 *
-* @file  ThDySec\src\ThDy_DNAHybrid.Nana\SeqExpl.cpp
+* @file  ThDySec/src/ThDy_DNAHybrid.Nana/SeqExpl.cpp
 *
 * @brief 
 *
 */
 
-#include "ThDy_DNAHybrid.Nana\SeqExpl.h"
-#include "ThDy_DNAHybrid.Nana\main.Nana.h"
-
 #include <algorithm>
 
-namespace fs = std::experimental::filesystem ;
+#include "ThDy_DNAHybrid.Nana/SeqExpl.h"
+#include "ThDy_DNAHybrid.Nana/main.Nana.h"
+
+namespace fs = std::filesystem ;
 
 SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
         : _Pr             (tdForm), 

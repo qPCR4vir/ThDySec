@@ -1,9 +1,9 @@
 /**
-* Copyright (C) 2009-2018, Ariel Vina Rodriguez ( arielvina@yahoo.es )
+* Copyright (C) 2009-2019, Ariel Vina Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @autor Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2018
+* 2009-2019
 *
 * @file  ThDySec\include\ThDySec\sec_mult.h
 *
