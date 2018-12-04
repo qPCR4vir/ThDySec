@@ -31,24 +31,25 @@
 #include <ThDySec/sec_mult.h>
 #include <ThDySec/common.h>
 using namespace DegCod;
-using namespace std;   // temp
+//using namespace std;   // temp
+namespace fs = std::filesystem;
 
 /// \todo make more efficient and elegant
-filesystem::path unique_filename(filesystem::path name)
+fs::path unique_filename(fs::path name)
 {
-    while(filesystem::exists(name))
+    while(fs::exists(name))
     {
         std::string ext = name.extension().string();
         std::string nam = name.stem().string();
         //std::string pat = name.remove_filename() ;
-        name = name.remove_filename() / filesystem::path( nam + "X" + ext) ;
+        name = name.remove_filename() / fs::path( nam + "X" + ext) ;
     }
     return name;
 }
 
 bool    CMultSec::Export_from   ( CMultSec& base, bool only_selected)  
 {
-    filesystem::path dir, file;
+    fs::path dir, file;
     auto s= path();
 
     for ( const auto& CurMSec : base.MSecL())        // recorre todos las msec
@@ -60,7 +61,7 @@ bool    CMultSec::Export_from   ( CMultSec& base, bool only_selected)
         file.remove_filename().replace_extension("fasta");
         dir.remove_filename().remove_filename();
 
-        filesystem::create_directories(dir);
+        fs::create_directories(dir);
         Export_as(unique_filename(file).string(), only_selected);
         return true;
     }
@@ -70,7 +71,7 @@ bool    CMultSec::Export_from   ( CMultSec& base, bool only_selected)
 bool      CMultSec::Export_local_seq   ( CMultSec& base, bool only_selected)
 {
     //assert(ms);
-    filesystem::path dir, file;
+    fs::path dir, file;
     auto s= path();
     auto b= base.path();
     if ( s.find(b))  return false;            // finded OK only if s beging with b
@@ -78,7 +79,7 @@ bool      CMultSec::Export_local_seq   ( CMultSec& base, bool only_selected)
     file.replace_extension("fasta");
     dir.remove_filename();
 
-    filesystem::create_directories(dir);
+    fs::create_directories(dir);
     Export_as(unique_filename(file).string(), only_selected);
     return true;
 }
@@ -99,22 +100,22 @@ CMultSec::CMultSec (    const std::string &path    ,
         _NNPar      (NNpar)/*,
         _Path       (file)*/
 {
-    filesystem::path  itf(path);
+    fs::path  itf(path);
 
     if (all_dir)                    // Load all files and directories recursiverly?
     {
-        if (filesystem::is_regular_file(itf)) 
+        if (fs::is_regular_file(itf))
             itf.remove_filename();
 
         _name = itf.filename ().string();     // The new MSec take the name of the dir.
         _Path = itf.string();                 // and the _Path point to it.
 
-        filesystem::directory_iterator rdi{ itf }, end;
+        fs::directory_iterator rdi{ itf }, end;
 
         for (; rdi != end; ++ rdi)
             AddMultiSec(  new CMultSec(  rdi->path().string() , 
                                          NNpar,
-                                         filesystem::is_directory(rdi->status()), 
+                                         fs::is_directory(rdi->status()),
                                          MaxTgId, 
                                          SecLim,   
                                          SecLenLim,

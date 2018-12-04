@@ -14,8 +14,8 @@
 #include "ThDy_programs/init_ThDy_prog_param.h"
 #include "ThDy_programs/prog_comm_functions.h"
 #include "ThDySec/sec.h"
-#include <cassert>
-using namespace std;
+
+namespace fs = std::filesystem;
 
 
 //ThDyCommProgParam::~ThDyCommProgParam(void)        {/*delete []_ProgList;*/}
@@ -80,7 +80,7 @@ CMultSec* ThDyCommProgParam::AddSeqFromFile( CMultSec           *parentGr,
                                 !onlyStructure);
 
 	parentGr->AddMultiSec(sG);
-    std::string parent_path = filesystem::path(sG->_Path).remove_filename().string();
+    std::string parent_path = fs::path(sG->_Path).remove_filename().string();
 
     if (parentGr->_Local._NMSec == 1)
         parentGr->_Path= parent_path ;
@@ -104,7 +104,7 @@ void CProgParam_microArray::RenameSondesMS(const std::string& name)
 //					CProgParam_microArray (titel,commThDyParam) 
 //					{  _probesMS->_name="Probes of Exp uArr";
 //					} 
-CProgParam_MultiplexPCR::CProgParam_MultiplexPCR(const string& titel, ThDyCommProgParam &commThDyParam) 
+CProgParam_MultiplexPCR::CProgParam_MultiplexPCR(const std::string& titel, ThDyCommProgParam &commThDyParam)
 	: CProgParam_microArray(titel,commThDyParam), _rtbl_self(nullptr)
 	{	
         _InputSondeFile.SetTitel("Imput file for primers"); 

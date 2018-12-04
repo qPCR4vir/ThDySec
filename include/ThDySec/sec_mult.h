@@ -114,7 +114,7 @@ class CMultSec
         /// Construct a filesystem path acording to the current tree, which can be different from the original path saved in member variable ._Path
 		std::string	path( )
 		{
-			std::string sep(std::string(1, filesystem::path::preferred_separator));// ::slash<filesystem::path>().value));
+			std::string sep(std::string(1, std::filesystem::path::preferred_separator));// ::slash<std::filesystem::path>().value));
             return Path(this, sep);
 		}
 
