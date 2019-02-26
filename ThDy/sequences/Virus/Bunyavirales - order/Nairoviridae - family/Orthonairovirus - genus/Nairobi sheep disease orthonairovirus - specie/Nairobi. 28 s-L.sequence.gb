@@ -1,0 +1,2669 @@
+LOCUS       KM464726               12081 bp    cRNA    linear   VRL 09-DEC-2014
+DEFINITION  Nairobi sheep disease virus isolate Jilin segment L RNA-dependent
+            RNA polymerase gene, complete cds.
+ACCESSION   KM464726
+VERSION     KM464726.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 12081)
+  AUTHORS   Liu,Q.
+  TITLE     Nairobi sheep disease virus in ticks, in China
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 12081)
+  AUTHORS   Liu,Q.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (03-SEP-2014) Military Veterinary Institute, Academy of
+            Military Medical Sciences, 666 Liuying West Road, Changchun, Jilin
+            130122, China
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: DNA STAR v. 5.0
+            Assembly Name         :: TICK VIRUS
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..12081
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /isolate="Jilin"
+                     /host="tick"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="China"
+                     /collection_date="2013"
+     CDS             43..12018
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AIZ00432.1"
+                     /translation="MEFLNSIPWEEVVPGQFTANPGFQVTDYFEIVRQPADGNCFYHS
+                     IAELFVPNKNDFSFRLVKQHLELAARRFFEEEPEAKGLGLGLEKYLEVAMCDNEWGGS
+                     LEASMLAKHLDVTIVIWVIEGPSRVAAAVKFGSGDVAGAINLLHTGYNHFDALRLLVD
+                     DSQVSRQPRDITERIEIVEEVLSEDREETFFEEDLLNFATVETIEEKLTRQDKKVQDE
+                     MQRRAVLLGKIIKKGENIPVRVGRVLDCLFNCKLFVELRDGLLVLKPESKEDPGSGCS
+                     LRQLGHRLLTRDKQIKQEYAKSKLYLTKDLLDHLDAGGLLRSAFPGMGLERNLQFLHS
+                     EVLLDVCTVVVAVLLSSFLYGSNNRNKKTFITNCLLNTSLSGKRVFKALGKLTGTTLY
+                     KSPRNALSHVCQTLYGKMMGKLQSYISVMSPISLLALRNLDFDNMSVKDYMEMLKEMS
+                     VIDNTDVDYTHREIADLNQLTDKLQKLFKEGRADELKNWYKEEELTKRSLRSVQNASE
+                     FLISDYFKKKDIMKFISTTGKASSTGNIGNVLSYAHNLYLSKESLKMTTEDTTQLLIE
+                     IKRLYRLQGEQSIEPIAIICDKLEEQFRRLFKELPEECSLECQTLFNDIRNSGSHSTA
+                     WKHALRLKGTAYEGMFSRQYGWSYIPEDIRPSLTMLIQTLFPHKFEEFLDRTQLHPEF
+                     RDLTPDFALTQKVYFKKNKIVEIQNTQLVIDSSLEGSVEAVPVVEKKMFPLPETPVDE
+                     VHSIQRIMKNFRDKVERDKRKKEEEGDRAPADEHMEDQKSGNVQDPDKPAHTTKEAIQ
+                     EKLEETEVPKASPESSGADKLQPALVPIGSRDKAQSAARGPLTYSDRILIDENSTELT
+                     EEEELEKRQILLVEVGYQTDVDGKITTDFKKWKDILRLLEMLEIKCSFIACADCTSTP
+                     ADNWWISEDKVRCLKSSISHLFSSLTKNSPADVTDIVVGSISTQKVRSYLKSGSATKT
+                     PISSKDVKETWQRMRQNIIERPTGAVINPGLESAMRQGLVDGVVMSKEGCVKTIETLK
+                     QNCDKITDEFERTKYKHELNENRTTSEKLLLGWLSEDLQGCRCGNCLNVIKQTVESIT
+                     ENSDRLEYLASSAILKSHCPECHPKGVSVSNSTNIMNRLPGLEKTQHSDNKGFEDTND
+                     ALTDLDRVVRLTLPGKTEKERRIKRNVETLIRLMMQASGLECIKLPSGQIITHRLTKK
+                     IRQEDENVLLDKQTERLERIKKELSDTKLSSYSEYAKKTLRHSIQRVDKQKESKCSVP
+                     RAWLEKLLRDLKVPTKDEDILTNIRESMSKRTNFIKNNDKLVIRSEEELIKFIGNRSV
+                     QLMPDRSKKLFQSDCILFKEVTAEAMKRYYSTPYEGVPEMIVLLINFLCRFPWFQEVV
+                     LYAKICETFLRCCTEFSRSGIKLVKVRHCDLNLAIKLPSNKKENMLCTLYNKEMELLK
+                     GPFFLNRRQAVLGASYPYITITLYMQVLQQHRCLEVLSTVGERTFENIKTCTSDLIAS
+                     LSLELTFAVNGQFEKAYEVRTKQCKLGGNFLNRSSRDHFITVISGLNTVYGLIIRDNL
+                     LANSQQQNKQLQMLRFGMLSGLSRLSCPKELGKKFSTSCRRLEDNIMRLYLQSTVYCS
+                     NRDVEHNINEWKSKDLCPEVTIPCFSVYGVFVNSDRQLIFDIYNVHIYNKEMDNFDEG
+                     CISVLEETAERHMLWEMDLLRSLSKETKDERSARLLLGCPNVRKAVDKDGNKLSKAGH
+                     ASPDDGDSDSSSLSGRRSYCSSRGRIQSIFGRYNSNKKPFEFRPGLEVRADPMNDFEQ
+                     AVTDTSQYAEYTPNQESLMKDFIQIIRMNPSHTMGSFELIQAVTEFSRNKYPAENIEK
+                     AKRDPKNWVSISEVTETTSIVSQPRTHIMLKDCFKILLGTENKKIVKMLRGKLKKLGA
+                     INTDIEIGRKDCLDMLNTVEGLSEEQRRNIVNGIFEPSKLSFYHWKELVQKDVEEVLL
+                     TDDGNYIFCWLKTLSSMLKGALKKELRFMNNGGVLELSNGFFSDDDFEELLNVKKELT
+                     GSMSLDRELNTELLLSSWMKCIYKPKEGASIVQEGLEALKVMAGELYEIRLQHLELTR
+                     MKKDNPSVSFTKEEVLVKRLEKSFLKKFNKEAMKFVNLVFFCSLSAPWCVHYKSLESY
+                     LVRHPEILELKAKGDLGSVILDLSVASAISRLVQQETNIELDAEVLNEMKVRFAVKYF
+                     VTLFTANGEPFSLSLNDGGLDENLQKTTDEKLLHQTKVVFTKIGLAGNNYDFMWTTQM
+                     IANSNFNVCKRLTGRTTGERLPRSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDH
+                     RFYAVLAPKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETIL
+                     NVGLDALSTMRLLDGRPVSEDSKLLNFYKVICISGDNTKWGPIHCCSFFSGMIQQLLK
+                     DVPDWSSFYKLTFIKNLCRQVEIPAASVKKILNTLRFRLSNKGGVESRSEEELRKELS
+                     DSTEEWGDNDTVKFLITTYLSKGIMALNSYNHMGQGIHHATSSLLTSLMAELFEELVI
+                     DYFKRHLPQLTVNVTHAGSSDDYAKCIVATGLLPKELYDRYSEAFWKHACKIKNLTAA
+                     VQRCCQMKDSAKTLVGDCFLEFYSEFMMGNRVTPAVIKFIFTGLINSSVTSPQSLVQA
+                     CHVSSQQAMYNSVPLMTNATFTLLRQQVFFSHVEDFVRRYGLITLGTVSSFGRLFVPT
+                     FSGLVSSAVALEDSEVLAKSAAEINENSIFLDSSSLSNLDSLKDIVSSKARDDGSSIS
+                     ETTIESTESGSSSSSFTFELTRPLSETELQFLKTLKSTTSVTACEIIQDKLTPLYADS
+                     QEGALDKYNVLYNSRLTASCDWLRQGRKMGPLELARRLQCILNILIVGYYRSFGSDGT
+                     DKQVKASLNRDDNRVIEDPMIQLVPEKLRRELERLGVSRMEIDELMPSIKPDETLCQL
+                     VAKKLISLNVATEEYSAEVSRLKQTLTARNVLHGLAGGIKELSLPIYTIFLKSYFFKD
+                     NVFLDLEDRWSTKHSSNYRDSSGRMLTGRVITKFTHWLDTFLNCTVSINRTQEIKDSS
+                     LFNPDLRCINILVREDNIKEMSIVQSHLRVVTSEFNNLNLQFSDCNRQKLKVVESRPP
+                     ECELEANKAVIVKSKLFSAVEQVRLANNPAVVMGYLLEESSISEVKPTKVDFSNLLKD
+                     RFKLMQFFPSVFALLKHLQSESSEMEKLGAPVDMQQVSKYSNHLTLLCRMIQQARPSL
+                     TVFYMLKGNQMNTEPTVSELVSYGIKEGRYLRLPEIGLDASTYSVKYWKILHCISAIG
+                     ELPLSDRDKTSLLISFLNWKVSSDSMAQDCPLYKQEHAVISEFAGQVVVNTLASELSS
+                     VRRDAERDSLTDLIDYVNSPTELLKKKPYLGTTCKFATWGENNRNGKFTYSSRSGEAI
+                     GIFIAGKLHIHLSRESTGLLCEVERNVLGWLGRRRTDILTKEQHQQFLEFLPTLSEVS
+                     QKNRDGTTQGICQDNTNVRMLKFVHPKKNTPVVKIKGQILTVKKQVSFEAESEPRLMW
+                     GHGCVSVVYDECETQTTYHENLLKIKQMVDSTTDRARSLPQSVFSDTKVILARIKFKS
+                     DLLLNSLCLLHSFLRHTTTDAVLEAESKCALLERYLQSGGVRVKSADETLEKKLCSKV
+                     IECKLEQTLDEEIGVCDNLNRVFSETPMPVSSWSEVQCYIEDVGFSNILITLDKTSTK
+                     GELIWKFSLDNTSNIAGSIRDIRSLVSYISTETIPKFLLPFLLFENLLSSILKQSLTV
+                     KETLHSTGISDKEIEAVATLFAYCFQNDKVKRKGPRCSMASILNLTKGDWVEVGQRMK
+                     LQAHLDSDTVRLSVQLAISTDAEQTADKKARVSMAKKVIASHLTLLLQEDGIDIKKLK
+                     DIAVNVQVRKEKTGEVLDFTLLDDQAGNLNYIGVLETIMDRRKKGPAISALEDFFLLL
+                     TGMAESNIQQDTAVKSEEACSDDICLEDLLEPSEESSSSSGALDKETVPDKVTFNWDS
+                     DSD"
+ORIGIN      
+        1 tctcaaagat atcaatcccc ccgttacccc agagttgcaa gcatggagtt cctgaacagc
+       61 attccttggg aggaggttgt tccaggacag ttcactgcaa atcctggctt tcaggttact
+      121 gattactttg agatagtcag acagcctgct gatggtaact gtttttatca cagcattgct
+      181 gaactttttg tgccaaacaa aaatgacttt tctttcaggc ttgtaaaaca gcaccttgag
+      241 ttggcagcga ggagattctt tgaggaagaa ccagaagcca aaggactagg cttgggtctt
+      301 gaaaagtact tagaagttgc tatgtgtgac aatgagtggg gaggaagtct agaagcttca
+      361 atgctggcaa aacacttaga cgtcaccatc gtcatatggg tgatagaagg tcccagcaga
+      421 gtggctgcag cagtgaaatt tgggtctgga gatgttgctg gtgcaataaa tcttctacac
+      481 accggttaca accactttga tgccttaagg ctgttagttg atgatagtca ggttagccgc
+      541 cagcccagag acatcacaga acgcatagaa atagttgaag aggtcctgtc ggaagataga
+      601 gaagaaacct tcttcgaaga ggacctactc aactttgcta ctgtagagac catagaagaa
+      661 aagctgacta gacaagataa aaaggttcaa gatgaaatgc agcgtagagc agtactactt
+      721 ggaaagatca taaaaaaagg tgaaaacatc cccgtgagag taggaagggt acttgactgc
+      781 ctatttaact gtaagctttt tgtggagttg agagatgggc tgctagtgtt aaagccagag
+      841 tcaaaagaag accccggttc gggatgcagc ttaaggcagc taggtcacag gctgttaaca
+      901 agagacaagc aaataaagca ggaatatgct aaatcaaaac tctatctgac aaaggacctg
+      961 ttagaccact tggatgctgg cggcctccta cgttcagcat ttccaggaat gggattagag
+     1021 aggaacctgc aattcttgca ctcagaggtt ctgcttgatg tgtgcacagt ggttgttgct
+     1081 gtcctactgt cttccttcct gtacgggtca aacaacagaa acaagaagac atttataaca
+     1141 aactgcttgc tgaacacaag cctttcaggg aagagagtct tcaaggcact aggaaagcta
+     1201 acaggcacca ctctttacaa aagtcctagg aatgctttgt cccatgtgtg tcaaacactc
+     1261 tatggcaaga tgatggggaa actgcagagc tacatttcag tcatgagtcc aataagtcta
+     1321 ttggctctgc ggaatctcga ctttgacaac atgtctgtta aagactacat ggagatgctg
+     1381 aaagagatgt cagtgataga taacactgac gttgattaca cccacagaga gatagctgat
+     1441 ctcaatcagc ttacagataa gctacaaaag ctgtttaaag agggaagagc agatgaactg
+     1501 aagaactggt acaaagagga agagttgaca aagcggtcat taagaagtgt gcaaaatgca
+     1561 tctgagtttt taataagtga ctatttcaag aagaaggaca ttatgaagtt catatcaaca
+     1621 acaggcaagg catcaagcac cggtaatatt gggaatgtcc tttcttacgc acataatcta
+     1681 tacttgagca aagagagcct aaagatgact accgaggata caacacagct tctgattgag
+     1741 ataaagagat tatatcgact tcagggcgaa caaagcattg agccaattgc gataatatgt
+     1801 gacaagcttg aggagcagtt cagaaggcta ttcaaagaat tgcctgagga atgttcgctc
+     1861 gaatgccaga ctctgttcaa cgacattagg aattctggca gtcacagtac agcatggaag
+     1921 catgcactaa gacttaaagg cacagcttac gaagggatgt tttccaggca gtatggatgg
+     1981 tcgtatatcc cagaagacat aaggccaagc ttgacaatgc tcatacaaac tttgtttcca
+     2041 cacaagtttg aggagtttct ggatcgaacg cagcttcacc ctgaattcag ggatctgaca
+     2101 cctgactttg ccttaactca gaaagtgtac tttaaaaaga acaaaatcgt ggagattcag
+     2161 aacacccagt tagtaattga ctcaagttta gagggctctg ttgaggctgt gcctgtagtt
+     2221 gagaagaaga tgtttcctct gcctgaaact ccagttgatg aagtgcactc catccagagg
+     2281 attatgaaga attttagaga caaagtcgaa agagacaaga gaaagaagga ggaagagggc
+     2341 gacagagcac cagcagacga acacatggag gaccagaaaa gtggcaatgt tcaagaccca
+     2401 gacaagcctg cccatacaac caaggaagca atacaagaga agttagaaga aacagaggtg
+     2461 cccaaggcca gtccagaatc aagtggagct gataaattac agccagctct agtaccaata
+     2521 ggctcccgtg ataaggctca aagtgcagcc aggggaccat tgacatacag tgacagaatt
+     2581 ctcattgatg aaaacagcac agaactgaca gaagaagaag aactggagaa gagacagata
+     2641 ctactagttg aggttggtta tcagaccgat gtggacggca aaataacaac agacttcaag
+     2701 aagtggaaag acatcttgag gctcctggag atgttggaga tcaagtgttc attcatagcc
+     2761 tgtgcagact gcacatcaac acctgcggac aactggtgga tctcagaaga taaggtgcga
+     2821 tgtctaaagt cttccataag ccacctattt agcagcctca caaagaactc tcctgcggat
+     2881 gttacggaca tagtagttgg ctctatcagc acacagaaag ttaggagtta cttgaagtct
+     2941 gggtcagcaa ctaaaacacc tatatccagt aaggatgtta aagaaacctg gcaacgcatg
+     3001 agacagaaca taatagaaag gccaacagga gctgttatca atcctggcct tgagagtgct
+     3061 atgagacaag gattagttga tggggttgtg atgtccaaag aagggtgtgt aaaaaccatt
+     3121 gagactttaa aacaaaactg tgataaaatc acagatgaat ttgaaagaac aaagtacaaa
+     3181 catgagctaa atgaaaacag aacaaccagt gaaaagctac ttctgggatg gttatccgag
+     3241 gatcttcaag gctgtaggtg tggcaactgt ttaaatgtca taaagcaaac agttgagagc
+     3301 ataacagaga actcagatag gcttgaatat ctagcgagta gtgctatcct caagtcacac
+     3361 tgtcctgaat gccatcccaa aggggtcagt gttagcaata gcactaacat aatgaacaga
+     3421 ctgcctggac tagaaaagac acaacattct gacaataaag gctttgaaga cacaaatgac
+     3481 gctctgacag atctggatag ggtggttcgg ttgactttac ctggcaaaac tgaaaaggag
+     3541 agaaggatta agagaaatgt tgaaacacta atccggttga tgatgcaggc ttcaggcctg
+     3601 gagtgcataa aactcccttc aggacagatt attacccaca gactaaccaa gaagatcaga
+     3661 caagaagatg agaatgtttt attggataag cagacagaaa ggctggagag aattaagaag
+     3721 gaactgtctg acacaaagtt gagcagttac tcagagtatg caaagaaaac cctaagacac
+     3781 tctatacaaa gagtagataa gcagaaagaa tccaagtgtt cagtgcctag agcatggtta
+     3841 gaaaagcttt taagagatct aaaagttccc acaaaagatg aagacatatt aacaaacatt
+     3901 agagagtcaa tgtcaaaaag gacaaacttc attaaaaaca atgataaact tgtgattagg
+     3961 tctgaagaag aactgataaa atttattgga aacagatcgg tacagctgat gcctgacagg
+     4021 tcaaagaaac tgtttcaatc agattgcatc cttttcaaag aagtcactgc tgaagcaatg
+     4081 aagagatatt actcaacacc gtacgaggga gttccagaga tgattgtgct attgataaac
+     4141 ttcttgtgca ggttcccttg gtttcaagag gttgttctct atgcgaagat ttgtgaaact
+     4201 ttcttaagat gctgtacgga gtttagtcgt tctggaatca aacttgtcaa agtgaggcac
+     4261 tgtgatttga acttggcaat aaagctgcct tccaacaaga aagaaaacat gttatgcact
+     4321 ctgtataaca aggagatgga actgctgaag ggacctttct tcctcaatag gagacaggct
+     4381 gttttaggtg cctcgtatcc gtacataacc atcactctct acatgcaagt tttacaacag
+     4441 cacaggtgcc ttgaggtttt aagcacggtt ggtgaaagga cattcgagaa catcaagact
+     4501 tgcacttcag acctaatagc cagcctatcg ttggaactaa catttgctgt caatggacag
+     4561 tttgaaaagg cctatgaagt tagaactaag cagtgcaagt tgggaggcaa ctttctgaac
+     4621 agaagcagca gagatcactt catcactgtt atttcaggtt tgaacactgt gtacggactc
+     4681 atcataagag acaacctctt agcaaattct caacagcaaa acaaacagct acaaatgcta
+     4741 aggttcggca tgttgtccgg cttaagcagg ctttcgtgtc caaaagaatt aggaaagaag
+     4801 ttctccacga gctgcaggag actcgaagac aatattatgc gactctattt gcaaagcact
+     4861 gtttactgtt caaacagaga tgttgaacat aacatcaatg agtggaaatc taaagacttg
+     4921 tgccctgaag tcacaattcc atgcttctcc gtctatggtg tatttgtgaa cagtgaccga
+     4981 cagttaatct ttgacattta caatgtacac atctacaaca aggagatgga caattttgac
+     5041 gaaggatgca taagtgtgtt agaagagact gctgagagac acatgctgtg ggaaatggat
+     5101 cttcttaggt cattaagtaa ggagacaaaa gatgaaaggt cagcaagact tctactagga
+     5161 tgcccaaatg tcaggaaagc agttgataag gacggtaaca agctgagtaa ggcagggcat
+     5221 gcatcccctg atgacgggga tagtgactcc tcaagcttaa gtgggagacg ttcttactgt
+     5281 tctagtagag ggaggattca gagcatcttt ggcaggtaca attcaaacaa aaaacctttt
+     5341 gagtttagac caggcttaga agttagagca gatccaatga atgatttcga gcaagcagtc
+     5401 acagacacat cgcaatatgc agaatacaca ccaaaccaag agagcttaat gaaagatttc
+     5461 atccaaatta taaggatgaa tcctagccac acgatgggct ccttcgagct catccaagca
+     5521 gtaacagaat tcagccgaaa caaatatcca gcagagaaca tagagaaggc taagagagat
+     5581 ccaaaaaact gggttagtat ttcagaagta acagaaacaa ctagcattgt ctcacaacct
+     5641 agaacacaca taatgctcaa agactgtttc aagattcttc tcggcactga gaacaagaaa
+     5701 atcgtcaaga tgctaagagg caagctaaag aagctgggtg ctatcaatac agacatagaa
+     5761 atcgggagaa aggattgcct agacatgctt aacaccgttg aaggactgtc agaagagcaa
+     5821 aggaggaaca ttgtcaatgg aattttcgag ccatctaagc tgtccttcta tcattggaag
+     5881 gaactagtcc agaaggatgt tgaagaggtg ctactgaccg atgatggcaa ttacattttc
+     5941 tgctggctaa agacactgtc atcaatgctg aaaggggctt taaaaaaaga gcttagattc
+     6001 atgaacaatg gaggtgtgct agaactcagc aatgggttct ttagtgacga tgatttcgag
+     6061 gagctgctaa atgttaaaaa ggaactgact ggaagcatga gcctagacag agagttaaac
+     6121 accgagttac ttttgtcatc atggatgaag tgcatctaca agcccaagga aggggcttca
+     6181 atagtgcaag aaggtttaga agcgctaaaa gtaatggcag gagaactgta cgagatcaga
+     6241 ctgcagcatt tagaactaac cagaatgaag aaggataatc ccagcgtaag cttcaccaag
+     6301 gaagaagttc ttgtgaaaag acttgagaag tcattcctga agaaatttaa caaggaagca
+     6361 atgaagtttg tcaatctagt gttcttttgt tcactctctg ccccttggtg tgttcattac
+     6421 aagtctttag agtcttactt ggtccgtcac ccagagatcc tcgagctcaa ggctaaaggt
+     6481 gatttaggat ctgtgatttt agacctctca gttgcatcgg ctatatcaag attagtccag
+     6541 caagaaacaa acattgagct ggatgcagag gtgctgaatg agatgaaggt gcgctttgct
+     6601 gtcaagtatt ttgtgacact atttacggcc aatggagagc ctttctcgct cagcttgaat
+     6661 gatggaggtc tagacgagaa cctacagaaa accacagacg agaagctgtt gcatcagact
+     6721 aaagtggtgt ttaccaagat tggattggca ggaaacaact atgacttcat gtggaccacg
+     6781 caaatgatag caaacagtaa cttcaatgtc tgcaagcgtc tgactggcag aacaactggt
+     6841 gaaaggcttc caaggagtgt gagaagcaaa gtaatttatg aaatggtaaa gcttgttggg
+     6901 gaaactggaa tggcaatact acaacaactg gcctttgccc aagctcttaa ttacgatcat
+     6961 agattttatg cagtgttggc accaaaagcc caacttggag ggagtaggga tctgctagtc
+     7021 caagagaccg gcacaaaagt tatccatgcc acaacagaaa tgttcagtcg aaacttattg
+     7081 aaaacaacac aggatgatgg actaacaaac cctcacttga aagagactat actgaatgtc
+     7141 ggactggatg cactaagcac aatgcgcctg ctggatggaa ggccagtgtc tgaagacagc
+     7201 aagcttctga acttttataa ggtgatctgc atctcaggag acaacactaa gtggggtccc
+     7261 attcactgct gctctttctt ctcgggtatg atccagcaac ttttgaaaga tgttccagac
+     7321 tggagttcat tctacaaact tactttcatt aagaaccttt gcagacaagt cgagattcct
+     7381 gccgctagtg tcaagaaaat cttgaacaca cttcgattta gactcagtaa caaaggaggt
+     7441 gttgaatcaa ggtcggaaga ggaactcagg aaagagctga gtgacagcac cgaagagtgg
+     7501 ggagacaatg acactgttaa gtttttgatc acaacttacc taagcaaagg aatcatggcg
+     7561 ctcaacagtt acaatcacat gggacaagga atacatcatg ccacctcatc actactgacc
+     7621 tcgctaatgg cagaactgtt tgaagaacta gtgatagact actttaaaag gcatctacca
+     7681 caactcactg taaacgtaac acatgctgga agttctgatg attatgcaaa gtgcattgtg
+     7741 gccactgggc tactgcctaa agaactctac gacaggtatt ctgaggcttt ctggaagcat
+     7801 gcatgcaaaa taaagaacct caccgcagct gtacaaagat gctgtcagat gaaggacagt
+     7861 gcaaagactc tggtgggcga ctgcttcctt gagttctaca gtgagttcat gatggggaat
+     7921 agagtaaccc cggctgtgat caagtttata ttcactggtc tcataaatag ctctgtgact
+     7981 tcaccgcaga gcttagtgca ggcttgtcat gtgtcttctc aacaagcaat gtacaatagt
+     8041 gtcccattga tgaccaatgc aactttcact ctccttagac agcaagtgtt cttctcacat
+     8101 gtagaagact ttgtacgcag atatggacta attacactag gaactgtgtc gtcttttggc
+     8161 cgcttgtttg ttccgacgtt ttctggccta gtcagttctg cagttgcctt agaagacagt
+     8221 gaagtcttgg caaaatcagc tgctgaaatt aacgagaaca gcattttcct agatagcagc
+     8281 agtctttcta atctggacag tctgaaagat atcgtcagtt ctaaggctag ggatgatggg
+     8341 agttctataa gcgaaacaac tattgagtct actgagtcag gaagttcctc gtccagtttc
+     8401 acgtttgagc ttacaagacc gctatctgaa acagaactac agtttcttaa aacgttaaaa
+     8461 tcgactactt ctgtgactgc gtgtgagatc atacaggaca agttgactcc actatatgca
+     8521 gatagtcaag aaggtgcatt ggacaagtac aatgtgttgt acaatagcag attgactgca
+     8581 tcttgtgatt ggctcagaca aggaaggaaa atgggacctc ttgagttagc taggagattg
+     8641 caatgtattc taaacattct aattgtaggt tactatagat catttggtag cgacgggaca
+     8701 gataagcaag ttaaggcatc tctcaatagg gacgacaata gagttatcga agaccccatg
+     8761 attcaactag tacctgaaaa gctgagaaga gagctagaga ggctgggagt ctctaggatg
+     8821 gagatcgatg aactgatgcc ttctataaag cctgacgaaa ctctctgtca gttggttgcc
+     8881 aaaaagctca tcagcctaaa cgtcgccaca gaagagtact ctgcagaagt ctccagacta
+     8941 aaacagacct tgacagccag aaacgtcctg catggccttg ctggaggtat caaggagctg
+     9001 tcacttccta tctataccat cttcctaaag tcgtactttt ttaaagacaa tgtcttctta
+     9061 gaccttgagg acagatggtc aaccaagcac agctcaaatt atagggacag ttctggcagg
+     9121 atgctgactg gtagagtgat tacaaaattc actcattggc tggacacatt tttgaactgc
+     9181 acagtaagca tcaacaggac acaagaaatc aaagacagtt ctcttttcaa tcctgacctc
+     9241 aggtgtataa acattttggt aagggaagac aacataaagg agatgtcaat tgttcaaagt
+     9301 cacctcaggg tcgtcacgtc agaatttaac aacctcaatc ttcagttctc cgactgcaac
+     9361 agacaaaaac tgaaggtggt tgagtccagg ccacctgaat gtgaactaga ggccaacaaa
+     9421 gcagtaattg taaagtcaaa actgttcagt gctgttgagc aggttagact tgcaaacaat
+     9481 cctgcagtgg tgatgggcta ccttcttgag gagtcatcaa tctcagaggt aaaacccacc
+     9541 aaggtagact tttccaatct gttgaaagat aggtttaagt tgatgcagtt ttttccttcc
+     9601 gtctttgctt tgctgaagca ccttcagtct gaatcgtcag agatggaaaa gctaggggca
+     9661 ccagtagata tgcagcaagt gtcaaagtac tcaaaccatt taactctgtt atgtagaatg
+     9721 attcagcagg ctaggccttc actgaccgtc ttctacatgc tgaaaggtaa tcaaatgaac
+     9781 actgagccca cggtgtctga gctagtcagt tacgggataa aggaaggcag atacctgaga
+     9841 ctgcctgaga taggccttga tgccagtaca tactcggtga agtactggaa aatacttcac
+     9901 tgcatttctg ccataggtga attacctctt agtgacagag acaaaacgtc tcttctcata
+     9961 agtttcctca actggaaagt ttcatctgac tctatggcac aagattgtcc gctttacaaa
+    10021 caggaacatg ctgtcatcag tgaatttgca ggacaggttg ttgtgaacac acttgccagt
+    10081 gagcttagct ctgttaggag agatgctgaa agagatagcc tcactgatct gattgattat
+    10141 gtgaattctc ccacagaatt actcaagaag aaaccctacc ttggcacaac atgcaaattt
+    10201 gcaacttggg gagagaacaa caggaatggc aagttcacat acagcagtcg gtcaggagag
+    10261 gcaattggca tattcatagc agggaaactc cacatccatc tgagcagaga gtcgactggt
+    10321 ctactatgtg aggtggaaag gaatgtgctc ggctggctcg gaagacgaag gacagatatc
+    10381 ctaacaaagg agcaacacca gcaattttta gagttcctac ctacactaag cgaagtgtca
+    10441 cagaaaaata gagatggcac cacacaaggc atttgtcagg acaacaccaa tgtccgaatg
+    10501 ctaaaatttg tgcacccgaa gaagaatact cctgttgtga agatcaaagg gcagatactg
+    10561 acggtaaaaa aacaagtcag cttcgaggca gagagtgaac ccaggctcat gtggggacac
+    10621 ggttgtgttt cagttgttta cgatgagtgt gaaactcaga ctacatacca tgaaaatttg
+    10681 cttaaaataa aacagatggt tgatagcact acagatagag ccagaagtct cccacagtca
+    10741 gtgttctcag acaccaaggt gattcttgcc agaattaagt tcaaatcaga ccttctactg
+    10801 aattcacttt gtttactaca cagcttctta agacacacaa ccactgatgc tgtgctggag
+    10861 gcagagagta aatgtgcact gttagaaagg tacttgcagt caggaggggt aagagtgaag
+    10921 tcagcagacg aaactttaga gaagaagctg tgcagcaagg tgatagagtg taagcttgag
+    10981 caaactcttg acgaagagat tggagtttgt gacaacctta atagagtatt ttctgaaact
+    11041 ccgatgcctg tcagtagctg gtctgaagtg caatgttata ttgaggatgt gggtttcagt
+    11101 aacatactaa taacacttga caaaacaagc accaaaggtg aactgatctg gaaattttct
+    11161 ctggacaaca caagcaacat agctggcagc atcagggata taaggtcgct cgtttcctac
+    11221 ataagcaccg aaactatacc aaaattctta ctacctttcc tgctctttga gaatctactc
+    11281 tccagcatcc tcaagcagag cttgacagtg aaggagacat tacattccac aggcatctct
+    11341 gacaaagaaa ttgaagcagt tgccacctta tttgcttact gctttcaaaa cgacaaggtt
+    11401 aagaggaaag gcccccgatg ttcaatggcc tctatcctaa acttaaccaa aggtgactgg
+    11461 gtggaggtag gacagagaat gaagctgcag gcacatctag attcagatac tgttcgattg
+    11521 agtgttcagc tggcaatctc tactgatgca gaacagacag cagataaaaa agctcgagtg
+    11581 tcaatggcaa agaaggtgat agcttctcat ttaacactac tattgcaaga ggacggtatt
+    11641 gacatcaaga agcttaagga catagctgtt aacgttcagg ttaggaagga aaagactgga
+    11701 gaagtgcttg attttacact ccttgatgac caggcaggca atttaaacta cattggagtg
+    11761 ttggagacaa taatggatag gaggaagaag ggtcctgcca tcagtgcact tgaagacttc
+    11821 tttctgcttc taacaggcat ggcagaaagc aatatacaac aagacacagc agtcaaaagt
+    11881 gaggaggctt gcagtgatga catatgtctc gaagatcttc ttgagcctag cgaagaatca
+    11941 tccagcagct caggtgcact ggacaaagaa actgtacctg acaaagtgac attcaactgg
+    12001 gactccgata gtgactaagc ttcagtatac ttacttaaga cttaaattaa taggggtggg
+    12061 gggggaacga tttctttgag a
+//
+
+LOCUS       MH791449               12054 bp    mRNA    linear   VRL 17-OCT-2018
+DEFINITION  Nairobi sheep disease virus isolate Hubei RNA-dependent RNA
+            polymerase mRNA, complete cds.
+ACCESSION   MH791449
+VERSION     MH791449.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 12054)
+  AUTHORS   Yang,L., Zhao,Z., He,B. and Tu,C.
+  TITLE     Viromic profiling of ticks and goats, Hubei, China
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 12054)
+  AUTHORS   Yang,L., Zhao,Z., He,B. and Tu,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (23-AUG-2018) Virology, Military Veterinary, Liuying West
+            666, Changchun, Jilin 130122, China
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..12054
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="mRNA"
+                     /isolate="Hubei"
+                     /host="tick"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="China"
+                     /collection_date="2016-05"
+                     /collected_by="Biao He, Zhizhou Tan, Dongxiao Liu"
+     CDS             12..11987
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AYI99257.1"
+                     /translation="MEFLNSIPWEEVVPGQFTANPGFQVTDYFEIVRQPADGNCFYHS
+                     IAELFVPNKNDFSFRLVKQHLELAARRFFEEEPEAKGLGLGLEKYLEVAMCDNEWGGS
+                     LEASMLAKHLDITIVIWVIEGPSRVAAAVKFGPGDVAGAINLLHTGYNHFGALRLLVD
+                     DSQASRQPRDITERIEVVEEVLSEDREETFFEEDLLNFATVETVEEKLTRQDKKVQDE
+                     MQRRAVLLGKIIKKGENIPVRVGRVLDCLFNCKLFVELRDGLLVLKPESKEDPGLGCS
+                     SRQLGHKLLTRDKQIKQEYAKSKLYLTKDLLDHLDAGGLLRSAFPGMGLERNLQFLHS
+                     EVLLDVCTVVVAVLLSSFLYGSNNRNKKTFITNCLLNTSLSGKRVFKALGKLTGTTLY
+                     KSPRNALSHVCQTLYGKMMGKLQSYISVMSPISLLALRNLDFDNMSVKDYMEMLKEMS
+                     VIDNTDVDYTHREIADLNQLTDKLQKLFKEGRADELKNWYKEEELTKRSLRSVQNASE
+                     FLISDYFKKKDIMKFISTTGKASSTGNIGNVLSYAHNLYLSKESLKMTTEDTTQLLIE
+                     IKRLYRLQGEQSIEPIAIICDKLEEQFRKLFKELPEECSLECQTLFNDIRNSGSHSTA
+                     WKHALRLKGTAYEGMFSRQYGWSYIPEDIKPSLTMLIQTLFPHKFEEFLDRTQLHPEF
+                     RDLTPDFALTQKVYFKKNRIVGIQNTQLVIDSSLEGSVEAVPVVEKKMFPLPETPVDE
+                     VHSIQRIMKNFRDKVERDKRKKEEEGDKAPADEHMGDQKGGNVHDPDKPTYTTKEAKQ
+                     EKSEGTEVPEVNPESSGADKLQSALAPMGSRDKAQSVARGPLTYSDRILIDENSTELT
+                     EEEELEKRQILLVEVGYQTDVDGKITTDFKKWKDILRLLEMLEIKCSFIACADCTSTP
+                     ADNWWISEDKVRCLKSSISHLFSSLTKNSPADVTDIVVGSISTQKVRSYLKSGSATKT
+                     PISSKDVKETWQRMRQNIIERPTGAIINSGLESAMRQGLVDGVVMSKEGCVKTIETLK
+                     QNCDKITDEFERTKCKHELNENRTTSEKLLLGWLSEDLQGCRCGNCLNIIKQTVESIT
+                     ENSDRLEYLASSAILKSHCPDCHPKGVSVSNSTNIMNRLPGLEKTQHSDNKGFEDTND
+                     ALTDLDRVVRLTLPGKTEKERRIKRNVETLIRLMMQASGLECIKLPSGQIITHRLTKK
+                     IRQEDENVLLDKQTERLERIKKELSDTKLSSYSEYVKKTLRHSIQRVDKQKDSKCSVP
+                     RAWLEKLLRDLKVPTKDEDILTNIRESMSKKTNFIKNNDKLVIRSEEELIKFIGNRSV
+                     QLMPDKSKKLFQSDCILFKEVTAEAMKRYYSTPYEGVPEMIVLLINFLCRFPWFQEVV
+                     LYGKICETFLRCCTEFSRSGIKLVKVRHCDLNLAIKLPSNKKENMLCTLYNKEMELLK
+                     GPFFLNRRQAVLGASYPYITITLYMQVLQQHRCLEVLSTVGERTFENIKTCTSDLIAS
+                     LSLELTYAVNGQFEKAYEVRTRQCKLGGNFLNRSSRDHFITVISGLNTVYGLIIRDNL
+                     LANSQQQNKQLQMLRFGMLSGLSRLSCPKELGKKFSTSCRRLEDNIMRLYLQSTVYCS
+                     NRDVEHNINEWKSKDLCPEVTIPCFSVYGVFVNSDRQLIFDIYNVHIYNKEMDNFDEG
+                     CISVLEETAERHMLWEMDLLRSLSKETKDERSARLLLGCPNVRKAVDKDGNKLSKAGS
+                     TSPDDGDSDSSSLSGRRSYCSSRGRIQSIFGRYNSNKKPFEFRPGLEVRADPMNDFEQ
+                     AVTDTSQYAEYTPNQESLMKDFIQIIRMNPSHTMGSFELIQAVTEFGRSKYPAENIEK
+                     AKRDPKNWVSISEVTETTSIVSQPRTHIMLKDCFKILLGTENKKIVKMLRGKLKKLGA
+                     ISTDIEIGRKDCLDMLNTVEGLSEEQRKNIVNGIFEPSKLSFYHWKELVQKDVEEVLL
+                     TDDGNYIFCWLKTLSSMLKGALKKELRFMNNGGVLELSNGFFSDDEFEELLNVKKELT
+                     GSMSLDRELNTELLLASWMKCIYKPKEGAAIVQEGLEALKVMAGELYEIRLQHLELTR
+                     MKKDNPSVSFTKEEVLVKRLEKSFLKKFNKEAMKFVNLVFFCSLSAPLVCYYKSLESY
+                     LVRHPEILELKAKGDLGSVILDLSVASVISRLVQQETSIELDAEVLNEMKVRFAVKYF
+                     VTLFTANGEPFSLSLNDGGLDENLQKTTDQKLLHQTKVVFTKIGLAGNNYDFMWTTQM
+                     IANSNFNVCKRLTGRTTGERLPRSVRSKVIYEMVKLVGETGMAILQQLAFAQALDYDH
+                     RFYAVLAPKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETIL
+                     NVGLDALSTMRLLDGRPVSEDSKLLNFYKVICISGDNTKWGPIHCCSFFSGMIQQLLK
+                     DVPDWSSFYKLTFIKNLCRQVEIPAASVKKILNTLRFRLSNKGGVESRSEEELRKELS
+                     DSTEEWGDNDTVKFLITTYLSKGIMALNSYNHMGQGIHHGTSSLLTSLMAELFEELVI
+                     DYFKRHLPQLTVNVTHAGSSDDYAKCIVVTGLLPKELYDRYTEAFWKHACKLKDFTAA
+                     VQRCCQMKDSARTLVSDCFLEFYSEFMMGNRVTPAVIKFIFTGLINSSVTSPQSLVQA
+                     CHVSSQQAMYNSVPLMTNATFTLLRQQVFFSHVEDFVRRYGLITLGTVSSFGRLFVPT
+                     FSGLVSSAVALEDSEVLAKSAAEINENSIFLDSSSLSNLDSLKDIDRAKARDDESSIS
+                     ETTIESTESGSSSSSFTFELTRPLSETELQFLKTLKSTASVTACGIMQDKLTPLYADS
+                     QEGALDKYNVLYNSRLTASCDWLRQGRKRGPLELARRLQCILNILIVGYYRSFGSDGT
+                     DKQVKASLNRDDNRVIEDPMIQLVPEKLRRELERLGVSRMEIDELMPSVKPDETLCQL
+                     AAKKLISLNVATEEYSAEVSRLKQTLTARNVLHGLAGGIKELSLPIYTIFLKSYFFKD
+                     NVFLDLEDRWSTKHSSNYRDSSGRMLTGRVITKFTHWLDTFLNCTVSINRTQEIKDSS
+                     LFNPDLRCINILVREDNIREMSIVQSHLRVVTSELNNLNLQFSDCNRQKLKVVESRPP
+                     ECELEANKAVIVKSKLFSAVEQVRLANNPAVVMGYLLEESSISEVKPTKVDFSNLLKD
+                     RFKLMQFFPSVFALLKHLQFESSEMEKLGAPVDMQQVSKYSNHLTLLCRMIQQARPSL
+                     TVFYMLKGNQMNTEPTVSELVSYGIKEGRYLRLPEVGLDASTYSVKYWKILHCISAIG
+                     ELPLSDRDKTSLLISFLNWKVSPDSVAQDCPLYKQEHAVISEFAGQVVVNTLASELSS
+                     VRRDAERDSLADLVDYVNSPTELLKKKPYLGTTCKFATWGENNRNGKFTYSSRSGEAI
+                     GIFIAGKLHIHLSRESTGLLCEVERNVLGWLGRRRTDILTKEQHQQFLEFLPTLSEVS
+                     QKNRDGTTQGICQDNTNVRMLKFVHPKKNTPVVKIKGQILTVKKQVSFEAESEPRLMW
+                     GHGCVSVVYDECETQTTYHENLLKIKQMVDSTTDRARNLPQSVFSDTKVILTRIKFKS
+                     NLLLNSLCLLHSFLRHTTTDAVLEAESKCALLERYLQSGGVRVRSADETLEKKLCSKV
+                     IECKLEQTLDEEIGVCDSLNRVFSETPMPVSSWSEVQCYIEDVGFSNILITLDKTSTK
+                     GELIWKFSLDNTSNIAGSIKDIRSLVSYISTETIPKFLLPFLLFENLLSSILKQSLTV
+                     KETLHATGISDKEIEAVATLFAYCFQNDKVKRKGPRCSMASILNLTKGDWVEIGQRMK
+                     LQAHLDSDTVRLSVQLAISTDAERTADKKARVSMAKKVIASQLTLLLQEDGIDIKKLK
+                     DIAVNVQVKKEKTGEVLDFTLLDDQAGNLNYLGVLETMMDRRKKGPAISALEDFFLLL
+                     TGMAESNIQQDTAVKSEEACSDDICLEDLLEPSEESSSSSGTLDKETVPDKVTFNWDS
+                     DSD"
+ORIGIN      
+        1 gagttgcaag catggagttc ctgaacagca ttccttggga agaggttgtt ccagggcagt
+       61 tcactgcaaa tcctggcttt caggttactg attactttga gatagtcaga cagcctgctg
+      121 atggtaactg cttttatcac agcattgctg aactttttgt gccaaacaaa aatgactttt
+      181 ctttcaggct tgtaaaacag cacctagagt tggcagcgag gagattcttt gaagaagagc
+      241 cagaagctaa aggactaggc ttaggtcttg aaaagtactt agaagttgct atgtgtgaca
+      301 atgagtgggg aggaagtttg gaagcttcaa tgctggcaaa acacttagac atcaccatcg
+      361 tcatatgggt gatagaaggt cccagcagag tggctgcagc agtgaaattt gggcctggag
+      421 atgttgccgg tgcaataaat cttctacaca ctggctacaa ccactttggt gccttaaggc
+      481 tgttagttga cgacagtcag gctagccgcc agcccagaga catcacagaa cgcatagaag
+      541 tagttgaaga ggtcctgtct gaagatagag aagaaacctt cttcgaagaa gacctgctca
+      601 actttgctac tgtagagacc gtagaagaaa agctgactag acaagataaa aaggttcaag
+      661 atgaaatgca gcgtagagcg gtactacttg gaaagatcat aaaaaaaggt gaaaacatcc
+      721 ccgtgagagt aggaagggta cttgattgtt tatttaactg taagcttttt gtggagttga
+      781 gagatgggct gctagtgttg aagccagagt caaaggagga ccccggtttg ggatgcagct
+      841 caaggcaact aggtcacaag ctgttaacaa gggacaagca aataaaacaa gaatatgcca
+      901 aatcgaaact ctatctgaca aaggacctgt tagaccactt agatgctggc ggcctcctac
+      961 gttcagcatt tccaggaatg ggattagaga gaaacctgca attcttacac tcagaggttc
+     1021 tacttgatgt gtgcacagtg gttgttgctg tcctactgtc ctccttcctg tacgggtcaa
+     1081 acaacagaaa caaaaaaaca tttataacaa actgcttgct gaacacaagc ctttcaggga
+     1141 agagagtctt taaggcacta gggaagctaa caggcaccac tctttacaaa agtcctagga
+     1201 atgctttatc ccatgtgtgt caaacactct atggcaagat gatggggaaa ctgcagagct
+     1261 acatttcagt tatgagtcca ataagtctat tggctctgag gaatctcgac tttgacaaca
+     1321 tgtctgttaa agactacatg gagatgctga aagagatgtc agtaatagac aacactgatg
+     1381 ttgactacac ccacagagag atagctgatc tcaatcagct cacagataag ctacaaaagc
+     1441 tgtttaagga gggaagagca gatgagctga agaactggta taaagaggaa gagttgacaa
+     1501 agcggtcatt aagaagtgtg cagaatgcat ctgagttttt aataagtgac tatttcaaga
+     1561 agaaggacat tatgaagttt atatcaacaa caggcaaggc atcaagcacc ggtaatattg
+     1621 ggaatgtcct ttcttatgca cataacctat acttgagcaa agagagccta aagatgacta
+     1681 ccgaggacac aacacagctt ctgattgaga taaagagatt atatcgactt cagggcgaac
+     1741 aaagcattga gccaattgcg ataatatgtg acaagcttga ggagcagttc agaaagctgt
+     1801 tcaaagagct acctgaggaa tgttcgctcg aatgccagac tctgttcaac gacatcagga
+     1861 actctggcag tcacagtaca gcatggaagc atgcactaag acttaaaggc acagcttacg
+     1921 aaggaatgtt ttccaggcag tacggatggt cgtatatccc agaagacatc aagccaagct
+     1981 tgacaatgct catacagact ttgtttccac acaagtttga ggagtttctg gatcgaaccc
+     2041 agcttcatcc ggaatttagg gatctgacac ctgacttcgc tttaactcag aaagtgtact
+     2101 ttaaaaagaa caggatcgta gggattcaaa acacccagtt agtgattgac tcaagcttag
+     2161 agggatctgt tgaagctgtt cctgtagttg agaagaagat gtttcctctg cctgaaactc
+     2221 cagttgatga agtgcactcc atccagagga ttatgaagaa tttcagagac aaagtcgaaa
+     2281 gagacaagag gaagaaggaa gaagagggcg acaaagcacc agcagacgaa cacatggggg
+     2341 atcagaaagg tggcaatgtt catgacccag ataagcctac ctatacaacc aaggaagcaa
+     2401 aacaagaaaa gtcagaagga acagaggtgc ccgaggtcaa tccagaatca agtggagctg
+     2461 ataaattaca gtcagctcta gcaccaatgg gctcccgtga taaggctcaa agcgtagcca
+     2521 gaggaccatt gacatacagt gacagaattc tcattgatga aaacagcaca gaactgacag
+     2581 aagaagaaga actggagaag agacagatac tactagtcga ggttggttat cagaccgatg
+     2641 tggacggcaa aataacaaca gacttcaaga agtggaaaga catcttgagg ctcctggaga
+     2701 tgttagaaat caagtgttca tttatagcct gtgcagactg cacatcaaca cctgcggaca
+     2761 actggtggat ctcagaagat aaggtgcgat gtctaaagtc ttccataagc cacctattta
+     2821 gcagcctcac aaagaactct cctgcggatg ttacggacat agtggttggc tctatcagca
+     2881 cacagaaagt tagaagctac ttgaagtctg ggtcagcaac caaaacacct atatccagta
+     2941 aggatgttaa agaaacctgg caacgcatga gacagaacat aatagaaagg ccaacaggag
+     3001 ctattatcaa ttcgggcctt gagagtgcta tgagacaagg attagttgat ggggttgtga
+     3061 tgtccaaaga agggtgtgta aaaaccattg agactttgaa acaaaactgt gacaaaatca
+     3121 cagatgaatt tgaaagaaca aagtgtaaac atgagctaaa tgaaaacaga acaaccagtg
+     3181 aaaagctact tctgggatgg ttatccgagg atcttcaagg ttgtaggtgt ggcaactgtt
+     3241 taaatatcat aaagcaaacg gttgagagca taacagagaa ctcagatagg cttgaatacc
+     3301 tagcgagtag cgctatcctc aagtcacact gtcctgattg ccatcccaaa ggggtcagtg
+     3361 ttagcaatag tactaacata atgaacagac tgcctggact agaaaagaca caacattctg
+     3421 acaataaggg ctttgaagac acaaatgacg ctctgacaga tctggatagg gtggttcggt
+     3481 taactttacc cggcaaaact gaaaaggaga gaaggattaa gagaaatgtt gaaacactaa
+     3541 tccggttgat gatgcaggct tcaggcttgg agtgcataaa actcccttca ggacagatta
+     3601 ttacccacag actaaccaag aagatcagac aagaagatga aaatgtttta ctggacaagc
+     3661 agacagaaag gctggagaga attaagaagg agctgtctga cacaaaattg agcagttact
+     3721 cagagtatgt gaagaaaacc ctaagacact ctatacaaag agtagataag cagaaggact
+     3781 ccaagtgttc agtgcctaga gcatggctag aaaagctctt aagagacttg aaggttccca
+     3841 caaaagatga agatatacta acaaacatta gagagtcaat gtcaaaaaag acaaacttca
+     3901 ttaaaaacaa tgataaactt gtgattagat ctgaagaaga gctgataaaa tttatcggaa
+     3961 acagatcggt gcagctgatg cctgacaagt caaagaaact gtttcaatca gattgcatac
+     4021 ttttcaaaga agtcactgct gaagcaatga agagatatta ctcaacacca tacgaaggag
+     4081 ttccagagat gattgtgcta ttaataaact tcttgtgcag gttcccttgg ttccaagagg
+     4141 ttgttctcta tggaaagatt tgtgaaactt tcttaagatg ctgcacggag tttagtcgtt
+     4201 ctggaattaa actcgtcaaa gtgaggcact gtgatttgaa cttggcaata aagctgccct
+     4261 ccaacaagaa agaaaacatg ttatgcactc tgtataacaa ggagatggaa ctgctgaaag
+     4321 gacctttctt cctcaatagg agacaggctg ttcttggtgc ctcgtatccg tacataacca
+     4381 tcaccctcta catgcaagtt ttacaacagc acaggtgcct tgaggtttta agtacggttg
+     4441 gtgaaaggac attcgagaac atcaagactt gcacctcaga cttgatagcc agcctatcgt
+     4501 tagaactaac atatgctgtc aatgggcagt ttgagaaggc ctatgaagtt agaaccaggc
+     4561 agtgcaagtt gggaggcaac tttctgaaca gaagcagcag agatcacttc attactgtga
+     4621 tttcaggctt gaacactgtg tacggactca ttataagaga caacctctta gcaaattctc
+     4681 aacagcaaaa caaacaactc caaatgctaa ggtttggcat gttatctggc ttaagcaggc
+     4741 tttcgtgtcc gaaagaatta gggaagaagt tctctacgag ttgcagaaga ctcgaggaca
+     4801 atattatgcg actctacttg caaagcactg tttactgctc aaacagggat gttgaacata
+     4861 acatcaatga gtggaaatct aaagacttgt gccctgaagt tacaatccca tgtttctctg
+     4921 tctatggtgt gtttgtgaat agtgaccgac agttaatctt tgacatttac aatgtacata
+     4981 tctacaataa ggagatggac aattttgatg aaggatgcat aagtgtgtta gaagagactg
+     5041 ctgaaaggca catgctatgg gaaatggatc ttcttaggtc attgagtaag gagacaaaag
+     5101 atgaaaggtc agcaagactc ctactgggat gcccaaatgt caggaaagca gttgataagg
+     5161 acggcaacaa actgagtaag gcagggagca catctcctga tgatggggat agtgactcat
+     5221 caagcttaag tgggagacgt tcttactgtt ctagtagagg aaggattcag agcatctttg
+     5281 gcaggtacaa ttcaaacaaa aaaccttttg agtttagacc aggcttagaa gttagagcag
+     5341 atccaatgaa tgattttgag caagcagtta cagacacatc gcaatatgca gaatacacgc
+     5401 caaatcaaga gagcttaatg aaagacttca tccaaattat aaggatgaat cctagccaca
+     5461 cgatgggctc cttcgagctc atccaagcag taacagaatt cggccgaagc aagtatccag
+     5521 cagagaacat agaaaaagct aagagagacc caaagaactg ggttagtata tcagaagtga
+     5581 cagaaacaac aagcattgtt tcacaaccta gaacccacat aatgctcaaa gactgtttca
+     5641 agattctcct cggcactgag aacaagaaaa tcgtcaagat gctaagaggc aagctaaaga
+     5701 agctgggtgc tatcagtaca gatatagaaa tcgggagaaa ggactgtcta gacatgctta
+     5761 acaccgttga aggtctgtca gaagagcaaa ggaagaatat tgttaatgga attttcgagc
+     5821 catctaagct gtccttctat cattggaagg aactggtcca gaaggatgtt gaggaggtgc
+     5881 tattaaccga tgatggcaat tatatatttt gttggctaaa gacactgtca tcaatgctga
+     5941 aaggtgcttt aaaaaaggag cttcgtttca tgaacaatgg aggcgtgcta gaactcagca
+     6001 atgggttctt tagtgatgat gaattcgagg agctgctaaa tgttaaaaag gaactgactg
+     6061 gaagcatgag tctagacaga gagttaaaca ccgagttact tttggcttca tggatgaagt
+     6121 gtatctacaa gcccaaggaa ggggctgcaa tagtgcaaga aggtttagaa gcactgaaag
+     6181 taatggcagg agaactgtac gagatcagac tgcagcattt agaactgacc agaatgaaga
+     6241 aggataatcc cagcgtaagc ttcaccaagg aagaagttct tgtgaaaaga cttgagaagt
+     6301 cattcctaaa gaaatttaac aaggaagcaa tgaagtttgt caacctagtg ttcttttgtt
+     6361 cactctctgc ccctttggtg tgttattaca agtctttaga gtcttacttg gtccgtcacc
+     6421 cagagatcct tgagctcaag gctaaaggtg atttagggtc tgtgattttg gacctctcag
+     6481 ttgcatcggt tatatcaaga ttggtccagc aagagacaag cattgagcta gatgcagagg
+     6541 tgctgaatga gatgaaggta cgctttgctg tcaagtattt tgtgacacta tttacggcca
+     6601 atggagagcc tttctcactc agcttgaatg atggaggtct agacgagaac ttacagaaaa
+     6661 ctacagacca gaagctgttg catcagacta aagtggtgtt taccaaaatt ggactggcag
+     6721 gaaacaacta tgacttcatg tggaccacgc aaatgatagc aaacagtaac ttcaatgtct
+     6781 gcaagcgtct gactggcaga acaactggtg aaaggcttcc caggagtgtg agaagcaaag
+     6841 taatttatga aatggtaaag cttgttgggg aaactggaat ggcaatacta caacagctgg
+     6901 cctttgctca agctctcgat tatgatcata gattttatgc agtgttggca ccaaaagccc
+     6961 aacttggagg gagtagggat ctgctagtcc aagagaccgg cacaaaagtc atccatgcca
+     7021 cgacagaaat gttcagtcga aacttattga aaacaacaca agatgatggt ctaacaaacc
+     7081 ctcacttgaa agagactata ttgaatgttg gactagatgc actaagcaca atgcgtctgc
+     7141 tggatggaag gccagtgtct gaagacagca agcttctgaa cttttataag gtaatctgca
+     7201 tctcaggaga caacaccaag tggggcccca ttcactgctg ctctttcttc tcgggtatga
+     7261 tccagcaact tttgaaagat gttccagact ggagttcatt ctacaaacta actttcatta
+     7321 agaacctttg cagacaagtt gagattcctg ccgctagtgt caagaaaatc ctgaacacac
+     7381 ttcgatttag gctcagtaac aaaggaggcg ttgaatcgag atcggaagag gaactcagga
+     7441 aagagctgag tgacagcacc gaagagtggg gagacaatga cactgttaag tttttgatca
+     7501 caacttacct aagcaaagga atcatggcgc tcaacagtta caatcacatg ggtcaaggga
+     7561 tacatcatgg cacttcatca ctgctgacct cgctaatggc agaactgttt gaagaactag
+     7621 tgatagatta ctttaaaagg cacctaccac agctcactgt aaacgtaaca catgctggaa
+     7681 gctctgatga ttatgcaaag tgcattgtag tcactgggct tctgcctaaa gaactctacg
+     7741 acaggtatac tgaggctttc tggaagcatg catgcaaatt aaaggacttc accgcagctg
+     7801 tacaaagatg ctgtcagatg aaggacagtg caaggacttt ggtgagcgac tgcttccttg
+     7861 agttctacag tgagttcatg atggggaata gagtaacccc ggctgtgatc aagtttatat
+     7921 tcactggtct cataaatagt tcagtgactt caccgcagag cttagtgcag gcttgccatg
+     7981 tgtcttctca acaagcaatg tacaacagtg tcccattgat gaccaatgca accttcactc
+     8041 tactcagaca gcaagtgttc ttctcacatg tagaagactt tgtacgcaga tatggactaa
+     8101 ttacactagg aactgtgtca tcttttggcc gcctgtttgt tcctacgttt tctggcctag
+     8161 tcagttctgc agttgcttta gaagacagtg aagtcttggc aaagtcagct gctgaaatta
+     8221 acgagaacag cattttccta gatagcagca gtctttctaa tctggacagt ctgaaagaca
+     8281 tcgaccgtgc taaagctagg gatgatgaga gttctataag tgaaacaact attgagtcta
+     8341 ctgagtcagg aagttcctcg tctagtttca catttgagct tacaagaccg ctatctgaaa
+     8401 cagaactaca gtttcttaaa actttaaagt cgactgcttc tgtaactgcg tgtgggatca
+     8461 tgcaggacaa gttgactcca ctatatgcag atagtcaaga aggtgcattg gacaagtaca
+     8521 atgtgttgta caatagcaga ttgactgcat cttgtgattg gctcagacaa ggaaggaaaa
+     8581 ggggacctct tgagttagct aggagactgc aatgtattct aaacattcta attgtaggtt
+     8641 actatagatc atttggtagt gacgggacag ataagcaagt taaggcatct ctcaacaggg
+     8701 acgacaatag agttatcgaa gaccccatga ttcaactagt acctgaaaag ctgagaagag
+     8761 agctagagag gttgggagtc tctaggatgg agatcgacga actaatgcct tctgtaaagc
+     8821 cagacgaaac tctctgtcag ttggctgcca aaaagctcat cagcctgaac gtcgccacag
+     8881 aagagtactc tgcagaagta tctagactaa aacagacctt gacagccaga aatgtcctgc
+     8941 atggccttgc tggaggtatc aaggagctgt cacttcctat ttataccatc tttctcaagt
+     9001 cgtatttttt taaagacaat gtcttcttag accttgagga cagatggtca accaagcaca
+     9061 gctctaatta tagggacagc tctggcagga tgctgactgg tagagtgatc acaaaattca
+     9121 ctcattggct ggacacattt ttgaactgca cagtaagcat caacagaaca caagaaatca
+     9181 aggacagttc tcttttcaat cctgacctca gatgtataaa cattttggtg agggaagaca
+     9241 acataaggga gatgtcaatt gttcaaagtc acctcagggt cgtcacgtca gagcttaaca
+     9301 acctcaatct tcagttctcc gactgcaaca gacaaaaact gaaggtggtt gagtccagac
+     9361 cacctgaatg tgaactagag gccaacaaag cggtaattgt aaagtcaaaa ctgttcagtg
+     9421 ctgttgagca ggttagactt gcaaacaacc ctgcagtggt gatgggctac cttcttgagg
+     9481 agtcatcaat atcagaggta aaacccacca aggtggactt ttccaatctg ttgaaagaca
+     9541 ggtttaagct gatgcagttt tttccttccg tctttgcttt gttgaagcac cttcagtttg
+     9601 agtcgtcaga gatggagaag ctaggggcac cagtagatat gcagcaagtg tcaaagtatt
+     9661 caaaccatct gactttatta tgtagaatga tacagcaggc taggccttca ctaaccgtct
+     9721 tctacatgtt gaaaggtaat caaatgaaca ctgagcccac ggtgtctgag ctggtcagtt
+     9781 atggaataaa ggaaggcagg tacctaagac tgcctgaggt aggtcttgat gccagtacat
+     9841 actcggtgaa gtactggaaa atacttcact gcatctctgc cataggtgaa ttaccactta
+     9901 gtgatagaga caagacatct cttctcataa gtttcctcaa ctggaaagtt tcacctgact
+     9961 cagtggcaca agattgtccg ctctacaaac aggaacatgc tgtcatcagt gaatttgcag
+    10021 gacaggttgt tgtgaacaca cttgccagtg agcttagctc tgttaggaga gatgctgaaa
+    10081 gagacagcct cgctgatctg gttgattatg tgaattctcc cacagaatta ctcaagaaga
+    10141 agccttacct tggcacaaca tgcaaatttg caacttgggg agagaacaac aggaacggca
+    10201 agttcacata cagcagtcga tcaggagagg caattggcat cttcatagca gggaaactcc
+    10261 acatccatct gagcagggag tcgactggtc tactatgtga ggtagaaagg aatgtgctcg
+    10321 gctggcttgg aagacgaagg acagatatcc taacaaagga gcagcaccag caatttctag
+    10381 agttcctacc tacactaagc gaagtgtcac agaaaaatag ggatggcacc acacaaggca
+    10441 tctgtcagga caacaccaat gtccgaatgc taaaatttgt gcacccgaaa aagaacactc
+    10501 ctgttgtcaa gatcaaaggg cagatactaa cggtaaaaaa acaggtcagc ttcgaggcag
+    10561 aaagtgaacc taggcttatg tggggacatg gttgtgtttc agttgtttac gatgagtgtg
+    10621 aaactcagac tacataccat gaaaatttac ttaaaataaa acagatggtt gatagcacaa
+    10681 cagatagagc cagaaatctc cctcagtcag tattctcaga caccaaggtg attcttacca
+    10741 gaattaagtt caaatcaaac ctcctgctga attcactttg cttactacac agcttcttaa
+    10801 gacacacaac cactgatgct gtactggagg cagaaagtaa gtgtgcactg ttagagaggt
+    10861 acctgcagtc aggaggggtg agagtgaggt cagcagacga aactttagag aagaagctat
+    10921 gcagcaaggt gatagagtgt aagcttgagc aaacccttga tgaagagatt ggagtttgtg
+    10981 acagccttaa tagagtgttt tctgaaactc cgatgcctgt cagtagctgg tcggaagtgc
+    11041 aatgttatat tgaggatgtg ggtttcagta acatactaat aacacttgac aaaacaagca
+    11101 ccaaaggtga actgatctgg aaattttctc tggacaacac aagcaatata gctggcagca
+    11161 tcaaggatat aaggtcgctt gtttcctaca taagtaccga aactatacca aaattcttac
+    11221 tacccttctt gctctttgag aatctactct ccagcatcct caagcagagc ttaacagtga
+    11281 aggagacatt gcatgctaca ggcatttctg acaaagaaat tgaagcagtt gccaccttat
+    11341 ttgcttactg ctttcaaaac gataaggtta agaggaaagg cccccgatgt tcaatggcct
+    11401 ctatcctgaa cttgaccaaa ggtgattggg tggagatagg gcagagaatg aaactgcagg
+    11461 cacatctaga ttcagatact gttcgattga gtgttcagct ggcgatttct actgatgcag
+    11521 aacggacagc agataaaaaa gctcgagtgt caatggcaaa gaaggtgata gcttctcaac
+    11581 taacattact attgcaagag gatggcattg acatcaagaa gcttaaggac atagctgtta
+    11641 acgttcaggt taagaaggaa aagactggag aagtgcttga tttcacactc cttgatgacc
+    11701 aggcaggcaa tctaaactac cttggagtgt tagagacaat gatggatagg aggaagaagg
+    11761 gtcctgccat cagtgcactt gaagacttct ttctgcttct aacaggcatg gcagaaagca
+    11821 atatacaaca agacacagca gtcaaaagtg aggaggcctg cagtgatgac atatgtctcg
+    11881 aagatcttct tgaacctagt gaagaatcat ccagcagctc aggtacactg gataaagaaa
+    11941 cggtacctga caaagtgaca ttcaactggg actctgatag tgattaagct tcagaatgta
+    12001 taatcaggat ttgcattaat aggggtgtgg gggaacgatt tctttgagat ttct
+//
+
+LOCUS       HM991317                 345 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 615525 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991317
+VERSION     HM991317.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 345)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 345)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..345
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="615525"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1961"
+     CDS             <1..>345
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67454.1"
+                     /translation="KVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAVLAPKAQLG
+                     GSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLDALSTMRLL
+                     DGRPVSEDSKLLN"
+ORIGIN      
+        1 aaagtgatct atgaaatggt gaagcttgtt ggggaaactg gaatggcaat actacaacag
+       61 ctggcttttg ctcaagctct taattatgat catagatttt atgcagtact ggcaccgaaa
+      121 gcccaacttg gtgggagtag agatctgcta gtccaggaaa ctggcacaaa agtcatccat
+      181 gctacaacag agatgttcag tcgaaactta ttgaaaacaa cacaagatga tggactgaca
+      241 aaccctcact tgaaagaaac tatactaaat gttggactag atgcactgag cacaatgcgt
+      301 ctgctagatg gaaggccagt gtctgaagac agcaagcttc tgaac
+//
+
+LOCUS       HM991324                 335 bp    cRNA    linear   VRL 26-JUL-2011
+DEFINITION  Nairobi sheep disease virus strain 623614 RNA-dependent RNA
+            polymerase-like gene, partial sequence.
+ACCESSION   HM991324
+VERSION     HM991324.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 335)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 335)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..335
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="623614"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1962"
+     misc_feature    <1..>335
+                     /note="similar to RNA-dependent RNA polymerase"
+ORIGIN      
+        1 gtgatctatg aaatggtgaa gcttgttggg gaaactggaa tggcaatact acaacaactg
+       61 gcttttgctc aagctcttaa ttatgatcat agattttatg cagtattggc accgaaagcc
+      121 caacttgggg ggagtaggga tctgctagtt caggaaactg gcacaaaagt catccatgcc
+      181 acaacagaga tgttcagtcg aaacttgttg aaaacaacac aagatgatgg actgacaaac
+      241 cctcacttga aagaaaccat actaaatgtt ggactagatg cactgagcac aatgcgtctg
+      301 ctagatggaa ggccagtgtc tgaagatagc aagct
+//
+
+LOCUS       HM991308                 374 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 40350 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991308
+VERSION     HM991308.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 374)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 374)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..374
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="40350"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="2001"
+     CDS             <1..>374
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67449.1"
+                     /translation="PRSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAVLA
+                     PKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLDAL
+                     STMRLLDGRPVSEDSKLLNFYKV"
+ORIGIN      
+        1 cccagaagtg tgagaagcaa ggtgatctat gaaatggtaa agcttgttgg ggaaactgga
+       61 atggcaatac tacaacaact ggcttttgct caagctctta attatgatca tagattttat
+      121 gcagtactgg caccgaaagc tcaacttggg gggagtaggg atctgttagt ccaggaaact
+      181 ggcacaaaag tcatccatgc tacaacagag atgttcagtc gaaacttgtt gaaaacaaca
+      241 caagatgatg gactgacaaa ccctcacttg aaagaaacca tactgaatgt cggactggat
+      301 gcactgagca caatgcgcct gctagatgga aggccggtgt ctgaagatag caagcttctg
+      361 aacttctata aagt
+//
+
+LOCUS       HM991319                 350 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 615566 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991319
+VERSION     HM991319.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 350)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 350)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..350
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="615566"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1961"
+     CDS             <1..>350
+                     /codon_start=2
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67456.1"
+                     /translation="VRSKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAVLAPKA
+                     QLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLDALSTM
+                     RLLDGRPVSEDSKL"
+ORIGIN      
+        1 tgtgagaagc aaggtgatct atgaaatggt gaagcttgtt ggagaaactg gaatggcaat
+       61 actacaacaa ctggcttttg ctcaagctct taattatgat catagatttt atgcagtatt
+      121 ggcaccaaaa gcccaactcg gggggagtag ggatctgcta gtccaggaaa ctggcacaaa
+      181 agtcatccat gctacaacag agatgttcag tcgaaacttg ttgaaaacaa cacaggatga
+      241 tggactgaca aaccctcact tgaaagaaac catactaaat gtcggactag atgctttgag
+      301 cacaatgcgt ctgctagatg gaaggccagt gtctgaagat agcaagcttg
+//
+
+LOCUS       AY359525                 442 bp    cRNA    linear   VRL 26-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 708 RNA-dependent RNA polymerase
+            gene, partial cds.
+ACCESSION   AY359525
+VERSION     AY359525.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 442)
+  AUTHORS   Honig,J.E., Osborne,J.C. and Nichol,S.T.
+  TITLE     The high genetic variation of viruses of the genus Nairovirus
+            reflects the diversity of their predominant tick hosts
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 442)
+  AUTHORS   Honig,J.E., Osborne,J.C. and Nichol,S.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-AUG-2003) Special Pathogens Branch, Division of Viral
+            and Rickettsial Diseases, Centers for Disease Control and
+            Prevention, 1600 Clifton Rd. NE, MS G-14, Atlanta, GA 30333, USA
+FEATURES             Location/Qualifiers
+     source          1..442
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="708"
+                     /db_xref="taxon:194540"
+     CDS             <1..>442
+                     /note="L polymerase"
+                     /codon_start=2
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AAQ93050.1"
+                     /translation="VCKRLTGRTTGERLPRSVRSKVIYEMVKLVGETGMAILQQLAFA
+                     QALNYDHRFYAVLAPKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNP
+                     HLKETILNVGLDALSTMRLLDGRPVSEDSKLLNFYKVICISGDNT"
+ORIGIN      
+        1 tgtttgcaag cgtctgactg gcagaacaac tggtgaaagg cttcccagaa gtgtaagaag
+       61 caaggtgatt tatgaaatgg tgaagcttgt cggggaaact ggaatggcaa tactacaaca
+      121 gctggccttt gctcaagctc ttaattatga tcatagattt tatgcagtat tagcgccgaa
+      181 agcccaactt ggagggagta gagatctgtt agttcaggag actggaacaa aagtcatcca
+      241 tgccacaaca gagatgttca gtcgaaactt gttgaaaaca acacaagatg atggactgac
+      301 aaaccctcac ttgaaagaaa ccatactgaa tgtcggacta gatgcactga gcacaatgcg
+      361 tctactggat gggaggccag tgtctgaaga cagcaagctt cttaactttt ataaagtgat
+      421 ctgcatttca ggagacaata ca
+//
+
+LOCUS       HM991316                 341 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 615198 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991316
+VERSION     HM991316.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 341)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 341)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..341
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="615198"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1961"
+     CDS             <1..>341
+                     /codon_start=3
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67453.1"
+                     /translation="SKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAVLAPKAQL
+                     GGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLDALSTMRL
+                     LDGRPVSEDSK"
+ORIGIN      
+        1 gaagcaaggt gatctatgaa atggtgaagc ttgttgggga aactggaatg gcaatactac
+       61 aacaactggc ttttgctcaa gctcttaatt atgatcatag attttatgca gtattggcac
+      121 cgaaagccca acttgggggg agtagggatc tgctagtcca ggaaactggc acaaaagtca
+      181 tccacgctac aacagagatg ttcagccgaa acttgttgaa aacaacacaa gatgatggac
+      241 tgacaaaccc tcacttgaaa gaaaccatac taaatgtcgg actagatgca ctgagcacaa
+      301 tgcgtctgct agatggaagg ccagtgtctg aagatagcaa g
+//
+
+LOCUS       HM991320                 347 bp    cRNA    linear   VRL 26-JUL-2011
+DEFINITION  Nairobi sheep disease virus strain 616287 RNA-dependent RNA
+            polymerase-like gene, partial sequence.
+ACCESSION   HM991320
+VERSION     HM991320.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 347)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 347)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..347
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="616287"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1961"
+     misc_feature    <1..>347
+                     /note="similar to RNA-dependent RNA polymerase"
+ORIGIN      
+        1 gtgagaagca aggtgatcta tgaaatggtg aagcttgttg gggaaactgg aatggcaata
+       61 ctacaacaac tggcttttgc tcaagctctt aattatgatc atagatttta tgcagtattg
+      121 gcaccgaaag cccaacttgg ggggagtagg gatctgctag tccaggaaac tggcacaaaa
+      181 gtcatccacg ctacaacaga gatgttcagc cgaaacttgt tgaaaacaac acaagatgat
+      241 ggactgacaa accctcactt gaaagaaacc atactaaatg tcggactaga tgcactgagc
+      301 acaaatgcgt ctgctagatg gaaggccagt gtctgaagat agcaagc
+//
+
+LOCUS       HM991321                 355 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 621161 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991321
+VERSION     HM991321.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 355)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 355)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..355
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="621161"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1962"
+     CDS             <1..>355
+                     /codon_start=3
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67457.1"
+                     /translation="VRSKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAVLAPKA
+                     QLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLDALSTM
+                     RLLDGRPVSEDSKLL"
+ORIGIN      
+        1 gtgtgagaag caaggtgatc tatgaaatgg tgaagcttgt tggggaaact ggaatggcaa
+       61 tactacaaca actggctttt gctcaagctc ttaactatga tcatagattt tatgcagtac
+      121 tggcaccgaa agcccaactt gggggaagta gggatctgct agtccaggaa actggcacaa
+      181 aggtcatcca tgctacaaca gagatgttca gtcgaaactt gttgaaaaca acacaagatg
+      241 atggactgac aaaccctcac ctgaaagaaa ccatactaaa tgtcggacta gatgcactga
+      301 gcacaatgcg tctgctagat gggaggccag tgtctgaaga cagcaagctt ctgaa
+//
+
+LOCUS       HM991312                 350 bp    cRNA    linear   VRL 26-JUL-2011
+DEFINITION  Nairobi sheep disease virus strain 40627 RNA-dependent RNA
+            polymerase-like gene, partial sequence.
+ACCESSION   HM991312
+VERSION     HM991312.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 350)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 350)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..350
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="40627"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="2002"
+     misc_feature    <1..>350
+                     /note="similar to RNA-dependent RNA polymerase"
+ORIGIN      
+        1 tgagaggctt cccagaagtg tgagaagtaa ggtgatttat gaaatggtga agcttgttgg
+       61 ggaaactgga atggcaatac tacaacaact ggcatttgct caagctctta attatgatca
+      121 tagattttat gcagtattgg caccgaaagc ccaacttggg gggagtaggg atctgctagt
+      181 ccaggaaaca ggcacaaaag tcatccatgc tacaacagag atgttcagtc gaaacttgtt
+      241 gaaaacaaca caagatgatg gactgacaaa ccctcacttg aaagaaacca tactaaatgt
+      301 tggactagat gcactgagaa caatgcgtct gctagatgga aggccggtgt
+//
+
+LOCUS       HM991313                 391 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 62873 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991313
+VERSION     HM991313.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 391)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 391)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..391
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="62873"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1962"
+     CDS             <1..>391
+                     /codon_start=3
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67452.1"
+                     /translation="LPRSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAVL
+                     APKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLDA
+                     LSTMRLLDGRPVSEDSKLLNFYKVICIS"
+ORIGIN      
+        1 ggcttcccag aagtgtgaga agcaaggtga tctatgaaat ggtgaagctt gttggggaaa
+       61 ctggaatggc aatactacaa caactggctt ttgctcaagc tcttaattat gatcatagat
+      121 tttatgcagt attggcaccg aaagcccaac ttggggggag tagggatctg ctagtccagg
+      181 aaactggcac aaaagtcatc cacgctacaa cagagatgtt cagccgaaac ttgttgaaaa
+      241 caacacaaga tgatggactg acaaaccctc acttgaaaga aaccatacta aatgtcggac
+      301 tagatgcact gagcacaatg cgtctgctag atggaaggcc agtgtctgaa gatagcaagc
+      361 ttctgaactt ctataaagta atctgtatat c
+//
+
+LOCUS       HM991314                 354 bp    cRNA    linear   VRL 26-JUL-2011
+DEFINITION  Nairobi sheep disease virus strain 62874 RNA-dependent RNA
+            polymerase-like gene, partial sequence.
+ACCESSION   HM991314
+VERSION     HM991314.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 354)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 354)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..354
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="62874"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1962"
+     misc_feature    <1..>354
+                     /note="similar to RNA-dependent RNA polymerase"
+ORIGIN      
+        1 aactggtgag aggcttccca gaagtgtgag aagcaaggtg atctatgaaa tggtgaagct
+       61 tgttggagaa actggaatgg caatactaca acaactggct tttgctcaag ctcttaatta
+      121 tgatcataga ttttatgcag tattggcacc gaaagcccaa ctcgggggga gtagggatct
+      181 gctagtccag gaaactggca caaaagtcat ccatgctaca acagagatgt tcagtcgaaa
+      241 cttgctaaaa acaacacagg atgatggact gacaaaccct cacttgaaag aaaccatact
+      301 aaatgtcgga ctagatgcat tgagcacaat gcgtctgcta gatggaaggc cagt
+//
+
+LOCUS       HM991325                 376 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 623615 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991325
+VERSION     HM991325.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 376)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 376)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..376
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="623615"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1962"
+     CDS             <1..>376
+                     /codon_start=2
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67459.1"
+                     /translation="VRSKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAVLAPKA
+                     QLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLDALSTM
+                     RLLDGRPVSEDSKLLNFYKVICI"
+ORIGIN      
+        1 tgtgagaagt aaggtaatct atgaaatggt gaagcttgtt ggggaaactg gaatggcaat
+       61 actacaacag ctggcctttg ctcaagctct taattacgat cataggtttt atgcagtatt
+      121 agcaccaaaa gcccagcttg gagggagcag ggatctgcta gtacaagaga ctggtacaaa
+      181 agtcatccat gccaccacag agatgtttag tcggaactta ttgaaaacaa cacaagatga
+      241 tggcctaaca aaccctcact tgaaagaaac catactgaat gtcggacttg atgcactgag
+      301 tacaatgcgt ttgttagacg gaaggccagt gtctgaagac agcaagcttc tgaactttta
+      361 caaagtaatc tgtata
+//
+
+LOCUS       HM991322                 288 bp    cRNA    linear   VRL 26-JUL-2011
+DEFINITION  Nairobi sheep disease virus strain 621604 RNA-dependent RNA
+            polymerase-like gene, partial sequence.
+ACCESSION   HM991322
+VERSION     HM991322.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 288)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 288)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..288
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="621604"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1962"
+     misc_feature    <1..>288
+                     /note="similar to RNA-dependent RNA polymerase"
+ORIGIN      
+        1 aaggtaattt atgaaatggt gaagcttgtt ggagaaactg gaatggcaat actacaacag
+       61 ctggcctttg ctcaagctct taattatgat cataggtttt atgcagtatt agcaccaaaa
+      121 gcccagcttg gagggagcag ggatctgcta gtacaagaga ctggtacaaa ggtcatccat
+      181 gccactacag agatgttcag tcggaactta ttaaaaacaa cacaagatga tggcctgaca
+      241 aaccctcact tgaaagaaac catactgaat gtcgggacta gatgcatc
+//
+
+LOCUS       HM991315                 375 bp    cRNA    linear   VRL 26-JUL-2011
+DEFINITION  Nairobi sheep disease virus strain 67552 RNA-dependent RNA
+            polymerase-like gene, partial sequence.
+ACCESSION   HM991315
+VERSION     HM991315.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 375)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 375)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..375
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="67552"
+                     /host="Hyalomma sp."
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1967"
+     misc_feature    <1..>375
+                     /note="similar to RNA-dependent RNA polymerase"
+ORIGIN      
+        1 tgtgagaagc aaggtgatct atgaaatggt gaagcttgtt ggggaaactg gaatggcaat
+       61 actacaacaa ctggcttttg ctcaagctct taattatgat catagatttt atgcagtatt
+      121 ggaccgaaag cccaacttgg ggggagtaga gatctgctag tccaggaaac tggcactaaa
+      181 gtcatccatg ctacaacaga gatgttcagt cgaaacttgt tgaaaacaac acaagatgat
+      241 ggactgacaa accctcactt gaaagaaacc atactaaatg tcggactaga tgcactgagc
+      301 acaatgcgtc tgctagatgg aggcagtgtc tgaagatagc aagcttctga cttctataag
+      361 aatctgatat aggag
+//
+
+LOCUS       HM991307                 314 bp    cRNA    linear   VRL 26-JUL-2011
+DEFINITION  Nairobi sheep disease virus strain 6233 RNA-dependent RNA
+            polymerase-like gene, partial sequence.
+ACCESSION   HM991307
+VERSION     HM991307.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 314)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 314)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..314
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="6233"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1962"
+     misc_feature    <1..>314
+                     /note="similar to RNA-dependent RNA polymerase"
+ORIGIN      
+        1 gaagtgtgag aagtaaggta atttatgaaa tggtgaagct tgttggagaa actggaatgg
+       61 caatactaca acagctggcc tttgctcaag ctcttaatta tgatcatagg ttttatgcag
+      121 tattagcacc aaaagcccag cttggaggga gcagggatct gctagtacaa gagactggta
+      181 caaaggtcat ccatgccact acagagatgt tcagtcggaa cttattaaaa acaacacaag
+      241 atgatggcct gacaaaccct cacttgaaag aaaccatact gaatgtcgga cttgatgctc
+      301 tgagtacaat gcgt
+//
+
+LOCUS       AY359526                 442 bp    cRNA    linear   VRL 26-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain Ganjam G619 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   AY359526
+VERSION     AY359526.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 442)
+  AUTHORS   Honig,J.E., Osborne,J.C. and Nichol,S.T.
+  TITLE     The high genetic variation of viruses of the genus Nairovirus
+            reflects the diversity of their predominant tick hosts
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 442)
+  AUTHORS   Honig,J.E., Osborne,J.C. and Nichol,S.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-AUG-2003) Special Pathogens Branch, Division of Viral
+            and Rickettsial Diseases, Centers for Disease Control and
+            Prevention, 1600 Clifton Rd. NE, MS G-14, Atlanta, GA 30333, USA
+FEATURES             Location/Qualifiers
+     source          1..442
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="Ganjam G619"
+                     /db_xref="taxon:194540"
+     CDS             <1..>442
+                     /note="L polymerase"
+                     /codon_start=2
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AAQ93051.1"
+                     /translation="VCKRLTGRTTGERLPRSVRSKVIYEMVKLVGETGMAILQQLAFA
+                     QALNYDHRFYAVLAPKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNP
+                     HLKETILNVGLDALSTMRLLDGRPVSEDSKLLNFYKVICISGDNT"
+ORIGIN      
+        1 tgtttgcaag cgtctgactg gtagaacaac tggtgaaagg cttcccagaa gtgtgagaag
+       61 caaggtaatt tatgaaatgg tgaagcttgt tggagaaact ggaatggcaa tactacaaca
+      121 gctggccttt gctcaagccc ttaattatga ccatagattt tatgcagtat tagcacctaa
+      181 agcccagctt ggagggagca gggatctgct agtacaagag actggtacaa aggtcatcca
+      241 cgccacaaca gaaatgttca gtcgaaattt actgaaaaca acacaagacg atggtttgac
+      301 aaaccctcac ttgaaggaaa ccatactgaa tgttggactg gatgcactga gcacgatgcg
+      361 cttgctagac ggaaggccag tgtctgaaga cagcaagctt ctgaactttt acaaagtaat
+      421 ctgtatatca ggagacaaca ca
+//
+
+LOCUS       HM991326                 370 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 623956 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991326
+VERSION     HM991326.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 370)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 370)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..370
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="623956"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1962"
+     CDS             <1..>370
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67460.1"
+                     /translation="ERLPRSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYA
+                     VLAPKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGL
+                     DALSTMRLLDGRPVSEDSKLL"
+ORIGIN      
+        1 gaaaggcttc ccagaagtgt gagaagtaag gtaatttatg aaatggtgaa gcttgttgga
+       61 gaaactggaa tggcaatact acaacagctg gcctttgctc aagctcttaa ttatgatcat
+      121 aggttttatg cagtattagc accaaaagcc cagcttggag ggagcaggga tctgctagta
+      181 caagagactg gtacaaaggt catccatgcc actacagaga tgttcagtcg gaacttatta
+      241 aaaacaacac aagatgatgg cctgacaaac cctcacttga aagaaaccat actgaatgtc
+      301 ggacttgatg ctctgagtac aatgcgtttg ttggacggaa ggccagtgtc tgaagatagc
+      361 aagcttctga
+//
+
+LOCUS       HM991311                 358 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 40623 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991311
+VERSION     HM991311.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 358)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 358)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..358
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="40623"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="2002"
+     CDS             <1..>358
+                     /codon_start=2
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67451.1"
+                     /translation="RSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAVLAP
+                     KAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLDALS
+                     TMRLLDGRPVSEDSKLL"
+ORIGIN      
+        1 cagaagtgtg agaagtaagg taatttatga aatggtgaag cttgttggag aaactggaat
+       61 ggcaatacta caacagctgg cctttgctca agctcttaat tatgatcata ggttttatgc
+      121 agtattagca ccaaaagccc agcttggagg gagcagggat ctgctagtac aagagactgg
+      181 tacaaaggtc atccatgcca ctacagagat gttcagtcgg aacttattaa aaacaacaca
+      241 agatgatggc ctgacaaacc ctcacttgaa agaaaccata ctgaatgtcg gacttgatgc
+      301 tctgagtaca atgcgtttgt tggacggaag gccagtgtct gaagatagca agcttctg
+//
+
+LOCUS       HM991323                 380 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 622469 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991323
+VERSION     HM991323.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 380)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 380)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..380
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="622469"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1962"
+     CDS             <1..>380
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67458.1"
+                     /translation="RLPRSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAV
+                     LAPKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLD
+                     ALSTMRLLDGRPVSEDSKLLNFYKV"
+ORIGIN      
+        1 aggcttccca gaagtgtgag aagtaaggta atttatgaaa tggtgaagct tgttggagaa
+       61 actggaatgg caatactaca acagctggcc tttgctcaag ctcttaatta tgatcatagg
+      121 ttttatgcag tattagcacc aaaagcccag cttggaggga gcagggatct gctagtacaa
+      181 gagactggta caaaggtcat ccatgccact acagagatgt tcagtcggaa cttattaaaa
+      241 acaacacaag atgatggcct gacaaaccct cacttgaaag aaaccatact gaatgtcgga
+      301 cttgatgctc tgagtacaat gcgtttgttg gacggaaggc cagtgtctga agatagcaag
+      361 cttctgaact tttacaaagt
+//
+
+LOCUS       HM991318                 360 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 615526 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991318
+VERSION     HM991318.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 360)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 360)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..360
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="615526"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1961"
+     CDS             <1..>360
+                     /codon_start=3
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67455.1"
+                     /translation="LPRSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAVL
+                     APKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLDA
+                     LSTMRLLDGRPVSEDSK"
+ORIGIN      
+        1 ggcttcccag aagtgtgaga agcaaggtaa tttatgaaat ggtgaagctt gttggagaaa
+       61 ctggaatggc aatactacaa cagctggcct ttgctcaagc ccttaattat gaccatagat
+      121 tttatgcagt attagcacct aaagcccagc ttggagggag cagggatctg ctagtacaag
+      181 agactggtac aaaggtcatc cacgccacaa cagaaatgtt cagtcgaaat ttactgaaaa
+      241 caacacaaga cgatggtttg acaaaccctc acttgaagga aaccatactg aatgttggac
+      301 tggatgcact gagcacgatg cgcttgctag acggaaggcc agtgtctgaa gacagcaagc
+//
+
+LOCUS       EU697951               12081 bp    cRNA    linear   VRL 01-NOV-2009
+DEFINITION  Nairobi sheep disease virus strain 708 segment L RNA-dependent RNA
+            polymerase gene, complete cds.
+ACCESSION   EU697951
+VERSION     EU697951.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 12081)
+  AUTHORS   Yadav,P.D., Khristova,M., Vincent,M.J. and Nichol,S.T.
+  TITLE     Genetic diversity of Ganjam virus in India and close genetic link
+            with Nairobi sheep disease virus in Africa based on partial and
+            complete genome sequencing
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 12081)
+  AUTHORS   Yadav,P.D., Khristova,M., Vincent,M.J. and Nichol,S.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-MAY-2008) Special Pathogen Branch, Division of Viral
+            & Rickettsial Diseases, Centers for Disease Control and Prevention,
+            1600 Clifton Rd. NE, Atlanta, GA 30333, USA
+FEATURES             Location/Qualifiers
+     source          1..12081
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="708"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /lab_host="mouse brain culture"
+                     /country="Kenya"
+     primer_bind     1..22
+     CDS             43..12018
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="ACH99799.1"
+                     /translation="MEFLNSIPWEEVVPGQFTANPGFQVTDYFEIVRQPADGNCFYHS
+                     IAELFVPNKNDFSFRLVKQHLELAARRFFEEEPEAKGLDLGLEKYLEVAMCDNEWGGS
+                     LEASMLAKHLDITIVIWVIEGPSRVAAAVKFGPGDVAGAINLLHTGYNHFDALRLLVD
+                     DSQASRQPRDITERIEIVEEVLSEDREETFFEEDLLNFATAETIEEKLTRQDKKVQDE
+                     MQRRAVLLGKIIKKGENIPVRVGRVLDCLFNCKLFVELRDGLLVLKPESKEDPSIGCS
+                     LRQLGHKLLTRDKQIKQEYAKSKLYLTKDLLDHLDAGGLLRSAFPGMGLERNLQFLHS
+                     EILLDVCTVVVAVLLSSFLYGSNNRNKKTFITNCLLNTSLSGKRVFKALGKLTGVTLY
+                     RSPRSALSHVCQALYGKMMGKLQSFISVMSPISLLALRNLDFDNMSVKDYMEMLKEMS
+                     VIDNTDVDYTHREIADLNQLTDKLQKLFKEGRAEELKNWFKEEELTKRSLRSVQNASE
+                     FLISDYFKRKDIMKFISTTGKASSTGNIGNILSYAHNLYLSKESLKMTTEDTTQLLIE
+                     IKRLYKLQGEQSIEPIAIICDKLEEQFRKLFKELPEECSLECQTLFNDIRNSGSHSTA
+                     WKHALRLKGTAYEGMFSRQYGWSYIPEDIKPSLTMLIQTLFPHKFEEFLDRTQLHPEF
+                     RDLTPDFALTQKVYFKKNKIVEIQNTQLVIDSSLEGSVEAVPVVEKKMFPLPETPVDE
+                     VHSIQRIMKSFRDKVEQDKKRKEEEGDKAPTDEHVKDQIGDGVQDQDEPALTTKGAKQ
+                     EETEETEETKASPESKGANKLQPALALTTSRGTAQSLTRGPLTYSDRILIDENSAELT
+                     EEEELEKRQILLVEVGYQTDVDGKITTDFKKWKDILKLLEMLEIKCSFIACADCTSTP
+                     ADNWWISEDKVRCLKSSISHLFSSLTKNSPADVTDIVVGSISTQKVRSYLKSGSATKT
+                     PVSSKDVKETWQRMRQNIMERPTGAVINSGLESAMRQGLVDGVVMSKEGCVKTIETLK
+                     QNCDKITDGFERTKYKHELNENRTTSEKLLLGWLSEDLQGCRCSSCLNIIKQTVESIT
+                     ENSDRLEYLASSTILKSHCPDCHPRGVSVSNSTNIMNRLPGLENIQHSDNKGFEDTNE
+                     ALTDLDRVVRLTLPGKTEKERRIKRNVETLIRLMMQASGLECIKLPSGQIITHRLTRK
+                     IKQEDENVLLDKQTEKLERIKKELSDTKLSSYSEYVKKTLGYSIQRVDKQKESKCSVP
+                     RAWLEKLLRDLKVPTKDEDILTNIRESMSKKTNFVENNDKLVIRSEEELIRFIENRSV
+                     QLMPDKSRKLFQSDCILFKEVTAEAMKRYYSTPYEGVPEMIVLLINFLCRFPWFQEVV
+                     LYGKICETFLRCCTEFSRSGIKLVKVRHCDLNLAIKLPSNKKENMLCTLYNKEMELLK
+                     GPFFLNRRQAVLGASYPYIIITLYMQVLQQHRCLEVLRTVGERTFENIKTCTSDLIAS
+                     LMLELTYAVNGQFEMAYGVRTRQCKLGGNFLNRSSRDHFITVISGLNTVYGLIIRDNL
+                     LANSQQQNKQLQMLRFGMLSGLSRLSCPKELGKKFSTSCRRLEDNIMRLYLQSTVYCS
+                     NRDVEHNINEWKLKDLCPEVTIPCFSVYGVFVNSDRQLIFDIYNVHIYNKEMDNFDEG
+                     CISVLEETAERHMLWEMDLLRSLSKETKDERLARLLLGCPNVRKAVDKEGNKLSKARH
+                     ASPEDEDSDSSSLSGRRSYCSSKGRIQSIFGRYNSNKKPFEFRPGLEVSADPMNDFEQ
+                     AVTDTSQYAEYTPNQESLMKDFVQIIRMNPSHTMGSFELIQAVTEFGRSKYPAENIEK
+                     AKRDPKNWVSISEVTETTSIVSQPRTHIMLKDCFKILLGTENKKIVKMLRGKLKKLGA
+                     ISTDIEIGRKDCLDMLNTVEGLSEEQRKNIVNGIFEPSKLSFYHWKELVQKDVEEVLL
+                     TDDGNYIFCWLKTLSSMLKGALKKELRFMNSGGVLELNNGFFSEDEFEELLNVKKELT
+                     GSMSLDRELNTELLLASWLKCIYKPKEGAAIVQEGLEALKVMAGELYEIRLQHLELTR
+                     MKKDNPSVSFTKEEVLVKRLEKSFLKKFNKEAMKFVNLVFFCSLSAPWCIHYKSLESY
+                     LVRHPEILELKAKGDLGSVILDLSVASAISRLVQQETSIEMDVEVLNEMKVRFAVKYF
+                     VTLFTANGEPFSLSLNDGGLDENLQKTTDEKLLHQTKVVFTKIGLAGNNYDFMWTTQM
+                     IANSNFNVCKRLTGRTTGERLPRSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDH
+                     RFYAVLAPKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETIL
+                     NVGLDALSTMRLLDGRPVSEDSKLLNFYKVICISGDNTKWGPIHCCSFFSGMIQQLLK
+                     DVPDWSSFYKLAFIKNLCRQVEIPAASVKKILNTLRFRLSNKGGVESKSEEELRKELS
+                     DSTEEWGDNDTVKFLITTYLSKGIMALNSYNHMGQGIHHATSSLLTSLMAELFEELVI
+                     DYFKRHLPQLTVNVTHAGSSDDYAKCIVATGLLPKELYDRYSEAFWKHACKIKNFTAA
+                     VQRCCQMKDSAKTLVGDCFLEFYSEFMMGNRVTPAVIKFIFTGLINSSVTSPQSLVQA
+                     CHVSSQQAMYNSVPLMTNATFTLLRQQVFFSHVEDFVRRYGLITLGTVSSFGRLFVPT
+                     FSGLVSSAVALEDSEVLAKSAAEINENNIFLDSSSLSNLDSLKDADSTKARDDESSVS
+                     ETTIESTESGSSSSSFTFELTRPLSETELQFLKTLKSTTSVTACEIIQDKLTPLYADS
+                     QEGALDKYNVLYNSRLTASCDWLRQGRKRGPLELARRLQCILNILIVGYYRSFGSDGT
+                     DKQVKASLNRDDNRVVEDPMIQLIPEKLRRELERLGVSRMEIDELMPSIKPDETLCQL
+                     VAKKLISLNVATEEYTAEVSRLKQTLTARNVLHGLAGGIKELSLPIYTIFLKSYFFKD
+                     NVFLDLEDRWSTKHSSNYRDSSGRMLTGRVITKFTHWLDTFLNCMVSINRTQEIKDNS
+                     LFNPDLRCINILVREDNIKEMSIVQSHLRVVTSEFNNLNLQFSDCNRQKLKVVESRPP
+                     ECELEANKAVIVKSKLFSAVEQVRLANNPAVVMGYLLEESSISEVKPTKVDFSNLLKD
+                     RFKLMQFFPSVFALLKHLQSESSEMEKLGAPVDMQQVSKYSNHLTLLCRMIQQARPSL
+                     TVFYMLKGNQMNTEPTVSELVSYGIKEGRYLRLPEIGLDASTYSVKYWKILHCISAIG
+                     ELPLSDRDKTSLLISFLNWKVSSDSMAQDCPLYKQEHAVISEFAGQVVVNTLASELSS
+                     VRKDAERDSLTDLIDYVNSPTELLKKKPYLGTTCKFTTWGENNRNGKFTYSSRSGEAI
+                     GIFIAGKLHIHLSRESTGLLCEVERNVLGWLGRRRTDVLTKEQHQQFLEFLPTLSEVS
+                     QKNRDGTTQGLCQDSTNVRMLKFVHPKKNTPVVKIKGQILTVKKQVSFEAESEPRLMW
+                     GHGCVSVVYDECETQTTYHENLLKIKQMVDSTTDRARSLPQSVFSDTKVILARIRFKS
+                     DLLLNSLCLLHSFLRHTTTDAVLEAESKCALLERYLQSGGVRVKSADETLERKLCSKV
+                     IECKLEQTLDEEIEVCDSLNRVFSETPVPVSSWSEVQCYIEDVGFSNVLITLDKTSTK
+                     GELIWKFSLDNTSNIAGSIKDIRSLVSYISTETIPKFLLPFLLFENLLSSILKQSLTV
+                     KETLHSTGISDKEIEAVATLFAYCFQNDKVKRKGPRCSMSSILNLTKGDWVEIGQRMK
+                     LQAHLDSDIVRLNVQLAISTDADQTVDKKARVSMAKKVIASQLTLLLQEDGIDIKKLK
+                     DMAVNVQVRKEKTGEVLDFTLLDDQAGNLNYIGVLETIMDRRKKGPAISALEDFFLLL
+                     TGMAESNIQQNTATKSEEAYSDDICLEDLLEPSEESTSSSGTQDKETVPDRVTFNWDS
+                     DSD"
+     primer_bind     complement(12058..12081)
+ORIGIN      
+        1 tctcaaagat atcaatcccc ccgttacccc agagttgcaa gcatggagtt cctgaacagc
+       61 attccttggg aggaggttgt tccaggacag ttcactgcaa accctggttt tcaggtcacg
+      121 gattactttg agatagtcag acagcctgct gatggtaact gcttttatca cagcattgct
+      181 gaactctttg tgccaaataa aaatgacttt tctttcagac ttgtgaagca acacctcgag
+      241 ctggcggcaa ggagattctt cgaggaagag cctgaagcca agggactgga cttgggtctt
+      301 gaaaaatact tggaagttgc tatgtgtgac aatgaatggg gaggaagttt ggaagcttcg
+      361 atgttggcaa agcacctcga catcactatt gtcatatggg tgatagaagg tcctagcaga
+      421 gtggctgcag cagtgaaatt tggacccgga gatgttgctg gtgcaataaa tctcctacac
+      481 actggttata accactttga tgccttgaga ctgttagttg atgatagcca ggccagccgg
+      541 caacccaggg acattacaga acgcatagaa atagttgaag aagttttgtc tgaagacaga
+      601 gaagaaacct tcttcgaaga agacctgctc aactttgcta ctgcagagac catagaagag
+      661 aagctgacta gacaagataa gaaggttcaa gatgaaatgc agcgtagagc agtactacta
+      721 gggaagatca taaagaaagg cgaaaatatc cctgtgagag ttggaagggt acttgattgt
+      781 ctatttaatt gtaagttgtt tgtggagctg agagatggac tgctagtatt aaaaccagag
+      841 tctaaagaag atccgagtat aggatgcagc ctaaggcagc tgggccataa actgttgact
+      901 agagacaaac agataaaaca ggaatatgct aagtcaaagc tctatttgac aaaggacctc
+      961 ttggaccact tagatgctgg tggactctta cgctcagcat ttccaggaat ggggttagag
+     1021 aggaatctgc agttcttgca ctcagaaatc ctacttgatg tgtgcacagt agttgttgct
+     1081 gtcctactgt cttccttctt gtatgggtca aataacagga ataagaagac gttcataacg
+     1141 aactgcttgc tgaacacaag cctttcaggt aagagagtct tcaaggcatt agggaagctg
+     1201 acaggtgtca ctctttatag aagtcctagg agtgccttat cccacgtgtg tcaagcactc
+     1261 tatgggaaga tgatgggaaa gctgcagagc ttcatttcag tcatgagtcc aataagtcta
+     1321 ttggctctac ggaatctcga ctttgacaac atgtctgtca aagactacat ggaaatgctg
+     1381 aaagagatgt cagtgataga caacactgac gttgattata cccacagaga aatagctgac
+     1441 ctcaatcagc tcacagataa gctccaaaag ctgttcaagg aggggagagc agaagaactg
+     1501 aagaactggt tcaaagagga agagttgaca aagcggtcat taaggagtgt gcaaaatgca
+     1561 tctgagtttt tgataagtga ctattttaaa aggaaggaca ttatgaaatt tatttcaaca
+     1621 acaggcaagg catcaagcac aggcaatatt ggcaatattc tttcttacgc acataatcta
+     1681 tacttgagca aggagagcct aaagatgact accgaggaca caacgcagct tctgattgaa
+     1741 ataaagaggc tatataaact tcaaggagaa caaagcattg agccaattgc aataatatgt
+     1801 gacaagctcg aggagcagtt taggaaactg ttcaaggagt tgcctgaaga atgttcactt
+     1861 gaatgtcaga ctctattcaa cgatattaga aactctggca gtcacagtac agcatggaag
+     1921 catgcactga ggcttaaggg cacagcttat gaagggatgt tttccaggca gtatggatgg
+     1981 tcatatattc ctgaagatat aaagccgagc ttgacaatgc tcatacagac tctgtttcca
+     2041 cacaaatttg aggagtttct ggatcgaacg cagcttcacc ctgaattcag ggatctgaca
+     2101 cctgactttg ccttaactca gaaagtgtac tttaaaaaga acaaaatcgt ggagattcag
+     2161 aacacccagt tagtaattga ctcaagttta gaggggtctg ttgaggctgt tcctgtggta
+     2221 gagaaaaaga tgtttcctct gcctgagact ccagttgacg aagtacactc tattcagagg
+     2281 attatgaaaa gttttagaga caaagttgaa caagacaaga agagaaagga ggaagaaggc
+     2341 gacaaggcgc caacagatga acatgtaaaa gatcagatag gtgatggtgt tcaagatcaa
+     2401 gacgagcctg ctcttacaac caaaggagca aaacaggaag aaacggaaga aacagaggaa
+     2461 accaaggcca gcccggaatc aaagggagcc aataagttac agccagcctt agcactaaca
+     2521 acctctcgtg gtacagctca aagtttaacc agagggccac taacatacag tgacagaatt
+     2581 ctcattgatg aaaacagtgc agaactgaca gaagaagaag aattagagaa gagacagata
+     2641 ctactagttg aagttggtta tcagaccgat gtggatggca aaataacaac agactttaag
+     2701 aagtggaaag acatcttaaa gcttctagag atgttagaga ttaagtgttc cttcatagcc
+     2761 tgcgcagact gcacatcaac acctgcagac aactggtgga tctcagaaga caaggtgcgg
+     2821 tgtctaaagt cctccataag tcacctgttt agcagcctca caaagaactc tcctgcagat
+     2881 gttacggaca tagtagttgg ctccatcagc acacagaaag tgaggagtta cttgaagtct
+     2941 gggtcagcaa ccaagacgcc tgtctctagc aaggatgtta aagaaacttg gcagcgcatg
+     3001 aggcagaaca taatggaaag gcctacaggg gctgttatta actcgggcct tgaaagtgct
+     3061 atgagacagg gattagttga tggggttgta atgtccaaag aggggtgtgt gaaaaccatt
+     3121 gagactttaa aacagaactg tgacaaaatc accgatgggt ttgagagaac aaagtacaaa
+     3181 catgaactaa atgaaaatag gacaactagt gaaaagctgc ttctgggatg gttgtccgag
+     3241 gatctccaag gctgtagatg tagcagctgt ttgaacatca taaagcaaac agttgaaagc
+     3301 ataacagaaa actcagacag gcttgagtat ttagcaagta gcactattct taagtcacac
+     3361 tgccctgatt gccatcctag aggagttagt gttagcaata gtaccaatat aatgaacaga
+     3421 ctgcctggac tagaaaatat tcaacattct gataacaagg gctttgaaga cacaaatgaa
+     3481 gctctgacag atctggacag ggtggtccgg ttgaccttac ctggtaaaac agaaaaggag
+     3541 agaaggatta agagaaatgt cgaaacacta atccggctga tgatgcaggc ttcaggttta
+     3601 gaatgcataa aactcccttc ggggcagatt attacccaca ggttgaccag gaagattaaa
+     3661 caagaagatg aaaatgtttt actggacaag cagacagaaa agctggagag aatcaaaaag
+     3721 gaactctctg atacaaagtt gagcagttac tcagaatatg taaagaaaac cctaggatac
+     3781 tcaatacaga gagtggataa gcagaaagaa tctaagtgct cagtgcctag agcatggtta
+     3841 gaaaagcttt taagagatct aaaagttccc acaaaagatg aagatatatt aacaaatatt
+     3901 agagagtcaa tgtcaaaaaa gacaaacttt gttgaaaaca atgacaaact tgtaattaga
+     3961 tccgaagaag aattaataag atttattgaa aatagatcag tacagctgat gcctgacaaa
+     4021 tctagaaagc tgtttcaatc agattgtata ctgttcaaag aagttactgc tgaagcaatg
+     4081 aagaggtatt actcaacacc gtacgagggg gttccagaga tgattgtgtt gttgataaac
+     4141 ttcctgtgca gattcccttg gttccaagag gttgttctct atggtaagat atgtgagact
+     4201 tttttaagat gctgtacgga gttcagtcgt tctggaatta aacttgttaa agtaagacac
+     4261 tgtgatctaa acttggcaat aaagttgccc tccaacaaga aagaaaatat gttatgcact
+     4321 ctgtacaaca aggagatgga actgctgaag ggaccttttt tccttaatag aagacaggct
+     4381 gttttaggtg cctcatatcc atacataatt atcaccctct acatgcaagt tttgcaacaa
+     4441 cacaggtgtc ttgaggtttt gagaacggtt ggtgagagga catttgagaa catcaagact
+     4501 tgtacctcag acctaatagc cagcctaatg ttagaactaa cctatgctgt caatgggcaa
+     4561 tttgaaatgg cctatggagt tagaacaagg cagtgcaagc taggaggtaa ctttttgaac
+     4621 agaagcagca gagaccactt catcactgtg atctcaggtt tgaacactgt ttatggactc
+     4681 atcataaggg ataatcttct agcaaattct cagcagcaga acaaacaact tcaaatgcta
+     4741 agatttggca tgttgtctgg cttaagcagg ctttcatgtc caaaagaatt agggaagaag
+     4801 ttttccacta gctgcagaag actagaggac aacatcatgc ggctctactt acagagcact
+     4861 gtttactgtt caaacaggga tgttgaacat aacataaatg agtggaaatt gaaggatctg
+     4921 tgtcctgaag ttacgatccc atgcttttct gtttatggtg tgtttgtgaa cagtgatcgg
+     4981 cagttaatct tcgacattta taatgtacat atctacaata aagagatgga caattttgat
+     5041 gagggatgta taagtgtgtt agaagagacc gctgagagac acatgctatg ggaaatggat
+     5101 ctccttaggt cattaagcaa agagacaaaa gatgagaggt tagcgaggct tctattagga
+     5161 tgtccaaatg ttaggaaagc agttgacaag gaaggtaaca aactgagcaa ggcaaggcat
+     5221 gcatctcccg aagatgagga tagtgactca tcaagcttaa gtggaagacg ttcttactgc
+     5281 tctagtaaag gaaggatcca gagcatattt ggcaggtaca attccaacaa aaaacctttt
+     5341 gagtttagac caggcctaga agttagtgca gatccaatga atgattttga gcaagcagtc
+     5401 acagacacat cgcagtatgc agaatacaca ccaaatcaag aaagcttaat gaaagatttc
+     5461 gttcaaatta taaggatgaa tcctagtcac acgatgggtt cctttgagct tattcaagca
+     5521 gtaacagaat tcggtcgaag caagtaccca gcagagaaca tagagaaagc caaaagagac
+     5581 ccaaaaaact gggtgagcat ctcagaagta acagaaacaa caagcattgt ttcacaaccc
+     5641 agaacgcaca taatgctcaa agactgtttt aaaattctcc ttggtacaga gaataagaaa
+     5701 atcgtgaaga tgctaagggg caagctaaag aagctaggtg ccatcagtac ggatatagaa
+     5761 attgggagaa aggattgtct tgacatgctt aataccgttg aggggctgtc agaagagcaa
+     5821 aggaaaaaca ttgttaacgg aatttttgag ccatccaaac tgtcattcta tcattggaaa
+     5881 gaactagtcc aaaaagatgt tgaggaggtg ctgctgaccg acgatggaaa ctacatcttt
+     5941 tgctggctaa agacactgtc atcgatgctg aaaggggctt taaagaaaga gctccgattt
+     6001 atgaacagtg gaggtgtgct agagctcaac aatgggtttt tcagtgagga tgaattcgag
+     6061 gagctgctaa acgtcaaaaa ggaactgacc ggaagcatga gtctagatag agaattaaac
+     6121 acagagttac ttttggcttc atggctgaag tgtatctaca aacccaagga aggggctgca
+     6181 atagtgcaag aaggtttaga ggcactaaaa gtaatggcag gagaactata tgaaatcagg
+     6241 ctacagcatt tagagctaac cagaatgaag aaggacaatc ccagtgtgag cttcaccaaa
+     6301 gaggaagtcc ttgttaaaag gcttgagaag tcattcctaa agaaatttaa caaggaagca
+     6361 atgaagtttg tcaacttggt gttcttttgt tcactctctg ccccgtggtg tattcattac
+     6421 aagtccttgg agtcttactt ggtgcgtcac ccagagatcc ttgagctcaa ggccaaaggt
+     6481 gatttaggat ctgtgatttt ggacctctca gttgcatcgg ccatatcaag gctagtccag
+     6541 caagaaacaa gcattgagat ggatgtggag gtgctgaatg agatgaaagt gcgctttgct
+     6601 gtcaaatatt ttgtgacact gtttacggcc aatggagagc ctttctctct tagcttgaat
+     6661 gatggaggcc tggacgaaaa tctacagaaa accacagatg agaagctgtt gcatcagacg
+     6721 aaagtggtgt ttaccaaaat cgggttggca ggaaacaatt atgatttcat gtggaccaca
+     6781 caaatgatag caaacagcaa tttcaatgtt tgcaagcgtc tgactggcag aacaactggt
+     6841 gaaaggcttc ccagaagtgt aagaagcaag gtgatttatg aaatggtgaa gcttgtcggg
+     6901 gaaactggaa tggcaatact acaacagctg gcctttgctc aagctcttaa ttatgatcat
+     6961 agattttatg cagtattagc gccgaaagcc caacttggag ggagtagaga tctgttagtt
+     7021 caggagactg gaacaaaagt catccatgcc acaacagaga tgttcagtcg aaacttgttg
+     7081 aaaacaacac aagatgatgg actgacaaac cctcacttga aagaaaccat actgaatgtc
+     7141 ggactagatg cactgagcac aatgcgtcta ctggatggga ggccagtgtc tgaagacagc
+     7201 aagcttctta acttttataa agtgatctgc atttcaggag acaatacaaa atggggtcct
+     7261 atacactgct gctctttctt ctctggcatg atccagcagc ttctaaaaga tgtcccagac
+     7321 tggagctcat tctataagct tgctttcatt aagaaccttt gcagacaagt cgagatccct
+     7381 gctgccagtg tcaagaaaat cctgaacact cttcggttta gacttagcaa caaaggaggt
+     7441 gtcgagtcga aatcagaaga ggagctcaga aaggagctga gtgacagcac tgaagaatgg
+     7501 ggagacaatg acactgttaa atttttgatt acaacttatc taagcaaagg aatcatggca
+     7561 ctcaacagct acaatcacat gggtcaagga atacaccatg ctacctcatc actgctgact
+     7621 tcgttaatgg cagaattgtt cgaagaacta gtgattgact actttaagag gcatctacca
+     7681 cagctcactg taaacgtaac acatgctgga agctctgatg attatgcaaa gtgcattgtg
+     7741 gccactgggc ttctgcctaa agaactctac gacaggtatt ctgaggcttt ctggaagcat
+     7801 gcatgcaaaa taaagaactt cactgcagct gtccaaagat gctgtcagat gaaggacagt
+     7861 gcaaaaacat tggtgggaga ctgcttcctt gagttctaca gtgagttcat gatgggtaat
+     7921 agggtaactc cggctgtgat caagtttata ttcactggtc ttataaatag ttcagtgact
+     7981 tcaccgcaaa gcttggtgca agcctgtcat gtatcttctc aacaagcgat gtataatagt
+     8041 gtcccactga tgaccaatgc aacctttact cttcttagac agcaagtttt cttctcacat
+     8101 gtggaagact ttgtgcgcag atacgggtta atcacactgg gcactgtatc atccttcggc
+     8161 cgcctatttg ttcccacgtt ttctggccta gttagttctg cggttgcttt agaagatagt
+     8221 gaagtcttgg caaagtcagc tgctgaaatc aacgaaaata atattttcct agacagcagc
+     8281 agtctttcca atctagacag cttgaaagac gcggacagca ctaaagctag ggatgatgag
+     8341 agttctgtaa gtgaaaccac aattgagtct actgaatcag gaagttcctc gtccagtttc
+     8401 acatttgaac tgacaagacc gctgtctgaa acagaactac agtttcttaa aacattaaag
+     8461 tcgaccactt ctgtaactgc atgtgaaata atacaagaca aactgacccc actatatgca
+     8521 gacagtcagg aaggtgcact ggacaagtac aatgtactgt acaacagcag gttgactgca
+     8581 tcttgtgact ggctcagaca gggcaggaaa agagggcctc ttgagttagc taggaggctg
+     8641 cagtgtattt taaacattct aattgtaggc tactacaggt catttggtag tgatggtaca
+     8701 gacaagcaag tcaaggcatc tctcaatagg gatgacaata gagttgttga agatcccatg
+     8761 attcaattga tacctgagaa gctaagaaga gagttagaga gattaggagt ctctagaatg
+     8821 gaaattgatg aactcatgcc atctattaag cctgatgaaa ccctctgtca gttggtagct
+     8881 aaaaaactca tcagcttgaa cgtcgcaacg gaagagtaca ctgcagaagt ctccaggcta
+     8941 aagcaaacct tgacagccag aaatgtcctg catggccttg ctggtggcat caaggagctg
+     9001 tcacttccta tttacaccat ctttctcaag tcgtactttt tcaaggataa tgtcttcttg
+     9061 gaccttgagg acagatggtc gacgaagcac agctccaatt atagggacag ttctggcaga
+     9121 atgctaactg gtagagtaat tacaaagttc actcactggc tggatacatt tctgaactgt
+     9181 atggtaagca tcaacaggac acaggaaatc aaggacaatt ctctttttaa tcctgacctc
+     9241 agatgtataa acattttggt aagggaagat aatataaagg agatgtcaat tgttcaaagc
+     9301 caccttagag ttgttacgtc agaatttaac aacctcaatc ttcagttctc tgactgcaac
+     9361 agacagaaac tgaaggtggt tgagtctagg ccacctgaat gtgagctaga ggccaacaaa
+     9421 gcagtgattg taaagtcaaa actgttcagt gctgttgagc aggtcaggct tgcaaacaat
+     9481 cctgcagtgg tcatgggcta cctccttgaa gagtcatcaa tctcagaggt gaagcccact
+     9541 aaggtagact tttctaattt gttgaaagat aggttcaaac tgatgcagtt ctttccctct
+     9601 gtctttgctt tgctgaagca ccttcagtct gagtcgtcag agatggaaaa actaggggca
+     9661 ccagtagata tgcagcaggt gtcaaagtat tcaaatcatt taactctact gtgtagaatg
+     9721 atacagcagg ctaggccttc gttaacagtc ttctacatgc taaaaggtaa tcaaatgaac
+     9781 actgagccca cggtgtctga gctagtcagt tacgggataa aggaaggcag atacctgaga
+     9841 ctgcctgaga taggccttga tgctagcaca tactctgtga aatactggaa aatacttcac
+     9901 tgcatttctg ccataggtga attgccactt agtgacaggg ataaaacatc tctactcata
+     9961 agtttcctta actggaaagt ttcgtctgac tcaatggcac aagattgtcc gctttacaaa
+    10021 caagagcatg ctgtcatcag tgagtttgca gggcaggttg ttgtgaacac acttgctagt
+    10081 gagctcagct ctgttaggaa agatgctgaa agagacagcc ttactgacct gattgattat
+    10141 gtgaactcac ctacagagtt actcaagaaa aaaccctacc ttggtactac atgtaaattc
+    10201 acaacctggg gtgagaataa taggaacggc aaattcacat acagcagtcg gtcaggagaa
+    10261 gcaattggca tctttatagc aggaaaactc cacatacact tgagcagaga atcaactggt
+    10321 ctcctatgtg aggtggaaag aaatgtgctc ggttggcttg gtaggcgcag aacagatgtg
+    10381 ctaacaaaag agcagcatca acagttctta gagttccttc cgacattaag cgaagtatca
+    10441 caaaaaaata gggatggtac cacacaaggc ctatgtcaag acagcacaaa tgtccgaatg
+    10501 ctaaaatttg tgcacccgaa aaagaacact cctgtcgtta agatcaaggg gcagatactg
+    10561 acggtaaaga aacaagtcag cttcgaggca gagagtgaac ctagactcat gtgggggcac
+    10621 ggttgtgtct cagttgttta tgatgaatgt gaaactcaga ccacgtacca tgaaaatttg
+    10681 cttaaaataa aacagatggt tgatagcaca acagatagag ctaggagcct cccacagtca
+    10741 gtattttcgg acaccaaagt gattcttgct agaatcaggt tcaaatcaga ccttctgctg
+    10801 aattcacttt gcttgttgca cagcttctta agacacacaa ccactgatgc tgtactagag
+    10861 gcagagagta aatgtgcact gctagaaaga tacctacagt caggaggggt gagggtaaag
+    10921 tcagcagatg agaccttaga gagaaagcta tgcagcaagg tgatagaatg taagcttgaa
+    10981 caaacccttg atgaggaaat tgaagtctgt gatagcctca acagagtttt ctctgagact
+    11041 ccggtgcctg tcagtagctg gtcagaagtg caatgttata ttgaggatgt gggcttcagt
+    11101 aatgtactaa taacactgga caagacaagt accaaaggcg aattgatctg gaaattttcc
+    11161 ctagacaaca caagcaacat agctggcagc atcaaggaca taagatcact tgtttcctac
+    11221 ataagcactg aaactatacc aaagttcttg ctaccctttt tgctctttga gaacctgctc
+    11281 tctagcatcc tcaagcagag cttgacagtg aaggagacat tacattccac aggcatctct
+    11341 gacaaagaaa ttgaagcagt tgcaacctta tttgcttact gcttccaaaa cgataaagtc
+    11401 aagagaaagg gcccccgatg ttcaatgtcc tctattctaa acttgaccaa aggtgactgg
+    11461 gtggagatag gacagagaat gaaactacag gcacatctag actcagatat tgttagattg
+    11521 aatgttcagc tagcaatctc taccgatgca gatcaaacag tggataaaaa agctcgagtg
+    11581 tcaatggcaa agaaagtaat agcttctcag ctaacactat tactgcaaga ggatggtatt
+    11641 gacattaaga agcttaagga catggctgtt aatgttcaag ttaggaagga aaaaactgga
+    11701 gaagtactag attttacact ccttgatgac caggcaggca atctgaacta catcggagtg
+    11761 ttagagacaa taatggacag aaggaagaag ggtcctgcca ttagtgcgct tgaagacttc
+    11821 tttctgcttc taacaggcat ggcagagagc aacatacaac agaacacagc aactaagagt
+    11881 gaggaagctt acagtgatga catatgtcta gaagacctcc ttgaacctag cgaggaatcg
+    11941 actagcagct ctggtacgca ggacaaagaa actgtacctg atagagtgac atttaactgg
+    12001 gactccgata gtgactaagc ttcagtatac ttacttaaga cttaaattaa taggggtggg
+    12061 gggggaacga tttctttgag a
+//
+
+LOCUS       HM991309                 355 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain 40399 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991309
+VERSION     HM991309.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 355)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 355)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..355
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="40399"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="2001"
+     CDS             <1..>355
+                     /codon_start=2
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67450.1"
+                     /translation="PRSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDHRFYAVLA
+                     PKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETILNVGLDAL
+                     STMRLLDGRPVSEDSK"
+ORIGIN      
+        1 tcctagaagt gtgagaagta aggtaattta tgaaatggtg aagcttgttg gagaaactgg
+       61 aatggcaata ctacaacaac tggcctttgc tcaagctctt aattatgatc ataggtttta
+      121 tgcagtatta gcaccaaaag cccagcttgg agggagcagg gatctgctag tacaagagac
+      181 tggtacaaag gtcatccatg ccactacaga gatgttcagt cggaacttat taaaaacaac
+      241 acaagatgat ggcctgacaa accctcactt gaaagaaacc atactgaatg tcggacttga
+      301 tgctctgagt acaatgcgtt tgttggacgg aaggccagtg tcggaagata gcaag
+//
+
+LOCUS       HM991327                 172 bp    cRNA    linear   VRL 25-JUL-2016
+DEFINITION  Nairobi sheep disease virus strain P-4081 RNA-dependent RNA
+            polymerase gene, partial cds.
+ACCESSION   HM991327
+VERSION     HM991327.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 172)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 172)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..172
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="P-4081"
+                     /isolation_source="serum"
+                     /host="Homo sapiens"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="1956"
+     CDS             <1..>172
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AEK67461.1"
+                     /translation="TGMAIIQQLAFAQALNYDHRFYAELAPKAQLGGSRDLLVQETGT
+                     KVIQATTEMFSRN"
+ORIGIN      
+        1 actggaatgg caataataca acagctggcc tttgctcaag ctcttaatta cgatcatagg
+       61 ttttatgcag aattagcacc aaaagcccag cttggaggga gcagggattt gctagtacaa
+      121 gagactggta caaaagtcat ccaggccacc acagagatgt ttagtcggaa ct
+//
+
+LOCUS       HM991310                 370 bp    cRNA    linear   VRL 26-JUL-2011
+DEFINITION  Nairobi sheep disease virus strain 40621 RNA-dependent RNA
+            polymerase-like gene, partial sequence.
+ACCESSION   HM991310
+VERSION     HM991310.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 370)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. 11 (5), 1111-1120 (2011)
+   PUBMED   21511058
+REFERENCE   2  (bases 1 to 370)
+  AUTHORS   Yadav,P.D., Nichole,S.T. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUL-2010) Virus Repository and High Containment
+            Laboratory, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pune, Maharashtra 411021, India
+FEATURES             Location/Qualifiers
+     source          1..370
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="40621"
+                     /host="Hyalomma intermedia"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India: Ganjam"
+                     /collection_date="2002"
+     misc_feature    <1..>370
+                     /note="similar to RNA-dependent RNA polymerase"
+ORIGIN      
+        1 gactggtgag aggcatccca gaaagtgtga gaagtaaggt gatttatgaa aatggtgaag
+       61 cttgttgggg aaactggaat ggcaatacta caacaactgg catttgctca agcacttaat
+      121 tatgatcata gattttatgc agtattggca ccgaaagccc aacatggggg gagtagggat
+      181 ctgctagtcc aggaaacagg cacaaaagtc atccatgcta caacagagat gttcagtcga
+      241 aacatgttga aaacaacaca agatgatgga ctgacaaacc ctcacttgaa agaaaccata
+      301 ctaaatgtgg actagatgca ctgagcaaca aatgcgtctg ctagatggaa ggccggtgtc
+      361 tgaagatagc
+//
+
+LOCUS       HQ286601               12081 bp    cRNA    linear   VRL 30-SEP-2011
+DEFINITION  Nairobi sheep disease virus strain 708 RNA-dependent RNA polymerase
+            gene, complete cds.
+ACCESSION   HQ286601
+VERSION     HQ286601.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 12081)
+  AUTHORS   Yadav,P.D., Vincent,M.J., Khristova,M., Kale,C., Nichol,S.T.,
+            Mishra,A.C. and Mourya,D.T.
+  TITLE     Genomic analysis reveals Nairobi sheep disease virus to be highly
+            diverse and present in both Africa, and in India in the form of the
+            Ganjam virus variant
+  JOURNAL   Infect. Genet. Evol. (2011) In press
+   PUBMED   21511058
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 12081)
+  AUTHORS   Yadav,P.D. and Mourya,D.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (20-SEP-2010) Virus Repository and High Containment
+            Complex, Microbial Containment Complex, National Institute of
+            Virology, Sus Road, Pashan, Pune, Maharashtra 410021, India
+FEATURES             Location/Qualifiers
+     source          1..12081
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="708"
+                     /host="Homo sapiens"
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /country="India"
+     CDS             43..12018
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="AED88229.1"
+                     /translation="MEFLNSIPWEEVVPGQFTANPGFQVTDYFEIVRQPADGNCFYHS
+                     IAELFVPNKNDFSFRLVKQHLELAARRFFEEESEAKGLGLSLEKYLEVAMCDNEWGGS
+                     LEASMLAKHLDITIVIWVIEGPSRVAAAVKFGPGDVAGAINLLHTGYNHFDALRLLVD
+                     DSQVSRQPRDITERIEIVEEVLSEDREETFFEEDLLNFATTETVEEKLTRQDKKVQDE
+                     MQRRAALLGKIIKKGENIPVRVGRVLDCLFNCKLFVELRDGLLVLKPESKEDPSMGCS
+                     LRQLGHKLLTRDKQIKQEYAKSKLYLTKDLLDHLDAGGLLRSAFPGMGLERNLQFLHS
+                     EVLLDVCTVVVAVLLSSFLYGSNNRNKKTFITNCLLNTSLSGKRVFKALGKLTGTTLY
+                     RSPRNALSHVCQTLYGKMMGRLQSYISVMSPISLLALRNLDFDNMSVKDYMEMLKEMS
+                     VIDNTDVDYTHREIADLNQLTDKLQKLFKEGRADELKNWYKEEELTKRSLRSVQNASE
+                     FLISDYFKKKDIMKFISTTGKASSTANIGNVLSYAHNLYLSKESLKMTTEDTTQLLIE
+                     IKRLYRLQGEQSIEPIAIICDKLEEQFRKLFKELPEECSLECQTLFNDIRNSGSHSTA
+                     WKHALRLKGTAYEGMFSRQYGWSYIPEDIKPSLTMLIQTLFPHKFEEFLDRTQLHPEF
+                     RDLTPDFALTQKVYFKKNKIVGIQNTQLVIDSSLEGSVEAVPVVEKKMFPLPETPVDE
+                     VHSIQRIMKSFRDKVENDKKRKEEEGDKAPASESMEDQKGGSVQDQDKPAPITKKAMQ
+                     EESERAGESKSNLESRGADKLQPVLASTGPRGMAQSATRGPLTYSDRILIDENSTELT
+                     EEEELEKRQILLVEVGYQTDVDGKITTDFKKWKDILRLLEMLEIKCSFIACADCTSTP
+                     ADNWWISEDKVRCLKSSISHLFSSLTKNSPADVTDIVVGSISTQKVRSYLKSGSATKT
+                     PVSSKDVKETWQRMRQNIIERPTGAIINSGLESAMRQGLVDGVVMSKEGCVKTIETLK
+                     QNCDRITDEFERTKYKHELNENKTTSEKLLLGWLSEDLQGCRCSNCLNIIKQTVESIT
+                     ENSDRLEYLASSTILKSHCPDCHPRGVSVSNSTNIMNRLPGLEKTQHSDNKGFEDTNE
+                     ALTDLDRVVRLTLPGKTEKERRIKRNVETLIRLMMQASGLECIKLPSGQIITHRLTRK
+                     IKQEDENVLSDKLTERLERIKKELSDAKLSSYSEYVKKTLGHSIQRVDKQKESKCSVP
+                     RAWLEKLLRDLKVPTKDEDILTNIRESMSKKTNFIKNNDRLVIRSEEELTRFVENRSV
+                     QLMPDKSKKLFQSDCILFKEVTAEAMKRYYSTPYEGVPEMIVLLINFLCRFPWFQEVV
+                     LYGKICETFLRCCTEFSRSGIKLVKVRHCDLNLAIKLPSNKKENMLCTLYSKEMELLK
+                     GPFFLNRRQAVLGASYPYIIITLYMQVLQQHRCLEVLSTVGERTFENIKTCTSDLIAS
+                     LSLELTYAVNGQFEKAYEVRTRQCKLGGNFLNRSSRDHFITVISGLNTVYGLIVRDNL
+                     LANSQQQNKQLQMLRFGMLSGLSRLSCPKELGKKFSTSCRRLEDNIMRLYLQSTVYCS
+                     NRDVEHNINEWKSKDLCPEVTIPCFSVYGVFVNSDRQLIFDIYNVHIYNKEMDNFDEG
+                     CISVLEETAERHMLWEMDLLRSLSRETKDERSARLLLGCPNVRKAIDKDGNKLSKAGS
+                     TSPDDGDSDSSSLSGRRSYCSSRGRIQSIFGRYNSNKKPFEFRPGLEVRADPMNDFEQ
+                     AVTDTSQYAEYTPNQESLMKDFIQIIRTNPSHTMGSFELIQAVTEFGRSKYPAENIEK
+                     AKRDPKNWVSISEVTETTSIVSQPRTHIMLKDCFKILLGTENKKIVKMLRGKLKKLGA
+                     INTDIEIGRKDCLDMLNTVEGLSEEQRKNIVNGIFEPSKLSFYHWKELVQKDVEEVLL
+                     TDDGNYIFCWLKTLSSMLKGALKKELRFMNNGGVLELNSGFFSEDEFEELLNVKKELT
+                     GNMSLDRELNTELLLASWLKCVYKPKEGASIVQEGLEALKAMAGELYEIRLQHLELTR
+                     MKKDNPSVSFTKEEVLVKRLEKSFLKKFNKEAMKFVNLVFFCSLSAPWCVHYKSLESY
+                     LVRHPEILELKAKGDLGSVILDLSVASAISRLVQQETNSELDSEVLNEMKVRFAVKYF
+                     VTLFTANGEPFSLSLNDGGLDENLQKTTDEKLLHQTKVVFTKIGLAGNNYDFMWTTQM
+                     IANSNFNVCKRLTGRTTGERLPRSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDH
+                     RFYAVLAPKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETIL
+                     NVGLDALSTMRLLDGRPVSEDSKLLNFYKVICISGDNTKWGPIHCCSFFSGMIQQLLK
+                     DVPDWSSFYKLAFIKNLCRQVEIPAASVKKILNTLRFRLSNKGGVESKSEEELRKELS
+                     DSTEEWGDNDTVKFLITTYLSKGIMALNSYNHMGQGIHHATSSLLTSLMAELFEELVI
+                     DHFKRHLPQLTVNVTHAGSSDDYAKCIVVTGLLPKELYDRYTEAFWKHACKIKNYTAA
+                     VQRCCQMKDSAKTLVGDCFLEFYSEFMMGNRVTPAVIKFIFTGLINSSVTSPQSLVQA
+                     CHVSSQQAMYNSVPLMTNATFTLLRQQVFFSHVEDFVRRYGLITLGTVSSFGRLFVPT
+                     FSGLVSSAVALEDSEVLAKSAAEINENNIFLDSSSLSNLDNLKDTDSAKARDDESSIS
+                     ETTIESTESGSSSSSFTFELTRPLSETELQFLKTLKSTTSVTACEIIQDKLTPLYADS
+                     QEGALDKYNVLYNSRLTASCDWLRQGRKRGPLELARRLQCILNILIVGYYRSFGSDGT
+                     DKQVKASLNRDDNRVIEDPMIQLVPEKLRRELERLGVSRMEIDELMPSIKPDETLCQL
+                     VAKKLISLNVATEEYTAEVSRLKQTLTARNVLHGLAGGIKELSLPIYTIFLKSYFFKD
+                     NVFLDLEDRWSTKHSSNYRDSSGRMLTGRVITKFTHWLDTFLNCTVSINRTQEIKDNS
+                     LFNPDLRCINILVREDNVKEMSIVQSHLRVVTSEFNNLNLQFSDCNRQKLKVVESRPP
+                     ECELEANKAVIVKSKLFSAVEQVRLANNPAVVMGYLLEESSISEVKPTKVDFSNLLKD
+                     RFKLMQFFPSVFALLKHLQSESSEMEKLGAPVDMQQVSKYSNHLTLLCRMIQQARPSL
+                     TVFYMLKGNQMNTEPTVSELVSYGIKEGRYLRLPEIGLDASTYSVKYWKILHCISAIG
+                     ELPLSDRDKTSLLISFLNWKVSSDSMAQDCPLYKQEHAVISEFAGQVVVNTLASELSS
+                     VRRDAERDSLTDLIDYVNSPTELLKKKPYLGTTCKFTTWGENNRNGKFTYSSRSGEAI
+                     GIFIAGKLHIHLSRESTGLLCEVERNVLGWLGRRRTDVLTKEQHQQFLEFLPTLSEVS
+                     QKNRDGTTQGLCQDNTNVRMLRFVHPKKNTPVVKIKGQILTVKKQVSFEAESEPRLMW
+                     GHGCVSVVYDECETQTTYHENLLKIKQMVDSTTDRARSLPQSVFSDTKVILARIKFKS
+                     DLLLNSLCLLHSFLRHTTTDAVLEAESKCALLERYLQSGGVRVKSADETLERKLCSKV
+                     IECKLEQTLDEEIEVCDSLNKVFSETPVPVSSWSEVQCYIEDVGFSNILITLDKTSTK
+                     GELIWKFSLDNTSNIAGSIKDIRSLVSYISTETIPKFLLPFLLFENLLSSILKQSLTV
+                     KETLHATGISDKEIEAVATLFAFCFQNDKVKRKGPRCSMSSILNLTKGDWVEVGQRMK
+                     LQAHLDSDTVRLSVQLAISTDADQTADKKARVSMAKKVIASQLTLLLQEDGIDIKKLK
+                     DIAVNVQVRKEKTGEVLDFTLLDDQAGNLNYIGVLETIMDRRKKGPAISALEDFFLLL
+                     TGMAESNIQQDTAIKSEEACSDDICLEDLLEPSEESSSSSGAQDKEAVPDRVTFNWDS
+                     DSD"
+ORIGIN      
+        1 tctcaaagat atcaatcccc ccgttacccc agagttgcaa gcatggagtt cctgaacagc
+       61 attccttggg aagaggttgt tccagggcag ttcactgcaa accctggttt tcaggtcacg
+      121 gattactttg agatagtcag acagcctgct gatggcaact gtttttacca cagcattgct
+      181 gaactctttg tgccaaataa aaatgacttt tctttcagac ttgtgaagca gcatcttgag
+      241 ttggcagcga gaagattctt tgaggaggaa tccgaagcca aaggactagg cctgagtctt
+      301 gagaagtatt tagaggttgc tatgtgtgac aatgagtggg gagggagtct ggaagcttcg
+      361 atgttggcaa agcacctaga catcactatt gtcatatggg tgatagaagg tcctagcaga
+      421 gtggctgcag cagtgaaatt tggacctgga gatgttgctg gcgcaataaa tctcctacac
+      481 accggttaca atcacttcga tgccttaaga ctgttagttg atgacagcca agtcagccgt
+      541 caacctagag acatcacaga acgcatagaa atagttgaag aggtgctgtc tgaagacaga
+      601 gaagaaacct tctttgaaga agatctgctc aactttgcca ccacagagac tgtagaagag
+      661 aagctgacca ggcaagataa gaaggttcag gatgaaatgc agcgtagggc agcattacta
+      721 gggaaaatca taaagaaagg tgaaaacatc cctgtgagag taggaagggt acttgactgt
+      781 ctgttcaact gcaaattgtt tgtagagcta agagatggac tactggtgtt aaagccagag
+      841 tcgaaagagg atccaagcat ggggtgcagt ctgaggcagc taggccacaa actgctaaca
+      901 agagacaagc aaataaaaca ggaatatgct aagtctaagc tatacctgac aaaagatctt
+      961 ttggaccacc tagatgctgg tggactcttg cgctcagcat ttccagggat gggattagag
+     1021 agaaatctgc agttcttgca ctccgaggtt ctacttgatg tgtgcacagt ggttgttgct
+     1081 gttctactgt cctccttcct gtatgggtca aacaacagaa acaagaagac attcataaca
+     1141 aactgcttgc tgaacacgag cctttcaggg aagagagtct tcaaggcatt aggaaagctg
+     1201 acaggtacca ctctttacag aagtcctagg aatgccttgt ctcatgtgtg tcagactctt
+     1261 tatggcaaga tgatgggtag gctacagagc tacatttcag tcatgagtcc aataagtttg
+     1321 ttagctctac gaaatctcga ctttgacaac atgtctgtta aagactacat ggaaatgcta
+     1381 aaagagatgt cagtgataga caatacagat gttgactaca cccacagaga gattgctgac
+     1441 ctcaatcagc tcacagataa gcttcaaaag ttatttaaag agggaagggc agatgagctg
+     1501 aagaactggt acaaagagga agaattgaca aagcggtcat tgagaagtgt gcaaaatgca
+     1561 tctgagtttt taataagtga ctattttaaa aagaaggaca ttatgaagtt tatatcaaca
+     1621 acaggcaagg catcaagcac tgcaaatatt ggcaatgtcc tatcttacgc acataatcta
+     1681 tacttgagca aagagagcct aaagatgact acagaagaca caacacagct tctgattgag
+     1741 ataaagagat tatataggct tcaaggagaa caaagcattg agccaattgc aataatatgt
+     1801 gataagcttg aggagcaatt tagaaaacta ttcaaagagt tgcctgaaga atgttcactc
+     1861 gagtgtcaga ctctgttcaa tgacattaga aactctggta gtcacagtac agcatggaag
+     1921 catgcactga ggcttaaagg tactgcttat gaaggaatgt tctctaggca atatggatgg
+     1981 tcatatattc ctgaagatat aaagccgagc ttgacaatgc tcatacagac tctgtttcct
+     2041 cataagtttg aggagtttct ggatcgaact cagctccatc cagaatttag ggacctgaca
+     2101 cctgacttcg ccttaactca gaaggtgtac ttcaaaaaga acaagatcgt gggaattcaa
+     2161 aacacccagt tagtaattga ctcaagctta gaggggtctg ttgaggctgt tcccgtggtg
+     2221 gagaagaaga tgttccctct acctgagact ccagttgacg aagtacactc catccagagg
+     2281 attatgaaaa gtttcagaga caaagttgaa aatgacaaaa agagaaagga ggaagaaggt
+     2341 gacaaagcac cagcaagtga aagcatggaa gaccagaaag gtggtagtgt tcaagaccaa
+     2401 gacaagcctg ctcccataac caagaaggca atgcaggagg agtcagaaag agcaggagaa
+     2461 tccaagtcca acctggaatc aaggggagct gacaaattac agccagtttt agcatcaaca
+     2521 ggcccccgtg gcatggctca aagtgcaacc agaggaccac taacatacag tgacagaatt
+     2581 cttattgatg aaaacagtac agaactaaca gaagaagaag agttggaaaa gagacagata
+     2641 ctactggttg aagttggtta ccagaccgat gtggatggca aaataacaac agacttcaag
+     2701 aagtggaaag acatcttgag gcttttggaa atgttagaaa ttaagtgttc tttcatagcc
+     2761 tgcgcagact gcacatcaac acctgcagac aactggtgga tctcagaaga caaggtacgt
+     2821 tgtctaaagt cctccataag tcacctgttt agcagcctca caaagaactc tcctgcggat
+     2881 gtcacggaca tagtggttgg ctctatcagc acacagaagg tgagaagtta cttgaagtct
+     2941 ggatcagcaa ccaagacacc tgtctccagc aaggatgtta aagaaacttg gcaacgtatg
+     3001 cgacagaaca taatagaaag gcctacaggg gccatcatca attcaggcct tgagagtgcc
+     3061 atgagacaag gattagttga tggagttgtg atgtcaaaag aagggtgtgt gaaaaccatt
+     3121 gaaactttaa aacaaaactg tgacaggatc actgatgagt ttgaaagaac aaagtacaaa
+     3181 catgaactaa acgaaaacaa gacaaccagt gaaaagctac ttctgggatg gttgtccgag
+     3241 gatctccagg gttgcagatg tagcaactgt ttaaacatca taaaacaaac agttgagagt
+     3301 ataacagaga actcagatag gcttgagtat ttagcaagta gcactatcct caagtcgcac
+     3361 tgccctgatt gccatcctag aggggttagt gttagcaata gcaccaatat aatgaacaga
+     3421 ctgcctgggc tagaaaagac ccaacattcc gacaacaaag gctttgaaga cacaaatgaa
+     3481 gctctgacag atctagatag agtggtccgg ttgactttac ccggcaaaac agaaaaagag
+     3541 agaagaatca aaagaaatgt cgaaacacta atcaggctaa tgatgcaggc gtcaggccta
+     3601 gagtgcataa aactcccttc agggcagatt atcacccaca gactgaccag gaagatcaag
+     3661 caagaagatg aaaatgtttt atcagacaaa ctgacagaaa ggctggaaag aattaagaag
+     3721 gaactctctg atgcaaaatt gagcagttac tcagagtatg tgaagaaaac cttagggcac
+     3781 tccatacaga gagtggataa acagaaggaa tccaagtgtt cagtgcctag agcatggcta
+     3841 gagaagcttt taagagattt gaaagttcct accaaagatg aagatatact aacaaatatt
+     3901 agagagtcaa tgtcaaaaaa gactaacttc attaaaaaca atgacaggct tgtgattaga
+     3961 tctgaagaag agttaacgag atttgttgaa aacaggtctg tacagttaat gcctgacaag
+     4021 tctaagaagc tctttcaatc tgattgtatc ctcttcaaag aagtcactgc tgaagcaatg
+     4081 aagcggtatt attcaacacc gtacgaagga gttccggaga tgattgtgct actaataaac
+     4141 ttcttatgca gattcccttg gttccaagag gttgttctct acgggaaaat ctgtgagact
+     4201 tttttgagat gctgtactga gttcagtcgt tctggaatta agcttgtcaa ggtgagacac
+     4261 tgtgatttaa acctagcaat aaagttgccc tctaacaaga aagaaaatat gttatgtact
+     4321 ctgtatagca aggagatgga actgctgaaa ggacccttct tcctcaatag aagacaggct
+     4381 gtcttaggtg cttcgtatcc atacataatc atcaccctct acatgcaagt tttacaacag
+     4441 cacaggtgtc ttgaggtctt aagcacagtt ggtgaaagaa catttgaaaa catcaagact
+     4501 tgcacctcag acctgatagc tagcctatca ttagaactga catatgctgt caatgggcag
+     4561 tttgagaagg cttatgaagt tagaacaagg cagtgcaagc taggaggtaa ctttttaaac
+     4621 agaagcagca gagaccactt cattactgtg atctcaggtt taaacactgt ttatggactt
+     4681 attgtaaggg ataaccttct tgcaaattcc caacaacaaa acaaacagct tcagatgcta
+     4741 agatttggca tgttgtctgg cttgagtagg ctttcgtgtc caaaggaact aggaaaaaag
+     4801 ttttccacga gctgcagaag actcgaggac aatatcatgc ggctctatct acaaagcact
+     4861 gtttactgtt caaacaggga cgttgaacat aacatcaatg agtggaagtc gaaagatcta
+     4921 tgtcctgaag ttacaatccc atgcttctct gtttacggtg tgtttgtgaa cagcgatcgt
+     4981 cagttaatct ttgacattta caacgtgcat atctacaata aagagatgga caattttgat
+     5041 gaaggatgta taagtgtgtt ggaagagact gccgaaagac acatgctctg ggaaatggat
+     5101 ctacttaggt cattaagcag agagacaaaa gatgagaggt cagcaaggct tctattagga
+     5161 tgcccaaatg tcaggaaagc aatcgacaag gacggcaaca aactaagcaa ggcaggtagc
+     5221 acatctcccg atgacggcga cagtgactca tcaagcttaa gtgggagacg ttcttactgc
+     5281 tctagtagag ggaggattca gagcatattt ggcaggtaca attccaacaa gaaacctttt
+     5341 gagtttagac caggtctaga agttagagca gatccaatga atgattttga gcaagcagtc
+     5401 acagacacat cgcaatatgc agagtacaca ccgaatcaag aaagcttaat gaaagatttt
+     5461 atccaaatta taaggactaa tcctagtcac acaatgggct cttttgagct cattcaagca
+     5521 gtaacagaat tcggccgaag caagtaccca gcagagaaca tagaaaaagc taaaagggac
+     5581 ccaaagaact gggtgagtat ctcagaagta acagaaacaa caagcattgt ttcacaaccc
+     5641 agaacacaca taatgctcaa agactgcttt aaaattcttc tcggtactga gaataagaag
+     5701 atcgtcaaga tgctaagggg aaagctgaag aagttaggtg ctataaacac tgatatagaa
+     5761 attggaagga aggactgtct ggacatgcta aataccgttg aagggctatc agaagagcaa
+     5821 aggaagaaca ttgttaatgg aatttttgag ccttctaaat tgtcattcta ccactggaag
+     5881 gaactagtcc aaaaagatgt tgaggaggtg ctgctgactg atgatggcaa ctacatcttt
+     5941 tgctggttga aaacactgtc atcaatgctg aaaggggctt tgaagaaaga gctccgattc
+     6001 atgaacaatg gaggtgtgct agaactcaac agtggattct tcagtgagga tgaatttgag
+     6061 gagctgctaa acgtcaaaaa agaactgact ggaaacatga gtctagacag agagttaaac
+     6121 acagagttac ttttggcttc atggctgaag tgtgtctaca agcccaaaga aggggcctca
+     6181 atagtgcaag aaggtttaga agcactgaag gcgatggcag gagaactata tgaaatcaga
+     6241 ttgcagcatt tggagctaac cagaatgaag aaggacaatc ctagtgtaag cttcaccaag
+     6301 gaagaagttc ttgtgaaaag gcttgagaag tcattcctga agaaatttaa caaggaagca
+     6361 atgaagtttg ttaacctggt gttcttctgt tcactctctg ccccgtggtg tgttcattac
+     6421 aagtctttag agtcctactt ggtccgtcac ccagagatcc ttgagctaaa ggccaaaggt
+     6481 gatttgggat ctgtgatttt agacctttcg gttgcatcgg ctatatcaag gctagtccaa
+     6541 caagaaacaa acagtgagct agattcagag gtgttaaatg agatgaaagt gcgctttgct
+     6601 gtcaagtact ttgtaacact gtttacagct aatggagagc ctttctcact tagcctgaat
+     6661 gatggaggtc tagatgagaa tctacagaaa accacagacg agaagctgtt gcatcagaca
+     6721 aaagtagtat ttactaaaat cggattggca ggaaacaatt atgacttcat gtggactacg
+     6781 caaatgatag caaacagcaa cttcaatgtt tgcaagcgtc tgactggtag aacaactggt
+     6841 gaaaggcttc ccagaagtgt gagaagcaag gtaatttatg aaatggtgaa gcttgttgga
+     6901 gaaactggaa tggcaatact acaacagctg gcctttgctc aagcccttaa ttatgaccat
+     6961 agattttatg cagtattagc acctaaagcc cagcttggag ggagcaggga tctgctagta
+     7021 caagagactg gtacaaaggt catccacgcc acaacagaaa tgttcagtcg aaatttactg
+     7081 aaaacaacac aagacgatgg tttgacaaac cctcacttga aggaaaccat actgaatgtt
+     7141 ggactggatg cactgagcac gatgcgcttg ctagacggaa ggccagtgtc tgaagacagc
+     7201 aagcttctga acttttacaa agtaatctgt atatcaggag acaacacaaa gtggggtcct
+     7261 atacactgct gctctttctt ttctggtatg attcagcagc ttttgaagga tgtgccagac
+     7321 tggagttcat tctacaagct tgctttcatc aagaatcttt gcaggcaggt tgagattcct
+     7381 gctgccagtg taaagaaaat cctgaacaca cttcggttta gacttagtaa caaaggaggt
+     7441 gttgagtcaa agtcagaaga ggagctcagg aaagagctaa gcgatagcac tgaagaatgg
+     7501 ggagacaatg acactgtcaa gtttctgatc acaacctatc taagcaaagg aatcatggca
+     7561 ctcaacagct acaatcacat gggtcaaggg atacaccatg ccacctcatc attgctgact
+     7621 tcgttaatgg cagaactatt cgaagaacta gtgatagacc attttaaaag gcatctacca
+     7681 cagctcactg tcaacgtgac acatgctgga agctctgatg attatgcgaa gtgcattgtg
+     7741 gtcactgggc ttctgcctaa agaactctac gacaggtata ctgaagcttt ctggaagcat
+     7801 gcatgcaaaa taaagaacta tactgcagcc gtccaaaggt gctgtcagat gaaggatagt
+     7861 gcgaagacat tggtaggaga ttgcttcctc gagttctaca gtgagttcat gatgggcaat
+     7921 agagtaactc cagctgtgat caagttcata ttcactggcc tcataaacag ttcagtgact
+     7981 tcaccacaga gcttagtgca agcctgtcat gtatcttctc aacaagcaat gtataacagt
+     8041 gtcccgttga tgactaatgc aaccttcact cttcttagac agcaagtttt cttctcacat
+     8101 gtggaggatt ttgtgcgcag atatgggctg attacactag gcactgtgtc atccttcggt
+     8161 cgcctgtttg ttcccacgtt ttctggccta gttagttctg cggttgcctt agaagacagc
+     8221 gaagtcctgg cgaagtcagc tgctgaaatc aacgaaaaca acatttttct agatagcagc
+     8281 agtctctcca atctagacaa cctaaaagac accgacagtg ctaaagctag ggatgatgag
+     8341 agttccataa gtgagaccac aattgaatcc actgaatcag gaagttcctc ttctagtttc
+     8401 acttttgagc tgacaagacc gctatctgaa acagaactgc agtttctcaa aacattaaag
+     8461 tcgaccactt ctgtaactgc atgtgaaata atacaggaca agctgactcc actatatgca
+     8521 gacagtcaag aaggtgcgtt agataagtac aatgtgctgt acaacagcag attgactgct
+     8581 tcttgtgatt ggctcagaca aggaaggaaa aggggacctc ttgaattagc taggaggttg
+     8641 caatgtatct tgaacattct gattgtgggt tattacagat catttggtag tgatgggaca
+     8701 gacaagcaag tcaaggcatc cctcaataga gatgacaaca gagtcatcga agaccccatg
+     8761 attcaactag tacctgagaa gctaagaaga gagttagaga gattaggagt ctccagaatg
+     8821 gaaatcgatg aacttatgcc ttccatcaag cctgatgaaa ctctctgtca gctggtggcc
+     8881 aaaaaactca tcagcctgaa cgttgcaaca gaagagtaca ctgcagaagt ctctaggctg
+     8941 aagcagacct tgacagccag aaatgtcttg cacggccttg ctggaggcat caaggagctg
+     9001 tcacttccaa tttacaccat cttcctcaag tcatactttt tcaaggacaa tgtcttctta
+     9061 gacctagagg atagatggtc aacgaagcat agctctaatt acagggacag ttctggtaga
+     9121 atgctaactg gtagagtaat cacaaaattc actcattggt tagacacatt tctgaactgt
+     9181 acggtgagca ttaacaggac acaagaaatc aaggacaatt ctcttttcaa ccctgacctc
+     9241 agatgtataa acattctagt gagagaggac aatgtgaagg agatgtcaat tgttcaaagc
+     9301 caccttaggg ttgtcacttc agaattcaac aacctcaatc ttcagttctc tgactgcaac
+     9361 agacaaaaac tgaaggtggt tgagtctaga ccgcctgaat gtgagctaga ggccaataag
+     9421 gcggtaattg taaagtcgaa gttgttcagt gctgttgagc aggtcagact tgcaaataac
+     9481 cctgcagtgg ttatgggcta cctccttgag gagtcatcaa tctcagaagt gaaacccacc
+     9541 aaggtagact tttctaacct gttgaaagat agattcaaac tgatgcagtt cttcccctcc
+     9601 gtctttgctt tgctgaagca ccttcagtct gagtcgtcag agatggagaa actaggggca
+     9661 ccagtggata tgcagcaggt gtcaaagtat tcaaaccatt tgacactatt gtgtagaatg
+     9721 atacagcagg ctaggccttc gctgacagtt ttctacatgc tgaaaggcaa tcagatgaac
+     9781 actgagccta cagtgtctga gctggtcagc tatgggatca aggagggcag atacctaaga
+     9841 ctgcctgaaa taggtcttga tgccagcaca tactctgtta agtactggaa aatacttcac
+     9901 tgcatttctg ccataggtga attaccactt agtgacagag ataaaacatc cctacttata
+     9961 agtttcctca actggaaagt ttcatctgac tcaatggcac aagattgtcc gctttacaaa
+    10021 caagagcatg ctgttatcag tgaatttgca ggacaggttg ttgtgaacac tcttgctagt
+    10081 gagctcagct ctgttaggag agatgctgag agagatagcc ttactgacct gattgattat
+    10141 gtgaattcac ctacagagct actcaagaaa aaaccctacc tcggtacaac atgtaaattc
+    10201 actacctggg gtgaaaacaa caggaacggc aagtttacat acagcagtcg gtcgggagag
+    10261 gcaattggca tcttcattgc aggaaaactc cacatacatc tgagcaggga atcaactggt
+    10321 ctgctatgtg aggtggaaag aaatgtgctt ggctggcttg ggagacgtag gacagatgta
+    10381 ctaacaaagg agcagcacca acaattttta gagttccttc ctacgctaag cgaggtgtca
+    10441 caaaaaaata gggacggcac cacacaaggt ctatgtcagg acaacacaaa tgtccgtatg
+    10501 ctgagatttg tgcacccaaa aaagaacact cctgttgtca agatcaaggg gcagattctg
+    10561 acagtgaaaa aacaggttag ttttgaggca gagagtgagc ctagactcat gtgggggcat
+    10621 ggttgtgtct cagtagttta cgatgagtgt gagactcaga ctacgtacca tgaaaattta
+    10681 ctcaagataa agcagatggt tgatagcaca actgatagag ctagaagcct cccacagtca
+    10741 gtattctcag acaccaaagt gattcttgcc agaatcaagt tcaaatccga ccttctgctg
+    10801 aactcacttt gcctgttgca cagcttccta agacacacaa ctactgatgc tgtgctggag
+    10861 gcagaaagca agtgtgcact gctagaaagg tacctgcagt caggaggggt gagagtaaag
+    10921 tcagcagatg aaactttaga gagaaagtta tgcagcaagg tgatagaatg taagcttgag
+    10981 caaactcttg atgaagaaat tgaagtctgt gatagcctca acaaagtgtt ctccgagact
+    11041 cctgttcccg tcagtagctg gtcggaagtg cagtgctaca ttgaggatgt gggcttcagc
+    11101 aacatcctaa taacacttga caaaacaagc actaagggag aactgatctg gaaattttct
+    11161 ctagacaata caagcaacat agctggtagc atcaaggaca taaggtcgct tgtttcctac
+    11221 ataagcaccg aaactatacc aaaattcttg ctacctttcc tgctctttga gaacctgctc
+    11281 tccagcattc tcaagcaaag cttgacagtg aaggagacat tacatgctac aggcatctct
+    11341 gacaaagaaa ttgaagcagt tgccacctta tttgctttct gcttccaaaa cgacaaggtc
+    11401 aaaagaaaag gcccccgatg ttcaatgtcc tctatcctaa acttaaccaa aggtgattgg
+    11461 gtggaagtag ggcagagaat gaaacttcag gcacatctgg attcggacac tgtccggctg
+    11521 agtgttcagt tagcaatctc taccgatgca gatcaaacag ctgataaaaa agctcgagtg
+    11581 tcaatggcaa agaaagtgat agcttctcaa ctaacactac tactgcaaga ggatggtatt
+    11641 gacattaaaa aacttaagga catagctgtt aatgttcagg ttaggaaaga aaaaactggt
+    11701 gaggtactag attttacact tcttgatgac caagcaggta acctgaacta tatcggagtg
+    11761 ttggagacaa taatggatag aagaaagaaa ggtcctgcca tcagtgcact tgaagacttc
+    11821 tttcttctac taacaggcat ggccgaaagc aacatacaac aggacacagc aatcaaaagt
+    11881 gaagaagctt gcagtgacga catatgtctc gaagaccttc ttgaacccag tgaggaatca
+    11941 tccagcagct ccggtgcgca ggacaaagaa gctgtacccg acagagtaac attcaactgg
+    12001 gattctgaca gtgattgatc ttcagtgtgt atactaaaag tttaaattag taggggtgtg
+    12061 gggggaacga tttctttgag a
+//
+
+LOCUS       EU697949               12081 bp    cRNA    linear   VRL 01-NOV-2009
+DEFINITION  Nairobi sheep disease virus strain Ganjam G619 segment L
+            RNA-dependent RNA polymerase gene, complete cds.
+ACCESSION   EU697949
+VERSION     EU697949.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 12081)
+  AUTHORS   Yadav,P.D., Khristova,M., Vincent,M.J. and Nichol,S.T.
+  TITLE     Genetic diversity of Ganjam virus in India and close genetic link
+            with Nairobi sheep disease virus in Africa based on partial and
+            complete genome sequencing
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 12081)
+  AUTHORS   Yadav,P.D., Khristova,M., Vincent,M.J. and Nichol,S.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-MAY-2008) Special Pathogen Branch, Division of Viral
+            & Rickettsial Diseases, Centers for Disease Control and Prevention,
+            1600 Clifton Rd. NE, Atlanta, GA 30333, USA
+FEATURES             Location/Qualifiers
+     source          1..12081
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="viral cRNA"
+                     /strain="Ganjam G619"
+                     /host="Haemaphysalis sp."
+                     /db_xref="taxon:194540"
+                     /segment="L"
+                     /lab_host="mouse brain culture"
+                     /country="India: Bhanjanagar, Orissa"
+                     /collection_date="1954"
+     primer_bind     1..22
+     CDS             43..12018
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="ACH99797.1"
+                     /translation="MEFLNSIPWEEVVPGQFTANPGFQVTDYFEIVRQPADGNCFYHS
+                     IAELFVPNKNDFSFRLVKQHLELAARRFFEEESEAKGLGLSLEKYLEVAMCDNEWGGS
+                     LEASMLAKHLDITIVIWVIEGPSRVAAAVKFGPGDVAGAINLLHTGYNHFDALRLLVD
+                     DSQVSRQPRDITERIEIVEEVLSEDREETFFEEDLLNFATTETVEEKLTRQDKKVQDE
+                     MQRRAALLGKIIKKGENIPVRVGRVLDCLFNCKLFVELRDGLLVLKPESKEDPSMGCS
+                     LRQLGHKLLTRDKQIKQEYAKSKLYLTKDLLDHLDAGGLLRSAFPGMGLERNLQFLHS
+                     EVLLDVCTVVVAVLLSSFLYGSNNRNKKTFITNCLLNTSLSGKRVFKALGKLTGTTLY
+                     RSPRNALSHVCQTLYGKMMGRLQSYISVMSPISLLALRNLDFDNMSVKDYMEMLKEMS
+                     VIDNTDVDYTHREIADLNQLTDKLQKLFKEGRADELKNWYKEEELTKRSLRSVQNASE
+                     FLISDYFKKKDIMKFISTTGKASSTGNIGNVLSYAHNLYLSKESLKMTTEDTTQLLIE
+                     IKRLYRLQGEQSIEPIAIICDKLEEQFRKLFKELPEECSLECQTLFNDIRNSGSHSTA
+                     WKHALRLKGTAYEGMFSRQYGWSYIPEDIKPSLTMLIQTLFPHKFEEFLDRTQLHPEF
+                     RDLTPDFALTQKVYFKKNKIVGIQNTQLVIDSSLEGSVEAVPVVEKKMFPLPETPVDE
+                     VHSIQRIMKSFRDKVENDKKRKEEEGDKAPASESMEDQKGGSVQDQDKPAPITKKAMQ
+                     EESERAGESKSNLESRGADKLQPVLASTGPRGMAQSATRGPLTYSDRILIDENSTELT
+                     EEEELEKRQILLVEVGYQTDVDGKITTDFKKWKDILRLLEMLEIKCSFIACADCTSTP
+                     ADNWWISEDKVRCLKSSISHLFSSLTKNSPADVTDIVVGSISTQKVRSYLKSGSATKT
+                     PVSSKDVKETWQRMRQNIIERPTGAIIISGLESAMRQGLVDGVVMSKEGCVKTIETLK
+                     QNCDRITDEFERTKYKHELNENKTTSEKLLLGWLSEDLQGCRCSNCLNIIKQTVESIT
+                     ENSDRLEYLASSTILKSHCPDCHPRGVSVSNSTNIMNRLPGLEKTQHSDNKGFEDTNE
+                     ALTDLDRVVRLTLPGKTEKERRIKRNVETLIRLMMQASGLECIKLPSGQIITHRLTRK
+                     IKQEDENVLSDKLTERLERIKKELSDAKLSSYSEYVKKTLGHSIQRVDKQKESKCSVP
+                     RAWLEKLLRDLKVPTKDEDILTNIRESMSKKTNFIKNNDRLVIRSEEELTRFVENRSV
+                     QLMPDKSKKLFQSDCILFKEVTAEAMKRYYSTPYEGVQEMIVLLINFLCRFPWFQEVV
+                     LYGKICETFLRCCTEFSRSGIKLVKVRHCDLNLAIKLPSNKKENMLCTLYSKEMELLK
+                     GPFFLNRRQAVLGASYPYIIITLYMQVLQQHRCLEVLSTVGERTFENIKTCTSDLIAS
+                     LSLELTYAVNGQFEKAYEVRTRQCKLGGNFLNRSSRDHFITVISGLNTVYGLIVRDNL
+                     LANSQQQNKQLQMLRFGMLSGLSRLSCPKELGKKFSTSCRRLEDNIMRLYLQSTVYCS
+                     NRDVEHNINEWKSKDLCPEVTIPCFSVYGVFVNSDRQLIFDIYNVHIYNKEMDNFDEG
+                     CISVLEETAERHMLWEMDLLRSLSRETKDERSARLLLGCPNVRKAIDKDGNKLSKAGS
+                     TSPDDGDSDSSSLSGRRSYCSSRGRIQSIFGRYNSNKKPFEFRPGLEVRADPMNDFEQ
+                     AVTDTSQYAEYTPNQESLMKDFIQIIRTNPSHTMGSFELIQAVTEFGRSKYPAENIEK
+                     AKRDPKNWVSISEVTETTSIVSQPRTHIMLKDCFKILLGTENKKIVKMLRGKLKKLGA
+                     INTDIEIGRKDCLDMLNTVEGLSEEQRKNIVNGIFEPSKLSFYHWKELVQKDVEEVLL
+                     TDDGNYIFCWLKTLSSMLKGALKKELRFMNNGGVLELNSGFFSEDEFEELLNVKKELT
+                     GNMSLDRELNTELLLASWLKCVYKPKEGASIVQEGLEALKAMAGELYEIRLQHLELTR
+                     MKKDNPSVSFTKEEVLVKRLEKSFLKKFNKEAMKFVNLVFFCSLSAPWCVHYKSLESY
+                     LVRHPEILELKAKGDLGSVILDLSVASAISRLVQQETNSELDSEVLNEMKVRFAVKYF
+                     VTLFTANGEPFSLSLNDGGLDENLQKTTDEKLLHQTKVVFTKIGLAGNNYDFMWTTQM
+                     IANSNFNVCKRLTGRTTGERLPRSVRSKVIYEMVKLVGETGMAILQQLAFAQALNYDH
+                     RFYAVLAPKAQLGGSRDLLVQETGTKVIHATTEMFSRNLLKTTQDDGLTNPHLKETIL
+                     NVGLDALSTMRLLDGRPVSEDSKLLNFYKVICISGDNTKWGPIHCCSFFSGMIQQLLK
+                     DVPDWSSFYKLAFIKNLCRQVEIPAASVKKILNTLRFRLSNKGGVESKSEEELRKELS
+                     DSTEEWGDNDTVKFLITTYLSKGIMALNSYNHMGQGIHHATSSLLTSLMAELFEELVI
+                     DYFKRHLPQLTVNVTHAGSSDDYAKCIVVTGLLPKELYDRYTEAFWKHACKIKNYTAA
+                     VQRCCQMKDSAKTLVGDCFLEFYSEFMMGNRVTPAVIKFIFTGLINSSVTSPQSLVQA
+                     CHVSSQQAMYNSVPLMTNATFTLLRQQVFFSHVEDFVRRYGLITLGTVSSFGRLFVPT
+                     FSGLVSSAVALEDSEVLAKSAAEINENNIFLDSSSLSNLDNLKDTDSAKARDDESSIS
+                     ETTIESTESGSSSSSFTFELTRPLSETELQFLKTLKSTTSVTACEIIQDKLTPLYADS
+                     QEGALDKYNVLYNSRLTASCDWLRQGRKRGPLELARRLQCILNILIVGYYRSFGSDGT
+                     DKQVKASLNRDDNRVIEDPMIQLVPEKLRRELERLGVSRMEIDELMPSIKPDETLCQL
+                     VAKKLISLNVATEEYTAEVSRLKQTLTARNVLHGLAGGIKELSLPIYTIFLKSYFFKD
+                     NVFLDLEDRWSTKHSSNYRDSSGRMLTGRVITKFTHWLDTFLNCTVSINRTQEIKDNS
+                     LFNPDLRCINILVREDNVKEMSIVQSHLRVVTSEFNNLNLQFSDCNRQKLKVVESRPP
+                     ECELEANKAVIVKSKLFSAVEQVRLANNPAVVMGYLLEESSISEVKPTKVDFSNLLKD
+                     RFKLMQFFPSVFALLKHLQSESSEMEKLGAPVDMQQVSKYSNHLTLLCRMIQQARPSL
+                     TVFYMLKGNQMNTEPTVSELVSYGIKEGRYLRLPEIGLDASTYSVKYWKILHCISAIG
+                     ELPLSDRDKTSLLISFLNWKVPSDSMAQDCPLYKQEHAVISEFAGQVVVNTLASELSS
+                     VRRDAERDSLTDLIDYVNSPTELLKKKPYLGTTCKFTTWGENNRNGKFTYSSRSGEAI
+                     GIFIAGKLHIHLSRESTGLLCEVERNVLGWLGRRRTDVLTKEQHQQFLEFLPTLSEVS
+                     QKNRDGTTQGLCQDNTNVRMLRFVHPKKNTPVVKIKGQILTVKKQVSFEAESEPRLMW
+                     GHGCVSVVYDECETQTTYHENLLKIKQMVDSTTDRARSLPQSVFSDTKVILARIKFKS
+                     DLLLNSLCLLHSFLRHTTTDAVLEAESKCALLERYLQSGGVRVKSADETLERKLCSKV
+                     IECKLEQTLDEEIEVCDSLNKVFSETPVPVSSWSEVQCYIEDVGFSNILITLDKTSTK
+                     GELIWKFSLDNTSNIAGSIKDIRSLVSYISTETIPKFLLPFLLFENLLSSILKQSLTV
+                     KETLHATGISDKEIEAVATLFAFCFQNDKVKRKGPRCSMSSILNLTKGDWVEVGQRMK
+                     LQAHLDSDTVRLSVQLAISIDADQTADKKARVSMAKKVIASQLTLLLQEDGIDIKKLK
+                     DIAVNVQVRKEKTGEVLDFTLLDDQAGNLNYIGVLETIMDRRKKGPAISALEDFFLLL
+                     TGMAESNIQQDTAIKSEEACSDDICLEDLLEPSEESSSSSGAQDKEAVPDRVTFNWDS
+                     DSD"
+     primer_bind     complement(12058..12081)
+ORIGIN      
+        1 tctcaaagat atcaatcccc ccgttacccc agagttgcaa gcatggagtt cctgaacagc
+       61 attccttggg aagaggttgt tccagggcag ttcactgcaa accctggttt tcaggtcacg
+      121 gattactttg agatagtcag acagcctgct gatggcaact gtttttacca cagcattgct
+      181 gaactctttg tgccaaataa aaatgacttt tctttcagac ttgtgaagca gcatcttgag
+      241 ttggcagcga gaagattctt tgaggaggaa tccgaagcca aaggactagg cctgagtctt
+      301 gagaagtatt tagaggttgc tatgtgtgac aatgagtggg gagggagtct ggaagcttcg
+      361 atgttggcaa agcacctaga catcactatt gtcatatggg tgatagaagg tcctagcaga
+      421 gtggctgcag cagtgaaatt tggacctgga gatgttgctg gcgcaataaa tctcctacac
+      481 accggttaca atcacttcga tgccttaaga ctgttagttg atgacagcca agtcagccgt
+      541 caacctagag acatcacaga acgcatagaa atagttgaag aggtgctgtc tgaagacaga
+      601 gaagaaacct tctttgaaga agatctgctc aactttgcca ccacagagac tgtagaagag
+      661 aagctgacca ggcaagataa gaaggttcag gatgaaatgc agcgtagggc agcattacta
+      721 gggaaaatca taaagaaagg tgaaaacatc cctgtgagag taggaagggt acttgactgt
+      781 ctgttcaact gcaaattgtt tgtagagcta agagatggac tactggtgtt aaagccagag
+      841 tcgaaagagg atccaagcat ggggtgcagt ctgaggcagc taggccacaa actgctaaca
+      901 agagacaagc aaataaaaca ggaatatgct aagtctaagc tatacctgac aaaagatctt
+      961 ttggaccacc tagatgctgg tggactcttg cgctcagcat ttccagggat gggattagag
+     1021 agaaatctgc agttcttgca ctccgaggtt ctacttgatg tgtgcacagt ggttgttgct
+     1081 gttctactgt cctccttcct gtatgggtca aacaacagaa acaagaagac attcataaca
+     1141 aactgcttgc tgaacacgag cctttcaggg aagagagtct tcaaggcatt aggaaagctg
+     1201 acaggtacca ctctttacag aagtcctagg aatgccttgt ctcatgtgtg tcagactctt
+     1261 tatggcaaga tgatgggtag gctacagagc tacatttcag tcatgagtcc aataagtttg
+     1321 ttagctctac gaaatctcga ctttgacaac atgtctgtta aagactacat ggaaatgcta
+     1381 aaagagatgt cagtgataga caatacagat gttgactaca cccacagaga gattgctgac
+     1441 ctcaatcagc tcacagataa gcttcaaaag ttatttaaag agggaagggc agatgagctg
+     1501 aagaactggt acaaagagga agaattgaca aagcggtcat tgagaagtgt gcaaaatgca
+     1561 tctgagtttt taataagtga ctattttaaa aagaaggaca ttatgaagtt tatatcaaca
+     1621 acaggcaagg catcaagcac tggcaatatt ggcaatgtcc tatcttacgc acataatcta
+     1681 tacttgagca aagagagcct aaagatgact acagaagaca caacacagct tctgattgag
+     1741 ataaagagat tatataggct tcaaggagaa caaagcattg agccaattgc aataatatgt
+     1801 gataagcttg aggagcaatt tagaaaacta ttcaaagagt tgcctgaaga atgttcactc
+     1861 gagtgtcaga ctctgttcaa tgacattaga aactctggta gtcacagtac agcatggaag
+     1921 catgcactga ggcttaaagg tactgcttat gaaggaatgt tctctaggca atatggatgg
+     1981 tcatatattc ctgaagatat aaagccgagc ttgacaatgc tcatacagac tctgtttcct
+     2041 cataagtttg aggagtttct ggatcgaact cagctccatc cagaatttag ggacctgaca
+     2101 cctgacttcg ccttaactca gaaggtgtac ttcaaaaaga acaagatcgt gggaattcaa
+     2161 aacacccagt tagtaattga ctcaagctta gaggggtctg ttgaggctgt tcccgtggtg
+     2221 gagaagaaga tgttccctct acctgagact ccagttgacg aagtacactc catccagagg
+     2281 attatgaaaa gtttcagaga caaagttgaa aatgacaaaa agagaaagga ggaagaaggt
+     2341 gacaaagcac cagcaagtga aagcatggaa gaccagaaag gtggtagtgt tcaagaccaa
+     2401 gacaagcctg ctcccataac caagaaggca atgcaggagg agtcagaaag agcaggagaa
+     2461 tccaagtcca acctggaatc aaggggagct gacaaattac agccagtttt agcatcaaca
+     2521 ggcccccgtg gcatggctca aagtgcaacc agaggaccac taacatacag tgacagaatt
+     2581 cttattgatg aaaacagtac agaactaaca gaagaagaag agttggaaaa gagacagata
+     2641 ctactggttg aagttggtta ccagaccgat gtggatggca aaataacaac agacttcaag
+     2701 aagtggaaag acatcttgag gcttttggaa atgttagaaa ttaagtgttc tttcatagcc
+     2761 tgcgcagact gcacatcaac acctgcagac aactggtgga tctcagaaga caaggtacgt
+     2821 tgtctaaagt cctccataag tcacctgttt agcagcctca caaagaactc tcctgcggat
+     2881 gtcacggaca tagtggttgg ctctatcagc acacagaagg tgagaagtta cttgaagtct
+     2941 ggatcagcaa ccaagacacc tgtctccagc aaggatgtta aagaaacttg gcaacgtatg
+     3001 cgacagaaca taatagaaag gcctacaggg gccatcatca tttcaggcct tgagagtgcc
+     3061 atgagacaag gattagttga tggagttgtg atgtcaaaag aagggtgtgt gaaaaccatt
+     3121 gaaactttaa aacaaaactg tgacaggatc actgatgagt ttgaaagaac aaagtacaaa
+     3181 catgaactaa acgaaaacaa gacaaccagt gaaaagctac ttctgggatg gttgtccgag
+     3241 gatctccagg gttgcagatg tagcaactgt ttaaacatca taaaacaaac agttgagagt
+     3301 ataacagaga actcagatag gcttgagtat ttagcaagta gcactatcct caagtcgcac
+     3361 tgccctgatt gccatcctag aggggttagt gttagcaata gcaccaatat aatgaacaga
+     3421 ctgcctgggc tagaaaagac ccaacattcc gacaacaaag gctttgaaga cacaaatgaa
+     3481 gctctgacag atctagatag agtggtccgg ttgactttac ccggcaaaac agaaaaagag
+     3541 agaagaatca aaagaaatgt cgaaacacta atcaggctaa tgatgcaggc gtcaggccta
+     3601 gagtgcataa aactcccttc agggcagatt atcacccaca gactgaccag gaagatcaag
+     3661 caagaagatg aaaatgtttt atcagacaaa ctgacagaaa ggctggaaag aattaagaag
+     3721 gaactctctg atgcaaaatt gagcagttac tcagagtatg tgaagaaaac cttagggcac
+     3781 tccatacaga gagtggataa acagaaggaa tccaagtgtt cagtgcctag agcatggcta
+     3841 gagaagcttt taagagattt gaaagttcct accaaagatg aagatatact aacaaatatt
+     3901 agagagtcaa tgtcaaaaaa gactaacttc attaaaaaca atgacaggct tgtgattaga
+     3961 tctgaagaag agttaacgag atttgttgaa aacaggtctg tacagttaat gcctgacaag
+     4021 tctaagaagc tctttcaatc tgattgtatc ctcttcaaag aagtcactgc tgaagcaatg
+     4081 aagcggtatt attcaacacc gtacgaagga gttcaggaga tgattgtgct actaataaac
+     4141 ttcttatgca gattcccttg gttccaagag gttgttctct acgggaaaat ctgtgagact
+     4201 tttttgagat gctgtactga gttcagtcgt tctggaatta agcttgtcaa ggtgagacac
+     4261 tgtgatttaa acctagcaat aaagttgccc tctaacaaga aagaaaatat gttatgtact
+     4321 ctgtatagca aggagatgga actgctgaaa ggacccttct tcctcaatag aagacaggct
+     4381 gtcttaggtg cttcgtatcc atacataatc atcaccctct acatgcaagt tttacaacag
+     4441 cacaggtgtc ttgaggtctt aagcacagtt ggtgaaagaa catttgaaaa catcaagact
+     4501 tgcacctcag acctgatagc tagcctatca ttagaactga catatgctgt caatgggcag
+     4561 tttgagaagg cttatgaagt tagaacaagg cagtgcaagc taggaggtaa ctttttaaac
+     4621 agaagcagca gagaccactt cattactgtg atctcaggtt taaacactgt ttatggactt
+     4681 attgtaaggg ataaccttct tgcaaattcc caacaacaaa acaaacagct tcagatgcta
+     4741 agatttggca tgttgtctgg cttgagtagg ctttcgtgtc caaaggaact aggaaaaaag
+     4801 ttttccacga gctgcagaag actcgaggac aatatcatgc ggctctatct acaaagcact
+     4861 gtttactgtt caaacaggga cgttgaacat aacatcaatg agtggaagtc gaaagatcta
+     4921 tgtcctgaag ttacaatccc atgcttctct gtttacggtg tgtttgtgaa cagcgatcgt
+     4981 cagttaatct ttgacattta caacgtgcat atctacaata aagagatgga caattttgat
+     5041 gaaggatgta taagtgtgtt ggaagagact gccgaaagac acatgctctg ggaaatggat
+     5101 ctacttaggt cattaagcag agagacaaaa gatgagaggt cagcaaggct tctattagga
+     5161 tgcccaaatg tcaggaaagc aatcgacaag gacggcaaca aactaagcaa ggcaggtagc
+     5221 acatctcccg atgacggcga cagtgactca tcaagcttaa gtgggagacg ttcttactgc
+     5281 tctagtagag ggaggattca gagcatattt ggcaggtaca attccaacaa gaaacctttt
+     5341 gagtttagac caggtctaga agttagagca gatccaatga atgattttga gcaagcagtc
+     5401 acagacacat cgcaatatgc agagtacaca ccgaatcaag aaagcttaat gaaagatttt
+     5461 atccaaatta taaggactaa tcctagtcac acaatgggct cttttgagct cattcaagca
+     5521 gtaacagaat tcggccgaag caagtaccca gcagagaaca tagaaaaagc taaaagggac
+     5581 ccaaagaact gggtgagtat ctcagaagta acagaaacaa caagcattgt ttcacaaccc
+     5641 agaacacaca taatgctcaa agactgcttt aaaattcttc tcggtactga gaataagaag
+     5701 atcgtcaaga tgctaagggg aaagctgaag aagttaggtg ctataaacac tgatatagaa
+     5761 attggaagga aggactgtct ggacatgcta aataccgttg aagggctatc agaagagcaa
+     5821 aggaagaaca ttgttaatgg aatttttgag ccttctaaat tgtcattcta ccactggaag
+     5881 gaactagtcc aaaaagatgt tgaggaggtg ctgctgactg atgatggcaa ctacatcttt
+     5941 tgctggttga aaacactgtc atcaatgctg aaaggggctt tgaagaaaga gctccgattc
+     6001 atgaacaatg gaggtgtgct agaactcaac agtggattct tcagtgagga tgaatttgag
+     6061 gagctgctaa acgtcaaaaa agaactgact ggaaacatga gtctagacag agagttaaac
+     6121 acagagttac ttttggcttc atggctgaag tgtgtctaca agcccaaaga aggggcctca
+     6181 atagtgcaag aaggtttaga agcactgaag gcgatggcag gagaactgta tgaaatcaga
+     6241 ttgcagcatt tggagctaac cagaatgaag aaggacaatc ctagtgtaag cttcaccaag
+     6301 gaagaagttc ttgtgaaaag gcttgagaag tcattcctga agaaatttaa caaggaagca
+     6361 atgaagtttg ttaacctggt gttcttctgt tcactctctg ccccgtggtg tgttcattac
+     6421 aagtctttag agtcctactt ggtccgtcac ccagagatcc ttgagctaaa ggccaaaggt
+     6481 gatttgggat ctgtgatttt agacctttcg gttgcatcgg ctatatcaag gctagtccaa
+     6541 caagaaacaa acagtgagct agattcagag gtgttaaatg agatgaaagt gcgctttgct
+     6601 gtcaagtact ttgtaacact gtttacagct aatggagagc ctttctcact tagcctgaat
+     6661 gatggaggtc tagatgagaa tctacagaaa accacagacg agaagctgtt gcatcagaca
+     6721 aaagtagtat ttactaaaat cggattggca ggaaacaatt atgacttcat gtggactacg
+     6781 caaatgatag caaacagcaa cttcaatgtt tgcaagcgtc tgactggtag aacaactggt
+     6841 gaaaggcttc ccagaagtgt gagaagcaag gtaatttatg aaatggtgaa gcttgttgga
+     6901 gaaactggaa tggcaatact acaacagctg gcctttgctc aagcccttaa ttatgaccat
+     6961 agattttatg cagtattagc acctaaagcc cagcttggag ggagcaggga tctgctagta
+     7021 caagagactg gtacaaaggt catccacgcc acaacagaaa tgttcagtcg aaatttactg
+     7081 aaaacaacac aagacgatgg tttgacaaac cctcacttga aggaaaccat actgaatgtt
+     7141 ggactggatg cactgagcac gatgcgcttg ctagacggaa ggccagtgtc tgaagacagc
+     7201 aagcttctga acttttacaa agtaatctgt atatcaggag acaacacaaa gtggggtcct
+     7261 atacactgct gctctttctt ttctggtatg attcagcagc ttttgaagga tgtgccagac
+     7321 tggagttcat tctacaagct tgctttcatc aagaatcttt gcaggcaggt tgagattcct
+     7381 gctgccagtg taaagaaaat cctgaacaca cttcggttta gacttagtaa caaaggaggt
+     7441 gttgagtcaa agtcagaaga ggagctcagg aaagagctaa gcgatagcac tgaagaatgg
+     7501 ggagacaatg acactgtcaa gtttctgatc acaacctatc taagcaaagg aatcatggca
+     7561 ctcaacagct acaatcacat gggtcaaggg atacaccatg ccacctcatc attgctgact
+     7621 tcgttaatgg cagaactatt cgaagaacta gtgatagact attttaaaag gcatctacca
+     7681 cagctcactg tcaacgtgac acatgctgga agctctgatg attatgcgaa gtgcattgtg
+     7741 gtcactgggc ttctgcctaa agaactctac gacaggtata ctgaagcttt ctggaagcat
+     7801 gcatgcaaaa taaagaacta tactgcagcc gtccaaaggt gctgtcagat gaaggatagt
+     7861 gcgaagacat tggtaggaga ttgcttcctc gagttctaca gtgagttcat gatgggcaat
+     7921 agagtaactc cagctgtgat caagttcata ttcactggcc tcataaacag ttcagtgact
+     7981 tcaccacaga gcttagtgca agcctgtcat gtatcttctc aacaagcaat gtataacagt
+     8041 gtcccgttga tgactaatgc aaccttcact cttcttagac agcaagtttt cttctcacat
+     8101 gtggaggatt ttgtgcgcag atatgggctg attacactag gcactgtgtc atccttcggt
+     8161 cgcctgtttg ttcccacgtt ttctggccta gttagttctg cggttgcctt agaagacagc
+     8221 gaagtcctgg cgaagtcagc tgctgaaatc aacgaaaaca acatttttct agatagcagc
+     8281 agtctctcca atctagacaa cctaaaagac accgacagtg ctaaagctag ggatgatgag
+     8341 agttccataa gtgagaccac aattgaatcc actgaatcag gaagttcctc ttctagtttc
+     8401 acttttgagc tgacaagacc gctatctgaa acagaactgc agtttctcaa aacattaaag
+     8461 tcgaccactt ctgtaactgc atgtgaaata atacaggaca agctgactcc actatatgca
+     8521 gacagtcaag aaggtgcgtt agataaatac aatgtgctgt acaacagcag attgactgct
+     8581 tcttgtgatt ggctcagaca aggaaggaaa aggggacctc ttgaattagc taggaggttg
+     8641 caatgtatct tgaacattct gattgtgggt tattacagat catttggtag tgatgggaca
+     8701 gacaagcaag tcaaggcatc cctcaataga gatgacaaca gagtcatcga agaccccatg
+     8761 attcaactag tacctgagaa gctaagaaga gagttagaga gattaggagt ctccagaatg
+     8821 gaaatcgatg aacttatgcc ttccatcaag cctgatgaaa ctctctgtca gctggtggcc
+     8881 aaaaaactca tcagcctgaa cgttgcaaca gaagagtaca ctgcagaagt ctctaggctg
+     8941 aagcagacct tgacagccag aaatgtcttg cacggccttg ctggaggcat caaggagctg
+     9001 tcacttccaa tttacaccat cttcctcaag tcatactttt tcaaggacaa tgtcttctta
+     9061 gacctagagg atagatggtc aacgaagcat agctctaatt acagggacag ttctggtaga
+     9121 atgctaactg gtagagtaat cacaaaattc actcattggt tagacacatt tctgaactgt
+     9181 acggtgagca ttaacaggac acaagaaatc aaggacaatt ctcttttcaa ccctgacctc
+     9241 agatgtataa acattctagt gagagaggac aatgtgaagg agatgtcaat tgttcaaagc
+     9301 caccttaggg ttgtcacttc agaattcaac aacctcaatc ttcagttctc tgactgcaac
+     9361 agacaaaaac tgaaggtggt tgagtctaga ccgcctgaat gtgagctaga ggccaataag
+     9421 gcggtaattg taaagtcgaa gttgttcagt gctgttgagc aggtcagact tgcaaataac
+     9481 cctgcagtgg ttatgggcta cctccttgag gagtcatcaa tctcagaagt gaaacccacc
+     9541 aaggtagact tttctaacct gttgaaagat agattcaaac tgatgcagtt cttcccctcc
+     9601 gtctttgctt tgctgaagca ccttcagtct gagtcgtcag agatggagaa actaggggca
+     9661 ccagtggata tgcagcaggt gtcaaagtat tcaaaccatt tgacactatt gtgtagaatg
+     9721 atacagcagg ctaggccttc gctgacagtt ttctacatgc tgaaaggcaa tcagatgaac
+     9781 actgagccta cagtgtctga gctggtcagc tatgggatca aggagggcag atacctaaga
+     9841 ctgcctgaaa taggtcttga tgccagcaca tactctgtta agtactggaa aatacttcac
+     9901 tgcatttctg ccataggtga attaccactt agtgacagag ataaaacatc cctacttata
+     9961 agtttcctca actggaaagt tccatctgac tcaatggcac aagattgtcc gctttacaaa
+    10021 caagagcatg ctgttatcag tgaatttgca ggacaggttg ttgtgaacac tcttgctagt
+    10081 gagctcagct ctgttaggag agatgctgag agagatagcc ttactgacct gattgattat
+    10141 gtgaattcac ctacagagct actcaagaaa aaaccctacc tcggtacaac atgtaaattc
+    10201 actacctggg gtgaaaacaa caggaacggc aagtttacat acagcagtcg gtcgggagag
+    10261 gcaattggca tcttcattgc aggaaaactc cacatacatc tgagcaggga atcaactggt
+    10321 ctgctatgtg aggtggaaag aaatgtgctt ggctggcttg ggagacgtag gacagatgta
+    10381 ctaacaaagg agcagcacca acaattttta gagttccttc ctacgctaag cgaggtgtca
+    10441 caaaaaaata gggacggcac cacacaaggt ctatgtcagg acaacacaaa tgtccgtatg
+    10501 ctgagatttg tgcacccaaa aaagaacact cctgttgtca agatcaaggg gcagattctg
+    10561 acagtgaaaa aacaggttag ttttgaggca gagagtgagc ctagactcat gtgggggcat
+    10621 ggttgtgtct cagtagttta cgatgagtgt gagactcaga ctacgtacca tgaaaattta
+    10681 ctcaagataa agcagatggt tgatagcaca actgatagag ctagaagcct cccacagtca
+    10741 gtattctcag acaccaaagt gattcttgcc agaatcaagt tcaaatccga ccttctgctg
+    10801 aactcacttt gcctgttgca cagcttccta agacacacaa ctactgatgc tgtgctggag
+    10861 gcagaaagca agtgtgcact gctagaaagg tacctgcagt caggaggggt gagagtaaag
+    10921 tcagcagatg aaactttaga gagaaagtta tgcagcaagg tgatagaatg taagcttgag
+    10981 caaactcttg atgaagaaat tgaagtctgt gatagcctca acaaagtgtt ctccgagact
+    11041 cctgttcccg tcagtagctg gtcggaagtg cagtgctaca ttgaggatgt gggcttcagc
+    11101 aacatcctaa taacacttga caaaacaagc actaagggag aactgatctg gaaattttct
+    11161 ctagacaata caagcaacat agctggtagc atcaaggaca taaggtcgct tgtttcctac
+    11221 ataagcaccg aaactatacc aaaattcttg ctacctttcc tgctctttga gaacctgctc
+    11281 tccagcattc tcaagcaaag cttgacagtg aaggagacat tacatgctac aggcatctct
+    11341 gacaaagaaa ttgaagcagt tgccacctta tttgctttct gcttccaaaa cgacaaggtc
+    11401 aaaagaaaag gcccccgatg ttcaatgtcc tctatcctaa acttaaccaa aggtgattgg
+    11461 gtggaagtag ggcagagaat gaaacttcag gcacatctgg attcggacac tgtccggctg
+    11521 agtgttcagt tagcaatctc tatcgatgca gatcaaacag ctgataaaaa agctcgagtg
+    11581 tcaatggcaa agaaagtgat agcttctcaa ctaacactac tactgcaaga ggatggtatt
+    11641 gacattaaaa aacttaagga catagctgtt aatgttcagg ttaggaaaga aaaaactggt
+    11701 gaggtactag attttacact tcttgatgac caagcaggta acctgaacta tatcggagtg
+    11761 ttggagacaa taatggatag aagaaagaaa ggtcctgcca tcagtgcact tgaagacttc
+    11821 tttcttctac taacaggcat ggccgaaagc aacatacaac aggacacagc aatcaaaagt
+    11881 gaagaagctt gcagtgacga catatgtctc gaagaccttc ttgaacccag tgaggaatca
+    11941 tccagcagct ccggtgcgca ggacaaagaa gctgtacccg acagagtaac attcaactgg
+    12001 gattctgaca gtgattgatc ttcagtgtgt atactaaaag tttaaattag taggggtgtg
+    12061 gggggaacga tttctttgag a
+//
+
