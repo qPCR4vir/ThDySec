@@ -110,10 +110,11 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             fb .add_filter ( SetupPage::FastaFiltre( )   )
                .init_file(pt.string())
                .title(("Replace/reload a group of sequences from a file"));
-            if (!fb()) return;
+            auto path=fb.show();
+            if ( path.empty() ) return;
 
             _Pr._cp._pSeqNoUsed->AddMultiSec(ms);
-            _Pr._cp.AddSeqFromFile    ( pms, fb.file(), false    );
+            _Pr._cp.AddSeqFromFile    ( pms, path[0].u8string(), false    );
             Refresh(tn->owner());
         });
 
@@ -132,8 +133,8 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             
             fs::path pt{ms->_Path};
             nana::folderbox  fb{ *this, pt.parent_path() , "Replace/reload a group of sequences from a directory" };
-            auto p=fb();
-            if (!p) return;
+            auto p=fb.show();
+            if (p.empty()) return;
             auto it=std::find_if(pms->MSecL().begin(), pms->MSecL().end(),
                                  [&ms](auto & sp_ms) {return ms == sp_ms.get(); });
             if (it == pms->MSecL().end()) return;
@@ -144,7 +145,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             _tree.auto_draw(false);
             _list.auto_draw(false);
 
-            CMultSec* newms = _Pr._cp.AddSeqFromFile    ( pms, p->string(), true    );
+            CMultSec* newms = _Pr._cp.AddSeqFromFile    ( pms, p[0].u8string(), true    );
             _tree.erase(tn);
             populate(appendNewNode  (own, newms) );
             own.expand(true);
@@ -226,8 +227,8 @@ void SeqExpl::MakeResponive()
                                     .init_file(pt.string())
                                     .title      ( ("File load: Add a group of sequences from a file") );
 
-                            if (fb()) 
-                               AddMSeqFiles(fb.file(), false);
+                            if (auto path=fb(); ! path.empty())
+                               AddMSeqFiles(path[0].u8string(), false);
                         });
         //_loadFileTT.set(_loadFile,("File load: Add a group of sequences from a file"));
 
@@ -241,9 +242,9 @@ void SeqExpl::MakeResponive()
                             CMultSec *ms = tn.value<CMultSec*>();
                             fs::path pt{ms->_Path};
                             nana::folderbox  fb{ *this, pt, "Directory load: Add a tree of groups of sequences from a directory" };
-                            auto p=fb();
-                            if (!p) return;
-                            AddMSeqFiles(p->string(), true);
+                            auto path=fb();
+                            if (path.empty()) return;
+                            AddMSeqFiles(path[0].u8string(), true);
                         });
         _re_loadDir .tooltip(("Directory reload: Reload a tree of groups of sequences from a directory,\nposible using new filtres."))
                     . events().click([this]()  {  ReloadDir (_tree.selected());    });
@@ -254,10 +255,10 @@ void SeqExpl::MakeResponive()
                             CMultSec *ms = tn.value<CMultSec*>();
                             fs::path pt{ms->_Path};
                             nana::folderbox  fb{ *this, pt, "Directory scan: Reproduce the structure of directory..." };
-                            auto p=fb();
-                            if (!p) return;                            
+                            auto path=fb();
+                            if (path.empty()) return;
 
-                            CMultSec* newms = _Pr._cp.CopyStructFromDir    ( ms, p->string()   );
+                            CMultSec* newms = _Pr._cp.CopyStructFromDir    ( ms, path[0].u8string()   );
                             _tree.auto_draw(false);
                             populate(  appendNewNode  (tn, newms) );
                             tn.expand(true);
