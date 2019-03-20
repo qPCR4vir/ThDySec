@@ -55,7 +55,7 @@ bool    CMultSec::Export_from   ( CMultSec& base, bool only_selected)
     for ( const auto& CurMSec : base.MSecL())        // recorre todos las msec
     {    
         auto b= CurMSec->path();
-        if ( b.empty() || s.find(b))  continue;    // finded OK only if s beging with p
+        if ( b.empty() || s.find(b))  continue;    // found OK only if s begin with p
 
         file = dir = s.replace(0, b.length()-1, CurMSec->_Path);
         file.remove_filename().replace_extension("fasta");

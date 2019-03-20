@@ -21,7 +21,7 @@
 #include <string>
 #include <memory>
 #include <vector>
-#ifdef BOOST_FILESYSTEM_FORCE
+#if defined(BOOST_FILESYSTEM_FORCE) || defined(NANA_FILESYSTEM_FORCE)
 #  include <nana/filesystem/filesystem_ext.hpp>
 #else
 #  include <filesystem>
