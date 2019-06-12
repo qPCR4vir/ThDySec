@@ -25,25 +25,21 @@
 
  class About : public nana::form, public EditableForm
  {
-	 nana::label  copy_r{ *this, " Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es, <bold> qPCR4vir</> at <bold blue url=\"https://qpcr4vir.github.io/\"> GitHub</>)" };
+	 nana::group c_r {*this, "Author:"};
+     nana::label  copy_r{ c_r, " Copyright (C) 2009-2018, Ariel Vina-Rodriguez    ( arielvina@yahoo.es, <bold> qPCR4vir</> at <bold blue url=\"https://qpcr4vir.github.io/\"> GitHub</>)" };
+	 nana::label  comments{ c_r,R"(This work is mentioned in <bold blue url="https://epub.ub.uni-greifswald.de/frontdoor/deliver/index/docId/2175/file/VinaRodriguez.2018.Dissertation.pdf"> my PhD thesis </>.
 
+ Program distributed under the <bold blue url="https://www.gnu.org/licenses/"> GNU General Public License</>)" };
 
-	 nana::label  comments{ *this,R"(This work is mentioned in my PhD thesis at INNT-FLI.
-
-		 Program distributed under the GNU General Public License, see:
- https://www.gnu.org/licenses/)" };
-	 
-	 
-
-	 nana::label  compiled{ *this, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.01     )" };
-
-     nana::label  downloads{ *this, R"(Downloads and source code: https://github.com/qPCR4vir/ThDySec
-                       Wiki: https://github.com/qPCR4vir/ThDySec/wiki
+     nana::group build {*this, "Programm:"};
+     nana::label  compiled{ build, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.02     )" };
+     nana::label  downloads{ build, R"(Downloads and source code: <bold blue url="https://github.com/qPCR4vir/ThDySec"> github.com/qPCR4vir/ThDySec</>)
+                                             <bold blue url=" https://github.com/qPCR4vir/ThDySec/wiki "> Wiki:</>
    ________________________________________________________________________________)" };
 
-     nana::label  GUI_lib{ *this, R"(Powered by Nana C++ GUI library:  http://nanapro.org/en-us/
-                                  Wiki:  https://github.com/qPCR4vir/nana-docs/wiki
-      Nana Version: 1.6.2 dev : https://github.com/qPCR4vir/nana/)" };
+     nana::label  GUI_lib{ build, R"(Powered by <bold blue url="http://nanapro.org/en-us/ "> Nana C++ GUI library:</>
+                                        <bold blue url="https://github.com/qPCR4vir/nana-docs/wiki"> Wiki:</>
+                      <bold blue url=" https://github.com/qPCR4vir/nana/">  Nana Version: 1.7.1 dev</>)" };
 
 
 	 
@@ -54,23 +50,41 @@
 	 About() : nana::form   ( nana::rectangle(nana::point(50, 5), nana::size(500, 350)) ),
 	           EditableForm ( nullptr, *this, "About ThDy Hybrid" , "about.lay.txt") 
 	 {
-		 copy_r.format(true);
-			  // .caption(" Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es, <bold> qPCR4vir</> at <bold blue url=\"https://qpcr4vir.github.io/\"> GitHub</>)");
+         copy_r.format(true);
+         comments.format(true);
+         compiled.format(true);
+         GUI_lib.format(true);
+         downloads.format(true);
+         // .caption(" Copyright (C) 2009-2018, Ariel Vina-Rodriguez ( arielvina@yahoo.es, <bold> qPCR4vir</> at <bold blue url=\"https://qpcr4vir.github.io/\"> GitHub</>)");
 		 InitMyLayout();
-		 SelectClickableWidget(copy_r);
-		 bclose.events().click([&](){this->close();});
+		 SelectClickableWidget(c_r);
+         SelectClickableWidget(build);
+         SelectClickableWidget(copy_r);
+
+         bclose.events().click([&](){this->close();});
 	 }
 
  void SetDefLayout() override
 	 {
-		 _DefLayout = R"(vertical  gap=2 margin=2  
-                            <CR vfit=248 height=60 margin=[5,20,3,20] >  	
-                            <all vert  margin=[3,20,3,20] >)"	 ;
+		 _DefLayout = R"(
+< vertical     gap=5 margin=[3,20,3,20]
+      <CR     min=110 max=160 >
+      <all      min=140 max=200 >
+     < min=10  max=30>
+      <close  min=15  max=60>
+     < min=10  max=30>
+ >  )";
+		 c_r.div     (R"(vert< CR  vert vfit=290 height=60  gap=5 margin=[5,20,3,20] > )");
+         build.div   (R"(vert< all vert                     gap=5 margin=[3,20,3,20] > )");
 	 }
  void AsignWidgetToFields()
  {
-	 _place.field("all") << comments << compiled << downloads << GUI_lib << bclose ;
-	 _place["CR"] << copy_r;
+     _place["CR"]    << c_r  ;
+     _place["all"]   << build   ;
+     _place["close"] << bclose ;
+
+     c_r   ["CR" ] << copy_r << comments;
+     build ["all"] << compiled << downloads << GUI_lib ;
  }
  };
 
@@ -188,8 +202,17 @@ int main(int argc, char *argv[])
 	_menuBar.at(2).append_splitter();
 	_menuBar.at(2).append("&About", [&](nana::menu::item_proxy& ip) 
 	{
-		About ab;
-		ab.modality();
+        try {
+            About ab;
+            ab.modality();
+        }
+        catch (std::exception e)
+        {
+            (nana::msgbox(*this, "Error in About !\n\t", nana::msgbox::button_t::ok)
+                    .icon(nana::msgbox::icon_information )
+                    << e.what()
+            ).show (  ) ;
+        }
 		//ab.show();
 	});
 
