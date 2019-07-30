@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
-project(ThDy_DNAHybrid VERSION      0.02.00
+project(ThDy_DNAHybrid VERSION      0.02.02
         DESCRIPTION "Thermo Dynamic DNA Hybridizations"
         HOMEPAGE_URL https://github.com/qPCR4vir/ThDySec
         LANGUAGES CXX         )
