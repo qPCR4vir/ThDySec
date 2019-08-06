@@ -27,7 +27,6 @@ using List = nana::listbox;
 
 class TableHybRes  : public nana::form, public EditableForm
 {   
-    using Table = CTable<TmGPos, std::string> ;
     using index = Table::index;
     struct value
     {
@@ -112,6 +111,7 @@ class TableHybRes  : public nana::form, public EditableForm
                            _bG   {*this,("G"  )},   
                            _bPos {*this,("Pos")},
                            _byCol{*this,("<--")},
+                           _descr{*this,("Description")},
                            _mix  {*this, ("Consolidate")};
 
     std::shared_ptr<Table> _table;
@@ -119,7 +119,7 @@ class TableHybRes  : public nana::form, public EditableForm
     G                      _G  {_table.get()};
     Pos                    _Pos{_table.get()};
     value                  *val { &_Tm} ;
-    std::size_t            mTm, mG, mP;
+    std::size_t            mTm, mG, mP, mDescr;
  
     void SetValType(value &val_)
     { 
@@ -178,11 +178,11 @@ class TableHybRes  : public nana::form, public EditableForm
     }
     void AsignWidgetToFields() override
     {
- 	    _place.field("toolbar"       ) <<_bTm << _bG << _bPos << _byCol ;
+ 	    _place.field("toolbar"       ) << _descr <<_bTm << _bG << _bPos << _byCol ;
  	    _place.field("_list"         ) <<_list;
 	}
  public:
-     explicit TableHybRes    (std::shared_ptr<CTable<TmGPos, std::string>>& table)  :
+     explicit TableHybRes    (std::shared_ptr<Table>& table)  :
                             nana::form (nana::rectangle( nana::point(50,5), nana::size(1000,650) )),
                             EditableForm    (nullptr, *this,  table->TitTable(), "TableTm.lay.txt"),
                             _table(table)
@@ -248,6 +248,12 @@ class TableHybRes  : public nana::form, public EditableForm
                             _bPos.pushed(true );
                             _menuProgram.checked(mP, true);
                         });
+        _descr.events().click([this]()
+                             {
+                                 _descr.pushed(!_descr.pushed());
+                                 SetValType(*val);
+                                 _menuProgram.checked(mDescr, _descr.pushed());
+                             });
 
         _byCol.events().click([&]()
           {
@@ -270,7 +276,7 @@ class TableHybRes  : public nana::form, public EditableForm
         _bTm .enable_pushed(true).pushed(true);
         _bG  .enable_pushed(true).pushed(false);
         _bPos.enable_pushed(true).pushed(false);
-
+        _descr.enable_pushed(true).pushed(true);
 
         _menuProgram.append_splitter();
         
@@ -285,6 +291,9 @@ class TableHybRes  : public nana::form, public EditableForm
         mP=_menuProgram.append      ( ("Show Pos")    , [&](nana::menu::item_proxy& ip) { Click( _bPos);})
                         .check_style( nana::menu::checks::option)
                         .index();
+        mDescr=_menuProgram.append      ( ("Show Description")    , [&](nana::menu::item_proxy& ip) { Click( _descr);})
+                .check_style( nana::menu::checks::option)
+                .index();
     }
     void SetFormat(int dec=1 , int len=6)  // ??
     {  
@@ -303,7 +312,7 @@ class TableHybRes  : public nana::form, public EditableForm
             auto &t = *i.table->_table.get();
             auto &v = *i.table->val;
 			auto &l = i.table->_list ;
-            ores<< t.TitRow(i.row)   ;
+            ores<< (i.table->_descr.pushed() ? t.TitRow(i.row)->Description() : t.TitRow(i.row)->Name() )   ;
                 
             if  (v.return_bg() )
                 for (int col=0; col< t.totalCol() ; ++col)
