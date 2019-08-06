@@ -18,7 +18,7 @@
 //int microArrayProg ( CProgParam_microArray *IPrgPar_uArr, CMultSec &pr, CMultSec &tg, time_t t_0,  int MAxGrDegTg=1, const std::string of_x=""	);
 using namespace std; /// \todo temp?
 
-void	CreateColumns(CTable<TmGPos> &rtbl, CMultSec &pr, int MaxGrDeg, OutStr &os )
+void	CreateColumns(CTable<TmGPos, std::string> &rtbl, CMultSec &pr, int MaxGrDeg, OutStr &os )
 {
 	for (auto &CurSec : pr.SecL()) 			// recorre todos las sondas
 	{	CSec &s = *CurSec ;
@@ -59,7 +59,7 @@ void	CreateColumns(CTable<TmGPos> &rtbl, CMultSec &pr, int MaxGrDeg, OutStr &os 
         CreateColumns(rtbl, *CurMSec,MaxGrDeg,os );
 }
 
-void	Hybrid(CTable<TmGPos> &rtbl, CMultSec &tg, CMultSec &pr, ThDyAlign	&Al, OutStr &os, int MAxGrDegTg=1)
+void	Hybrid(CTable<TmGPos, std::string> &rtbl, CMultSec &tg, CMultSec &pr, ThDyAlign	&Al, OutStr &os, int MAxGrDegTg=1)
 {
 	const std::string path =CMultSec::Path(&tg) 	 ;
 	for (auto &CurSec : tg.SecL())   /// recorre todos los targets
@@ -131,9 +131,9 @@ int microArrayProg ( CProgParam_microArray *IPrgPar_uArr,
 				osPl_Tm <<"Row_ID"	;	
 				osPl_G  <<"Row_ID"	;		
 
-	IPrgPar_uArr->_rtbl.reset( new	CTable<TmGPos> ( TableName/*,	tg->CountSelectedSeqRec(),
+	IPrgPar_uArr->_rtbl.reset( new	CTable<TmGPos, std::string> ( TableName/*,	tg->CountSelectedSeqRec(),
 																	pr->CountSelectedNDegSeqRec(MaxGrDeg)  */)  ); ;
-	CTable<TmGPos> &rtbl = *(  IPrgPar_uArr->_rtbl.get()  );
+	CTable<TmGPos, std::string> &rtbl = *(  IPrgPar_uArr->_rtbl.get()  );
 
 	// Primero creamos non deg set y el primer renglon de las tablas con el nombre de las sondas
 

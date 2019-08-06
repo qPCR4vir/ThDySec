@@ -301,7 +301,7 @@ void Check_NNp_Targets (/*ThDyCommProgParam& cp*/)
 class CProgParam_microArray ;
 int microArrayProg   ( CProgParam_microArray   *IPrgPar_uArr )  ;
 
-template <typename Num> class CTable ;          //typedef uArr_RT CTable<TmGPos> ;
+template <typename Num, typename RowTitle> class CTable ;          //typedef uArr_RT CTable<TmGPos> ;
 
 class CEspThDyProgParam : public CEspProg
 {public:
@@ -321,7 +321,7 @@ class CProgParam_microArray : public CEspThDyProgParam
     CParamBool       _PrRecurDir    {this, "Recursively add all probe seq-files from all dir", "ProbRecDir", false} ;
     CParamBool       _PrDirStrOnly  {this, "Reproduce only the dir struct in probe"          , "ProbDirStr", true } ;
       
-    std::shared_ptr<CTable<TmGPos>> _rtbl ;		                //uArr_RT *_rtbl;
+    std::shared_ptr<CTable<TmGPos, std::string>> _rtbl ;		                //uArr_RT *_rtbl;
 
 	//bool			    _I, _G;			// Outpu table of I, G. 
 	//CParamBool		 I,  G;			// Outpu table of I, G. 
@@ -402,7 +402,7 @@ class CProgParam_MultiplexPCR : public CProgParam_microArray
 	int		Run		()   {	
                             return MultiplexPCRProg ( this )  ;
                          }
-    std::shared_ptr<CTable<TmGPos>> _rtbl_self ;		                //uArr_RT *_rtbl;
+    std::shared_ptr<CTable<TmGPos, std::string>> _rtbl_self ;		                //uArr_RT *_rtbl;
 };
 
 class CProgParam_SondeDesign ;

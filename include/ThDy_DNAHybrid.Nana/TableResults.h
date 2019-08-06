@@ -27,7 +27,7 @@ using List = nana::listbox;
 
 class TableHybRes  : public nana::form, public EditableForm
 {   
-    using Table = CTable<TmGPos> ;
+    using Table = CTable<TmGPos, std::string> ;
     using index = Table::index;
     struct value
     {
@@ -182,7 +182,7 @@ class TableHybRes  : public nana::form, public EditableForm
  	    _place.field("_list"         ) <<_list;
 	}
  public:
-     explicit TableHybRes    (std::shared_ptr<CTable<TmGPos>>& table)  :
+     explicit TableHybRes    (std::shared_ptr<CTable<TmGPos, std::string>>& table)  :
                             nana::form (nana::rectangle( nana::point(50,5), nana::size(1000,650) )),
                             EditableForm    (nullptr, *this,  table->TitTable(), "TableTm.lay.txt"),
                             _table(table)
