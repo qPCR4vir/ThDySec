@@ -52,7 +52,7 @@ class CMultSec
 		CMultSec			*_parentMS {nullptr};		///< std::weak_ptr<CMultSec> _parentMS	;
         CSec				*_Consenso {nullptr};
         bool                 _selected { true };
-		std::string			 _Path ;				///< file path of the original sequence source
+		std::string			 _orig_file_path ;				///< file path of the original sequence source
 
 
      //explicit CMultSec (const std::string &Name  )                 : _name		(trim_string(Name))  {	}
@@ -111,7 +111,7 @@ class CMultSec
 			return path;
         }
 
-        /// Construct a filesystem path acording to the current tree, which can be different from the original path saved in member variable ._Path
+        /// Construct a filesystem path acording to the current tree, which can be different from the original path saved in member variable ._orig_file_path
 		std::string	path( )
 		{
 			std::string sep(std::string(1, std::filesystem::path::preferred_separator));// ::slash<std::filesystem::path>().value));
@@ -238,7 +238,7 @@ class CMultSec
         /// (will try all child of base to set the base dir and export)
         /// To decide the name of the file it need the path of the base node that do not form part of the file name
         /// That is for example: "all_seq/Primers for Multiplex PCR/"...
-        bool    Export_from   ( CMultSec& base, bool only_selected)  ;
+        bool    Export_from   ( CMultSec& tree_base, bool only_selected)  ;
 
 		/// Export local sequences to a new file in fasta format with filters applied
 

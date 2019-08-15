@@ -68,12 +68,12 @@
 	 {
 		 _DefLayout = R"(
 < vertical     gap=5 margin=[3,20,3,20]
-      <CR     min=110 max=160 >
-      <all      min=140 max=200 >
-     < min=10  max=30>
-      <close  min=15  max=60>
-     < min=10  max=30>
- >  )";
+      <CR     min=125 max=150 >
+      <all      min=170 max=200 >
+     < min=1  max=180>
+      <close  min=25  max=80>
+     < min=10  max=20>
+ >    )";
 		 c_r.div     (R"(vert< CR  vert vfit=290 height=60  gap=5 margin=[5,20,3,20] > )");
          build.div   (R"(vert< all vert                     gap=5 margin=[3,20,3,20] > )");
 	 }
@@ -83,7 +83,7 @@
      _place["all"]   << build   ;
      _place["close"] << bclose ;
 
-     c_r   ["CR" ] << copy_r << comments;
+     c_r   ["CR" ] << copy_r   << comments;
      build ["all"] << compiled << downloads << GUI_lib ;
  }
  };
