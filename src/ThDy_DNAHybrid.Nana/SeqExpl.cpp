@@ -104,7 +104,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             CMultSec *pms = ms->_parentMS;
             assert(ms);
             assert(pms);
-            fs::path pt{ms->_Path};
+            fs::path pt{ms->_orig_file_path};
             pt= fs::canonical(pt).make_preferred();
             nana::filebox  fb{ *this, true };
             fb .add_filter ( SetupPage::FastaFiltre( )   )
@@ -131,7 +131,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             assert(ms);
             assert(pms);
             
-            fs::path pt{ms->_Path};
+            fs::path pt{ms->_orig_file_path};
             nana::folderbox  fb{ *this, pt.parent_path() , "Replace/reload a group of sequences from a directory" };
             auto p=fb.show();
             if (p.empty()) return;
@@ -219,7 +219,7 @@ void SeqExpl::MakeResponive()
                         {
                             auto      tn    = _tree.selected();
                             CMultSec* ms    = tn.value<CMultSec*>();
-                            fs::path pt{ms->_Path};
+                            fs::path pt{ms->_orig_file_path};
                             pt= fs::canonical(pt).make_preferred();
 
                             nana::filebox  fb{ *this, true };
@@ -240,7 +240,7 @@ void SeqExpl::MakeResponive()
                         {
                             auto tn= _tree.selected();
                             CMultSec *ms = tn.value<CMultSec*>();
-                            fs::path pt{ms->_Path};
+                            fs::path pt{ms->_orig_file_path};
                             nana::folderbox  fb{ *this, pt, "Directory load: Add a tree of groups of sequences from a directory" };
                             auto path=fb();
                             if (path.empty()) return;
@@ -253,7 +253,7 @@ void SeqExpl::MakeResponive()
                         {
                             auto tn= _tree.selected();
                             CMultSec *ms = tn.value<CMultSec*>();
-                            fs::path pt{ms->_Path};
+                            fs::path pt{ms->_orig_file_path};
                             nana::folderbox  fb{ *this, pt, "Directory scan: Reproduce the structure of directory..." };
                             auto path=fb();
                             if (path.empty()) return;

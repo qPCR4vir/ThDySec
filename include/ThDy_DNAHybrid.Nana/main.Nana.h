@@ -13,7 +13,7 @@
 #ifndef main_nana_H
 #define main_nana_H
 
-#include <nana/gui/wvl.hpp>
+#include <nana/gui.hpp>
 #include <nana/gui/widgets/tabbar.hpp>
 
 #include "ThDy_programs/init_ThDy_prog_param.h"

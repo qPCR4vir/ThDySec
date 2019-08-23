@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
-project(ThDy_DNAHybrid VERSION      0.02.00
+project(ThDy_DNAHybrid VERSION      0.02.02
         DESCRIPTION "Thermo Dynamic DNA Hybridizations"
         HOMEPAGE_URL https://github.com/qPCR4vir/ThDySec
         LANGUAGES CXX         )
@@ -9,8 +9,8 @@ project(ThDy_DNAHybrid VERSION      0.02.00
 add_executable(   ThDy_DNAHybrid)
 
 target_include_directories(ThDy_DNAHybrid PUBLIC include)
-target_compile_features   (ThDy_DNAHybrid PUBLIC cxx_std_17)
-target_sources            (ThDy_DNAHybrid PRIVATE
+#target_compile_features   (ThDy_DNAHybrid PUBLIC cxx_std_17)
+target_sources (ThDy_DNAHybrid PRIVATE
         src/ThDySec/cod_deg.cpp
         src/ThDySec/sec.cpp
         src/ThDySec/sec_basic.cpp
@@ -35,7 +35,8 @@ target_sources            (ThDy_DNAHybrid PRIVATE
         src/ThDy_DNAHybrid.Nana/uArray.cpp)
 
 
-add_subdirectory(../ExtLib/nana.ext  ../ExtLib/cmake-nana_ext-build-${CMAKE_BUILD_TYPE} )
+add_subdirectory(../ExtLib/nana.ext  ../ExtLib/cmake-nana_ext-build-${CMAKE_BUILD_TYPE}
+                 EXCLUDE_FROM_ALL )
 target_link_libraries(ThDy_DNAHybrid PRIVATE nana_ext )
 
 

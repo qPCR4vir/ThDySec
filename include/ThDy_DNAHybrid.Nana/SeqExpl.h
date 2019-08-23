@@ -162,21 +162,21 @@ class SeqExpl : public CompoWidget
     Node ReloadDir    (Tree::item_proxy tn)
     {            
         CMultSec *ms = tn.value<CMultSec*>();
-        if (ms->_Path.empty()) 
+        if (ms->_orig_file_path.empty())
         {
             for (Tree::item_proxy& ntn : tn)
                 ReloadDir(ntn);
             return tn;
         }
-        else return Refresh(Replace(tn, ms, ms->_Path,true)).expand(true).select(true);//true
+        else return Refresh(Replace(tn, ms, ms->_orig_file_path,true)).expand(true).select(true);//true
     }
     Node ReloadFile   (Tree::item_proxy tn)
     {            
         CMultSec *ms = tn.value<CMultSec*>();
-        if (ms->_Path.empty())  
+        if (ms->_orig_file_path.empty())
            return tn;
         else
-           return Refresh(Replace(tn, ms, ms->_Path,false));
+           return Refresh(Replace(tn, ms, ms->_orig_file_path,false));
     }
     void ShowLocals(bool showLocals)
     {        

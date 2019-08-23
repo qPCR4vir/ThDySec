@@ -46,21 +46,32 @@ fs::path unique_filename(fs::path name)
     }
     return name;
 }
-
-bool    CMultSec::Export_from   ( CMultSec& base, bool only_selected)  
+/// export all seq in this MSec in a file named as this tree-path.
+bool    CMultSec::Export_from   ( CMultSec& tree_base, bool only_selected)
 {
     fs::path dir, file;
-    auto s= path();
+    auto my_tree_path= path();
+    std::cout << "my_tree_path: " + my_tree_path << "\n";
 
-    for ( const auto& CurMSec : base.MSecL())        // recorre todos las msec
+    for ( const auto& CurMSec : tree_base.MSecL())           // recorre todos las msec to find what is my tree_base dir
     {    
-        auto b= CurMSec->path();
-        if ( b.empty() || s.find(b))  continue;    // found OK only if s begin with p
+        auto major_sub_tree_path= CurMSec->path();
+        std::cout << "major_sub_tree_path: " + major_sub_tree_path << "\n";       // like: 'All seq\Target seq\'
+        std::cout << "major_sub_tree_dir: " + CurMSec->_orig_file_path << "\n";   // like: '../ThDy/sequences/'
 
-        file = dir = s.replace(0, b.length()-1, CurMSec->_Path);
-        file.remove_filename().replace_extension("fasta");
-        dir.remove_filename().remove_filename();
+                                                             // found OK only if my_tree_path begin with major_sub_tree_path
+        if ( major_sub_tree_path.empty() || my_tree_path.find(major_sub_tree_path))
+            continue;
 
+                                                             // todo: find a robust solution for this hack: replace tree base with the original directory base.
+        file = dir = my_tree_path.replace(0, major_sub_tree_path.length()-1, CurMSec->_orig_file_path);
+        std::cout << "file: " + file.generic_string() << "\n";
+        file = file.parent_path().replace_extension("export.fasta");
+        std::cout << "file': " + file.generic_string() << "\n";
+        dir = file.parent_path();
+        std::cout << "dir': " + dir.generic_string() << "\n";
+
+        //if (!fs::is_regular_file(dir))
         fs::create_directories(dir);
         Export_as(unique_filename(file).string(), only_selected);
         return true;
@@ -75,7 +86,7 @@ bool      CMultSec::Export_local_seq   ( CMultSec& base, bool only_selected)
     auto s= path();
     auto b= base.path();
     if ( s.find(b))  return false;            // finded OK only if s beging with b
-    file = dir = s.replace(0, b.length(), base._Path);
+    file = dir = s.replace(0, b.length(), base._orig_file_path);
     file.replace_extension("fasta");
     dir.remove_filename();
 
@@ -98,7 +109,7 @@ CMultSec::CMultSec (    const std::string &path    ,
         _MaxTgId    (MaxTgId), 
         _SecLenLim  (SecLenLim),
         _NNPar      (NNpar)/*,
-        _Path       (file)*/
+        _orig_file_path       (file)*/
 {
     fs::path  itf(path);
 
@@ -108,7 +119,7 @@ CMultSec::CMultSec (    const std::string &path    ,
             itf.remove_filename();
 
         _name = itf.filename ().string();     // The new MSec take the name of the dir.
-        _Path = itf.string();                 // and the _Path point to it.
+        _orig_file_path = itf.string();                 // and the _orig_file_path point to it.
 
         fs::directory_iterator rdi{ itf }, end;
 
@@ -126,7 +137,7 @@ CMultSec::CMultSec (    const std::string &path    ,
         if (itf.has_filename())
         {
             _name = itf.filename ().string();     /// The new MSec take the name of the file.
-            _Path = itf.string();                 /// and the _Path point directly to the file.
+            _orig_file_path = itf.string();                 /// and the _Path point directly to the file.
             if (loadSec)
                AddFromFile(path);  /// will throw if not a file
             return;

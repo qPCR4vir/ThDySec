@@ -80,12 +80,12 @@ CMultSec* ThDyCommProgParam::AddSeqFromFile( CMultSec           *parentGr,
                                 !onlyStructure);
 
 	parentGr->AddMultiSec(sG);
-    std::string parent_path = fs::path(sG->_Path).remove_filename().string();
+    std::string parent_path = fs::path(sG->_orig_file_path).remove_filename().string();
 
     if (parentGr->_Local._NMSec == 1)
-        parentGr->_Path= parent_path ;
-    else if (parentGr->_Path != parent_path)
-            parentGr->_Path.clear();
+        parentGr->_orig_file_path= parent_path ;
+    else if (parentGr->_orig_file_path != parent_path)
+            parentGr->_orig_file_path.clear();
 
 	return sG;
 }
