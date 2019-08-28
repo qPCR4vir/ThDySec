@@ -230,7 +230,7 @@ CSec::CSec (    const std::string&  sec,
 		_b.push_back(       n_basek-1  ); 	  	
 		_GCp	= _GCp*100/this->Len() ;	
 		_Tm.Set( _NNpar->CalcTM( _SdS.back(), _SdH.back()) ) ;      //_maxTm = _minTm =
-		if (Len()>1000 || Len()*Degeneracy() > 32*4*4*4*4*4*4*4*4*4*4) return; // oligo with 10 n
+		if (Len()>1000 || Len()*Degeneracy() > 32*4*4*4*4*4*4*4*4) return; // oligo with 8 n = 40 MB?
 		CreateNonDegSet();
 }
 
@@ -347,6 +347,7 @@ CMultSec *CSec::CreateNonDegSet()
 	else 	
 		{	if (_NonDegSet)			// La sec tiene bases deg y ya existia un ndgs. Lo respetamos.
 				return _NonDegSet.get() ; // revisar si es el mismo PNNParams NNpar??
+            if (Len()*Degeneracy() > 32*4*4*4*4*4*4*4*4) return _NonDegSet.get(); // oligo with 8 n = 40 MB?
 			ForceNonDegSet() ;
 			//_Tm = _NonDegSet->_Tm ; //	_maxTm = _NonDegSet->_maxTm ; _minTm = _NonDegSet->_minTm ;	_Tm    = (_maxTm + _minTm )/2 ;
 		}
@@ -403,6 +404,7 @@ CSec *	CSec::CopyFirstBases(long pos)
 
 CSec *	CSec::GenerateNonDegVariant ( CSec *s, long pos, Base ndb) /// \todo: crear variante que inserte las variantes en la lista dada.????
 {	Base pre ; Base b_or,  cur ;								   /// para eso anadir ultimo parametro CMultiSec &ndg=_nds
+
 	CSec *sec ;
 	if (pos==0) 
 	{	sec = s->CopyFirstBases(0);   // caso esp: ni pos -1, ni muto a ndb
@@ -454,7 +456,9 @@ CSec *	CSec::GenerateNonDegVariant ( CSec *s, long pos, Base ndb) /// \todo: cre
 		else 		// hasta que encuentra la siguiente bas deg
 		{	for (Base d=0; d < n-1 ; d++)	// recorre las bas no deg de la base deg b_or, menos la ultima
 			{
-				_NonDegSet->AddSec( GenerateNonDegVariant ( sec, i, dg2ba [ db2nu[b_or]  ][d] )) ;
+                if (Len()*Degeneracy() < 32*4*4*4*4*4*4*4*4)  // oligo with 8 n = 65.536 variants = 40 MB?
+                if (_NonDegSet->_Global._NSec < 4*4*4*4*4*4*4*4)
+                   _NonDegSet->AddSec( GenerateNonDegVariant ( sec, i, dg2ba [ db2nu[b_or]  ][d] )) ;
 			}
 
 			ndb			 = dg2ba [  db2nu[b_or]  ][n-1];   // aqui me quedo con la ultima variante para seguir
