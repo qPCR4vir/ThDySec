@@ -34,27 +34,27 @@ void	CreateColumns(Table &rtbl, CMultSec &pr, int MaxGrDeg, OutStr &os )
 		if ( CMultSec *nds=s.NonDegSet().get() ) 
 		{	
 			const std::string path =CMultSec::Path(s._parentMS) ;
-			for (auto &ndsCurSec : nds->SecL()) 	// recorre todos las var no deg de la sonda
+			for (auto &ndsCurSec : nds->SecL()) 	       // recorre todos las var no deg de la sonda
 			{	CSec &s = *ndsCurSec ;
-				const std::string name (path + s.Name() );
+				const std::string name (path + "#" + s.Name() );
 				os.Tm	 <<sep << name		;	
 				os.G	 <<sep << name		;	
 				os.Pos	 <<sep << name		;	
 				os.Pl_Tm <<"  "<< name		;	
 				os.Pl_G  <<"  "<< name		;
-				rtbl.AddColummnTit(/*name*/  s.Name()	);																						//s.x;
+				rtbl.AddColummnTit(/*name*/  "#" + s.Name()	);																						//s.x;
 			}
-		} else 
-			{	
-				const std::string name (path + s.Name() );
-				os.Tm	 <<sep << name		;	
-				os.G	 <<sep << name		;	
-				os.Pos	 <<sep << name		;	
-				os.Pl_Tm <<"  "<< name		;	
-				os.Pl_G	 <<"  "<< name	    ;
-				rtbl.AddColummnTit(/*name*/  s.Name()	);
-			}
-	}
+		}
+
+        const std::string name (path + s.Name() );
+        os.Tm	 <<sep << name		;
+        os.G	 <<sep << name		;
+        os.Pos	 <<sep << name		;
+        os.Pl_Tm <<"  "<< name		;
+        os.Pl_G	 <<"  "<< name	    ;
+        rtbl.AddColummnTit(/*name*/  s.Name()	);
+
+    }
 	for (auto &CurMSec : pr.MSecL()) 	 
         CreateColumns(rtbl, *CurMSec,MaxGrDeg,os );
 }

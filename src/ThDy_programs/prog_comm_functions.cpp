@@ -34,7 +34,7 @@ unique_ptr<ThDyAlign> Create_ThDyAlign(const ThDyCommProgParam& _cp, LonSecPos M
 }
 
 /// Set CSec and trigget the aligment in an existing ThDyAlign with output a line of Tm, G and Position to a table and files.
-inline void Hybrid(CSec &s, CSec &t, 	ThDyAlign &Al,	ofstream &osTm,
+inline TmGPos Hybrid(CSec &primer, CSec &target, 	ThDyAlign &Al,	ofstream &osTm,
 														ofstream &osG,
 														ofstream &osPos,
 														ofstream &osPl_Tm,
@@ -44,10 +44,11 @@ inline void Hybrid(CSec &s, CSec &t, 	ThDyAlign &Al,	ofstream &osTm,
 														CTable<Temperature> *tlTm,
 														CTable<Energy>	*tlG,
 														CTable<SecPos> *tlPos*/)
-{	Al.Align( &s, &t);					//  virtual !!!
+{	Al.Align( &primer, &target);					//  virtual !!!
 	Al.SelectOptParam(Al.Ta());				//	FrAl.GetOptHit();
 
-	if (osTm	) osTm		<<sep	<<	KtoC(Al.Tm())			;	if (rtbl) *rtbl << TmGPos ( KtoC( Al.Tm() ), Al.G()	/ 1000	,Al._maxgloj);
+	TmGPos tmgp ( KtoC( Al.Tm() ), Al.G()	/ 1000	,Al._maxgloj);
+	if (osTm	) osTm		<<sep	<<	KtoC(Al.Tm())			;	if (rtbl) *rtbl << tmgp;
 	if (osG		) osG		<<sep	<<		 Al.G()	/ 1000		;	/*if (tlG)  *tlG  <<  Al.G()	/ 1000		;*/
 	if (osPos	) osPos		<<sep	<<		 Al._maxgloj		;	//if (tlPos) *tlPos<<  Al._maxgloj			;	// pos del 5'
 	if (osPl_Tm	) osPl_Tm	<<"\t"	<<  KtoC(Al.Tm())			;
@@ -56,11 +57,11 @@ inline void Hybrid(CSec &s, CSec &t, 	ThDyAlign &Al,	ofstream &osTm,
 	print_ThDyAlign (osAl, Al);
 	//Al.Export_DPMz_Pre(osAl);
 
-
+    return tmgp;
 }
 
 /// Align all CSec vs all in the list os sequences probe and target in an existing ThDyAlign with output a line of Tm, G and Position to a table and files.
-void HybridPr(CMultSec &pr, CSec &t, 	ThDyAlign &Al,	ofstream &osTm,
+void HybridPr(CMultSec &primers, CSec &target, 	ThDyAlign &Al,	ofstream &osTm,
 														ofstream &osG,
 														ofstream &osPos,
 														ofstream &osPl_Tm,
@@ -70,24 +71,46 @@ void HybridPr(CMultSec &pr, CSec &t, 	ThDyAlign &Al,	ofstream &osTm,
 														CTable<Temperature> *tlTm,
 														CTable<Energy>	*tlG,
 														CTable<SecPos> *tlPos*/)
-{	// recorre todos los primers de nuevo
-	for (auto& CurSec : pr.SecL())
+{
+    // todo take 2 tables - the second for one value per primer.NonDegSet, not per NonDeg variant.
+
+    // recorre todos los primers de nuevo
+	for (auto& uptr_primer : primers.SecL())
 	{
-		CSec &s = *CurSec;
-		if(!s.Selected()) continue;
-		if ( ! s.NonDegSet()  ) 
+		CSec &primer = *uptr_primer;
+		if(!primer.Selected()) continue;
+		if ( ! primer.NonDegSet()  )
 			{	
-				Hybrid (s, t, 	Al, osTm, osG,osPos,osPl_Tm,osPl_G,osAl, rtbl);
+				Hybrid (primer, target, 	Al, osTm, osG,osPos,osPl_Tm,osPl_G,osAl, rtbl);
 			} else 
 				{	
-                    CMultSec *nds=s.NonDegSet().get() ;
+                    CMultSec *nds=primer.NonDegSet().get() ;
+
+                    // todo record were it will begin to write to the table
+                    // auto &Num = rtbl->Next();
+                    // auto [rrow, rcol] = rtbl->get_pos();
+                    // index row = rrow, col = rcol;
+                    TmGPos tmgp_final; bool first = true;
 					for ( auto& nds_CurSec :  nds->SecL() ) // recorre todos las var no deg
 					{	
-                        CSec &s = *nds_CurSec ;
-						Hybrid (s, t, 	Al, osTm, osG,osPos,osPl_Tm,osPl_G,osAl, rtbl);
+                        CSec &ndeg_primer_variant = *nds_CurSec ;
+                        TmGPos tmgp = Hybrid (ndeg_primer_variant, target, 	Al, osTm, osG,osPos,osPl_Tm,osPl_G,osAl, rtbl);
+                        if (first)
+                        {
+                            tmgp_final = tmgp;
+                            first = false;
+                        }
+                        else
+                        {
+                            tmgp_final._G  = std::min(tmgp_final._G, tmgp._G);
+                            tmgp_final._Tm = std::max(tmgp_final._Tm, tmgp._Tm);
+                        }
 					}// recorre todos las var no deg
+
+					// todo squash all the previous into one row.
+					*rtbl << tmgp_final;
 				} 
 	}
-	for (auto& CurMSec : pr.MSecL())  
-        HybridPr (*CurMSec, t, 	Al, osTm, osG,osPos,osPl_Tm,osPl_G,osAl, rtbl);
+	for (auto& CurMSec : primers.MSecL())
+        HybridPr (*CurMSec, target, 	Al, osTm, osG,osPos,osPl_Tm,osPl_G,osAl, rtbl);
 }			

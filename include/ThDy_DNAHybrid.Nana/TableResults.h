@@ -178,7 +178,7 @@ class TableHybRes  : public nana::form, public EditableForm
     }
     void AsignWidgetToFields() override
     {
- 	    _place.field("toolbar"       ) << _descr <<_bTm << _bG << _bPos << _byCol ;
+ 	    _place.field("toolbar"       ) << _descr <<_bTm << _bG << _bPos << _byCol << _mix;
  	    _place.field("_list"         ) <<_list;
 	}
  public:
@@ -272,6 +272,20 @@ class TableHybRes  : public nana::form, public EditableForm
                                         return reverse ? !r : r;
                                     });
           });
+
+        _mix.events().click([&]()
+         {
+            auto n = _list.column_size();
+            _list.auto_draw(false);
+            for (int i=0; i<n; i++)
+            {
+                auto &col = _list.column_at(i);
+                auto const &t = col.text();
+                if (!t.empty() && t[0] == '#')
+                    col.visible(! col.visible());
+            }
+             _list.auto_draw(true);
+         });
 
         _bTm .enable_pushed(true).pushed(true);
         _bG  .enable_pushed(true).pushed(false);

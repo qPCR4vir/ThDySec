@@ -84,12 +84,20 @@ class SeqExpl : public CompoWidget
     Node Refresh(Tree::item_proxy node)
     {
             _tree.auto_draw(false);
-
-            populate(node);
-            node.expand(true);
-            RefreshList(node);
-
+            try{
+                populate(node);
+                node.expand(true);
+                RefreshList(node);
+            }
+            catch ( std::exception& e )      //
+            {
+                (nana::msgbox(*this, "Error during sequence lists displaying !\n\t", nana::msgbox::button_t::ok)
+                        .icon(nana::msgbox::icon_information )
+                        << e.what()
+                ).show (  ) ;
+            }
             _tree.auto_draw(true);
+
             return node;
     }
     void RefreshList(                      ) { RefreshList(_tree.selected());         }
