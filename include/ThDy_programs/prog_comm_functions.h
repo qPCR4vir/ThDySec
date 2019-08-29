@@ -44,7 +44,7 @@ class OutStr
 };
 
 
-inline void Hybrid(CSec &s, CSec &t, 	ThDyAlign &Al,  std::ofstream &osTm,
+inline TmGPos Hybrid(CSec &primer, CSec &target, 	ThDyAlign &Al,  std::ofstream &osTm,
 														std::ofstream &osG,
 														std::ofstream &osPos,
 														std::ofstream &osPl_Tm,
@@ -56,7 +56,7 @@ inline void Hybrid(CSec &s, CSec &t, 	ThDyAlign &Al,  std::ofstream &osTm,
 														CTable<SecPos> *tlPos  = nullptr*/);
 
 
-void HybridPr(CMultSec &pr, CSec &t, 	ThDyAlign &Al,  std::ofstream &osTm,
+void HybridPr(CMultSec &primers, CSec &target, 	ThDyAlign &Al,  std::ofstream &osTm,
 														std::ofstream &osG,
 														std::ofstream &osPos,
 														std::ofstream &osPl_Tm,
