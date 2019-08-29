@@ -280,7 +280,8 @@ class TableHybRes  : public nana::form, public EditableForm
             for (int i=0; i<n; i++)
             {
                 auto &col = _list.column_at(i);
-                if (col.text().find('#') == 0)
+                auto const &t = col.text();
+                if (!t.empty() && t[0] == '#')
                     col.visible(! col.visible());
             }
              _list.auto_draw(true);
