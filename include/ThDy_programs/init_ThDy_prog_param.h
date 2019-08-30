@@ -576,17 +576,17 @@ class ThDyProject : public CProject /// Permite manejar todo el projecto: con un
         //   }
         //catch(std::exception& e)
         //{
-             //(nana::msgbox(*_EdWd_owner, ("std::exception during EditableWidget ReCollocation: "))
+             //(nana::msgbox(*_EdWd, ("std::exception during EditableWidget ReCollocation: "))
              //       .icon(nana::msgbox::icon_error)
-             //                    <<("\n   in form: ") << nana::API::window_caption(*_EdWd_owner)
+             //                    <<("\n   in form: ") << nana::API::window_caption(*_EdWd)
              //                    <<("\n   exception : ") << e.what() 
              //).show();
   //      }
 		//catch(...)
 		//{
-             //(nana::msgbox(*_EdWd_owner, ("An uncaptured exception during EditableWidget ReCollocation: "))
+             //(nana::msgbox(*_EdWd, ("An uncaptured exception during EditableWidget ReCollocation: "))
              //       .icon(nana::msgbox::icon_error)
-             //                    <<("\n   in form: ") << nana::API::window_caption(*_EdWd_owner)
+             //                    <<("\n   in form: ") << nana::API::window_caption(*_EdWd)
              //).show();
 	    //}
      //      return -1;

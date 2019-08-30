@@ -26,13 +26,13 @@
  class About : public nana::form, public EditableForm
  {
 	 nana::group c_r {*this, "Author:"};
-     nana::label  copy_r{ c_r, " Copyright (C) 2009-2018, Ariel Vina-Rodriguez                ( arielvina@yahoo.es, <bold> qPCR4vir</> at <bold blue url=\"https://qpcr4vir.github.io/\"> GitHub</>)" };
+     nana::label  copy_r{ c_r, " Copyright (C) 2009-2019, Ariel Vina-Rodriguez                ( arielvina@yahoo.es, <bold> qPCR4vir</> at <bold blue url=\"https://qpcr4vir.github.io/\"> GitHub</>)" };
 	 nana::label  comments{ c_r,R"(This work is mentioned in <bold blue url="https://epub.ub.uni-greifswald.de/frontdoor/deliver/index/docId/2175/file/VinaRodriguez.2018.Dissertation.pdf"> my PhD thesis </>.
 
  Program distributed under the <bold blue url="https://www.gnu.org/licenses/"> GNU General Public License</>)" };
 
      nana::group build {*this, "Programm:"};
-     nana::label  compiled{ build, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.05     )" };
+     nana::label  compiled{ build, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.07     )" };
      nana::label  downloads{ build, R"(Downloads and source code: <bold blue url="https://github.com/qPCR4vir/ThDySec"> github.com/qPCR4vir/ThDySec</>
                                              <bold blue url=" https://github.com/qPCR4vir/ThDySec/wiki "> Wiki:</>
    ________________________________________________________________________________)" };
