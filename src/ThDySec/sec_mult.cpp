@@ -10,12 +10,7 @@
 * @brief 
 */
 
-#ifdef WINDOWS_FORM_GUI
-#include "stdafx.h"
-#pragma unmanaged
-#endif
-
-#include <stdio.h>
+//#include <stdio.h>
 #include <string.h>
 #include <assert.h>
 #include <iostream>
@@ -26,12 +21,10 @@
 #include <stack>
 #include <algorithm>
 
-//using namespace std ; 
-
 #include <ThDySec/sec_mult.h>
 #include <ThDySec/common.h>
+
 using namespace DegCod;
-//using namespace std;   // temp
 namespace fs = std::filesystem;
 
 /// \todo make more efficient and elegant
@@ -46,6 +39,7 @@ fs::path unique_filename(fs::path name)
     }
     return name;
 }
+
 /// export all seq in this MSec in a file named as this tree-path.
 bool    CMultSec::Export_from   ( CMultSec& tree_base, bool only_selected)
 {
@@ -57,14 +51,14 @@ bool    CMultSec::Export_from   ( CMultSec& tree_base, bool only_selected)
     {    
         auto major_sub_tree_path= CurMSec->path();
         std::cout << "major_sub_tree_path: " + major_sub_tree_path << "\n";       // like: 'All seq\Target seq\'
-        std::cout << "major_sub_tree_dir: " + CurMSec->_orig_file_path << "\n";   // like: '../ThDy/sequences/'
+        std::cout << "major_sub_tree_dir: " + CurMSec->_orig_file.string() << "\n";   // like: '../ThDy/sequences/'
 
                                                              // found OK only if my_tree_path begin with major_sub_tree_path
         if ( major_sub_tree_path.empty() || my_tree_path.find(major_sub_tree_path))
             continue;
 
                                                              // todo: find a robust solution for this hack: replace tree base with the original directory base.
-        file = dir = my_tree_path.replace(0, major_sub_tree_path.length()-1, CurMSec->_orig_file_path);
+        file = dir = my_tree_path.replace(0, major_sub_tree_path.length()-1, CurMSec->_orig_file.string());
         std::cout << "file: " + file.generic_string() << "\n";
         file = file.parent_path().replace_extension("export.fasta");
         std::cout << "file': " + file.generic_string() << "\n";
@@ -86,7 +80,7 @@ bool      CMultSec::Export_local_seq   ( CMultSec& base, bool only_selected)
     auto s= path();
     auto b= base.path();
     if ( s.find(b))  return false;            // finded OK only if s beging with b
-    file = dir = s.replace(0, b.length(), base._orig_file_path);
+    file = dir = s.replace(0, b.length(), base._orig_file.string());
     file.replace_extension("fasta");
     dir.remove_filename();
 
@@ -95,16 +89,15 @@ bool      CMultSec::Export_local_seq   ( CMultSec& base, bool only_selected)
     return true;
 }
 
-
-CMultSec::CMultSec (    const std::string &path    , 
+CMultSec::CMultSec (const fs::path &path,
                     std::shared_ptr<CSaltCorrNN>  NNpar    , 
                     bool           all_dir  /*= false*/,
-                    float           MaxTgId    /*= 100*/, 
+                    float          MaxTgId    /*= 100*/,
                     LonSecPosRang  SecLim    /*= LonSecPosRang {1,0}*/,     
                     SecPosRang     SecLenLim/*= SecPosRang    {0,0}*/,
                     bool           loadSec  /*= true*/
                  )  
-    :    /*_name(trim_string(file)),    */
+    :
         _SecLim     (SecLim),
         _MaxTgId    (MaxTgId), 
         _SecLenLim  (SecLenLim),
@@ -116,16 +109,16 @@ CMultSec::CMultSec (    const std::string &path    ,
     if (all_dir)                    // Load all files and directories recursiverly?
     {
         if (fs::is_regular_file(itf))
-            itf.remove_filename();
+            itf = itf.parent_path();
 
         _name = itf.filename ().string();     // The new MSec take the name of the dir.
-        _orig_file_path = itf.string();                 // and the _orig_file_path point to it.
+        _orig_file = itf;                     // and the _orig_file point to it.
 
         fs::directory_iterator rdi{ itf }, end;
 
         for (; rdi != end; ++ rdi)
             AddMultiSec(  std::make_shared<CMultSec>(  
-				                         rdi->path().string() , 
+				                         rdi->path() ,
                                          NNpar,
                                          fs::is_directory(rdi->status()),
                                          MaxTgId, 
@@ -138,24 +131,21 @@ CMultSec::CMultSec (    const std::string &path    ,
         if (itf.has_filename())
         {
             _name = itf.filename ().string();     /// The new MSec take the name of the file.
-            _orig_file_path = itf.string();                 /// and the _Path point directly to the file.
+            _orig_file = itf;                 /// and the _Path point directly to the file.
             if (loadSec)
-               AddFromFile(path);  /// will throw if not a file
+               AddFromFile(itf);  /// will throw if not a file
             return;
         }
-    throw std::ios_base::failure(std::string("No such sequence file: ")+ path );
-    // throw "request a non recursive load from a non regular file";
+    throw std::ios_base::failure(std::string("Non recursive load from a non regular file: no such sequence file: ")
+                                + path.string() );
 }
 
-int        CMultSec::AddFromFile (const std::string& file)    // return la cantidad de sec add ------  AddFromFile   ---
+int        CMultSec::AddFromFile (const fs::path& file)    // return la cantidad de sec add ------  AddFromFile   ---
 {    
     std::ifstream ifile( file );
     if ( ! ifile ) 
-    {
-        throw std::ios_base::failure(std::string("Could not open the sequence file: ")+ file );
-    }
-
-        return AddFromFile(ifile); /// \todo: retrow anadiendo el nombre del file
+        throw std::ios_base::failure("Could not open the sequence file: "+ file.string() );
+    return AddFromFile(ifile);      /// \todo: rethrow anadiendo el nombre del file
 }
 
 int        CMultSec::AddFromFile (std::ifstream& ifile)        // return la cantidad de sec add -----------  AddFromFile   ---

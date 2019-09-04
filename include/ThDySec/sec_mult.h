@@ -10,16 +10,15 @@
 * @brief 
 */
 
-#pragma unmanaged	
-
 #ifndef _MULTSEC_H
 #define _MULTSEC_H
 
-#include <stdlib.h>
+//#include <stdlib.h>
 #include <fstream>
 #include <cassert>
 #include <string>
 #include <memory>
+#include <list>
 #include <vector>
 #if defined(BOOST_FILESYSTEM_FORCE) || defined(NANA_FILESYSTEM_FORCE)
 #  include <nana/filesystem/filesystem_ext.hpp>
@@ -52,14 +51,11 @@ class CMultSec
 		float				_MaxTgId  {100};			///< \todo: quitar de aqui?. Pertenece a CSec, o a un objeto "AddFromFile" 
 		std::shared_ptr<CSaltCorrNN>	_NNPar ;		///< \todo: quitar de aqui?. Pertenece a CSec, o a un objeto "AddFromFile" 
 		CMultSec			*_parentMS {nullptr};		///< std::weak_ptr<CMultSec> _parentMS	;
-        CSec				*_Consenso {nullptr};
+        //CSec				*_Consenso {nullptr};       ///< unused ...
         bool                 _selected { true };
-		std::string			 _orig_file_path ;				///< file path of the original sequence source
+		std::filesystem::path _orig_file ;				///< file path of the original sequence source
 
-
-     //explicit CMultSec (const std::string &Name  )                 : _name		(trim_string(Name))  {	}
-
-       /// Create a named and free empty group
+       /// Create a named and free empty group to build root of CMultiSec tree
        explicit CMultSec (std::shared_ptr<CSaltCorrNN> NNpar, const std::string &Name = "")        
                           : _NNPar      (NNpar            ), 
    	  			            _name       (trim_string(Name))            
@@ -73,7 +69,7 @@ class CMultSec
                                                                 _NNPar      (ms->_NNPar)         
                   {  }
 
-	   /// Read all the sequences from a stream into this group dedducing format and appling filters
+	   /// Read all the sequences from a stream into this group deducing format and apling filters
        CMultSec (	std::ifstream &	    file	,	 
 					std::shared_ptr<CSaltCorrNN>  NNpar	, 
 					float		  MaxTgId	= 100,                 ///< Sec. with more % of identity are marked as "filtered" and not selected
@@ -87,7 +83,7 @@ class CMultSec
                   { AddFromFile(file); }
 
          /// The new MSec take the name of the dir, and remember the rest of the path
-         CMultSec (	const std::string &path	,                       ///< The name of the file or directory to be loaded 
+         CMultSec (	const std::filesystem::path &path	,           ///< The name of the file or directory to be loaded
 					std::shared_ptr<CSaltCorrNN>  NNpar	, 
 					bool           all_dir  = false,                ///< Load all files and directories recursiverly? 
 					float		   MaxTgId	= 100,                  ///< Sec. with more % of identity are marked as "filtered" and not selected
@@ -222,7 +218,7 @@ class CMultSec
 		/// The file format is decided lookind at the first non blanc character: > fasta, < some xml, etc.
 		/// @return number of readed sequences 
 		/// \todo better exeption mesg and new exeptio classes for format error?
-		int		AddFromFile		(const std::string& file);
+		int		AddFromFile		(const std::filesystem::path& file);
 		int		AddFromFile     (std::ifstream& ifile);
 		int		AddFromFileFASTA(std::ifstream &ifileFASTA);
 		int		AddFromFileBLAST(std::ifstream &ifileBLAST);
@@ -251,7 +247,7 @@ class CMultSec
         /// That is for example: "all_seq/Primers for Multiplex PCR/"...
         bool    Export_local_seq   ( CMultSec& base, bool only_selected);
 
-        void   Export_as(std::string filename, bool only_selected)  
+        void   Export_as(std::filesystem::path filename, bool only_selected)
         {
 			std::ofstream ofile( filename );
 	        if ( ! ofile ) 

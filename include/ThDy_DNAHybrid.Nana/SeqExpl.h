@@ -165,7 +165,7 @@ class SeqExpl : public CompoWidget
     }
 
     Node AddNewSeqGr  (Tree::item_proxy node) ;
-    Node AddMSeqFiles (const std::string &file, bool  all_in_dir) ;
+    Node AddMSeqFiles (const std::filesystem::path &file, bool  all_in_dir) ;
     Node  Replace    (Tree::item_proxy tn, CMultSec *ms, const std::string& Path, bool all_in_dir);
     Node ReloadDir    (Tree::item_proxy tn)
     {            

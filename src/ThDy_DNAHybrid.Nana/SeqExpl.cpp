@@ -64,7 +64,7 @@ SeqExpl::Node SeqExpl::AddNewSeqGr  (Tree::item_proxy node)
                 }        
         }
 
-SeqExpl::Node SeqExpl::AddMSeqFiles (const std::string &file, bool  all_in_dir) 
+SeqExpl::Node SeqExpl::AddMSeqFiles (const std::filesystem::path &file, bool  all_in_dir)
     {     
     try{ 
             auto      tn    = _tree.selected();
