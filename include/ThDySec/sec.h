@@ -99,8 +99,8 @@ class CSec : public CSecBasInfo
     void         CorrectSaltOwczarzy    () ;
     CMultSec    *CreateNonDegSet        () ;              ///< crea todo el set si no existia, solo si existen bases deg: _NDB>0
     CMultSec    *ForceNonDegSet         ();               ///< lo crea siempre, incluso para =1??
-    CSec        *GenerateNonDegVariant  (CSec *s, long pos, Base ndb)   ; ///< recursiva
-    CSec        *CopyFirstBases         (long pos)   ;    ///< copia parcialmente hasta la pos
+	std::shared_ptr<CSec> GenerateNonDegVariant  (long pos, Base ndb) ; ///< recursiva
+	std::shared_ptr<CSec> CopyFirstBases         (long pos) const  ;    ///< copia parcialmente hasta la pos
     void         CorrectSalt            () { if ( _NNpar->UseOwczarzy () ) CorrectSaltOwczarzy();};
     CSec *Clone(DNAstrand strnd=DNAstrand::direct     ) const override; /// unique_ptr<ISec> crea una copia muy simple. \todo CUIDADO con copias de CSecBLASTHit y otros derivados
     CSec *Clone( long  InicBase,

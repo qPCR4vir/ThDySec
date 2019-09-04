@@ -124,7 +124,8 @@ CMultSec::CMultSec (    const std::string &path    ,
         fs::directory_iterator rdi{ itf }, end;
 
         for (; rdi != end; ++ rdi)
-            AddMultiSec(  new CMultSec(  rdi->path().string() , 
+            AddMultiSec(  std::make_shared<CMultSec>(  
+				                         rdi->path().string() , 
                                          NNpar,
                                          fs::is_directory(rdi->status()),
                                          MaxTgId, 
@@ -235,13 +236,13 @@ int        CMultSec::AddFromFileFASTA (std::ifstream &ifile)  // ---------------
         if (     Fasta_SEC.length() < static_cast<std::size_t>( secBeg + lmin -1 )   )    
              continue;
 
-        std::unique_ptr<CSec> sec (  new CSec(   Fasta_SEC ,
+        auto sec = std::make_shared<CSec>(  Fasta_SEC ,
                                             _Local._NSec, 
                                             Fasta_NAME , 
                                             _NNPar,
                                             lmax, 
                                             secBeg  //  \todo: cambiar constr de CSec ???? use make_unique?
-                                         )) ;                  assert(sec);
+                                          ) ;     
                         
         if ( sec->Len() < lmin  )    
             continue; 
@@ -260,17 +261,17 @@ int        CMultSec::AddFromFileFASTA (std::ifstream &ifile)  // ---------------
             {
                 sec->Selected(false);
                 sec->Filtered(true);
-                InsertSecAfter (idem, sec.release() ) ;    
+                InsertSecAfter (idem, sec) ;    
             }
             else
             {
                 (*idem)->Selected(false);
                 (*idem)->Filtered(true);
-                InsertSec(idem, sec.release());
+                InsertSec(idem, sec);
             }
         }
         else
-            AddSec(sec.release() );
+            AddSec(sec);
 
         NumSeq++;        
     }
@@ -359,15 +360,14 @@ int        CMultSec::AddFromFileBLAST (std::ifstream &fi) // ----------------  C
         //if (lmax && ((_Hsp_query_to - _Hsp_query_from)>lmax) && (_Hsp_hit_to - _Hsp_hit_from)>lmax)
         //    continue;
 
-        std::unique_ptr<CSecBLASTHit> secH
-                { new CSecBLASTHit(     std::move( i ), // _BlastOutput_query_len ,   ??????????
+        auto secH = std::make_shared<CSecBLASTHit>
+			                      (     std::move( i ), // _BlastOutput_query_len ,   ??????????
                                         std::move(sec)        ,
                                         lmaxHit,
                                         secHitBeg,          // _SecBeg, _SecEnd,
                                         id,                 //Hit_num   ???        //    char    *    nam,    Hit_def
                                         _NNPar           /*,  //long l=0,(Hit_len ---> NO ) !!!  -->_Hsp_align_len -OK clas,    conc*/
-                                        )
-                };
+                                  );
 
         if ( secH->Len() < lmin  )    
             continue;
@@ -379,7 +379,7 @@ int        CMultSec::AddFromFileBLAST (std::ifstream &fi) // ----------------  C
         {
             secH->Selected(false);
             secH->Filtered(true);
-            AddSec(secH.release() );
+            AddSec(secH);
         }
         else
         {
@@ -390,17 +390,17 @@ int        CMultSec::AddFromFileBLAST (std::ifstream &fi) // ----------------  C
                 {
                     secH->Selected(false);
                     secH->Filtered(true);
-                    InsertSecAfter(idem, secH.release());
+                    InsertSecAfter(idem, secH);
                 }
                 else
                 {
                     (*idem)->Selected(false);
                     (*idem)->Filtered(true);
-                    InsertSec(idem, secH.release());
+                    InsertSec(idem, secH);
                 }
             }
             else
-               AddSec(secH.release() );
+               AddSec(secH);
         }
         id++;
     }
@@ -481,7 +481,7 @@ int        CMultSec::AddFromFileGBtxt (std::ifstream &fi) // ----------------  C
         } while (ORIGIN!="ORIGIN");  std::cout<< "ORIGIN: "<<ORIGIN<<std::endl;
         if (!getline(fi, sec, '/')) return id;
         fi.ignore(all, '\n');     std::cout<< "sec: "<<sec.length()<<std::endl;
-        auto secGBtxt = std::make_unique<CSecGBtxt>(std::move(inf),
+        auto secGBtxt = std::make_shared<CSecGBtxt>(std::move(inf),
                                                     std::move(sec),
                                                     id,           //    char        *    nam,    DEFINITION    ,
                                                     _NNPar);
@@ -502,17 +502,17 @@ int        CMultSec::AddFromFileGBtxt (std::ifstream &fi) // ----------------  C
             {
                 secGBtxt->Selected(false);
                 secGBtxt->Filtered(true);
-                InsertSecAfter(idem, secGBtxt.release());
+                InsertSecAfter(idem, secGBtxt);
             }
             else
             {
                 (*idem)->Selected(false);
                 (*idem)->Filtered(true);
-                InsertSec(idem, secGBtxt.release());
+                InsertSec(idem, secGBtxt);
             }
         }
         else
-            AddSec(secGBtxt.release());
+            AddSec(secGBtxt);
 
         id++;        
     }
@@ -574,7 +574,8 @@ int        CMultSec::AddFromFileGB (std::ifstream &ifile)  // ----------------  
             xml_line.copy(sec,xml_line.length()) ;    sec[xml_line.length()]=0;    
 
 
-            CSecGB *secGB=  new CSecGB(      _Textseq_id_accession,
+            auto secGB = std::make_shared<CSecGB>(      
+				                            _Textseq_id_accession,
                                             _Org_ref_taxname    ,
                                             _Seqdesc_title,
                                             _Seq_inst_length     ,
@@ -606,7 +607,6 @@ int        CMultSec::AddFromFileGB (std::ifstream &ifile)  // ----------------  
                         AddSec(secGB);
                     id++;        
                 }
-                else delete secGB;
         }
     while (ifile.good() ); 
     return id; 
@@ -620,7 +620,7 @@ CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSe
     if ( _MaxTgId >= 100  ) //  no restriction on similarity
         return _LSec.end() ;    
 
-    long LenCandSec=sec.Len() ;     // Lenght of Candidate Sec (to be in the list, with MaxId)
+    long LenCandSec=sec.Len() ;     // Lenght of the Candidate Sec (to be in the list, with MaxId)
 
     long MaxErCS= long(ceil(float(LenCandSec*(100.0f-_MaxTgId) ) / 100.0f)); // min of not Id base to be in the list
     
@@ -702,32 +702,29 @@ CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSe
     return _LSec.end();
 }
 
- CSec *    CMultSec::AddSec ( CSec *sec )
+std::shared_ptr<CSec> CMultSec::AddSec ( std::shared_ptr<CSec> sec )
 {    if (!sec) return nullptr ;
-    _LSec.emplace_back(sec);
-    UpdateTotalsMoving ( sec );
+    _LSec.push_back(sec);
+    UpdateTotalsMoving ( *sec );
     return sec;
 }
- CSec *    CMultSec::InsertSec(LSec::const_iterator pos, CSec *sec) 
+std::shared_ptr<CSec> CMultSec::InsertSec(LSec::const_iterator pos, std::shared_ptr<CSec> sec)
 {    if (!sec) return nullptr ;
-    _LSec.emplace(pos, sec);
-    UpdateTotalsMoving ( sec );
+    _LSec.insert(pos, sec);
+    UpdateTotalsMoving ( *sec );
     return sec;
 }
- CSec *    CMultSec::InsertSecAfter(LSec::const_iterator preSec, CSec *sec)
+std::shared_ptr<CSec> CMultSec::InsertSecAfter(LSec::const_iterator preSec, std::shared_ptr<CSec> sec)
 {    
-    if (!sec) return nullptr ;
-    _LSec.emplace(++preSec, sec);
-    UpdateTotalsMoving ( sec );
-    return sec;
+    return InsertSec(++preSec, sec);
 }
 
-void    CMultSec::UpdateTotalsMoving ( CSec *sec ) 
+void    CMultSec::UpdateTotalsMoving ( CSec &sec ) 
 {    
-    if (!sec || sec->_parentMS == this)                                        // no hay sec o ya estaba aqui
+    if (sec._parentMS == this)                                        // no hay sec o ya estaba aqui
         return;
-    CMultSec *parMS   =sec->_parentMS;                    // /*._Get()*/
-    CMultSec *My_parMS=     _parentMS;                    // /*._Get()*/
+    CMultSec *parMS    = sec._parentMS;                    // /*._Get()*/
+    CMultSec *My_parMS = _parentMS;                    // /*._Get()*/
     bool checkExtr(true) ; 
     CMultSec   *cp;
 
@@ -757,21 +754,21 @@ void    CMultSec::UpdateTotalsMoving ( CSec *sec )
             }
     }else
         cp=nullptr;
-    Add2LocalExtreme(*sec);
+    Add2LocalExtreme(sec);
     for (My_parMS ; My_parMS!=cp && My_parMS; My_parMS=My_parMS->_parentMS)  // desde mi hacia arriba hasta el com parent anadiendo
     {
         if (checkExtr)
-            My_parMS->Add2GlobalExtreme(*sec);
+            My_parMS->Add2GlobalExtreme(sec);
         else
         {
             if (parMS) parMS->_Global._NSec ++;                                // sumo sus s a este total.
         }
     }    
-    sec->_parentMS = (this) ;                            //* std::weak_ptr<CMultSec> */
+    sec._parentMS = (this) ;                            //* std::weak_ptr<CMultSec> */
 }
 
 
-CMultSec   *CMultSec::findComParent( CMultSec *ms)
+CMultSec   *CMultSec::findComParent( CMultSec &ms)
 {
     if(!ms || ms==this) 
         return ms;
@@ -801,33 +798,33 @@ CMultSec   *CMultSec::findComParent( CMultSec *ms)
 }
 
 
-CMultSec *    CMultSec::AddMultiSec ( CMultSec *ms )  //--------------------------------------    AddMultiSec    --------------------
-{    if (!ms) return nullptr;    
-    _LMSec.emplace_back(ms);
-    UpdateTotalsMoving ( ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
-    return ms;
-}
-CMultSec *    CMultSec::AddMultiSec (LMSec::value_type ms )  //--------------------------------------    AddMultiSec    --------------------
+std::shared_ptr<CMultSec> CMultSec::AddMultiSec (std::shared_ptr<CMultSec> ms)  //--------------------------------------    AddMultiSec    --------------------
 {    if (!ms) return nullptr;    
     _LMSec.push_back(ms);
-    UpdateTotalsMoving ( ms.get() );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
-    return ms.get();
+    UpdateTotalsMoving ( *ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
+    return ms;
 }
-void        CMultSec::UpdateTotalsMoving ( CMultSec *msec ) 
+//std::shared_ptr<CMultSec> CMultSec::AddMultiSec (std::shared_ptr<CMultSec> ms )  //--------------------------------------    AddMultiSec    --------------------
+//{    if (!ms) return nullptr;    
+//    _LMSec.push_back(ms);
+//    UpdateTotalsMoving ( ms.get() );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
+//    return ms.get();
+//}
+void        CMultSec::UpdateTotalsMoving ( CMultSec &msec ) 
 {    
-    if (!msec || msec->_parentMS==this)                    // no hay msec o ya estaba antes en una de mis subtrees inmediatas. 
+    if (msec._parentMS==this)                    // no hay msec o ya estaba antes en una de mis subtrees inmediatas. 
         return;
 
-    CMultSec *parMS   =msec->_parentMS;                    // /*._Get()*/
-    CMultSec *My_parMS=     _parentMS;                    // /*._Get()*/
+    CMultSec *parMS   = msec._parentMS;                    // /*._Get()*/
+    CMultSec *My_parMS=      _parentMS;                    // /*._Get()*/
     bool checkExtr(true) ; 
     CMultSec   *cp;
     if (parMS)                                        // no es imprescindible. Anadido solo por claridad de intencion
     {    cp=findComParent( msec);
         for ( parMS;  parMS != cp  && parMS ;  parMS=parMS->_parentMS)            // desde localizacion orig subiendo hasta parent comun
             {
-                parMS->_Global._NSec -= msec->_Global._NSec ;            // elimino sus s de este total.
-                parMS->_Global._NMSec-= msec->_Global._NMSec + 1;        // elimino sus ms de este total.
+                parMS->_Global._NSec -= msec._Global._NSec ;            // elimino sus s de este total.
+                parMS->_Global._NMSec-= msec._Global._NMSec + 1;        // elimino sus ms de este total.
                 parMS->_Local._NMSec--    ;                                // la elimino de esta ms. 
                 if (checkExtr && parMS->_Global._NSec)
                     if (parMS->isGlobExtreme(msec))
@@ -838,7 +835,7 @@ void        CMultSec::UpdateTotalsMoving ( CMultSec *msec )
     }else
         cp=nullptr;
 
-    Add2LocalExtreme(*msec);
+    Add2LocalExtreme(msec);
     for (My_parMS ; My_parMS!=cp && My_parMS; My_parMS=My_parMS->_parentMS)  // desde mi hacia arriba hasta el com parent anadiendo
     {
         if (checkExtr)
@@ -849,7 +846,7 @@ void        CMultSec::UpdateTotalsMoving ( CMultSec *msec )
             My_parMS->_Global._NMSec+= msec->_Global._NMSec + 1;        // sumo sus ms a este total.
         }
     }
-    msec->_parentMS = (this) ;                            // std::weak_ptr<CMultSec> 
+    msec._parentMS = (this) ;                            // std::weak_ptr<CMultSec> 
 
 }
 

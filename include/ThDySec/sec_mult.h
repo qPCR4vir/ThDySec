@@ -270,9 +270,9 @@ class CMultSec
 
 
 		LSec::const_iterator Idem (CSec &sec);  //		CConsParam	_ConsPar ;
-		CSec		*AddSec			( CSec *sec );
-		CSec		*InsertSec		( LSec::const_iterator pos, CSec *sec ) ;
-		CSec		*InsertSecAfter ( LSec::const_iterator pos, CSec *sec ) ;
+		std::shared_ptr<CSec> AddSec		 ( std::shared_ptr<CSec> sec);
+		std::shared_ptr<CSec> InsertSec		 ( LSec::const_iterator pos, std::shared_ptr<CSec> sec) ;
+		std::shared_ptr<CSec> InsertSecAfter ( LSec::const_iterator pos, std::shared_ptr<CSec> sec) ;
 		CMultSec    *MoveMSec       (LMSec::const_iterator from) // revise design
 		{
 			CMultSec* p = (*from)->_parentMS;
@@ -337,12 +337,12 @@ class CMultSec
 		}
 
 
-		CMultSec	*AddMultiSec	(const std::string &Name )
+		std::shared_ptr<CMultSec> AddMultiSec	(const std::string &Name )
 		{
-			return AddMultiSec(new CMultSec (this, Name  ));
+			return AddMultiSec(std::make_shared<CMultSec>(this, Name));
 		}
-		CMultSec	*AddMultiSec	(CMultSec *MultSec);
-		CMultSec	*AddMultiSec	(LMSec::value_type MultSec);
+		std::shared_ptr<CMultSec> AddMultiSec	(std::shared_ptr<CMultSec> MultSec);
+		//std::shared_ptr<CMultSec> AddMultiSec	(std::shared_ptr<CMultSec> MultSec);
 
 //		CSec		CalculateConsenso	(double) ;
 //		void		release			()	{_LSec.release(); _LMSec.release();}

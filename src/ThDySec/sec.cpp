@@ -359,7 +359,7 @@ CMultSec *CSec::ForceNonDegSet()
 		//if (_NonDegSet)			// pero existia un ndgs !!
 		_NonDegSet.reset(new CMultSec(_NNpar));	// lo borramos 
 		 
-		_NonDegSet->AddSec( GenerateNonDegVariant(this, 0, 0) ) ;
+		_NonDegSet->AddSec( GenerateNonDegVariant(0, 0) ) ;
 		_Tm = _NonDegSet->_Local._Tm ; 
 
 		//assert ( ( (cout << "Post Deg set generation: "<< _name << "\t" << _c << "\t" 
@@ -370,9 +370,9 @@ CMultSec *CSec::ForceNonDegSet()
 	return _NonDegSet.get();
 }
 
-CSec *	CSec::CopyFirstBases(long pos) 
+std::shared_ptr<CSec> CSec::CopyFirstBases(long pos) const
 {	
-	CSec *sec = new CSec ( Len(), _NNpar) ;
+	std::shared_ptr<CSec> sec = std::make_shared<CSec> ( Len(), _NNpar) ;
 	assert(sec);
     sec->_name =  _name ;
     sec->_Clas =  _Clas ;
@@ -402,12 +402,13 @@ CSec *	CSec::CopyFirstBases(long pos)
 	return sec ;
 }
 
-CSec *	CSec::GenerateNonDegVariant ( CSec *s, long pos, Base ndb) /// \todo: crear variante que inserte las variantes en la lista dada.????
+/// \todo: crear variante que inserte las variantes en la lista dada.????
+std::shared_ptr<CSec> CSec::GenerateNonDegVariant (long pos, Base ndb) 
 {	Base pre ; Base b_or,  cur ;								   /// para eso anadir ultimo parametro CMultiSec &ndg=_nds
 
-	CSec *sec ;
+    std::shared_ptr<CSec> sec;
 	if (pos==0) 
-	{	sec = s->CopyFirstBases(0);   // caso esp: ni pos -1, ni muto a ndb
+	{	sec = CopyFirstBases(0);   // caso esp: ni pos -1, ni muto a ndb
 		pre = sec->_b[0];
 		//sec->_SdS.push_back(_SdS[0]);
 		//sec->_SdH.push_back(_SdH[0]);
@@ -415,7 +416,7 @@ CSec *	CSec::GenerateNonDegVariant ( CSec *s, long pos, Base ndb) /// \todo: cre
 	else 
 	{
 		// copia la parte inicial, que ya esta bien
-		sec = s->CopyFirstBases(pos-1);     // anadirle algo al nombre ??
+		sec = CopyFirstBases(pos-1);     // anadirle algo al nombre ??
 
 		// cambia la base deg en la 'pos' a 'ndb' - no deg base --> MUTACION  !!
 			  pre = sec->_b[pos-1];
@@ -458,7 +459,7 @@ CSec *	CSec::GenerateNonDegVariant ( CSec *s, long pos, Base ndb) /// \todo: cre
 			{
                 if (Len()*Degeneracy() < 32*4*4*4*4*4*4*4*4)  // oligo with 8 n = 65.536 variants = 40 MB?
                 if (_NonDegSet->_Global._NSec < 4*4*4*4*4*4*4*4)
-                   _NonDegSet->AddSec( GenerateNonDegVariant ( sec, i, dg2ba [ db2nu[b_or]  ][d] )) ;
+                   _NonDegSet->AddSec( sec->GenerateNonDegVariant (i, dg2ba [ db2nu[b_or]  ][d] )) ;
 			}
 
 			ndb			 = dg2ba [  db2nu[b_or]  ][n-1];   // aqui me quedo con la ultima variante para seguir
