@@ -251,7 +251,7 @@ class CMultSec
 			std::ofstream ofile( filename );
 	        if ( ! ofile ) 
 	        {
-	            throw std::ios_base::failure(std::string("Could not create the sequence file: ")+ filename );
+	            throw std::ios_base::failure(std::string("Could not create the sequence file: ")+ filename.string() );
 	        }
             Export( ofile, only_selected);
         }
@@ -265,19 +265,19 @@ class CMultSec
 			    CurMSec->Export(ofile, only_selected);
         }
 
-        /// too simple, works only for aligned sequences: todo real simple alignmend
+        /// too simple, works only for aligned sequences: todo real simple alignmend??
         SecIt Idem (CSec &sec) const;             //		CConsParam	_ConsPar ;
 
 		pSec AddSec		    ( pSec sec);
         pSec InsertSec		( SecIt pos, pSec sec) ;
-        pSec InsertSecAfter ( SecItr pos, pSec sec) ;
-		pMSec MoveMSec      ( MSecIt from) /// todo revise design !!!
+        pSec InsertSecAfter ( SecIt pos, pSec sec) ;
+        void MoveMSec       ( MSecIt from) /// todo revise design !!!
 		{
 			CMultSec* p = (*from)->_parentMS;
-			if (p == this) return p;                  // no-op ; mover al final?
-            std::shared_ptr<CMultSec> s = *from;
+			if (p == this) return ;                  // no-op ; mover al final?
+            pMSec s = *from;
 			if (p) p->_LMSec.erase(from);
-			return AddMultiSec(s);
+			AddMultiSec(s);
 		}
 		int			CountSelectedSeq		()
 		{
@@ -335,25 +335,25 @@ class CMultSec
 		}
 
 
-		std::shared_ptr<CMultSec> AddMultiSec	(const std::string &Name )
+        MSecIt AddMultiSec(const std::string &Name )
 		{
 			return AddMultiSec(std::make_shared<CMultSec>(this, Name));
 		}
-		std::shared_ptr<CMultSec> AddMultiSec	(std::shared_ptr<CMultSec> MultSec);
+		MSecIt AddMultiSec	(pMSec MultSec);
 		//std::shared_ptr<CMultSec> AddMultiSec	(std::shared_ptr<CMultSec> MultSec);
 
-//		CSec		CalculateConsenso	(double) ;
-//		void		release			()	{_LSec.release(); _LMSec.release();}
+        //	CSec CalculateConsenso(double) ;
+
 		void		clear			()	{_LSec.clear(); _LMSec.clear();} ///\todo uncount !!!!!
 
 		virtual ~CMultSec ()  ;	
 
         long Len()
-           {
-               if (_Consenso)
-                   return _Consenso->Len();
-               else return 0;
-           }
+            {
+                assert (0);
+                //if (_Consenso) //    return _Consenso->Len();else
+                return 0;
+            }
 
 		CMultSec		*findComParent		( CMultSec	*ms	);
 		const LSec &  SecL() const { return  _LSec; }

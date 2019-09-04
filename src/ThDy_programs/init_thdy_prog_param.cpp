@@ -27,67 +27,53 @@ std::shared_ptr<CMultSec>  ThDyCommProgParam::CreateRoot	()
 	return std::make_shared<CMultSec> (_pSaltCorrNNp, "All seq") ;
 }
 
-CMultSec* ThDyCommProgParam::AddSeqGroup		(CMultSec   *parentGr, const std::string&     Name)
+CMultSec::MSecIt ThDyCommProgParam::AddSeqGroup(CMultSec &parentGr, const std::string& Name)
 {
-	if(parentGr)
-	    if (  parentGr->_NNPar ) 
-            return parentGr->AddMultiSec(new CMultSec(parentGr->_NNPar, Name));
-		else
-            return parentGr->AddMultiSec(new CMultSec(_pSaltCorrNNp, Name));
-
-    return new CMultSec(_pSaltCorrNNp, Name);
+	if (  parentGr._NNPar )
+        return parentGr.AddMultiSec(std::make_shared<CMultSec>(parentGr._NNPar, Name));
+    else
+        return parentGr.AddMultiSec(std::make_shared<CMultSec>(_pSaltCorrNNp, Name));
 }
 
 
-CMultSec* ThDyCommProgParam::AddSeqFromFile( CMultSec           *parentGr, 
-	                                         const std::string&  FileName, 
-	                                         bool                recursive/*=false*/, 
-	                                         bool                onlyStructure/*=false*/)
+CMultSec::MSecIt ThDyCommProgParam::AddSeqFromFile(CMultSec &parentGr,
+                                                   const std::filesystem::path &FileName,
+                                                   bool recursive/*=false*/,
+                                                   bool onlyStructure/*=false*/)
 {
-	if(!parentGr) 
-		return new  CMultSec(	FileName,
-								_pSaltCorrNNp,
-								recursive,
-								_MaxTgId,
-								_SecLim,
-								_SecLenLim,
-								!onlyStructure);
-    
-	CMultSec *sG{};
+    CMultSec::pMSec sG;
 
 	for (CMultSec* pgr : _primersGr)       // scan primers groups
 	{
-		if (pgr == pgr->findComParent(parentGr) )   // adding in a primer group: dont use filtres, use parent filtres?
+		if (pgr == pgr->findComParent(&parentGr))   // adding in a primer group: dont use filters, use parent filters?
 		{   
-				sG=new CMultSec ( FileName , 
-                                parentGr->_NNPar ? parentGr->_NNPar : _pSaltCorrNNp,
-                                recursive,
-							    parentGr->_MaxTgId  ,
-							    parentGr->_SecLim ,
-                                parentGr->_SecLenLim, 
-                                !onlyStructure);
+				sG=std::make_shared<CMultSec>(FileName ,
+                                              parentGr._NNPar ? parentGr._NNPar : _pSaltCorrNNp,
+                                              recursive,
+							                  parentGr._MaxTgId  ,
+							                  parentGr._SecLim ,
+                                              parentGr._SecLenLim,
+                                              !onlyStructure);
 				sG->CreateNonDegSetRec();
 				break;
 		}
 	}
 	if (!sG)
-		        sG=new CMultSec ( FileName , 
-                                parentGr->_NNPar ? parentGr->_NNPar : _pSaltCorrNNp,
-                                recursive,
-							    _MaxTgId  ,
-							    _SecLim ,
-                                _SecLenLim, 
-                                !onlyStructure);
+	    sG=std::make_shared<CMultSec>(FileName ,
+                                      parentGr._NNPar ? parentGr._NNPar : _pSaltCorrNNp,
+                                      recursive,
+							          _MaxTgId  ,
+							          _SecLim ,
+                                      _SecLenLim,
+                                      !onlyStructure);
+    CMultSec::MSecIt it = parentGr.AddMultiSec(sG);
+    auto parent_path = sG->_orig_file.parent_path();
 
-	parentGr->AddMultiSec(sG);
-    std::string parent_path = fs::path(sG->_orig_file_path).remove_filename().string();
-
-    if (parentGr->_Local._NMSec == 1)
-        parentGr->_orig_file_path= parent_path ;
-    else if (parentGr->_orig_file_path != parent_path)
-            parentGr->_orig_file_path.clear();
-
-	return sG;
+    if (parentGr._Local._NMSec == 1)
+        parentGr._orig_file = parent_path ;
+    else if (parentGr._orig_file != parent_path)
+            parentGr._orig_file.clear();
+	return it;
 }
 
 void CProgParam_microArray::RenameSondesMS(const std::string& name)

@@ -133,8 +133,8 @@ int SondeDesignProg ( CProgParam_SondeDesign *IPrgPar_SdDes)
     IPrgPar_SdDes->_cp.Actualice_NNp();  /// \todo review
 
                                          /// \todo use only the file name not the path (use filesystem)
-    IPrgPar_SdDes->probes = IPrgPar_SdDes->_cp.AddSeqGroup(IPrgPar_SdDes->probes, 
-                                                           IPrgPar_SdDes->_cp._OutputFile.get());
+    IPrgPar_SdDes->probes = IPrgPar_SdDes->_cp.AddSeqGroup(*IPrgPar_SdDes->probes,
+                                                           IPrgPar_SdDes->_cp._OutputFile.get())->get();
 
 
     /// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////

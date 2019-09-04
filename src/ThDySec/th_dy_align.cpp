@@ -895,7 +895,7 @@ void    CMSecCand::ExportCommonSonden(  bool             colpased,
     FracTDAlign fAl( _sL._L.Max() + 1 ,  _sL._L.Max() + 1, _TDATmC->_NNpar);
     fAl.SetTa ( _TDATmC->Ta () );
     long Num{0};
-    std::unique_ptr<CSec> cand, c_cand;
+    CMultSec::pSec cand, c_cand;
 
 /// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 std::cout << "\n EXPORTING...";
@@ -929,7 +929,7 @@ std::cout << "\n EXPORTING...";
                     //  std::cout<< "\nSeq: "<<  
                     /// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                         
-                        res->AddSec(cand.release())->Name();
+                        res->AddSec(cand)->Name();
 
 
 

@@ -81,7 +81,7 @@ class SeqExpl : public CompoWidget
     void AsignWidgetToFields() override;
     void MakeResponive();
 
-    Node Refresh(Tree::item_proxy node)
+    Node Refresh(Node node)
     {
             _tree.auto_draw(false);
             try{
@@ -100,8 +100,8 @@ class SeqExpl : public CompoWidget
 
             return node;
     }
-    void RefreshList(                      ) { RefreshList(_tree.selected());         } ///< very High Level
-    void RefreshList(const Tree::item_proxy node) { RefreshList( node.value<MSecIt>()); } ///< High Level
+    void RefreshList(                ) { RefreshList(_tree.selected());      } ///< very High Level
+    void RefreshList(const Node &node) { RefreshList( node.value<MSecIt>()); } ///< High Level
     void RefreshList(MSecIt ms)  ///< medium Level
     {
             _list.auto_draw(false);
@@ -112,17 +112,20 @@ class SeqExpl : public CompoWidget
             _list.auto_draw(true);
 			RefreshStatusInfo(**ms);
     }
-    void populate_list_recur(Tree::item_proxy node) ///< High Level
+
+    void populate_list_recur(const Node& node) ///< High Level
     {
         populate_list_recur(**node.value<MSecIt>());
     }
+
     void populate_list_recur(CMultSec &ms)  ///< Low Level
-		{
-			populate_list(ms);
-            if ( _showAllseq )
-	            for ( auto& CurMSec : ms.MSecL() )
-                    populate_list_recur(*CurMSec);
-		}
+    {
+        populate_list(ms);
+        if ( _showAllseq )
+            for ( auto& CurMSec : ms.MSecL() )
+                populate_list_recur(*CurMSec);
+    }
+
     void populate_list(CMultSec &ms)
     {
         for (SecIt CurSec = ms.SecL().begin(); CurSec != ms.SecL().end(); CurSec++)
@@ -139,7 +142,7 @@ class SeqExpl : public CompoWidget
                                                              :   0x0   )  ));//nana::color::gray_border );
     }
 
-    Node AddRoot          (MSecIt ms)
+    Node AddRoot(MSecIt ms)
     {
         std::string name = ms->_name;
         return _tree.insert(name, name).value(ms).check(ms->Selected());
@@ -164,15 +167,18 @@ class SeqExpl : public CompoWidget
         return node;
     }
 
-    Node AddNewSeqGr  (Tree::item_proxy node) ;
+    Node AddNewSeqGr  (Node node) ;
+
+    /// Add seq from file to the selected tree Node
     Node AddMSeqFiles (const std::filesystem::path &file, bool  all_in_dir) ;
-    Node  Replace    (Tree::item_proxy tn, CMultSec *ms, const std::string& Path, bool all_in_dir);
-    Node ReloadDir    (Tree::item_proxy tn)
+
+    Node Replace    (Node tn, MSecIt ms, const std::string& Path, bool all_in_dir);
+    Node ReloadDir  (Node tn)
     {            
         CMultSec *ms = tn.value<CMultSec*>();
         if (ms->_orig_file_path.empty())
         {
-            for (Tree::item_proxy& ntn : tn)
+            for (Node & ntn : tn)
                 ReloadDir(ntn);
             return tn;
         }

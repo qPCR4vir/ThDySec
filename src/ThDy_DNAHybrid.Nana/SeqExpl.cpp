@@ -53,24 +53,25 @@ SeqExpl::SeqExpl  (ThDyNanaForm& tdForm)
         _list.auto_draw(true);
     }
 
-SeqExpl::Node SeqExpl::AddNewSeqGr  (Tree::item_proxy node)
-        {    try{    
-                    return appendNewNode(node, _Pr._cp.AddSeqGroup(**node.value<MSecIt>(),"New group")).expand(true);
-                }
-                catch ( std::exception& e)
-                { 
-                  (nana::msgbox ( ("Error adding new group" ) )<< e.what()).show() ;
-                  return node;
-                }        
+SeqExpl::Node SeqExpl::AddNewSeqGr  (Node node)
+{
+    try{
+            return appendNewNode(node, _Pr._cp.AddSeqGroup(**node.value<MSecIt>(),"New group")).expand(true);
         }
+    catch ( std::exception& e)
+        {
+          (nana::msgbox ( ("Error adding new group" ) )<< e.what()).show() ;
+          return node;
+        }
+}
 
 SeqExpl::Node SeqExpl::AddMSeqFiles (const std::filesystem::path &file, bool  all_in_dir)
     {     
     try{ 
-            auto      tn    = _tree.selected();
-            CMultSec* ms    = tn.value<CMultSec*>();
-            CMultSec* newms = _Pr._cp.AddSeqFromFile    (ms , file, all_in_dir    );
-            return Refresh(   tn);
+            Node   tn = _tree.selected();
+            pMSec ms = *tn.value<MSecIt>();
+            _Pr._cp.AddSeqFromFile(ms->get(), file, all_in_dir);
+            return Refresh(tn);
         }
         catch ( std::exception& e)
         { 
@@ -100,7 +101,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
                 nana::msgbox ( ("Sorry, you can't replace group " + tn.text()) ).show() ;
                 return;
             }
-            CMultSec *ms = tn.value<CMultSec*>();
+            auto ms = tn.value<CMultSec::LMSec::const_iterator>();
             CMultSec *pms = ms->_parentMS;
             assert(ms);
             assert(pms);
@@ -113,45 +114,51 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             auto path=fb.show();
             if ( path.empty() ) return;
 
-            _Pr._cp._pSeqNoUsed->AddMultiSec(ms);
+            _Pr._cp._pSeqNoUsed->MoveMSec(ms);
             _Pr._cp.AddSeqFromFile    ( pms, path[0].u8string(), false    );
             Refresh(tn->owner());
         });
 
         menu.append(("Replace from directory . . ."), [&](nana::menu::item_proxy& ip) 
         {
-            auto tn= _tree.selected();
+            Node tn= _tree.selected();
             if (isRoot(tn) || isRoot(tn->owner()) )
             {
                 nana::msgbox ( ("Sorry, you can't replace group " + tn->text()) ) ;
                 return;
             }
-            CMultSec *ms = tn.value<CMultSec*>();
-            CMultSec *pms = ms->_parentMS;
+            auto       ms = tn.value<CMultSec::MSecIt>();
+            CMultSec *parentMs = ms->_parentMS;
             assert(ms);
-            assert(pms);
+            assert(parentMs);
             
-            fs::path pt{ms->_orig_file_path};
+            fs::path pt{ms->_orig_file};
             nana::folderbox  fb{ *this, pt.parent_path() , "Replace/reload a group of sequences from a directory" };
             auto p=fb.show();
             if (p.empty()) return;
-            auto it=std::find_if(pms->MSecL().begin(), pms->MSecL().end(),
+
+            /*
+            // a "trick" to get an iterator to the CMultiSec *   !!!!!!!!!
+            auto it=std::find_if(parentMs->MSecL().begin(), parentMs->MSecL().end(),
                                  [&ms](auto & sp_ms) {return ms == sp_ms.get(); });
-            if (it == pms->MSecL().end()) return;
-            _Pr._cp._pSeqNoUsed->MoveMSec(it);     // hight level MoveMSec !! (actualize globals) ?
+
+            if (it == parentMs->MSecL().end()) return;
+            */
+
+            _Pr._cp._pSeqNoUsed->MoveMSec(ms);     // hight level MoveMSec !! (actualize globals) ?
             
             auto own = tn->owner();
 
             _tree.auto_draw(false);
             _list.auto_draw(false);
 
-            CMultSec* newms = _Pr._cp.AddSeqFromFile    ( pms, p[0].u8string(), true    );
+            CMultSec::pMSec newms = _Pr._cp.AddSeqFromFile(parentMs, p[0].u8string(), true    );
             _tree.erase(tn);
             populate(appendNewNode  (own, newms) );
             own.expand(true);
 
             _list.clear();
-            populate_list_recur(pms);
+            populate_list_recur(parentMs);
 
             _tree.auto_draw(true);
             _list.auto_draw(true);
@@ -390,18 +397,17 @@ void SeqExpl::MakeResponive()
                     .events().click([this]() { ShowFiltered( _show_filt_s.pushed());  });
     }
 
-SeqExpl::Node SeqExpl::Replace      (Tree::item_proxy tn, CMultSec *ms, const std::string& Path, bool all_in_dir)
+SeqExpl::Node SeqExpl::Replace (Node tn, MSecIt ms, const std::string& Path, bool all_in_dir)
 {        
 try{ 
-        Tree::item_proxy   own = tn->owner();
-        CMultSec          *pms = ms->_parentMS;  
+        Node      own = tn->owner();
         assert(ms);
+        CMultSec *pms = (*ms)->_parentMS;
         assert(pms);
 
+        MSecIt newms = _Pr._cp.AddSeqFromFile    ( *pms, Path, all_in_dir    );
 
-        CMultSec* newms = _Pr._cp.AddSeqFromFile    ( pms, Path, all_in_dir    );
-
-        _Pr._cp._pSeqNoUsed->AddMultiSec(ms); 
+        _Pr._cp._pSeqNoUsed->MoveMSec(*ms);
         _tree.erase(tn);
         populate(_tree.find( _Pr._cp._pSeqNoUsed->_name));
         return appendNewNode(own, newms).expand(true).select(true) ;

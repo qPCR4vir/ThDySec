@@ -710,7 +710,7 @@ CMultSec::pSec CMultSec::InsertSec(CMultSec::SecIt pos, CMultSec::pSec sec)
     UpdateTotalsMoving ( *sec );
     return sec;
 }
-CMultSec::pSec CMultSec::InsertSecAfter(CMultSec::SecIt, CMultSec::pSec sec)
+CMultSec::pSec CMultSec::InsertSecAfter(CMultSec::SecIt preSec, CMultSec::pSec sec)
 {    
     return InsertSec(++preSec, sec);
 }
@@ -792,12 +792,13 @@ CMultSec   *CMultSec::findComParent( CMultSec *ms)
     return myPms;
 }
 
-CMultSec::pMSec CMultSec::AddMultiSec (CMultSec::pMSec ms)  //--------------------------------------    AddMultiSec    --------------------
+CMultSec::MSecIt CMultSec::AddMultiSec (CMultSec::pMSec ms)  //--------------------------------------    AddMultiSec    --------------------
 {
-    if (!ms) return ms;
-    _LMSec.push_back(ms);
+    MSecIt end = _LMSec.end();
+    if (!ms) return end;
+    MSecIt it = _LMSec.insert(end, ms);
     UpdateTotalsMoving ( *ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
-    return ms;
+    return it;
 }
 //std::shared_ptr<CMultSec> CMultSec::AddMultiSec (std::shared_ptr<CMultSec> ms )  //--------------------------------------    AddMultiSec    --------------------
 //{    if (!ms) return nullptr;    
@@ -815,7 +816,7 @@ void        CMultSec::UpdateTotalsMoving ( CMultSec &msec )
     bool checkExtr(true) ; 
     CMultSec   *cp;
     if (parMS)                                        // no es imprescindible. Anadido solo por claridad de intencion
-    {    cp=findComParent( msec);
+    {    cp=findComParent( &msec);
         for ( parMS;  parMS != cp  && parMS ;  parMS=parMS->_parentMS)            // desde localizacion orig subiendo hasta parent comun
             {
                 parMS->_Global._NSec -= msec._Global._NSec ;            // elimino sus s de este total.
@@ -834,11 +835,11 @@ void        CMultSec::UpdateTotalsMoving ( CMultSec &msec )
     for (My_parMS ; My_parMS!=cp && My_parMS; My_parMS=My_parMS->_parentMS)  // desde mi hacia arriba hasta el com parent anadiendo
     {
         if (checkExtr)
-            My_parMS->Add2GlobalExtreme(*msec);
+            My_parMS->Add2GlobalExtreme(msec);
         else
         {
-            My_parMS->_Global._NSec += msec->_Global._NSec ;            // sumo sus s a este total.
-            My_parMS->_Global._NMSec+= msec->_Global._NMSec + 1;        // sumo sus ms a este total.
+            My_parMS->_Global._NSec += msec._Global._NSec ;            // sumo sus s a este total.
+            My_parMS->_Global._NMSec+= msec._Global._NMSec + 1;        // sumo sus ms a este total.
         }
     }
     msec._parentMS = (this) ;                            // std::weak_ptr<CMultSec> 
