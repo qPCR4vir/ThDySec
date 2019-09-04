@@ -150,12 +150,11 @@ int        CMultSec::AddFromFile (const fs::path& file)    // return la cantidad
 
 int        CMultSec::AddFromFile (std::ifstream& ifile)        // return la cantidad de sec add -----------  AddFromFile   ---
 {        
-    //if (  _SecLim.Max() <= _SecLim.Min() ) 
-    //    _SecLim.SetMax(0) ;                      // if ( _SecEnd<=_SecBeg) _SecEnd=0 ;
+    //if (  _SecLim.Max() <= _SecLim.Min() )  // _SecLim.SetMax(0) ;  // if ( _SecEnd<=_SecBeg) _SecEnd=0 ;
 
     int j=0;
     char c1;
-    ifile>>std::skipws  >> c1;
+    ifile >> std::skipws  >> c1;
     if ( ! ifile.good() )     
     {
         throw std::ios_base::failure(std::string("Could not read the sequence file: ")/*+ file */);
@@ -257,11 +256,11 @@ int        CMultSec::AddFromFileFASTA (std::ifstream &ifile)  // ---------------
             {
                 (*idem)->Selected(false);
                 (*idem)->Filtered(true);
-                InsertSec(idem, sec);
+                InsertSec(idem, sec);    // std::move?
             }
         }
         else
-            AddSec(sec);
+            AddSec(sec);   // std::move?
 
         NumSeq++;        
     }
@@ -315,18 +314,18 @@ int        CMultSec::AddFromFileBLAST (std::ifstream &fi) // ----------------  C
         scan("Hit_def"      )  ; if(!getline(fi, i.Hit_def,'<') ) return id;    //<Hit_def>Wets NIle virus strain ArB3573/82, complete genome</Hit_def>
         scan("Hit_accession")  ; if(!getline(fi, i.Hit_accession,'<'))return id;//<Hit_def>Wets NIle virus strain ArB3573/82, complete genome</Hit_def>
         scan("Hit_len"      )  ;  fi>>i.Hit_len;                //  <Hit_len>11048</Hit_len>
-        scan("Hsp_bit-score")  ;  fi>>i.Hsp_bit_score;            //  <Hsp_bit-score>482.786</Hsp_bit-score>
+        scan("Hsp_bit-score")  ;  fi>>i.Hsp_bit_score;          //  <Hsp_bit-score>482.786</Hsp_bit-score>
         scan("Hsp_score"    )  ;  fi>>i.Hsp_score;              //  <Hsp_score>534</Hsp_score>
-        scan("Hsp_evalue"   )  ;  fi>>i.Hsp_evalue;                //  <Hsp_evalue>3.71782e-133</Hsp_evalue>
-        scan("Hsp_query-from") ;  fi>>i.Hsp_query_from;            //  <Hsp_query-from>1</Hsp_query-from>
-        scan("Hsp_query-to" )  ;  fi>>i.Hsp_query_to;            //  <Hsp_query-to>267</Hsp_query-to>
-        scan("Hsp_hit-from" )  ;  fi>>i.Hsp_hit_from;            //  <Hsp_hit-from>9043</Hsp_hit-from>
-        scan("Hsp_hit-to"   )  ;  fi>>i.Hsp_hit_to;                //  <Hsp_hit-to>9309</Hsp_hit-to>
+        scan("Hsp_evalue"   )  ;  fi>>i.Hsp_evalue;             //  <Hsp_evalue>3.71782e-133</Hsp_evalue>
+        scan("Hsp_query-from") ;  fi>>i.Hsp_query_from;         //  <Hsp_query-from>1</Hsp_query-from>
+        scan("Hsp_query-to" )  ;  fi>>i.Hsp_query_to;           //  <Hsp_query-to>267</Hsp_query-to>
+        scan("Hsp_hit-from" )  ;  fi>>i.Hsp_hit_from;           //  <Hsp_hit-from>9043</Hsp_hit-from>
+        scan("Hsp_hit-to"   )  ;  fi>>i.Hsp_hit_to;             //  <Hsp_hit-to>9309</Hsp_hit-to>
         scan("Hsp_query-frame");  fi>>i.Hsp_query_frame;        //  <Hsp_query-frame>1</Hsp_query-frame>
-        scan("Hsp_identity" )  ;  fi>>i.Hsp_identity;            //  <Hsp_identity>267</Hsp_identity>
-        scan("Hsp_positive" )  ;  fi>>i.Hsp_positive;            //  <Hsp_positive>267</Hsp_positive>
-        scan("Hsp_gaps"     )  ;  fi>>i.Hsp_gaps;                 //  <Hsp_gaps>0</Hsp_gaps>
-        scan("Hsp_align-len")  ;  fi>>i.Hsp_align_len;            //  <Hsp_align-len>267</Hsp_align-len>
+        scan("Hsp_identity" )  ;  fi>>i.Hsp_identity;           //  <Hsp_identity>267</Hsp_identity>
+        scan("Hsp_positive" )  ;  fi>>i.Hsp_positive;           //  <Hsp_positive>267</Hsp_positive>
+        scan("Hsp_gaps"     )  ;  fi>>i.Hsp_gaps;               //  <Hsp_gaps>0</Hsp_gaps>
+        scan("Hsp_align-len")  ;  fi>>i.Hsp_align_len;          //  <Hsp_align-len>267</Hsp_align-len>
         scan("Hsp_hseq"     )  ; if(!getline(fi, sec,'<'))         return id;//<Hsp_hseq>TACAACATGATGGGAAAGAGAGAGAAGAAG
         scan("Hsp_midline"  )  ; if(!getline(fi, i.Hsp_midline,'<'))return id;//<Hsp_midline>|||||||||||||||||||||||||||||||||||||||||
                                                             
@@ -471,6 +470,7 @@ int        CMultSec::AddFromFileGBtxt (std::ifstream &fi) // ----------------  C
         } while (ORIGIN!="ORIGIN");  std::cout<< "ORIGIN: "<<ORIGIN<<std::endl;
         if (!getline(fi, sec, '/')) return id;
         fi.ignore(all, '\n');     std::cout<< "sec: "<<sec.length()<<std::endl;
+
         auto secGBtxt = std::make_shared<CSecGBtxt>(std::move(inf),
                                                     std::move(sec),
                                                     id,           //    char        *    nam,    DEFINITION    ,
@@ -511,7 +511,10 @@ int        CMultSec::AddFromFileGBtxt (std::ifstream &fi) // ----------------  C
 }
 
 int        CMultSec::AddFromFileGB (std::ifstream &ifile)  // ----------------  CMultSec::            AddFromFileGB  -----------------------------
-{    int        id=0;
+{
+    /// \todo update !!
+
+    int        id=0;
     std::string xml_line ;
 
     do {    char        *    _Textseq_id_accession    =0 ;    
@@ -605,7 +608,7 @@ int        CMultSec::AddFromFileGB (std::ifstream &ifile)  // ----------------  
 int        CMultSec::AddFromFileODT (std::ifstream &ifileODT){return 0;}
 int        CMultSec::AddFromFileODS (std::ifstream &ifileODS){return 0;}
 
-CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSec:: NotIdem  --- busqueda trivial de sec identicas -------------
+CMultSec::SecIt CMultSec::Idem ( CSec &sec ) const  // ------  CMultSec:: NotIdem  --- busqueda trivial de sec identicas -------------
 {    
     if ( _MaxTgId >= 100  ) //  no restriction on similarity
         return _LSec.end() ;    
@@ -614,7 +617,7 @@ CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSe
 
     long MaxErCS= long(ceil(float(LenCandSec*(100.0f-_MaxTgId) ) / 100.0f)); // min of not Id base to be in the list
     
-    for (auto CurSec = _LSec.begin(); CurSec != _LSec.end(); ++CurSec)        // recorre todos las primeras sec de esta misma ms
+    for (SecIt CurSec = _LSec.begin(); CurSec != _LSec.end(); ++CurSec) // recorre todos las primeras sec de esta misma ms
     {    
         CSec &s = **CurSec ; 
         if (s.Filtered())
@@ -692,19 +695,22 @@ CMultSec::LSec::const_iterator CMultSec::Idem ( CSec &sec )   // ------  CMultSe
     return _LSec.end();
 }
 
-std::shared_ptr<CSec> CMultSec::AddSec ( std::shared_ptr<CSec> sec )
-{    if (!sec) return nullptr ;
+CMultSec::pSec CMultSec::AddSec( CMultSec::pSec sec)
+{
+    if (!sec) return sec ;
     _LSec.push_back(sec);
     UpdateTotalsMoving ( *sec );
     return sec;
 }
-std::shared_ptr<CSec> CMultSec::InsertSec(LSec::const_iterator pos, std::shared_ptr<CSec> sec)
-{    if (!sec) return nullptr ;
+
+CMultSec::pSec CMultSec::InsertSec(CMultSec::SecIt pos, CMultSec::pSec sec)
+{
+    if (!sec) return sec ;
     _LSec.insert(pos, sec);
     UpdateTotalsMoving ( *sec );
     return sec;
 }
-std::shared_ptr<CSec> CMultSec::InsertSecAfter(LSec::const_iterator preSec, std::shared_ptr<CSec> sec)
+CMultSec::pSec CMultSec::InsertSecAfter(CMultSec::SecIt, CMultSec::pSec sec)
 {    
     return InsertSec(++preSec, sec);
 }
@@ -757,8 +763,7 @@ void    CMultSec::UpdateTotalsMoving ( CSec &sec )
     sec._parentMS = (this) ;                            //* std::weak_ptr<CMultSec> */
 }
 
-
-CMultSec   *CMultSec::findComParent( CMultSec &ms)
+CMultSec   *CMultSec::findComParent( CMultSec *ms)
 {
     if(!ms || ms==this) 
         return ms;
@@ -787,9 +792,9 @@ CMultSec   *CMultSec::findComParent( CMultSec &ms)
     return myPms;
 }
 
-
-std::shared_ptr<CMultSec> CMultSec::AddMultiSec (std::shared_ptr<CMultSec> ms)  //--------------------------------------    AddMultiSec    --------------------
-{    if (!ms) return nullptr;    
+CMultSec::pMSec CMultSec::AddMultiSec (CMultSec::pMSec ms)  //--------------------------------------    AddMultiSec    --------------------
+{
+    if (!ms) return ms;
     _LMSec.push_back(ms);
     UpdateTotalsMoving ( *ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
     return ms;
@@ -841,42 +846,5 @@ void        CMultSec::UpdateTotalsMoving ( CMultSec &msec )
 }
 
         CMultSec::~CMultSec ()                // funciona bien solo si la lista es "lineal"
-{    
-    //_LSec.Destroy  ()    ;
-    //_LMSec.Destroy ()    ;
-    //Remove(); 
-    // CSec        *_Consenso ;
+{
 }    
-
-
-//void    CMultSec::RefreshExtremes( CMultSec *ms)
-//{
-//    if(!ms)
-//        return;
-//    if(ms->_NSec)
-//
-//}
-    //    
-    //while (parMS)                                    // subo por el tree hasta llegar al root
-    //    if (parMS==this)                        
-    //        return;                                    // la sec estaba antes en una de mis subtrees. 
-    //    else
-    //auto TLen= msec->_TLen ;
-    //auto TTm = msec->_TTm ;
-    ////auto TNMS
-    //CMultSec *My_parMS=this ;    //_parentMS/*._Get()*/;        // 
-    //while (My_parMS)                                // subo por el tree hasta llegar al root
-    //{    if ( ! My_parMS->_TNSec  )    
-    //    {                                            
-    //        My_parMS->_TLen= TLen ;                //   si ademas es la primera del todo inicializar los max totales
-    //        My_parMS->_TTm = TTm ;
-    //    }else
-    //        {    
-    //            My_parMS->_TLen.Expand( TLen) ;
-    //            My_parMS->_TTm .Expand( TTm ) ;
-    //        }    
-    //    My_parMS->_TNSec +=msec->_TNSec;            // la elimino de este total. Que hacer con las max??
-    //    My_parMS->_TNMSec+=msec->_TNMSec;
-    //    TLen=My_parMS->_TLen ;
-    //    TTm =My_parMS->_TTm ;
-    //}

@@ -25,22 +25,20 @@
 #else
 #  include <filesystem>
 #endif
-#include <list>
 
-
-#include "sec.h" 
+#include "sec.h"
 #include "sec_rang.h" 
 
                                         // ---------------------------------------------------------- 	CMultSec    -------------------
   /// Permite hacer grupos de sec o de MultiSec (para analisis por "especies"?)
 
   /// \todo add construction of concensus 
-  /// \todo make std with vector or list of std::shared_ptr<Csec> and CMultSec> ?
-  /// Atention:  It owns and destroy the sequences: Use Remove() or Free() to prevent destruction fo sequences
-class CMultSec	 
+class CMultSec
 {	public:
-	using LSec   = std::list<std::shared_ptr<CSec    >>;
-	using LMSec  = std::list<std::shared_ptr<CMultSec>>;
+    using pSec   = std::shared_ptr<CSec> ;
+    using pMSec  = std::shared_ptr<CMultSec> ;
+	using LSec   = std::list<pSec>;
+	using LMSec  = std::list<pMSec>;
     using MSecIt = LMSec::const_iterator;
     using SecIt  = LSec::const_iterator;
 
@@ -57,21 +55,22 @@ class CMultSec
 
        /// Create a named and free empty group to build root of CMultiSec tree
        explicit CMultSec (std::shared_ptr<CSaltCorrNN> NNpar, const std::string &Name = "")        
-                          : _NNPar      (NNpar            ), 
-   	  			            _name       (trim_string(Name))            
+                          : _NNPar  (std::move(NNpar) ),
+   	  			            _name   (trim_string(Name))
                       {  }
 
 	   /// Create a named and free empty group using the given group as "template"
-       CMultSec(CMultSec	*ms, const std::string &Name = ""): _name       (trim_string(Name)),
-                                                                _SecLim     (ms->_SecLim),
-                                                                _SecLenLim  (ms->_SecLenLim),
-                                                                _MaxTgId    (ms->_MaxTgId), 
-                                                                _NNPar      (ms->_NNPar)         
+       explicit CMultSec(CMultSec	*ms, const std::string &Name = "")
+                      : _name       (trim_string(Name)),
+                        _SecLim     (ms->_SecLim),
+                        _SecLenLim  (ms->_SecLenLim),
+                        _MaxTgId    (ms->_MaxTgId),
+                        _NNPar      (ms->_NNPar)
                   {  }
 
 	   /// Read all the sequences from a stream into this group deducing format and apling filters
-       CMultSec (	std::ifstream &	    file	,	 
-					std::shared_ptr<CSaltCorrNN>  NNpar	, 
+       CMultSec (	std::ifstream &	    file,
+					std::shared_ptr<CSaltCorrNN>  NNpar,
 					float		  MaxTgId	= 100,                 ///< Sec. with more % of identity are marked as "filtered" and not selected
 					LonSecPosRang  SecLim	= LonSecPosRang {1,0}, ///< Filtre, using only this region. Will take into account alignment coordenates.
                     SecPosRang     SecLenLim= SecPosRang{0,0})     ///< Limit the length. tiny sec: not created, large: get trunkated   
@@ -79,7 +78,7 @@ class CMultSec
 	                    _SecLim     (SecLim),
                         _SecLenLim  (SecLenLim),
 	                    _MaxTgId    (MaxTgId), 
-	                    _NNPar      (NNpar)              
+	                    _NNPar      (std::move(NNpar))
                   { AddFromFile(file); }
 
          /// The new MSec take the name of the dir, and remember the rest of the path
@@ -109,10 +108,10 @@ class CMultSec
 			return path;
         }
 
-        /// Construct a filesystem path acording to the current tree, which can be different from the original path saved in member variable ._orig_file_path
+        /// Construct a filesystem path according to the current tree, which can be different from the original path saved in member variable ._orig_file
 		std::string	path( )
 		{
-			std::string sep(std::string(1, std::filesystem::path::preferred_separator));// ::slash<std::filesystem::path>().value));
+			std::string sep = std::string(1, std::filesystem::path::preferred_separator);
             return Path(this, sep);
 		}
 
@@ -145,8 +144,8 @@ class CMultSec
 										    }
 		    void Clear(){_NSec=0, _NMSec=0;}
 
-		    bool isExtreme(const CSec&		s){return _Tm.isExtrem( s._Tm ) || _Len.isExtrem( s.Len() );}
-		    bool isExtreme(const CExtremes& e){return _Tm.isExtrem( e._Tm ) || _Len.isExtrem( e._Len  );}
+		    bool isExtreme(const CSec&		s)const {return _Tm.isExtrem( s._Tm ) || _Len.isExtrem( s.Len() );}
+		    bool isExtreme(const CExtremes& e)const {return _Tm.isExtrem( e._Tm ) || _Len.isExtrem( e._Len  );}
 
 		} _Local, _Global;
 
@@ -205,9 +204,9 @@ class CMultSec
             for (auto &CurMSec : _LMSec)  		// recorre todos las primeras sec
 				Add2LocalExtreme( *CurMSec) ; 
 		}
-		bool isGlobExtreme(const CSec    &sec){return _Global.isExtreme( sec				) ;}
-		bool isGlobExtreme(const CMultSec &ms){return _Global.isExtreme( ms._Global	) ;}
-		bool isLocExtreme (const CSec      &s){return  _Local.isExtreme( s				) ;}
+		bool isGlobExtreme(const CSec    &sec)const {return _Global.isExtreme( sec		    ) ;}
+		bool isGlobExtreme(const CMultSec &ms)const {return _Global.isExtreme( ms._Global	) ;}
+		bool isLocExtreme (const CSec      &s)const {return  _Local.isExtreme( s			) ;}
 		//bool isLocExtreme (const CMultSec *ms){return _Tm.isExtrem (ms->_TTm) || _Len.isExtrem (ms->_TLen );}
 		//void setGloExtreme(const CMultSec *ms){return _Tm.isExtrem (ms->_TTm) || _Len.isExtrem (ms->_TLen );}
 
@@ -219,11 +218,11 @@ class CMultSec
 		/// @return number of readed sequences 
 		/// \todo better exeption mesg and new exeptio classes for format error?
 		int		AddFromFile		(const std::filesystem::path& file);
-		int		AddFromFile     (std::ifstream& ifile);
-		int		AddFromFileFASTA(std::ifstream &ifileFASTA);
-		int		AddFromFileBLAST(std::ifstream &ifileBLAST);
-		int		AddFromFileGB	(std::ifstream &ifileGB);
-		int		AddFromFileGBtxt(std::ifstream &ifileGB);
+		int		AddFromFile     (std::ifstream& ifile);       ///< determine the file format
+		int		AddFromFileFASTA(std::ifstream &ifileFASTA);  // ok
+		int		AddFromFileBLAST(std::ifstream &ifileBLAST);  // XML, ok
+		int		AddFromFileGB	(std::ifstream &ifileGB);     // XML
+		int		AddFromFileGBtxt(std::ifstream &ifileGB);     // plain text
 		int		AddFromFileODT	(std::ifstream &ifileODT);
 		int		AddFromFileODS	(std::ifstream &ifileODS);
 
@@ -266,12 +265,13 @@ class CMultSec
 			    CurMSec->Export(ofile, only_selected);
         }
 
+        /// too simple, works only for aligned sequences: todo real simple alignmend
+        SecIt Idem (CSec &sec) const;             //		CConsParam	_ConsPar ;
 
-		LSec::const_iterator Idem (CSec &sec);  //		CConsParam	_ConsPar ;
-		std::shared_ptr<CSec> AddSec		 ( std::shared_ptr<CSec> sec);
-		std::shared_ptr<CSec> InsertSec		 ( LSec::const_iterator pos, std::shared_ptr<CSec> sec) ;
-		std::shared_ptr<CSec> InsertSecAfter ( LSec::const_iterator pos, std::shared_ptr<CSec> sec) ;
-		std::shared_ptr<CMultSec> MoveMSec   (LMSec::const_iterator from) /// todo revise design !!!
+		pSec AddSec		    ( pSec sec);
+        pSec InsertSec		( SecIt pos, pSec sec) ;
+        pSec InsertSecAfter ( SecItr pos, pSec sec) ;
+		pMSec MoveMSec      ( MSecIt from) /// todo revise design !!!
 		{
 			CMultSec* p = (*from)->_parentMS;
 			if (p == this) return p;                  // no-op ; mover al final?
