@@ -76,7 +76,6 @@ class SeqExpl : public CompoWidget
 	nana::label     _statusbar    { *this },
                     _firma ;
 
-    using pSec = CSec*;
     void SetDefLayout() override;
     void AsignWidgetToFields() override;
     void MakeResponive();
@@ -116,12 +115,12 @@ class SeqExpl : public CompoWidget
     {
         populate_list_recur(node.value<CMultSec*>()); // msec(node)  );
     }
-    void populate_list_recur(CMultSec     *ms)
+    void populate_list_recur(CMultSec &ms)  ///< Low Level
 		{
 			populate_list(ms);
             if ( _showAllseq )
-	            for ( auto& CurMSec : ms->MSecL() )
-                    populate_list_recur(CurMSec.get());
+	            for ( auto& CurMSec : ms.MSecL() )
+                    populate_list_recur(*CurMSec);
 		}
     void populate_list(CMultSec*ms)
     {
@@ -206,7 +205,7 @@ class SeqExpl : public CompoWidget
             populate_list_recur(_tree.selected());
         _list.auto_draw(true);
     }
-	void RefreshStatusInfo(CMultSec *ms);
+	void RefreshStatusInfo(const CMultSec &ms);
 
 
 public:

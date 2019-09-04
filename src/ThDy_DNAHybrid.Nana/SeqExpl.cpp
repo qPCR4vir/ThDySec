@@ -18,17 +18,17 @@
 
 namespace fs = std::filesystem ;
 
-SeqExpl::SeqExpl              (ThDyNanaForm& tdForm)
+SeqExpl::SeqExpl  (ThDyNanaForm& tdForm)
         : _Pr             (tdForm), 
           CompoWidget     (tdForm, ("Seq Explorer"), ("SeqExpl.lay.txt")),
           _firma{*this, _Pr .e_mail_firma}
     {
         auto& sch = _list.scheme();
 		sch.header_padding_bottom = sch.header_padding_top = 1;
-        sch.text_margin   = 2;
-        sch.item_height_ex= 1;
+        sch.text_margin = 2;
+        sch.item_height_ex = 1;
         sch.header_splitter_area_before = 4;
-        sch.header_splitter_area_after  = 4 ; 
+        sch.header_splitter_area_after = 4 ;
 
         _statusbar.format(true).bgcolor(nana::colors::turquoise );
         
@@ -462,51 +462,51 @@ void SeqExpl::SetDefLayout()
 }
 
 void SeqExpl::AsignWidgetToFields()
-    {
-        using ParamGUIBind::link;
+{
+    using ParamGUIBind::link;
 
-        _commPP << link(_Pr._cp.MaxTgId, numUpDwMaxTgId)
-            << link(_Pr._cp.SecLim, numUpDw_TgBeg, numUpDw_TgEnd)
-            << link(_Pr._cp.SecLenLim, numUpDw_SLenMin, numUpDw_SLenMax)
-            ;
+    _commPP << link(_Pr._cp.MaxTgId, numUpDwMaxTgId)
+        << link(_Pr._cp.SecLim, numUpDw_TgBeg, numUpDw_TgEnd)
+        << link(_Pr._cp.SecLenLim, numUpDw_SLenMin, numUpDw_SLenMax)
+        ;
 
 
-        _place["toolbar"] << "   Files:" << _loadFile << _re_loadFile << _paste
-            << "      Dir:" << _loadDir << _re_loadDir << _scanDir << _cut << _del
-            << "      Seq:" << _show_locals_s << _show_filt_s << _cutSec << _delSec
-            ;
-        _place["Tree"  ] << _tree;
-        _place["List"  ] << _list;
-        _place["tflab"] << "Targets filters: ";
-        _place["TargetsOptions"]    << numUpDwMaxTgId
-                                    << numUpDw_TgBeg << numUpDw_TgEnd
-                                    << numUpDw_SLenMin << numUpDw_SLenMax;
+    _place["toolbar"] << "   Files:" << _loadFile << _re_loadFile << _paste
+        << "      Dir:" << _loadDir << _re_loadDir << _scanDir << _cut << _del
+        << "      Seq:" << _show_locals_s << _show_filt_s << _cutSec << _delSec
+        ;
+    _place["Tree"  ] << _tree;
+    _place["List"  ] << _list;
+    _place["tflab"] << "Targets filters: ";
+    _place["TargetsOptions"]    << numUpDwMaxTgId
+                                << numUpDw_TgBeg << numUpDw_TgEnd
+                                << numUpDw_SLenMin << numUpDw_SLenMax;
 
-        _place["statusbar"] << _statusbar;
-        _place.field("Firma") << _firma;
+    _place["statusbar"] << _statusbar;
+    _place.field("Firma") << _firma;
+}
 
-    }
 std::string K2s(Temperature t) { return temperature_to_string(KtoC(t)); }
-void SeqExpl::RefreshStatusInfo(CMultSec *ms)
+
+void SeqExpl::RefreshStatusInfo(const CMultSec &ms)
 {
 	//std::string local = 
-    _statusbar.caption("  <bold>Local</> (sq: " + std::to_string(ms->_Local._NSec)
-        + ", gr: " + std::to_string(ms->_Local._NMSec) + "),"
-        + (ms->_Local._NSec ? "    Length[" + std::to_string(ms->_Local._Len.Min())
-            + "-" + std::to_string(ms->_Local._Len.Max()) + "]"
-            + ", Tm[ " + K2s(ms->_Local._Tm.Min()) + "-"
-            + K2s(ms->_Local._Tm.Max()) + "]  "
+    _statusbar.caption("  <bold>Local</> (sq: " + std::to_string(ms._Local._NSec)
+        + ", gr: " + std::to_string(ms._Local._NMSec) + "),"
+        + (ms._Local._NSec ? "    Length[" + std::to_string(ms._Local._Len.Min())
+            + "-" + std::to_string(ms._Local._Len.Max()) + "]"
+            + ", Tm[ " + K2s(ms._Local._Tm.Min()) + "-"
+            + K2s(ms._Local._Tm.Max()) + "]  "
             : "")
-        + ".        <bold>Global</> (sq: " + std::to_string(ms->_Global._NSec)
-        + ", gr: " + std::to_string(ms->_Global._NMSec) + "),"
-        + (ms->_Global._NSec ? "    Length[" + std::to_string(ms->_Global._Len.Min())
-            + "-" + std::to_string(ms->_Global._Len.Max()) + "]"
-            + ", Tm[ " + K2s(ms->_Global._Tm.Min()) + "-"
-            + K2s(ms->_Global._Tm.Max()) + " ]  "
+        + ".        <bold>Global</> (sq: " + std::to_string(ms._Global._NSec)
+        + ", gr: " + std::to_string(ms._Global._NMSec) + "),"
+        + (ms._Global._NSec ? "    Length[" + std::to_string(ms._Global._Len.Min())
+            + "-" + std::to_string(ms._Global._Len.Max()) + "]"
+            + ", Tm[ " + K2s(ms._Global._Tm.Min()) + "-"
+            + K2s(ms._Global._Tm.Max()) + " ]  "
             : "")
     );
 }
-
 
 void SeqExpl::InitTree()
     {
@@ -518,7 +518,7 @@ void SeqExpl::InitTree()
             populate( AddRoot( CurMSec.get() )) ;
 
         _tree.find(("Target seq")).select(true);
-        populate_list_recur(_Pr._cp._pSeqTree.get());
+        populate_list_recur(*_Pr._cp._pSeqTree);
 
 		_list.auto_draw(true);
 		_tree.auto_draw(true);
