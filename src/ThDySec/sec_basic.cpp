@@ -9,11 +9,6 @@
 * @brief 
 */
 
-#ifdef WINDOWS_FORM_GUI
-#include "stdafx.h"
-#pragma unmanaged
-#endif
-
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>

@@ -35,11 +35,11 @@ class ISec		// Pure virtual class ?
 
 	virtual const sequence& Sequence(							  )	const=0 ;
 
-	// std::unique_ptr<ISec> ?
-	virtual ISec *Clone    ( DNAstrand   strnd = DNAstrand::direct )	const=0 ; ///< unique_ptr<ISec> crea una copia muy simple. CUIDADO con copias de CSecBLASTHit y otros derivados
-	virtual ISec *Clone    ( long        InicBase,
-							 long        EndBase, 
-							 DNAstrand   strnd = DNAstrand::direct)	    const=0  ;
+	///  crea una copia muy simple. CUIDADO con copias de CSecBLASTHit y otros derivados
+	virtual ISec* Clone( DNAstrand   strnd = DNAstrand::direct ) const=0 ;
+
+	virtual ISec* Clone(long InicBase, long EndBase,
+							            DNAstrand strnd = DNAstrand::direct) const=0  ;
 
 	virtual std::string Copy_Seq( DNAstrand   strnd = DNAstrand::direct)const=0;
 	virtual std::string Copy_Seq( long InicBase,
@@ -117,13 +117,15 @@ public:
 		return Copy_Seq(1, Len(), strnd);
 	}
 
-	bool		 NotIdem		(CSecBasInfo *sec) {return false;}
 	DegCod::Base operator[]	(int i)const{return _c[i];}  /// i+1 ????
 
 	long		Len			()const		{return static_cast<long>(_c.length())-2;} //
 	long		Degeneracy	()const		{return _GrDeg;}
 	long		*BaseCount	()			{return _Count;}
-	long		BaseCount	(DegCod::Base b) const{ return  DegCod::is_degbase[b] ?  _Count[DegCod::db2nu[b]] : 0;}
+	long		BaseCount	(DegCod::Base b) const
+	{
+	    return  DegCod::is_degbase[b] ?  _Count[DegCod::db2nu[b]] : 0;
+	}
 	std::shared_ptr<CMultSec>	NonDegSet	()			{return _NonDegSet;}   // ?
 	float		GCpercent	()const		{return	_GCp ;}		
 };

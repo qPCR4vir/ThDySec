@@ -1,21 +1,15 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2019, Ariel Vina Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
-* @author Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2016
+* @autor Ariel Vina-Rodriguez (qPCR4vir)
+* 2009-2019
 *
 * @file  ThDySec\include\ThDySec\sec.h
 *
-* @brief To manipulate DNA sequences for simple thermodynamic modeling of hybridization.
-*
+* @brief
 * Classes to manipulate DNA sequences. Adapted exclusively to DNA and specifically for thermodynamic calculations.
-*
-*
 */
-
-#pragma unmanaged    
 
 #ifndef _SEC_H
 #define _SEC_H
@@ -28,10 +22,6 @@
 #include <vector>
 
 #include <nana/filesystem/filesystem_ext.hpp>
-
-
-namespace filesystem = std::filesystem;
-
 
 #include "sec_basic.h" 
 #include "th_dy_param.h"   
@@ -102,9 +92,10 @@ class CSec : public CSecBasInfo
 	std::shared_ptr<CSec> GenerateNonDegVariant  (long pos, Base ndb) ; ///< recursiva
 	std::shared_ptr<CSec> CopyFirstBases         (long pos) const  ;    ///< copia parcialmente hasta la pos
     void         CorrectSalt            () { if ( _NNpar->UseOwczarzy () ) CorrectSaltOwczarzy();};
-    CSec *Clone(DNAstrand strnd=DNAstrand::direct     ) const override; /// unique_ptr<ISec> crea una copia muy simple. \todo CUIDADO con copias de CSecBLASTHit y otros derivados
-    CSec *Clone( long  InicBase,
-                 long  EndBase, 
+
+    /// crea una copia muy simple. \todo CUIDADO con copias de CSecBLASTHit y otros derivados
+    CSec* Clone(DNAstrand strnd=DNAstrand::direct) const override;
+    CSec* Clone( long  InicBase, long  EndBase,
                  DNAstrand   strnd = DNAstrand::direct) const override;
 
     //virtual CSec*CreateCopy        (DNAstrand strnd=direct) override;//< crea una copia muy simple. CUIDADO con copias de CSecBLASTHit y otros derivados

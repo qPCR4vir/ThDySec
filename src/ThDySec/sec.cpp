@@ -11,11 +11,6 @@
 *
 */
 
-#ifdef WINDOWS_FORM_GUI
-#include "stdafx.h"
-#pragma unmanaged
-#endif
-
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
@@ -25,8 +20,6 @@
 #include <math.h>
 #include <list>
 #include <stack>
-
-using namespace std ; 
 
 #include "ThDySec/sec_mult.h"
 #include "ThDySec/common.h" 
@@ -234,27 +227,26 @@ CSec::CSec (    const std::string&  sec,
 		CreateNonDegSet();
 }
 
-CSec *CSec::Clone   	(DNAstrand strnd 	 ) const   // std::unique_ptr<ISec> ?
+CSec* CSec::Clone   	(DNAstrand strnd 	 ) const
 {	
-	unique_ptr<CSec> newS {new CSec( Copy_Seq(strnd), 
-						             NewS_ID(),				
-									_name + DNAstrandName[(int)strnd],
-									_NNpar	,
-									0,1,
-									_Clas,
-									_Conc
-									)
-	                       };
+	auto newS = std::make_unique<CSec>( Copy_Seq(strnd),
+						                NewS_ID(),
+								   	   _name + DNAstrandName[(int)strnd],
+									   _NNpar	,
+									   0,1,
+									   _Clas,
+									   _Conc
+									  ) ;
 	newS->Selected(Selected());
 	newS->Filtered(Filtered());
-	return newS.release();   	//return std::make_unique<ISec>(newS);
+	return newS.release() ;   	//return std::make_unique<ISec>(newS);
 }
 
 CSec *CSec::Clone( long        InicBase,
                    long        EndBase, 
                    DNAstrand   strnd/* = DNAstrand::direct*/) const    
 {
-	unique_ptr<CSec> newS{ new CSec(    Copy_Seq (InicBase, EndBase, strnd),
+	std::unique_ptr<CSec> newS{ new CSec(    Copy_Seq (InicBase, EndBase, strnd),
 										NewS_ID(),
 										_name + DNAstrandName[(int)strnd],
 										_NNpar	,
