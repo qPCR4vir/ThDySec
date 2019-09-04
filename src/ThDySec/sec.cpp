@@ -76,7 +76,7 @@ CSec::CSec (    const std::string&  sec,
             ///      Y_beg ,  Y_end,  Y_pos (current position) are coordinates in Y. This coordinates will be adjusted in the first (pre)read
 
             ///  - sec_X - string seq. Original string TEXT of the seq.  (index in sec[0])     
-        const LonSecPos sec_Len=static_cast<LonSecPos>( sec .length());
+        const auto sec_Len=static_cast<LonSecPos>( sec .length());
 		if (sec_Len < 2)  return;  ///    we return if we have only 0 or 1 base to analyze
         LonSecPos sec_beging =0,     
                   sec_end    =sec_Len,    
@@ -327,44 +327,43 @@ void	CSec::CorrectSaltOwczarzy()
 	_Tm.Set( _NNpar->CalcTM( _SdS.back(), _SdH.back()) ) ; //_maxTm = _minTm =	_Tm  = _maxTm = _minTm =  ;
 } 
 
-CMultSec *CSec::CreateNonDegSet()
+CMultSec::pMSec CSec::CreateNonDegSet()
 {
 	if (! _NDB )					// La sec no tiene bases deg 
 	{	if (_NonDegSet)				// pero existia un ndgs !! no debe ser...pero por si...
 			{	               	    // lo borramos 
 				_NonDegSet.reset();	// y ponemos en 0. Porque esto se usa para saber si existe.
 			}
-		return _NonDegSet.get() ;			// O sea, nullptr
+		return _NonDegSet ;			// O sea, nullptr
 	}
 	else 	
 		{	if (_NonDegSet)			// La sec tiene bases deg y ya existia un ndgs. Lo respetamos.
-				return _NonDegSet.get() ; // revisar si es el mismo PNNParams NNpar??
-            if (Len()*Degeneracy() > 32*4*4*4*4*4*4*4*4) return _NonDegSet.get(); // oligo with 8 n = 40 MB?
+				return _NonDegSet ; // revisar si es el mismo PNNParams NNpar??
+            if (Len()*Degeneracy() > 32*4*4*4*4*4*4*4*4) return _NonDegSet; // oligo with 8 n = 40 MB?
 			ForceNonDegSet() ;
 			//_Tm = _NonDegSet->_Tm ; //	_maxTm = _NonDegSet->_maxTm ; _minTm = _NonDegSet->_minTm ;	_Tm    = (_maxTm + _minTm )/2 ;
 		}
-	return _NonDegSet.get();
+	return _NonDegSet;
 }
 
-CMultSec *CSec::ForceNonDegSet()
+CMultSec::pMSec CSec::ForceNonDegSet()
 {
-		//if (_NonDegSet)			// pero existia un ndgs !!
-		_NonDegSet.reset(new CMultSec(_NNpar));	// lo borramos 
-		 
-		_NonDegSet->AddSec( GenerateNonDegVariant(0, 0) ) ;
-		_Tm = _NonDegSet->_Local._Tm ; 
+    _NonDegSet.reset(new CMultSec(_NNpar));	// lo borramos
 
-		//assert ( ( (cout << "Post Deg set generation: "<< _name << "\t" << _c << "\t" 
-		//			 << "Tm=" << (_minTm - 273)  << " �C"
-		//			 << " ("  << (_Tm - 273)     << " �C"  << ") "
-		//			          << (_maxTm - 273)  << " �C"  << "\n" ) , 1 ) ) ;
+    _NonDegSet->AddSec( GenerateNonDegVariant(0, 0) ) ;
+    _Tm = _NonDegSet->_Local._Tm ;
 
-	return _NonDegSet.get();
+    //assert ( ( (cout << "Post Deg set generation: "<< _name << "\t" << _c << "\t"
+    //			 << "Tm=" << (_minTm - 273)  << " �C"
+    //			 << " ("  << (_Tm - 273)     << " �C"  << ") "
+    //			          << (_maxTm - 273)  << " �C"  << "\n" ) , 1 ) ) ;
+
+	return _NonDegSet;
 }
 
-std::shared_ptr<CSec> CSec::CopyFirstBases(long pos) const
+CMultSec::pSec CSec::CopyFirstBases(long pos) const
 {	
-	std::shared_ptr<CSec> sec = std::make_shared<CSec> ( Len(), _NNpar) ;
+	auto sec = std::make_shared<CSec> ( Len(), _NNpar) ;
 	assert(sec);
     sec->_name =  _name ;
     sec->_Clas =  _Clas ;
@@ -395,7 +394,7 @@ std::shared_ptr<CSec> CSec::CopyFirstBases(long pos) const
 }
 
 /// \todo: crear variante que inserte las variantes en la lista dada.????
-std::shared_ptr<CSec> CSec::GenerateNonDegVariant (long pos, Base ndb) 
+CMultSec::pSec CSec::GenerateNonDegVariant (long pos, Base ndb)
 {	Base pre ; Base b_or,  cur ;								   /// para eso anadir ultimo parametro CMultiSec &ndg=_nds
 
     std::shared_ptr<CSec> sec;

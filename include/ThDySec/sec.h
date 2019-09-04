@@ -87,8 +87,8 @@ class CSec : public CSecBasInfo
 
     //long        Len            ()const        {return _SdS.size();} //
     void         CorrectSaltOwczarzy    () ;
-    CMultSec    *CreateNonDegSet        () ;              ///< crea todo el set si no existia, solo si existen bases deg: _NDB>0
-    CMultSec    *ForceNonDegSet         ();               ///< lo crea siempre, incluso para =1??
+    std::shared_ptr<CMultSec> CreateNonDegSet    () ;       ///< crea todo el set si no existia, solo si existen bases deg: _NDB>0
+    std::shared_ptr<CMultSec> ForceNonDegSet     ();        ///< lo crea siempre, incluso para =1??
 	std::shared_ptr<CSec> GenerateNonDegVariant  (long pos, Base ndb) ; ///< recursiva
 	std::shared_ptr<CSec> CopyFirstBases         (long pos) const  ;    ///< copia parcialmente hasta la pos
     void         CorrectSalt            () { if ( _NNpar->UseOwczarzy () ) CorrectSaltOwczarzy();};
@@ -101,12 +101,13 @@ class CSec : public CSecBasInfo
     //virtual CSec*CreateCopy        (DNAstrand strnd=direct) override;//< crea una copia muy simple. CUIDADO con copias de CSecBLASTHit y otros derivados
     //const char    *Get_charSec            ()const{return (const char*)_c.c_str();}  ///   ???????????
 
-    bool        Selected() const;                 //< User-editable    ???????????????????????????????????????????????????????????????????????????
-    bool        Selected(bool select)    
+    bool Selected() const override ;          //< User-editable    ???????????????????????????????????????????????????????????????????????????
+    bool Selected(bool select) override
                           { 
                               _selected = select; 
                               return Selected(); 
                            }             //< make protected: ?????????????????????????????????????????????????
+
     Base        operator()        (int i)const{return _b[i];}
     Temperature  Tm    (long pi, long pf   )const;                               ///< Tm de la sonda con sec desde pi hasta pf, inclusive ambas!! 
     Temperature  Tm    (long pi            )const    {return Tm(pi,Len())   ;}   ///< Tm de la sonda con sec desde pi hasta el final, inclusive ambos!!
@@ -205,13 +206,9 @@ class CSecBLASTHit : public CSec // ---------------------------------------   CS
                     this->_aln_fragment->sq_ref.Set(       info.Hsp_query_from, info.Hsp_query_to);    ///\todo review  ACTUALIZE !!!!!!!!!!!!!!!!!!!!
                     //this->_aln_fragment->aln   .set(*this, info.Hsp_query_from, info.Hsp_query_to);
                     this->_aln_fragment->sq    .Set(       info.Hsp_hit_from,   info.Hsp_hit_to  );
-
                 }
 
-
-
-    // para cada hit
-    //NumRang<long>    _SecLim;                                     //long    _SecBeg;    //long    _SecEnd;
+    // para cada hit     //NumRang<long>    _SecLim;         //long    _SecBeg;    //long    _SecEnd;
     std::string    Description ()const    override {return _description.length() ? _description : info.Hit_def ; }
 };
 
@@ -237,9 +234,9 @@ class CSecGB : public CSec // ---------------------------------------   CSecGB  
                 _Org_ref_taxname        ( std::move(Org_ref_taxname )) ,
                 _Seqdesc_title          ( std::move(Seqdesc_title) ) ,                
                 _Seq_inst_length        ( Seq_inst_length )                 {}            
-    virtual std::string    Description ()const override    {return _description.length() ? _description : _Seqdesc_title ; }
+    std::string    Description ()const override    {return _description.length() ? _description : _Seqdesc_title ; }
 
-    virtual ~CSecGB(){    }
+    ~CSecGB()override { }
 };
 
 class CSecGBtxt : public CSec // ---------------------------------------   CSecGBtxt    ------------------------------------------------
@@ -263,9 +260,9 @@ class CSecGBtxt : public CSec // ---------------------------------------   CSecG
                 ):        CSec (std::move(sec), id, inf.LOCUS, NNpar, 0,1, clas, conc ), // actualizar Beg-End
                           info(std::move(inf))       {}
 
-    virtual std::string    Description ()const override    {return info.DEFINITION.empty() ? _description : info.DEFINITION ; }
+    std::string    Description ()const override    {return info.DEFINITION.empty() ? _description : info.DEFINITION ; }
     
-    virtual ~CSecGBtxt() {                }    
+    ~CSecGBtxt() override { }
 };
 
 #endif

@@ -94,10 +94,10 @@ public:
     ~CSecBasInfo() override;
     std::string Name		()const		{return _name;}              ///< User-editable
 	int			ID			()const		{return _ID;}	             ///< Run-time-sistem define, non-editable
-	bool		Filtered(bool filter)	{return _filtered=filter;}   ///< User-editable ?????
-	bool		Filtered(		) const {return _filtered;}
-	bool		Selected(bool select)	{return _selected=select;} 		  	 ///< make protected: ??
-	bool		Selected(		) const {return _selected;}					 ///< User-editable
+	bool Filtered(bool filter)	{return _filtered=filter;}   ///< User-editable ?????
+    bool		Filtered(		) const {return _filtered;}
+    virtual bool Selected(bool select)	{return _selected=select;} 		  	 ///< make protected: ??
+    virtual bool Selected(		) const {return _selected;}					 ///< User-editable
 	void	    Description (std::string	description)		{ _description.swap(description);}
 	virtual std::string	Description ()const	
         {
