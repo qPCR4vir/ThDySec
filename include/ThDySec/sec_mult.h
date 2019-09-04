@@ -207,9 +207,9 @@ class CMultSec
             for (auto &CurMSec : _LMSec)  		// recorre todos las primeras sec
 				Add2LocalExtreme( *CurMSec) ; 
 		}
-		bool isGlobExtreme(const CSec     *s ){return _Global.isExtreme( *s				) ;}
-		bool isGlobExtreme(const CMultSec *ms){return _Global.isExtreme( ms->_Global	) ;}
-		bool isLocExtreme (const CSec     *s ){return  _Local.isExtreme( *s				) ;}
+		bool isGlobExtreme(const CSec    &sec){return _Global.isExtreme( sec				) ;}
+		bool isGlobExtreme(const CMultSec &ms){return _Global.isExtreme( ms._Global	) ;}
+		bool isLocExtreme (const CSec      &s){return  _Local.isExtreme( s				) ;}
 		//bool isLocExtreme (const CMultSec *ms){return _Tm.isExtrem (ms->_TTm) || _Len.isExtrem (ms->_TLen );}
 		//void setGloExtreme(const CMultSec *ms){return _Tm.isExtrem (ms->_TTm) || _Len.isExtrem (ms->_TLen );}
 
@@ -368,8 +368,8 @@ class CMultSec
         //std::list<std::shared_ptr<CSec    >> _LSec;
         //std::list<std::shared_ptr<CMultSec>> _LMSec;
 		//void			UpdateTotals		( CSec		*sec ) ;
-		void			UpdateTotalsMoving	( CSec		*sec ) ;
-		void			UpdateTotalsMoving	( CMultSec	*sec ) ;
+		void			UpdateTotalsMoving	( CSec		&sec ) ;
+		void			UpdateTotalsMoving	( CMultSec	&sec ) ;
 		//static void		RefreshExtremes		( CMultSec	*ms	);
 };
 
