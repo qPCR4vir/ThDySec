@@ -40,8 +40,10 @@
   /// Atention:  It owns and destroy the sequences: Use Remove() or Free() to prevent destruction fo sequences
 class CMultSec	 
 {	public:
-	using LSec  = std::list<std::shared_ptr<CSec    >>;
-	using LMSec = std::list<std::shared_ptr<CMultSec>>;
+	using LSec   = std::list<std::shared_ptr<CSec    >>;
+	using LMSec  = std::list<std::shared_ptr<CMultSec>>;
+    using MSecIt = LMSec::const_iterator;
+    using SecIt  = LSec::const_iterator;
 
 		std::string			_name ;						///< 
         int					_ID       {NewMS_ID()};		///< Unique ID in each programm run
@@ -273,11 +275,11 @@ class CMultSec
 		std::shared_ptr<CSec> AddSec		 ( std::shared_ptr<CSec> sec);
 		std::shared_ptr<CSec> InsertSec		 ( LSec::const_iterator pos, std::shared_ptr<CSec> sec) ;
 		std::shared_ptr<CSec> InsertSecAfter ( LSec::const_iterator pos, std::shared_ptr<CSec> sec) ;
-		CMultSec    *MoveMSec       (LMSec::const_iterator from) // revise design
+		std::shared_ptr<CMultSec> MoveMSec   (LMSec::const_iterator from) /// todo revise design !!!
 		{
 			CMultSec* p = (*from)->_parentMS;
-			if (p == this) return p;    // no-op ; mover al final?
-			LMSec::value_type s = std::move(*from);
+			if (p == this) return p;                  // no-op ; mover al final?
+            std::shared_ptr<CMultSec> s = *from;
 			if (p) p->_LMSec.erase(from);
 			return AddMultiSec(s);
 		}

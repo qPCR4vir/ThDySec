@@ -55,7 +55,7 @@ SeqExpl::SeqExpl  (ThDyNanaForm& tdForm)
 
 SeqExpl::Node SeqExpl::AddNewSeqGr  (Tree::item_proxy node)
         {    try{    
-                    return appendNewNode(node, _Pr._cp.AddSeqGroup(node.value<CMultSec*>(),"New group")).expand(true);
+                    return appendNewNode(node, _Pr._cp.AddSeqGroup(**node.value<MSecIt>(),"New group")).expand(true);
                 }
                 catch ( std::exception& e)
                 { 
@@ -513,9 +513,9 @@ void SeqExpl::InitTree()
         _list.auto_draw(false);
         _tree.auto_draw(false);
 
-        CMultSec *ms=_Pr._cp._pSeqTree.get();
-        for ( auto& CurMSec :  ms->MSecL() )
-            populate( AddRoot( CurMSec.get() )) ;
+        auto ms = _Pr._cp._pSeqTree->MSecL();
+        for ( MSecIt CurMSec = ms.begin(); CurMSec != ms.end(); CurMSec++)
+            populate( AddRoot(CurMSec)) ;
 
         _tree.find(("Target seq")).select(true);
         populate_list_recur(*_Pr._cp._pSeqTree);

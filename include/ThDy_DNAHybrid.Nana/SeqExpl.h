@@ -26,8 +26,6 @@
 
 class ThDyNanaForm ;
  
-using List = nana::listbox;
-
 inline std::string temperature_to_string(Temperature t) // use KtoC to convert from Kelvin to Centigr
 {
 	int w = 10;  // -250,0 �C
@@ -39,8 +37,11 @@ inline std::string temperature_to_string(Temperature t) // use KtoC to convert f
 
 class SeqExpl : public CompoWidget
 {
-    using Tree = nana::treebox;
-    using Node = Tree::item_proxy;
+    using Tree   = nana::treebox;
+    using Node   = Tree::item_proxy;
+    using MSecIt = CMultSec::MSecIt;   // the "value type" for Tree Node
+    using List   = nana::listbox;
+    using SecIt  = CMultSec::SecIt;    // the "value type" for List Item
 
     ThDyNanaForm       &_Pr;
     Tree                _tree{ *this };
@@ -99,21 +100,21 @@ class SeqExpl : public CompoWidget
 
             return node;
     }
-    void RefreshList(                      ) { RefreshList(_tree.selected());         }
-    void RefreshList(const Tree::item_proxy node) { RefreshList( node.value<CMultSec*>()); }
-    void RefreshList(CMultSec*ms)
+    void RefreshList(                      ) { RefreshList(_tree.selected());         } ///< very High Level
+    void RefreshList(const Tree::item_proxy node) { RefreshList( node.value<MSecIt>()); } ///< High Level
+    void RefreshList(MSecIt ms)  ///< medium Level
     {
             _list.auto_draw(false);
 
             _list.clear();
-            populate_list_recur(ms);
+            populate_list_recur(**ms);
 
             _list.auto_draw(true);
-			RefreshStatusInfo(ms);
+			RefreshStatusInfo(**ms);
     }
-    void populate_list_recur(Tree::item_proxy node)
+    void populate_list_recur(Tree::item_proxy node) ///< High Level
     {
-        populate_list_recur(node.value<CMultSec*>()); // msec(node)  );
+        populate_list_recur(**node.value<MSecIt>());
     }
     void populate_list_recur(CMultSec &ms)  ///< Low Level
 		{
@@ -122,23 +123,23 @@ class SeqExpl : public CompoWidget
 	            for ( auto& CurMSec : ms.MSecL() )
                     populate_list_recur(*CurMSec);
 		}
-    void populate_list(CMultSec*ms)
+    void populate_list(CMultSec &ms)
     {
-        for (auto& CurSec : ms->SecL()) 
-		  if ( _showFiltered || ! CurSec->Filtered() ) 
-              AddSecToList(CurSec.get());
+        for (SecIt CurSec = ms.SecL().begin(); CurSec != ms.SecL().end(); CurSec++)
+		  if ( _showFiltered || ! CurSec->Filtered() )
+              AddSecToList(CurSec);
     }
 
-    List::item_proxy AddSecToList     (CSec* s)
+    List::item_proxy AddSecToList     (SecIt s)
     {
-        return _list.at(0).append(s).value  ( s             )
-                                    .check  ( s->Selected() )
-                                    .fgcolor( static_cast<nana::color_rgb>(
-                                              (s->Filtered()     ?   0xFF00FF   ///\todo: use coding
-                                                                :   0x0   )  ));//nana::color::gray_border );
+        return _list.at(0).append(s, true)
+                          .check  ( s->Selected() )
+                          .fgcolor( static_cast<nana::color_rgb>(
+                                              (s->Filtered() ? 0xFF00FF   ///\todo: use coding
+                                                             :   0x0   )  ));//nana::color::gray_border );
     }
 
-    Node AddRoot          (CMultSec*ms)  
+    Node AddRoot          (MSecIt ms)
     {
         std::string name = ms->_name;
         return _tree.insert(name, name).value(ms).check(ms->Selected());
@@ -147,19 +148,19 @@ class SeqExpl : public CompoWidget
     {
         return node.level() == 1;
     }
- static Node appendNewNode(Node node, CMultSec*ms) /// Add a new node to the child of node.
+ static Node appendNewNode(Node node, MSecIt ms) /// Add a new node to the child of node.
     {
         std::string name = ms->_name;
         return node->append(name, name, ms).check(ms->Selected());
     }
-    Node populate     ( Node node)  /// crea y add to the child of node un nodo nuevo por cada seq in ms. Asume el nodo estaba vacio
+    Node populate     ( Node node)  ///< create & add to the child of node a new node nuevo for each MSec in ms.
     {
         while(node.size()) 
             _tree.erase(node.child());
 
-        CMultSec *ms = node.value<CMultSec*>(); //  msec(node);
-		for (auto& CurMSec : ms->MSecL())  
-			populate( appendNewNode(node, CurMSec.get())) ;
+        auto ms = node.value<MSecIt>()->MSecL(); //  msec(node);
+		for (MSecIt CurMSec = ms.begin();CurMSec != ms.end(); CurMSec++)
+			populate( appendNewNode(node, CurMSec)) ;
         return node;
     }
 

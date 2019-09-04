@@ -245,10 +245,10 @@ void Check_NNp_Targets (/*ThDyCommProgParam& cp*/)
                                 _InputTargetFile.get()  );
 }
     std::shared_ptr<CMultSec>  CreateRoot	();
-	CMultSec *AddSeqGroup	(CMultSec *parentGr, const std::string&     Name);
-	CMultSec *AddPrimerGroup(CMultSec *parentGr, const std::string&     Name)
+	MSecIt AddSeqGroup	 (CMultSec &parentGr, const std::string& Name);
+	MSecIt AddPrimerGroup(CMultSec &parentGr, const std::string& Name)
 	{
-		CMultSec *pgr = AddSeqGroup(parentGr, Name);
+        MSecIt pgr = AddSeqGroup(parentGr, Name);
 		_primersGr.insert(pgr);
 		return pgr;
 	}
