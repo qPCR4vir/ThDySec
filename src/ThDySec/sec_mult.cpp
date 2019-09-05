@@ -795,9 +795,9 @@ CMultSec   *CMultSec::findComParent( CMultSec *ms)
 CMultSec::MSecIt CMultSec::AddMultiSec (CMultSec::pMSec ms)  //--------------------------------------    AddMultiSec    --------------------
 {
     MSecIt end = _LMSec.end();
-    if (!ms) return end;
-    MSecIt it = _LMSec.insert(end, ms);
-    UpdateTotalsMoving ( *ms );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
+    if (!MultSec) return end;
+    MSecIt it = _LMSec.insert(end, MultSec);
+    UpdateTotalsMoving ( *MultSec );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
     return it;
 }
 //std::shared_ptr<CMultSec> CMultSec::AddMultiSec (std::shared_ptr<CMultSec> ms )  //--------------------------------------    AddMultiSec    --------------------

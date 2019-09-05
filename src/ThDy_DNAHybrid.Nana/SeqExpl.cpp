@@ -196,8 +196,8 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
         auto  indxFASTA = menu.append(("Export FASTA . . ."          ),[&](nana::menu::item_proxy& ip)            {  /*_tree.selected().value<CMultSec*>()->ExportFASTA();*/  }).index();
         auto& menuFASTA = *menu.create_sub_menu(indxFASTA);
         menuFASTA.append(("Only current sequences"     ),[&](nana::menu::item_proxy& ip)            {  ;  });
-        menuFASTA.append(("Selected sequences in group"),[&](nana::menu::item_proxy& ip)            { _Pr.ExportFASTA(_tree.selected().value<CMultSec*>(), true );  });
-        menuFASTA.append(("All sequences in group"     ),[&](nana::menu::item_proxy& ip)            { _Pr.ExportFASTA(_tree.selected().value<CMultSec*>(), false);  });
+        menuFASTA.append(("Selected sequences in group"),[&](nana::menu::item_proxy& ip)            { _Pr.ExportFASTA(_tree.selected().value<MSecIt>()->get(), true );  });
+        menuFASTA.append(("All sequences in group"     ),[&](nana::menu::item_proxy& ip)            { _Pr.ExportFASTA(_tree.selected().value<MSecIt>()->get(), false);  });
         menuFASTA.append(("All selected sequences"     ),[&](nana::menu::item_proxy& ip)            { _Pr._cp._pSeqTargets->Export_as("export.fasta", true )  ;  });
         menuFASTA.append(("All sequences"              ),[&](nana::menu::item_proxy& ip)            { _Pr._cp._pSeqTargets->Export_as("export.fasta", false)  ;  });
 
@@ -259,13 +259,13 @@ void SeqExpl::MakeResponive()
                     .events().click([this]()
                         {
                             auto tn= _tree.selected();
-                            CMultSec *ms = tn.value<CMultSec*>();
-                            fs::path pt{ms->_orig_file_path};
+                            MSecIt ms = tn.value<MSecIt>();
+                            fs::path pt{(*ms)->_orig_file};
                             nana::folderbox  fb{ *this, pt, "Directory scan: Reproduce the structure of directory..." };
                             auto path=fb();
                             if (path.empty()) return;
 
-                            CMultSec* newms = _Pr._cp.CopyStructFromDir    ( ms, path[0].u8string()   );
+                            MSecIt newms = _Pr._cp.CopyStructFromDir(**ms, path[0].u8string()   );
                             _tree.auto_draw(false);
                             populate(  appendNewNode  (tn, newms) );
                             tn.expand(true);
@@ -274,11 +274,11 @@ void SeqExpl::MakeResponive()
         _paste      .tooltip(("Paste sequences"))
                     .events().click([this]()
         {
-            auto       tn = _tree.selected();
-            CMultSec *pms = tn.value<CMultSec*>();
+            Node    tn = _tree.selected();
+            MSecIt pms = tn.value<MSecIt>();
 
             for (auto ms : _dragMSec)
-                pms->AddMultiSec(ms);
+                *pms->AddMultiSec(ms);     /// \todo use MoveMSec   ?????!!!!!!
             for (auto s : _dragSec)
                 pms->AddSec(s);
 
@@ -297,11 +297,12 @@ void SeqExpl::MakeResponive()
             _tree.auto_draw(true);
             _list.auto_draw(true);
         });
-        _cut        .tooltip(("Cut a group of sequences"))
+
+        _cut        .tooltip(("Cut a group of sequences"))      //  ------------  CUT --------------
                     .events().click([this]()
         {
-            auto tn= _tree.selected(); 
-            if (tn->owner()->owner().empty())    //   ???  if( tn->level() < 2 );
+            Node tn= _tree.selected();
+            if (tn->owner()->owner().empty())    //   ???  if( tn->level() < 2 );  ///\todo use isRoot() ?
             {
                 (nana::msgbox ( _tree , ("Cut a group of sequences " + tn->text()) )
                           << ("Sorry, you can�t cut the group: ") + tn->text() )
@@ -309,8 +310,8 @@ void SeqExpl::MakeResponive()
                           .show() ;
                 return;
             }
-            CMultSec *ms = tn.value<CMultSec*>();
-            CMultSec *pms = ms->_parentMS;  
+            MSecIt ms = tn.value<MSecIt>();
+            CMultSec *pms = (*ms)->_parentMS;
             assert(ms);
             assert(pms);
 
@@ -329,7 +330,8 @@ void SeqExpl::MakeResponive()
             _tree.auto_draw(true);
             _list.auto_draw(true);
         });
-        _del        .tooltip(("Delete a group of sequences "))
+
+        _del        .tooltip(("Delete a group of sequences "))      //  ------------  DEL --------------
                     .events().click([this]()
         {
             auto tn= _tree.selected();
@@ -341,8 +343,8 @@ void SeqExpl::MakeResponive()
                           .show() ;
                 return;
             }
-            CMultSec *ms = tn.value<CMultSec*>();
-            CMultSec *pms = ms->_parentMS;     
+            MSecIt ms = tn.value<MSecIt>();
+            CMultSec *pms = (*ms)->_parentMS;
             assert(ms);
             assert(pms);
 
@@ -354,7 +356,6 @@ void SeqExpl::MakeResponive()
 
             _tree.erase(tn);
             populate(appendNewNode (_tree.find(("Don t use") ), ms ));
-
             own.select(true).expand(true);
 
             _tree.auto_draw(true);

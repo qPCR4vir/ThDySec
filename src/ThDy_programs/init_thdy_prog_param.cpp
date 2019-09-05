@@ -40,15 +40,17 @@ CMultSec::MSecIt ThDyCommProgParam::AddSeqFromFile(CMultSec &parentGr,
                                                    bool onlyStructure/*=false*/)
 {
     CMultSec::pMSec sG;
-
+    // Primers and normal sequences are added differently: primers are not filtered.
+    // We need to know if we are adding primers. For that we will test if one of the parents of the given
+    // parent is in the list (set) of primer trees.
 	for (CMultSec* pgr : _primersGr)       // scan primers groups
 	{
-		if (pgr == pgr->findComParent(&parentGr))   // adding in a primer group: dont use filters, use parent filters?
+		if (pgr == pgr->findComParent(&parentGr))   // adding in a primer group: dont use filters
 		{   
 				sG=std::make_shared<CMultSec>(FileName ,
                                               parentGr._NNPar ? parentGr._NNPar : _pSaltCorrNNp,
                                               recursive,
-							                  parentGr._MaxTgId  ,
+							                  parentGr._MaxTgId  ,   // use parent filters?
 							                  parentGr._SecLim ,
                                               parentGr._SecLenLim,
                                               !onlyStructure);
@@ -56,7 +58,7 @@ CMultSec::MSecIt ThDyCommProgParam::AddSeqFromFile(CMultSec &parentGr,
 				break;
 		}
 	}
-	if (!sG)
+	if (!sG)    // not primers, just some target sequences. Will be filtered.
 	    sG=std::make_shared<CMultSec>(FileName ,
                                       parentGr._NNPar ? parentGr._NNPar : _pSaltCorrNNp,
                                       recursive,

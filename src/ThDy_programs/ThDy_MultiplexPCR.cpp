@@ -84,7 +84,7 @@ int MultiplexPCRProg ( CProgParam_MultiplexPCR *IPrgPar_uArr, CMultSec		&pr)
 	int MultiplexPCRProg ( CProgParam_MultiplexPCR *IPrgPar_uArr)  
 {
 
-    IPrgPar_uArr->Check_NNp_Targets_probes (IPrgPar_uArr->_probesMS);
+    IPrgPar_uArr->Check_NNp_Targets_probes (IPrgPar_uArr->_probesMS-get());
 
 	return MultiplexPCRProg ( IPrgPar_uArr, *IPrgPar_uArr->_probesMS)  ;
 

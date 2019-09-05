@@ -144,12 +144,13 @@ class ThDyCommProgParam : public CCommProgParam
 					 st_Exp_sond{this, "Program option- re-export probes",	     "Exp_probes",   false }, 
 					 st_ExpTarg {this, "Program option- re-export targets",	 "Exp_target",   false };
 
-   	std::set<CMultSec*>           _primersGr  ;
+   	std::set<CMultSec*>           _primersGr  ;  /// the real CMultiSec are in the main tree. Here just for convenience.
     std::shared_ptr<CSaltCorrNN>  _pSaltCorrNNp     {Create_NNpar( )};
-	std::shared_ptr<CMultSec>     _pSeqTree      = CreateRoot()  ;  ///<  The root of the sequences tree
-	CMultSec*     _pSeqNoUsed       {(AddSeqGroup(*_pSeqTree, "Don t use"  ))->get() } ;
-	CMultSec*     _pSeqTargets      {(AddSeqGroup(*_pSeqTree, "Target seq"))->get() } ;
-	CMultSec*     _pSeqNonTargets   {(AddSeqGroup(*_pSeqTree, "Non Target seq"))->get()  } ;
+    /// In this tree will be ALL other CMultiSec. The next pointers are just for convenience.
+	std::shared_ptr<CMultSec>     _pSeqTree      = CreateRoot()  ;  ///<  The super-root of the sequences tree
+	CMultSec*     _pSeqNoUsed       {(AddSeqGroup(*_pSeqTree, "Don t use"  ))->get() } ; ///< the root for deleted
+	CMultSec*     _pSeqTargets      {(AddSeqGroup(*_pSeqTree, "Target seq"))->get() } ;  ///< the root for Viral seq
+	CMultSec*     _pSeqNonTargets   {(AddSeqGroup(*_pSeqTree, "Non Target seq"))->get()  } ; ///<
 	CMultSec*     _pPCRfiltrePrimers{(AddPrimerGroup(*_pSeqTree, "PCR Primers to <filtre> sequences"))->get()} ;
 
 	///
@@ -191,72 +192,73 @@ class ThDyCommProgParam : public CCommProgParam
 		} 
 
 	///< Create a new set of NN parameters based on current concentration. and Ta set in com-par.
-std::unique_ptr<CSaltCorrNN> Create_NNpar        ( )   
-{
-	std::unique_ptr<CSaltCorrNN> NNpar ( new  	CSaltCorrNN	(	 _ConcSd,  _ConcTg,  _ConcSalt, _SaltCorr, loadNNPar.get()?_InputNNFile.get():"")); 
-	//auto NNpar = std::make_unique<CSaltCorrNN>();
-	NNpar->SetTa(	CtoK(	 _Ta));			 
-	return NNpar ;
-}
-std::unique_ptr<CSaltCorrNN> Init_NNpar          ()   //< Initialize the set of NeirN parametrs  in com-par, loading/saving if necesary
-{                                      /// Depend on  _ConcSd,  _ConcTg,  _ConcSalt , _Ta, _loadNNPar,  _InputNNFile,  _saveNNPar,_OutputFile      
-	std::unique_ptr<CSaltCorrNN> NNpar=Create_NNpar();
-	if (loadNNPar.get()) 
+    std::unique_ptr<CSaltCorrNN> Create_NNpar        ( )
     {
-		std::ifstream isTDP(_InputNNFile.get());	assert(isTDP);
-        NNpar->LoadNNParam(isTDP) ;	
+        std::unique_ptr<CSaltCorrNN> NNpar ( new  	CSaltCorrNN	(	 _ConcSd,  _ConcTg,  _ConcSalt, _SaltCorr, loadNNPar.get()?_InputNNFile.get():""));
+        //auto NNpar = std::make_unique<CSaltCorrNN>();
+        NNpar->SetTa(	CtoK(	 _Ta));
+        return NNpar ;
     }
-	if ( saveNNPar.get())
-	{	
-        //std::string OutputTDP( _OutputFile.Get()) ; OutputTDP += ".ThDyParam.csv";
+    std::unique_ptr<CSaltCorrNN> Init_NNpar          ()   //< Initialize the set of NeirN parametrs  in com-par, loading/saving if necesary
+    {                                      /// Depend on  _ConcSd,  _ConcTg,  _ConcSalt , _Ta, _loadNNPar,  _InputNNFile,  _saveNNPar,_OutputFile
+        std::unique_ptr<CSaltCorrNN> NNpar=Create_NNpar();
+        if (loadNNPar.get())
+        {
+            std::ifstream isTDP(_InputNNFile.get());	assert(isTDP);
+            NNpar->LoadNNParam(isTDP) ;
+        }
+        if ( saveNNPar.get())
+        {
+            //std::string OutputTDP( _OutputFile.Get()) ; OutputTDP += ".ThDyParam.csv";
 
-		std::ofstream osTDP	(_OutputFile.get() + ".ThDyParam.csv");				assert(osTDP);
-		osTDP << *NNpar ;
-	}
-	return NNpar ;
-}
+            std::ofstream osTDP	(_OutputFile.get() + ".ThDyParam.csv");				assert(osTDP);
+            osTDP << *NNpar ;
+        }
+        return NNpar ;
+    }
 
-std::shared_ptr<CSaltCorrNN> Get_Actualiced_NNpar(const std::shared_ptr<CSaltCorrNN>& currNNpar )
-{
-	if ( currNNpar)
+    std::shared_ptr<CSaltCorrNN> Get_Actualiced_NNpar(const std::shared_ptr<CSaltCorrNN>& currNNpar )
     {
-        if ( currNNpar->NeedActualization(_ConcSd, _ConcTg, _ConcSalt, _SaltCorr)  )
-            return Create_NNpar ();
+        if ( currNNpar)
+        {
+            if ( currNNpar->NeedActualization(_ConcSd, _ConcTg, _ConcSalt, _SaltCorr)  )
+                return Create_NNpar ();
 
-        currNNpar->SetTa(	CtoK(_Ta));	
- 	    return currNNpar ;
+            currNNpar->SetTa(	CtoK(_Ta));
+            return currNNpar ;
+        }
+        if ( _pSaltCorrNNp )
+            return Get_Actualiced_NNpar(_pSaltCorrNNp);
+        return Init_NNpar ();
     }
-    if ( _pSaltCorrNNp )
-        return Get_Actualiced_NNpar(_pSaltCorrNNp);
-    return Init_NNpar ();
-}
 
-void                    Actualice_NNp       ()
-{
-    _pSaltCorrNNp=Get_Actualiced_NNpar(_pSaltCorrNNp);
-}
+    void                    Actualice_NNp       ()
+    {
+        _pSaltCorrNNp=Get_Actualiced_NNpar(_pSaltCorrNNp);
+    }
 
-void Check_NNp_Targets (/*ThDyCommProgParam& cp*/)
-{
-    if (! _pSaltCorrNNp )
-        Actualice_NNp();
+    void Check_NNp_Targets (/*ThDyCommProgParam& cp*/)
+    {
+        if (! _pSaltCorrNNp )
+            Actualice_NNp();
 
-    assert( _pSeqTargets );
-    if ( !  _pSeqTargets->_Global._NSec)
-		    AddSeqFromFile (    *_pSeqTargets,
-                                _InputTargetFile.get()  );
-}
+        assert( _pSeqTargets );
+        if ( !  _pSeqTargets->_Global._NSec)
+                AddSeqFromFile (    *_pSeqTargets,
+                                    _InputTargetFile.get()  );
+    }
 
-CMultSec::pMSec CreateRoot	();
+    CMultSec::pMSec CreateRoot	();
 
-CMultSec::MSecIt AddSeqGroup(CMultSec &parentGr, const std::string& Name);
+    CMultSec::MSecIt AddSeqGroup(CMultSec &parentGr, const std::string& Name);
 
-CMultSec::MSecIt AddPrimerGroup(CMultSec &parentGr, const std::string& Name)
-{
-    CMultSec::MSecIt pgr = AddSeqGroup(parentGr, Name);
-    _primersGr.insert((pgr)->get());
-    return pgr;
-}
+    /// used to create only base, sub-root primer groups.
+    CMultSec::MSecIt AddPrimerGroup(CMultSec &parentGr, const std::string& Name)
+    {
+        CMultSec::MSecIt pgr = AddSeqGroup(parentGr, Name);
+        _primersGr.insert((pgr)->get());
+        return pgr;
+    }
 
 
 	/// take parameters from the parent if possible
@@ -265,10 +267,11 @@ CMultSec::MSecIt AddPrimerGroup(CMultSec &parentGr, const std::string& Name)
                                     bool recursive = false,
                                     bool onlyStructure = false);
 
-    CMultSec::pMSec CopyStructFromDir(CMultSec &parentGr, const std::string& FileName)
+    CMultSec::MSecIt CopyStructFromDir(CMultSec &parentGr, const std::string& FileName)
     {
-        return *AddSeqFromFile(parentGr, FileName, true, true);
+        return AddSeqFromFile(parentGr, FileName, true, true);
     }
+
     void      LoadSequences ()
     {
         if (!_InputTargetFile.get().empty())   AddSeqFromFile(*_pSeqTargets       , _InputTargetFile.get(), _TRecurDir   .get() , _TDirStrOnly .get() );
@@ -277,20 +280,20 @@ CMultSec::MSecIt AddPrimerGroup(CMultSec &parentGr, const std::string& Name)
     }
     void      CopyStructFromDir ()
     {
-        if (!_InputTargetFile.get().empty())   CopyStructFromDir(_pSeqTargets      , _InputTargetFile.get());
-        if (!_NonTargetFile  .get().empty())   CopyStructFromDir(_pSeqNonTargets   , _NonTargetFile  .get());
-        if (!_PCRfiltrPrFile .get().empty())   CopyStructFromDir(_pPCRfiltrePrimers, _PCRfiltrPrFile .get());
+        if (!_InputTargetFile.get().empty())   CopyStructFromDir(*_pSeqTargets      , _InputTargetFile.get());
+        if (!_NonTargetFile  .get().empty())   CopyStructFromDir(*_pSeqNonTargets   , _NonTargetFile  .get());
+        if (!_PCRfiltrPrFile .get().empty())   CopyStructFromDir(*_pPCRfiltrePrimers, _PCRfiltrPrFile .get());
     }
 
-    CMultSec *AddTargetFromFile(const std::string& FileName)
+    CMultSec *AddTargetFromFile(const std::string& FileName)                      ///< deprecated   !!!
 	{
 		return AddSeqFromFile(*_pSeqTargets,FileName)->get();
 	}
-	CMultSec *AddNoTargetFromFile(const std::string& FileName)
+	CMultSec *AddNoTargetFromFile(const std::string& FileName)                    ///< deprecated   !!!
 	{
 		return AddSeqFromFile(*_pSeqNonTargets,FileName)->get();
 	}
-	CMultSec *AddPCRfiltreFromFile(const std::string& FileName)
+	CMultSec *AddPCRfiltreFromFile(const std::string& FileName)                   ///< deprecated   !!!
 	{
 		return AddSeqFromFile(*_pPCRfiltrePrimers,FileName)->get();
 	}
@@ -343,17 +346,20 @@ class CProgParam_microArray : public CEspThDyProgParam
 
 	void      SondeFile(const std::string &InputSondeFile)	  {	_InputSondeFile .set( trim_string(InputSondeFile    ))	;	}
     void RenameSondesMS(const std::string& name);
+
     void      LoadSequences ()
     {
         if (!_InputSondeFile.get().empty())
             _cp.AddSeqFromFile(*_probesMS, _InputSondeFile.get(), _PrRecurDir   .get() , _PrDirStrOnly .get() );
     }
-    void CopyStructFromDir ()
+
+    void CopyStructFromDir ()                                    ///< deprecated   !!!
     {
         if (!_InputSondeFile.get().empty())   
 			_cp.CopyStructFromDir(*_probesMS, _InputSondeFile.get());
     }
-    CMultSec *AdduArrFromFile(const std::string& FileName)
+
+    CMultSec *AdduArrFromFile(const std::string& FileName)       ///< deprecated   !!!
 	{
 		return _cp.AddSeqFromFile(*_probesMS,FileName)->get();
     }
@@ -365,7 +371,7 @@ class CProgParam_microArray : public CEspThDyProgParam
     if (! probes->_Global._NSec)
 	 if (!_InputSondeFile.get().empty())
 		probes->AddFromFile ( _InputSondeFile.get() );	
-     else assert((std::cerr<<"No seq. in the probes MS in uArr routine.", true));
+     else assert((std::cerr<<"No seq. in the probes MS in uArr routine.", true)); //false??
 }
     
 
@@ -423,10 +429,8 @@ int SondeDesignProg  ( CProgParam_SondeDesign  &IPrgPar_SdDes)  ;
 class CProgParam_SondeDesign : public CEspThDyProgParam			//  .------------------------	CProgParam_SondeDesign	----------------
 {public:
 
-
-
-	CProgParam_SondeDesign(const std::string& titel,ThDyCommProgParam &commThDyParam):		
-		CEspThDyProgParam (titel, commThDyParam),
+	CProgParam_SondeDesign(const std::string& titel,ThDyCommProgParam &commThDyParam)
+      : CEspThDyProgParam (titel, commThDyParam),
 		_design (true), design(this, "Make only design or full comp",	        "DesigVsCmp", _design,  true),
 		                unique(this, "Find probes unique for a few sequences",	"FindUnique",           true),
 		                common(this, "Find probes common for most sequences",	"FindCommon",           true),

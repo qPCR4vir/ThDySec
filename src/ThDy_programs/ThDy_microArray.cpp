@@ -158,7 +158,7 @@ int microArrayProg ( CProgParam_microArray *IPrgPar_uArr)
 {
 	time_t t_0 = time(nullptr);
 
-    IPrgPar_uArr->Check_NNp_Targets_probes (IPrgPar_uArr->_probesMS);
+    IPrgPar_uArr->Check_NNp_Targets_probes (IPrgPar_uArr->_probesMS->get());
 
 	//assert(("IPrgPar_uArr->_probesMS - debiera existir siempre",IPrgPar_uArr->_probesMS));
 	//CMultSec  &pr(		*IPrgPar_uArr->_probesMS.get() ); 
