@@ -103,7 +103,6 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             }
             MSecIt ms = tn.value<MSecIt>();
             CMultSec *pms = (*ms)->_parentMS;
-            assert(ms);
             assert(pms);
             fs::path pt{(*ms)->_orig_file};
             pt= fs::canonical(pt).make_preferred();
@@ -129,7 +128,6 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             }
             MSecIt       ms = tn.value<MSecIt>();
             CMultSec *parentMs = (*ms)->_parentMS;
-            assert(ms);
             assert(parentMs);
             
             fs::path pt{(*ms)->_orig_file};
@@ -321,7 +319,6 @@ void SeqExpl::MakeResponive()
             }
             MSecIt ms = tn.value<MSecIt>();
             CMultSec *pms = (*ms)->_parentMS;
-            assert(ms);
             assert(pms);
 
             _dragMSec.push_back(_Pr._cp._pSeqNoUsed->MoveMSec(ms));
@@ -352,7 +349,6 @@ void SeqExpl::MakeResponive()
             }
             MSecIt ms = tn.value<MSecIt>();
             CMultSec *pms = (*ms)->_parentMS;
-            assert(ms);
             assert(pms);
 
             _Pr._cp._pSeqNoUsed->MoveMSec(ms);
@@ -408,7 +404,6 @@ SeqExpl::Node SeqExpl::Replace (Node tn, MSecIt ms, const std::string& Path, boo
 {        
 try{ 
         Node      own = tn->owner();
-        assert(ms);
         CMultSec *pms = (*ms)->_parentMS;
         assert(pms);
 
