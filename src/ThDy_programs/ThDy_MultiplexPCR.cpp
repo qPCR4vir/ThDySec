@@ -1,10 +1,9 @@
 /**
-* Copyright (C) 2009-2016, Ariel Vina-Rodriguez ( ariel.rodriguez@fli.bund.de , arielvina@yahoo.es )
-*  https://www.fli.de/en/institutes/institut-fuer-neue-und-neuartige-tierseuchenerreger/wissenschaftlerinnen/prof-dr-m-h-groschup/
+* Copyright (C) 2009-2019, Ariel Vina-Rodriguez ( arielvina@yahoo.es )
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @author Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2016
+* 2012-2019
 *
 * @file ThDySec\src\ThDy_programs\ThDy_MultiplexPCR.cpp
 *
@@ -12,12 +11,9 @@
 *
 */
 
-//#include "StdAfx.h"
-#pragma unmanaged
-//#include "ThDySec\th_dy_align.h"
 #include "ThDy_programs/prog_comm_functions.h"
 
-int microArrayProg ( CProgParam_microArray *IPrgPar_uArr, 
+int microArrayProg( CProgParam_microArray *IPrgPar_uArr,
                     CMultSec &pr, 
                     CMultSec &tg, 
                     time_t t_0,  
@@ -26,26 +22,25 @@ int microArrayProg ( CProgParam_microArray *IPrgPar_uArr,
 
 void CreateComplProbes(	CMultSec		&pr	)   /// revise !!!!!!!!!!!!
 {
-	CMultSec *cms{nullptr};
-
-	for (auto &CurMSec : pr.MSecL())   ///\todo recursive ?! use only selected   ?!!!
+    auto &ms = pr.MSecL();
+    for ( auto CurMSec_i = ms.begin(); CurMSec_i != ms.end(); CurMSec_i++)
+    ///\todo recursive ?! use only selected   ?!!!
 	{
-		if (CurMSec->_name == "compl")        // if there was already one compl group
+        CMultSec *CurMSec = CurMSec_i->get();
+        if (CurMSec->_name == "compl")        // if there was already one compl group
 		{
-			cms = CurMSec.get();
-			cms->clear();                ///\todo uncount !!!!!        // destroy to reuse  !!
+            CurMSec->_parentMS->DeleteMSec(CurMSec_i);
 		}
 		else if (CurMSec->Selected())         // recursively CreateComplProbes for all the other groups
 			CreateComplProbes(*CurMSec);
 	}
 
-	if(!cms) 
-        cms=pr.AddMultiSec("compl");
+	auto cms = *pr.AddMultiSec("compl");
 
 	for (auto &CurSec : pr.SecL()) 			// recorre todos las sondas
 	{	CSec &s = *CurSec ;
 		if( s.Selected())
-		    cms->AddSec ( s.Clone(DNAstrand::rev_compl) ); 
+            cms->AddFreeSec(std::shared_ptr<CSec>(s.Clone(DNAstrand::rev_compl)));
 	}
 }
 

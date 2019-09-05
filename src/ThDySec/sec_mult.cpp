@@ -250,17 +250,17 @@ int        CMultSec::AddFromFileFASTA (std::ifstream &ifile)  // ---------------
             {
                 sec->Selected(false);
                 sec->Filtered(true);
-                InsertSecAfter (idem, sec) ;    
+                InsertFreeSecAfter(idem, sec) ;
             }
             else
             {
                 (*idem)->Selected(false);
                 (*idem)->Filtered(true);
-                InsertSec(idem, sec);    // std::move?
+                InsertFreeSec(idem, sec);    // std::move?
             }
         }
         else
-            AddSec(sec);   // std::move?
+            AddFreeSec(sec);   // std::move?
 
         NumSeq++;        
     }
@@ -368,7 +368,7 @@ int        CMultSec::AddFromFileBLAST (std::ifstream &fi) // ----------------  C
         {
             secH->Selected(false);
             secH->Filtered(true);
-            AddSec(secH);
+            AddFreeSec(secH);
         }
         else
         {
@@ -379,17 +379,17 @@ int        CMultSec::AddFromFileBLAST (std::ifstream &fi) // ----------------  C
                 {
                     secH->Selected(false);
                     secH->Filtered(true);
-                    InsertSecAfter(idem, secH);
+                    InsertFreeSecAfter(idem, secH);
                 }
                 else
                 {
                     (*idem)->Selected(false);
                     (*idem)->Filtered(true);
-                    InsertSec(idem, secH);
+                    InsertFreeSec(idem, secH);
                 }
             }
             else
-               AddSec(secH);
+                AddFreeSec(secH);
         }
         id++;
     }
@@ -492,17 +492,17 @@ int        CMultSec::AddFromFileGBtxt (std::ifstream &fi) // ----------------  C
             {
                 secGBtxt->Selected(false);
                 secGBtxt->Filtered(true);
-                InsertSecAfter(idem, secGBtxt);
+                InsertFreeSecAfter(idem, secGBtxt);
             }
             else
             {
                 (*idem)->Selected(false);
                 (*idem)->Filtered(true);
-                InsertSec(idem, secGBtxt);
+                InsertFreeSec(idem, secGBtxt);
             }
         }
         else
-            AddSec(secGBtxt);
+            AddFreeSec(secGBtxt);
 
         id++;        
     }
@@ -587,17 +587,17 @@ int        CMultSec::AddFromFileGB (std::ifstream &ifile)  // ----------------  
                         {
                             secGB->Selected(false);
                             secGB->Filtered(true);
-                            InsertSecAfter(idem, secGB);
+                            InsertFreeSecAfter(idem, secGB);
                         }
                         else
                         {
                             (*idem)->Selected(false);
                             (*idem)->Filtered(true);
-                            InsertSec(idem, secGB);
+                            InsertFreeSec(idem, secGB);
                         }
                     }
                     else
-                        AddSec(secGB);
+                        AddFreeSec(secGB);
                     id++;        
                 }
         }
@@ -695,24 +695,22 @@ CMultSec::SecIt CMultSec::Idem ( CSec &sec ) const  // ------  CMultSec:: NotIde
     return _LSec.end();
 }
 
-CMultSec::pSec CMultSec::AddSec( CMultSec::pSec sec)
+CMultSec::SecIt CMultSec::AddFreeSec(CMultSec::pSec sec)
 {
-    if (!sec) return sec ;
-    _LSec.push_back(sec);
-    UpdateTotalsMoving ( *sec );
-    return sec;
+    return InsertFreeSec(_LSec.end(), sec);
 }
 
-CMultSec::pSec CMultSec::InsertSec(CMultSec::SecIt pos, CMultSec::pSec sec)
+CMultSec::SecIt CMultSec::InsertFreeSec(CMultSec::SecIt pos, CMultSec::pSec sec)
 {
-    if (!sec) return sec ;
-    _LSec.insert(pos, sec);
+    SecIt end = _LSec.end();
+    if (!sec) return end ;
+    SecIt it = _LSec.insert(pos, sec);
     UpdateTotalsMoving ( *sec );
-    return sec;
+    return it;
 }
-CMultSec::pSec CMultSec::InsertSecAfter(CMultSec::SecIt preSec, CMultSec::pSec sec)
+CMultSec::SecIt CMultSec::InsertFreeSecAfter(CMultSec::SecIt preSec, CMultSec::pSec sec)
 {    
-    return InsertSec(++preSec, sec);
+    return InsertFreeSec(++preSec, sec);
 }
 
 void    CMultSec::UpdateTotalsMoving ( CSec &sec ) 

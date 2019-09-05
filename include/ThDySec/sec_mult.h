@@ -268,18 +268,54 @@ class CMultSec
         /// too simple, works only for aligned sequences: todo real simple alignmend??
         SecIt Idem (CSec &sec) const;             //		CConsParam	_ConsPar ;
 
-		pSec AddSec		    ( pSec sec);
-        pSec InsertSec		( SecIt pos, pSec sec) ;
-        pSec InsertSecAfter ( SecIt pos, pSec sec) ;
-        void MoveMSec       ( MSecIt from) /// todo revise design !!!
-		{
-			CMultSec* p = (*from)->_parentMS;
-			if (p == this) return ;                  // no-op ; mover al final?
+        SecIt AddFreeSec(pSec sec);
+        SecIt InsertFreeSec(SecIt pos, pSec sec) ;
+        SecIt InsertFreeSecAfter(SecIt preSec, pSec sec) ;
+        SecIt MoveSec(SecIt from)
+        {
+            CMultSec* p = (*from)->_parentMS;
+            if (p == this) return from;
+
+            pSec s = *from;
+            if (p) p->_LSec.erase(from);
+            return AddFreeSec(s);
+        }
+
+        MSecIt AddMultiSec(const std::string &Name )
+        {
+            return AddFreeMultiSec(std::make_shared<CMultSec>(this, Name));
+        }
+        MSecIt AddFreeMultiSec(pMSec MultSec);
+        MSecIt MoveMSec( MSecIt from)
+        {
+            CMultSec* p = (*from)->_parentMS;
+            if (p == this) return from;                  // no-op ; mover al final?
+
             pMSec s = *from;
-			if (p) p->_LMSec.erase(from);
-            AddFreeMultiSec(s);
-		}
-		int			CountSelectedSeq		()
+            if (p) p->_LMSec.erase(from);
+            return AddFreeMultiSec(s);
+        }
+
+        void DeleteMSec( MSecIt from)
+        {
+            CMultSec* p = (*from)->_parentMS;
+            if (p == this) return;                  // no-op ; mover al final?
+
+            pMSec s = *from;
+            if (p) p->_LMSec.erase(from);
+            UpdateTotalsMoving(*s);
+        }
+
+        void DeleteSec( SecIt from)
+        {
+            CMultSec* p = (*from)->_parentMS;
+            if (p == this) return;                  // no-op ; mover al final?
+
+            pSec s = *from;
+            if (p) p->_LSec.erase(from);
+            UpdateTotalsMoving(*s);
+        }
+    int			CountSelectedSeq		()
 		{
             int count{0};
 			for (auto& CurSec : _LSec)		// recorre todos las primeras sec de esta misma ms
@@ -334,12 +370,6 @@ class CMultSec
 				 CurMSec->CreateNonDegSetRec( );
 		}
 
-
-        MSecIt AddMultiSec(const std::string &Name )
-		{
-			return AddFreeMultiSec(std::make_shared<CMultSec>(this, Name));
-		}
-		MSecIt AddFreeMultiSec(pMSec MultSec);
 		//std::shared_ptr<CMultSec> AddFreeMultiSec	(std::shared_ptr<CMultSec> MultSec);
 
         //	CSec CalculateConsenso(double) ;

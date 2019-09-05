@@ -40,8 +40,10 @@ int DegTmCalc ( CProgParam_TmCalc *IPrgPar_Calc)
 
 	std::shared_ptr<CMultSec>	pr,	tg;			// Esto se puede hacer mejor
 
-	if   (      Sec->NonDegSet()) pr=      Sec->NonDegSet() ; else {pr.reset(new CMultSec(IPrgPar_Calc->_cp._pSaltCorrNNp)); pr->AddSec(      Sec);}
-	if   (Sec2Align->NonDegSet()) tg=Sec2Align->NonDegSet() ; else {tg.reset(new CMultSec(IPrgPar_Calc->_cp._pSaltCorrNNp)); tg->AddSec(Sec2Align);}
+	if   (      Sec->NonDegSet()) pr=      Sec->NonDegSet() ; else {pr.reset(new CMultSec(IPrgPar_Calc->_cp._pSaltCorrNNp));
+        pr->AddFreeSec(Sec);}
+	if   (Sec2Align->NonDegSet()) tg=Sec2Align->NonDegSet() ; else {tg.reset(new CMultSec(IPrgPar_Calc->_cp._pSaltCorrNNp));
+        tg->AddFreeSec(Sec2Align);}
 
 		
 	IPrgPar_Calc->_TmS  = KtoC(pr->_Local._Tm) ;// (    KtoC(pr->_minTm)   ,   KtoC(pr->_maxTm)   ) ; 

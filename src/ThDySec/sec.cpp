@@ -350,7 +350,7 @@ CMultSec::pMSec CSec::ForceNonDegSet()
 {
     _NonDegSet.reset(new CMultSec(_NNpar));	// lo borramos
 
-    _NonDegSet->AddSec( GenerateNonDegVariant(0, 0) ) ;
+    _NonDegSet->AddFreeSec(GenerateNonDegVariant(0, 0)) ;
     _Tm = _NonDegSet->_Local._Tm ;
 
     //assert ( ( (cout << "Post Deg set generation: "<< _name << "\t" << _c << "\t"
@@ -450,7 +450,7 @@ CMultSec::pSec CSec::GenerateNonDegVariant (long pos, Base ndb)
 			{
                 if (Len()*Degeneracy() < 32*4*4*4*4*4*4*4*4)  // oligo with 8 n = 65.536 variants = 40 MB?
                 if (_NonDegSet->_Global._NSec < 4*4*4*4*4*4*4*4)
-                   _NonDegSet->AddSec( sec->GenerateNonDegVariant (i, dg2ba [ db2nu[b_or]  ][d] )) ;
+                    _NonDegSet->AddFreeSec(sec->GenerateNonDegVariant(i, dg2ba[db2nu[b_or]][d])) ;
 			}
 
 			ndb			 = dg2ba [  db2nu[b_or]  ][n-1];   // aqui me quedo con la ultima variante para seguir

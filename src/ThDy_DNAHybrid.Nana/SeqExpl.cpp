@@ -277,10 +277,10 @@ void SeqExpl::MakeResponive()
             Node    tn = _tree.selected();
             MSecIt pms = tn.value<MSecIt>();
 
-            for (auto ms : _dragMSec)
-                *pms->AddMultiSec(ms);     /// \todo use MoveMSec   ?????!!!!!!
-            for (auto s : _dragSec)
-                pms->AddSec(s);
+            for (MSecIt ms : _dragMSec)
+                pms->MoveMSec(ms);     /// \todo use MoveMSec   ?????!!!!!!
+            for (SecIt s : _dragSec)
+                pms->MoveSec(s);
 
             _dragMSec.clear();
             _dragSec .clear();
@@ -407,7 +407,7 @@ try{
 
         MSecIt newms = _Pr._cp.AddSeqFromFile    ( *pms, Path, all_in_dir    );
 
-        _Pr._cp._pSeqNoUsed->MoveMSec(*ms);
+        _Pr._cp._pSeqNoUsed->MoveMSec(ms);
         _tree.erase(tn);
         populate(_tree.find( _Pr._cp._pSeqNoUsed->_name));
         return appendNewNode(own, newms).expand(true).select(true) ;
