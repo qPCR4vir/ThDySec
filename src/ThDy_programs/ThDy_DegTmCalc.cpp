@@ -118,9 +118,9 @@ int DegTmCalc ( CProgParam_TmCalc *IPrgPar_Calc)
 	//delete pAl;	
 	if (IPrgPar_Calc->save.get())	
 	{
-		CMultSec primers(IPrgPar_Calc->_cp._pSaltCorrNNp); 
-		primers.AddMultiSec( pr);
-		primers.AddMultiSec( tg);
+		CMultSec primers(IPrgPar_Calc->_cp._pSaltCorrNNp);
+        primers.AddFreeMultiSec(pr);
+        primers.AddFreeMultiSec(tg);
 
 		int t=MultiplexPCRProg ( IPrgPar_Calc, primers		)  ;
 		return t;

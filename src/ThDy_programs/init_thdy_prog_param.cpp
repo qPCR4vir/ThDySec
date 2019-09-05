@@ -29,8 +29,8 @@ std::shared_ptr<CMultSec>  ThDyCommProgParam::CreateRoot	()
 
 CMultSec::MSecIt ThDyCommProgParam::AddSeqGroup(CMultSec &parentGr, const std::string& Name)
 {
-	return parentGr.AddMultiSec(
-		std::make_shared<CMultSec>(parentGr._NNPar ? parentGr._NNPar : _pSaltCorrNNp, Name)   );
+	return parentGr.AddFreeMultiSec(
+            std::make_shared<CMultSec>(parentGr._NNPar ? parentGr._NNPar : _pSaltCorrNNp, Name));
 }
 
 
@@ -66,7 +66,7 @@ CMultSec::MSecIt ThDyCommProgParam::AddSeqFromFile(CMultSec &parentGr,
 							          _SecLim ,
                                       _SecLenLim,
                                       !onlyStructure);
-    CMultSec::MSecIt it = parentGr.AddMultiSec(sG);
+    CMultSec::MSecIt it = parentGr.AddFreeMultiSec(sG);
     auto parent_path = sG->_orig_file.parent_path();
 
     if (parentGr._Local._NMSec == 1)

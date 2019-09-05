@@ -277,7 +277,7 @@ class CMultSec
 			if (p == this) return ;                  // no-op ; mover al final?
             pMSec s = *from;
 			if (p) p->_LMSec.erase(from);
-			AddMultiSec(s);
+            AddFreeMultiSec(s);
 		}
 		int			CountSelectedSeq		()
 		{
@@ -337,10 +337,10 @@ class CMultSec
 
         MSecIt AddMultiSec(const std::string &Name )
 		{
-			return AddMultiSec(std::make_shared<CMultSec>(this, Name));
+			return AddFreeMultiSec(std::make_shared<CMultSec>(this, Name));
 		}
-		MSecIt AddMultiSec	(pMSec MultSec);
-		//std::shared_ptr<CMultSec> AddMultiSec	(std::shared_ptr<CMultSec> MultSec);
+		MSecIt AddFreeMultiSec(pMSec MultSec);
+		//std::shared_ptr<CMultSec> AddFreeMultiSec	(std::shared_ptr<CMultSec> MultSec);
 
         //	CSec CalculateConsenso(double) ;
 

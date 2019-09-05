@@ -117,14 +117,14 @@ CMultSec::CMultSec (const fs::path &path,
         fs::directory_iterator rdi{ itf }, end;
 
         for (; rdi != end; ++ rdi)
-            AddMultiSec(  std::make_shared<CMultSec>(  
-				                         rdi->path() ,
-                                         NNpar,
-                                         fs::is_directory(rdi->status()),
-                                         MaxTgId, 
-                                         SecLim,   
-                                         SecLenLim,
-                                         loadSec) );
+            AddFreeMultiSec(std::make_shared<CMultSec>(
+                    rdi->path(),
+                    NNpar,
+                    fs::is_directory(rdi->status()),
+                    MaxTgId,
+                    SecLim,
+                    SecLenLim,
+                    loadSec));
         return;
     }
     else                           // Load only this file
@@ -792,7 +792,7 @@ CMultSec   *CMultSec::findComParent( CMultSec *ms)
     return myPms;
 }
 
-CMultSec::MSecIt CMultSec::AddMultiSec (CMultSec::pMSec ms)  //--------------------------------------    AddMultiSec    --------------------
+CMultSec::MSecIt CMultSec::AddFreeMultiSec(CMultSec::pMSec MultSec)  //--------------------------------------    AddFreeMultiSec    --------------------
 {
     MSecIt end = _LMSec.end();
     if (!MultSec) return end;
@@ -800,7 +800,7 @@ CMultSec::MSecIt CMultSec::AddMultiSec (CMultSec::pMSec ms)  //-----------------
     UpdateTotalsMoving ( *MultSec );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes
     return it;
 }
-//std::shared_ptr<CMultSec> CMultSec::AddMultiSec (std::shared_ptr<CMultSec> ms )  //--------------------------------------    AddMultiSec    --------------------
+//std::shared_ptr<CMultSec> CMultSec::AddMultiSec (std::shared_ptr<CMultSec> ms )  //--------------------------------------    AddFreeMultiSec    --------------------
 //{    if (!ms) return nullptr;    
 //    _LMSec.push_back(ms);
 //    UpdateTotalsMoving ( ms.get() );   // al llamar ya esta la ms movida fisicamente. Falta solo actualizar extremes

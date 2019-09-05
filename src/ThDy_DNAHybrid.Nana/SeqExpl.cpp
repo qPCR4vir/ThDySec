@@ -315,9 +315,8 @@ void SeqExpl::MakeResponive()
             assert(ms);
             assert(pms);
 
-            _Pr._cp._pSeqNoUsed->AddMultiSec(ms);
-            _dragMSec.push_back(ms);
-            //ms->MoveBefore(_Pr._cp._pSeqNoUsed->goFirstMSec() );  /// \todo: higth level MoveMSec !! (actualize globals)
+            _Pr._cp._pSeqNoUsed->MoveMSec(ms);
+            _dragMSec.push_back((*ms)->get());
             auto own = tn->owner();
 
             _tree.auto_draw(false);
@@ -348,7 +347,7 @@ void SeqExpl::MakeResponive()
             assert(ms);
             assert(pms);
 
-            _Pr._cp._pSeqNoUsed->AddMultiSec(ms); //ms->MoveBefore(_Pr._cp._pSeqNoUsed->goFirstMSec() );  /// \todo: higth level MoveMSec !! (actualize globals)
+            _Pr._cp._pSeqNoUsed->MoveMSec(ms);
             auto own = tn->owner();
 
             _tree.auto_draw(false);
