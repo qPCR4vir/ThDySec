@@ -48,8 +48,8 @@ class SeqExpl : public CompoWidget
     List                _list{ *this };
 	nana::toolbar       _tbar{ *this };
     bool				_showAllseq{true}, _showFiltered{true};
-    std::vector<CSec*>      _dragSec;
-    std::vector<CMultSec*>  _dragMSec;
+    std::vector<SecIt>  _dragSec;
+    std::vector<MSecIt> _dragMSec;
 
     nana::button    _loadFile     {*this,("Load"   )},       //nana::toolbar  _tbar { *this };
                     _re_loadFile  {*this,("reLoad" )},   
@@ -129,23 +129,23 @@ class SeqExpl : public CompoWidget
     void populate_list(CMultSec &ms)
     {
         for (SecIt CurSec = ms.SecL().begin(); CurSec != ms.SecL().end(); CurSec++)
-		  if ( _showFiltered || ! CurSec->Filtered() )
+		  if ( _showFiltered || ! (*CurSec)->Filtered() )
               AddSecToList(CurSec);
     }
 
     List::item_proxy AddSecToList     (SecIt s)
     {
         return _list.at(0).append(s, true)
-                          .check  ( s->Selected() )
+                          .check  ( (*s)->Selected() )
                           .fgcolor( static_cast<nana::color_rgb>(
-                                              (s->Filtered() ? 0xFF00FF   ///\todo: use coding
+                                              ((*s)->Filtered() ? 0xFF00FF   ///\todo: use coding
                                                              :   0x0   )  ));//nana::color::gray_border );
     }
 
     Node AddRoot(MSecIt ms)
     {
-        std::string name = ms->_name;
-        return _tree.insert(name, name).value(ms).check(ms->Selected());
+        std::string name = (*ms)->_name;
+        return _tree.insert(name, name).value(ms).check((*ms)->Selected());
     }
     bool isRoot(const Node &node)
     {
@@ -153,15 +153,16 @@ class SeqExpl : public CompoWidget
     }
  static Node appendNewNode(Node node, MSecIt ms) /// Add a new node to the child of node.
     {
-        std::string name = ms->_name;
-        return node->append(name, name, ms).check(ms->Selected());
+        std::string name = (*ms)->_name;
+        return node->append(name, name, ms).check((*ms)->Selected());
     }
+
     Node populate     ( Node node)  ///< create & add to the child of node a new node nuevo for each MSec in ms.
     {
         while(node.size()) 
             _tree.erase(node.child());
 
-        auto ms = node.value<MSecIt>()->MSecL(); //  msec(node);
+        auto ms = (*node.value<MSecIt>())->MSecL(); //  msec(node);
 		for (MSecIt CurMSec = ms.begin();CurMSec != ms.end(); CurMSec++)
 			populate( appendNewNode(node, CurMSec)) ;
         return node;
@@ -174,23 +175,23 @@ class SeqExpl : public CompoWidget
 
     Node Replace    (Node tn, MSecIt ms, const std::string& Path, bool all_in_dir);
     Node ReloadDir  (Node tn)
-    {            
-        CMultSec *ms = tn.value<CMultSec*>();
-        if (ms->_orig_file_path.empty())
+    {
+        MSecIt ms = tn.value<MSecIt>();
+        if ((*ms)->_orig_file.empty())
         {
             for (Node & ntn : tn)
                 ReloadDir(ntn);
             return tn;
         }
-        else return Refresh(Replace(tn, ms, ms->_orig_file_path,true)).expand(true).select(true);//true
+        else return Refresh(Replace(tn, ms, (*ms)->_orig_file.string(),true)).expand(true).select(true);//true
     }
     Node ReloadFile   (Tree::item_proxy tn)
-    {            
-        CMultSec *ms = tn.value<CMultSec*>();
-        if (ms->_orig_file_path.empty())
+    {
+        MSecIt ms = tn.value<MSecIt>();
+        if ((*ms)->_orig_file.empty())
            return tn;
         else
-           return Refresh(Replace(tn, ms, ms->_orig_file_path,false));
+           return Refresh(Replace(tn, ms, (*ms)->_orig_file.string(),false));
     }
     void ShowLocals(bool showLocals)
     {        
@@ -223,7 +224,7 @@ public:
     void InitTree();
 };
 
-List::oresolver& operator<<(List::oresolver & ores, CSec * const sec );
+nana::listbox::oresolver& operator<<(nana::listbox::oresolver & ores, CMultSec::SecIt const sec );
 
 class RenameFrom : public nana::form, public EditableForm
 {

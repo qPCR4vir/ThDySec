@@ -158,14 +158,14 @@ int microArrayProg ( CProgParam_microArray *IPrgPar_uArr)
 {
 	time_t t_0 = time(nullptr);
 
-    IPrgPar_uArr->Check_NNp_Targets_probes (IPrgPar_uArr->_probesMS->get());
+    IPrgPar_uArr->Check_NNp_Targets_probes (IPrgPar_uArr->_probesMS.get());
 
 	//assert(("IPrgPar_uArr->_probesMS - debiera existir siempre",IPrgPar_uArr->_probesMS));
 	//CMultSec  &pr(		*IPrgPar_uArr->_probesMS.get() ); 
 	//if(IPrgPar_uArr->_InputSondeFile.Get()[0] )
 	//	pr.AddFromFile ( IPrgPar_uArr->_InputSondeFile.Get() );	
 
-	auto res=microArrayProg (  IPrgPar_uArr, 
+	auto res=microArrayProg( IPrgPar_uArr,
                             *IPrgPar_uArr->_probesMS, 
                             *IPrgPar_uArr->_cp._pSeqTargets , 
                              t_0 ,

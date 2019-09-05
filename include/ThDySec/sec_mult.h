@@ -35,12 +35,12 @@
   /// \todo add construction of concensus 
 class CMultSec
 {	public:
-    using pSec   = std::shared_ptr<CSec> ;
-    using pMSec  = std::shared_ptr<CMultSec> ;
-	using LSec   = std::list<pSec>;
-	using LMSec  = std::list<pMSec>;
-    using MSecIt = LMSec::const_iterator;
-    using SecIt  = LSec::const_iterator;
+        using pSec   = std::shared_ptr<CSec> ;
+        using pMSec  = std::shared_ptr<CMultSec> ;
+        using LSec   = std::list<pSec>;
+        using LMSec  = std::list<pMSec>;
+        using MSecIt = LMSec::const_iterator;
+        using SecIt  = LSec::const_iterator;
 
 		std::string			_name ;						///< 
         int					_ID       {NewMS_ID()};		///< Unique ID in each programm run
@@ -53,14 +53,14 @@ class CMultSec
         bool                 _selected { true };
 		std::filesystem::path _orig_file ;				///< file path of the original sequence source
 
-       /// Create a named and free empty group to build root of CMultiSec tree
-       explicit CMultSec (std::shared_ptr<CSaltCorrNN> NNpar, const std::string &Name = "")        
+        /// Create a named and free empty group to build root of CMultiSec tree
+        explicit CMultSec (std::shared_ptr<CSaltCorrNN> NNpar, const std::string &Name = "")
                           : _NNPar  (std::move(NNpar) ),
-   	  			            _name   (trim_string(Name))
+                            _name   (trim_string(Name))
                       {  }
 
-	   /// Create a named and free empty group using the given group as "template"
-       explicit CMultSec(CMultSec	*ms, const std::string &Name = "")
+	    /// Create a named and free empty group using the given group as "template"
+        explicit CMultSec(CMultSec	*ms, const std::string &Name = "")
                       : _name       (trim_string(Name)),
                         _SecLim     (ms->_SecLim),
                         _SecLenLim  (ms->_SecLenLim),
@@ -68,8 +68,8 @@ class CMultSec
                         _NNPar      (ms->_NNPar)
                   {  }
 
-	   /// Read all the sequences from a stream into this group deducing format and apling filters
-       CMultSec (	std::ifstream &	    file,
+	    /// Read all the sequences from a stream into this group deducing format and apling filters
+        CMultSec (	std::ifstream &	    file,
 					std::shared_ptr<CSaltCorrNN>  NNpar,
 					float		  MaxTgId	= 100,                 ///< Sec. with more % of identity are marked as "filtered" and not selected
 					LonSecPosRang  SecLim	= LonSecPosRang {1,0}, ///< Filtre, using only this region. Will take into account alignment coordenates.
@@ -81,8 +81,8 @@ class CMultSec
 	                    _NNPar      (std::move(NNpar))
                   { AddFromFile(file); }
 
-         /// The new MSec take the name of the dir, and remember the rest of the path
-         CMultSec (	const std::filesystem::path &path	,           ///< The name of the file or directory to be loaded
+        /// The new MSec take the name of the dir, and remember the rest of the path
+        CMultSec (	const std::filesystem::path &path	,           ///< The name of the file or directory to be loaded
 					std::shared_ptr<CSaltCorrNN>  NNpar	, 
 					bool           all_dir  = false,                ///< Load all files and directories recursiverly? 
 					float		   MaxTgId	= 100,                  ///< Sec. with more % of identity are marked as "filtered" and not selected

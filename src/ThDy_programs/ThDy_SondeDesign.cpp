@@ -125,16 +125,16 @@ void write_results(CProgParam_SondeDesign *IPrgPar_SdDes)
 
 }
 
-int SondeDesignProg ( CProgParam_SondeDesign &IPrgPar_SdDes)
+int SondeDesignProg ( CProgParam_SondeDesign *IPrgPar_SdDes)
 {    
     
     time_t t_0 = time(nullptr);
 
-    IPrgPar_SdDes._cp.Actualice_NNp();  /// \todo review
+    IPrgPar_SdDes->_cp.Actualice_NNp();  /// \todo review
 
                                          /// \todo use only the file name not the path (use filesystem)
-    IPrgPar_SdDes.probes = *IPrgPar_SdDes._cp.AddSeqGroup(*IPrgPar_SdDes.probes,
-                                                           IPrgPar_SdDes._cp._OutputFile.get()   );
+    IPrgPar_SdDes->probes = *IPrgPar_SdDes->_cp.AddSeqGroup(*IPrgPar_SdDes->probes,
+                                                           IPrgPar_SdDes->_cp._OutputFile.get()   );
 
 
     /// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -148,7 +148,7 @@ int SondeDesignProg ( CProgParam_SondeDesign &IPrgPar_SdDes)
     CMSecCand    msCand    (    
                    convCtoK_ctok( IPrgPar_SdDes->_sL ) ,
                             CtoK(IPrgPar_SdDes->_Tm_sig),         IPrgPar_SdDes->_G_sig      * 1000,
-                            CtoK(IPrgPar_SdDes->_MaxSd_nTgTm),     IPrgPar_SdDes->_MinSd_nTgG * 1000,    
+                            CtoK(IPrgPar_SdDes->_MaxSd_nTgTm),     IPrgPar_SdDes->_MinSd_nTgG * 1000,
                             CtoK(IPrgPar_SdDes->_MaxSelfTm),     IPrgPar_SdDes->_MinSelfG   * 1000     );
 
     if (!IPrgPar_SdDes->_cp._pSeqTargets->_NNPar)   ///  \todo Make seq specific
@@ -176,7 +176,7 @@ int SondeDesignProg ( CProgParam_SondeDesign &IPrgPar_SdDes)
 
     msCand.ExportCommonSonden(  IPrgPar_SdDes->_design, 
                                 ExtrCovPerc, 
-                                IPrgPar_SdDes->probes,
+                                IPrgPar_SdDes->probes.get(),
                                 IPrgPar_SdDes->_cp._OutputFile.get().c_str(), 
                                 fileFormat ( (int)fasta | (int)csv )
                               );

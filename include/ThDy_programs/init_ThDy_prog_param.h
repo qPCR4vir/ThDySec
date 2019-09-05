@@ -424,7 +424,7 @@ class CProgParam_MultiplexPCR : public CProgParam_microArray
 };
 
 class CProgParam_SondeDesign ;
-int SondeDesignProg  ( CProgParam_SondeDesign  &IPrgPar_SdDes)  ;
+int SondeDesignProg  ( CProgParam_SondeDesign  *IPrgPar_SdDes)  ;
 
 class CProgParam_SondeDesign : public CEspThDyProgParam			//  .------------------------	CProgParam_SondeDesign	----------------
 {public:
@@ -479,7 +479,7 @@ class CProgParam_SondeDesign : public CEspThDyProgParam			//  .-----------------
 
 	int		Run		(){	
                         //Check_NNp_Targets (/*IPrgPar_SdDes->*/_cp);
-                        return  SondeDesignProg( *this )  ;
+                        return  SondeDesignProg( this )  ;
                       }
 	/// results
 	CMultSec::pMSec probes;

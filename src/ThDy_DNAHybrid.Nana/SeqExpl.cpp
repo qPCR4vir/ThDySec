@@ -69,8 +69,8 @@ SeqExpl::Node SeqExpl::AddMSeqFiles (const std::filesystem::path &file, bool  al
     {     
     try{ 
             Node   tn = _tree.selected();
-            pMSec ms = *tn.value<MSecIt>();
-            _Pr._cp.AddSeqFromFile(ms->get(), file, all_in_dir);
+            CMultSec::pMSec ms = *tn.value<MSecIt>();
+            _Pr._cp.AddSeqFromFile(*ms, file, all_in_dir);
             return Refresh(tn);
         }
         catch ( std::exception& e)
@@ -101,11 +101,11 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
                 nana::msgbox ( ("Sorry, you can't replace group " + tn.text()) ).show() ;
                 return;
             }
-            auto ms = tn.value<CMultSec::LMSec::const_iterator>();
-            CMultSec *pms = ms->_parentMS;
+            MSecIt ms = tn.value<MSecIt>();
+            CMultSec *pms = (*ms)->_parentMS;
             assert(ms);
             assert(pms);
-            fs::path pt{ms->_orig_file_path};
+            fs::path pt{(*ms)->_orig_file};
             pt= fs::canonical(pt).make_preferred();
             nana::filebox  fb{ *this, true };
             fb .add_filter ( SetupPage::FastaFiltre( )   )
@@ -115,7 +115,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             if ( path.empty() ) return;
 
             _Pr._cp._pSeqNoUsed->MoveMSec(ms);
-            _Pr._cp.AddSeqFromFile    ( pms, path[0].u8string(), false    );
+            _Pr._cp.AddSeqFromFile    ( *pms, path[0].string(), false    );
             Refresh(tn->owner());
         });
 
@@ -127,12 +127,12 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
                 nana::msgbox ( ("Sorry, you can't replace group " + tn->text()) ) ;
                 return;
             }
-            auto       ms = tn.value<CMultSec::MSecIt>();
-            CMultSec *parentMs = ms->_parentMS;
+            MSecIt       ms = tn.value<MSecIt>();
+            CMultSec *parentMs = (*ms)->_parentMS;
             assert(ms);
             assert(parentMs);
             
-            fs::path pt{ms->_orig_file};
+            fs::path pt{(*ms)->_orig_file};
             nana::folderbox  fb{ *this, pt.parent_path() , "Replace/reload a group of sequences from a directory" };
             auto p=fb.show();
             if (p.empty()) return;
@@ -152,13 +152,13 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             _tree.auto_draw(false);
             _list.auto_draw(false);
 
-            CMultSec::pMSec newms = _Pr._cp.AddSeqFromFile(parentMs, p[0].u8string(), true    );
+            MSecIt newms = _Pr._cp.AddSeqFromFile(*parentMs, p[0].u8string(), true    );
             _tree.erase(tn);
             populate(appendNewNode  (own, newms) );
             own.expand(true);
 
             _list.clear();
-            populate_list_recur(parentMs);
+            populate_list_recur(tn);
 
             _tree.auto_draw(true);
             _list.auto_draw(true);
@@ -210,24 +210,24 @@ void SeqExpl::MakeResponive()
 
         _tree.events().selected ( [&]( const nana::arg_treebox &tbox_arg_info ) 
                                  { if (tbox_arg_info.operated) RefreshList(tbox_arg_info.item); });
+
         _tree.events().checked  ( [&]( const nana::arg_treebox &tbox_arg_info )
         {                                              
-            tbox_arg_info.item.value<CMultSec*>()->Selected(tbox_arg_info.operated);
+            (*(tbox_arg_info.item.value<MSecIt>()))->Selected(tbox_arg_info.operated);
             if (tbox_arg_info.item== _tree.selected())
                 RefreshList(tbox_arg_info.item);                //  ??????? Only RefreschList
         });
 
         _list.events().checked  ( [&](  const nana::arg_listbox &lbox_arg_info )
         {                                               
-            lbox_arg_info.item.value<CSec*>()->Selected(lbox_arg_info.item.checked());
+            (*(lbox_arg_info.item.value<SecIt>()))->Selected(lbox_arg_info.item.checked());
         });
  
-        _loadFile   .events().click([this]()
+        _loadFile   .events().click([this]()                                  //  ------------  LOAD--------------
                         {
                             auto      tn    = _tree.selected();
-                            CMultSec* ms    = tn.value<CMultSec*>();
-                            fs::path pt{ms->_orig_file_path};
-                            pt= fs::canonical(pt).make_preferred();
+                            MSecIt ms    = tn.value<MSecIt>();
+                            fs::path pt= fs::canonical((*ms)->_orig_file).make_preferred();
 
                             nana::filebox  fb{ *this, true };
                             fb .add_filter ( SetupPage::FastaFiltre( )                   )
@@ -235,26 +235,33 @@ void SeqExpl::MakeResponive()
                                     .title      ( ("File load: Add a group of sequences from a file") );
 
                             if (auto path=fb(); ! path.empty())
-                               AddMSeqFiles(path[0].u8string(), false);
+                               AddMSeqFiles(path[0].string(), false);
                         });
         //_loadFileTT.set(_loadFile,("File load: Add a group of sequences from a file"));
 
+                                                                              //  ------------  RE-LOAD-------------- ?
         _re_loadFile.events().click([this]()  {  ReloadFile(_tree.selected());    });
-        _re_loadFileTT.set(_re_loadFile,("File reload: Reload a group of sequences from a file, \nposible using new filtres."));
 
+                                                                              //  ------------  RE-LOAD-DIR --------- ?
+        _re_loadFileTT.set(_re_loadFile,("File reload: Reload a group of sequences from a file, \npossibly using new filters."));
+
+                                                                             //  ------------  LOAD-DIR --------- ?
         _loadDir    .tooltip(("Directory load: Add a tree of groups of sequences from a directory."))
                     .events().click([this]()
                         {
                             auto tn= _tree.selected();
-                            CMultSec *ms = tn.value<CMultSec*>();
-                            fs::path pt{ms->_orig_file_path};
-                            nana::folderbox  fb{ *this, pt, "Directory load: Add a tree of groups of sequences from a directory" };
+                            MSecIt ms = tn.value<MSecIt>();
+                            nana::folderbox  fb{ *this, (*ms)->_orig_file, "Directory load: Add a tree of groups of sequences from a directory" };
                             auto path=fb();
                             if (path.empty()) return;
-                            AddMSeqFiles(path[0].u8string(), true);
+                            AddMSeqFiles(path[0].string(), true);
                         });
-        _re_loadDir .tooltip(("Directory reload: Reload a tree of groups of sequences from a directory,\nposible using new filtres."))
+
+                                                                             //  ------------  RE-LOAD-DIR --------- ?
+        _re_loadDir .tooltip(("Directory reload: Reload a tree of groups of sequences from a directory,\npossibly using new filters."))
                     . events().click([this]()  {  ReloadDir (_tree.selected());    });
+
+                                                                             //  ------------  SCAN-DIR ---------
         _scanDir    .tooltip(("Directory scan: Reproduce the structure of directory..."))
                     .events().click([this]()
                         {
@@ -265,17 +272,19 @@ void SeqExpl::MakeResponive()
                             auto path=fb();
                             if (path.empty()) return;
 
-                            MSecIt newms = _Pr._cp.CopyStructFromDir(**ms, path[0].u8string()   );
+                            MSecIt newms = _Pr._cp.CopyStructFromDir(**ms, path[0].string()   );
                             _tree.auto_draw(false);
                             populate(  appendNewNode  (tn, newms) );
                             tn.expand(true);
                             _tree.auto_draw(true);
                         });
+
+                                                                                //  ------------  PASTE ---------
         _paste      .tooltip(("Paste sequences"))
                     .events().click([this]()
         {
             Node    tn = _tree.selected();
-            MSecIt pms = tn.value<MSecIt>();
+            CMultSec *pms = tn.value<MSecIt>()->get();
 
             for (MSecIt ms : _dragMSec)
                 pms->MoveMSec(ms);     /// \todo use MoveMSec   ?????!!!!!!
@@ -298,7 +307,7 @@ void SeqExpl::MakeResponive()
             _list.auto_draw(true);
         });
 
-        _cut        .tooltip(("Cut a group of sequences"))      //  ------------  CUT --------------
+        _cut        .tooltip(("Cut a group of sequences"))                    //  ------------  CUT Gr--------------
                     .events().click([this]()
         {
             Node tn= _tree.selected();
@@ -315,8 +324,7 @@ void SeqExpl::MakeResponive()
             assert(ms);
             assert(pms);
 
-            _Pr._cp._pSeqNoUsed->MoveMSec(ms);
-            _dragMSec.push_back((*ms)->get());
+            _dragMSec.push_back(_Pr._cp._pSeqNoUsed->MoveMSec(ms));
             auto own = tn->owner();
 
             _tree.auto_draw(false);
@@ -330,7 +338,7 @@ void SeqExpl::MakeResponive()
             _list.auto_draw(true);
         });
 
-        _del        .tooltip(("Delete a group of sequences "))      //  ------------  DEL --------------
+        _del        .tooltip(("Delete a group of sequences "))               //  ------------  DEL --------------
                     .events().click([this]()
         {
             auto tn= _tree.selected();
@@ -361,27 +369,26 @@ void SeqExpl::MakeResponive()
             _list.auto_draw(true);
         });
 
-        _cutSec     .tooltip(("Cut selected sequences from list"))
+        _cutSec     .tooltip(("Cut selected sequences from list"))            //  ------------  CUT sec --------------
                     .events().click([this]()
         {
             auto sel =    _list.selected() ; 
             for (auto i : sel)
             {
-                auto s=_list.at(i ).value<CSec*>();
-                _Pr._cp._pSeqNoUsed->AddSec( s );
-                _dragSec.push_back(s);
+                SecIt s=_list.at(i ).value<SecIt>();
+                _dragSec.push_back(_Pr._cp._pSeqNoUsed->MoveSec(s));
             }
             RefreshList();
         });
 
-        _delSec     .tooltip(("Delete selected sequences from list"))
+        _delSec     .tooltip(("Delete selected sequences from list"))          //  ------------  DEL sec --------------
                     .events().click([this]()
         {
             auto sel =    _list.selected() ; 
             for (auto i : sel)
             {
-                auto s=_list.at(i ).value<CSec*>();
-                _Pr._cp._pSeqNoUsed->AddSec( s );
+                SecIt s=_list.at(i ).value<SecIt>();
+                _Pr._cp._pSeqNoUsed->MoveSec(s);
             }
             RefreshList();
         });
@@ -442,7 +449,7 @@ void SeqExpl::ShowFindedProbes_in_mPCR(bool show_/*=true*/)
 
 void SeqExpl::RefreshProbes_mPCR(bool show_/*=true*/)
 {
-    auto probNode = _tree.find(_Pr._mPCR._probesMS->_name);
+    Node probNode = _tree.find(_Pr._mPCR._probesMS->_name);
     Refresh(probNode).expand(true).select(true);
     if (show_) 
         _Pr.ShowExpl();
@@ -531,10 +538,12 @@ void SeqExpl::InitTree()
 
     }
 
-List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
+nana::listbox::oresolver& operator<<(nana::listbox::oresolver & ores, CMultSec::SecIt const sec_it )
 {
     static const long    blen{ 50 }, slen{ 20000 };
     char val[blen];
+
+    CSec *sec = sec_it->get();
 
     snprintf(val,blen,     ("%*d")  , 6,           sec->Len()       );
 
@@ -559,7 +568,7 @@ List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
     nana::color tc{static_cast<nana::color_rgb>(0xFFFFFFFF)} , 
                 bc = nana::color(nana::colors::blue).blend( nana::colors::red, fade_rate); 
 
-    ores << List::cell{ temperature_to_string(t), {bc , tc} };                             //case 2: Tm 
+    ores << nana::listbox::cell{ temperature_to_string(t), {bc , tc} };                             //case 2: Tm
 
     snprintf(val,blen,     ("%*d")  , 5,           sec->Degeneracy());
 
@@ -567,11 +576,11 @@ List::oresolver& operator<<(List::oresolver & ores, CSec * const sec )
     std::string desc = sec->Description();
     if (nana::review_utf8(desc))
         sec->Description(desc);
+
     ores <<  val                                                     // case 3: deg    
          <<  desc   ;                                                // case 4: descr  
 
-    
-         if( sec->_aln_fragment && sec->_aln_fragment->aln.lenght())
+    if( sec->_aln_fragment && sec->_aln_fragment->aln.lenght())
     {
         snprintf(val,blen,     ("%*d")  , 6,           sec->_aln_fragment ->aln.Min()       );
         ores <<  val                       ;                                                    // case 5: beg in aln   
