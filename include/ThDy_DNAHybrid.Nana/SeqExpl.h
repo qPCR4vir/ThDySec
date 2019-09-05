@@ -129,23 +129,24 @@ class SeqExpl : public CompoWidget
     void populate_list(CMultSec &ms)
     {
         for (SecIt CurSec = ms.SecL().begin(); CurSec != ms.SecL().end(); CurSec++)
-		  if ( _showFiltered || ! (*CurSec)->Filtered() )
+		  if ( _showFiltered || ! (**CurSec).Filtered() )
               AddSecToList(CurSec);
     }
 
     List::item_proxy AddSecToList     (SecIt s)
     {
-        return _list.at(0).append(s, true)
-                          .check  ( (*s)->Selected() )
+        return _list.at(0).append(s)
+                          .value(s)
+                          .check  ( (**s).Selected() )
                           .fgcolor( static_cast<nana::color_rgb>(
-                                              ((*s)->Filtered() ? 0xFF00FF   ///\todo: use coding
+                                              ((**s).Filtered() ? 0xFF00FF   ///\todo: use coding
                                                              :   0x0   )  ));//nana::color::gray_border );
     }
 
     Node AddRoot(MSecIt ms)
     {
-        std::string name = (*ms)->_name;
-        return _tree.insert(name, name).value(ms).check((*ms)->Selected());
+        std::string name = (**ms)._name;
+        return _tree.insert(name, name).value(ms).check((**ms).Selected());
     }
     bool isRoot(const Node &node)
     {
@@ -153,8 +154,8 @@ class SeqExpl : public CompoWidget
     }
  static Node appendNewNode(Node node, MSecIt ms) /// Add a new node to the child of node.
     {
-        std::string name = (*ms)->_name;
-        return node->append(name, name, ms).check((*ms)->Selected());
+        std::string name = (**ms)._name;
+        return node.append(name, name).value(ms).check((**ms).Selected());
     }
 
     Node populate     ( Node node)  ///< create & add to the child of node a new node nuevo for each MSec in ms.
