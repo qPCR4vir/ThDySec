@@ -300,7 +300,7 @@ void FindSondenPage::Run_Design(bool design)
 	try{                                   
 			_Pr._SdDes.probes=  _Pr._mPCR._probesMS;  /// Use _Pr._SdDes.probes to attach the results
 
-            _Pr.Run(_Pr._SdDes);	                        ///  Why not   _Pr._SdDes.Run ();? \todo make paralel with nana::progres
+            _Pr.Run(_Pr._SdDes);	                  ///  Why not   _Pr._SdDes.Run ();? \todo make paralel with nana::progres
 
                 if (chkBx_showFindedProbes.checked()) 
                 ( dynamic_cast<ThDyNanaForm&>(_Pr)).mExpl_.ShowFindedProbes_in_mPCR();

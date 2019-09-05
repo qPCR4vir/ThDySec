@@ -29,10 +29,8 @@ std::shared_ptr<CMultSec>  ThDyCommProgParam::CreateRoot	()
 
 CMultSec::MSecIt ThDyCommProgParam::AddSeqGroup(CMultSec &parentGr, const std::string& Name)
 {
-	if (  parentGr._NNPar )
-        return parentGr.AddMultiSec(std::make_shared<CMultSec>(parentGr._NNPar, Name));
-    else
-        return parentGr.AddMultiSec(std::make_shared<CMultSec>(_pSaltCorrNNp, Name));
+	return parentGr.AddMultiSec(
+		std::make_shared<CMultSec>(parentGr._NNPar ? parentGr._NNPar : _pSaltCorrNNp, Name)   );
 }
 
 

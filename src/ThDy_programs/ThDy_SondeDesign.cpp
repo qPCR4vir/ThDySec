@@ -125,16 +125,16 @@ void write_results(CProgParam_SondeDesign *IPrgPar_SdDes)
 
 }
 
-int SondeDesignProg ( CProgParam_SondeDesign *IPrgPar_SdDes)
+int SondeDesignProg ( CProgParam_SondeDesign &IPrgPar_SdDes)
 {    
     
     time_t t_0 = time(nullptr);
 
-    IPrgPar_SdDes->_cp.Actualice_NNp();  /// \todo review
+    IPrgPar_SdDes._cp.Actualice_NNp();  /// \todo review
 
                                          /// \todo use only the file name not the path (use filesystem)
-    IPrgPar_SdDes->probes = IPrgPar_SdDes->_cp.AddSeqGroup(*IPrgPar_SdDes->probes,
-                                                           IPrgPar_SdDes->_cp._OutputFile.get())->get();
+    IPrgPar_SdDes.probes = *IPrgPar_SdDes._cp.AddSeqGroup(*IPrgPar_SdDes.probes,
+                                                           IPrgPar_SdDes._cp._OutputFile.get()   );
 
 
     /// \debug   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////

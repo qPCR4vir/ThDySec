@@ -265,9 +265,9 @@ CMultSec::MSecIt AddPrimerGroup(CMultSec &parentGr, const std::string& Name)
                                     bool recursive = false,
                                     bool onlyStructure = false);
 
-    CMultSec::pMSec CopyStructFromDir(CMultSec *parentGr, const std::string& FileName)
+    CMultSec::pMSec CopyStructFromDir(CMultSec &parentGr, const std::string& FileName)
     {
-        return *AddSeqFromFile(*parentGr, FileName, true, true);
+        return *AddSeqFromFile(parentGr, FileName, true, true);
     }
     void      LoadSequences ()
     {
@@ -326,7 +326,7 @@ class CEspThDyProgParam : public CEspProg
 
 class CProgParam_microArray : public CEspThDyProgParam
 {public:	
-    CMultSec*   _probesMS      { _cp.AddPrimerGroup(*_cp._pSeqTree, "Probes for Virtual uArr")->get()};
+    CMultSec::pMSec _probesMS{*_cp.AddPrimerGroup(*_cp._pSeqTree, "Probes for Virtual uArr")};
     CParamString	            _InputSondeFile{ this, "Input file for probes", "iSonde_uAr", "" };
     CParamBool       _PrRecurDir    {this, "Recursively add all probe seq-files from all dir", "ProbRecDir", false} ;
     CParamBool       _PrDirStrOnly  {this, "Reproduce only the dir struct in probe"          , "ProbDirStr", true } ;
@@ -346,11 +346,12 @@ class CProgParam_microArray : public CEspThDyProgParam
     void      LoadSequences ()
     {
         if (!_InputSondeFile.get().empty())
-            _cp.AddSeqFromFile(*_probesMS , _InputSondeFile.get(), _PrRecurDir   .get() , _PrDirStrOnly .get() );
+            _cp.AddSeqFromFile(*_probesMS, _InputSondeFile.get(), _PrRecurDir   .get() , _PrDirStrOnly .get() );
     }
     void CopyStructFromDir ()
     {
-        if (!_InputSondeFile.get().empty())   _cp.CopyStructFromDir(_probesMS      , _InputSondeFile.get());
+        if (!_InputSondeFile.get().empty())   
+			_cp.CopyStructFromDir(*_probesMS, _InputSondeFile.get());
     }
     CMultSec *AdduArrFromFile(const std::string& FileName)
 	{
@@ -417,7 +418,7 @@ class CProgParam_MultiplexPCR : public CProgParam_microArray
 };
 
 class CProgParam_SondeDesign ;
-int SondeDesignProg  ( CProgParam_SondeDesign  *IPrgPar_SdDes)  ;
+int SondeDesignProg  ( CProgParam_SondeDesign  &IPrgPar_SdDes)  ;
 
 class CProgParam_SondeDesign : public CEspThDyProgParam			//  .------------------------	CProgParam_SondeDesign	----------------
 {public:
@@ -474,10 +475,10 @@ class CProgParam_SondeDesign : public CEspThDyProgParam			//  .-----------------
 
 	int		Run		(){	
                         //Check_NNp_Targets (/*IPrgPar_SdDes->*/_cp);
-                        return  SondeDesignProg( this )  ;
+                        return  SondeDesignProg( *this )  ;
                       }
 	/// results
-	CMultSec *probes{};
+	CMultSec::pMSec probes;
 
 	struct targets_comp
 	{
@@ -498,7 +499,6 @@ class CProgParam_SondeDesign : public CEspThDyProgParam			//  .-----------------
 
 	std::vector<targets_comp> targets_comparitions;
 };
-
 
 
 class CProgParam_TmCalc ;
