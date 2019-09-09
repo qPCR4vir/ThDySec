@@ -521,7 +521,7 @@ void SeqExpl::InitTree()
         _list.auto_draw(false);
         _tree.auto_draw(false);
 
-        auto ms = _Pr._cp._pSeqTree->MSecL();
+        auto& ms = _Pr._cp._pSeqTree->MSecL();
         for ( MSecIt CurMSec = ms.begin(); CurMSec != ms.end(); CurMSec++)
             populate( AddRoot(CurMSec)) ;
 

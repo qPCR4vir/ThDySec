@@ -143,7 +143,7 @@ class SeqExpl : public CompoWidget
                                                              :   0x0   )  ));//nana::color::gray_border );
     }
 
-    Node AddRoot(MSecIt ms)
+    Node AddRoot(MSecIt const ms)
     {
         std::string name = (**ms)._name;
         return _tree.insert(name, name).value(ms).check((**ms).Selected());
@@ -152,7 +152,7 @@ class SeqExpl : public CompoWidget
     {
         return node.level() == 1;
     }
- static Node appendNewNode(Node node, MSecIt ms) /// Add a new node to the child of node.
+ static Node appendNewNode(Node node, MSecIt const ms) /// Add a new node to the child of node.
     {
         std::string name = (**ms)._name;
         return node.append(name, name).value(ms).check((**ms).Selected());
@@ -163,7 +163,7 @@ class SeqExpl : public CompoWidget
         while(node.size()) 
             _tree.erase(node.child());
 
-        auto ms = (*node.value<MSecIt>())->MSecL(); //  msec(node);
+        auto &ms = (*node.value<MSecIt>())->MSecL(); //  msec(node);
 		for (MSecIt CurMSec = ms.begin();CurMSec != ms.end(); CurMSec++)
 			populate( appendNewNode(node, CurMSec)) ;
         return node;
