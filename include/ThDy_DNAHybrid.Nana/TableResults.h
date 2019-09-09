@@ -202,10 +202,10 @@ class TableHybRes  : public nana::form, public EditableForm
 
         _list.auto_draw(false);
                 
-        _list.append_header(("Seq")  , 120);
+        _list.append_header(("Seq")  , 120);                       ///      fix and fit
         for (index col = 1; col <= _table->totalCol(); ++col)
         {    
-            _list.append_header(   _table->TitColumn(col-1)   , 100);
+            _list.append_header(   _table->TitColumn(col-1)   , 0);
             _list.set_sort_compare(col,[col,this](const std::string&, nana::any* row1_, const std::string&, nana::any*row2_, bool reverse)
             {
                  return comp(col,row1_,row2_,reverse);
