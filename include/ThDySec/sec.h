@@ -89,7 +89,7 @@ class CSec : public CSecBasInfo
     void         CorrectSaltOwczarzy    () ;
     std::shared_ptr<CMultSec> CreateNonDegSet    () ;       ///< crea todo el set si no existia, solo si existen bases deg: _NDB>0
     std::shared_ptr<CMultSec> ForceNonDegSet     ();        ///< lo crea siempre, incluso para =1??
-	std::shared_ptr<CSec> GenerateNonDegVariant  (long pos, Base ndb) ; ///< recursiva
+	std::shared_ptr<CSec> GenerateNonDegVariant  (CSec &s, long pos, Base ndb) ; ///< recursiva
 	std::shared_ptr<CSec> CopyFirstBases         (long pos) const  ;    ///< copia parcialmente hasta la pos
     void         CorrectSalt            () { if ( _NNpar->UseOwczarzy () ) CorrectSaltOwczarzy();};
 
