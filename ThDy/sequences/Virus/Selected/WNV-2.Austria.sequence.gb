@@ -1,0 +1,63 @@
+LOCUS       HM015884                 981 bp    RNA     linear   VRL 25-JUL-2016
+DEFINITION  West Nile virus strain goshawk Austria 361/10(2009) NS5 gene,
+            partial cds.
+ACCESSION   HM015884
+VERSION     HM015884.1
+KEYWORDS    .
+SOURCE      West Nile virus (WNV)
+  ORGANISM  West Nile virus
+            Viruses; ssRNA viruses; ssRNA positive-strand viruses, no DNA
+            stage; Flaviviridae; Flavivirus; Japanese encephalitis virus group.
+REFERENCE   1  (bases 1 to 981)
+  AUTHORS   Wodak,E., Richter,S., Bago,Z., Revilla-Fernandez,S.,
+            Weissenbock,H., Nowotny,N. and Winter,P.
+  TITLE     Detection and molecular analysis of West Nile virus infections in
+            birds of prey in the eastern part of Austria in 2008 and 2009
+  JOURNAL   Vet. Microbiol. 149 (3-4), 358-366 (2011)
+   PUBMED   21276665
+REFERENCE   2  (bases 1 to 981)
+  AUTHORS   Revilla-Fernandez,S., Richter,S., Wodak,E., Bago,Z. and Winter,P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-MAR-2010) Institute for Veterinary Disease Control
+            Moedling, Austrian Agency for Health and Food Safety, Robert Koch
+            Gasse 17, Moedling 2340, Austria
+FEATURES             Location/Qualifiers
+     source          1..981
+                     /organism="West Nile virus"
+                     /mol_type="genomic RNA"
+                     /strain="goshawk Austria 361/10(2009)"
+                     /host="goshawk"
+                     /db_xref="taxon:11082"
+                     /country="Austria"
+                     /collection_date="2009"
+                     /note="lineage 2"
+     CDS             <1..>981
+                     /codon_start=3
+                     /product="NS5"
+                     /protein_id="ADK36684.1"
+                     /translation="SRAIWFMWLGARFLEFEALGFLNEDHWLGRKNSGGGVEGLGLQK
+                     LGYILKEVGTKPGGKIYADDTAGWDTRITKADLENEAKVLELLDGEHRRLARSIIELT
+                     YRHKVVKVMRPAADGKTVMDVISREDQRGSGQVVTYALNTFTNLAVQLVRMMEGEGVI
+                     GPDDVEKLGKGKGPKVRTWLFENGEERLSRMAVSGDDCVVKPLDDRFATSLHFLNAMS
+                     KVRKDIQEWKPSTGWYDWQQVPFCSNHFTELIMKDGRTLVVPCRGQDELIGRARISPG
+                     AGWNVRDTACLAKSYAQMWLLLYFHRRDLRLMANAICSAVPVNWVPTGRT"
+ORIGIN      
+        1 gcagcagagc catttggttc atgtggctag gggcccgctt cctggagttt gaagctctcg
+       61 gattcctcaa tgaagaccac tggctgggta ggaagaactc aggaggagga gttgaaggct
+      121 taggactgca gaagcttggg tacatcttga aggaagtcgg aacaaagcct ggaggaaaga
+      181 tctacgccga tgataccgca ggctgggaca cacgcatcac caaagctgac ctcgagaacg
+      241 aagcgaaggt tcttgaactg ctggacggag aacaccgacg cctagcgcgg tccatcattg
+      301 agctcacata ccgacacaaa gtcgtgaaag tgatgaggcc agcggccgac gggaaaactg
+      361 tgatggatgt catctccaga gaggatcaga gaggaagcgg gcaggtagtg acttacgccc
+      421 tgaacacctt cactaatcta gcagttcagc tggtcagaat gatggagggg gagggggtca
+      481 ttggacctga cgatgttgaa aaactgggaa aaggaaaagg ccctaaggtc agaacctggc
+      541 tgtttgagaa tggcgaggag cgtctcagtc gcatggccgt cagcggtgat gactgcgtgg
+      601 tgaaaccttt ggacgaccgc ttcgccacat cactacactt cctaaatgcc atgtcaaagg
+      661 tccgcaaaga catccaggaa tggaaaccct cgacagggtg gtatgactgg cagcaggtcc
+      721 cattctgttc aaaccatttc acggaactga tcatgaagga cggcaggacg ttggtggtcc
+      781 cgtgtcgtgg acaagacgag ttgattggac gggccagaat ctctccaggg gctggatgga
+      841 atgtgcgcga caccgcctgc ctggcgaagt catacgcgca gatgtggctg ttgctttatt
+      901 ttcaccgtag agacctgaga ttgatggcta acgccatctg ttccgctgtg cctgtcaact
+      961 gggttcccac agggcgtacc a
+//
+

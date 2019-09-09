@@ -1,0 +1,84 @@
+LOCUS       NC_005302               1672 bp ss-RNA     linear   VRL 13-AUG-2018
+DEFINITION  Crimean-Congo hemorrhagic fever virus segment S, complete sequence.
+ACCESSION   NC_005302
+VERSION     NC_005302.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Crimean-Congo hemorrhagic fever orthonairovirus
+  ORGANISM  Crimean-Congo hemorrhagic fever orthonairovirus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1672)
+  AUTHORS   Lofts,R., Hodgson,L. and Smith,J.F.
+  TITLE     Crimean-Congo hemorrhagic fever virus S segment
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1672)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (12-AUG-2004) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1672)
+  AUTHORS   Lofts,R., Hodgson,L. and Smith,J.F.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-FEB-1997) Virology Division, USAMRIID, Bldg. 1425,
+            Fort Detrick, Frederick, MD 21701, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence was derived from U88410.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1672
+                     /organism="Crimean-Congo hemorrhagic fever
+                     orthonairovirus"
+                     /mol_type="genomic RNA"
+                     /strain="10200"
+                     /db_xref="taxon:1980519"
+                     /segment="S"
+     gene            56..1504
+                     /locus_tag="CCFHVsSgp1"
+                     /db_xref="GeneID:2943076"
+     CDS             56..1504
+                     /locus_tag="CCFHVsSgp1"
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="NP_950237.1"
+                     /db_xref="GeneID:2943076"
+                     /translation="MENKIEVNNKDEMNRWFEEFKKGNGLVDTFTNSYSFCESVPNLD
+                     RFVFQMASATDDAQKDSIYASALVEATKFCAPIYECAWVSSTGIVKKGLEWFEKNAGT
+                     IKSWDESYTELKVDVPKIEQLTGYQQAALKWRKDIGFRVNANTAALSNKVLAEYKVPG
+                     EIVMSVKEMLSDMIRRRNLILNRGGDENPRGPVSHEHVDWCREFVKGKYIMAFNPPWG
+                     DINKSGRSGIALVATGLAKLAETEGKGIFDEAKKTVEALNGYLDKHKDEVDRASADSM
+                     ITNLLKHIAKAQELYKNSSALRAQSAQIDTAFSSYYWLYKAGVTPETFPTVSQFLFEL
+                     GKQPRGTKKMKKALLSTPMKWGKKLYELFADDSFQQNRIYMHPAVLTAGRISEMGVCF
+                     GTIPVANPDDAAQGSGHTKSILNLRTNTETNNPCAKTIVKLFEVQKTGFNIQDMDIVA
+                     SEHLLHQSLVGKQSPFQNAYNVKGNATSANII"
+ORIGIN      
+        1 tctcaaagaa acacgtgccg cttacgccca cagtgttctc ttgagtgtta gcagaatgga
+       61 aaacaagatc gaggtgaata acaaagatga gatgaacagg tggtttgaag agttcaaaaa
+      121 aggaaatgga cttgtggaca ccttcacaaa ctcctattcc ttttgcgaga gtgttcccaa
+      181 tttggacagg tttgtgtttc agatggccag tgccaccgat gatgcacaga aggactccat
+      241 ctacgcatct gctctggtgg aggcaacaaa gttttgtgca cctatatatg agtgcgcatg
+      301 ggttagctcc actggcattg taaaaaaggg acttgaatgg ttcgagaaaa atgcaggaac
+      361 cattaagtcc tgggatgaaa gttatactga gctaaaggtc gacgtcccga aaatagagca
+      421 gcttaccggt taccaacaag ctgccttgaa gtggagaaaa gacataggtt tccgtgtcaa
+      481 tgccaacaca gcagctctga gcaacaaagt cctcgcagaa tacaaagtcc ctggtgagat
+      541 tgtgatgtct gtcaaagaga tgctgtcaga catgattagg agaaggaacc tgattctaaa
+      601 caggggtggt gatgagaacc cacgtggccc agtgagccat gagcatgtag actggtgcag
+      661 ggagtttgtc aaaggcaaat acatcatggc cttcaaccca ccatgggggg acatcaacaa
+      721 gtcaggccgt tcaggaatag cacttgttgc aacaggcctt gctaagcttg cagagactga
+      781 aggaaaggga atatttgatg aagccaaaaa gactgtggag gccctcaacg ggtatctgga
+      841 caagcataag gacgaagttg atagagcaag cgccgacagc atgataacaa accttcttaa
+      901 gcatattgcc aaggcacagg agctctataa aaattcatct gcacttcgtg cacaaagcgc
+      961 acagattgac actgctttca gctcatacta ttggctttac aaggctggcg tgactcctga
+     1021 aaccttcccg acggtgtcac agttcctctt tgagctaggg aaacagccaa gaggtaccaa
+     1081 gaaaatgaag aaggctcttc tgagcacccc aatgaagtgg gggaagaagc tttatgagct
+     1141 ctttgccgat gattctttcc agcagaacag gatttacatg catcctgccg tgcttacagc
+     1201 tggtagaatc agtgaaatgg gagtctgctt tgggacaatc cctgtggcca atcctgatga
+     1261 tgctgcccaa ggatctggac acactaagtc tattctcaac ctccgtacca acactgagac
+     1321 caataatccg tgtgccaaaa ccatcgtcaa gctatttgaa gttcaaaaaa cagggttcaa
+     1381 cattcaggac atggacatag tggcctctga gcacttgcta caccaatccc ttgttggcaa
+     1441 gcaatcccca ttccagaacg cctacaacgt caagggcaat gccaccagtg ctaacatcat
+     1501 ttaaaataca aactgctctg tactcaactt ccttccttct gaaccgccat ccataattgc
+     1561 aatacttaat catgcttttt tacttgctta tgtaacctta ttttattaac ctttctctat
+     1621 tttctcttgt tttaaacact taaagggctg tgcggcaacg gtatctttga ga
+//
+
