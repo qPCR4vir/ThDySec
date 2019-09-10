@@ -454,12 +454,12 @@ void SeqExpl::RefreshProbes_mPCR(bool show_/*=true*/)
 void SeqExpl::SetDefLayout()
 {
     _DefLayout =
-        "vertical                                                 \n\t"
-        "          <weight=23 <toolbar weight=680 margin=2 ><>>    \n\t"
-        "          <      <Tree  > |75% <List >   >                \n\t"
-
-        "          <weight=21 <weight=5> <weight=80 tflab> <min=640 max=1000  TargetsOptions   >  <weight=5>>  \n\t"
-        "          <weight=20 <statusbar margin=1  min=700 > <Firma max=180> <weight=3 > >   \n\t"
+            "vertical                                                 	\n\t"
+            "	          <height=23 <toolbar width=680 margin=2 ><>>    	\n\t"
+            "	          <      <Tree  > |75% <List >   >                	\n\t"
+            "	          <height=22 margin=[1,5,1,5] <width=80 tflab> <min=640 max=1000  TargetsOptions   > >  	\n\t"
+            "	          <height=22 <statusbar margin=2  min=700 > <Firma max=180> <width=3 > >   	\n\t"
+            "		\n\t"
         ;
 
     numUpDwMaxTgId.ResetLayout(60, 40, 30);
