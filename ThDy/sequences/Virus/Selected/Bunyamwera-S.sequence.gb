@@ -1,0 +1,85 @@
+LOCUS       NC_001927                961 bp    cRNA    linear   VRL 13-AUG-2018
+DEFINITION  Bunyamwera virus segment S, complete sequence.
+ACCESSION   NC_001927
+VERSION     NC_001927.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Bunyamwera virus
+  ORGANISM  Bunyamwera virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Peribunyaviridae; Orthobunyavirus.
+REFERENCE   1  (bases 1 to 961)
+  AUTHORS   Elliott,R.M.
+  TITLE     Nucleotide sequence analysis of the small (S) RNA segment of
+            Bunyamwera virus, the prototype of the family Bunyaviridae
+  JOURNAL   J. Gen. Virol. 70 (PT 5), 1281-1285 (1989)
+   PUBMED   2732714
+REFERENCE   2  (bases 1 to 961)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-AUG-2000) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence was derived from D00353.
+            Submitted in computer readable form by R.M. Elliott on 18-Jan-1989.
+            The virus contains the negative sense strand; the positive strand
+            is shown below.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..961
+                     /organism="Bunyamwera virus"
+                     /mol_type="viral cRNA"
+                     /db_xref="taxon:35304"
+                     /segment="S"
+                     /note="clones pBU[NS14,N3/59,N308, N309,N93];
+                     small RNA segment"
+     gene            86..787
+                     /locus_tag="BUNVsSgp1"
+                     /db_xref="GeneID:2648217"
+     CDS             86..787
+                     /locus_tag="BUNVsSgp1"
+                     /note="nucleocapsid protein"
+                     /codon_start=1
+                     /product="N protein"
+                     /protein_id="NP_047213.1"
+                     /db_xref="GeneID:2648217"
+                     /translation="MIELEFHDVAANTSSTFDPEVAYANFKRVHTTGLSYDHIRIFYI
+                     KGREIKTSLAKRSEWEVTLNLGGWKITVYNTNFPGNRNNPVPDDGLTLHRLSGFLARY
+                     LLEKMLKVSEPEKLIIKSKIINPLAEKNGITWNDGEEVYLSFFPGSEMFLGTFRFYPL
+                     AIGIYKVQRKEMEPKYLEKTMRQRYMGLEAATWTVSKLTEVQSALTVVSSLGWKKTNV
+                     SAAARDFLAKFGINM"
+     gene            105..410
+                     /locus_tag="BUNVsSgp2"
+                     /db_xref="GeneID:2648218"
+     CDS             105..410
+                     /locus_tag="BUNVsSgp2"
+                     /exception="alternative start codon"
+                     /note="non-structural protein; NSs; overlapping ORF;
+                     overlaps the N protein ORF; expressed from an internal +1
+                     reading frame within the N ORF (PMID: 2732714)"
+                     /codon_start=1
+                     /product="NSs protein"
+                     /protein_id="NP_047214.1"
+                     /db_xref="GeneID:2648218"
+                     /translation="MMSLLTPAVLLTQRSHTLTLSVSTPLGLVMTTYESSTLKDARLK
+                     LVSQKEVNGKLHLTLGAGRLLYIIRIFLATGTTQFLTMVLPSTASVDSLPGTYLRRC"
+ORIGIN      
+        1 agtagtgtac tccacactac aaacttgcta ttgttgaaaa tcgctgtgct attaaatcca
+       61 acagaaggtc attaaaggct ctttaatgat tgagttggaa tttcatgatg tcgctgctaa
+      121 caccagcagt acttttgacc cagaggtcgc atacgctaac tttaagcgtg tccacaccac
+      181 tgggcttagt tatgaccaca tacgaatctt ctacattaaa ggacgcgaga ttaaaactag
+      241 tctcgcaaaa agaagtgaat gggaagttac acttaacctt gggggctgga agattactgt
+      301 atataatacg aattttcctg gcaaccggaa caacccagtt cctgacgatg gtcttaccct
+      361 ccaccgcctc agtggattcc ttgccaggta cctacttgag aagatgctga aagtcagtga
+      421 accagagaaa ttgattatta aatcaaaaat aatcaaccct ttggctgaaa agaatgggat
+      481 cacttggaat gatggagagg aagtttatct ctctttcttc ccaggatcag agatgttctt
+      541 aggaactttc agattctacc ccttagcaat cgggatctac aaagttcagc gcaaggaaat
+      601 ggaaccaaaa taccttgaga aaacaatgcg gcagaggtac atgggactag aagcagcaac
+      661 ttggactgtt agtaaattga cagaagttca gtctgcactg acagttgtct ctagcttagg
+      721 ttggaagaaa accaatgtta gtgcagctgc cagggacttc cttgctaaat tcggaatcaa
+      781 catgtaagca gggatgcatt tttaatcggg ctaaagtcat ctgttttaat ttggctaaaa
+      841 gggttgtttc aacccacaaa ataacagctg cttgggtggg tggttgggga cagaaagaca
+      901 gcgggctaaa tcaacattat attgttaatg gtattttaag ttttaggtgg agcacactac
+      961 t
+//
+

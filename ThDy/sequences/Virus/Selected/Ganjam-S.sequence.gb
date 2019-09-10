@@ -1,0 +1,76 @@
+LOCUS       AF504294                1590 bp    mRNA    linear   VRL 30-OCT-2008
+DEFINITION  Nairobi sheep disease virus strain Ganjam G619 segment S
+            nucleocapsid mRNA, complete cds.
+ACCESSION   AF504294
+VERSION     AF504294.1
+KEYWORDS    .
+SOURCE      Nairobi sheep disease virus (Ganjam virus)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1590)
+  AUTHORS   Marczinke,B.I. and Nichol,S.T.
+  TITLE     Nairobi sheep disease virus, an important tick-borne pathogen of
+            sheep and goats in Africa, is also present in Asia
+  JOURNAL   Virology 303 (1), 146-151 (2002)
+   PUBMED   12482666
+REFERENCE   2  (bases 1 to 1590)
+  AUTHORS   Marczinke,B.I. and Nichol,S.T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-APR-2002) Special Pathogens Branch, CDC, 1600 Clifton
+            Rd. NE., Atlanta, GA 30333, USA
+FEATURES             Location/Qualifiers
+     source          1..1590
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="mRNA"
+                     /strain="Ganjam G619"
+                     /db_xref="taxon:194540"
+                     /segment="S"
+                     /country="India"
+                     /note="Asian variant of Nairobi sheep disease virus;
+                     antigenomic sense S segment sequence;
+                     synonym: Ganjam virus"
+     CDS             52..1500
+                     /note="encapsidation of viral RNAs"
+                     /codon_start=1
+                     /product="nucleocapsid"
+                     /protein_id="AAM33324.1"
+                     /translation="MQNQIVADNKDAILAWHKTYSEKHKLKSVLTNSASFCETIPDLS
+                     GYEVSMRLVSSESEKDSVYASALVAATKFCAPILECAWTSCTGMIQRGLDWFDNNGEM
+                     VKIWDADYGKLRTEVPSPEQLLGYQRAALKWRKDTKYGINKNTAALAAAIATEYRVPG
+                     SIVVNVKDMLSDMIRRRNKILNRDGSEDVPKRGPVSKEHIDWARDLAQGKFLVVFNPP
+                     WGDINKAGKSGIALAATGMAKLIELDGPKVAEDLKESLKSLVAWINAHKDEVENGKEV
+                     VDGLTKHLQKALELAKQSSAMRAQGAQIDTVFSSYYWLWKAGVTAEMFPTVSQFLFEL
+                     GKVPRGNKKMKKALSSMPLKWGKKLLALFADDSFTANRIYMHPGVLTAGRMSELGVCF
+                     GAIPVANPDDAAEGSGHIKNILNYKTDTQAGNPCAQNIVALFNIQKAGFDIESMDIVA
+                     SEHLLHQSLVGKRSPFQNAYNIRGNATSIQII"
+ORIGIN      
+        1 tctcaaagac acacgtgccg ctttcgcccg aattgtcttt gaactttgac catgcagaac
+       61 cagattgtcg cagacaacaa ggatgccatc cttgcatggc acaaaaccta cagcgagaag
+      121 cacaaactta agtctgtttt gactaattca gcttctttct gtgaaaccat acctgatttg
+      181 tcaggatatg aggttagcat gaggcttgtt tcatctgaaa gtgagaaaga ttcagtatat
+      241 gcttctgcct tggttgctgc aactaagttc tgtgctccta tcttagagtg cgcctggacc
+      301 agctgcacag ggatgatcca acgtggcctc gactggtttg ataacaacgg agagatggtg
+      361 aagatctggg atgcagatta tgggaaactg agaacggagg tacccagtcc tgaacagtta
+      421 ctaggttacc agagggctgc tctaaagtgg agaaaggaca ccaaatatgg gatcaacaaa
+      481 aacacagcgg cattggctgc tgcaattgca accgagtaca gagtccctgg ttcaattgta
+      541 gtaaacgtca aggacatgct atccgacatg attaggagaa ggaacaaaat cctaaacaga
+      601 gacggcagtg aagacgttcc aaagagggga cctgtcagca aagagcacat tgactgggcc
+      661 agagatcttg cacagggcaa gttccttgtt gttttcaacc caccatgggg tgatatcaac
+      721 aaggcaggga agtcaggaat tgctctagca gcaaccggca tggcaaaatt gatagagctg
+      781 gacggtccca aagttgcaga ggacttgaaa gagtctctga aaagcctcgt ggcgtggatc
+      841 aatgcccaca aggatgaagt ggagaatggc aaagaggttg ttgacggttt gaccaagcac
+      901 ctgcagaaag cccttgaact agccaagcag tcaagtgcca tgagagctca aggagcccag
+      961 attgacactg tttttagcag ctactactgg ctttggaagg caggtgtgac tgcagagatg
+     1021 ttcccgacag tctcacagtt tctctttgag ctaggcaagg tgcccagagg gaacaaaaaa
+     1081 atgaagaaag cactgtcaag catgcctctg aaatggggaa agaaattact tgcactcttt
+     1141 gctgatgata gcttcactgc caatcggatt tacatgcacc ctggagtctt gacagcggga
+     1201 agaatgtcgg agcttggcgt ttgctttggg gcaattccag tggccaatcc tgatgatgca
+     1261 gctgagggtt caggtcatat caagaacata ctgaactaca agactgacac ccaggctggt
+     1321 aacccctgtg cccagaacat cgttgccttg ttcaacattc aaaaagcagg cttcgacatt
+     1381 gagagcatgg acatagttgc ctcagagcat ctgctgcatc agtcacttgt tggaaagagg
+     1441 tccccttttc agaatgccta caacatccga gggaatgcca ccagtatcca aatcatctag
+     1501 ccgaaccgct acctgctgct tgcttctttc tgtttctttt atttctgctt ttattaacaa
+     1561 gggggctgtg cggcaacgat ctctttgaga
+//
+

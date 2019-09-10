@@ -1,0 +1,70 @@
+LOCUS       KJ716848                 975 bp    cRNA    linear   VRL 12-AUG-2014
+DEFINITION  Ngari virus strain Adrar segment S, complete sequence.
+ACCESSION   KJ716848
+VERSION     KJ716848.1
+KEYWORDS    .
+SOURCE      Ngari virus
+  ORGANISM  Ngari virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Peribunyaviridae; Orthobunyavirus.
+REFERENCE   1  (bases 1 to 975)
+  AUTHORS   Eiden,M., Vina-Rodriguez,A., Hoeper,D., El Mamy,B.O., Unger,H.,
+            Doumbia,B. and Groschup,M.H.
+  TITLE     Detection of Ngari virus in small ruminants from a Rift Valley
+            Fever outbreak in Mauritania 2010
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 975)
+  AUTHORS   Eiden,M., Vina-Rodriguez,A., Hoeper,D., El Mamy,B.O., Unger,H.,
+            Doumbia,B. and Groschup,M.H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (16-APR-2014) Friedrich-Loeffler-Institut, Institute for
+            Novel and Emerging Infectious Diseases, Suedufer 10, Greifswald
+            17489, Germany
+COMMENT     GenBank Accession Numbers KJ716848-KJ716850 represent sequences
+            from the 3 segments of Ngari virus strain Adrar.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: Newbler v. 2.6
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..975
+                     /organism="Ngari virus"
+                     /mol_type="viral cRNA"
+                     /strain="Adrar"
+                     /isolation_source="serum"
+                     /host="small ruminant"
+                     /db_xref="taxon:273357"
+                     /segment="S"
+                     /lab_host="VeroE6"
+                     /country="Mauritania"
+                     /collection_date="2010"
+     CDS             92..793
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="AII99849.1"
+                     /translation="MIELEFHDVAANTSSTFDPEVAYANFKRIYTTGLSYDHIRIFYI
+                     KGREIKTSLAKRSEWEVTLNLGGWKITVYNTNFPGNRNNPVPDDGLTLHRLSGFLARY
+                     LLEKMLKVSEPEKLIIKSKIINPLAEKNGITWNDGEEVYLSFFPGSEMFLGTFRFYPL
+                     AIGIYKVQRKEMEPKYLEKTMRQRYMGLEAATWTVSKLTEVQSALTVVSSLGWKKTNV
+                     SAAARDFLAKFGINM"
+ORIGIN      
+        1 ccaaggttaa gtgtactcca cactacaaac ttgctattgt tgaaaatcgc tgtgctatca
+       61 aatctaacag aaggtcatta aaggcttttt aatgattgag ttagaatttc atgatgtcgc
+      121 tgctaacacc agcagtactt ttgacccaga ggtcgcatac gctaacttta agcgtatcta
+      181 caccactggg cttagttatg accacatacg aatcttctac attaaaggac gcgagattaa
+      241 aactagtctc gcaaaaagaa gtgagtggga agttacactt aaccttgggg gctggaagat
+      301 tactgtatat aatacgaatt ttcctggcaa ccggaacaac ccagttcctg acgatggtct
+      361 taccctccac cgcctcagtg gattccttgc caggtaccta cttgagaaaa tgctaaaagt
+      421 cagtgaacca gaaaaattga tcatcaaatc aaaaataatc aatccattgg cagaaaaaaa
+      481 tgggatcact tggaatgatg gggaggaagt ctacctctcc ttttttccag gatcagaaat
+      541 gttcctagga actttcagat tctatccctt ggcaattggg atctacaaag ttcagcgcaa
+      601 ggaaatggaa ccaaaatacc ttgaaaagac aatgcgacag agatatatgg gactagaagc
+      661 agcaacttgg actgtcagta aattgacaga agttcagtct gcactaacag ttgtctccag
+      721 cttgggttgg aagaaaacta atgttagtgc agctgccagg gatttccttg ctaaatttgg
+      781 aatcaatatg taagcaagga agcattttaa atcaggctaa aatcatcagt tttaatttgg
+      841 ctaaaagggt tgtctcaacc cacaaaatag cagctgtttg ggtgggtggt tggggacaga
+      901 aagacagcgg actaaattag cattacatta ttaatggtat tttaagtttt aggtggagca
+      961 cactactagt gattc
+//
+

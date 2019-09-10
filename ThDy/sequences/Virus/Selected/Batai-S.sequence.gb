@@ -1,0 +1,94 @@
+LOCUS       NC_043581                948 bp    RNA     linear   VRL 22-AUG-2019
+DEFINITION  Batai virus strain MS50 segment S, complete sequence.
+ACCESSION   NC_043581
+VERSION     NC_043581.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Batai virus
+  ORGANISM  Batai virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Peribunyaviridae; Orthobunyavirus;
+            Batai orthobunyavirus.
+REFERENCE   1  (bases 1 to 948)
+  AUTHORS   Groseth,A., Matsuno,K., Dahlstrom,E., Anzick,S.L., Porcella,S.F.
+            and Ebihara,H.
+  TITLE     Complete genome sequencing of four geographically diverse strains
+            of batai virus
+  JOURNAL   J. Virol. 86 (24), 13844-13845 (2012)
+   PUBMED   23166251
+REFERENCE   2  (bases 1 to 948)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-AUG-2019) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 948)
+  AUTHORS   Groseth,A., Matsuno,K., Dahlstrom,E., Anzick,S.L., Porcella,S.F.
+            and Ebihara,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-SEP-2012) Laboratory of Virology, Molecular Virology
+            & Host-Pathogen Interactions Unit, NIAID, NIH, 903 S 4th St.,
+            Hamilton, MT 59840, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to JX846604.
+            GenBank Accession Numbers JX846604-JX846606 represent sequences
+            from the 3 segments of Batai virus MS50.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: GS De Novo Assembler v. v2.6
+            Sequencing Technology :: 454; Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..948
+                     /organism="Batai virus"
+                     /mol_type="genomic RNA"
+                     /strain="MS50"
+                     /host="Aedes curtipes"
+                     /db_xref="taxon:80942"
+                     /segment="S"
+                     /country="Malaysia"
+                     /collection_date="1962"
+     gene            71..772
+                     /locus_tag="FLA96_sSgp1"
+                     /db_xref="GeneID:41324367"
+     CDS             71..772
+                     /locus_tag="FLA96_sSgp1"
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="YP_009666907.1"
+                     /db_xref="GeneID:41324367"
+                     /translation="MIELEFNDVAANTSSTFDPEVAYANFKRVHTTGLSYDHVRIFYI
+                     KGREIKTSLSKRSEWEVTLNLGGWKIAVYNTNFPSNRNNPVPDDGLTLHRLSGYLARY
+                     LFEKIVKVSEPEKLLIKSKIINPLAEKNGITWADGEEIYLSFFPGSEMFLGTFKFYPL
+                     AIGIYKVQRKEMEPKYLEKTMRQRYMGLEAGTWTVSKVNEVQAAVNVVSTLGWKKTNV
+                     SAAAREFLAKFGIAM"
+     gene            93..395
+                     /locus_tag="FLA96_sSgp2"
+                     /db_xref="GeneID:41324368"
+     CDS             93..395
+                     /locus_tag="FLA96_sSgp2"
+                     /codon_start=1
+                     /product="non-structural protein NSs"
+                     /protein_id="YP_009666908.1"
+                     /db_xref="GeneID:41324368"
+                     /translation="MSLLTPAVLLTQRSHTLTLSVSTPLGLVMTTYESSTLKEERLKL
+                     VSQKEVNGKLHLTLGAGRLLYIIRIFLATGTTQFLTMVLPSTASVDTLPGTYLRRL"
+ORIGIN      
+        1 agtagtgtac tccacactat aaacttgctt gagagataca aagagaatta tcaaagggtg
+       61 aggcctttaa atgattgagt tagaatttaa cgatgtcgct gctaacacca gcagtacttt
+      121 tgacccagag gtcgcatacg ctaactttaa gcgtgtccac accactgggc ttagttatga
+      181 ccacgtacga atcttctaca ttaaaggaag agagattaaa actagtctct caaaaagaag
+      241 tgaatgggaa gttacactta accttggggg ctggaagatt gctgtatata atacgaattt
+      301 tcctagcaac cggaacaacc cagttcctga cgatggtctt accctccacc gcctcagtgg
+      361 ataccttgcc aggtacctat ttgagaagat tgtgaaagtt agcgaaccag agaaactgct
+      421 aataaaatca aagattataa accccctggc tgagaaaaat gggatcacat gggcagatgg
+      481 tgaggagatt tacctctcat tcttcccagg ctcggagatg ttccttggga ctttcaaatt
+      541 ttaccccttg gcaattggca tatacaaagt ccagaggaag gagatggagc caaaatatct
+      601 agaaaaaaca atgcgccaga gatacatggg gctggaagca gggacatgga cggttagcaa
+      661 ggttaatgaa gtacaggctg cagttaatgt agtctccaca ctaggttgga agaaaacaaa
+      721 tgtcagtgct gctgccagag aattcctggc caaatttggc attgctatgt aattcagttg
+      781 tttccctaat tggctcagtt tttccagtgt taattggcta ttccaaaaga ggttcaaacc
+      841 tcaaaacgta gaacagcata atgggtgggt ggttggggac agatattctt cggattatca
+      901 gaatggttat tttttgaagc tgttaagttt taggtggagc acactact
+//
+

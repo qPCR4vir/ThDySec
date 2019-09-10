@@ -1,0 +1,162 @@
+LOCUS       NC_043579               4448 bp    RNA     linear   VRL 22-AUG-2019
+DEFINITION  Batai virus strain MS50 segment M, complete sequence.
+ACCESSION   NC_043579
+VERSION     NC_043579.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Batai virus
+  ORGANISM  Batai virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Peribunyaviridae; Orthobunyavirus;
+            Batai orthobunyavirus.
+REFERENCE   1  (bases 1 to 4448)
+  AUTHORS   Groseth,A., Matsuno,K., Dahlstrom,E., Anzick,S.L., Porcella,S.F.
+            and Ebihara,H.
+  TITLE     Complete genome sequencing of four geographically diverse strains
+            of batai virus
+  JOURNAL   J. Virol. 86 (24), 13844-13845 (2012)
+   PUBMED   23166251
+REFERENCE   2  (bases 1 to 4448)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-AUG-2019) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 4448)
+  AUTHORS   Groseth,A., Matsuno,K., Dahlstrom,E., Anzick,S.L., Porcella,S.F.
+            and Ebihara,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-SEP-2012) Laboratory of Virology, Molecular Virology
+            & Host-Pathogen Interactions Unit, NIAID, NIH, 903 S 4th St.,
+            Hamilton, MT 59840, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to JX846605.
+            GenBank Accession Numbers JX846604-JX846606 represent sequences
+            from the 3 segments of Batai virus MS50.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: GS De Novo Assembler v. v2.6
+            Sequencing Technology :: 454; Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..4448
+                     /organism="Batai virus"
+                     /mol_type="genomic RNA"
+                     /strain="MS50"
+                     /host="Aedes curtipes"
+                     /db_xref="taxon:80942"
+                     /segment="M"
+                     /country="Malaysia"
+                     /collection_date="1962"
+     gene            44..4348
+                     /locus_tag="FLA96_sMgp1"
+                     /db_xref="GeneID:41324365"
+     CDS             44..4348
+                     /locus_tag="FLA96_sMgp1"
+                     /codon_start=1
+                     /product="glycoprotein precursor"
+                     /protein_id="YP_009666905.1"
+                     /db_xref="GeneID:41324365"
+                     /translation="MKMLTLIIIVSCWVATLQNPLISRCFHGGQLIAEKKSLTSISEF
+                     CIKDDVSMLKSEVIYQKNDTGIYGHSKVFRHWTIADWKYCNPVPTAGGSINVIELDKN
+                     LNLIAKNYVCTRDCTITVDKENAQIVFQTDKLNHFEVTGTTISTGWFKTKASVALDRT
+                     CEHIKVSCGKKTLQFHACFKQHMSCVRFLHRSMLPGSMANSICQNIELIIIITLTLVI
+                     FILMLIATRFYICYLLIPVFMPIAYAYGWAYNRSCKKCSCCGLAYHPFTNCGSYCVCG
+                     ARFETSDRMRLHRESGLCQGFKSLRMARRLCKSKGSSLVISILLATLILSFVTPIEGT
+                     MTNYPTNEKYSLDEIADVLKWKEQESEYKYYAILYASIIGACFTVLFAGTALALNIVL
+                     ELLTKINVIYCEECSMYHSKSNIKYIGDFTNKCGFCTCGLLEDPDGVVVHKVKRSCTY
+                     QYKLTWVKTIMIVLSILFLLQNIIVIVAADSDCWTNEELKPECVGPLIAPADCTEKDK
+                     KTYLTEAAALVKTKKISQVDADNVEILGKTIESAIKAIEKQKTYHRMHLLEAVFLNKH
+                     CDYYKLFEHNSGYSQVKWRMLAKTQHFDICAFAKESKFCKCMAGGACAEDSWDFDTTM
+                     NSTYTSKGDNFKHDMSLFLKIFEAAFPGTSYVYMLNKIKEKKPYQSVTMIDKIKTKYP
+                     NNKMLVAYLEFGKCLMGVGHASTFELQQSQLERLYQPAELSRSVGQLTSLSNAQVGTI
+                     TKECSKYKDISCLSPRFGIPMENMVACGDSPNYKIYKKPIKVYKAHDRVETWCIKDQH
+                     CLVDYTPAEADVVKKLKTMKCWLNDPGTETDAYTTAIKSCRIMDKGVCTVNGQKWSII
+                     KCDSDLLYYTDHIEGEDTGNDIGHYCISVGCKTDRYPINPDIVTDCTWEFKSRKSSYI
+                     GKISMQSLEDYKKALTDKLTHTLETYSFAPTADLPHIKPIYKYITAQGVENSDGIEGA
+                     YITATIPALGGTSIGYSVQSKDGFPLLDLIIYIKAAVIRSTYIHLYDTGPTISINTKH
+                     DEKCTGQCPAEIEHEANWLTFSQERTSRWGCEEFGCLAINTGCVFGSCQDVIRPETKV
+                     YRKSVEEEVVLTVCINYPGNTFCTEINAIEPKITEEVELQFKTVDTKTLPTLLAVTNH
+                     KLFSGQINDLGTFGQMCGNVQKTNSSILGSGTPKFDYTCHGASRKDIIVRKCYNNNYD
+                     SCKLLKEEKQLVFNDDHETITVVNNRHLVGELAIKLILGDIQYKLFTEKLDLQIDAKC
+                     VGCPDCFESYACNFQIVSNIDTVCAINGPCDIFHNRISIRSTQQNYGVKMSCKRTPDQ
+                     NEKFVICGREYSVFFHTVQKNDKIEINTGDQTSYIKEMDTRCKTWLCRVRDEGLSVIF
+                     EPIKAFFGSYFSIAFYIVLFIIIAFLVIYIFMPMFMKLRDILKQNEKLYLQEIKQK"
+ORIGIN      
+        1 agtagtgtac taccgatatt tacaagcctc acaaagttta attatgaaga tgctgactct
+       61 gattattatt gtttcatgct gggttgcaac tttgcaaaac ccactcatct caagatgttt
+      121 ccacggtggt caactaatag cagaaaagaa atcattgaca tcgatatctg aattctgcat
+      181 caaagatgat gtatctatgt taaaatcaga agtgatatac caaaaaaatg atactggaat
+      241 ctatggtcat agcaaagttt tcagacattg gactattgca gattggaaat actgtaaccc
+      301 agtccctaca gcaggaggca gcattaatgt aattgagttg gataaaaact tgaatctgat
+      361 agcaaaaaac tatgtatgca ctagagattg cactattacc gtagacaaag aaaatgcaca
+      421 gattgtgttc cagactgaca aacttaatca ttttgaagtg actggtacaa caataagtac
+      481 ggggtggttc aaaaccaaag catcagtagc actagataga acttgtgaac atatcaaagt
+      541 cagttgcgga aagaaaacac tgcaattcca tgcttgcttc aaacaacaca tgtcatgtgt
+      601 tagattttta cacagaagta tgctaccagg gtctatggca aactctattt gccagaatat
+      661 agagttaatt ataattataa cattgacatt agttatattt atacttatgt tgatagcaac
+      721 tagattttat atatgttatc ttctaatacc agtgtttatg cctattgctt atgcttatgg
+      781 ctgggcttac aatcgtagtt gtaagaaatg tagttgttgt ggcttagcat accacccgtt
+      841 tacaaactgt ggatcttatt gtgtatgtgg agctaggttt gaaacatctg acaggatgag
+      901 gctacatagg gaatcagggc tatgtcaagg ctttaaaagt cttaggatgg cacgaagatt
+      961 atgtaaatca aaagggtctt cccttgttat atctattttg ctagcgacat taatcttatc
+     1021 ttttgtaaca ccaatagaag gtacaatgac aaattaccct accaatgaga aatactctct
+     1081 agatgaaatt gcagatgttc taaaatggaa agaacaagaa agtgaatata aatattatgc
+     1141 catactatat gcttctataa ttggtgcgtg ttttacagta ttatttgcag gcactgcttt
+     1201 agccctcaac atagtgttag agttattgac aaaaataaat gttatatatt gtgaagaatg
+     1261 tagtatgtac cacagcaagt caaatataaa gtatattggt gattttacaa acaaatgtgg
+     1321 gttttgcaca tgtggattac tagaagatcc agatggtgtt gtggtccata aggtgaagag
+     1381 atcatgcaca taccagtaca aactcacttg ggttaaaaca ataatgatag tgttatctat
+     1441 tttattcttg ctacaaaata ttatagttat agttgctgca gatagtgatt gttggactaa
+     1501 tgaagaactc aaaccagaat gtgtagggcc tctaattgca ccagcagatt gtaccgaaaa
+     1561 agataagaag acatacctaa cagaagcagc tgcattggta aaaactaaaa agatatcaca
+     1621 ggtagatgca gataatgttg aaattctagg aaagacgata gagtcagcaa taaaggctat
+     1681 agaaaagcaa aaaacctacc acaggatgca cctcttggaa gcagtttttt taaataaaca
+     1741 ttgcgattat tataaattgt ttgagcataa tagtggttac tcacaagtaa agtggagaat
+     1801 gttagcaaaa acccaacact ttgatatatg tgcttttgca aaagaaagca aattctgcaa
+     1861 atgtatggct ggtggtgctt gcgctgaaga ctcttgggac tttgatacaa ccatgaattc
+     1921 aacatataca tcgaaaggag acaattttaa acatgacatg tctctatttt taaaaatatt
+     1981 tgaggcagca tttccaggta catcgtatgt ctacatgctt aataaaatca aggaaaagaa
+     2041 accttaccaa tcagtaacta tgatagacaa aatcaaaact aaatatccta ataataaaat
+     2101 gctggtagct tacctagagt ttggaaaatg tttgatgggt gtaggacatg catcaacctt
+     2161 tgaacttcaa cagagtcaac tagaaagatt ataccaacca gcagagctga gtagatcggt
+     2221 tggtcaactt acttcattat caaatgcaca agtgggcaca atcacaaaag aatgctctaa
+     2281 gtataaagat ataagttgct taagtccaag gtttggaata cctatggaaa atatggttgc
+     2341 ctgtggggat agtccaaatt ataaaatata taaaaaaccc attaaggttt acaaagcaca
+     2401 tgatagagta gaaacatggt gtattaaaga ccagcattgt ttggtagact acacgccagc
+     2461 agaggcagat gtggtaaaaa aactcaaaac aatgaagtgt tggttaaatg atccgggtac
+     2521 tgaaactgat gcctacacca ctgctattaa aagttgcagg atcatggaca aaggtgtttg
+     2581 tacagttaat gggcaaaaat ggtcaataat aaaatgtgac tctgatttac tttattatac
+     2641 agatcatata gagggagagg atactggaaa tgacattggc cactattgta tatctgttgg
+     2701 ttgcaaaaca gatagatacc caattaatcc agatatagtt actgattgta cttgggagtt
+     2761 taaatcaaga aaatcatctt acataggtaa aatatcaatg caatcattag aagattataa
+     2821 aaaagcactc acagacaaat taacacacac acttgaaaca tacagctttg caccaactgc
+     2881 agacttgccc catataaaac ccatttataa atatattaca gcacaaggtg tcgaaaactc
+     2941 tgatggaata gagggtgctt atataacagc aaccatccct gcactggggg gaactagcat
+     3001 aggatatagt gttcaatcaa aggatggttt ccctctatta gacctgatta tatatataaa
+     3061 agctgcagtt attagaagca catatataca cttatatgat actgggccaa ctattagcat
+     3121 aaataccaaa catgatgaga aatgcactgg ccaatgccca gcagaaatag aacatgaagc
+     3181 taattggttg actttctcac aagagagaac tagcagatgg ggttgtgaag aatttgggtg
+     3241 tttagcaatc aatactggct gtgtctttgg atcatgccaa gacgtgataa ggccagaaac
+     3301 taaagtatac agaaagtcag tagaagaaga agttgttcta actgtctgta taaattatcc
+     3361 tggcaacaca ttctgtacag agataaatgc aatagaaccg aaaataactg aagaggtaga
+     3421 gctccagttt aagactgtag acacaaaaac actaccaact ttactagcag tgacaaatca
+     3481 taaattattt agtggccaaa tcaatgattt aggaacattt ggtcagatgt gtggtaatgt
+     3541 acagaaaact aactctagca tcttaggctc cggcacacct aagtttgatt acacatgcca
+     3601 tggtgctagt agaaaagaca taattgttag aaaatgttac aataataatt atgattcttg
+     3661 taaactgctg aaggaagaga agcagcttgt atttaatgac gaccatgaga ctataactgt
+     3721 tgtaaataac cgacatttgg ttggggaatt agcaataaaa ttaatcttag gagacataca
+     3781 gtacaagctt tttacagaaa aattagacct tcagatagat gcaaaatgtg ttgggtgccc
+     3841 agattgcttt gagagttatg cctgcaattt ccagattgtt tctaatatag ataccgtctg
+     3901 tgctattaat gggccatgtg acatattcca caatagaatt tctattcgat caacgcagca
+     3961 aaattatggt gttaaaatgt cttgtaaaag aacaccagat caaaatgaga aatttgtgat
+     4021 ctgtggaagg gagtacagtg tctttttcca tactgttcaa aagaatgata aaattgaaat
+     4081 aaacactggc gatcagacct cttatataaa ggagatggat actagatgta aaacctggtt
+     4141 atgcagagta agggatgaag gccttagtgt tatatttgag cctattaaag ccttctttgg
+     4201 tagttacttc agtattgctt tttatatagt actattcata attatagcct tcttggtaat
+     4261 ctatatattt atgccaatgt tcatgaagct aagggatata ttaaagcaga atgaaaagct
+     4321 ttatcttcaa gaaatcaaac agaaataatt gtaacaggaa tactatagag gctgttgtac
+     4381 ataggcagat aaaaaacgat gcatagcatc aacataagaa gcagtaaggt tatcggtagc
+     4441 acactact
+//
+

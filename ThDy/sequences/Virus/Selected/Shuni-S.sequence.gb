@@ -1,0 +1,86 @@
+LOCUS       NC_043698                851 bp ss-RNA     linear   VRL 22-AUG-2019
+DEFINITION  Shuni virus strain SAE1809 nucleocapsid and nonstructural protein
+            genes, complete cds.
+ACCESSION   NC_043698
+VERSION     NC_043698.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Shuni orthobunyavirus
+  ORGANISM  Shuni orthobunyavirus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Peribunyaviridae; Orthobunyavirus.
+REFERENCE   1  (bases 1 to 851)
+  AUTHORS   van Eeden,C., Harders,F., Kortekaas,J., Bossers,A. and Venter,M.
+  TITLE     Genomic and phylogenetic characterization of Shuni virus
+  JOURNAL   Arch. Virol. 159 (11), 2883-2892 (2014)
+   PUBMED   24957652
+REFERENCE   2  (bases 1 to 851)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-AUG-2019) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 851)
+  AUTHORS   van Eeden,C. and Venter,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (23-JAN-2013) Medical Virology, University of Pretoria, 5
+            Bophelo road, Pretoria, Gauteng 0002, South Africa
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KC510272.
+            
+            ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..851
+                     /organism="Shuni orthobunyavirus"
+                     /mol_type="genomic RNA"
+                     /strain="SAE1809"
+                     /isolation_source="cell culture isolate"
+                     /db_xref="taxon:159148"
+                     /segment="S"
+                     /country="South Africa"
+                     /collection_date="16-Jan-2009"
+     gene            35..736
+                     /locus_tag="FLB38_sSgp1"
+                     /db_xref="GeneID:41324397"
+     CDS             35..736
+                     /locus_tag="FLB38_sSgp1"
+                     /codon_start=1
+                     /product="nucleocapsid"
+                     /protein_id="YP_009667051.1"
+                     /db_xref="GeneID:41324397"
+                     /translation="MANQFIFQDVPQRNLATFNPEVGYVAFIAKHGAQLNFDTVRVFF
+                     LNQKKAKMVLSKTAQPSVDLTFGGIKFTLVNNHFPQYTANPVPDTALTLHRLSGYLAK
+                     WVADQCKTNQIKLAEAMEKIVMPLAEVKGCTWTEGLTMYLGFAPGAEMFLETFEFYPL
+                     VIDMHRVLKDGMDVNFMRKVLRQRYGTLTAEQWMTQKIDAVRAAFNAVGQLSWAKSGF
+                     SPAARTFLAQFGINI"
+     gene            60..335
+                     /locus_tag="FLB38_sSgp2"
+                     /db_xref="GeneID:41324398"
+     CDS             60..335
+                     /locus_tag="FLB38_sSgp2"
+                     /codon_start=1
+                     /product="nonstructural protein"
+                     /protein_id="YP_009667052.1"
+                     /db_xref="GeneID:41324398"
+                     /translation="MFLNGISLRLTRRSGMWHLLLNMGPNSISIPLESSSSIRRRPRW
+                     YSVRRHNRVLILHLVASNLHWLITIFPNTQQILCQTLPSLSTVSQDI"
+ORIGIN      
+        1 agtagtgtac tccactatag aacaaagctt ttaaatggca aaccagttta ttttccaaga
+       61 tgttcctcaa cggaatctcg ctacgtttaa cccggaggtc gggtatgtgg catttattgc
+      121 taaacatggg gcccaactca atttcgatac cgttagagtc ttcttcctca atcagaagaa
+      181 ggccaagatg gtactcagta agacggcaca accgagtgtt gatcttacat ttggtggcat
+      241 caaatttaca ttggttaata accattttcc ccaatacaca gcaaatcctg tgccagacac
+      301 tgccctcact ctccaccgtc tctcaggata tctagcaaaa tgggttgcag atcaatgcaa
+      361 aacaaatcaa atcaaattgg cagaggccat ggaaaaaata gtcatgccac ttgctgaagt
+      421 aaaaggttgt acctggactg aggggttgac catgtatctg ggattcgcac caggtgctga
+      481 aatgttcctg gaaacattcg aattctatcc tctggtcatt gatatgcaca gagtgctaaa
+      541 agatgggatg gatgtcaact tcatgcgaaa ggtycttcgc caacgctatg ggacattgac
+      601 tgcagaacaa tggatgactc aaaaaataga tgctgtccgt gcagcattca atgctgttgg
+      661 gcagctaagc tgggccaaat caggattctc accagctgcc agaactttcc ttgcccaatt
+      721 cggtataaac atctaaattc tcaaaacaat cccacccctt tcccccagta tggtgttcca
+      781 aaacaccata cgccatttct gcagcattgt tcattcatct ctattaattg ttctatgtgg
+      841 agcacactac t
+//
+

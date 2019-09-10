@@ -1,0 +1,73 @@
+LOCUS       AF434162                1716 bp    RNA     linear   VRL 19-APR-2002
+DEFINITION  Dugbe virus isolate ArD 16095 segment S, complete sequence.
+ACCESSION   AF434162
+VERSION     AF434162.1
+KEYWORDS    .
+SOURCE      Dugbe orthonairovirus
+  ORGANISM  Dugbe orthonairovirus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1716)
+  AUTHORS   Bridgen,A., Dalrymple,D.A. and Elliott,R.M.
+  TITLE     Dugbe nairovirus S segment: correction of published sequence and
+            comparison of five isolates
+  JOURNAL   Virology 294 (2), 364-371 (2002)
+   PUBMED   12009878
+REFERENCE   2  (bases 1 to 1716)
+  AUTHORS   Bridgen,A., Dalrymple,D.A. and Elliott,R.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (16-OCT-2001) Division of Virology, University of
+            Glasgow, Church Street, Glasgow G11 5JR, UK
+FEATURES             Location/Qualifiers
+     source          1..1716
+                     /organism="Dugbe orthonairovirus"
+                     /mol_type="genomic RNA"
+                     /isolate="ArD 16095"
+                     /db_xref="taxon:1980521"
+                     /segment="S"
+                     /note="cRNA sequence"
+     CDS             52..1503
+                     /codon_start=1
+                     /product="nucleocapsid protein"
+                     /protein_id="AAL73397.1"
+                     /translation="MENQIKANNKKEFDEWFKPFSEKLQLRSNLTNSASLCDRVPDLA
+                     LAEMKMALATDDKEKDSIFSNALVEATRFCAPIYECAWTCSTGVVQKSLSWFDKNKDF
+                     IKLWDSKYMDLRKGIPEPEQLVSYQQAAQKWRKDVGYEINQFTRSLTHPVVAEYKVPG
+                     EIAVDVKEMLSDMIRRRNVLLNGDGENAGKKGPISREHVSWGRELAGGKFQVVFNPPW
+                     GDINKCGKSGIPLAATAMVKVAELDGSKKLEDIRQALLDLKKWVEDNKDALEDGKGNE
+                     LVQTMTKHLAQAVELSKKSNALRAQGAQIDTPFSAYYWAWSAGVKPETFFTLSQFLFE
+                     MGQSARGGKKMIKALTSTPLRWGKGLINLFADDDFSGNRLYMHPAVLTPGRMSEMGAC
+                     FGVIPVASPEDAILGSGHSKNILNFKIDTSVQNPCASTIVQLYRIQKSGFDLESLEVV
+                     STEHLLHQSFVGKRCPTQNAYKVRGNATNVNII"
+ORIGIN      
+        1 tctcaaagac aaacgtgccg cagtcgcccg attgtacttt gaagaagcaa gatggagaat
+       61 cagatcaagg caaacaataa aaaagagttt gatgagtggt ttaaaccttt tagtgaaaag
+      121 ctccaattaa ggtcaaacct cacaaactct gcatccctgt gtgatagagt acctgaccta
+      181 gctctagcag aaatgaaaat ggcccttgcc acagatgata aagaaaaaga ctcaatcttt
+      241 tctaatgctc tggtggaggc aacacgtttc tgtgctccaa tctatgagtg tgcttggacc
+      301 tgcagtacag gcgtagtgca gaagagctta agctggtttg ataagaacaa agacttcatc
+      361 aaactctggg actcaaagta catggatctc agaaagggta tccctgaacc agagcaacta
+      421 gtttcatacc agcaggcggc ccaaaagtgg agaaaggacg ttggttatga aattaaccaa
+      481 ttcacaaggt ctctcacaca tccagttgtt gcagagtaca aagtgcctgg agaaattgct
+      541 gttgatgtca aagaaatgct gtctgacatg atcaggcgca ggaatgtcct gctgaacgga
+      601 gacggagaaa atgctgggaa aaaaggtcct atcagcagag agcatgtctc ttggggccgt
+      661 gagttggcag gaggaaagtt ccaagttgtg tttaatcctc cttgggggga tataaacaag
+      721 tgtggtaaat caggcattcc tctagcagct actgccatgg tgaaggttgc tgagctagat
+      781 gggtcaaaga agcttgaaga tataaggcag gcccttctgg atctaaaaaa atgggttgaa
+      841 gataacaagg atgcactaga ggatgggaaa ggcaatgagc tcgtccagac tatgacaaag
+      901 catctggctc aagcagtgga actatccaaa aagtccaatg ccctgcgtgc acaaggagca
+      961 caaatagaca ctcctttctc agcctattat tgggcttgga gcgctggtgt taagccagag
+     1021 acatttttca ctttgtctca attcctcttt gagatgggcc agagtgctag aggaggcaaa
+     1081 aaaatgatca aagcactgac ttccacacca ctaaggtggg gtaagggatt gattaacctg
+     1141 tttgcagatg atgacttttc gggcaacaga ctatacatgc atcctgcagt tctgactcct
+     1201 ggtcgaatga gtgaaatggg tgcatgcttt ggggttattc ctgttgcaag cccagaagat
+     1261 gcaatcctag gttcaggaca ctcaaaaaac atactgaact tcaaaattga caccagtgtg
+     1321 cagaacccat gtgcatccac aatcgtgcaa ctgtacagaa tccagaaatc tggctttgat
+     1381 ctggaaagct tagaagtagt gtctactgaa catcttttgc accagtcatt tgttggtaaa
+     1441 agatgcccaa cccagaatgc ttacaaggtg agaggaaatg caaccaatgt taacatcatc
+     1501 taaaagctgg cattgtgtgg ccttccctaa catcttaaac aagttgcaca tcagcgaaag
+     1561 gccactaaaa gcttttttct tacttatctt tccattcttt tcttctttat atattagttt
+     1621 tgctttttga ctaacatact aacatagtat aagttgtaat caatctgcta attctgctta
+     1681 acacaggggg gctgtgcggc aacgatctct ttgaga
+//
+

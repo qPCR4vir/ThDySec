@@ -1,0 +1,92 @@
+LOCUS       NC_038711               1677 bp    RNA     linear   VRL 24-AUG-2018
+DEFINITION  Hazara virus isolate JC280 segment S, complete sequence.
+ACCESSION   NC_038711
+VERSION     NC_038711.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Hazara virus
+  ORGANISM  Hazara virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1677)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (24-AUG-2018) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   2  (bases 1 to 1677)
+  AUTHORS   Lewandowski,K.S., Bell,A.J., Wooldridge,D., Chamberlain,J.,
+            Afrough,B., Dowall,S., Vipond,R., Gharbia,S. and Hewson,R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-JAN-2015) Research and Technical Services, Public
+            Health England, Porton, Porton Down, Manor Farm Road, Porton,
+            Salisbury, Wiltshire SP4 0JG, UK
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KP406725.
+            GenBank Accession Numbers KP406723-KP406725 represent sequences
+            from the 3 segments of Hazara virus.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: BWA v. 0.7.5; QuasiBam v. 1.0
+            Coverage              :: 1.0
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1677
+                     /organism="Hazara virus"
+                     /mol_type="genomic RNA"
+                     /isolate="JC280"
+                     /host="Ixodes redikorzevi"
+                     /db_xref="taxon:11596"
+                     /segment="S"
+                     /country="Pakistan"
+                     /collection_date="1964"
+     gene            83..1540
+                     /locus_tag="D1S34_sSgp1"
+                     /db_xref="GeneID:37618985"
+     CDS             83..1540
+                     /locus_tag="D1S34_sSgp1"
+                     /codon_start=1
+                     /product="nucleocapsid protein"
+                     /protein_id="YP_009507852.1"
+                     /db_xref="GeneID:37618985"
+                     /translation="MENKIVASTKEEFNTWYKQFAEKHKLNNKYTESASFCAEIPQLD
+                     TYKYKMELASTDNERDAIYSSALIEATRFCAPIMECAWASCTGTVKRGLEWFDKNKDS
+                     DTVKVWDANYQKLRTETPPAEALLAYQKAALNWRKDVGFSIGEYTSILKKAVAAEYKV
+                     PGTVINNIKEMLSDMIRRRNRIINGGSDDAPKRGPVGREHLDWCREFASGKFLNAFNP
+                     PWGEINKAGKSGYPLLATGLAKLVELEGKDVMDKAKASIAQLEGWVKENKDQVDQDKA
+                     EDLLKGVRESYKTALALAKQSNAFRAQGAQIDTVFSSYYWLWKAGVTPVTFPSVSQFL
+                     FELGKNPKGQKKMQKALINTPLKWGKRLIELFADNDFTENRIYMHPCVLTSGRMSELG
+                     ISFGAVPVTSPDDAAQGSGHTKAVLNYKTKTEVGNPCACIISSLFEIQKAGYDIESMD
+                     IVASEHLLHQSLVGKRSPFQNAYLIKGNATNINII"
+ORIGIN      
+        1 tctcaaagac aaacgtgccg cagacgcccc acgttttcat ccttttgaga gcaaaaccgg
+       61 tcgcctcaca acatcagcga gaatggagaa caagattgtt gccagtacta aggaagagtt
+      121 caacacctgg tacaagcagt ttgctgagaa acacaaactg aacaacaagt acacggaatc
+      181 tgcatccttt tgtgccgaaa ttcctcagct cgacacctac aagtacaaga tggagctagc
+      241 cagcacggac aatgagaggg acgccatcta cagctcagca ctcattgagg ccacccgatt
+      301 ctgtgctcct atcatggagt gtgcatgggc ttcctgcact gggacagtta aaagaggtct
+      361 ggaatggttc gacaaaaaca aagactctga caccgtgaag gtctgggatg ccaactacca
+      421 aaagctaaga acagagacac cgcctgctga ggcattactg gcataccaga aagccgccct
+      481 caactggaga aaggatgtcg gcttctccat tggggagtac accagtatac taaaaaaggc
+      541 agtggcggca gagtataagg tgccagggac agtgatcaat aacatcaaag aaatgctcag
+      601 cgatatgatt cgacgcagga acaggatcat caacggtggc tccgatgatg cgccaaagag
+      661 agggcctgtt gggcgtgagc atcttgactg gtgcagagag tttgcctcag gcaaattttt
+      721 gaatgctttc aaccctcctt ggggagagat taacaaggca ggtaaatctg ggtaccctct
+      781 cttggccacg ggattagcaa agctggttga gctagagggg aaagacgtga tggacaaggc
+      841 caaggcaagc attgcacaac ttgaaggatg ggtcaaagag aacaaagacc aagtcgacca
+      901 agacaaggca gaagacctcc taaaaggggt gagagaaagc tacaagactg ccctggctct
+      961 ggcaaagcag tcgaacgcct tccgtgccca gggagctcaa atagacactg tgttcagcag
+     1021 ctactactgg ctttggaagg caggagtgac accagtcacc ttcccatctg tgtcccaatt
+     1081 ccttttcgag ctgggtaaga accccaaggg acagaaaaaa atgcaaaagg cactcatcaa
+     1141 cacccctctc aaatggggaa aaaggctcat tgaactgttt gctgataacg acttcacaga
+     1201 gaacagaatc tacatgcacc cctgtgtgct aacatctgga agaatgtccg agcttggaat
+     1261 atcgtttgga gccgtgcccg tcaccagtcc cgatgatgcc gcccaagggt ccgggcacac
+     1321 aaaggcagtc ctcaactata agaccaagac cgaggtcggc aacccgtgtg cctgcatcat
+     1381 ttcaagcctc tttgagatcc aaaaagcagg ttatgacatt gagagcatgg atatagtcgc
+     1441 ctctgaacat cttctccatc aatctcttgt ggggaagcgc tcgcccttcc aaaacgccta
+     1501 cctcattaaa ggcaatgcca ccaacatcaa catcatctag gattgcggct aggttcactg
+     1561 ccaacacatc tctactgctg tttttcttct gcattgcttt gcttctattc ttactttcat
+     1621 tcttattcta ttctgttttg taaaatttgg ggctgtgcgg caacgatatc tttgaga
+//
+

@@ -1,0 +1,93 @@
+LOCUS       NC_034386               1590 bp ss-RNA     linear   VRL 13-AUG-2018
+DEFINITION  Nairobi sheep disease virus isolate Jilin segment S nucleocapsid
+            gene, complete cds.
+ACCESSION   NC_034386
+VERSION     NC_034386.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1590)
+  AUTHORS   Liu,Q.
+  TITLE     Nairobi sheep disease virus in ticks, in China
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1590)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2017) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1590)
+  AUTHORS   Liu,Q.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (03-SEP-2014) Military Veterinary Institute, Academy of
+            Military Medical Sciences, 666 Liuying West Road, Changchun, Jilin
+            130122, China
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KM464724.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: DNA STAR v. 5.0
+            Assembly Name         :: TICK VIRUS
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1590
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="genomic RNA"
+                     /isolate="Jilin"
+                     /host="tick"
+                     /db_xref="taxon:194540"
+                     /segment="S"
+                     /country="China"
+                     /collection_date="2013"
+     gene            52..1500
+                     /locus_tag="CAB93_sSgp1"
+                     /db_xref="GeneID:32305862"
+     CDS             52..1500
+                     /locus_tag="CAB93_sSgp1"
+                     /codon_start=1
+                     /product="nucleocapsid"
+                     /protein_id="YP_009361831.1"
+                     /db_xref="GeneID:32305862"
+                     /translation="MQNQIVADNKDAILAWHKTYSEKHRLKSVLTNSASFCETIPDLS
+                     GYEVSMRLVSSESEKDSVYASALVAATKFCAPILECAWTSCTGMVERGLDWFENNKET
+                     VKIWDAEYGKLRTEAPSPEQLLGYQRAALKWRKDTKYGINRNTAALAAAIATEYRVPG
+                     SIVVNVKDMLSDMIRRRNKILNRDGSEDVPKRGPVSKEHIDWARDLAQGKFLVVFNPP
+                     WGDINKAGKSGIALAATGMAKLIELDGPKIAEDLRESLKGLVAWINAHKDEVENGKEV
+                     VDGLTKHLQKALELAKQSSAMRAQGAQIDTVFSSYYWLWKAGVTAEMFPTVSQFLFEL
+                     GKVPRGNKKMKKALSSMPLKWGKKLLALFADDSFTANRIYMHPGVLTAGRMSELGVCF
+                     GAIPVANPDDAAEGSGHIKNILAQTTDTQAGNPCAQNIVALFNIQKAGFDIESMDIVA
+                     LEHLLHQSLVGKRSPFQNAYNIRGNATSIQII"
+ORIGIN      
+        1 tctcaaagac aaacgtgccg ctttcgccca cattgtcttt gaactctgac catgcagaac
+       61 cagattgttg cggacaacaa ggatgccatc cttgcatggc acaaaaccta cagtgagaag
+      121 cacagactca agtctgtttt gacaaactca gcttctttct gtgagactat acctgacttg
+      181 tcggggtatg aggtcagcat gaggcttgtt tcatcggaga gtgagaagga ctcagtgtat
+      241 gcatctgccc tggtggccgc gactaaattc tgtgctccta tactggagtg tgcctggacc
+      301 agctgcacgg ggatggtcga gcgtggtctg gactggtttg aaaacaacaa ggaaacagtg
+      361 aagatttggg atgctgagta cgggaagcta agaacggaag cacccagccc tgaacaactg
+      421 ctgggttacc agagagcagc tcttaagtgg agaaaggata ccaagtacgg gatcaacaga
+      481 aatacagctg cactggccgc tgcaattgca accgagtata gagtccctgg atcaattgtg
+      541 gtgaatgtca aggacatgct gtcggacatg atcaggagaa ggaacaagat cctgaacaga
+      601 gacggcagtg aagatgttcc gaaaagggga cccgtcagca aagagcacat tgactgggct
+      661 agggaccttg ctcaaggtaa gttccttgtt gtcttcaatc caccatgggg tgatatcaac
+      721 aaggcaggaa agtcagggat tgccttagca gcgacaggta tggcaaaatt gatagagctg
+      781 gatggtccca aaattgcaga ggacctgagg gaatctctga agggtcttgt ggcatggatc
+      841 aatgcccaca aggatgaagt ggagaacggt aaagaggttg ttgatggttt gaccaagcac
+      901 ctgcagaaag cccttgaatt agccaagcaa tcaagtgcca tgagagccca aggggctcag
+      961 attgacactg tctttagcag ctactactgg ctttggaagg caggtgtgac agcggagatg
+     1021 tttccgacag tctcacagtt tctttttgag ctcggcaagg tgcccagggg aaataaaaaa
+     1081 atgaagaaag cactatcaag tatgcctctg aagtggggaa agaagttgct agcactcttt
+     1141 gctgatgata gcttcactgc taatcggatt tacatgcacc ctggtgtcct aacagctggg
+     1201 agaatgtctg agctcggtgt ttgcttcgga gcaatcccag ttgccaatcc tgacgatgcc
+     1261 gctgagggtt caggccacat caagaatata ctagcacaaa ccactgacac tcaggctggc
+     1321 aacccctgcg cacagaacat cgtcgcccta ttcaacattc agaaagccgg cttcgacatt
+     1381 gagagcatgg acatagttgc cttggagcat ctgctacacc agtcactcgt tggaaagaga
+     1441 tctccttttc agaatgccta caacatccgg ggaaatgcca ccagcatcca gatcatttaa
+     1501 tcgaactgcc gcatgctacc tgtttctctc tatttctctt acttctgcta ttattaacaa
+     1561 aggggctgtg cggcaacgat ctctttgaga
+//
+
