@@ -93,9 +93,44 @@ class TableHybRes  : public nana::form, public EditableForm
 			nana::color bgc(nana::colors::red);
 			return bgc.blend(nana::colors::blue, fade_rate);
 		}
-
-	
 	};
+    struct I : value
+    {
+        float val(index row,  index col) const override
+        {
+            Energy G = table->at(row,col )._G;
+            return G < m_G_sat ? m_I_sat : theta*exp(G*ro);
+        }
+
+        double m_G_sat, m_I_sat, ro, theta;
+        I(Table *t, double I_senc, double I_sat, Energy G_senc, Energy G_sat)
+              : value {t},
+                m_G_sat{G_sat},
+                m_I_sat{I_sat},
+                ro {log(I_senc)/(G_senc-G_sat)},
+                theta {exp(-G_sat*ro)}
+        {}
+
+        void set_ro_theta(double I_senc, double I_sat, Energy G_senc, Energy G_sat)
+        {
+            m_G_sat = G_sat;
+            m_I_sat = I_sat;
+            ro = log(I_senc)/(G_senc-G_sat);
+            theta = exp(-G_sat*ro);
+        }
+
+        bool return_bg() override { return true; }
+
+        nana::color bg_color(index row, index col, List &lst) override
+        {
+            double i = val(row, col);
+
+            double min = 0, max = m_I_sat;
+            double fade_rate = i<min ? 0.0 : i>max ? 1.0 : (i - min) / (max - min);
+            nana::color bgc(nana::colors::white );
+            return bgc.blend(nana::colors::red, fade_rate);
+        }
+    };
     struct Pos : value
     {
         float val(index row,  index col)const override
@@ -103,6 +138,13 @@ class TableHybRes  : public nana::form, public EditableForm
             return static_cast<float>( table->at(row,col)._Pos );
         }
         Pos(Table *t) :value {t} {n_dec=0;};
+
+        bool return_bg() override {return true;}
+
+        nana::color bg_color(index row,  index col, List &lst) override
+        {
+            return Tm{table}.bg_color(row, col, lst);
+        }
    };
 
     List                   _list { *this };
@@ -110,6 +152,7 @@ class TableHybRes  : public nana::form, public EditableForm
     nana::button           _bTm  {*this,("Tm" )},       //nana::toolbar     _tbar { *this };
                            _bG   {*this,("G"  )},   
                            _bPos {*this,("Pos")},
+                           _bI   {*this,("Int")},
                            _byCol{*this,("<--")},
                            _descr{*this,("Description")},
                            _mix  {*this, ("Consolidate")};
@@ -118,8 +161,11 @@ class TableHybRes  : public nana::form, public EditableForm
     Tm                     _Tm {_table.get()};
     G                      _G  {_table.get()};
     Pos                    _Pos{_table.get()};
+                           //I  (Table *t,     I_senc,   I_sat,  G_senc,  G_sat)
+    I                      _I  {_table.get(),   0.2,      1.0,    5.0f,   0.99f };  // todo get from prog parameters
+
     value                  *val { &_Tm} ;
-    std::size_t            mTm, mG, mP, mDescr;
+    std::size_t            mTm, mG, mP, mDescr, mI;
  
     void SetValType(value &val_)
     { 
@@ -178,7 +224,7 @@ class TableHybRes  : public nana::form, public EditableForm
     }
     void AsignWidgetToFields() override
     {
- 	    _place.field("toolbar"       ) << _descr <<_bTm << _bG << _bPos << _byCol << _mix;
+ 	    _place.field("toolbar"       ) << _descr <<_bTm << _bPos << _bG << _bI << _byCol << _mix;
  	    _place.field("_list"         ) <<_list;
 	}
  public:
@@ -201,7 +247,8 @@ class TableHybRes  : public nana::form, public EditableForm
         SelectClickableWidget( *this);
 
         _list.auto_draw(false);
-                
+
+        // Add column headers
         _list.append_header(("Seq")  , 120);                       ///      fix and fit
         for (index col = 1; col <= _table->totalCol(); ++col)
         {    
@@ -212,6 +259,7 @@ class TableHybRes  : public nana::form, public EditableForm
             });
         }
 
+        // Add rows
         for (index row = 0; row < _table->totalRow(); ++row)
             _list.at(0).append( Index{this,row}, true );
 
@@ -226,8 +274,10 @@ class TableHybRes  : public nana::form, public EditableForm
                             _bTm .pushed(true);
                             _bG  .pushed(false);
                             _bPos.pushed(false);
+                            _bI  .pushed(false);
                             _menuProgram.checked(mTm, true);
                         });
+
         _bG  .events().click([this]()
                         {
                             SetFormat(1);
@@ -236,8 +286,10 @@ class TableHybRes  : public nana::form, public EditableForm
                             _bTm .pushed(false);
                             _bG  .pushed(true);
                             _bPos.pushed(false);
+                            _bI  .pushed(false);
                             _menuProgram.checked(mG, true);
                         });
+
         _bPos.events().click([this]()
                         {
                             SetFormat(0);
@@ -246,8 +298,22 @@ class TableHybRes  : public nana::form, public EditableForm
                             _bTm .pushed(false);
                             _bG  .pushed(false);
                             _bPos.pushed(true );
+                            _bI  .pushed(false);
                             _menuProgram.checked(mP, true);
                         });
+        _bI  .events().click([this]()
+                             {
+                                 SetFormat(2);
+                                 SetValType(_I);
+                                 caption( std::string(("Table I: ")) +  _Titel);
+                                 _bTm .pushed(false);
+                                 _bG  .pushed(false);
+                                 _bPos.pushed(false);
+                                 _bI  .pushed(true);
+                                 _menuProgram.checked(mI, true);
+                             });
+
+
         _descr.events().click([this]()
                              {
                                  _descr.pushed(!_descr.pushed());
@@ -290,6 +356,7 @@ class TableHybRes  : public nana::form, public EditableForm
         _bTm .enable_pushed(true).pushed(true);
         _bG  .enable_pushed(true).pushed(false);
         _bPos.enable_pushed(true).pushed(false);
+        _bI  .enable_pushed(true).pushed(false);
         _descr.enable_pushed(true).pushed(true);
 
         _menuProgram.append_splitter();
@@ -302,9 +369,14 @@ class TableHybRes  : public nana::form, public EditableForm
                         .check_style( nana::menu::checks::option)
                         .index();
 
+        mI=_menuProgram.append      ( ("Show Intensity"), [&](nana::menu::item_proxy& ip) { Click( _bI);  })
+                .check_style( nana::menu::checks::option)
+                .index();
+
         mP=_menuProgram.append      ( ("Show Pos")    , [&](nana::menu::item_proxy& ip) { Click( _bPos);})
                         .check_style( nana::menu::checks::option)
                         .index();
+
         mDescr=_menuProgram.append      ( ("Show Description")    , [&](nana::menu::item_proxy& ip) { Click( _descr);})
                 .check_style( nana::menu::checks::option)
                 .index();
@@ -335,9 +407,7 @@ class TableHybRes  : public nana::form, public EditableForm
 									   nana::colors::white} };
             else 
                 for (int col=0; col< t.totalCol() ; ++col)
-                    ores<< List::cell{ v.str     (i.row, col),
-                                       { TableHybRes::Tm{&t}.bg_color(i.row, col, l),
-                                         nana::colors::white} };
+                    ores<< v.str(i.row, col);
 
             return ores;
         }

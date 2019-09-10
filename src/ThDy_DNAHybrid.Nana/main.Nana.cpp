@@ -32,7 +32,7 @@
  Program distributed under the <bold blue url="https://www.gnu.org/licenses/"> GNU General Public License</>)" };
 
      nana::group build {*this, "Programm:"};
-     nana::label  compiled{ build, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.10     )" };
+     nana::label  compiled{ build, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.11    )" };
      nana::label  downloads{ build, R"(Downloads and source code: <bold blue url="https://github.com/qPCR4vir/ThDySec"> github.com/qPCR4vir/ThDySec</>
                                              <bold blue url=" https://github.com/qPCR4vir/ThDySec/wiki "> Wiki:</>
    ________________________________________________________________________________)" };
