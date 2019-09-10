@@ -335,7 +335,9 @@ class TableHybRes  : public nana::form, public EditableForm
 									   nana::colors::white} };
             else 
                 for (int col=0; col< t.totalCol() ; ++col)
-                    ores<< v.str(i.row, col)  ;
+                    ores<< List::cell{ v.str     (i.row, col),
+                                       { TableHybRes::Tm{&t}.bg_color(i.row, col, l),
+                                         nana::colors::white} };
 
             return ores;
         }
