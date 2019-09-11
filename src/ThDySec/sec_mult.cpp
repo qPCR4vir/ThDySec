@@ -708,6 +708,7 @@ CMultSec::SecIt CMultSec::InsertFreeSec(CMultSec::SecIt pos, CMultSec::pSec sec)
     UpdateTotalsMoving ( *sec );
     return it;
 }
+
 CMultSec::SecIt CMultSec::InsertFreeSecAfter(CMultSec::SecIt preSec, CMultSec::pSec sec)
 {    
     return InsertFreeSec(++preSec, sec);

@@ -33,7 +33,7 @@ CMultSec::MSecIt ThDyCommProgParam::AddSeqGroup(CMultSec &parentGr, const std::s
             std::make_shared<CMultSec>(parentGr._NNPar ? parentGr._NNPar : _pSaltCorrNNp, Name));
 }
 
-
+/// A completely new CMultSec is added to parentGr, by loading from a file or directory.
 CMultSec::MSecIt ThDyCommProgParam::AddSeqFromFile(CMultSec &parentGr,
                                                    const std::filesystem::path &FileName,
                                                    bool recursive/*=false*/,

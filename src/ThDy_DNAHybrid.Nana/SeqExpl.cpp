@@ -83,104 +83,65 @@ SeqExpl::Node SeqExpl::AddMSeqFiles (const std::filesystem::path &file, bool  al
 void SeqExpl::AddMenuItems(nana::menu& menu)
     {
         menu.append_splitter();
-
-        menu.append(("Add a new, empty, group for sequences")  , [&](nana::menu::item_proxy& ip) {  AddNewSeqGr(_tree.selected());    });
-        menu.append(("Add a group of sequences from a file..."), [&](nana::menu::item_proxy& ip) {  Click(_loadFile);                 });
-        menu.append(("Add a tree of groups of sequences from a directory..."),[&](nana::menu::item_proxy& ip) {  Click(_loadDir);     });
+        using Mitem = nana::menu::item_proxy;
+        menu.append(("Add a new, empty, group for sequences"      ),[&](Mitem& ip) { AddNewSeqGr(_tree.selected()); });
+        menu.append(("Add a group of sequences from a file..."    ),[&](Mitem& ip) { Click(_loadFile);              });
+        menu.append(("Add groups of sequences from a directory..."),[&](Mitem& ip) { Click(_loadDir);               });
 
         menu.append_splitter();
 
-        menu.append(("Reproduce only the structure of directory..."),[&](nana::menu::item_proxy& ip)  {  Click(_scanDir);     });
-        menu.append(("Reload from the original file" )  , [&](nana::menu::item_proxy& ip)   {  ReloadFile(_tree.selected());    });
-        menu.append(("Reload from the original directory"), [&](nana::menu::item_proxy& ip) {  ReloadDir(_tree.selected());     });
-        menu.append(("Replace from a file . . ." )  , [&](nana::menu::item_proxy& ip) 
+        menu.append(("Scan the structure of directory..."),[&](Mitem& ip) { Click(_scanDir);              });
+        menu.append(("Re-scan the original directory"   ), [&](Mitem& ip) { Click(_re_scanDir);           });
+        menu.append(("Reload the original file"         ), [&](Mitem& ip) { ReloadFile(_tree.selected()); });
+        menu.append(("Reload the original directory"    ), [&](Mitem& ip) { ReloadDir (_tree.selected()); });
+        menu.append(("Replace from a file . . ."        ), [&](Mitem& ip)
         {
             auto tn= _tree.selected();
-            if (isRoot(tn) || isRoot(tn->owner()) )
-            {
-                nana::msgbox ( ("Sorry, you can't replace group " + tn.text()) ).show() ;
-                return;
-            }
             MSecIt ms = tn.value<MSecIt>();
-            CMultSec *pms = (*ms)->_parentMS;
-            assert(pms);
             fs::path pt{(*ms)->_orig_file};
             pt= fs::canonical(pt).make_preferred();
             nana::filebox  fb{ *this, true };
             fb .add_filter ( SetupPage::FastaFiltre( )   )
-               .init_file(pt.string())
-               .title(("Replace/reload a group of sequences from a file"));
+                    .init_file(pt.string())
+                    .title(("Replace a group of sequences from a file"));
             auto path=fb.show();
             if ( path.empty() ) return;
 
-            _Pr._cp._pSeqNoUsed->MoveMSec(ms);
-            _Pr._cp.AddSeqFromFile    ( *pms, path[0].string(), false    );
-            Refresh(tn->owner());
+            Replace(tn, ms, path[0], false);
         });
 
         menu.append(("Replace from directory . . ."), [&](nana::menu::item_proxy& ip) 
         {
-            Node tn= _tree.selected();
-            if (isRoot(tn) || isRoot(tn->owner()) )
-            {
-                nana::msgbox ( ("Sorry, you can't replace group " + tn->text()) ) ;
-                return;
-            }
-            MSecIt       ms = tn.value<MSecIt>();
-            CMultSec *parentMs = (*ms)->_parentMS;
-            assert(parentMs);
-            
-            fs::path pt{(*ms)->_orig_file};
-            nana::folderbox  fb{ *this, pt.parent_path() , "Replace/reload a group of sequences from a directory" };
+            Node   tn = _tree.selected();
+            MSecIt ms = tn.value<MSecIt>();
+
+            nana::folderbox  fb{ *this, (*ms)->_orig_file.parent_path(),
+                                 "Replace/reload a group of sequences from a directory" };
             auto p=fb.show();
             if (p.empty()) return;
 
-            /*
-            // a "trick" to get an iterator to the CMultiSec *   !!!!!!!!!
-            auto it=std::find_if(parentMs->MSecL().begin(), parentMs->MSecL().end(),
-                                 [&ms](auto & sp_ms) {return ms == sp_ms.get(); });
-
-            if (it == parentMs->MSecL().end()) return;
-            */
-
-            _Pr._cp._pSeqNoUsed->MoveMSec(ms);     // hight level MoveMSec !! (actualize globals) ?
-            
-            auto own = tn->owner();
-
-            _tree.auto_draw(false);
-            _list.auto_draw(false);
-
-            MSecIt newms = _Pr._cp.AddSeqFromFile(*parentMs, p[0].u8string(), true    );
-            _tree.erase(tn);
-            populate(appendNewNode  (own, newms) );
-            own.expand(true);
-
-            _list.clear();
-            populate_list_recur(tn);
-
-            _tree.auto_draw(true);
-            _list.auto_draw(true);
+            Replace(tn, ms, p[0], true);
         });
 
         menu.append_splitter();
 
-        menu.append     ( ("Show Only local sequences"),[&](nana::menu::item_proxy& ip) { ShowLocals( menu.checked(ip.index())); })
+        menu.append     ( ("Show Only local sequences"),[&](Mitem& ip) { ShowLocals( menu.checked(ip.index())); })
             .check_style( nana::menu::checks::option)
             .checked    ( false );
 
-        menu.append     ( ("Show filtered sequences"  ),[&](nana::menu::item_proxy& ip) { ShowFiltered( menu.checked(ip.index())); })
+        menu.append     ( ("Show filtered sequences"  ),[&](Mitem& ip) { ShowFiltered( menu.checked(ip.index())); })
             .check_style( nana::menu::checks::highlight )
             .checked    ( true );
  
         menu.append_splitter();
-        menu.append(("Cut selected sequences from list"          ),[&](nana::menu::item_proxy& ip)  {  Click(_cutSec);  });
-        menu.append(("Cut selected groups of sequences from tree"),[&](nana::menu::item_proxy& ip)  {  Click(_cut   );  });
-        menu.append(("Paste the sequences"                       ),[&](nana::menu::item_proxy& ip)  {  Click(_paste );  });
+        menu.append(("Cut selected sequences from list"          ),[&](Mitem& ip)  {  Click(_cutSec);  });
+        menu.append(("Cut selected groups of sequences from tree"),[&](Mitem& ip)  {  Click(_cut   );  });
+        menu.append(("Paste the sequences"                       ),[&](Mitem& ip)  {  Click(_paste );  });
 
         menu.append_splitter();
-        menu.append(("Del selected sequences from list"),[&](nana::menu::item_proxy& ip)            {  Click(_delSec);  });
-        menu.append(("Del selected groups of sequences from tree"),[&](nana::menu::item_proxy& ip)  {  Click(_del   );  });
-        menu.append(("Rename the selected group of sequences"),[&](nana::menu::item_proxy& ip) 
+        menu.append(("Del selected sequences from list"          ),[&](Mitem& ip)  {  Click(_delSec);  });
+        menu.append(("Del selected groups of sequences from tree"),[&](Mitem& ip)  {  Click(_del   );  });
+        menu.append(("Rename the selected group of sequences"    ),[&](Mitem& ip)
         {
             
             RenameFrom rnm(_tree, _tree.selected().text());
@@ -191,13 +152,13 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
         }).enabled(true);
 
         menu.append_splitter();
-        auto  indxFASTA = menu.append(("Export FASTA . . ."          ),[&](nana::menu::item_proxy& ip)            {  /*_tree.selected().value<CMultSec*>()->ExportFASTA();*/  }).index();
+        auto  indxFASTA = menu.append(("Export FASTA . . ."),[&](Mitem& ip) {  /*_tree.selected().value<CMultSec*>()->ExportFASTA();*/  }).index();
         auto& menuFASTA = *menu.create_sub_menu(indxFASTA);
-        menuFASTA.append(("Only current sequences"     ),[&](nana::menu::item_proxy& ip)            {  ;  });
-        menuFASTA.append(("Selected sequences in group"),[&](nana::menu::item_proxy& ip)            { _Pr.ExportFASTA(_tree.selected().value<MSecIt>()->get(), true );  });
-        menuFASTA.append(("All sequences in group"     ),[&](nana::menu::item_proxy& ip)            { _Pr.ExportFASTA(_tree.selected().value<MSecIt>()->get(), false);  });
-        menuFASTA.append(("All selected sequences"     ),[&](nana::menu::item_proxy& ip)            { _Pr._cp._pSeqTargets->Export_as("export.fasta", true )  ;  });
-        menuFASTA.append(("All sequences"              ),[&](nana::menu::item_proxy& ip)            { _Pr._cp._pSeqTargets->Export_as("export.fasta", false)  ;  });
+        menuFASTA.append(("Only current sequences"     ),[&](Mitem& ip){  ;  });
+        menuFASTA.append(("Selected sequences in group"),[&](Mitem& ip){ _Pr.ExportFASTA(_tree.selected().value<MSecIt>()->get(), true );  });
+        menuFASTA.append(("All sequences in group"     ),[&](Mitem& ip){ _Pr.ExportFASTA(_tree.selected().value<MSecIt>()->get(), false);  });
+        menuFASTA.append(("All selected sequences"     ),[&](Mitem& ip){ _Pr._cp._pSeqTargets->Export_as("export.fasta", true )  ;  });
+        menuFASTA.append(("All sequences"              ),[&](Mitem& ip){ _Pr._cp._pSeqTargets->Export_as("export.fasta", false)  ;  });
 
     }
 
@@ -254,10 +215,13 @@ void SeqExpl::MakeResponive()
                             if (path.empty()) return;
                             AddMSeqFiles(path[0].string(), true);
                         });
-
                                                                              //  ------------  RE-LOAD-DIR --------- ?
         _re_loadDir .tooltip(("Directory reload: Reload a tree of groups of sequences from a directory,\npossibly using new filters."))
                     . events().click([this]()  {  ReloadDir (_tree.selected());    });
+
+                                                                             //  ------------  RE_SCAN-DIR ---------
+        _re_scanDir .tooltip(("Re-Scan the original directory: reproduce the structure."))
+                .events().click([this]() { ReloadDir (_tree.selected(), true); });
 
                                                                              //  ------------  SCAN-DIR ---------
         _scanDir    .tooltip(("Directory scan: Reproduce the structure of directory..."))
@@ -265,18 +229,11 @@ void SeqExpl::MakeResponive()
                         {
                             auto tn= _tree.selected();
                             MSecIt ms = tn.value<MSecIt>();
-                            fs::path pt{(*ms)->_orig_file};
-                            nana::folderbox  fb{ *this, pt, "Directory scan: Reproduce the structure of directory..." };
+                            nana::folderbox  fb{ *this, (*ms)->_orig_file, "Directory scan: Reproduce the structure of directory..." };
                             auto path=fb();
                             if (path.empty()) return;
-
-                            MSecIt newms = _Pr._cp.CopyStructFromDir(**ms, path[0].string()   );
-                            _tree.auto_draw(false);
-                            populate(  appendNewNode  (tn, newms) );
-                            tn.expand(true);
-                            _tree.auto_draw(true);
+                            Replace(tn, ms, path[0], true, true);
                         });
-
                                                                                 //  ------------  PASTE ---------
         _paste      .tooltip(("Paste sequences"))
                     .events().click([this]()
@@ -400,25 +357,34 @@ void SeqExpl::MakeResponive()
                     .events().click([this]() { ShowFiltered( _show_filt_s.pushed());  });
     }
 
-SeqExpl::Node SeqExpl::Replace (Node tn, MSecIt ms, const std::string& Path, bool all_in_dir)
+/// The 'old' node tn will be eliminated, and in his previous parent a new node will be created and returned,
+/// The sequences in ms will be moved to DontUse and in his parent a new CMultiSec will be loaded from file.
+SeqExpl::Node SeqExpl::Replace (Node tn, MSecIt ms, const fs::path& Path, bool all_in_dir, bool scan_only/*=false*/)
 {        
 try{ 
+        if (isRoot(tn) || isRoot(tn->owner()) )
+        {
+            nana::msgbox ( ("Sorry, you can't replace group " + tn.text()) ).show() ;
+            return tn;
+        }
         Node      own = tn->owner();
         CMultSec *pms = (*ms)->_parentMS;
         assert(pms);
+        if (pms != (*own.value<MSecIt>()).get())
+            throw std::logic_error("The group of sequences to be replaced was not in the parent tree node.");
 
-        MSecIt newms = _Pr._cp.AddSeqFromFile    ( *pms, Path, all_in_dir    );
+        MSecIt newms = _Pr._cp.AddSeqFromFile(*pms, Path, all_in_dir, scan_only);
 
         _Pr._cp._pSeqNoUsed->MoveMSec(ms);
-        _tree.erase(tn);
+        _tree.auto_draw(false);
         populate(_tree.find( _Pr._cp._pSeqNoUsed->_name));
-        return appendNewNode(own, newms).expand(true).select(true) ;
+        return Refresh(own) ;
     }
     catch ( std::exception& e)
     { 
         (nana::msgbox ( ("Error replacing sequences: " ) ).icon(nana::msgbox::icon_error)
             << "into group:    "  << tn.key()                                 
-            << "\n from " << (all_in_dir?"directory: " : "file: ") << Path     <<"\n"<< e.what()
+            << "\n from " << (all_in_dir?"directory: " : "file: ") << Path.string()     <<"\n"<< e.what()
         ).show() ;
      }        
     catch(...)
@@ -426,7 +392,7 @@ try{
             (nana::msgbox(("An uncaptured exception during replacing sequences: "))
                 .icon(nana::msgbox::icon_error) 
             << "into "<< tn.key()                                
-            << "from "<< (all_in_dir?"directory ":"file ") << Path    
+            << "from "<< (all_in_dir?"directory ":"file ") << Path.string()
             ).show();
     }
     return tn;
@@ -449,7 +415,6 @@ void SeqExpl::RefreshProbes_mPCR(bool show_/*=true*/)
     if (show_) 
         _Pr.ShowExpl();
 }
-
 
 void SeqExpl::SetDefLayout()
 {
@@ -480,7 +445,7 @@ void SeqExpl::AsignWidgetToFields()
 
 
     _place["toolbar"] << "   Files:" << _loadFile << _re_loadFile << _paste
-        << "      Dir:" << _loadDir << _re_loadDir << _scanDir << _cut << _del
+        << "      Dir:" << _loadDir << _re_loadDir << _scanDir << _re_scanDir << _cut << _del
         << "      Seq:" << _show_locals_s << _show_filt_s << _cutSec << _delSec
         ;
     _place["Tree"  ] << _tree;
@@ -597,3 +562,12 @@ nana::listbox::oresolver& operator<<(nana::listbox::oresolver & ores, CMultSec::
 
     return ores;
 }
+
+
+/*
+// a "trick" to get an iterator to the CMultiSec *   !!!!!!!!!
+auto it=std::find_if(parentMs->MSecL().begin(), parentMs->MSecL().end(),
+                     [&ms](auto & sp_ms) {return ms == sp_ms.get(); });
+
+if (it == parentMs->MSecL().end()) return;
+*/

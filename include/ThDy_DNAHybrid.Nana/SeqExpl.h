@@ -56,6 +56,7 @@ class SeqExpl : public CompoWidget
                     _loadDir      {*this,("Load"   )},       
                     _re_loadDir   {*this,("reLoad" )},
                     _scanDir      {*this,("Scan"   )},
+                    _re_scanDir   {*this,("reScan"   )},
                     _cut          {*this,("Cut"    )},
                     _paste        {*this,("Paste"  )},
                     _del          {*this,("Del"    )},
@@ -174,26 +175,31 @@ class SeqExpl : public CompoWidget
     /// Add seq from file to the selected tree Node
     Node AddMSeqFiles (const std::filesystem::path &file, bool  all_in_dir) ;
 
-    Node Replace    (Node tn, MSecIt ms, const std::string& Path, bool all_in_dir);
-    Node ReloadDir  (Node tn)
+    /// The 'old' node tn will be eliminated, and in his previous parent a new node will be created and returned,
+    /// The sequences in ms will be moved to DontUse and in his parent a new CMultiSec will be loaded from file.
+    Node Replace    (Node tn, MSecIt ms, const std::filesystem::path& Path, bool all_in_dir, bool scan_only=false);
+
+    Node ReloadFile   (Tree::item_proxy tn)
+    {
+        MSecIt ms = tn.value<MSecIt>();
+        if ((*ms)->_orig_file.empty())
+            return tn;
+        else
+            return Refresh(Replace(tn, ms, (*ms)->_orig_file, false));
+    }
+
+    Node ReloadDir  (Node tn, bool scan_only=false)
     {
         MSecIt ms = tn.value<MSecIt>();
         if ((*ms)->_orig_file.empty())
         {
             for (Node & ntn : tn)
-                ReloadDir(ntn);
+                ReloadDir(ntn, scan_only);
             return tn;
         }
-        else return Refresh(Replace(tn, ms, (*ms)->_orig_file.string(),true)).expand(true).select(true);//true
+        else return Replace(tn, ms, (*ms)->_orig_file, true, scan_only).select(true);//true
     }
-    Node ReloadFile   (Tree::item_proxy tn)
-    {
-        MSecIt ms = tn.value<MSecIt>();
-        if ((*ms)->_orig_file.empty())
-           return tn;
-        else
-           return Refresh(Replace(tn, ms, (*ms)->_orig_file.string(),false));
-    }
+
     void ShowLocals(bool showLocals)
     {        
         if(showLocals != _showAllseq) return ;

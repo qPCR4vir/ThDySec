@@ -261,7 +261,9 @@ class ThDyCommProgParam : public CCommProgParam
     }
 
 
-	/// take parameters from the parent if possible
+	/// A completely new CMultSec is added to parentGr, by loading from a file or directory.
+	///
+	/// take parameters from the parent if possible. Differently load primers.
     CMultSec::MSecIt AddSeqFromFile(CMultSec &parentGr,
                                     const std::filesystem::path &FileName,
                                     bool recursive = false,
