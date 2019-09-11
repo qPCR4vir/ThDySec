@@ -110,7 +110,7 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
             Replace(tn, ms, path[0], false);
         });
 
-        menu.append(("Replace from directory . . ."), [&](nana::menu::item_proxy& ip) 
+        menu.append(("Replace from directory . . ."), [&](Mitem& ip)
         {
             Node   tn = _tree.selected();
             MSecIt ms = tn.value<MSecIt>();
@@ -200,9 +200,6 @@ void SeqExpl::MakeResponive()
 
                                                                               //  ------------  RE-LOAD-------------- ?
         _re_loadFile.events().click([this]()  {  ReloadFile(_tree.selected());    });
-
-                                                                              //  ------------  RE-LOAD-DIR --------- ?
-        _re_loadFileTT.set(_re_loadFile,("File reload: Reload a group of sequences from a file, \npossibly using new filters."));
 
                                                                              //  ------------  LOAD-DIR --------- ?
         _loadDir    .tooltip(("Directory load: Add a tree of groups of sequences from a directory."))

@@ -149,13 +149,13 @@ class TableHybRes  : public nana::form, public EditableForm
 
     List                   _list { *this };
 
-    nana::button           _bTm  {*this,("Tm" )},       //nana::toolbar     _tbar { *this };
-                           _bG   {*this,("G"  )},   
-                           _bPos {*this,("Pos")},
-                           _bI   {*this,("Int")},
-                           _byCol{*this,("<--")},
-                           _descr{*this,("Description")},
-                           _mix  {*this, ("Consolidate")};
+    nana::button           _bTm  {*this,"Tm" },       //nana::toolbar     _tbar { *this };
+                           _bG   {*this,"G"  },
+                           _bPos {*this,"Pos"},
+                           _bI   {*this,"Int"},
+                           _byCol{*this,"<--"},
+                           _descr{*this,"Description"},
+                           _bDeg {*this,"Deg"};
 
     std::shared_ptr<Table> _table;
     Tm                     _Tm {_table.get()};
@@ -169,21 +169,20 @@ class TableHybRes  : public nana::form, public EditableForm
  
     void SetValType(value &val_)
     { 
+        val = &val_;
+        Repopulate();
+    }
+    void Repopulate()
+    {
         _list.auto_draw(false);
         bool freeze{true};
         freeze=_list.freeze_sort(freeze);
 
-        val = &val_;
-        Repopulate();
-        
+        for (auto &i : _list.at(0))
+            i.resolve_from(i.value<Index>());
         _list.auto_draw(true);
         //_list.unsort();
         _list.freeze_sort(freeze);
-    }
-    void Repopulate()
-    {
-        for (auto &i : _list.at(0))
-            i.resolve_from(i.value<Index>());
     }
 
     bool comp(index col, nana::any* row1_, nana::any*row2_, bool reverse)
@@ -224,7 +223,7 @@ class TableHybRes  : public nana::form, public EditableForm
     }
     void AsignWidgetToFields() override
     {
- 	    _place.field("toolbar"       ) << _descr <<_bTm << _bPos << _bG << _bI << _byCol << _mix;
+ 	    _place.field("toolbar"       ) << _descr << _bTm << _bPos << _bG << _bI << _byCol << _bDeg;
  	    _place.field("_list"         ) <<_list;
 	}
  public:
@@ -258,6 +257,7 @@ class TableHybRes  : public nana::form, public EditableForm
                  return comp(col,row1_,row2_,reverse);
             });
         }
+        set_Deg_variants_visibility(false);
 
         // Add rows
         for (index row = 0; row < _table->totalRow(); ++row)
@@ -316,9 +316,8 @@ class TableHybRes  : public nana::form, public EditableForm
 
         _descr.events().click([this]()
                              {
-                                 _descr.pushed(!_descr.pushed());
-                                 SetValType(*val);
                                  _menuProgram.checked(mDescr, _descr.pushed());
+                                 Repopulate();
                              });
 
         _byCol.events().click([&]()
@@ -339,48 +338,58 @@ class TableHybRes  : public nana::form, public EditableForm
                                     });
           });
 
-        _mix.events().click([&]()
-         {
-            auto n = _list.column_size();
+        _bDeg.events().click([&]()
+        {
             _list.auto_draw(false);
-            for (int i=0; i<n; i++)
-            {
-                auto &col = _list.column_at(i);
-                auto const &t = col.text();
-                if (!t.empty() && t[0] == '#')
-                    col.visible(! col.visible());
-            }
-             _list.auto_draw(true);
-         });
+            set_Deg_variants_visibility(_bDeg.pushed());
+            _list.auto_draw(true);
+        });
 
-        _bTm .enable_pushed(true).pushed(true);
-        _bG  .enable_pushed(true).pushed(false);
-        _bPos.enable_pushed(true).pushed(false);
-        _bI  .enable_pushed(true).pushed(false);
-        _descr.enable_pushed(true).pushed(true);
+        _descr.enable_pushed(true).pushed(false);
+        _bTm  .enable_pushed(true).pushed(true );
+        _bG   .enable_pushed(true).pushed(false);
+        _bPos .enable_pushed(true).pushed(false);
+        _bI   .enable_pushed(true).pushed(false);
+        _bDeg .enable_pushed(true).pushed(false);
 
         _menuProgram.append_splitter();
+
+        using Mitem = nana::menu::item_proxy;
         
-        mTm=_menuProgram.append     ( ("Show Tm")    , [&](nana::menu::item_proxy& ip)  { Click( _bTm); })
+        mTm=_menuProgram.append     ( ("Show Tm"),       [&](Mitem& ip)  { Click( _bTm); })
                         .check_style( nana::menu::checks::option)
                         .index();
 
-        mG=_menuProgram.append      ( ("Show delta G"), [&](nana::menu::item_proxy& ip) { Click( _bG);  })
+        mG=_menuProgram.append      ( ("Show delta G"),   [&](Mitem& ip) { Click( _bG);  })
                         .check_style( nana::menu::checks::option)
                         .index();
 
-        mI=_menuProgram.append      ( ("Show Intensity"), [&](nana::menu::item_proxy& ip) { Click( _bI);  })
+        mI=_menuProgram.append      ( ("Show Intensity"), [&](Mitem& ip) { Click( _bI);  })
                 .check_style( nana::menu::checks::option)
                 .index();
 
-        mP=_menuProgram.append      ( ("Show Pos")    , [&](nana::menu::item_proxy& ip) { Click( _bPos);})
+        mP=_menuProgram.append      ( ("Show Pos"),       [&](Mitem& ip) { Click( _bPos);})
                         .check_style( nana::menu::checks::option)
                         .index();
 
-        mDescr=_menuProgram.append      ( ("Show Description")    , [&](nana::menu::item_proxy& ip) { Click( _descr);})
+        mDescr=_menuProgram.append  ( ("Show Description"), [&](Mitem& ip) { Click( _descr);})
                 .check_style( nana::menu::checks::option)
                 .index();
     }
+
+    void set_Deg_variants_visibility(bool visible)
+    {
+        auto n = _list.column_size();
+        for (int i=0; i<n; i++)
+        {
+            auto &col = _list.column_at(i);
+            auto const &t = col.text();
+            if (!t.empty() && t[0] == '#')
+                col.visible(visible);
+        }
+    }
+
+
     void SetFormat(int dec=1 , int len=6)  // ??
     {  
         _Tm.n_len=_G.n_len=len; _Tm.n_dec=_G.n_dec=dec;

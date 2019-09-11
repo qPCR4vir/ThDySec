@@ -51,31 +51,32 @@ class SeqExpl : public CompoWidget
     std::vector<SecIt>  _dragSec;
     std::vector<MSecIt> _dragMSec;
 
-    nana::button    _loadFile     {*this,("Load"   )},       //nana::toolbar  _tbar { *this };
-                    _re_loadFile  {*this,("reLoad" )},   
-                    _loadDir      {*this,("Load"   )},       
-                    _re_loadDir   {*this,("reLoad" )},
-                    _scanDir      {*this,("Scan"   )},
-                    _re_scanDir   {*this,("reScan"   )},
-                    _cut          {*this,("Cut"    )},
-                    _paste        {*this,("Paste"  )},
-                    _del          {*this,("Del"    )},
-                    _cutSec       {*this,("Cut"    )},
-                    _delSec       {*this,("Del"    )},
-                    _show_locals_s{*this,("local"  )},
-                    _show_filt_s  {*this,("filter" )}
+    nana::button    _loadFile     {*this, "Load"  },       //nana::toolbar  _tbar { *this };
+                    _re_loadFile  {*this, "reLoad"},
+                    _loadDir      {*this, "Load"  },
+                    _re_loadDir   {*this, "reLoad"},
+                    _scanDir      {*this, "Scan"  },
+                    _re_scanDir   {*this, "reScan"},
+                    _cut          {*this, "Cut"   },
+                    _paste        {*this, "Paste" },
+                    _del          {*this, "Del"   },
+                    _cutSec       {*this, "Cut"   },
+                    _delSec       {*this, "Del"   },
+                    _show_locals_s{*this, "local" },
+                    _show_filt_s  {*this, "filter"}
                     ; 
 
 	ParamGUIBind::BindGroup    _commPP;
-	nana::NumUnitUpDown numUpDwMaxTgId  {*this, "Max. ident.:"        , 99,  50 , 100 ,   "%"}, 
-                        numUpDw_TgBeg   {*this, "Beg.:"               ,  0,   0 , 100000,"nt"},    /// rev !!
-                        numUpDw_TgEnd   {*this, "End.:"               ,  0,   0 , 100000,"nt"},    /// rev !!	
-                        numUpDw_SLenMin {*this, "Min.Len.:"           ,  0,   0 , 100000,"nt"},
-                        numUpDw_SLenMax {*this, "Max.Len.:"           ,  0,   0 , 100000,"nt"};
+	nana::NumUnitUpDown numUpDwMaxTgId  {*this, "Max. ident.:",99,50, 100 ,  "%" },
+                        numUpDw_TgBeg   {*this, "Beg.:"       , 0, 0, 100000,"nt"},    /// rev !!
+                        numUpDw_TgEnd   {*this, "End.:"       , 0, 0, 100000,"nt"},    /// rev !!
+                        numUpDw_SLenMin {*this, "Min.Len.:"   , 0, 0, 100000,"nt"},
+                        numUpDw_SLenMax {*this, "Max.Len.:"   , 0, 0, 100000,"nt"};
 
-    nana::tooltip   _loadFileTT {_loadFile,("File load: Add a group of sequences from a file")},
-                    _re_loadFileTT ;
-	nana::label     _statusbar    { *this },
+    nana::tooltip   _loadFileTT {_loadFile,"File load: Add a group of sequences from a file"},
+                    _re_loadFileTT {_re_loadFile,"File reload: Reload a group of sequences from a file, \npossibly using new filters."};
+
+    nana::label     _statusbar    { *this },
                     _firma ;
 
     void SetDefLayout() override;
