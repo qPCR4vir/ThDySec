@@ -372,6 +372,8 @@ class TableHybRes  : public nana::form, public EditableForm
                         .check_style( nana::menu::checks::option)
                         .index();
 
+        _menuProgram.append_splitter();
+
         mDescr=_menuProgram.append  ( ("Show Description"), [&](Mitem& ip) { Click( _descr);})
                 .check_style( nana::menu::checks::option)
                 .index();
