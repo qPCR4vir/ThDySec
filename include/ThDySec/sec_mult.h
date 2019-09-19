@@ -296,14 +296,15 @@ class CMultSec
             return AddFreeMultiSec(s);
         }
 
-        void DeleteMSec( MSecIt from)
+        void DeleteMSec(MSecIt del)
         {
-            CMultSec* p = (*from)->_parentMS;
+            CMultSec* p = (*del)->_parentMS;
             if (p == this) return;                  // no-op ; mover al final?
 
-            pMSec s = *from;
-            if (p) p->_LMSec.erase(from);
+            pMSec s = *del;
+            if (p) p->_LMSec.erase(del);
             UpdateTotalsMoving(*s);
+            s->_parentMS= nullptr;
         }
 
         void DeleteSec( SecIt from)
