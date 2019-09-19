@@ -37,56 +37,88 @@ TGAAAATTCCTGAGACACATGG
 >RVF-rev
 ACTTCCTTGCATCATCTGATG
 
->Batai_Buny_S-f        - Batai_Buny_S-F_444
+>Batai_Buny-S-f        -d1 - Batai_Buny_S-F_444
 GCTGGAAGGTTACTGTATTTAATAC
->Buny-f                -Buny.f.2	
+>Buny-S-f              -d2  -Buny.f.2	
 GCTGGAAGATTACTGTATWTAATAC
->Ilesha-f	           -Ilesha.f.4	
+>Ilesha-S-f	           -d4 -Ilesha.f.4	
 GCTGGAAGATTKCYGTATATAATAC
->Batai_Buny_S-r        - Batai_Buny_S-R_445
+>Batai_Buny-S-r        -d1 - Batai_Buny_S-R_445
 CAAGGAATCCACTGAGTCTGTG
->Ilesha-r              -Ilesha.r.10
+>Ilesha-S-r            -d4  -Ilesha.r.10
 CAAGGWATCCACTGAGKCGGTG
->Batai_Buny_S-P_445
+>Batai_Buny-S-p        -d1  - Batai_Buny_S-P_445
 AACAGTCCAGTTCCAGACGATGGTC
 
->BUNV-M_Forw
+>Buny-M-f              -d1 - BUNV-M_Forw
 GGTATAGAAGGGGCATTCATAACAG
->BUNV-M_Rev
+>Batai.Batai-M-f	   -d4.6 OK better than Batai.f.4??
+GGRGTAGATTCAGCATAYATAACTG
+>Batai.Ngari-M-f	   -d2.5 OK
+GGAGTAGATTCAGCATATATAKCTG
+>Batai-M-f	           -d2.4 variant of Batai.Batai.f.6	
+GGAGTAGATTCAGCATAYATAACTG
+>Buny-M-r              -d1  - BUNV-M_Rev
 TTGACAGCCAAGCACCCAA
->BUNV-M_Probe_M11852
+>Batai.Ngari-M-r       -d1.14   OK
+TTTACAGCAAGGCACCCAA
+>Batai-M-r             -d16.13   may remplace 14
+TTKACAGCAAGRCAYCCRA
+
+
+>Batai.Batai.r.15      -d32  not much better than 14+13, no remplace for 14
+TTSAYAGCAAGRCAYCCRA
+>r.12                  -d128
+TTKAYRGCMARRCAMCCAA
+>Buny.r.11             -d96
+TTDAYWGCYARGCASCCAA
+
+
+>Buny.f.8	           -d6144
+GGWATAGAHKSRGCATWYATMWYWK
+>f.7	               -d1532
+GGWRTWGAWTCAGCATAYATMWYDK
+
+
+
+>Buny-M-p_M11852                - BUNV-M_Probe_M11852
 TGACGAACATTGCACTGGCCAATGTC
 
 
->Simbu_F
+
+
+
+
+
+>Simbu-S-f      - Simbu_F
 TAGAGTCTTCTTCCTCAAYCAGAAGA
->Simbu_R
+>Simbu-S-r      - Simbu_R
 TAYTGGGGAAAATGGTTATTAACCA
 
 
->Nairo-f 	Vina-Rodriguez,2019 - Nairo.f.2
+>Nairo-S-f 	Vina-Rodriguez,2019 - Nairo.f.2
 CAAGRGGKACCAARAAAATGAARAAGGC
->Nairo-r 	Vina-Rodriguez,2019 - Nairo-CC-r_713  in LAB
+>Nairo-S-r 	Vina-Rodriguez,2019 - Nairo-CC-r_713  in LAB
 CYACTGGRATTGCCCCRAAGCAAACR
 
->CCHFV-f 	Vina-Rodriguez,2019 - CCHFV.f.1
+>CCHFV-S-f 	Vina-Rodriguez,2019 - CCHFV.f.1
 CAAGRGGTACCAAGAAAATGAARAAGGC
->CCHFV-r 	Vina-Rodriguez,2019 - CCHFV.r.6
+>CCHFV-S-r 	Vina-Rodriguez,2019 - CCHFV.r.6
 CMACAGGGATTGTYCCAAAGCAGAC
 
->NSDV-f 	Vina-Rodriguez,2019 - NSDV.f.5
+>NSDV-S-f 	Vina-Rodriguez,2019 - NSDV.f.5
 CCAGAGGRAACAAAAAAATGAAGAARGC
->NSDV-r 	Vina-Rodriguez,2019 - NSDV.r.8
+>NSDV-S-r 	Vina-Rodriguez,2019 - NSDV.r.8
 CYACTGGRATTGCCCCRAAGCAAAC
 
->DGBV-f 	Vina-Rodriguez,2019 - DGBV.f.3
+>DGBV-S-f 	Vina-Rodriguez,2019 - DGBV.f.3
 CTAGAGGAGGCAAAAAAATGATCAARGC
->DGBV-r 	Vina-Rodriguez,2019 - DGBV.r.9
+>DGBV-S-r 	Vina-Rodriguez,2019 - DGBV.r.9
 CAACAGGAATAACYCCRAAGCATGC
 
->HAZV-f 	Vina-Rodriguez,2019 - HAZV.f.4
+>HAZV-S-f 	Vina-Rodriguez,2019 - HAZV.f.4
 CCAAGGGACAGAAAAAAATGCAAAAGGC
->HAZV-r 	Vina-Rodriguez,2019 - HAZV.r.10
+>HAZV-S-r 	Vina-Rodriguez,2019 - HAZV.r.10
 TGACGGGCACGGCTCCAAACGATAT
 
 
