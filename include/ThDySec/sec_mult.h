@@ -271,13 +271,13 @@ class CMultSec
         SecIt AddFreeSec(pSec sec);
         SecIt InsertFreeSec(SecIt pos, pSec sec) ;
         SecIt InsertFreeSecAfter(SecIt preSec, pSec sec) ;
-        SecIt MoveSec(SecIt from)
+        SecIt MoveSec(SecIt move_me)
         {
-            CMultSec* p = (*from)->_parentMS;
-            if (p == this) return from;
+            CMultSec* from = (*move_me)->_parentMS;
+            if (from == this) return move_me;
 
-            pSec s = *from;
-            if (p) p->_LSec.erase(from);
+            pSec s = *move_me;
+            if (from) from->_LSec.erase(move_me);
             return AddFreeSec(s);
         }
 
