@@ -847,5 +847,5 @@ void        CMultSec::UpdateTotalsMoving ( CMultSec &msec )
 
         CMultSec::~CMultSec ()                // funciona bien solo si la lista es "lineal"
 {
-    clear();
+    //clear();
 }    

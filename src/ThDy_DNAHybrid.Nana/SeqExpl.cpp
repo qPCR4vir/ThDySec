@@ -322,25 +322,35 @@ void SeqExpl::MakeResponive()
         _cutSec     .tooltip(("Cut selected sequences from list"))            //  ------------  CUT sec --------------
                     .events().click([this]()
         {
-            auto sel =    _list.selected() ; 
+            auto sel =    _list.selected() ;
+            // std::cout << "\nGoing to Cut selected sequences from list - items: " << sel.size();
+            if (sel.empty()) return;
+            _list.auto_draw(false);
             for (auto i : sel)
             {
                 SecIt s=_list.at(i ).value<SecIt>();
                 _dragSec.push_back(_Pr._cp._pSeqNoUsed->MoveSec(s));
             }
-            RefreshList();
+            _list.erase(sel);
+            RefreshStatusInfo();
+            _list.auto_draw(true);
         });
 
         _delSec     .tooltip(("Delete selected sequences from list"))          //  ------------  DEL sec --------------
                     .events().click([this]()
         {
-            auto sel =    _list.selected() ; 
+            auto sel =    _list.selected() ;
+            // std::cout << "\nGoing to delete selected sequences from list - items: " << sel.size();
+            if (sel.empty()) return;
+            _list.auto_draw(false);
             for (auto i : sel)
             {
                 SecIt s=_list.at(i ).value<SecIt>();
                 _Pr._cp._pSeqNoUsed->MoveSec(s);
             }
-            RefreshList();
+            _list.erase(sel);
+            RefreshStatusInfo();
+            _list.auto_draw(true);
         });
 
         _show_locals_s.enable_pushed(true)

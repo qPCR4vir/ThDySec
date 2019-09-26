@@ -222,7 +222,7 @@ class SeqExpl : public CompoWidget
         _list.auto_draw(true);
     }
 	void RefreshStatusInfo(const CMultSec &ms);
-
+    void RefreshStatusInfo() {RefreshStatusInfo(**_tree.selected().value<MSecIt>() );};
 
 public:
     SeqExpl(ThDyNanaForm& tdForm);
