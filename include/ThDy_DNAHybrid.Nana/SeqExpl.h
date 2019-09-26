@@ -130,8 +130,9 @@ class SeqExpl : public CompoWidget
 
     void populate_list(CMultSec &ms)
     {
+        std::cout << "\nGoing to populate_list - this prevent a crash when compiled with gcc";
         for (SecIt CurSec = ms.SecL().begin(); CurSec != ms.SecL().end(); CurSec++)
-		  if ( _showFiltered || ! (**CurSec).Filtered() )
+		  if ( _showFiltered || ! ((**CurSec).Filtered() ))
               AddSecToList(CurSec);
     }
 
