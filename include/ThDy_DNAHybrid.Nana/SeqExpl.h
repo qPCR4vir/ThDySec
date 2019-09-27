@@ -102,8 +102,15 @@ class SeqExpl : public CompoWidget
 
             return node;
     }
-    void RefreshList(                ) { RefreshList(_tree.selected());      } ///< very High Level
-    void RefreshList(const Node &node) { RefreshList( node.value<MSecIt>()); } ///< High Level
+    void RefreshList(                ) ///< very High Level
+	{
+		RefreshList(_tree.selected());
+	} 
+    void RefreshList(const Node &node) ///< High Level
+	{
+		if (node.empty()) return;
+		RefreshList( node.value<MSecIt>()); 
+	} 
     void RefreshList(MSecIt ms)  ///< medium Level
     {
             _list.auto_draw(false);
@@ -117,7 +124,8 @@ class SeqExpl : public CompoWidget
 
     void populate_list_recur(const Node& node) ///< High Level
     {
-        populate_list_recur(**node.value<MSecIt>());
+		if (node.empty()) return;
+		populate_list_recur(**node.value<MSecIt>());
     }
 
     void populate_list_recur(CMultSec &ms)  ///< Low Level
@@ -138,8 +146,8 @@ class SeqExpl : public CompoWidget
 
     List::item_proxy AddSecToList     (SecIt s)
     {
-        return _list.at(0).append(s)
-                          .value(s)
+        return _list.at(0).append(s, true)
+                          //.value(s)
                           .check  ( (**s).Selected() )
                           .fgcolor( static_cast<nana::color_rgb>(
                                               ((**s).Filtered() ? 0xFF00FF   ///\todo: use coding
@@ -223,7 +231,12 @@ class SeqExpl : public CompoWidget
         _list.auto_draw(true);
     }
 	void RefreshStatusInfo(const CMultSec &ms);
-    void RefreshStatusInfo() {RefreshStatusInfo(**_tree.selected().value<MSecIt>() );};
+    void RefreshStatusInfo() 
+	{
+		auto tn = _tree.selected();
+		if (tn.empty()) return;
+		RefreshStatusInfo(**tn.value<MSecIt>() );
+	};
 
 public:
     SeqExpl(ThDyNanaForm& tdForm);

@@ -69,6 +69,8 @@ SeqExpl::Node SeqExpl::AddMSeqFiles (const std::filesystem::path &file, bool  al
     {     
     try{ 
             Node   tn = _tree.selected();
+			if (tn.empty()) return tn; // trhow
+
             CMultSec::pMSec ms = *tn.value<MSecIt>();
             _Pr._cp.AddSeqFromFile(*ms, file, all_in_dir);
             return Refresh(tn);
@@ -76,7 +78,9 @@ SeqExpl::Node SeqExpl::AddMSeqFiles (const std::filesystem::path &file, bool  al
         catch ( std::exception& e)
         { 
             (nana::msgbox ( ("Error adding sequences" ) )<< e.what()).show() ;
-            return _tree.selected();
+			Node   tn = _tree.selected();
+			if (tn.empty()) return tn; //?
+            return tn;
          }         
     }
 
@@ -84,7 +88,11 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
     {
         menu.append_splitter();
         using Mitem = nana::menu::item_proxy;
-        menu.append(("Add a new, empty, group for sequences"      ),[&](Mitem& ip) { AddNewSeqGr(_tree.selected()); });
+        menu.append(("Add a new, empty, group for sequences"      ),[&](Mitem& ip) 
+			{	Node   tn = _tree.selected();
+				if (tn.empty()) return; //?
+				AddNewSeqGr(tn); 
+			});
         menu.append(("Add a group of sequences from a file..."    ),[&](Mitem& ip) { Click(_loadFile);              });
         menu.append(("Add groups of sequences from a directory..."),[&](Mitem& ip) { Click(_loadDir);               });
 
@@ -92,12 +100,21 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
 
         menu.append(("Scan the structure of directory..."),[&](Mitem& ip) { Click(_scanDir);              });
         menu.append(("Re-scan the original directory"   ), [&](Mitem& ip) { Click(_re_scanDir);           });
-        menu.append(("Reload the original file"         ), [&](Mitem& ip) { ReloadFile(_tree.selected()); });
-        menu.append(("Reload the original directory"    ), [&](Mitem& ip) { ReloadDir (_tree.selected()); });
+        menu.append(("Reload the original file"         ), [&](Mitem& ip) 
+			{	Node   tn = _tree.selected();
+				if (tn.empty()) return; //?
+				ReloadFile(tn); 
+			});
+        menu.append(("Reload the original directory"    ), [&](Mitem& ip) 
+			{	Node   tn = _tree.selected();
+				if (tn.empty()) return; //?
+				ReloadDir (tn); 
+			});
         menu.append(("Replace from a file . . ."        ), [&](Mitem& ip)
         {
             auto tn= _tree.selected();
-            MSecIt ms = tn.value<MSecIt>();
+			if (tn.empty()) return; //?
+			MSecIt ms = tn.value<MSecIt>();
             fs::path pt{(*ms)->_orig_file};
             pt= fs::canonical(pt).make_preferred();
             nana::filebox  fb{ *this, true };
@@ -113,7 +130,8 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
         menu.append(("Replace from directory . . ."), [&](Mitem& ip)
         {
             Node   tn = _tree.selected();
-            MSecIt ms = tn.value<MSecIt>();
+			if (tn.empty()) return; //?
+			MSecIt ms = tn.value<MSecIt>();
 
             nana::folderbox  fb{ *this, (*ms)->_orig_file.parent_path(),
                                  "Replace/reload a group of sequences from a directory" };
@@ -144,10 +162,12 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
         menu.append(("Rename the selected group of sequences"    ),[&](Mitem& ip)
         {
             
-            RenameFrom rnm(_tree, _tree.selected().text());
+			Node   tn = _tree.selected();
+			if (tn.empty()) return; //?
+			RenameFrom rnm(_tree, tn.text());
             nana::API::modal_window( rnm );
-            _tree.selected().text(rnm.Name());
-            _tree.selected().value<CMultSec*>()->_name = rnm.Name() ;
+            tn.text(rnm.Name());
+            tn.value<CMultSec*>()->_name = rnm.Name() ;
 
         }).enabled(true);
 
@@ -155,8 +175,16 @@ void SeqExpl::AddMenuItems(nana::menu& menu)
         auto  indxFASTA = menu.append(("Export FASTA . . ."),[&](Mitem& ip) {  /*_tree.selected().value<CMultSec*>()->ExportFASTA();*/  }).index();
         auto& menuFASTA = *menu.create_sub_menu(indxFASTA);
         menuFASTA.append(("Only current sequences"     ),[&](Mitem& ip){  ;  });
-        menuFASTA.append(("Selected sequences in group"),[&](Mitem& ip){ _Pr.ExportFASTA(_tree.selected().value<MSecIt>()->get(), true );  });
-        menuFASTA.append(("All sequences in group"     ),[&](Mitem& ip){ _Pr.ExportFASTA(_tree.selected().value<MSecIt>()->get(), false);  });
+        menuFASTA.append(("Selected sequences in group"),[&](Mitem& ip)
+			{	Node   tn = _tree.selected();
+				if (tn.empty()) return; //?
+				_Pr.ExportFASTA(tn.value<MSecIt>()->get(), true );  
+			});
+        menuFASTA.append(("All sequences in group"     ),[&](Mitem& ip)
+			{	Node   tn = _tree.selected();
+				if (tn.empty()) return; //?
+				_Pr.ExportFASTA(tn.value<MSecIt>()->get(), false);  
+			});
         menuFASTA.append(("All selected sequences"     ),[&](Mitem& ip){ _Pr._cp._pSeqTargets->Export_as("export.fasta", true )  ;  });
         menuFASTA.append(("All sequences"              ),[&](Mitem& ip){ _Pr._cp._pSeqTargets->Export_as("export.fasta", false)  ;  });
 
@@ -185,7 +213,8 @@ void SeqExpl::MakeResponive()
         _loadFile   .events().click([this]()                                  //  ------------  LOAD--------------
                         {
                             auto      tn    = _tree.selected();
-                            MSecIt ms    = tn.value<MSecIt>();
+							if (tn.empty()) return;
+							MSecIt ms    = tn.value<MSecIt>();
                             fs::path pt= fs::canonical((*ms)->_orig_file).make_preferred();
 
                             nana::filebox  fb{ *this, true };
@@ -199,14 +228,20 @@ void SeqExpl::MakeResponive()
         //_loadFileTT.set(_loadFile,("File load: Add a group of sequences from a file"));
 
                                                                               //  ------------  RE-LOAD-------------- ?
-        _re_loadFile.events().click([this]()  {  ReloadFile(_tree.selected());    });
+        _re_loadFile.events().click([this]()  
+			{  
+				auto      tn = _tree.selected();
+				if (tn.empty()) return;
+				ReloadFile(tn);    
+			});
 
                                                                              //  ------------  LOAD-DIR --------- ?
         _loadDir    .tooltip(("Directory load: Add a tree of groups of sequences from a directory."))
                     .events().click([this]()
                         {
-                            auto tn= _tree.selected();
-                            MSecIt ms = tn.value<MSecIt>();
+							auto      tn = _tree.selected();
+							if (tn.empty()) return;
+							MSecIt ms = tn.value<MSecIt>();
                             nana::folderbox  fb{ *this, (*ms)->_orig_file, "Directory load: Add a tree of groups of sequences from a directory" };
                             auto path=fb();
                             if (path.empty()) return;
@@ -214,18 +249,27 @@ void SeqExpl::MakeResponive()
                         });
                                                                              //  ------------  RE-LOAD-DIR --------- ?
         _re_loadDir .tooltip(("Directory reload: Reload a tree of groups of sequences from a directory,\npossibly using new filters."))
-                    . events().click([this]()  {  ReloadDir (_tree.selected());    });
+                    . events().click([this]()  
+						{  auto      tn = _tree.selected();
+		                   if (tn.empty()) return;
+		                   ReloadDir (tn);    
+						});
 
                                                                              //  ------------  RE_SCAN-DIR ---------
         _re_scanDir .tooltip(("Re-Scan the original directory: reproduce the structure."))
-                .events().click([this]() { ReloadDir (_tree.selected(), true); });
+                .events().click([this]() 
+					{ auto      tn = _tree.selected();
+					  if (tn.empty()) return;
+				      ReloadDir (tn, true); 
+					});
 
                                                                              //  ------------  SCAN-DIR ---------
         _scanDir    .tooltip(("Directory scan: Reproduce the structure of directory..."))
                     .events().click([this]()
                         {
-                            auto tn= _tree.selected();
-                            MSecIt ms = tn.value<MSecIt>();
+							auto      tn = _tree.selected();
+							if (tn.empty()) return;
+							MSecIt ms = tn.value<MSecIt>();
                             nana::folderbox  fb{ *this, (*ms)->_orig_file, "Directory scan: Reproduce the structure of directory..." };
                             auto path=fb();
                             if (path.empty()) return;
@@ -236,7 +280,8 @@ void SeqExpl::MakeResponive()
                     .events().click([this]()
         {
             Node    tn = _tree.selected();
-            CMultSec *pms = tn.value<MSecIt>()->get();
+            if (tn.empty()) return;
+			CMultSec *pms = tn.value<MSecIt>()->get();
 
             for (MSecIt ms : _dragMSec)
                 pms->MoveMSec(ms);     /// \todo use MoveMSec   ?????!!!!!!
@@ -263,7 +308,8 @@ void SeqExpl::MakeResponive()
                     .events().click([this]()
         {
             Node tn= _tree.selected();
-            if (tn->owner()->owner().empty())    //   ???  if( tn->level() < 2 );  ///\todo use isRoot() ?
+			if (tn.empty()) return;
+			if (tn->owner().empty() || tn->owner()->owner().empty())    //   ???  if( tn->level() < 2 );  ///\todo use isRoot() ?
             {
                 (nana::msgbox ( _tree , ("Cut a group of sequences " + tn->text()) )
                           << ("Sorry, you can�t cut the group: ") + tn->text() )
@@ -293,7 +339,8 @@ void SeqExpl::MakeResponive()
                     .events().click([this]()
         {
             auto tn= _tree.selected();
-            if (tn->owner()->owner().empty())
+			if (tn.empty()) return;
+            if (tn->owner().empty() || tn->owner()->owner().empty())
             {
                 (nana::msgbox ( _tree , ("Deleting a group of sequences " + tn->text()) )
                           << ("Sorry, you can�t delete the group: ") + tn->text() )
