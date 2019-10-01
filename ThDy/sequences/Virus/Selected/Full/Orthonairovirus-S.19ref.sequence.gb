@@ -1,0 +1,2069 @@
+LOCUS       NC_038711               1677 bp    RNA     linear   VRL 24-AUG-2018
+DEFINITION  Hazara virus isolate JC280 segment S, complete sequence.
+ACCESSION   NC_038711
+VERSION     NC_038711.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Hazara virus
+  ORGANISM  Hazara virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1677)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (24-AUG-2018) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   2  (bases 1 to 1677)
+  AUTHORS   Lewandowski,K.S., Bell,A.J., Wooldridge,D., Chamberlain,J.,
+            Afrough,B., Dowall,S., Vipond,R., Gharbia,S. and Hewson,R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-JAN-2015) Research and Technical Services, Public
+            Health England, Porton, Porton Down, Manor Farm Road, Porton,
+            Salisbury, Wiltshire SP4 0JG, UK
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KP406725.
+            GenBank Accession Numbers KP406723-KP406725 represent sequences
+            from the 3 segments of Hazara virus.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: BWA v. 0.7.5; QuasiBam v. 1.0
+            Coverage              :: 1.0
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1677
+                     /organism="Hazara virus"
+                     /mol_type="genomic RNA"
+                     /isolate="JC280"
+                     /host="Ixodes redikorzevi"
+                     /db_xref="taxon:11596"
+                     /segment="S"
+                     /country="Pakistan"
+                     /collection_date="1964"
+     gene            83..1540
+                     /locus_tag="D1S34_sSgp1"
+                     /db_xref="GeneID:37618985"
+     CDS             83..1540
+                     /locus_tag="D1S34_sSgp1"
+                     /codon_start=1
+                     /product="nucleocapsid protein"
+                     /protein_id="YP_009507852.1"
+                     /db_xref="GeneID:37618985"
+                     /translation="MENKIVASTKEEFNTWYKQFAEKHKLNNKYTESASFCAEIPQLD
+                     TYKYKMELASTDNERDAIYSSALIEATRFCAPIMECAWASCTGTVKRGLEWFDKNKDS
+                     DTVKVWDANYQKLRTETPPAEALLAYQKAALNWRKDVGFSIGEYTSILKKAVAAEYKV
+                     PGTVINNIKEMLSDMIRRRNRIINGGSDDAPKRGPVGREHLDWCREFASGKFLNAFNP
+                     PWGEINKAGKSGYPLLATGLAKLVELEGKDVMDKAKASIAQLEGWVKENKDQVDQDKA
+                     EDLLKGVRESYKTALALAKQSNAFRAQGAQIDTVFSSYYWLWKAGVTPVTFPSVSQFL
+                     FELGKNPKGQKKMQKALINTPLKWGKRLIELFADNDFTENRIYMHPCVLTSGRMSELG
+                     ISFGAVPVTSPDDAAQGSGHTKAVLNYKTKTEVGNPCACIISSLFEIQKAGYDIESMD
+                     IVASEHLLHQSLVGKRSPFQNAYLIKGNATNINII"
+ORIGIN      
+        1 tctcaaagac aaacgtgccg cagacgcccc acgttttcat ccttttgaga gcaaaaccgg
+       61 tcgcctcaca acatcagcga gaatggagaa caagattgtt gccagtacta aggaagagtt
+      121 caacacctgg tacaagcagt ttgctgagaa acacaaactg aacaacaagt acacggaatc
+      181 tgcatccttt tgtgccgaaa ttcctcagct cgacacctac aagtacaaga tggagctagc
+      241 cagcacggac aatgagaggg acgccatcta cagctcagca ctcattgagg ccacccgatt
+      301 ctgtgctcct atcatggagt gtgcatgggc ttcctgcact gggacagtta aaagaggtct
+      361 ggaatggttc gacaaaaaca aagactctga caccgtgaag gtctgggatg ccaactacca
+      421 aaagctaaga acagagacac cgcctgctga ggcattactg gcataccaga aagccgccct
+      481 caactggaga aaggatgtcg gcttctccat tggggagtac accagtatac taaaaaaggc
+      541 agtggcggca gagtataagg tgccagggac agtgatcaat aacatcaaag aaatgctcag
+      601 cgatatgatt cgacgcagga acaggatcat caacggtggc tccgatgatg cgccaaagag
+      661 agggcctgtt gggcgtgagc atcttgactg gtgcagagag tttgcctcag gcaaattttt
+      721 gaatgctttc aaccctcctt ggggagagat taacaaggca ggtaaatctg ggtaccctct
+      781 cttggccacg ggattagcaa agctggttga gctagagggg aaagacgtga tggacaaggc
+      841 caaggcaagc attgcacaac ttgaaggatg ggtcaaagag aacaaagacc aagtcgacca
+      901 agacaaggca gaagacctcc taaaaggggt gagagaaagc tacaagactg ccctggctct
+      961 ggcaaagcag tcgaacgcct tccgtgccca gggagctcaa atagacactg tgttcagcag
+     1021 ctactactgg ctttggaagg caggagtgac accagtcacc ttcccatctg tgtcccaatt
+     1081 ccttttcgag ctgggtaaga accccaaggg acagaaaaaa atgcaaaagg cactcatcaa
+     1141 cacccctctc aaatggggaa aaaggctcat tgaactgttt gctgataacg acttcacaga
+     1201 gaacagaatc tacatgcacc cctgtgtgct aacatctgga agaatgtccg agcttggaat
+     1261 atcgtttgga gccgtgcccg tcaccagtcc cgatgatgcc gcccaagggt ccgggcacac
+     1321 aaaggcagtc ctcaactata agaccaagac cgaggtcggc aacccgtgtg cctgcatcat
+     1381 ttcaagcctc tttgagatcc aaaaagcagg ttatgacatt gagagcatgg atatagtcgc
+     1441 ctctgaacat cttctccatc aatctcttgt ggggaagcgc tcgcccttcc aaaacgccta
+     1501 cctcattaaa ggcaatgcca ccaacatcaa catcatctag gattgcggct aggttcactg
+     1561 ccaacacatc tctactgctg tttttcttct gcattgcttt gcttctattc ttactttcat
+     1621 tcttattcta ttctgttttg taaaatttgg ggctgtgcgg caacgatatc tttgaga
+//
+
+LOCUS       NC_034503               1898 bp ss-RNA     linear   VRL 13-AUG-2018
+DEFINITION  UNVERIFIED: Farallon virus isolate CalAr846 segment S cRNA
+            sequence.
+ACCESSION   NC_034503
+VERSION     NC_034503.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    UNVERIFIED; RefSeq.
+SOURCE      Farallon virus
+  ORGANISM  Farallon virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1898)
+  AUTHORS   Walker,P.J., Widen,S.G., Wood,T.G., Guzman,H., Tesh,R.B. and
+            Vasilakis,N.
+  TITLE     A Global Genomic Characterization of Nairoviruses Identifies Nine
+            Discrete Genogroups with Distinctive Structural Characteristics and
+            Host-Vector Associations
+  JOURNAL   Am. J. Trop. Med. Hyg. (2016) In press
+   PUBMED   26903607
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 1898)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-MAY-2017) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1898)
+  AUTHORS   Walker,P.J., Widen,S.G., Wood,T.G., Guzman,H., Tesh,R.B. and
+            Vasilakis,N.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-DEC-2015) Biochemistry and Molecular Biology,
+            University of Texas Medical Branch, 301 University Blvd, Galveston,
+            TX 77555-1079, USA
+COMMENT     GenBank staff is unable to verify sequence and/or annotation
+            provided by the submitter.
+            PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KU343156.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: ABySS v. 1.3.5
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1898
+                     /organism="Farallon virus"
+                     /mol_type="genomic RNA"
+                     /isolate="CalAr846"
+                     /host="Ornithodoros sp."
+                     /db_xref="taxon:248053"
+                     /segment="S"
+                     /country="USA: South Farallon Island, CA"
+                     /collection_date="Jul-1965"
+ORIGIN      
+        1 ctctctcaaa gaaaaacgtg ccaaacccct ccataacaca gtaacattcc tgttgttgta
+       61 agaaggtgtg gaaagcactc tttgagatgg caactcgcat gcgctatcag aactatgctc
+      121 tggattttaa aggtattggc gattggaata cttggtggtc tggattcaag gccaaacatg
+      181 ctaacattaa cagcaatttc actaatttcg aaagcttcag caatggtatg ttcgatgtgg
+      241 gaacatttat tgatgaggct caaaaaatcc aaggaaacag ccatgctgat cagcagagag
+      301 atgctattct tgctcaagca gttgttcaag tgacaaagca tgccgcaccc gtgaagtatg
+      361 gtggatggct ggtaaaccga agctatgtgg agacagcaat tgactggttt cagcagaatt
+      421 cacaaacaac tgaggttaag ctctgggatg ccagttatga ccgtttgaag gctcagttgc
+      481 cagacctgga tcaagtgaaa ggctacatca aatctgctgt ccgattcaga agtgaaacag
+      541 gtctccctgg agacattggg tttgccgttc ttcaaggtgc aacagctgca cagtggaaag
+      601 tccccatgga ctacataaca gagatccagg agatgctgac agacatgagg aacaggcaga
+      661 acttggtctt tggaagcaac cgaaataaag aacagagcag acgcaatggt gaatacatgg
+      721 catctctgat tttaggaact gaaagtatcc taggtgaagt tccttggggc tcttggaaca
+      781 agagaaacaa aggagacaaa aaattgctcc tgagctccac tgccatcatg aatgcactcc
+      841 aaaataacct gataacagag gatgacatca aaagatttga acacgacatg aagaatgagc
+      901 atgctactga aaaagatgac gatgtcaaga aggcaatttc tgacatcctg acaatgcttg
+      961 aagcattcaa ggttgaaaga caagccatga acagcaacaa cacaggtggc ttcattcaac
+     1021 aagggtcaaa cattgatgtc atcttttcat ctttctactg ggtgtggaaa tcaggatgtt
+     1081 cagtgaacga gtttccagca ctgtcgaaat ttctaaatgg cttaggccaa aagtttgtcg
+     1141 gtaaagccaa aatgctggaa actctttcag gagtgaagtt caagtggggc aaaggacttt
+     1201 tgaacataat atccaaggac aactttgcag accgcataca catgcaccca gcagtcctca
+     1261 cctcatccag gatcaacaat gacatggtat cttgttttgg cattgttcca gctcacaatc
+     1321 cagatttggc tgaaaatgga tgtgcatcat tgagaaacat caccaacttt gaaacaagaa
+     1381 agaacaacat ctgtgcagct gcaattgcca gcctctttcg tgtctacaag gctgcatatc
+     1441 caagatatga ccagcaggaa gttgtcccca tggagcacat gctacatcag agcttccttg
+     1501 gaaagacctc ggccatgcaa aactcaagca tgattgtcgg aaatgctctg gatgtcaaca
+     1561 ttgtagcttg attttctttc cctcttcttt atctgtgtgt tacattgctg tgttttgttt
+     1621 acatatttag tttgttctac tgtttgcagt gatttagtgt ggcacctcaa attccaacct
+     1681 ctctccctga aaccgtgact gttttaaaca taaaagtctt tctcttttta acagtccatc
+     1741 aatgcttcaa ttctaggcag actgctcttc attctattct tctgcttact gcttgctgtt
+     1801 cctttctctc tttccttgtt tcgacttgtt tagtttattt cagtttgttt tctatcttaa
+     1861 gagtgtaatt gtggaggggt tagaggcaac attatctt
+//
+
+LOCUS       NC_034389               1787 bp    RNA     linear   VRL 25-AUG-2018
+DEFINITION  Keterrah virus isolate P61361 nucleoprotein gene, complete cds.
+ACCESSION   NC_034389
+VERSION     NC_034389.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Keterrah virus
+  ORGANISM  Keterrah virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1787)
+  AUTHORS   Walker,P.J., Widen,S.G., Firth,C., Blasdell,K.R., Wood,T.G.,
+            Travassos da Rosa,A.P., Guzman,H., Tesh,R.B. and Vasilakis,N.
+  TITLE     Genomic Characterization of Yogue, Kasokero, Issyk-Kul, Keterah,
+            Gossas, and Thiafora Viruses: Nairoviruses Naturally Infecting
+            Bats, Shrews, and Ticks
+  JOURNAL   Am. J. Trop. Med. Hyg. (2015) In press
+   PUBMED   26324724
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 1787)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-MAY-2017) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1787)
+  AUTHORS   Walker,P.J., Widen,S.G., Firth,C., Blasdell,K.R., Wood,T.G.,
+            Travassos da Rosa,A.P.A., Guzman,H., Tesh,R.B. and Vasilakis,N.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-MAY-2015) Pathology and Center for Biodefense and
+            Emerging Infectious Diseases, University of Texas Medical Branch,
+            301 University Blvd, Galveston, TX 77555-0609, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KR537449.
+            GenBank Accession Numbers KR537447-KR537449 represent sequences
+            from the 3 segments of Keterrah virus.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: ABySS v. 1.3.5
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1787
+                     /organism="Keterrah virus"
+                     /mol_type="genomic RNA"
+                     /isolate="P61361"
+                     /host="Carios pusillus"
+                     /db_xref="taxon:1712571"
+                     /segment="S"
+                     /country="Malaysia"
+                     /collection_date="11-Feb-1966"
+                     /note="identical sequqence found in host Scotophilus
+                     kuhlii"
+     gene            37..1497
+                     /locus_tag="CAB94_sSgp1"
+                     /db_xref="GeneID:37627616"
+     CDS             37..1497
+                     /locus_tag="CAB94_sSgp1"
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="YP_009361834.1"
+                     /db_xref="GeneID:37627616"
+                     /translation="MSKLVFENVEGLNEWFNAFSAGKGLDNRSSNSLCFGYEAPDYTN
+                     YAIRVGEARDDKEKNAIYGQAVIAATRFIAPLKECAWVSCKGMIERSMKWFDIAAHGN
+                     EDFKIWHDNYNALKSRVPSLMEITGYRTSVLNWRAATRFEELDTVQTLYGEMRMDYAI
+                     NADIAPTIVEMLNDMKDKRERAFGANGGSRGRVSQEHVGWVRLWLDGQIDPLSIPQWG
+                     SWDKTNSSGKRLGATGIVNLYDPQNYDSLALAEIKYGEAVAAARTAARDLDPAAITAT
+                     LQRIRACIDEAKEIANAREGNGNVAFTQQMAAMDVAFSSHYWLWRSGCKFESFAPLSQ
+                     YLFELGQRPVGSAKIDKMLGEMPWMWARGLRSSFADKTFQDKIHIHPAVLTQGRLLDM
+                     ASCFGAIPANNPERAREGTGNPRFILNLRRSGRNLCGTVAAKLFEVFKAGFNVQESEI
+                     IPAEHMLHQSFLGKQSHLQYAGMLQGDFTKIHIVNA"
+ORIGIN      
+        1 cagacgagcc gcacacaagt ggttaaatcc ttagagatgt ctaagctggt cttcgaaaac
+       61 gtcgagggct tgaatgaatg gttcaatgcc ttttctgcag gaaaaggcct tgataaccgt
+      121 tcaagcaact ccctctgctt cggttacgag gccccagatt ataccaacta tgccatcaga
+      181 gttggtgaag ctcgtgatga caaagagaag aatgccattt atgggcaggc cgtaatagca
+      241 gcaacaaggt tcattgcacc cttgaaagaa tgtgcatggg tgtcttgcaa aggcatgatc
+      301 gaaagatcta tgaagtggtt tgacatcgct gctcatggca acgaggattt taaaatctgg
+      361 catgacaact acaatgcact gaaatccagg gttcctagcc tcatggagat aactggttat
+      421 agaaccagtg tgctcaactg gagagctgcc acgagattcg aggagcttga cacagtacag
+      481 actctgtacg gggagatgcg tatggactat gccatcaatg ctgacattgc accaactatt
+      541 gttgagatgc taaatgacat gaaggacaag agagagagag catttggtgc taatggtggc
+      601 agcagaggta gagttagcca agagcacgta gggtgggtaa gactctggct tgatggacaa
+      661 attgaccctc tgtcgatccc tcagtggggc agttgggata agacaaatag cagtggtaag
+      721 agacttgggg caacaggcat cgttaacctg tatgatcctc agaattatga ctcactagct
+      781 cttgctgaga tcaagtatgg cgaagctgta gctgctgcca gaactgctgc cagagatctt
+      841 gaccctgcag caatcactgc aactctccag agaattaggg cttgcattga cgaagctaaa
+      901 gaaatcgcca atgcacgaga aggcaatgga aacgtagcgt tcacacagca aatggctgca
+      961 atggatgttg cctttagctc tcattattgg ctgtggagaa gtggttgtaa gtttgaaagc
+     1021 tttgcacctt tgtctcaata cctgtttgaa cttggacaaa ggccagtagg cagtgctaaa
+     1081 attgataaaa tgctaggaga aatgccttgg atgtgggcaa gaggacttag atcctccttt
+     1141 gctgataaaa cattccaaga taagatccat atccatccag cagttctaac acagggaaga
+     1201 ctgcttgaca tggcatcttg ctttggagct attccggcca ataatcctga gagagcaaga
+     1261 gaaggtacgg gcaaccctag atttatcttg aaccttcgtc gctcaggaag gaatctttgt
+     1321 ggaactgttg ctgccaaact ttttgaggtt ttcaaagccg gattcaatgt tcaagaatca
+     1381 gagatcatcc cagctgagca catgcttcat cagtcattcc taggtaagca gtctcatctt
+     1441 cagtatgctg gtatgcttca aggtgacttc actaagatcc acatcgtgaa tgcttaaact
+     1501 gaggttttac ttctattctc ttttcactta atcacatata acttcaaata atcatgcttt
+     1561 tgcttttacc tgcacctaca ttaaacagat tgcatcaacc agctttaaca acaggaagga
+     1621 ctgacgtcaa gatgactgag cgggcaaatt gggcacacac tgctacttac catctgtagc
+     1681 tgttaactag tgttagcatg gttttaagat gatgttgctg acacaactgt gtttaaacct
+     1741 aaacacaggt tgtttcaaca catcatgttt aaaaccatgc gttaaca
+//
+
+LOCUS       NC_034386               1590 bp ss-RNA     linear   VRL 13-AUG-2018
+DEFINITION  Nairobi sheep disease virus isolate Jilin segment S nucleocapsid
+            gene, complete cds.
+ACCESSION   NC_034386
+VERSION     NC_034386.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Nairobi sheep disease virus (NSDV)
+  ORGANISM  Nairobi sheep disease virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1590)
+  AUTHORS   Liu,Q.
+  TITLE     Nairobi sheep disease virus in ticks, in China
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1590)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2017) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1590)
+  AUTHORS   Liu,Q.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (03-SEP-2014) Military Veterinary Institute, Academy of
+            Military Medical Sciences, 666 Liuying West Road, Changchun, Jilin
+            130122, China
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KM464724.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: DNA STAR v. 5.0
+            Assembly Name         :: TICK VIRUS
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1590
+                     /organism="Nairobi sheep disease virus"
+                     /mol_type="genomic RNA"
+                     /isolate="Jilin"
+                     /host="tick"
+                     /db_xref="taxon:194540"
+                     /segment="S"
+                     /country="China"
+                     /collection_date="2013"
+     gene            52..1500
+                     /locus_tag="CAB93_sSgp1"
+                     /db_xref="GeneID:32305862"
+     CDS             52..1500
+                     /locus_tag="CAB93_sSgp1"
+                     /codon_start=1
+                     /product="nucleocapsid"
+                     /protein_id="YP_009361831.1"
+                     /db_xref="GeneID:32305862"
+                     /translation="MQNQIVADNKDAILAWHKTYSEKHRLKSVLTNSASFCETIPDLS
+                     GYEVSMRLVSSESEKDSVYASALVAATKFCAPILECAWTSCTGMVERGLDWFENNKET
+                     VKIWDAEYGKLRTEAPSPEQLLGYQRAALKWRKDTKYGINRNTAALAAAIATEYRVPG
+                     SIVVNVKDMLSDMIRRRNKILNRDGSEDVPKRGPVSKEHIDWARDLAQGKFLVVFNPP
+                     WGDINKAGKSGIALAATGMAKLIELDGPKIAEDLRESLKGLVAWINAHKDEVENGKEV
+                     VDGLTKHLQKALELAKQSSAMRAQGAQIDTVFSSYYWLWKAGVTAEMFPTVSQFLFEL
+                     GKVPRGNKKMKKALSSMPLKWGKKLLALFADDSFTANRIYMHPGVLTAGRMSELGVCF
+                     GAIPVANPDDAAEGSGHIKNILAQTTDTQAGNPCAQNIVALFNIQKAGFDIESMDIVA
+                     LEHLLHQSLVGKRSPFQNAYNIRGNATSIQII"
+ORIGIN      
+        1 tctcaaagac aaacgtgccg ctttcgccca cattgtcttt gaactctgac catgcagaac
+       61 cagattgttg cggacaacaa ggatgccatc cttgcatggc acaaaaccta cagtgagaag
+      121 cacagactca agtctgtttt gacaaactca gcttctttct gtgagactat acctgacttg
+      181 tcggggtatg aggtcagcat gaggcttgtt tcatcggaga gtgagaagga ctcagtgtat
+      241 gcatctgccc tggtggccgc gactaaattc tgtgctccta tactggagtg tgcctggacc
+      301 agctgcacgg ggatggtcga gcgtggtctg gactggtttg aaaacaacaa ggaaacagtg
+      361 aagatttggg atgctgagta cgggaagcta agaacggaag cacccagccc tgaacaactg
+      421 ctgggttacc agagagcagc tcttaagtgg agaaaggata ccaagtacgg gatcaacaga
+      481 aatacagctg cactggccgc tgcaattgca accgagtata gagtccctgg atcaattgtg
+      541 gtgaatgtca aggacatgct gtcggacatg atcaggagaa ggaacaagat cctgaacaga
+      601 gacggcagtg aagatgttcc gaaaagggga cccgtcagca aagagcacat tgactgggct
+      661 agggaccttg ctcaaggtaa gttccttgtt gtcttcaatc caccatgggg tgatatcaac
+      721 aaggcaggaa agtcagggat tgccttagca gcgacaggta tggcaaaatt gatagagctg
+      781 gatggtccca aaattgcaga ggacctgagg gaatctctga agggtcttgt ggcatggatc
+      841 aatgcccaca aggatgaagt ggagaacggt aaagaggttg ttgatggttt gaccaagcac
+      901 ctgcagaaag cccttgaatt agccaagcaa tcaagtgcca tgagagccca aggggctcag
+      961 attgacactg tctttagcag ctactactgg ctttggaagg caggtgtgac agcggagatg
+     1021 tttccgacag tctcacagtt tctttttgag ctcggcaagg tgcccagggg aaataaaaaa
+     1081 atgaagaaag cactatcaag tatgcctctg aagtggggaa agaagttgct agcactcttt
+     1141 gctgatgata gcttcactgc taatcggatt tacatgcacc ctggtgtcct aacagctggg
+     1201 agaatgtctg agctcggtgt ttgcttcgga gcaatcccag ttgccaatcc tgacgatgcc
+     1261 gctgagggtt caggccacat caagaatata ctagcacaaa ccactgacac tcaggctggc
+     1321 aacccctgcg cacagaacat cgtcgcccta ttcaacattc agaaagccgg cttcgacatt
+     1381 gagagcatgg acatagttgc cttggagcat ctgctacacc agtcactcgt tggaaagaga
+     1441 tctccttttc agaatgccta caacatccgg ggaaatgcca ccagcatcca gatcatttaa
+     1501 tcgaactgcc gcatgctacc tgtttctctc tatttctctt acttctgcta ttattaacaa
+     1561 aggggctgtg cggcaacgat ctctttgaga
+//
+
+LOCUS       KR537452                2286 bp    cRNA    linear   VRL 16-SEP-2015
+DEFINITION  Thiafora virus isolate AnD 11411 nucleoprotein gene, complete cds.
+ACCESSION   KR537452
+VERSION     KR537452.1
+KEYWORDS    .
+SOURCE      Thiafora orthonairovirus
+  ORGANISM  Thiafora orthonairovirus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 2286)
+  AUTHORS   Walker,P.J., Widen,S.G., Firth,C., Blasdell,K.R., Wood,T.G.,
+            Travassos da Rosa,A.P., Guzman,H., Tesh,R.B. and Vasilakis,N.
+  TITLE     Genomic Characterization of Yogue, Kasokero, Issyk-Kul, Keterah,
+            Gossas, and Thiafora Viruses: Nairoviruses Naturally Infecting
+            Bats, Shrews, and Ticks
+  JOURNAL   Am. J. Trop. Med. Hyg. (2015) In press
+   PUBMED   26324724
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 2286)
+  AUTHORS   Walker,P.J., Widen,S.G., Firth,C., Blasdell,K.R., Wood,T.G.,
+            Travassos da Rosa,A.P.A., Guzman,H., Tesh,R.B. and Vasilakis,N.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-MAY-2015) Pathology and Center for Biodefense and
+            Emerging Infectious Diseases, University of Texas Medical Branch,
+            301 University Blvd, Galveston, TX 77555-0609, USA
+COMMENT     GenBank Accession Numbers KR537450-KR537452 represent sequences
+            from the 3 segments of Thiafora virus.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: ABySS v. 1.3.5
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..2286
+                     /organism="Thiafora orthonairovirus"
+                     /mol_type="viral cRNA"
+                     /isolate="AnD 11411"
+                     /host="Crocidura sp."
+                     /db_xref="taxon:1980529"
+                     /segment="S"
+                     /country="Senegal"
+                     /collection_date="17-Feb-1971"
+     CDS             49..2070
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="ALD84357.1"
+                     /translation="MENLIDFTGVDGLQRWLKLTFPDTPIGKELTNFGSFMSVVPDLS
+                     EFELQARKAGSDQEKDAIYSKALIAATRKAAPIAACAWTSSNDMVTKGLKWFEDQITK
+                     ENPKFISWHKEYEFFKKNVPTVEQLMDYQTSALEWRRDTGYSVIPETATLTSKVVAQF
+                     SVPGVYVVAVQDMIKDMVARRGGGPKRGVSDEHIRCCLDIMNGNYSAIINPSWGELDK
+                     KNKQGLMLLATGFAKLREVHGPVAMVKVGQTVDKFKAWCQNQDILDKTKADEACNILE
+                     QAVNESLTLGGGAAIYRNQVAQIDTVFSSYYWMWRAGVTSQSFPLLSDFLFELGQNAR
+                     GNIKVVKALERTGLKWSRPLLSLFADNTFKVGRIHMHPAVLTVGRLSEMGACFGIIPA
+                     THPQSAVLGSGFAKNILNVKTDGLNPSASLVVQLFDIQRQSRMLTDLDVVSSEHLLHQ
+                     VLVGKKSAYQNAFQVRGNATDTKIVGFDPPKLKRGSNMRSSFDPKKTEVNFAFEPEAP
+                     IVQVAGLGPIRMGTKEEVAKQIEDARHRLEVQKLTEISEGVMAWEQSKRAEMSQKRKV
+                     TLGGPTTQTQTLTIQEQTVTPGSSVPRAGSVVQMAPLSGIHPIQQQFLPKVQLAPEGV
+                     QYINWQQVTQHPASDNKHMDWQHTAQPQAPSHTEDFPDDIFAPYQGPTV"
+ORIGIN      
+        1 tctcaaagaa agctgtgctg catactgtac aaaactttgt ctggagagat ggagaatctc
+       61 attgacttta caggtgtgga cggtcttcag agatggctca agctaacatt ccctgacaca
+      121 cctataggga aagagctaac caattttggc tccttcatgt ctgttgtgcc agacttgagt
+      181 gagtttgaac tgcaagcaag aaaggcaggt tcagaccaag aaaaagatgc aatatactcc
+      241 aaggcactga tagcagccac aagaaaggcg gctcctattg cggcctgtgc atggacatca
+      301 agcaacgaca tggtgacaaa agggctcaag tggttcgagg atcagataac aaaagagaat
+      361 cctaaattta tctcttggca caaggagtat gaatttttca aaaagaatgt gcccacagtt
+      421 gagcagctta tggattacca aacatcagct ctagaatgga ggagagacac aggttacagt
+      481 gtcataccag aaactgcaac tctcacaagc aaagttgtgg cacagttctc agttcctggg
+      541 gtctatgttg ttgctgtgca agatatgatc aaagacatgg ttgccagaag aggtggaggg
+      601 cctaaacgcg gagtcagtga tgaacacatc agatgttgtt tagacatcat gaatgggaat
+      661 tattctgcaa tcattaaccc ttcttggggg gagctggaca agaaaaacaa gcaaggactg
+      721 atgcttcttg caacaggctt cgctaaacta agggaggttc acggaccagt agcaatggtc
+      781 aaggttggac aaacggtcga caagttcaaa gcttggtgcc aaaatcagga catccttgac
+      841 aagacaaagg ccgatgaggc atgcaacata ctagaacagg cagtgaatga gagtcttaca
+      901 ctaggtggtg gtgcagcaat ctatcggaat caggttgctc agattgacac cgtgttcagt
+      961 agctactact ggatgtggcg tgctggtgta acatctcaga gtttcccctt gctatctgac
+     1021 ttcctctttg agttgggtca aaatgcaaga ggcaatataa aggttgtaaa ggccttggaa
+     1081 agaactggat taaaatggag cagacctttg ctgagtcttt ttgcagacaa tactttcaag
+     1141 gtgggaagga ttcacatgca tccagctgtc ttgacagttg gtaggctgag cgaaatgggg
+     1201 gcttgttttg gaatcatacc agcaactcat cctcagtcag cagtactagg ctcagggttt
+     1261 gcaaaaaaca tcttaaatgt aaagactgat ggtctcaacc catcagccag tctcgttgtt
+     1321 caactctttg acatccaaag acagtcaagg atgttgacag acctagatgt ggtgtcatca
+     1381 gagcatctcc tgcaccaagt actagttggt aaaaagagtg cttatcaaaa tgcatttcaa
+     1441 gtcagaggaa acgcaactga cactaagatt gtgggctttg atcctcctaa gcttaaaaga
+     1501 ggaagcaata tgagaagctc ttttgaccca aagaagacag aggtgaactt tgcttttgaa
+     1561 ccagaggcac caattgttca agtggccggc ttgggtccta tccggatggg aactaaggaa
+     1621 gaggttgcta agcagattga agatgcaaga cacagactag aagtccaaaa gctgactgag
+     1681 atctcagagg gtgtaatggc atgggaacag tccaagagag ccgaaatgtc ccaaaagaga
+     1741 aaagtcacac tagggggccc gacaacacaa acacaaacac tgaccatcca ggaacaaacg
+     1801 gtaactcccg gctcctctgt accacgggct ggttcggtgg tgcagatggc tcctctgtca
+     1861 ggtatacatc ctatacagca gcaattctta cctaaagtcc agttggcacc agaaggtgtt
+     1921 caatatataa actggcagca agttacccaa cacccagcat ctgacaacaa acacatggac
+     1981 tggcaacaca cggctcagcc tcaggcacca agccatacag aagactttcc tgatgacatc
+     2041 tttgcccctt atcaaggccc aactgtgtaa acagttcaca tccagattac gtctcaattt
+     2101 aaaaccaatt tctattttgc tttactaact gcttcatcca tcctcactaa ccgcaggctc
+     2161 tggggagaac cacctcggtc caacaagcgt ctcgcaggac acaggtggtt gtccatcaac
+     2221 ctcacagatc tgctttgcca aatcaacatt gtgacagtat gcagcaacac tatcttctga
+     2281 gaaact
+//
+
+LOCUS       KU925460                2183 bp    cRNA    linear   VRL 29-JUN-2016
+DEFINITION  Erve virus strain Brest/An 221 (TVP21049) segment S, partial
+            sequence.
+ACCESSION   KU925460
+VERSION     KU925460.1
+DBLINK      BioProject: PRJNA314196
+            BioSample: SAMN04530552
+KEYWORDS    .
+SOURCE      Erve virus
+  ORGANISM  Erve virus
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 2183)
+  AUTHORS   Kuhn,J.H., Wiley,M.R., Rodriguez,S.E., Bao,Y., Prieto,K., Travassos
+            da Rosa,A.P., Guzman,H., Savji,N., Ladner,J.T., Tesh,R.B., Wada,J.,
+            Jahrling,P.B., Bente,D.A. and Palacios,G.
+  TITLE     Genomic Characterization of the Genus Nairovirus (Family
+            Bunyaviridae)
+  JOURNAL   Viruses 8 (6), 164 (2016)
+   PUBMED   27294949
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 2183)
+  AUTHORS   Kuhn,J.H., Wiley,M.R., Rodriguez,S., Travassos da Rosa,A.P.A.,
+            Guzman,H., Savji,N., Ladner,J.T., Tesh,R.B., Wada,J.,
+            Jahrling,P.B., Bente,D.A. and Palacios,G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (10-MAR-2016) Center for Genomic Science, USAMRIID, 1425
+            Porter St, Frederick, MD 21702, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Ray v. 2.2; Bowtie2 v. 2.06
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..2183
+                     /organism="Erve virus"
+                     /mol_type="viral cRNA"
+                     /strain="Brest/An 221 (TVP21049)"
+                     /isolation_source="spleen and kidney"
+                     /host="Crocidura russula"
+                     /db_xref="taxon:248062"
+                     /segment="S"
+                     /country="France: Saulges, Mayenne"
+                     /collection_date="05-May-1982"
+                     /note="genotype: Thiafora"
+     CDS             45..1937
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="AMT75397.1"
+                     /translation="MENLIDFSGRDGLDRWLRATFPDVILSVGLTNYGSLMTSVPDLS
+                     HFEQMARQAKSEQEKDAVYSKALTEATRKAAPIAACALTSSKEMVKKGLQWFEDQIIS
+                     EDGNFLVWHQNYEQLKKAPPSFEQLMGYQMSALNWRQSVGYGQLEETAVLVSQVIAQF
+                     SVPGTLVVTVQEMIKDMIARRGGGPKRGVSEEHVRCCVDIMNGNLSALINPAWGDIDK
+                     KNKNGLMLLTTGIAKLRELYGPVAMVKVQQAADKFGEWGKAQDVLDQSRVQEIHQVLL
+                     KSIAESTSLGGGAAVFKNQIAQIDSVFSSYYWMWRAGVTPESFPLLSDFLFELGQNAR
+                     GSAKIIKTLDRIGLKWSKPLVNLFADSTFKMGRIHMHPAVLTTGRLNEMGLCFGIIPA
+                     SHPESAVNGSGFAKNILNVRTDGMNPSAQLVVQLFDIQRQSRTLSDLDVVSSEHLFHQ
+                     ILVGKQTAYQNAFQVKGNATDTKIVGFDPPKIDKNKAIRDAVDQHLMASGYAVAPERS
+                     VMDLRREMEEREHKQRLEALAARAREAEAWEASRRAEMIQKRSGVRGGPTVQTQTLTV
+                     QEQYTIPKPMQSPQVQLMGAQGSVQYLGASAQQPSDPWIQSQASATGISQQLPTEDYT
+                     TISLFK"
+ORIGIN      
+        1 tctcaaagaa agttgtgctg ttactgtttc acactttctt tgagatggag aacctaattg
+       61 acttttcggg cagggatgga cttgacagat ggcttagagc aacctttcca gatgttatcc
+      121 ttagtgttgg cttgaccaat tatggctcac ttatgacttc agtgcctgac ctcagtcatt
+      181 ttgaacaaat ggctcgccag gcaaagtcag agcaggaaaa ggatgccgtc tactccaaag
+      241 cactgactga ggcaaccagg aaagcggccc caattgctgc ctgtgctctt acatcaagca
+      301 aagaaatggt taaaaaagga ctgcagtggt ttgaggacca gatcatatca gaagatggga
+      361 attttttggt gtggcatcag aattacgaac aactgaaaaa agctcctccc tcatttgaac
+      421 agctcatggg ttatcagatg tcagcactca actggcgcca gagtgtaggg tatggtcaac
+      481 tagaggaaac tgcagtcctt gttagtcaag tgattgcaca gttttcagta cctggaactc
+      541 ttgtggtaac agttcaagaa atgataaaag acatgattgc cagaagagga ggtgggccaa
+      601 agaggggtgt gagtgaggag catgttagat gctgtgttga cataatgaat ggaaatcttt
+      661 ctgcccttat caatccagca tggggggata ttgataagaa aaataagaat ggtctaatgc
+      721 tactcactac aggtattgct aaacttcgag agctctatgg cccagttgct atggtgaaag
+      781 tccagcaggc agcagataag tttggagagt gggggaaggc acaagatgta ttggatcaaa
+      841 gcagagttca agaaattcac caggtcttgt taaaatcaat agcagagagt acatcacttg
+      901 gaggcggggc tgcagtattc aagaatcaaa ttgcacaaat tgattcagtt ttcagcagct
+      961 actattggat gtggcgtgct ggtgtcacac ctgaaagttt tcctctgttg tcggacttct
+     1021 tatttgaact aggacagaat gcaagaggta gtgcaaagat catcaaaact cttgaccgga
+     1081 ttggtttaaa atggagcaag ccacttgtca acttgtttgc agacagcact ttcaaaatgg
+     1141 gaaggattca catgcatcca gctgttctca caactggcag actgaatgaa atgggtttat
+     1201 gttttggcat tatacctgca agtcacccgg agtctgctgt gaatggttct ggatttgcaa
+     1261 aaaacattct gaatgtaagg actgatggaa tgaacccttc agcacaattg gttgttcaac
+     1321 tcttcgacat ccagagacag tccagaactc ttagtgatct ggatgttgtt tcgtctgaac
+     1381 acctcttcca tcagatctta gtagggaagc agactgccta ccaaaatgcc ttccaggtga
+     1441 aaggaaatgc aacagatacc aaaatagtag gatttgaccc acccaaaata gataagaaca
+     1501 aagccatcag agatgcagtt gatcagcacc taatggcaag tgggtatgca gttgcgccag
+     1561 aacgttccgt aatggatttg aggagagaaa tggaggaaag ggagcacaaa cagaggcttg
+     1621 aagcactggc tgctagagct agagaggcag aggcctggga agcatccaga cgagctgaaa
+     1681 tgattcaaaa aagaagcggt gtaagaggtg gtcctacagt gcagactcaa actctgacgg
+     1741 ttcaagagca gtataccatt cctaaaccca tgcagagtcc acaggttcag ctcatgggtg
+     1801 ctcaaggttc agttcagtac ttgggtgcca gtgctcagca accatcagat ccctggattc
+     1861 aaagtcaggc ctctgccaca ggcatctccc agcagctgcc tacagaggac tacactacta
+     1921 taagtctctt caagtaaaca ttaaaattta acatgtatac cactaagtta ccattaaaaa
+     1981 acgttactaa caaagctagg gggcaaccag cacgactcaa caagcgcctc gcagggtact
+     2041 ggtggttatc ctttggcttt atattacatc taacaatttt gcaccacaaa tgcttcgcag
+     2101 gacactagta gcaacacacc cagcttagat caccttctcc aatgacactt ctgtaacagt
+     2161 atgcagcaac actatctttg aga
+//
+
+LOCUS       KU925487                1668 bp    cRNA    linear   VRL 29-JUN-2016
+DEFINITION  Saphire II virus strain RML 52323-14 segment S, complete sequence.
+ACCESSION   KU925487
+VERSION     KU925487.1
+DBLINK      BioProject: PRJNA314196
+            BioSample: SAMN04530535
+KEYWORDS    .
+SOURCE      Saphire II virus
+  ORGANISM  Saphire II virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus;
+            unclassified Nairovirus.
+REFERENCE   1  (bases 1 to 1668)
+  AUTHORS   Kuhn,J.H., Wiley,M.R., Rodriguez,S.E., Bao,Y., Prieto,K., Travassos
+            da Rosa,A.P., Guzman,H., Savji,N., Ladner,J.T., Tesh,R.B., Wada,J.,
+            Jahrling,P.B., Bente,D.A. and Palacios,G.
+  TITLE     Genomic Characterization of the Genus Nairovirus (Family
+            Bunyaviridae)
+  JOURNAL   Viruses 8 (6), 164 (2016)
+   PUBMED   27294949
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1668)
+  AUTHORS   Kuhn,J.H., Wiley,M.R., Rodriguez,S., Travassos da Rosa,A.P.A.,
+            Guzman,H., Savji,N., Ladner,J.T., Tesh,R.B., Wada,J.,
+            Jahrling,P.B., Bente,D.A. and Palacios,G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (10-MAR-2016) Center for Genomic Science, USAMRIID, 1425
+            Porter St, Frederick, MD 21702, USA
+COMMENT     GenBank Accession Numbers KU925485-KU925487 represent sequences
+            from the 3 segments of Saphire II virus strain RML 52323-14.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: Ray v. 2.2; Bowtie2 v. 2.06
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1668
+                     /organism="Saphire II virus"
+                     /mol_type="viral cRNA"
+                     /strain="RML 52323-14"
+                     /host="Argas sp."
+                     /db_xref="taxon:1815512"
+                     /segment="S"
+                     /country="USA: Garza County, Texas"
+                     /collection_date="Aug-1969"
+                     /note="genotype: Hughes"
+     CDS             56..1531
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="AMT75424.1"
+                     /translation="MASFALNFPTVKEWDEWYTEFKKDQPALNSNYTNFDSFFQSKPN
+                     VEELVYKMEKNRQEPNPVKDAVLGETVIKLTKFAAPIKECAWLVNENFVSEAMKWFNN
+                     NKDNQMFKSWHDKYDYLKVNLPTVEQVSDYQKCALRFRSDVPLPKTLAFEILKDTVPV
+                     TYKVSKETARPILDMFNDMENKRGKALGTGSKSEEGKETLLFNSDWMGQYINGLRHLL
+                     DMPPWGSWEKENRKGDLICHTSLLNYEQRRGDQSINIKARTKELEALYVEAKNEDSDV
+                     CPDVVLKMLNSLSAYEKFKRGATEMQEAAYAQQAAALDTLFSSCYWLWKSGASLKSFP
+                     ALSKFLNELSHRAVGKVKLTSVLRSSGWKWGNGIAGMLSSGEFNGNKIHMHPAVLTSG
+                     RLSSDMTLCFGAVPAADPKSARNGCGSMRSILNLETNRKNMCASTIVDLFTVFCAGYN
+                     YKEEEIVPPEHMLHQSLLGKTSPFQNVSQREGSAFKVTIIH"
+ORIGIN      
+        1 tctcaaagta aataaagcct accgccccct agacataact tgtctgagaa gcgcaatggc
+       61 tagttttgct ttgaacttcc ctactgtcaa agagtgggat gaatggtaca ctgaattcaa
+      121 aaaggaccaa cctgctttaa atagcaacta caccaacttt gactctttct tccaaagtaa
+      181 accaaatgtt gaagaacttg tctacaaaat ggaaaagaac agacaagagc ctaatccagt
+      241 caaagatgca gtcctaggag aaacagtcat caagctcacc aaatttgcag cacctataaa
+      301 agagtgtgcc tggcttgtga acgaaaactt tgtctctgaa gcgatgaagt ggttcaacaa
+      361 caacaaagac aaccagatgt tcaagtcttg gcatgacaag tatgattact tgaaggtgaa
+      421 cctcccaact gtggaacaag tctctgacta tcaaaagtgt gctttaaggt tcagaagtga
+      481 tgtgccactt ccaaagacac tggcttttga gatactgaag gacactgtcc ctgtgaccta
+      541 caaagtcagc aaagagactg ccaggcctat cttggatatg ttcaatgaca tggagaacaa
+      601 acgtggcaaa gctttaggca ctggaagcaa gtcagaagaa ggcaaagaaa cactactgtt
+      661 caactctgac tggatgggac agtatataaa tgggcttcgt caccttttgg acatgccgcc
+      721 ctggggtagc tgggaaaaag aaaacagaaa aggtgacctc atctgccaca cttctctcct
+      781 taactatgaa caaagacgcg gggatcagtc gataaacatt aaggcccgca ctaaagagtt
+      841 agaggcctta tatgttgagg caaagaacga agactctgat gtgtgtccgg acgtggtgct
+      901 caagatgctc aacagtctct ctgcatatga gaagtttaag agaggtgcca ctgagatgca
+      961 ggaagctgct tacgcccagc aagccgcagc acttgacaca cttttctcct cctgctactg
+     1021 gctctggaag tcaggtgcct cgctcaagtc gttccctgct ctctcaaagt tcttaaatga
+     1081 gttgtcccac agggcagttg gaaaggtgaa gcttacatca gtactgcgct catctggctg
+     1141 gaagtgggga aatgggatag caggaatgct ttcctcaggt gagtttaatg gcaacaaaat
+     1201 tcacatgcat cctgcagtcc ttacatcagg aagactttct tctgacatga ccctttgctt
+     1261 tggtgcagtg cctgcagcag acccaaagag tgcgcgcaac ggctgcggaa gcatgagaag
+     1321 catcctcaac ctcgagacaa acaggaaaaa catgtgtgca agtaccattg tcgacctttt
+     1381 cacagtgttc tgtgcaggat acaactacaa ggaagaagag atagtccctc cagaacacat
+     1441 gctgcaccaa tcgcttttgg ggaaaacctc accttttcag aatgtcagcc agagagaggg
+     1501 aagtgctttc aaagtcacta tcatacacta agcttgcact gcaaactcta cctagcatat
+     1561 ataatcattg taaccaaata taatcttttc cttaatcatc atttaatctg ttttatttca
+     1621 ttaccaaagg taaactgggg ggggcgtgcg gctatactaa ctttgaga
+//
+
+LOCUS       NC_043441               1443 bp ss-RNA     linear   VRL 22-AUG-2019
+DEFINITION  Artashat virus strain LEIV-10898Az segment S nucleocapsid protein
+            gene, partial cds.
+ACCESSION   NC_043441
+VERSION     NC_043441.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Artashat orthonairovirus
+  ORGANISM  Artashat orthonairovirus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1443)
+  AUTHORS   Alkhovsky,S.V. and Shchetinin,A.M.
+  TITLE     Genetic diversity and phylogeny of the Nairoviruses
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1443)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-AUG-2019) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1443)
+  AUTHORS   Alkhovsky,S.V. and Shchetinin,A.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (16-FEB-2015) Lab. of Biotechnology, The D.I. Ivanovsky
+            Institute of Virology, 16 Gamaleya str., Moscow 123098, Russia
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KP792746.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: CLC genomic v. 7.0
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1443
+                     /organism="Artashat orthonairovirus"
+                     /mol_type="genomic RNA"
+                     /strain="LEIV-10898Az"
+                     /isolation_source="burrows of a gerbil (Meriones lybicus)"
+                     /host="Ornithodoros sp. (tick)"
+                     /db_xref="taxon:2170061"
+                     /segment="S"
+                     /country="Azerbaijan"
+                     /collection_date="1985"
+     gene            1..1443
+                     /locus_tag="FLA06_sSgp1"
+                     /db_xref="GeneID:41324561"
+     CDS             1..>1443
+                     /locus_tag="FLA06_sSgp1"
+                     /note="N"
+                     /codon_start=1
+                     /product="nucleocapsid protein"
+                     /protein_id="YP_009666120.1"
+                     /db_xref="GeneID:41324561"
+                     /translation="MANMLKIKTVAELDNWLKNFPPYVTASTAVTNSKSLAGHLESIE
+                     PYRAKVRDNMSQPEKDALYSQAAMGLFKFGAPIRECVWTSSTGVFERSMKWFEDNHTT
+                     PTFITWDEKYAALKTDVPTLEQLKAYQKSAIAWRVDIGYNAGPLTAILEEQLVDKYAV
+                     PMTIITDIQRMLDDMIAKRNNLLKSPANKGVVQDEHIRWVKDWLEGKCHAACAPLWGF
+                     DKKNTAGKYLFATGMAKIHQTVPKFDVLDKFDGRVQELSKIKKGDEVYTSAAIDSALK
+                     HLEGIRAEAAELIEGSSSYLAQCAQMDVPFSAYYWLWKAGVTEKSFPSLSDFLFQLAN
+                     KQVGTGKMVKILSGRGETWAAPIVQLFSAKETFKGDRIRMHPAVLTAGRLSDMGACFG
+                     AVPVNRPEDVTQGAGFARFALNFKTGRGNPCATNIVELFRLQDEMGEVSVENIVPSEH
+                     LLHQSLVGKRSPFQNAYNVKGNAIEVKVEQG"
+ORIGIN      
+        1 atggctaaca tgctgaaaat caaaacagtt gctgagctag ataactggct caaaaacttt
+       61 cccccctatg tgacagcgtc aactgctgtc acaaactcca aaagtctagc agggcacttg
+      121 gagagcattg agccttacag agcgaaggtc agagacaaca tgagccagcc agaaaaggat
+      181 gccctctact cgcaagctgc aatgggcctc tttaagttcg gagctcccat cagagagtgt
+      241 gtctggacga gcagcaccgg agtgttcgaa aggagcatga agtggttcga agacaaccac
+      301 accacaccca cattcatcac ctgggatgaa aagtatgcag cactgaagac tgatgtgccc
+      361 accctggagc agctaaaagc ttatcagaaa agtgccatcg cctggagggt tgacatcggc
+      421 tacaatgctg gcccattgac tgccatcctg gaggaacagc tggttgacaa gtacgcagtg
+      481 cccatgacga tcataaccga cattcaaagg atgttggatg atatgatcgc taagaggaac
+      541 aacttgctga agtctccagc taacaaggga gtggtccagg atgagcacat aagatgggtc
+      601 aaagactggt tggaaggcaa gtgtcacgct gcatgcgccc ctctgtgggg attcgacaaa
+      661 aagaacacag ccggcaagta tctgttcgcc acagggatgg ccaagataca tcagacagtg
+      721 cctaagttcg acgttcttga caagtttgat ggaagagtcc aggaactcag caaaatcaag
+      781 aaaggagacg aagtgtacac atctgcagct atcgacagcg ccctcaagca cctcgaaggc
+      841 atcagagctg aagctgctga gctcatagaa ggctcttctt cgtacctcgc ccagtgtgct
+      901 caaatggacg tgccatttag cgcttactac tggctgtgga aagctggggt gactgaaaaa
+      961 tccttcccca gcttgtctga cttcctcttc cagcttgcaa acaagcaagt aggcaccggg
+     1021 aagatggtga aaatcctctc cggccgtggt gagacttggg ctgcccccat tgtccagctt
+     1081 ttttcagcaa aagaaacctt caaaggtgat cgcatcagga tgcaccccgc cgtgctaact
+     1141 gctggaaggc tctccgacat gggtgcctgc tttggagcag tgcctgtgaa cagaccggag
+     1201 gatgtgacac aaggggcagg ctttgccagg tttgcgttga acttcaaaac aggaagaggc
+     1261 aatccctgcg caactaacat tgtggagctg ttccggctgc aggacgagat gggggaggtg
+     1321 agcgtggaaa acatcgtccc ctccgagcac ctcttgcatc agtctcttgt gggcaagcgg
+     1381 agtccctttc aaaatgccta caatgtcaag ggaaatgcca tcgaggtaaa ggtggagcag
+     1441 ggg
+//
+
+LOCUS       NC_043435               1485 bp ss-RNA     linear   VRL 22-AUG-2019
+DEFINITION  Chim virus strain LEIV-858Uz segment S nucleocapsid protein gene,
+            partial cds.
+ACCESSION   NC_043435
+VERSION     NC_043435.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Chim orthonairovirus
+  ORGANISM  Chim orthonairovirus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1485)
+  AUTHORS   Alkhovsky,S.V. and Shchetinin,A.M.
+  TITLE     Genetic diversity and phylogeny of the Nairoviruses
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1485)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-AUG-2019) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1485)
+  AUTHORS   Alkhovsky,S.V. and Shchetinin,A.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (16-FEB-2015) Lab. of Biotechnology, The D.I. Ivanovsky
+            Institute of Virology, 16 Gamaleya str., Moscow 123098, Russia
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KP792713.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: CLC genomic v. 7.0
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1485
+                     /organism="Chim orthonairovirus"
+                     /mol_type="genomic RNA"
+                     /strain="LEIV-858Uz"
+                     /isolation_source="burrows of a gerbil (Rhombomys opimus)"
+                     /host="Ornithodoros tartakovskyi (tick)"
+                     /db_xref="taxon:2170062"
+                     /segment="S"
+                     /country="Uzbekistan: near Chim village"
+                     /collection_date="1972"
+     gene            1..1485
+                     /locus_tag="FLA04_sSgp1"
+                     /db_xref="GeneID:41324565"
+     CDS             1..>1485
+                     /locus_tag="FLA04_sSgp1"
+                     /note="N"
+                     /codon_start=1
+                     /product="nucleocapsid protein"
+                     /protein_id="YP_009666114.1"
+                     /db_xref="GeneID:41324565"
+                     /translation="MSELKFETKEGLETWFKTFEQRVPLFSINTYSKCLSDKAPNLGL
+                     FKVQMEETKNDRQKNAIFGRAVVEATRNFAPYKEFAWTASNHIITKSQEWFDKNIANP
+                     KFVSWHSSYDTLKGKMPELPQLSDYQECAQSWRTFTDYEILPLTQSLTGEMTTRYVVD
+                     GSFSPTILRMAQDMVAKRKAMFNGTIPGEESQGKEAHIEWTRRWVEGEIESTMPPTWG
+                     SWTKQNSKGNLLGATALANLEQTKKIGAIAKAKEILKALKLLGANLVECNAKGVRSEA
+                     VTRIAVEVDACITEAEKLIEDSKNSTTTSKYYQQMAAMDVVFSAHYWLWRANIGVGTF
+                     PIFSQWLFELGQRPIGPRKVDEMLHSMAYNWSTSILNSFALRSFDENRMYMHPAVLTE
+                     SRLSEMITCFGLFPVANPERAKEGTGAIRNLMNLRTTGKNMCAQVIAELHNVFTSGFP
+                     NTLQCIVPPEHMLHQSFLGKHSPYQSAYKLKGDFTKVQVVSEHSV"
+ORIGIN      
+        1 atgtctgagc tcaaatttga aaccaaggag ggacttgaaa cttggtttaa aacctttgaa
+       61 cagagggttc ccctgttcag catcaacaca tattccaaat gccttagcga caaggcacca
+      121 aaccttgggc tcttcaaagt ccaaatggag gagaccaaaa atgaccgtca aaaaaatgcc
+      181 atcttcggga gggctgttgt tgaggcaaca aggaactttg ctccttataa agagtttgcc
+      241 tggacagcct caaatcacat catcacaaaa tctcaagagt ggttcgacaa gaacattgcg
+      301 aatcccaagt ttgtctcgtg gcacagcagc tatgacaccc tgaaaggtaa aatgcctgag
+      361 cttcctcagc ttagcgacta tcaggagtgt gcacagtcat ggagaacatt cactgattat
+      421 gaaattctcc ccctgacaca gagcctgact ggcgagatga caactcgcta tgttgtggat
+      481 ggctctttct ctccaacaat cctcaggatg gcacaggata tggtcgcaaa gagaaaagca
+      541 atgttcaatg gaacaatccc tggagaggaa agccaaggca aggaggccca tattgagtgg
+      601 accagaaggt gggttgaggg agagattgag tctacaatgc ctcctacatg gggctcgtgg
+      661 accaagcaaa actccaaagg gaacctactg ggagcaactg ctctagcaaa tttagagcag
+      721 accaaaaaga ttggcgccat tgcaaaggcc aaggaaatcc tcaaggcact caagctctta
+      781 ggtgccaatc tagttgagtg taatgccaag ggagtcagat cagaagcagt cacaagaatt
+      841 gctgtggagg ttgatgcatg tatcactgaa gctgaaaaac tcattgaaga ttccaaaaac
+      901 agcacaacca caagcaagta ctatcaacag atggctgcca tggacgttgt gttctctgcc
+      961 cattactggc tctggagggc aaacataggt gtagggacct tccctatctt ttctcagtgg
+     1021 ttgtttgagc ttggacaacg ccctattggt ccgagaaagg tggatgagat gctccacagc
+     1081 atggcctaca actggtcaac ttccatttta aacagctttg ccttgaggtc ctttgatgag
+     1141 aatcgaatgt acatgcatcc agctgtcttg acagagagca gactctcaga aatgataaca
+     1201 tgctttggac tctttccagt tgcaaatcca gaaagggcta aggaaggaac aggagccatc
+     1261 aggaacctga tgaacctaag gaccacaggc aagaacatgt gtgcacaagt aattgcagaa
+     1321 ctgcacaatg tgttcacctc tggattccca aacaccttac agtgcattgt tcctcctgaa
+     1381 cacatgcttc atcagtcctt tcttgggaag cacagccctt accagtcagc ctacaagctg
+     1441 aagggagact tcaccaaagt ccaagttgtg tcagagcact cagtg
+//
+
+LOCUS       NC_043438               4032 bp ss-RNA     linear   VRL 22-AUG-2019
+DEFINITION  Burana virus strain 760 segment M glycoprotein precursor, gene,
+            partial cds.
+ACCESSION   NC_043438
+VERSION     NC_043438.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Burana virus
+  ORGANISM  Burana virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 4032)
+  AUTHORS   Alkhovsky,S.V. and Shchetinin,A.M.
+  TITLE     Genetic diversity and phylogeny of the Nairoviruses
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 4032)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-AUG-2019) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 4032)
+  AUTHORS   Alkhovsky,S.V. and Shchetinin,A.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (16-FEB-2015) Lab. of Biotechnology, The D.I. Ivanovsky
+            Institute of Virology, 16 Gamaleya str., Moscow 123098, Russia
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KP792706.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: CLC genomic v. 7.0
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..4032
+                     /organism="Burana virus"
+                     /mol_type="genomic RNA"
+                     /strain="760"
+                     /isolation_source="ticks from cows"
+                     /host="Haemaphysalis punctata (tick)"
+                     /db_xref="taxon:1453404"
+                     /segment="M"
+                     /country="Kyrgyzstan: near Burana village in the Chu
+                     Valley"
+                     /collection_date="1971"
+     gene            1..4032
+                     /locus_tag="FLA05_sMgp1"
+                     /db_xref="GeneID:41324478"
+     CDS             1..>4032
+                     /locus_tag="FLA05_sMgp1"
+                     /note="GnGc"
+                     /codon_start=1
+                     /product="glycoprotein precursor"
+                     /protein_id="YP_009666117.1"
+                     /db_xref="GeneID:41324478"
+                     /translation="MARACFWAVALLLLLPDWGLANKSSPSPTNSTPVTSAASPAKPN
+                     TTASSGGFFTNSLGSIVYSFNSLKNASLQYKSRVLNYVNNSVQQIKSWGTGMVSFVIP
+                     YKGKANNSGQMAILSVKVGQSYDQLKQKFGRFNTTGWFNLLGKKIVLSVAEGMQVMTD
+                     GLGGLLSDPTLRITGSTYIIRPRKGGVPLWNGLVERMPPPTCAGSKIVRNSGFRSFNV
+                     EAQLDKQEPLVVIAYSTAHLGLEVEDCWATVESHDYIALLADNTRFIRPNLDDDSLHY
+                     PIIHITVNKHHLSKVCRVTMCSIREPQGPSTVIQEAKIEKVVVEIHPTKAVRHPIRKL
+                     LSVSQDIVKEPCSTGTKVVSVVKLDTHTANNSNPGPYKSICNGTKIVNGFAPPELGCY
+                     SVSRKTVAVQCPTEEKLTTKEYGDCTFKRSSQNCNYGYLCITVSTPGRGTVKISSGEA
+                     KDHQDCNKECDFTIKGFEAVLTCPNGEKHQIISSEVETNCPLHTYGHLPIWVCRMSFR
+                     PVMVYTLLAWYFLGYAAWRLCFFVICTLLRLGSFLTRCTRVRMDKTRGLCECCGEWVP
+                     TKYHWQRHESCRNGRCPYCRAVCSTEKLKKHVKDCIERENRLREDEEAVTIKYIPSAL
+                     RVTTIALSTVSKIGAKLMWLVGLFVIFYLCIHPVYAIKDTAVEEDLWAKEVDFVNHCS
+                     SDCVQGEEDCTCLVPAEPAVVTRKLQSIFPDFEALKRLASHHQGALRPASKKRSIDVT
+                     APWSTVYLQDAFAPSYSGKHISLSWTETSSSGEHITVNGKSEAILKLEAGTSFMWEIT
+                     SPTSSEKRRVFLSILDHTQVYNTRFLYATGDRLIESWMHGRCTGSCPDKCSCDDHLCH
+                     HSEYDDFTNWRCNPTWCWNIGTGCACCALGIKQPFTDWFISKWELEYISSPVIACIET
+                     SPDDRICQEVSAGTVLQLESISVQFSDPTGIEKKLPKEVALVHKMPGLNIFDLSKKIK
+                     LVDGRTLCDIQSCTHGPAGDIQFYSISSLFDQDHINLNKLSKKTGLNKTNSWASWSGV
+                     TSYYTCHPGHWPDCHSTGVVMHNAEAFENLMNQEDLGESYFFHEEKMYVNRTPTLSIK
+                     GRPSFGAGQITALLDVQGMMLKATHVKPDGLTIDLSSCKGCFGCSQGFTCVVRVKITK
+                     PDTFTIHLLSKDPDIIVPSTSINAKSDSTTTHEMHFFSTASKSEVCVETEEVDSSGKR
+                     ASSCCAAQLSEQKAVVLENRRTLHSTSDANCTTGYFTCVGSNLSSFFSSIGAFFRRYF
+                     GSIWAGIVTAVLLCGVVALAILFGPQIFSLCLICCRKRSGYRRLQQFESLRAEWTEAR
+                     KSVEEEKKKNKAVEQYLAKLSKAK"
+ORIGIN      
+        1 atggctagag cctgcttctg ggcagtggct ctattgctct tgttgccaga ttggggcctg
+       61 gcaaacaagt catcccctag ccccacaaac tcgacccctg tcacatctgc ggcctcacct
+      121 gccaagccta acaccacggc atcaagtgga gggtttttca ccaactccct tggcagtatt
+      181 gtgtacagct tcaacagcct aaaaaatgcc agcctgcagt acaaaagcag agtcctaaac
+      241 tatgtaaaca actctgtaca gcaaataaaa tcttggggca cagggatggt gtcctttgtt
+      301 ataccttata aaggcaaggc aaacaactca gggcagatgg ctatcttgtc tgtaaaagtg
+      361 ggccaaagct atgaccagct taaacagaag tttgggaggt tcaacacgac cggctggttt
+      421 aatctgctcg gcaagaagat tgtcctaagt gttgcagagg gaatgcaagt gatgactgat
+      481 ggcctgggag ggcttctatc tgatcccacc ctcagaataa ctggctcaac ttacatcata
+      541 aggcccagaa aagggggagt cccattgtgg aacggactcg tcgagagaat gccaccaccg
+      601 acctgcgcag gaagtaagat agtgaggaac tctggtttta ggtcattcaa cgttgaagcc
+      661 caacttgaca aacaagaacc actggttgtc attgcttact ccacagcaca tctagggctt
+      721 gaggtggagg actgctgggc caccgttgag agtcatgact acattgccct actagcagat
+      781 aacacaaggt ttatcaggcc taacctagat gatgactcac tacactaccc tatcatacat
+      841 atcactgtaa acaaacatca tctgagcaaa gtctgcaggg ttactatgtg ttccatcagg
+      901 gagcctcagg ggccatctac cgtcatccaa gaggccaaga tagaaaaggt ggttgtggag
+      961 attcatccca ctaaagcagt aaggcatcct atcaggaagc tgctttctgt ttcccaggac
+     1021 atcgtaaagg agccttgcag tacaggaact aaggtggtct cagtagttaa actggataca
+     1081 cacacagcca acaactccaa cccagggcct tacaaatcca tatgcaacgg cactaaaatt
+     1141 gtgaacggct ttgcaccgcc tgagttggga tgctactctg taagcaggaa gactgtcgca
+     1201 gttcaatgcc ctacagaaga gaagttaaca acaaaagagt atggggactg tacgttcaag
+     1261 agaagctccc agaactgtaa ctacgggtac ttatgtataa cggttagtac tcctggtaga
+     1321 ggcacagtga agatatcaag tggtgaggcc aaggaccacc aggactgtaa caaggagtgt
+     1381 gacttcacca taaaaggctt tgaagcagtg ctaacttgtc ccaatggcga aaagcaccag
+     1441 attatcagtt ctgaagtaga aactaactgc ccgcttcaca catatggaca cttgcctatc
+     1501 tgggtttgta ggatgagctt caggcctgtc atggtataca cattgctagc ttggtacttc
+     1561 cttggctatg ctgcatggag gctctgtttt tttgtgatat gcaccctttt aagactaggc
+     1621 tctttcttga ccaggtgcac cagagtcagg atggataaga caagaggact ttgcgagtgc
+     1681 tgtggagagt gggtaccaac aaaataccac tggcaacggc atgaaagctg taggaatgga
+     1741 agatgcccat actgtagagc agtatgcagc actgagaagc taaaaaaaca tgtcaaggac
+     1801 tgcattgaga gggaaaaccg cttgagagaa gatgaagagg cagttaccat taagtacata
+     1861 ccaagtgctt tgagagtcac caccattgct ctatcaactg tgtctaagat tggtgcaaag
+     1921 ctcatgtggc tggtggggtt gtttgtcatc ttttacctct gcatccatcc agtctacgcc
+     1981 atcaaagaca cagccgttga agaggacctc tgggcaaagg aggtagactt tgtcaaccac
+     2041 tgcagctcag actgcgttca aggtgaggag gactgcacat gcctagttcc tgcagagcct
+     2101 gcggtggtga caagaaagtt gcagtcaatt ttccctgact ttgaagctct caagaggctg
+     2161 gctagccacc accaaggagc actgagacct gcaagtaaaa aaagatcaat agacgtaact
+     2221 gccccttgga gcacagtgta tctacaggat gcctttgccc cttcttacag tgggaaacac
+     2281 atctctcttt cttggactga gacatcatca tctggagagc atataacagt caatggcaag
+     2341 tctgaggcga tcctaaaact ggaagcaggc acaagtttca tgtgggaaat aacatctccc
+     2401 acaagttctg aaaaaagaag ggtcttcctg tccatactcg atcatactca ggtttacaac
+     2461 acaaggttct tatatgcaac tggagatagg ctcattgagt catggatgca tggtaggtgc
+     2521 acaggctctt gcccagataa atgttcgtgc gatgaccacc tctgccacca cagcgagtat
+     2581 gatgatttca ctaactggag atgcaaccca acttggtgct ggaatattgg tacaggctgt
+     2641 gcatgctgtg ctcttggcat caagcagcct ttcacagact ggttcatcag caagtgggag
+     2701 cttgagtaca tttccagccc tgtcattgcg tgcattgaaa ccagtccaga tgatcgcatc
+     2761 tgtcaagaag tgtctgctgg aactgttttg cagttggaaa gtatcagtgt tcagtttagt
+     2821 gatccaacag gaatagagaa aaagctccca aaagaggttg ctcttgtcca caagatgcct
+     2881 ggattaaaca tctttgacct gtccaaaaag atcaagctgg tcgatggtag aacactttgc
+     2941 gacattcagt catgcaccca tggtcctgca ggcgacattc aattttacag catttcatcg
+     3001 ctctttgatc aggaccacat caacttgaac aaacttagta aaaaaacagg cctaaacaaa
+     3061 acaaactcct gggcatcatg gtctggtgta acttcatact acacgtgcca ccccggacac
+     3121 tggccagact gccacagcac aggtgttgtc atgcataatg cagaagcttt tgaaaatctg
+     3181 atgaatcagg aggacctagg agaaagctac ttcttccatg aagaaaaaat gtacgtgaac
+     3241 agaactccaa ccctgtcaat caaggggagg ccctcatttg gtgctgggca gataacggcc
+     3301 cttctagatg ttcaaggtat gatgctaaag gcaacccatg tgaaacctga tggtctcaca
+     3361 atagacctct ccagctgcaa aggctgcttt ggatgttcac aggggttcac ctgtgttgtg
+     3421 agagtgaaga tcacaaagcc agacacattc accatacatc tgctgtccaa ggacccggac
+     3481 atcatagtgc cgtccacttc gatcaatgcc aaaagtgact caaccacaac tcatgaaatg
+     3541 cacttcttct caactgcatc aaagtcagag gtctgtgttg agactgagga ggtggacagc
+     3601 tcaggtaagc gagcctcctc atgttgtgca gcacagctct ctgaacaaaa ggcagtagtt
+     3661 ctagagaaca ggagaacatt gcatagcact tctgatgcca actgcacaac cgggtacttc
+     3721 acttgtgttg gttcaaatct gtcaagtttt ttttcatcca ttggtgcgtt tttccgcaga
+     3781 tatttcggta gcatctgggc cggaattgtc actgctgtct tgctatgtgg ggttgttgca
+     3841 cttgcaatcc tcttcggccc acagatattt agcctttgct taatttgctg cagaaagagg
+     3901 agtggatata gaaggctaca gcagtttgag tcgctaaggg ccgagtggac agaagctcga
+     3961 aagagcgttg aagaagaaaa gaaaaaaaac aaggcagttg agcaatacct tgccaaattg
+     4021 tctaaggcca ag
+//
+
+LOCUS       NC_005302               1672 bp ss-RNA     linear   VRL 13-AUG-2018
+DEFINITION  Crimean-Congo hemorrhagic fever virus segment S, complete sequence.
+ACCESSION   NC_005302
+VERSION     NC_005302.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Crimean-Congo hemorrhagic fever orthonairovirus
+  ORGANISM  Crimean-Congo hemorrhagic fever orthonairovirus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1672)
+  AUTHORS   Lofts,R., Hodgson,L. and Smith,J.F.
+  TITLE     Crimean-Congo hemorrhagic fever virus S segment
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1672)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (12-AUG-2004) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1672)
+  AUTHORS   Lofts,R., Hodgson,L. and Smith,J.F.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-FEB-1997) Virology Division, USAMRIID, Bldg. 1425,
+            Fort Detrick, Frederick, MD 21701, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence was derived from U88410.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1672
+                     /organism="Crimean-Congo hemorrhagic fever
+                     orthonairovirus"
+                     /mol_type="genomic RNA"
+                     /strain="10200"
+                     /db_xref="taxon:1980519"
+                     /segment="S"
+     gene            56..1504
+                     /locus_tag="CCFHVsSgp1"
+                     /db_xref="GeneID:2943076"
+     CDS             56..1504
+                     /locus_tag="CCFHVsSgp1"
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="NP_950237.1"
+                     /db_xref="GeneID:2943076"
+                     /translation="MENKIEVNNKDEMNRWFEEFKKGNGLVDTFTNSYSFCESVPNLD
+                     RFVFQMASATDDAQKDSIYASALVEATKFCAPIYECAWVSSTGIVKKGLEWFEKNAGT
+                     IKSWDESYTELKVDVPKIEQLTGYQQAALKWRKDIGFRVNANTAALSNKVLAEYKVPG
+                     EIVMSVKEMLSDMIRRRNLILNRGGDENPRGPVSHEHVDWCREFVKGKYIMAFNPPWG
+                     DINKSGRSGIALVATGLAKLAETEGKGIFDEAKKTVEALNGYLDKHKDEVDRASADSM
+                     ITNLLKHIAKAQELYKNSSALRAQSAQIDTAFSSYYWLYKAGVTPETFPTVSQFLFEL
+                     GKQPRGTKKMKKALLSTPMKWGKKLYELFADDSFQQNRIYMHPAVLTAGRISEMGVCF
+                     GTIPVANPDDAAQGSGHTKSILNLRTNTETNNPCAKTIVKLFEVQKTGFNIQDMDIVA
+                     SEHLLHQSLVGKQSPFQNAYNVKGNATSANII"
+ORIGIN      
+        1 tctcaaagaa acacgtgccg cttacgccca cagtgttctc ttgagtgtta gcagaatgga
+       61 aaacaagatc gaggtgaata acaaagatga gatgaacagg tggtttgaag agttcaaaaa
+      121 aggaaatgga cttgtggaca ccttcacaaa ctcctattcc ttttgcgaga gtgttcccaa
+      181 tttggacagg tttgtgtttc agatggccag tgccaccgat gatgcacaga aggactccat
+      241 ctacgcatct gctctggtgg aggcaacaaa gttttgtgca cctatatatg agtgcgcatg
+      301 ggttagctcc actggcattg taaaaaaggg acttgaatgg ttcgagaaaa atgcaggaac
+      361 cattaagtcc tgggatgaaa gttatactga gctaaaggtc gacgtcccga aaatagagca
+      421 gcttaccggt taccaacaag ctgccttgaa gtggagaaaa gacataggtt tccgtgtcaa
+      481 tgccaacaca gcagctctga gcaacaaagt cctcgcagaa tacaaagtcc ctggtgagat
+      541 tgtgatgtct gtcaaagaga tgctgtcaga catgattagg agaaggaacc tgattctaaa
+      601 caggggtggt gatgagaacc cacgtggccc agtgagccat gagcatgtag actggtgcag
+      661 ggagtttgtc aaaggcaaat acatcatggc cttcaaccca ccatgggggg acatcaacaa
+      721 gtcaggccgt tcaggaatag cacttgttgc aacaggcctt gctaagcttg cagagactga
+      781 aggaaaggga atatttgatg aagccaaaaa gactgtggag gccctcaacg ggtatctgga
+      841 caagcataag gacgaagttg atagagcaag cgccgacagc atgataacaa accttcttaa
+      901 gcatattgcc aaggcacagg agctctataa aaattcatct gcacttcgtg cacaaagcgc
+      961 acagattgac actgctttca gctcatacta ttggctttac aaggctggcg tgactcctga
+     1021 aaccttcccg acggtgtcac agttcctctt tgagctaggg aaacagccaa gaggtaccaa
+     1081 gaaaatgaag aaggctcttc tgagcacccc aatgaagtgg gggaagaagc tttatgagct
+     1141 ctttgccgat gattctttcc agcagaacag gatttacatg catcctgccg tgcttacagc
+     1201 tggtagaatc agtgaaatgg gagtctgctt tgggacaatc cctgtggcca atcctgatga
+     1261 tgctgcccaa ggatctggac acactaagtc tattctcaac ctccgtacca acactgagac
+     1321 caataatccg tgtgccaaaa ccatcgtcaa gctatttgaa gttcaaaaaa cagggttcaa
+     1381 cattcaggac atggacatag tggcctctga gcacttgcta caccaatccc ttgttggcaa
+     1441 gcaatcccca ttccagaacg cctacaacgt caagggcaat gccaccagtg ctaacatcat
+     1501 ttaaaataca aactgctctg tactcaactt ccttccttct gaaccgccat ccataattgc
+     1561 aatacttaat catgcttttt tacttgctta tgtaacctta ttttattaac ctttctctat
+     1621 tttctcttgt tttaaacact taaagggctg tgcggcaacg gtatctttga ga
+//
+
+LOCUS       NC_004157               1716 bp ss-RNA     linear   VRL 13-AUG-2018
+DEFINITION  Dugbe virus segment S, complete sequence.
+ACCESSION   NC_004157
+VERSION     NC_004157.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Dugbe orthonairovirus
+  ORGANISM  Dugbe orthonairovirus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1716)
+  AUTHORS   Bridgen,A., Dalrymple,D.A. and Elliott,R.M.
+  TITLE     Dugbe nairovirus S segment: correction of published sequence and
+            comparison of five isolates
+  JOURNAL   Virology 294 (2), 364-371 (2002)
+   PUBMED   12009878
+REFERENCE   2  (bases 1 to 1716)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (14-SEP-2002) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1716)
+  AUTHORS   Bridgen,A., Dalrymple,D.A. and Elliott,R.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (16-OCT-2001) Division of Virology, University of
+            Glasgow, Church Street, Glasgow G11 5JR, UK
+COMMENT     VALIDATED REFSEQ: This record has undergone validation or
+            preliminary review. The reference sequence was derived from
+            AF434161.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1716
+                     /organism="Dugbe orthonairovirus"
+                     /mol_type="genomic RNA"
+                     /isolate="ArD 44313"
+                     /db_xref="taxon:1980521"
+                     /segment="S"
+                     /note="cRNA sequence"
+     gene            52..1503
+                     /locus_tag="DUGVsSgp1"
+                     /db_xref="GeneID:956564"
+     CDS             52..1503
+                     /locus_tag="DUGVsSgp1"
+                     /codon_start=1
+                     /product="nucleocapsid protein"
+                     /protein_id="NP_690574.1"
+                     /db_xref="GeneID:956564"
+                     /translation="MENQIKANNKKEFDEWFKPFSEKLQLRSNLTNSASLCDRVPDLA
+                     LAEMKMALATDDKEKDSIFSNALVEATRFCAPIYECAWTCSTGVVQKSLSWFDKNKDF
+                     IKLWDAKYMDLKKGIPEPEQLVSYQQAAQKWRKDVGYEINQFTRSLTHPVVAEYKVPG
+                     EIAVDVKEMLSDMIRRRNVLLNGDGENAGKKGPISREHVSWGRELAGGKFQVVFNPPW
+                     GDINKCGKSGIPLAATAMVKVAELDGSKKLEDIRQALLDLKKWVEDNKDALEDGKGNE
+                     LVQTMTKHLAQAVELSKKSNALRAQGAQIDTPFSAYYWAWSAGVKPETFFTLSQFLFE
+                     MGQSARGGKKMIKALTSTPLRWGKGLINLFADDDFLGNRLYMHPAVLTPGRMSEMGAC
+                     FGVIPVASPEDAILGSGHSKNILNFKIDTSVQNPCASTIVQLYRIQKSGFDLESLEVV
+                     STEHLLHQSFVGKRCPTQNAYKVRGNATNVNII"
+ORIGIN      
+        1 tctcaaagac aaacgtgccg cagtcgcccg attgtacttt gaagaagcaa gatggagaat
+       61 cagatcaagg caaacaataa aaaagagttt gatgagtggt ttaaaccttt tagtgaaaag
+      121 ctccaattaa ggtcaaacct cacaaactct gcatccctgt gtgatagagt acctgaccta
+      181 gctctagcag aaatgaaaat ggcccttgcc acagatgata aagaaaaaga ctcaatcttt
+      241 tctaatgctc tggtggaggc aacacgtttc tgtgctccaa tctatgagtg tgcttggacc
+      301 tgcagtacag gtgtagtgca gaagagctta agctggtttg ataagaacaa agacttcatc
+      361 aaactctggg acgcaaagta catggatctc aaaaagggta tccctgaacc agagcaacta
+      421 gtttcatacc agcaggcggc ccaaaagtgg agaaaggacg ttggttatga aattaaccaa
+      481 ttcacaaggt ctctcacaca tccagttgtt gcagagtaca aagtgcctgg agaaattgct
+      541 gttgatgtca aagaaatgct gtctgacatg atcaggcgca ggaatgtcct gctgaacgga
+      601 gacggagaaa atgctgggaa aaaaggtcct atcagcagag agcatgtctc ttggggccgt
+      661 gagttggcag gaggaaagtt ccaagttgtg tttaaccctc cttgggggga tataaacaag
+      721 tgtggtaaat caggcattcc tctagcagct actgccatgg tgaaggttgc tgagctagat
+      781 gggtcaaaga agcttgaaga tataaggcag gcccttctgg atctaaaaaa atgggttgaa
+      841 gataacaagg atgcactaga ggatgggaaa ggcaatgagc tcgtccagac tatgacaaag
+      901 catctggctc aagcagtgga actatccaaa aagtccaatg ccctgcgtgc acaaggagca
+      961 caaatagaca ctcctttctc agcctattat tgggcttgga gcgctggtgt taagccagag
+     1021 acatttttca ctttgtctca attcctcttt gagatgggcc agagtgctag aggaggcaaa
+     1081 aaaatgatca aagcactgac ttccacacca ctaaggtggg gcaagggatt gattaacctg
+     1141 tttgcagatg atgacttttt gggcaacaga ctatacatgc atcctgcagt tctgactcct
+     1201 ggtcgaatga gtgaaatggg tgcatgcttt ggggttattc ctgttgcaag cccagaagat
+     1261 gcaatcctag gttcaggaca ctcaaaaaac atactgaact tcaaaattga taccagtgta
+     1321 cagaacccat gtgcatccac aatcgtgcaa ctgtacagaa tccagaaatc tggctttgat
+     1381 ctagaaagct tagaagtagt gtctactgaa catcttttgc accagtcatt tgttggtaaa
+     1441 agatgcccaa cccagaatgc ttacaaggtg agaggaaatg caaccaatgt taacatcatc
+     1501 taaaagctgg cattatgtgg ccttccctaa catcttaaac aagttgcaca tcagcgaaag
+     1561 gccactaaaa gcttttttct tacttatctt tccatttttt tcttctttat atattagttt
+     1621 tgctttttga ctaacatact aacatagtgt aagttgtaat caatctgcta attctgctta
+     1681 acacaggggg gctgtgcggc aacgatctct ttgaga
+//
+
+LOCUS       NC_034562               1613 bp ss-RNA     linear   VRL 13-AUG-2018
+DEFINITION  UNVERIFIED: Clo Mor virus isolate ScotAr7 segment S cRNA sequence.
+ACCESSION   NC_034562
+VERSION     NC_034562.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    UNVERIFIED; RefSeq.
+SOURCE      Clo Mor virus
+  ORGANISM  Clo Mor virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1613)
+  AUTHORS   Walker,P.J., Widen,S.G., Wood,T.G., Guzman,H., Tesh,R.B. and
+            Vasilakis,N.
+  TITLE     A Global Genomic Characterization of Nairoviruses Identifies Nine
+            Discrete Genogroups with Distinctive Structural Characteristics and
+            Host-Vector Associations
+  JOURNAL   Am. J. Trop. Med. Hyg. (2016) In press
+   PUBMED   26903607
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 1613)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2017) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1613)
+  AUTHORS   Walker,P.J., Widen,S.G., Wood,T.G., Guzman,H., Tesh,R.B. and
+            Vasilakis,N.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-DEC-2015) Biochemistry and Molecular Biology,
+            University of Texas Medical Branch, 301 University Blvd, Galveston,
+            TX 77555-1079, USA
+COMMENT     GenBank staff is unable to verify sequence and/or annotation
+            provided by the submitter.
+            PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KU343141.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: ABySS v. 1.3.5
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1613
+                     /organism="Clo Mor virus"
+                     /mol_type="genomic RNA"
+                     /isolate="ScotAr7"
+                     /host="Ixodes uriae"
+                     /db_xref="taxon:1810952"
+                     /segment="S"
+                     /country="United Kingdom"
+                     /collection_date="15-Jun-1973"
+ORIGIN      
+        1 ctcaaagaaa ttcgtgccgc actagttgta acacgaagag ggaaaatgac taaccagctt
+       61 accttcagca gcaaagatgg tctggacaaa tggttcctaa attttagaca gaattttgga
+      121 ctgtcaggaa cctttaccaa ctcagcctcc atatgtggtg ggccagcaga cctttctaca
+      181 tacctcacct tgaaccccaa aactgacaga gaaaaagacg cctactactc tcaggccatg
+      241 attgatgctg tgaaaaaatg tgcaccactc tacgagtgcg catggaacag ctgcactggc
+      301 atggtggaaa gaggtctgaa gtggtttaag gacaatgctg ccataaccct tgaacttgac
+      361 aacatttatg ccaatgtcag aaagaaggaa cccaaccttt ctgagctgaa tgcctatcaa
+      421 aactttgcca tcaaatggag ggaggatact aagtatgcca tcaacgacct cacctcagtt
+      481 gctggaggag aagtgctgac acagtacgca gtctctagca acataatcct ggacgtccag
+      541 acaatgctta aagacatgat caagagaaga aacctggttc tcggctcagc tccaaccaga
+      601 agcaatgtgc aaccggagca catcatcttt gttgatgcct ggatcaatgg acagactcat
+      661 gtagctgcac taccaccatg gggaagcatg gacaaaaaaa actctgccaa ccatactctg
+      721 ctagcaacag gactctgcaa gctcatgcag acaaaagatg agcgtgcaat acaaaaagcc
+      781 caaatgcggg ttgttgaact ggaggaaatg ctacaagacc ccgacaaaca cggcttggac
+      841 aaggacacag catatgtcca tcttctgcag attaaagcct ccatcgatga agcaaggacc
+      901 atgggggttg acaaggcagc aatgatgtca caggctgcaa acatggacgt gcctttcagc
+      961 tcgtactact ggatgtacaa ggcaggtgtg acaagtgaga ccttcccatc cttgtctcaa
+     1021 ttcttgttcg aaatgggaac acaagccaga gggaaggaga agatgttcaa ggttttgaac
+     1081 aacatgccct tcaagtgggg taaaggcgtt ataaagctgt ttgcagacaa cacctttgaa
+     1141 ggcaacagac tgtacctcca tcctcttgtt ctgacatcag gacgcttgtc agacatgggt
+     1201 gcatgcttcg gagccttccc agtggcatat cctggcagag tcctcgaagg gtcaggacac
+     1261 ccaagataca tattgaatct taagactact gaccagaatc cttgtgcaga aaccatcgtc
+     1321 aagctcttcc agatcaacaa aacttactac cctaactatg aggcacaaga ggtgatccct
+     1381 tccgagcatc tgcttcacca atcattcatt gggaaaaagg gccctttcct gaacgtctca
+     1441 aaggtcaagg gaacggccac aaacgtccag atcatttcag gctaagaaaa agctgcttct
+     1501 cctacttcct tactgtaatc actaactcct taaaacttgt aatcattaaa ttccttttca
+     1561 atactaacct ttcttttatt cactctttaa actttaaagg cgtgcggcaa cgg
+//
+
+LOCUS       NC_034521               1768 bp ss-RNA     linear   VRL 13-AUG-2018
+DEFINITION  UNVERIFIED: Dera Ghazi Khan virus isolate JD254 segment S cRNA
+            sequence.
+ACCESSION   NC_034521
+VERSION     NC_034521.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    UNVERIFIED; RefSeq.
+SOURCE      Dera Ghazi Khan orthonairovirus
+  ORGANISM  Dera Ghazi Khan orthonairovirus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1768)
+  AUTHORS   Walker,P.J., Widen,S.G., Wood,T.G., Guzman,H., Tesh,R.B. and
+            Vasilakis,N.
+  TITLE     A Global Genomic Characterization of Nairoviruses Identifies Nine
+            Discrete Genogroups with Distinctive Structural Characteristics and
+            Host-Vector Associations
+  JOURNAL   Am. J. Trop. Med. Hyg. (2016) In press
+   PUBMED   26903607
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 1768)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-MAY-2017) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1768)
+  AUTHORS   Walker,P.J., Widen,S.G., Wood,T.G., Guzman,H., Tesh,R.B. and
+            Vasilakis,N.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-DEC-2015) Biochemistry and Molecular Biology,
+            University of Texas Medical Branch, 301 University Blvd, Galveston,
+            TX 77555-1079, USA
+COMMENT     GenBank staff is unable to verify sequence and/or annotation
+            provided by the submitter.
+            PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KU343153.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: ABySS v. 1.3.5
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1768
+                     /organism="Dera Ghazi Khan orthonairovirus"
+                     /mol_type="genomic RNA"
+                     /isolate="JD254"
+                     /host="Hyalomma dromedarii"
+                     /db_xref="taxon:1980520"
+                     /segment="S"
+                     /country="Pakistan"
+                     /collection_date="04-Apr-1966"
+ORIGIN      
+        1 tctctcaaag tcatacgtgt ctcgtacccc attgttactt cagtgcagct agatggcagg
+       61 ctacaatttc gaactagatt tcccgactgt gttagactgg gaatcatggt accttgggta
+      121 caaaagcaag caccctcagc taaactctat gttcaccaac tatgacagct tcgcctcggg
+      181 agtaccagat ctgactcagc ttcagcagga gatgtcaaga cacaaagacg atcctagagg
+      241 gctcaaagac tctatctttg gacgtgctgt agtcaaattg acagagcatg ctgctcctat
+      301 aaaggaatgt gcctggcttg tgaataaaac atttatcact gacgcccttc aatggtttga
+      361 gactaataag gatcaagact atgtgaagat ctgggacgct agttacacta cattgatgtc
+      421 ttcgctgcct agccttgaac aggtgcaggc ttatcagagg gctgccatca agttcaggca
+      481 aaatgttctg atgcccaaag acactgcatt ccagactctc ggaggggaag tccttgtcaa
+      541 ttataaggta aataaaacca tcatcacctc tgtcttagac atgctcaaag acatggaaaa
+      601 caaaaggtct gctctcaggg atccaagtgg tgcacctagt tccaacagaa aggaaaccat
+      661 tgatgtcaac tcaaagtgga tgatgggctg gctcaatgac gaggctgctc ttcttgacat
+      721 gcctccctgg ggagcatggg acaaaacaag tgctagagga cttccaatcg ctttgacttc
+      781 gattgtcaag tctgaacagg tcttaaaggt ggatctgact gacactgtca atgacaagaa
+      841 ggcaagaatt gcccgcctta tgagccttaa aacagatgag gccaaagact ttgacactga
+      901 tgctatcagg aaaatgcatg atgttctgga taaatggagc acctttaaga catcactaaa
+      961 agctacacca gcccagacag gagaacctgg cttcggacaa caggcagcag ctttagacac
+     1021 agttttttct gcctgttact ggctgtggaa gtctggagtt tcagtcaact catttcccgc
+     1081 cttgtcaaag ttcctgcatg agcttggcag caaggtagta ggtaagacta aacttgcctc
+     1141 agtacttaag gcatgtggat ggaagtgggg aaaaggtctg ctgaacatca tgtctatcgg
+     1201 gaactttaac ggcaacaaaa tccatatgca tcctgccgta ctgacagctg ggagaatgtc
+     1261 atctgacatg gtcatttcat ttggatcagt tcctgcatac aatgctgacc ttgcagaaga
+     1321 gtctgtaggc agtattagga gcattttgaa ttttgagaca aacaggagaa acagctgtgc
+     1381 tgaaggaatc gtgaagctct gggatgtctt ttgtgctgga tatgaatatc aggaagaaga
+     1441 aatcgtccct cctgaacaca tgctgcatca gtccttcctt gggaaagttt ctcctttcca
+     1501 aaatgtgtcc aagcgtgaag gagatgcact caaagtgcac atcacttcct aagttacaca
+     1561 ctgcagcttc ataatacaaa tcaaaaggta gcttaatatt aatgcacatc actatactta
+     1621 taagcagcta ttgtaatcac ttgcattaac actctacttt aatttacctt cttttcttca
+     1681 ccttattcca ttcattttat tctattttgt cactttgctt caccagcatt gattaggtaa
+     1741 aatttggggt gtgagacaac attatctt
+//
+
+LOCUS       NC_031286               1840 bp    RNA     linear   VRL 13-AUG-2018
+DEFINITION  Tacheng Tick Virus 1 strain TC253 nucleopasid protein (N) gene,
+            complete cds.
+ACCESSION   NC_031286
+VERSION     NC_031286.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Tacheng Tick Virus 1
+  ORGANISM  Tacheng Tick Virus 1
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1840)
+  AUTHORS   Li,C.X., Shi,M., Tian,J.H., Lin,X.D., Kang,Y.J., Chen,L.J.,
+            Qin,X.C., Xu,J., Holmes,E.C. and Zhang,Y.Z.
+  TITLE     Unprecedented genomic diversity of RNA viruses in arthropods
+            reveals the ancestry of negative-sense RNA viruses
+  JOURNAL   Elife 4 (2015) In press
+   PUBMED   25633976
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 1840)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-SEP-2016) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1840)
+  AUTHORS   Li,C.-X., Shi,M., Tian,J.-H., Lin,X.-D., Kang,Y.-J., Qin,X.-C.,
+            Chen,L.-J., Xu,J. and Holmes,E.C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (28-SEP-2014) Department of Zoonosis, State Key
+            Laboratory for Infectious Disease Prevention and Control, National
+            Institute of Communicable Disease Control and Prevention, Chinese
+            Center for Disease Control and Prevention, Changping Liuzi 5,
+            Beijing, Beijing 102206, China
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KM817743.
+            
+            ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1840
+                     /organism="Tacheng Tick Virus 1"
+                     /mol_type="genomic RNA"
+                     /strain="TC253"
+                     /host="Dermacentor marginatus"
+                     /db_xref="taxon:1608083"
+                     /segment="S"
+                     /country="China"
+                     /collection_date="2012"
+     gene            197..1669
+                     /gene="N"
+                     /locus_tag="BJD42_sSgp1"
+                     /db_xref="GeneID:29123052"
+     CDS             197..1669
+                     /gene="N"
+                     /locus_tag="BJD42_sSgp1"
+                     /codon_start=1
+                     /product="nucleopasid protein"
+                     /protein_id="YP_009304988.1"
+                     /db_xref="GeneID:29123052"
+                     /translation="MAPLPKSLLTFSDASGLDSWFKDFEAKNIMSEEYTNSKSFCFDL
+                     RMATQWKKLPTRAENDAMIAQLVHERLKTCAPIKEFAWTACDGMVERGLNWFDRNKDG
+                     ETMTWAANYEALKGRLPTTAEVNQYQKAALQWRTDTNYAINKYTAAISDSVVKIYQVN
+                     NKIVTDIRDLLSDMVARRNKALGIKPGEERVPAEHVDSFSNWLKQGDWSAPCPWGDWE
+                     KKNKKGNSLIVTACAGVINRALFKEEELKERLKSLAGDASLASKTEGFDPKKCEDTAK
+                     ILLDLYGKAKAFISGGDGSSQSGGFVQQGSALDTVFSSYFWAWKCGVKKDVFPALSSM
+                     LYALGKNPTGKTKIIKVLKASPYTWAHKMTEMFSTLSTDPIHMHPGVLTAGRLTTEMV
+                     ASFGAFPVSDPSKAADGASSPRFLLNLKSSDMNPAATTVSRMFYEYRQGYPDWRDEEI
+                     VPVEHLLHQTFLSKLGPYVNVSQVQGNALAVKITEYIVTK"
+ORIGIN      
+        1 aacgtgctgc acaccaatag cattcttttc tttgggcaac tttaaccctg gacaattacc
+       61 tgttcactca tagcacacaa attgtccggt cttcaatcat caaggtcgga gtgaccataa
+      121 tcaaccgcat cacttacatc ccatttgtcg gctcagtgtt tatcccatca cacacacgca
+      181 tagcccatat tccaatatgg ccccactgcc taagtcactt ctcactttct cggatgcttc
+      241 cggactagac agttggttta aggactttga agccaagaac atcatgtctg aggagtatac
+      301 taactccaag agcttctgtt ttgacctacg tatggccaca cagtggaaga agcttccgac
+      361 tagggcagag aatgatgcta tgattgccca acttgtccat gaaaggctga agacatgtgc
+      421 tccaataaag gagtttgcat ggactgcttg cgacggcatg gttgaacgag gactcaactg
+      481 gtttgataga aacaaagatg gtgaaaccat gacgtgggca gccaactacg aagcactaaa
+      541 aggaaggcta ccgacaaccg ctgaggtcaa ccagtaccag aaggcagcac tgcagtggcg
+      601 cacggacacc aactatgcca tcaacaagta cactgcagcg atctcagata gcgtggtcaa
+      661 gatatatcaa gtgaacaaca agatagtgac tgacatcagg gatctcctct ctgacatggt
+      721 tgcaaggcgc aacaaagctt tgggcatcaa gccaggtgaa gagcgggtcc cagcggaaca
+      781 tgtcgacagc ttcagcaact ggctgaaaca gggagactgg agtgcaccct gtccatgggg
+      841 agactgggag aagaaaaaca aaaaaggaaa cagcctcatt gtgacagcct gtgctggtgt
+      901 catcaaccga gccctcttca aagaggaaga attgaaggag aggctaaaga gcctggcagg
+      961 ggatgcctct ctggccagca agacagaagg cttcgaccct aaaaagtgtg aagacacagc
+     1021 aaagatactc ctggaccttt atggaaaggc aaaagcattt atctctggcg gggacggcag
+     1081 cagccagtct ggtggattcg tacagcaagg gtccgccctt gataccgtct tctcttccta
+     1141 cttttgggcc tggaaatgcg gagtgaagaa ggatgtattc cctgctctgt catctatgct
+     1201 gtatgccctg gggaagaacc caacaggcaa aaccaaaata atcaaggttc tgaaagcaag
+     1261 cccctacacc tgggcacaca agatgacaga aatgttttct accctgtcca ccgacccaat
+     1321 acacatgcac ccgggggtcc tcaccgccgg ccggctgacc acagaaatgg ttgcttcctt
+     1381 tggtgcattt ccagtgtctg acccaagcaa ggcagcagac ggtgcctcct cgccacggtt
+     1441 cttactgaac ctgaaaagct ctgacatgaa cccagcagcc actaccgtgt caaggatgtt
+     1501 ctacgagtac aggcagggct accccgactg gcgcgatgag gagattgtgc cagtggagca
+     1561 ccttctgcat cagacctttc ttagcaaact tggcccgtac gtcaatgtca gtcaggtgca
+     1621 aggcaatgcc cttgccgtta agatcactga atacattgtc accaaataag tccaatagcc
+     1681 ccagcagcca cgcctctcct gcctatccat cttctgccgc tttcctgttt ctctcctcaa
+     1741 tcgtcccctg ccagccacca cgcatgcatc tcgcccgggc cagcctctgc agcaatgttg
+     1801 cacgcaccat acttcatcag ttttactact ggtgtaagtt
+//
+
+LOCUS       NC_029932               1719 bp    RNA     linear   VRL 13-AUG-2018
+DEFINITION  Kasokero virus isolate Z-52963 nucleoprotein gene, complete cds.
+ACCESSION   NC_029932
+VERSION     NC_029932.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Kasokero virus
+  ORGANISM  Kasokero virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus.
+REFERENCE   1  (bases 1 to 1719)
+  AUTHORS   Walker,P.J., Widen,S.G., Firth,C., Blasdell,K.R., Wood,T.G.,
+            Travassos da Rosa,A.P., Guzman,H., Tesh,R.B. and Vasilakis,N.
+  TITLE     Genomic Characterization of Yogue, Kasokero, Issyk-Kul, Keterah,
+            Gossas, and Thiafora Viruses: Nairoviruses Naturally Infecting
+            Bats, Shrews, and Ticks
+  JOURNAL   Am. J. Trop. Med. Hyg. (2015) In press
+   PUBMED   26324724
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 1719)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (20-APR-2016) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1719)
+  AUTHORS   Walker,P.J., Widen,S.G., Firth,C., Blasdell,K.R., Wood,T.G.,
+            Travassos da Rosa,A.P.A., Guzman,H., Tesh,R.B. and Vasilakis,N.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-MAY-2015) Pathology and Center for Biodefense and
+            Emerging Infectious Diseases, University of Texas Medical Branch,
+            301 University Blvd, Galveston, TX 77555-0609, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KR537446.
+            GenBank Accession Numbers KR537444-KR537446 represent sequences
+            from the 3 segments of Kasokero virus.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: ABySS v. 1.3.5
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1719
+                     /organism="Kasokero virus"
+                     /mol_type="genomic RNA"
+                     /isolate="Z-52963"
+                     /host="Rousettus aegyptiacus"
+                     /db_xref="taxon:1712570"
+                     /segment="S"
+                     /country="Uganda"
+                     /collection_date="Aug-1977"
+     gene            38..1582
+                     /locus_tag="A6I17_sSgp1"
+                     /db_xref="GeneID:27246497"
+     CDS             38..1582
+                     /locus_tag="A6I17_sSgp1"
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="YP_009246487.1"
+                     /db_xref="GeneID:27246497"
+                     /translation="MSELSFKDVNGLNSWYEEFKKEIPIYTAGANSACLSPDLVDLSQ
+                     FKMDIDSQTSENAKNAVYGRAVIAATRKLAPIYECAWTSCEGIFERSMTWFNNNSDKP
+                     EFKVWHDKYNDLKSNLPEAEQILAYQTCSGSWRKEIGYEINQNTSTLKGDIVEEYGVN
+                     KNIVGTVKNMLVDMVNKRKKRLGGVVVTGAGTSEDHITWMENWLDSEIEPFSIPGWGS
+                     WAKQNSKGTRLAGTAIANITQKKDSDALEKAKEKLEKMKKTVSDAAALESEGMSEDAA
+                     KKMCQEIEASIGEAETLLGASVAQGESKYQQQAAAMDIPFSAHYWAWRSKVNENSFPA
+                     LSQWLFELGQRPIGAAKVNTMLGELPFIWARNLRGSFASSNFNGNKIYMHPAVLTAGR
+                     LSDMAACFGAFPVANPSRAIEGTGNTRYLLNLKREGDNPCASMVTSLFDVFSAGFKYQ
+                     DMDIVPPEHMLHQSFLGKTSPFQTASKIKGSFTKINVVAAPNKPTPYSFTPAVIRKPK
+                     EKKVKK"
+ORIGIN      
+        1 tctcaaagac agacgtgccg cttacccgta agcaaacatg tctgagttga gcttcaaaga
+       61 cgtcaacggc ttaaacagct ggtatgagga gttcaaaaag gaaattccca tctacacagc
+      121 tggagcaaat tcagcttgtc tcagtcctga tctggtggat ctaagccagt tcaaaatgga
+      181 cattgactct cagacttctg agaatgctaa aaatgcagtc tatggaagag cagtcatcgc
+      241 agccaccaga aagctagctc caatttatga gtgtgcctgg acttcctgtg aagggatctt
+      301 tgaacgatcc atgacctggt tcaataacaa ttctgataag cctgagttca aggtctggca
+      361 tgacaagtac aatgacttga agtctaatct gcctgaggct gaacagattc ttgcttatca
+      421 gacctgctct gggtcctgga ggaaggagat tggttatgaa atcaatcaga ataccagcac
+      481 actgaaaggc gacatagttg aagaatatgg tgtcaacaaa aacattgttg gtacagttaa
+      541 gaacatgctc gttgacatgg tcaacaaaag gaagaaaaga cttggtggtg ttgttgtaac
+      601 aggggctgga acctcagagg atcatattac ttggatggaa aactggcttg atagcgaaat
+      661 cgagccattt agcatcccag gatggggaag ctgggccaaa caaaactcta aggggactag
+      721 gcttgcggga acagccattg ccaacatcac ccagaaaaag gactctgatg ctttggaaaa
+      781 ggctaaagag aagcttgaga aaatgaagaa gactgtcagt gatgcagccg ctttagaatc
+      841 ggaaggaatg agtgaggatg ctgccaagaa aatgtgtcag gagattgagg cctctattgg
+      901 agaggctgag acgctccttg gagcaagtgt tgcacaggga gagtccaagt accaacaaca
+      961 agccgcagcc atggacatcc ctttttcagc ccactactgg gcttggaggt caaaggtcaa
+     1021 tgaaaacagc ttcccagcac tatcccagtg gctttttgaa ctaggtcaaa ggcctattgg
+     1081 tgcagcaaag gtgaatacca tgttgggcga gcttcccttt atctgggcac gaaatctgag
+     1141 aggatcgttt gcaagctcca attttaacgg aaataagatc tatatgcatc cagctgtctt
+     1201 gacagccgga aggctctcag acatggctgc ctgctttgga gcattcccag ttgcaaaccc
+     1261 gtccagagca attgaaggca ctggcaatac aaggtactta ctgaatctga agagggaggg
+     1321 agataatccc tgtgcctcta tggtgacatc tctctttgat gtcttttcag ctggttttaa
+     1381 gtaccaggac atggacattg tccctccaga gcacatgttg caccagtcct tccttgggaa
+     1441 aacaagtcca ttccagactg ctagtaagat caagggaagc ttcaccaaaa tcaacgttgt
+     1501 tgctgcccca aataaaccaa ctccatacag ctttactcca gcagtcatca gaaagcccaa
+     1561 agagaagaaa gttaagaagt aatttaccct tgctcagttt taatagtata accattaatc
+     1621 ctttgcttaa tctgcttatt gcttaatcaa tgttaaagaa agaaaggaaa gaagagaaaa
+     1681 agggacaaat tggggtatgc ggcaacatta tctttgaga
+//
+
+LOCUS       NC_029936               1761 bp    RNA     linear   VRL 13-AUG-2018
+DEFINITION  Yogue virus isolate DakAnD 56 nucleoprotein gene, complete cds.
+ACCESSION   NC_029936
+VERSION     NC_029936.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Yogue virus
+  ORGANISM  Yogue virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus;
+            unclassified Nairovirus.
+REFERENCE   1  (bases 1 to 1761)
+  AUTHORS   Walker,P.J., Widen,S.G., Firth,C., Blasdell,K.R., Wood,T.G.,
+            Travassos da Rosa,A.P., Guzman,H., Tesh,R.B. and Vasilakis,N.
+  TITLE     Genomic Characterization of Yogue, Kasokero, Issyk-Kul, Keterah,
+            Gossas, and Thiafora Viruses: Nairoviruses Naturally Infecting
+            Bats, Shrews, and Ticks
+  JOURNAL   Am. J. Trop. Med. Hyg. (2015) In press
+   PUBMED   26324724
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 1761)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (20-APR-2016) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1761)
+  AUTHORS   Walker,P.J., Widen,S.G., Firth,C., Blasdell,K.R., Wood,T.G.,
+            Travassos da Rosa,A.P.A., Guzman,H., Tesh,R.B. and Vasilakis,N.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-MAY-2015) Pathology and Center for Biodefense and
+            Emerging Infectious Diseases, University of Texas Medical Branch,
+            301 University Blvd, Galveston, TX 77555-0609, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to KR537455.
+            GenBank Accession Numbers KR537453-KR537455 represent sequences
+            from the 3 segments of Yogue virus.
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: ABySS v. 1.3.5
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1761
+                     /organism="Yogue virus"
+                     /mol_type="genomic RNA"
+                     /isolate="DakAnD 56"
+                     /host="Rousettus aegyptiacus"
+                     /db_xref="taxon:1712572"
+                     /segment="S"
+                     /country="Senegal"
+                     /collection_date="19-Jun-1968"
+     gene            38..1588
+                     /locus_tag="A6B03_sSgp1"
+                     /db_xref="GeneID:27246505"
+     CDS             38..1588
+                     /locus_tag="A6B03_sSgp1"
+                     /codon_start=1
+                     /product="nucleoprotein"
+                     /protein_id="YP_009246491.1"
+                     /db_xref="GeneID:27246505"
+                     /translation="MSQLEFKDVKGLNEWYESFKKEVPIYSQGANSACLGSELVDLSQ
+                     FKIDIDSQATESAKNAVYGKAVVAATRKLAPIYECAWTSCEGTFERSMAWFRDNADKP
+                     EFKLWHDKYNELKSNLPEPEQVEAYQTCSSAWRQAIGYEINANTSTLRGAIVEEYGVS
+                     KEIVGTVKDMLVDMVNKRKKRLGGVVVSGNKASDDHINWMKSWLDDEIELFSVPTWGS
+                     WAKLNSRGQRLAGTAIANIKQKKDGDAVETAKEKLEKMKAIASNPAVLETDGYSEDAV
+                     KKMCGEVESAIEEAEKLLAETGGGADSKYQQQAAAMDVPFSAHYWAWKSKVNDASFPA
+                     LSQWLFELGQRPIGATKINAMLGELPFVWARNLRSAFASSNFNGSKIYMHPAVLTAGR
+                     LSDMAACFGAFPVGNTARAVEGTGNTRFLLNLKREGDNPCATMVTSLFDVFSAGFKYQ
+                     DVEIVPPEHMLHQSFLGKTSPFQTASKIDGSFTEINIVAAPNKPTPYKFVPPVLTPKK
+                     QREKKRTK"
+ORIGIN      
+        1 tctcaaagac agacgtgccg cttaccagta agcaaacatg tctcaacttg agttcaagga
+       61 cgtgaagggg cttaatgaat ggtatgagtc attcaaaaag gaggttccca tctatagcca
+      121 gggagccaat tcagcatgcc ttggttcaga acttgtggat ctaagccagt tcaaaattga
+      181 catagactca caggcgactg aaagtgccaa gaatgctgta tatggaaagg ctgttgttgc
+      241 agctaccagg aagctggctc caatttatga atgtgcctgg acatcctgtg aagggacatt
+      301 cgaacgttcc atggcttggt ttcgtgacaa tgctgacaaa cctgagttta aactctggca
+      361 cgataaatac aatgagctga agtccaacct gcctgaacct gaacaggttg aggcctacca
+      421 gacttgctct agtgcatgga ggcaagccat tggttacgaa atcaatgcca acaccagcac
+      481 gttgagagga gccatagtgg aagagtatgg agtgagcaag gaaattgtgg gaacagttaa
+      541 ggatatgctt gtagatatgg tgaacaagag aaagaaacgg cttggaggtg tggttgtctc
+      601 aggaaacaaa gcctctgatg accacatcaa ctggatgaag tcctggcttg atgatgagat
+      661 tgaactgttt agtgtgccca cctggggaag ctgggctaag ttgaactcaa gaggacaaag
+      721 actggccgga acagcaatag ccaacattaa acaaaagaaa gatggtgatg ctgtagagac
+      781 tgctaaagaa aagctagaga agatgaaagc cattgcaagc aacccagccg tcctagaaac
+      841 agacggttac agcgaagatg ctgtcaagaa aatgtgtgga gaggttgagt ctgctattga
+      901 agaggctgaa aagctcctag cagagacagg aggaggagct gattccaagt atcagcagca
+      961 ggctgccgcc atggatgtgc ctttctctgc tcactattgg gcctggaagt cgaaggtcaa
+     1021 tgatgcgagc tttcctgcat tgtctcaatg gctctttgag cttggacaga gaccaattgg
+     1081 tgcaaccaag ataaatgcca tgcttggaga gttaccattt gtgtgggcaa gaaacctccg
+     1141 cagtgccttc gcaagctcaa acttcaatgg cagcaaaata tacatgcacc cagcagtctt
+     1201 gacagcaggc agactctctg acatggcagc atgctttggt gcatttccgg tgggtaacac
+     1261 tgcaagagca gtggaaggca cgggaaacac taggttcctt ctgaacctga aacgggaagg
+     1321 ggacaatcca tgtgcaacta tggtaacatc tttgtttgat gtcttttctg ctggattcaa
+     1381 gtaccaggat gttgagattg tgcctccaga gcacatgctg caccagtctt tcctagggaa
+     1441 gaccagccct ttccagacgg caagtaagat tgatgggtct ttcactgaga taaacatcgt
+     1501 tgctgcacca aacaagccga caccatacaa gtttgttccc cctgtcctga ctcccaagaa
+     1561 gcagagggag aagaaaagga ctaagtaaat caccggtatc ttcctgttca ctcactgctt
+     1621 ctatctgctt gctttgcacc aatcaaaatt aacatcctct ccggtcgggt cctgggctgc
+     1681 tcacaacaag aaagttttgt ttatataaac atatttatat aaacataaac tttctggtat
+     1741 gcggcaacat tatctttgag a
+//
+
+LOCUS       NC_029124              12143 bp    cRNA    linear   VRL 13-AUG-2018
+DEFINITION  Tofla virus viral cRNA, complete genome, segment: L.
+ACCESSION   NC_029124
+VERSION     NC_029124.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Tofla virus
+  ORGANISM  Tofla virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus;
+            unclassified Nairovirus.
+REFERENCE   1
+  AUTHORS   Shimada,S., Aoki,K., Nabeshima,T., Fuxun,Y., Kurosaki,Y.,
+            Shiogama,K., Onouchi,T., Sakaguchi,M., Fuchigami,T., Ono,H.,
+            Nishi,K., Posadas-Herrera,G., Uchida,L., Takamatsu,Y., Yasuda,J.,
+            Tsutsumi,Y., Fujita,H., Morita,K. and Hayasaka,D.
+  TITLE     Tofla virus: A newly identified Nairovirus of the Crimean-Congo
+            hemorrhagic fever group isolated from ticks in Japan
+  JOURNAL   Sci Rep 6, 20213 (2016)
+   PUBMED   26863911
+  REMARK    DOI:10.1038/srep20213
+            Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 12143)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-FEB-2016) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 12143)
+  AUTHORS   Hayasaka,D., Nabeshima,T., Shimada,S. and Aoki,K.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (30-OCT-2014) Contact:Daisuke Hayasaka Institute of
+            Tropical Medicine, Nagasaki University, Department of Virology;
+            1-12-4 Sakamoto, Nagasaki, Nagasaki 852-8523, Japan URL
+            :http://www.tm.nagasaki-u.ac.jp/virology/
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to LC008512.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..12143
+                     /organism="Tofla virus"
+                     /mol_type="viral cRNA"
+                     /strain="Toku_Hfla_2013"
+                     /host="Haemaphysalis flava (Tick)"
+                     /db_xref="taxon:1615758"
+                     /segment="L"
+                     /country="Japan"
+                     /collection_date="2013-11-12"
+     gene            39..10571
+                     /locus_tag="AV646_sLgp1"
+                     /db_xref="GeneID:26798443"
+     CDS             39..>10571
+                     /locus_tag="AV646_sLgp1"
+                     /codon_start=1
+                     /product="RNA-dependent RNA polymerase"
+                     /protein_id="YP_009227122.1"
+                     /db_xref="GeneID:26798443"
+                     /translation="MDFLEGIVWDDVSDIQSVSHPSFMITDYFEVIRQPADGNCFYHS
+                     LAELYIPKKTEHSYRLVKAELKQAAEVYFGTEPEAVALGIKLDEYLDTAMKDYEWGGS
+                     LEAAMLSRHLNITVVLWLVDSSNRVIGATKFGKGSLNTALHLLHSGLTHFDALRMLAF
+                     EEPGAQEPMSIVEKLEMVEKYTLEVDDDGLQEEEILLEAEEEAQAERERVDPDPRLRT
+                     QATLLHKLVRHGENIPIRVGRVLDCLFNCKLCIEMTSDLLVIKPERKENQGETLSLRQ
+                     LGHKMLTRDKQLKSEFSKHKLYLTKDLLDHLDVGGLLRSAFPGKGLERHLSLLHSELV
+                     LDICTVSLSALLSTFLYGSNNKNKKRFITNCLLGTNLSGKRVFRSLGKLTAGVLYRNP
+                     RKAVASICNDLYGKLVQKLSDCFTLMSPISLLALRNLDCDNMCLKDYIDMIEEMSKLD
+                     NSDVDFTHREIADINQLTDRLQRLAQTDSPDTLLSWFESSALTKRSQRDVRGAQEFLI
+                     SDFFRRKDIMKFISTSGKASSAGNLGNVLSYAHNLYLSKESLKMSSEDVTQLLIEIKR
+                     LYKLQGDQSVEPIALICDRLEESFRRLFRELPAECSQECQTLFEDIRNSTSHSTAWKH
+                     ALRLKGTAYEGMFSRQYGWQYTPEDIKPSLTMLVQTLFPEKFETFLDRTQLHPEFRDL
+                     TPDYALTQKVYFKSNQIVEVVSHQVSIGENLDESVDVVPLEEKKMFPLPETPIKEVHS
+                     IRNIIKAFHEKANGRDGHRSVDTTSKEEINTTLQSGDPESNAQGPAADDIKQADMHPE
+                     GQLDYNNRIIIDRNGVEVTEEEELMRRQLLLVEVGYQTDVDSKITTDHKKWKDILRLL
+                     EMLNIKCSFVACADCSSTPPDGWWISEDKVRTLKNSISHLFSCLTKNSPSDVTDIVVG
+                     SISTQKVRSYLKSGSATKTPISSKDVQETWLHQSENIVNRPTGVQLPQKLVRALKQGL
+                     VDGVVMTPDASRECIQTIKKNAERLTDEYERTKFKHELNVNRTTSEKMLLGWLNDDLQ
+                     GTRCSNCLSTIKETVEQMSENCDRIEYLSGCCILSSHCSECHPKGVEICNTTNVQRRL
+                     PDLSHLQHSENKGFEDTNEAITELDKLVRLTLPGKTEKERRVKRNVEQLIRQMMQQSD
+                     LECIKLPSGQIITHRLTRKAKQINEAAQTERQVERLDRLKKELSPKKLSTYSKHINHT
+                     IDSSLKRPDKQQNSRCAVPRAWLDKLLRDLKVPTKDEDILIGIQKSMQSKVNFSRNND
+                     KLLIRDEEDIRSFLSSRGRSLLETSEQGLFQSDCLLFKEVTAEALRRYMSTPYQEIPE
+                     TIVRLINLLCKFQWFQECTLYGKICETFLRCCTEFSRSGIKLVKVRHCDANIAIKLPS
+                     NKKENMLCCIYSKDMELIKGPFYINRRQAILGAAYPYILITTYIQVLQQHRCLEVLNN
+                     SGPRVLENITRCTKGLIECVEKELCCAVRGLFEKAYEIRTRQCALGGNFLNRSSRDHF
+                     VSVISGLNVVYGLLVRDNLLANSQQQNKQLQMLRFGMLCGLSRLSCPKELGKKFSASC
+                     RRIEDNIMRLYLQSTVYSANRDCELNAANWKLKDLCPDVTIPCFSVYGLFVNSDRQLI
+                     YDIYNVHIYNKEMDNFDEGCINVLEETAERHMMWELNLLEAINPETKDDRAARLLLGC
+                     PNIKRSTDKEGNRLSRVGHAADPDGGSSESSSVSGRRSYGSSKGRIQSMFGRYNSNKK
+                     PFELKPGLEVSSDPLHDYQQAVTGGSLYSEYSPNQDSILKDCIQIIRSNPGYTMGSFE
+                     LIQAVTEMARGKYPAENIEKARRDPKNWVSISEVTETTSIVSTPKVHVMLKDCYKVLL
+                     GTENKKIVKMLRGKLKKLGAISTDIEIGKKDCLDLLNTVDGLSEEQKKKIVCGIFEPS
+                     KLSFYHWKELVKKDLYEVLLTDDGNYIFCWLKTLSSLVKAGLKRDLKFMNQSTQPDHQ
+                     SNIFDVEEVDELLKMRSAISDSSESEDDLNASVLLRAWSRCVFRPKEGSQIVDEGLTK
+                     VMAIAEELFNLRRQHLELTKLKKDNPTVSFTKEEVTVKRLEKAFLSKNNASIMSITNL
+                     IFYCALSAPWCVHYKSLEAYLVRHPEVLEFNGSVPTESKILDLSVAALVIHLLATRGD
+                     HSPAELEGLDVKVRFLIRYVITLFTANGEPFSLSLSDGGLNEDLQKTTDEKLLHQTKV
+                     VFAKIGLSGKNYDFIWTVQMIANSNFNVCKRLTGRTTGERLPRSVRSKVIYEMVKLVG
+                     ETGMAILQQLAFAQALNYDHRFYAVLAPKAQLGGSRDLLVQETGTKVIHATTEMFSRN
+                     LLKTTKDDGLTNPHLKETILNSGLEALQTMRLVDGKAATDGGTLVTFYKVVCISGDNT
+                     KWGPIHCCSFFSGMMQQLLKDVPDWSAFYKLAFIKNLCRQVEIPAASIRKILNVLRFY
+                     LSDKGGVERLSEDEIRNKLCETLDLWGGNDIVKFLITTYLSKGIMAMNSYNHMGQGIH
+                     HATSSILTSVMAELFEDLTIDYYKRHYPSLTVTVTHAGSSDDYAKCVIVTGLLSKDLY
+                     DKYSETFWMHTCRLKNFTAAVQRCCQMKDSAKTLVGDCFLEFYSEFMMGYRVTPAVIK
+                     FIFTGLINSSVTSPQSLSQACHVSSQQAMYNSVPLLTNATFTLLRQQVFFSHVEDFIR
+                     RYGMLTLGSLSPFGRLFVPTFSGLVSSAIALEDSETVARSASILEENSIFLETSSLSI
+                     IDQISSSSSSDGDARSTTSVTTLESGHSDSSASSFTFEMNRPLSETELHFLKTLRDNG
+                     DQTVCEHIQDQITELYASSKEGSLDKYLLIYSSKLVDSCAWLKKGRDKGPLECARRIQ
+                     CILNVLIAGYYRSFGSDGTERQVKACLNRDDNRVIEDPMIQLIPEKLRRELERLGVSR
+                     MEVDELMPATSPSDTLCQLVAKKLISLNVSTEEYSAEVSRLKQTLTARNVLHGLAGGI
+                     KELSLPIYTIFMKSYFFKDNVFLDLEDRWSTKHSTNYRDSTGRMLHGRVITKYAHWLD
+                     NFLNCKVSIDRVQEVRDCSLFNPDLRCVNLLIGENNVRELSIVSSHLRVFIKEFDNLN
+                     LQFSDLNRQKLKIVESRPPESELEANKVVIVKSKLFSATEHVRLSNNPAVVMGYLLEE
+                     SSISEVKPTKVDYSNLLKDRFKLMQFFPSVFSLLRALQVESKEYEKLGDPIDMSTVSK
+                     YSNHLTLLCRMIQQARPSLTVFYMLKSTHLATEPTVSELVSFGVKEGRYLKLSETGLD
+                     ASTYSVKYWKILHCLSAIGELPISGTDKTTLLMSFLNWKVDTESCDKTCPLYKHEVSV
+                     LSEFSGQVVINTLASELSSVRRDGERDSLTDLIEYANSPGELLKKKPYLGTTARFQTW
+                     GETNRNGKFTYSSRSGEAIGIFISGKLHIHLSKESTGLLCEVERNVLSWLSKRRTDIL
+                     TREQHSQFLSFLPTMSEVAQKNRDGSTNGIMLDPNNPRMLKFTVARKQTPVIKVKQQI
+                     LTVKKQTSYDVESEPRLQWGHGCLTIIYDECETQTTYHENLLKIK"
+ORIGIN      
+        1 tctcaaagac atcaatcccc caaaacccca aaggtaacat ggatttcctt gagggcatcg
+       61 tgtgggatga tgtgtctgac attcaatccg tctctcaccc tagctttatg attacagact
+      121 atttcgaagt catcagacag ccggctgatg gcaactgctt ctaccatagc cttgctgagc
+      181 tctatatacc aaaaaagact gagcactctt acaggttggt caaggccgaa ctcaaacagg
+      241 ccgcagaggt gtactttgga acagagcctg aggccgtggc gctaggcata aagcttgatg
+      301 agtatctgga tactgcgatg aaagattatg aatggggagg gagcttggag gcagcaatgc
+      361 tctccaggca cctgaacatc acagttgtgc tttggttggt agacagcagc aacagggtga
+      421 ttggtgcaac caagtttgga aaggggtccc tcaacactgc ccttcatctc cttcacagtg
+      481 gtctgactca ctttgatgcc ctaagaatgc tggcattcga agaacctggt gcccaagagc
+      541 ctatgtccat agtagagaag ctggagatgg ttgagaagta cactctagag gtagatgacg
+      601 atgggctgca ggaagaagag atcttgctgg aggctgagga agaggcccag gctgagaggg
+      661 agcgtgtgga tccagaccct cgtcttagaa cgcaagcaac cctgctacac aagctcgtga
+      721 gacatggcga gaacatcccc atcagggtgg gcagagtgct tgattgtctc tttaactgca
+      781 agctctgcat tgaaatgact tctgacttgc ttgttatcaa gcctgaacgc aaagaaaatc
+      841 agggcgagac actaagcctt cgacagcttg gccacaaaat gttgacaagg gataaacagt
+      901 tgaagagcga gttctcaaag cacaagctct acctcacaaa ggacttgctc gatcacttag
+      961 atgtgggtgg acttttaagg tctgcttttc caggcaaggg gcttgaacgg cacctatcgc
+     1021 tcctgcattc cgagcttgtc cttgacatct gtactgtcag tttgagtgcg ctgttgtcca
+     1081 catttctata cggctcaaat aacaagaaca agaaaagatt cataacaaac tgccttttag
+     1141 gaacaaacct ttctggaaag agggtgttta ggtctcttgg gaagctgact gcaggtgttc
+     1201 tgtacagaaa ccccaggaag gcagtggcat ccatctgcaa tgatctatat ggaaagctgg
+     1261 tgcaaaagct gagtgattgc ttcactctga tgagcccaat cagccttctg gccttaagga
+     1321 acctggattg cgacaacatg tgtttgaagg attacatcga catgatagag gagatgtcaa
+     1381 agctggacaa ttctgatgtt gacttcacac atcgagaaat agctgacata aaccagctca
+     1441 ccgacaggct gcagagatta gcccagacag atagccctga tacactactt agttggttcg
+     1501 agagcagtgc attgacaaaa aggagccaac gagatgtaag gggcgctcag gaatttctga
+     1561 taagtgattt tttccggcgt aaggacataa tgaagttcat aagcacctcc ggaaaagcat
+     1621 caagtgctgg gaacctaggg aatgtcctct cttacgccca caacctctat ctaagcaaag
+     1681 agagcctgaa aatgtccagc gaggatgtaa ctcagttgct cattgagatc aagaggctct
+     1741 acaagctgca aggtgatcaa agtgtcgaac ctattgccct catctgtgat aggctggaag
+     1801 aaagctttag acggctgttt agagaactcc ctgctgagtg ctcccaagag tgccagaccc
+     1861 tatttgaaga catcagaaat tcaaccagcc acagcacagc ttggaagcat gccttacgct
+     1921 tgaaagggac agcatatgag ggcatgtttt caagacagta tgggtggcag tacactcctg
+     1981 aagacatcaa gcctagcctt accatgctag tgcagacctt gttccctgaa aaatttgaaa
+     2041 cgtttctcga caggacacag ctgcatccgg agttcagaga cctaactcct gattatgcat
+     2101 taacacagaa ggtgtacttt aagagtaacc agatagtaga ggttgtcagc caccaagtct
+     2161 cgataggtga gaaccttgat gaatctgtcg atgtggtccc tcttgaggaa aagaagatgt
+     2221 tccctctccc cgagacacca atcaaagagg tgcactccat aagaaatata atcaaagcat
+     2281 tccacgaaaa agcaaacggg agagacggcc acagatctgt cgacacaaca agcaaggaag
+     2341 agatcaacac aaccctccag tcaggagacc ctgaatccaa cgcccaaggg ccagcggccg
+     2401 acgacatcaa acaagctgat atgcacccag aaggacagct ggattacaac aaccgtataa
+     2461 taatagatag gaatggggtt gaagtcacag aagaagagga gcttatgagg aggcagctgc
+     2521 tactggtcga agttggctat cagactgatg ttgacagcaa gatcacgact gatcataaaa
+     2581 agtggaaaga catcttacgg cttcttgaaa tgctgaatat aaagtgttct tttgtggcct
+     2641 gtgccgactg ctcttctacc ccacctgacg gctggtggat ttcagaagat aaggtgagga
+     2701 ccctaaaaaa ctccattagt cacctcttca gctgcttgac taaaaattcc ccctctgatg
+     2761 tcacagacat tgttgttggt tcaatcagca cacagaaggt ccgtagttac ctcaagtcag
+     2821 gtagtgcaac caagacacca atctctagta aggatgtaca agaaacttgg ttgcaccaga
+     2881 gcgagaatat cgtcaacaga cccactggtg tccaacttcc tcaaaagctg gtcagagcgc
+     2941 taaaacaggg tcttgttgat ggagtggtga tgacccctga tgccagcaga gagtgcatac
+     3001 aaacaattaa gaaaaatgcg gaaagactaa cagacgagta tgagagaacc aaattcaagc
+     3061 atgagctcaa tgttaaccgc acgacaagtg agaaaatgct cttgggatgg ctcaatgatg
+     3121 accttcaggg caccagatgc tccaattgcc taagcacaat taaggagact gtagagcaaa
+     3181 tgtccgagaa ctgtgacagg atagagtacc tctctggatg ctgcatacta agctctcatt
+     3241 gcagtgaatg ccaccccaaa ggtgtagaga tatgcaacac aactaatgtg cagcgtaggc
+     3301 tacctgattt gtcccatctg caacattcag aaaacaaagg ctttgaggac acgaatgaag
+     3361 caataactga gttggacaaa ctagtaaggc taacattacc cggaaaaacg gaaaaagaga
+     3421 ggcgagtaaa aaggaacgtg gagcagctta tccgtcagat gatgcaacag tctgatcttg
+     3481 agtgcataaa gctgccatct ggacaaatca tcactcaccg actgacacga aaggccaaac
+     3541 agatcaatga agcagcacaa acagaaagac aggtggagag acttgacaga ctcaagaagg
+     3601 agctttcccc aaaaaaactg agcacctact ccaagcacat caatcataca atagacagct
+     3661 cgctcaaaag acctgacaag cagcaaaatt caagatgtgc ggtgcccaga gcctggttgg
+     3721 acaagcttct tcgagatcta aaggttccaa caaaggacga ggacatcctg atcggaatcc
+     3781 aaaagtcaat gcagagtaag gtgaatttta gcagaaacaa tgataaactc ctcatccgag
+     3841 atgaagaaga catcaggagc tttttatcat ccaggggtcg ttcccttttg gaaaccagtg
+     3901 agcaagggct tttccagtct gactgtctgc tctttaagga ggtgactgcc gaggccttgc
+     3961 gcagatacat gtcaacaccg taccaggaaa tacccgagac catagttaga ctcatcaacc
+     4021 ttctatgcaa gttccagtgg ttccaagaat gtaccctgta cggcaaaatt tgtgagacct
+     4081 ttctgcgctg ctgcactgag tttagcaggt cagggataaa attggtaaaa gtcaggcact
+     4141 gtgatgcgaa tattgctatt aagttgccct ccaataagaa ggaaaacatg ctctgttgca
+     4201 tctacagcaa agacatggag ctcataaaag gcccgttcta cataaacagg agacaagcca
+     4261 tcttgggtgc agcctatcct tacatactga taactaccta cattcaggtt ttacagcagc
+     4321 acaggtgcct tgaggttttg aacaacagtg gtccaagagt tttagagaac attacgagat
+     4381 gcactaaggg cctgatcgag tgtgtagaga aagaactctg ctgtgcagtt agagggcttt
+     4441 ttgagaaagc atatgagatc agaacacgac agtgcgcact tggcggaaat ttcctcaacc
+     4501 gcagtagtcg ggaccatttt gtatctgtca tttcgggcct taatgttgtc tatggtcttc
+     4561 tggtcagaga caatctcctt gcgaattccc aacagcagaa caagcaactg caaatgttga
+     4621 ggttcggaat gctttgtggc ttgagccgac tgtcttgtcc aaaggaattg ggaaagaagt
+     4681 tctctgcaag ctgtagaaga attgaagaca acataatgag attgtacctg caatcaacgg
+     4741 tttatagtgc aaatagggac tgtgagctca atgctgccaa ctggaagcta aaggaccttt
+     4801 gccctgatgt aaccattccc tgcttttcag tttacggtct ttttgtaaac agcgaccgac
+     4861 agttgattta cgatatatac aatgtgcaca tctataacaa agaaatggac aactttgatg
+     4921 aagggtgcat aaacgtcctg gaagaaactg ccgaaagaca catgatgtgg gagttgaatc
+     4981 ttctagaggc aataaatccc gaaacaaaag atgacagagc agcaagactg ctcttggggt
+     5041 gccccaacat taagagaagc actgacaagg aggggaacag gctgagcagg gttggccatg
+     5101 ctgcggatcc tgatgggggc agcagtgaga gttcaagcgt gtctggcagg aggtcgtacg
+     5161 ggtccagcaa aggaaggatc cagagcatgt ttggtcgcta caactccaac aagaaaccat
+     5221 ttgaacttaa accaggactg gaggtcagta gcgaccctct ccatgactat cagcaggctg
+     5281 tcactggtgg aagcctctac tcagaatact ctcccaacca ggatagcatc ttaaaggact
+     5341 gcatacaaat aataagaagc aaccctggct acacgatggg gtctttcgag ctgatccaag
+     5401 ctgtaactga gatggcaaga gggaaatacc ccgctgaaaa catagagaaa gcaagaagag
+     5461 accccaagaa ctgggtgagc atctcagaag tgacagagac aactagtata gtgtccacac
+     5521 caaaagtcca cgtgatgctg aaggactgct acaaagtgct actaggaacc gagaacaaga
+     5581 agatagtgaa gatgcttagg ggcaagctaa agaaacttgg agcaattagc actgatatag
+     5641 aaatagggaa aaaggactgc ttggaccttt tgaacacagt agacggtctc tcagaagaac
+     5701 aaaagaaaaa aatagtatgt ggtatatttg aaccatcaaa gctctctttc tatcactgga
+     5761 aagaactggt taaaaaggat ctctatgagg tactgttgac agatgacggg aattacatct
+     5821 tctgctggct caaaacctta tctagcttgg taaaagctgg tctcaaacgt gatcttaaat
+     5881 tcatgaacca aagcacgcaa ccagaccatc agagcaacat ctttgatgtg gaagaagttg
+     5941 atgaacttct caaaatgaga tccgcaataa gtgattcatc tgagtcagaa gatgacttga
+     6001 atgcgagtgt cctgctgagg gcctggtcca gatgtgtctt taggcctaag gaaggcagtc
+     6061 agatagtgga tgaaggactc actaaggtca tggcaatagc tgaagagctc ttcaacttac
+     6121 gaaggcagca tctagaactg acaaagctaa aaaaagacaa ccccacagta agcttcacga
+     6181 aggaggaagt aacagtaaag cgccttgaga aggcattttt gagtaaaaac aatgccagca
+     6241 ttatgtccat aaccaatctc atcttttact gcgccctctc tgcaccttgg tgcgtgcact
+     6301 acaagtcgct cgaagcttac cttgtcagac atcccgaagt tttggagttc aatggtagtg
+     6361 tccccacaga aagcaagata ctggatctgt ctgtggctgc tctcgtgata catctactgg
+     6421 caacaagagg cgaccattct cctgcagagc tagaagggtt agatgtcaaa gtgcgctttt
+     6481 taatccggta tgtcatcaca ctattcacag ccaacgggga gcctttctcc ctcagcctca
+     6541 gcgatggtgg cctcaacgag gacctgcaga agacaacaga cgaaaagctg ttacatcaga
+     6601 ctaaagtggt ctttgccaaa atcggcttgt caggcaagaa ctacgacttt atctggacag
+     6661 tccaaatgat agcaaacagc aatttcaatg tatgcaagcg gctgaccgga cggacaaccg
+     6721 gcgagcgcct tcctcggagt gtgagaagca aggtcatcta tgagatggta aagctggtcg
+     6781 gtgaaacagg gatggcaatt ttacagcaac tagcctttgc ccaagctctg aattacgatc
+     6841 acagatttta tgctgtgcta gccccaaaag cgcaactagg gggtagcagg gatctgttag
+     6901 tccaagagac cggtactaaa gtgatacatg caaccactga aatgtttagc agaaacctgc
+     6961 tgaagacaac caaggatgat gggctgacaa atcctcatct taaagagact attctgaact
+     7021 ccggcctaga agcattgcaa acaatgaggc ttgtggatgg taaagctgca acggatggtg
+     7081 gcactctggt caccttctac aaggttgtct gcatatctgg agacaacacc aaatggggcc
+     7141 ccattcactg ctgttctttc ttttcaggaa tgatgcaaca actcctcaag gatgtccctg
+     7201 actggagtgc tttctataaa ttggccttta tcaagaatct atgcaggcag gttgagattc
+     7261 ctgcagccag catcagaaaa atcctcaacg tgttaagatt ctatctgagt gataaaggtg
+     7321 gtgtcgagag acttagtgaa gatgaaataa ggaacaaact atgcgaaaca cttgatctgt
+     7381 ggggcggaaa tgatatagta aaatttctaa tcaccactta cctcagcaaa ggaatcatgg
+     7441 ccatgaacag ttacaaccac atgggacaag gcattcatca tgcgacctca tccatcttga
+     7501 catcagtgat ggctgagtta tttgaagatc tgacaatcga ttactacaag cggcactatc
+     7561 ccagtctgac agtcactgtc acacatgcgg gcagctccga cgactatgct aaatgtgtga
+     7621 ttgtgacagg gcttctatct aaagacctgt atgacaagta ctctgagacc ttttggatgc
+     7681 acacatgtcg tctaaagaac tttactgcag ctgttcagag gtgttgccaa atgaaagaca
+     7741 gtgcaaaaac acttgtaggg gactgcttcc tggagtttta cagtgaattc atgatgggct
+     7801 acagggtaac tcctgctgtc ataaagttca tcttcactgg gctaataaac agttcggtca
+     7861 catccccgca gagtttgtct caagcatgtc atgtgtcatc acagcaggct atgtacaaca
+     7921 gtgtcccgtt gttgaccaat gccactttca cactgctaag acagcaagtc ttcttctcac
+     7981 atgttgagga cttcatacgt cgctatggta tgctaacctt gggttctttg tccccgtttg
+     8041 gaagactctt tgttccaaca ttctccgggc tagtcagttc tgcaattgca ttggaagata
+     8101 gtgaaactgt ggcaaggtca gcctcaattc tggaggagaa cagcattttc ctagaaacaa
+     8161 gcagcttgtc aataattgac caaatatcca gcagctctag ttctgatgga gatgcacgaa
+     8221 gcactactag tgtgaccact cttgagtctg gccactcaga cagctctgcc tctagcttca
+     8281 cctttgagat gaacagacct ctatctgaga ctgagctaca cttcctcaaa acactcagag
+     8341 acaatggcga tcagactgtg tgtgagcaca tacaagatca aataacagag ctttacgcat
+     8401 catccaaaga aggctcacta gacaagtacc tactaatcta cagcagcaag ctagtcgact
+     8461 cgtgcgcatg gttaaagaaa ggtcgcgaca aaggtcctct ggagtgtgca agacgcatcc
+     8521 agtgcatatt gaatgtccta attgcaggct actataggtc atttgggagt gatggtacag
+     8581 aaagacaggt taaggcttgt cttaacaggg atgataaccg agtaatagaa gaccctatga
+     8641 tacagctcat cccagaaaaa ctgcggagag aattggaaag actgggtgtg tctaggatgg
+     8701 aggtggatga gctcatgcct gccacatcac ctagtgatac tctctgtcag ctggtagcaa
+     8761 agaagctcat cagcctaaat gtatctacag aggaatattc tgcagaagtc tcaagactga
+     8821 agcagaccct cacagcgaga aatgtccttc atggactggc aggtgggatc aaagagctgt
+     8881 cactgccaat ttacacaatc ttcatgaaat cgtacttctt caaggacaat gtgtttcttg
+     8941 acctggaaga caggtggagc accaaacaca gcacaaatta tagggacagc acaggtagga
+     9001 tgctgcatgg gcgtgtaatc acaaagtatg ctcactggct tgacaatttt ctaaattgca
+     9061 aggttagtat tgatagagtt caggaggtga gagattgctc cctcttcaac ccagacctgc
+     9121 gctgtgtcaa tttgttaatt ggtgaaaaca acgtcagaga actctcgata gtgtccagtc
+     9181 acttgagggt cttcatcaaa gaatttgaca acttaaacct tcaattctct gatctgaata
+     9241 gacaaaagct taagatagtg gagtctaggc ctcctgaatc agaactggaa gcgaataagg
+     9301 tggtgattgt caagtcgaaa ctcttcagtg ctactgagca cgtccgactg tcaaataacc
+     9361 ctgcagtggt gatgggctac ttactagaag agtcatccat ctctgaggtg aagccaacga
+     9421 aggtcgacta ctctaaccta ctgaaagaca ggtttaagct aatgcagttt ttcccttctg
+     9481 ttttttcctt gctgagagca ttacaggttg agtccaaaga gtatgaaaaa ttgggggacc
+     9541 caatagatat gagtaccgtg tccaagtact cgaatcacct caccctcctc tgtaggatga
+     9601 ttcagcaagc cagaccttcc ttaactgtgt tttacatgct aaagagtacc catttagcaa
+     9661 ctgagcctac tgtttctgag ctcgttagct ttggagtgaa ggagggcaga tacctgaaac
+     9721 tgtcagagac aggactggat gcaagcacat actctgtcaa atattggaag attctacact
+     9781 gtctatctgc cattggggag cttcccatta gtggcactga caaaaccaca cttctgatga
+     9841 gcttcttaaa ctggaaggtt gacactgaat catgtgacaa aacctgtcca ctttacaaac
+     9901 atgaggttag cgttctcagc gaattctccg gacaagtggt tatcaacact ttggctagtg
+     9961 aactcagctc tgttaggaga gacggagagc gagatagctt gactgattta attgaatatg
+    10021 ctaactcacc tggagaacta ctcaaaaaga aaccctacct tggtacaact gcacgctttc
+    10081 agacctgggg tgaaacgaac agaaacggga agttcacata cagtagtcgt tctggagaag
+    10141 ccattggcat cttcattagt ggtaagctgc acatacatct ctcaaaagag tctacaggcc
+    10201 tactatgtga ggttgagagg aatgtactca gttggctttc aaagagaaga acagatatcc
+    10261 tgacccgtga acaacacagc cagttcctct cctttcttcc aacaatgtca gaggttgccc
+    10321 agaagaacag agatggtagc accaacggta ttatgctaga cccaaataac ccaaggatgt
+    10381 taaagttcac agtcgctaga aagcagactc ccgtgataaa agtcaagcag cagattctaa
+    10441 ccgtcaagaa gcagacctcc tacgacgtgg aaagtgagcc caggcttcag tggggacatg
+    10501 gatgtttgac catcatctac gatgaatgtg agacgcaaac cacctaccat gaaaacttgc
+    10561 taaagataaa gcagctggtg gacagtacca tcgataagga gaaaatgtta ccacagtccg
+    10621 tcttttcaga caccaaaatc actttggcca aaattaggtt caaacaggac ctcctactca
+    10681 attccctgtg ccttctacat gccttcctaa aacacactgc ctcatatgca attatggagg
+    10741 ttgaatcaaa atcaaaccta cttgaaaggt tcctttcaac gggtggcctg caggtaaaga
+    10801 cataccacaa cacggtcact gataagttga aagacaaagt attagaaggc attgtcacac
+    10861 agtccctgga cgaggaagtt gctgtctgtg aagagctgaa caaggtgttc tcggagtctc
+    10921 aagtgccact tagtagctgg tccgaagtac agagctatgt ggaggaagtt ggctttagca
+    10981 acgtgctagt ctctgtagac aggagtcctt caaagagcga actgctgtgg aggttcactt
+    11041 tagacagcca agtcagcaac ttaggaacca taaaagatct taggtccttt gtcagctacg
+    11101 taagcactga gactgtgcca aagtttctgc tgcctttctt gctttttgag acactactag
+    11161 ctgacatcat ttccaaatgc aaagctctta aggagtgtat aaactccaca gggatcacag
+    11221 atagagagat cgatatccta atctgtttca cactcttctg cttccagaat gagaaggctg
+    11281 cacgtgacgg tccaaagtgc agtgccatag cactaaaaca attactgggc gacagctgtg
+    11341 tagacctaaa tagcagaatg tctgttgagt tgaggtccga cggtccagca gtagcattaa
+    11401 aaatcactgt tattctggtc aacagggagg agatgggagt agacaaggac aagcgagtca
+    11461 agattgccaa aaggaactta acaagttcac taggctcaat cttcttcaac aagtccctag
+    11521 gactgcctag tctgaagaag tttgccacca gccttaaaat gcttaatcaa aaagacagag
+    11581 aactacttga gttcactctg ccagtggagt cttcttctga gattgattac cagactatca
+    11641 ttgactccac aatagataga atgaaaaaag agaaggccat tatggggata gaaagccttc
+    11701 tcctgacatt aatgggcaaa gtcgacattg aggacacaag ctcagagact gctgatcccc
+    11761 aggcagatga tgttgaagcg ctgaggctag aagatctgat ggatgaagac aaatcggata
+    11821 gcattgagga tggggaggac gaagaggcaa tcatgaagag aggcttcaca ttcaattggg
+    11881 acagtgactg actttgactt gtgcatgaca gtcccttcag taattccctc ctaacaatac
+    11941 tgagcacaaa aggccccttt tcatcttcac cgccaataca gccgaacaag acaccaagca
+    12001 gagatgccgc tggtgaggtg gtccacccga cagtgcaggg gtacggtcat actgaaagac
+    12061 caaccaacta agctgatagg gaagtcctga gaggaaaccg acaggagtta ataatggggt
+    12121 gtggggcaac gatatctttg aga
+//
+
+LOCUS       NC_025833               1760 bp    cRNA    linear   VRL 13-AUG-2018
+DEFINITION  Leopards Hill virus cRNA, segment: S, complete sequence, strain:
+            11SB17.
+ACCESSION   NC_025833
+VERSION     NC_025833.1
+DBLINK      BioProject: PRJNA485481
+KEYWORDS    RefSeq.
+SOURCE      Leopards Hill virus
+  ORGANISM  Leopards Hill virus
+            Viruses; Riboviria; Negarnaviricota; Polyploviricotina;
+            Ellioviricetes; Bunyavirales; Nairoviridae; Orthonairovirus;
+            unclassified Nairovirus.
+REFERENCE   1
+  AUTHORS   Ishii,A., Ueno,K., Orba,Y., Sasaki,M., Moonga,L., Hang'ombe,B.M.,
+            Mweene,A.S., Umemura,T., Ito,K., Hall,W.W. and Sawa,H.
+  TITLE     A nairovirus isolated from African bats causes haemorrhagic
+            gastroenteritis and severe hepatic disease in mice
+  JOURNAL   Nat Commun 5, 5651 (2014)
+   PUBMED   25451856
+  REMARK    DOI:10.1038/ncomms6651
+            Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1760)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2014) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1760)
+  AUTHORS   Ishii,A. and Sawa,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (31-JUL-2013) Contact:Akihiro Ishii Hokkaido University,
+            Research Center for Zoonosis Control; Kita-20, Nishi-10, Sapporo,
+            Hokkaido 001-0020, Japan
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to AB842090.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..1760
+                     /organism="Leopards Hill virus"
+                     /mol_type="viral cRNA"
+                     /strain="11SB17"
+                     /isolation_source="Lung of bat specimen: CZC 11SB17"
+                     /host="Hipposideros gigas"
+                     /db_xref="taxon:1381104"
+                     /segment="S"
+                     /country="Zambia: Lusaka, Leopards Hill cave"
+                     /collection_date="2011-11-29"
+     gene            38..1582
+                     /gene="N"
+                     /locus_tag="RJ91_sSgp1"
+                     /db_xref="GeneID:22475069"
+     CDS             38..1582
+                     /gene="N"
+                     /locus_tag="RJ91_sSgp1"
+                     /codon_start=1
+                     /product="nucleocapside"
+                     /protein_id="YP_009111286.1"
+                     /db_xref="GeneID:22475069"
+                     /translation="MSELNFKDLNGLNNWFEEFKKDVPIYTSGANSACLSSGLVDLSQ
+                     FKLEIDAQSSESAKNAVYGRAVIAATRNLAPIYECAWTSCEGIFERSMSWFNDNADKP
+                     EFKVWHDKYNDLKSNLPEVEQILAYQNCSSLWRKDIGYEINQNTSTLKGDIVEEYGVN
+                     RNIVGTVKNMLVDMVNKRKKRLGGVVITGAGTSEDHITWMENWLDGEIESFSIPGWGS
+                     WAKQNSKGTRLAGTAIANIMQKKDSDALEKAKEKLEKMKKTADDPASLESEGMSEDAA
+                     KKMCQEVEASIEEAEVLLGTNVAQGESKYQQQAAAMDVPFSAHYWAWRCKVNENSFPA
+                     LSQWLFELGQRPIGAAKINTMLGELPFIWARNIRGSFASSNFNGNKIYMHPAVLTAGR
+                     LSDMAACFGAFPVANPQRAAEGTGNTRYLLNLKREGDNPCASMVTSLFDVFSAGFKYQ
+                     DMDIVPPEHMLHQSFLGKTSPFQTANKIKGSFTKINVVAAPNKPTPYVFTPASAKKIK
+                     EKKARK"
+ORIGIN      
+        1 tctcaaagaa agacgtgccg cttacccgta agcaaacatg tctgagctga actttaagga
+       61 tttgaacggc ctcaacaact ggtttgagga gttcaaaaaa gatgtaccca tttacacatc
+      121 aggtgcaaat tcagcctgtc tgagttccgg tttagttgac ttaagtcaat tcaaactgga
+      181 gattgatgct caatcatcag agagtgccaa gaatgctgtt tatggcagag cagtaattgc
+      241 tgcaactagg aatttggcac caatttatga gtgtgcttgg acatcatgtg agggcatctt
+      301 tgaaagatca atgtcctggt tcaatgacaa tgctgacaag ccagaattta aagtctggca
+      361 tgataaatac aatgacctga agtccaactt gcctgaagtg gagcagattc ttgcttatca
+      421 gaactgctca agcctttggc gcaaggacat aggttatgag atcaaccaga acaccagtac
+      481 tctgaaagga gacatagttg aagaatatgg tgtcaaccga aacatagtcg gcactgttaa
+      541 aaatatgctt gtggatatgg tcaacaagag aaagaaaaga ctggggggag ttgtgatcac
+      601 aggtgcaggg acgtcagaag accacatcac ctggatggag aactggttag atggagaaat
+      661 agaatctttt agtatcccag gctggggcag ctgggcaaag cagaattcaa agggaactag
+      721 acttgcagga acagcaattg ccaacattat gcagaagaag gactcagatg cacttgaaaa
+      781 ggccaaagaa aaattggaaa agatgaagaa gactgctgat gatccagcat cgctggagtc
+      841 tgaaggcatg agtgaggatg cagccaaaaa aatgtgccag gaggttgaag cctcaattga
+      901 agaagcagag gtactcctag gcacaaatgt tgcacaaggg gagtctaaat atcaacagca
+      961 ggctgctgca atggatgttc ctttctcggc acactactgg gcatggagat gcaaggtgaa
+     1021 tgagaacagc tttcctgcac tctcccagtg gctcttcgaa ctggggcaga gaccaattgg
+     1081 tgctgctaaa atcaacacaa tgcttggaga actgcctttc atctgggcca ggaatataag
+     1141 aggctccttt gccagttcca acttcaacgg caataaaatc tatatgcatc ctgctgtctt
+     1201 gacagctgga agattgtcag atatggccgc ctgttttggg gcttttcccg ttgcaaaccc
+     1261 acagagggct gctgaaggca ccggtaacac tagatacttg ctgaatctga aaagagaggg
+     1321 tgataatccc tgtgcttcaa tggtaacatc tctttttgat gttttttcag caggctttaa
+     1381 ataccaggac atggacattg tgcctccaga acacatgctt caccagtctt ttttagggaa
+     1441 gacaagccca tttcagacag ctaacaagat caaagggagc ttcacgaaaa tcaatgtggt
+     1501 tgctgctccc aataagccga ctccttatgt attcacccct gcctctgcca agaaaatcaa
+     1561 ggaaaagaag gctagaaagt aaggcttagc ccttctgttt gaggttcctt atccacagta
+     1621 gttcttggtg gagggttttt actaactgct ttaattaact gcactaacat ttatatagtt
+     1681 taagtttaga taatagagca agaagggaag aaagaaagag agtggaatag ttcgggtatg
+     1741 cggcaacatt atctttgaga
+//
+
