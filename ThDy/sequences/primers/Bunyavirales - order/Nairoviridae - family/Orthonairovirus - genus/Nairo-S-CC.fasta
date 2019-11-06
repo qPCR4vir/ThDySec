@@ -1,37 +1,129 @@
->f.113	
-GGHRVDRMMAARATGRHYRMRRYVCT
->f.112	
-GGBAMCAARAAAATGAAGAARRCACT
->f.111	
-CAAGRGGBAMCAARAAAATGAAGAARRC
+>CCHF.CCHF.r.80 8x CC, some NSD
+GGGATTGTYCCAAAGCAGACWCCCATYTC
+>CCHF.f.2	16x only CC, some NSD
+CAAGRGGKACCAARAAAATGAARAAGGC
+
+>CCHF.CCHF.Tofla.f.35 28,61°C,1x
+CAAAGGGGCAGAAAAAAATGCACAAGGC
+>CCHF.CCHF.Tofla.r.81 29, 68°C,1x
+GGGACTGCACCGAAGGTGACCCCAAGCTC
+
+>CCHF.Hazara.Hazara.r.82 29,65°C,1x
+GGCACGGCTCCAAACGATATTCCAAGCTC
+
+
+>Artashat.f.71 8x, very specific
+ARGTAGGCACYGGRAAGATGGTGAAAAT
+>Artashat.r.102 4x, and many others: DeraGhazi, Kasokero
+GGCACTGCTCCRAAGCARGCACCCATGTC
+
+>DeraGhazi.DeraGhazi.DeraGhazi.f.38 1 seq only
+TAGTAGGTAAGACTAAACTTGCCTCAGT
+>DeraGhazi.DeraGhazi.AbuHammad.f.36 1 seq only
+CAATCGGCAAGACCAAACTGCTCTCAAT
+>DeraGhazi.DeraGhazi.AbuHammad.r.79 1 seq only
+GGCACGGCGCCAAAGCTGAGGACAAGATC
+>DeraGhazi.DeraGhazi.AbuMina.f.37 1 seq only
+CAGTAGGCAAAACTAAGCTGCTGTCTAT
+
+>Keterrah.f.72, 1x, for some Issyk-kul too
+CAGTAGGCAGTGCTAAAATTGATAAAAT
+>Keterrah.r.103 1x, for some Issyk-kul too 
+GGAATAGCTCCAAAGCAAGATGCCATGTC
+
+>Saphire.f.73 1x, very specific
+CAGTTGGAAAGGTGAAGCTTACATCAGT
+>Saphire.r.105 1x
+GGCACTGCACCAAAGCAAAGGGTCATGTC
+
+>VinegarHill.f.74 28,61°C,1x
+TTGTAGGGAAAACAAAGCTGTCCTCCGT
+>VinegarHill.r.104 29,62°C,1	 
+GGGACTGAACCAAATGACAGGACCATGTC
+
+
+>Burana.Burana.Burana.f.33 28, 61°C, 1x, very specific
+CACAGGGTAGGACAAAGCTTGACCAGAA
+>Burana.r.77 29	  61.7 °C, 8x for Tamdy, Tacheng, Burana, Sakhalin, Kasokero,  
+GGAAAKGCACCRAARGAACACACCATTTC
+
+>Burana.Burana.Tacheng.f.34 28 57°C 1x, very specific
+CAACAGGCAAAACCAAAATAATCAAGGT
+>Burana.Burana.r.78 64x:use 77? for Burana, Tacheng, Tamdy, Sakhalin, Kasokero, DeraGhazi
+GGAAATGCACCAAAKGARSMMACCATKTC
+
+>Burana.Tamdy.f.32 28,54°C,8x, very specific, Works with 77
+CCACAGGTAGAARTAAATTRGARAAGAA
+
+>Hughes.Caspiy.f.40 28,57°C,1x, specific
+TTGTTGGGAAAACTCACATGATTGAGAC
+>Hughes.Caspiy.r.110 29	  63.8 °C	    1x
+GGCACAACACCAAAACAGGCCACCATATC
+
+>Hughes.Hughes.Hughes.f.43	    28	  61.6 °C	    8x, for Farallon, PuntaSalinas, Raza too. Use with 106,108,110,109,
+TTGTYGGCAAAGCCAAAATGMTGGARAC
+
+>Hughes.Hughes.Hughes.r.106 	    29	  61.2 °C	   32x
+GGRACAAYACCAAARCAGGASACCATRTC
+>Hughes.Hughes.PuntaSalinas.r.107 	    29	  64.7 °C	    1x
+GGCACAATACCGAAGCAGGACACCATGTC
+>Hughes.Hughes.Raza.r.108 	    29	  63.8 °C	    1x
+GGCACAACACCAAAGCAAGAGACCATGTC
+
+>Hughes.Hughes.Soldado.f.46	    28	  61.4 °C	    1x
+TTGTTGGCAGAGCACACATGATTGAGAC
+>Hughes.Hughes.Soldado.r.109     29	  63.8 °C	    1x
+GGAACAACACCAAAGCATGCCACCATCTC
+
+
+
+
+>Issyk-kul.Gossas.f.49	    28	  59.0 °C	    1x, very specific, poor alt: 48, 50 (42gr)
+CAGTTGGAGCTGCCAAAATTGCTAAAAT
+>Issyk-kul.Gossas.r.85	    29	  63.7 °C	    1x
+GGGATTGCTCCAAAGCAAGATGCCATGTC
+
+>Issyk-kul.Issyk-kul.f.50    28,59°C,16x, for Issyk-kul, UzunAgach, Keterrah,alter: 48, 51	(48-42gr)
+CWGTYGGCAGTGCYAAARTTGACAAAAT
+>Issyk-kul.UzunAgach.f.51	    28	  57.4 °C	    1x, for Issyk-kul, UzunAgach, Keterrah, alt: 50
+CAGTTGGCAGTGCTAAAATTGACAAAAT
+>Issyk-kul.r.84	    29	  64.4 °C	    4x, for Issyk-kul, UzunAgach, Keterrah, alt: 103 
+GGAATAGCYCCRAAGCAGGATGCCATGTC
+
+Name	Length	Tm °C	Deg	Description	Beg	End	Seq
+
+>Issyk-kul.f.48	    28	  58.5 °C	    2x, good alter to: 50,51 , use with rev 84
+CAGTTGGCAGTGCYAAAATTGACAAAAT
+
+>Kasokero.Kasokero.f.53	    28	  59.3 °C	    1x, very specific, use with rev 102, 95 	
+CTATTGGTGCAGCAAAGGTGAATACCAT
+
+>Kasokero.LeopardsHill.f.54	    28	  59.5 °C	    4x, very specific, use with rev 84, 95,75 
+CAATTGGYGCTGCYAAAATCAACACAAT
+
+
+
 
 >r.75 64x amplify the majority.
 CMACAGGRATTGYYCCAAAGCARRC
 
 
-
->Burana.Burana.Burana.f.33	very specific
-CACAGGGTAGGACAAAGCTTGACCAGAA
-
->Burana.r.77 8x for Tamdy, Tacheng, Burana, Sakhalin, Kasokero,  
-GGAAAKGCACCRAARGAACACACCATTTC
-
->Burana.Burana.r.78 64x for Burana, Tacheng, Tamdy, Sakhalin, Kasokero, DeraGhazi
-GGAAATGCACCAAAKGARSMMACCATKTC
-
-
-
-
-
 >r.76 128x amplify the majority.
 GGRATTGYYCCAAAGCARRCWCCCATYTC
 
->f.2	16x only CC, some NSD
-CAAGRGGKACCAARAAAATGAARAAGGC
 
-
->r.7  4x only CC
+>r.7  4x only CC, more specific ?=r6?
 CMACAGGGATTGTYCCAAAGCAGAC
+
+>f.113 1000000x
+GGHRVDRMMAARATGRHYRMRRYVCT
+>f.112 48x
+GGBAMCAARAAAATGAAGAARRCACT
+>f.111 96x	
+CAAGRGGBAMCAARAAAATGAAGAARRC
+
+
+
 
 >M13-rev-29		18	53.7	50
 CAGGAAACAGCTATGACC
