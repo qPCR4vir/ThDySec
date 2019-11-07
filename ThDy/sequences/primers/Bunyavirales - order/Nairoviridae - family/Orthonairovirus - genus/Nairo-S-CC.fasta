@@ -101,6 +101,95 @@ CTATTGGTGCAGCAAAGGTGAATACCAT
 >Kasokero.LeopardsHill.f.54	    28	  59.5 °C	    4x, very specific, use with rev 84, 95,75 
 CAATTGGYGCTGCYAAAATCAACACAAT
 
+>Kasokero.Yogue.f.55	    28	  58.8 °C	    1x, very specific, use with rev 78, 109, 84, 102
+CAATTGGTGCAACCAAGATAAATGCCAT
+
+
+>NSD.DGBV.f.26	    28	  57.0 °C	    1x, very specific, alernt to 3, use with rev 88, 9
+CTAGAGGAGGCAAAAAAATGATCAAAGC
+>DGBV.f.3	XXX fertig !!!    28	  57.7 °C	    2x, very specific, alernt to 26, use with rev 88, 9
+CTAGAGGAGGCAAAAAAATGATCAARGC
+>NSD.DGBV.r.88(c)	    29	  62.2 °C	    1x, alernt to 9
+GGAATAACCCCAAAGCATGCACCCATTTC
+>DGBV.r.9(c)	XXX fertig !!!   	    25	  58.6 °C	    4x, alernt to 88
+CAACAGGAATAACYCCRAAGCATGC
+
+>NSDV.f.5	XXX fertig !!!   		    28	  57.5 °C	    4x, alernt to 112, 111, use with rev 89, 8, 75
+CCAGAGGRAACAAAAAAATGAAGAARGC
+>NSD.NSDV.r.89(c)	    29	  65.5 °C	   16x, altern to 8
+GGRATTGCYCCRAAGCAAACACCRAGCTC
+>NSDV.r.8(c)	XXX fertig !!!   	    25	  61.5 °C	    8x, alernt to 89
+CYACTGGRATTGCCCCRAAGCAAAC
+
+>NSD.NSDV.Kupe.r.90(c)	    29	  66.7 °C	    1x, very specific, 
+GGCACGACTCCAAAACACGCACCCATCTC
+>NSD.NSDV.Kupe.f.114_c	
+AGGGCCTTGATCATCTTTTTTCCACC
+
+
+
+>Qalyub.Geran.f.57	    28	  60.8 °C	    1x, very specific, use with rev 91, 94 
+CAGCAGGTGCCAAGAAAATCTCTGCTAT
+>Qalyub.Geran.r.91(c)	    29	  67.4 °C	    1x, 
+GGGAAGAGCCCCAGTGCTGCTGTCATGTC
+
+>Qalyub.Qalyub.Qalyub.r.94(c)	    29	  65.3 °C	    1x, alter to 91
+GGGAAAAGCCCAAAGGCAGCTGTCATGTC
+
+>Qalyub.Qalyub.Bandia.f.59	    28	  57.6 °C	    1x, very specific, use with rev 92
+CATCTGGTGCCAAAAAAGTATCTGCTAT
+>Qalyub.Qalyub.Bandia.r.92(c)	    29	  56.5 °C	    1x, very specific
+GGAAATAGACCGAATACAGAGGTCATATC
+
+
+>Qalyub.Qalyub.Chim.f.60	    28	  59.3 °C	    1x, very specific, use with rev 93
+CTATTGGTCCGAGAAAGGTGGATGAGAT
+>Qalyub.Qalyub.Chim.r.93(c)	    29	  56.9 °C	    1x, very specific, better alter to 9 for Chim
+GGAAAGAGTCCAAAGCATGTTATCATTTC
+
+>Qalyub.Qalyub.Qalyub.f.61	    28	  58.3 °C	    1x, very specific, use with rev 94
+CAGCAGGACCAAAAAAAGTTTCTGCTAT
+>Qalyub.Qalyub.Qalyub.r.94(c)	    29	  65.3 °C	    1, specific, better alter to 75 for Qalyub
+GGGAAAAGCCCAAAGGCAGCTGTCATGTC
+
+>Sakhalin.Paramushir.f.63	    28	  59.1 °C	    4x, very specific, use with rev 95, 75, 9,96, 88
+CCAGAGGAAARGAAAAGATGTGCAGYAT
+>Sakhalin.Paramushir.r.95(c)	    29	  66.6 °C	    1x, specific, chut better alter to 75 for Paramushir
+GGGAAGGCCCCAAAGCATGCAGCCATATC
+
+>Sakhalin.Sakhalin.CloMor.f.64	    28	  60.9 °C	    1x, specific, better alter to 65 for CloMor,use with rev 96, 102, 95, 8, 89, 75, 99, 88
+CCAGAGGGAAGGAGAAGATGTTCAAGGT
+>Sakhalin.Sakhalin.CloMor.r.96(c) 29	  67.9 °C 1x, alter to 102, 95
+GGGAAGGCTCCGAAGCATGCACCCATGTC
+
+>Sakhalin.Sakhalin.Sakhalin.f.65 28 59°C 16x, specific, better alter to 67 for Sakhalin, use with rev 97, 99, 78, 8, 102, 75
+CCAGRGGRAAGGACAAGATGACYAARAT
+>Sakhalin.Sakhalin.Sakhalin.r.97(c)	    29	  69.0 °C 2x, specific, better alter to 99, 78, 8 for Sakhalin
+GGGAATGCACCAAAGGTGGCRCCCAGGTC
+
+>Sakhalin.Sakhalin.Taggert.f.66	    28	  55.7 °C	    1x, very specific, use with rev 98, / 75, 99, 94
+CTAGAGGAAAGGAGAAGATGACAAGAAT
+>Sakhalin.Sakhalin.Taggert.r.98(c)	    29	  66.6 °C	    1x, specific, better alter to 75, 99,94 for Taggert
+GGAAAAGCTCCAAAGGCAGCGCCTAGCTC
+
+>Sakhalin.Sakhalin.Tillamook.f.67	    28	  60.0 °C	    1x, very specific, altern to 65?, use with rev 99, 97, 102 
+CCAGAGGGAAGGACAAAATGACCAAGAT
+>Sakhalin.Sakhalin.Tillamook.r.99(c)	    29	  66.3 °C	    1x, specific, better alter to 97? for Tillamook
+GGGAATGCTCCAAAGGCAGCACCCAGATC
+
+>Thiafora.Thiafora.Erve.f.69	    28	  58.0 °C	    2x, very specific, use with rev 100
+CAAGAGGYAGTGCAAAGATCATCAAAAC
+>Thiafora.Thiafora.Erve.r.100	    29	  55.7 °C	    1x, very specific
+GAAATGGGTTTATGTTTTGGCATTATACC
+
+>Thiafora.Thiafora.Thiafora.f.70	    28	  56.6 °C	    1x, very specific, use with rev 101
+CAAGAGGCAATATAAAGGTTGTAAAGGC
+>Thiafora.Thiafora.Thiafora.r.101(c)	    29	  60.3 °C	    1x, very specific
+GGTATGATTCCAAAACAAGCCCCCATTTC
+
+
+
+
 
 
 
