@@ -1,227 +1,278 @@
->CCHF.CCHF.r.80 8x CC, some NSD
+>Nairo-f Nairo Vina-Rodriguez,2019 f.2  in LAB(796)
+CAAGRGGKACCAARAAAATGAARAAGGC
+>Nairo-r Nairo Vina-Rodriguez,2019 Nairo-CC-r_713 from 1232 to 1257  VisualOligoDeg in LAB(713)
+CYACTGGRATTGCCCCRAAGCAAACR
+
+
+>CCHFV-f Nairo.CCHFV Vina-Rodriguez,2019 CCHFV.f.1  in LAB(788)
+CAAGRGGTACCAAGAAAATGAARAAGGC
+>CCHFV-r Nairo.CCHFV Vina-Rodriguez,2019 CCHFV.r.6  in LAB(789)
+CMACAGGGATTGTYCCAAAGCAGAC
+>CCHFV-S-p Nairo.CCHFV Vina-Rodriguez,2019. probe  FAM-BHQ1  in LAB(pend)
+TGAGCACYCCAATGAAGTGGGGRAAGAA
+
+>CCHF.CCHF.r.80 Nairo.CCHFV Vina-Rodriguez,2019  8x CC, some NSD  in LAB(851)
 GGGATTGTYCCAAAGCAGACWCCCATYTC
->CCHF.f.2	16x only CC, some NSD
+>CCHF.f.2 Nairo.CCHFV Vina-Rodriguez,2019 	16x only CC, some NSD  in LAB(852)
 CAAGRGGKACCAARAAAATGAARAAGGC
 
->CCHF.CCHF.Tofla.f.35 28,61°C,1x
-CAAAGGGGCAGAAAAAAATGCACAAGGC
->CCHF.CCHF.Tofla.r.81 29, 68°C,1x
-GGGACTGCACCGAAGGTGACCCCAAGCTC
 
->CCHF.Hazara.Hazara.r.82 29,65°C,1x
+>HAZV-f Nairo.CCHFV.HAZV Vina-Rodriguez,2020 HAZV.f.4  in LAB(792)
+CCAAGGGACAGAAAAAAATGCAAAAGGC
+>HAZV-r Nairo.CCHFV.HAZV Vina-Rodriguez,2020 HAZV.r.10  in LAB(793)
+TGACGGGCACGGCTCCAAACGATAT
+>HAZV-S-p Nairo.CCHFV.HAZV Vina-Rodriguez,2020. probe  FAM-BHQ1  in LAB(pend)
+ATTGAACTGTTTGCTGATAACGACTTCA
+>HAZV-S-CCHF-f-1133 Nairo.CCHFV.HAZV Vina-Rodriguez,2020   in LAB(673)
+AGGGACAGAAAAAAATGCAAAAGGC
+>HAZV-S-CCHF-r Nairo.CCHFV.HAZV Vina-Rodriguez,2020   in LAB(674)
+GGGCACGGCTCCAAACGATAT
+>CCHF.Hazara.Hazara.r.82 Nairo.CCHFV.HAZV Vina-Rodriguez,2020  29,65°C,1x  in LAB(855)
 GGCACGGCTCCAAACGATATTCCAAGCTC
 
 
->Artashat.f.71 8x, very specific
-ARGTAGGCACYGGRAAGATGGTGAAAAT
->Artashat.r.102 4x, and many others: DeraGhazi, Kasokero
-GGCACTGCTCCRAAGCARGCACCCATGTC
+>CCHF.CCHF.Tofla.f.35 Nairo.CCHFV.Tofla Vina-Rodriguez,2019  28,61°C,1x  in LAB(853)
+CAAAGGGGCAGAAAAAAATGCACAAGGC
+>CCHF.CCHF.Tofla.r.81 Nairo.CCHFV.Tofla Vina-Rodriguez,2019   29, 68°C,1x  in LAB(854)
+GGGACTGCACCGAAGGTGACCCCAAGCTC
 
->DeraGhazi.DeraGhazi.DeraGhazi.f.38 1 seq only
-TAGTAGGTAAGACTAAACTTGCCTCAGT
->DeraGhazi.DeraGhazi.AbuHammad.f.36 1 seq only
+
+>NSDV-f Nairo.NSD Vina-Rodriguez,2020 NSDV.f.5  Nairo-CC-f     28	  57.5 °C	    4x, alernt to 112, 111, use with rev 89, 8, 75  from 1077 to 1105 VisualOligoDeg in LAB(790)
+CCAGAGGRAACAAAAAAATGAAGAARGC
+>NSDV-r Nairo.NSD Vina-Rodriguez,2020 NSDV.r.8     25	  61.5 °C	    8x, alernt to 89  in LAB(791)
+CYACTGGRATTGCCCCRAAGCAAAC
+>NSDV-S-p Nairo.NSD Vina-Rodriguez,2020. probe  FAM-BHQ1  in LAB(pend)
+GCACTCTTTGCTGATGATAGCTTCACTGC
+
+>NSD.NSDV.r.89 Nairo.NSD Vina-Rodriguez,2020     29	  65.5 °C	   16x, altern to 8  in LAB(846)   
+GGRATTGCYCCRAAGCAAACACCRAGCTC
+
+>DGBV-f Nairo.NSD.DGBV Vina-Rodriguez,2020 DGBV.f.3     28	  57.7 °C	    2x, very specific, alernt to 26, use with rev 88, 9   in LAB(794)
+CTAGAGGAGGCAAAAAAATGATCAARGC
+>DGBV-r Nairo.NSD.DGBV Vina-Rodriguez,2020 DGBV.r.9    25	  58.6 °C	    4x, alernt to 88  in LAB(795)
+CAACAGGAATAACYCCRAAGCATGC
+>DGBV-S-p Nairo.NSD.DGBV Vina-Rodriguez,2020. probe  FAM-BHQ1  in LAB(pend)
+CWTCCACACCACTAAGGTGGGGYAARGG
+
+>NSD.DGBV.f.26 Nairo.NSD.DGBV Vina-Rodriguez,2020 	    28	  57.0 °C	    1x, very specific, alernt to 3, use with rev 88, 9 in LAB(844) 
+CTAGAGGAGGCAAAAAAATGATCAAAGC
+>NSD.DGBV.r.88 Nairo.NSD.DGBV Vina-Rodriguez,2020 	    29	  62.2 °C	    1x, alernt to 9  in LAB(845)  
+GGAATAACCCCAAAGCATGCACCCATTTC
+
+>NSD.Kupe.f.114 Nairo.NSD.Kupe Vina-Rodriguez,2020  in LAB(847)    
+AGGGCCTTGATCATCTTTTTTCCACC
+>NSD.Kupe.r.90 Nairo.NSD.Kupe Vina-Rodriguez,2020   29	  66.7 °C	    1x, very specific,   in LAB(848)    
+GGCACGACTCCAAAACACGCACCCATCTC
+
+
+>DeraGhazi.DeraGhazi.AbuHammad.f.36 Nairo.DeraGhazi.AbuHammad Vina-Rodriguez,2020    1 seq only  in LAB(859)  
 CAATCGGCAAGACCAAACTGCTCTCAAT
->DeraGhazi.DeraGhazi.AbuHammad.r.79 1 seq only
+>DeraGhazi.DeraGhazi.AbuHammad.r.79 Nairo.DeraGhazi.AbuHammad Vina-Rodriguez,2020    1 seq only  in LAB(860)  
 GGCACGGCGCCAAAGCTGAGGACAAGATC
->DeraGhazi.DeraGhazi.AbuMina.f.37 1 seq only
+>DeraGhazi.DeraGhazi.AbuMina.f.37 Nairo.DeraGhazi.AbuMina Vina-Rodriguez,2020    1 seq only  in LAB(861)  
 CAGTAGGCAAAACTAAGCTGCTGTCTAT
-
->Keterrah.f.72, 1x, for some Issyk-kul too
-CAGTAGGCAGTGCTAAAATTGATAAAAT
->Keterrah.r.103 1x, for some Issyk-kul too 
-GGAATAGCTCCAAAGCAAGATGCCATGTC
-
->Saphire.f.73 1x, very specific
-CAGTTGGAAAGGTGAAGCTTACATCAGT
->Saphire.r.105 1x
-GGCACTGCACCAAAGCAAAGGGTCATGTC
-
->VinegarHill.f.74 28,61°C,1x
-TTGTAGGGAAAACAAAGCTGTCCTCCGT
->VinegarHill.r.104 29,62°C,1	 
-GGGACTGAACCAAATGACAGGACCATGTC
+>DeraGhazi.DeraGhazi.DeraGhazi.f.38 Nairo.DeraGhazi.DeraGhazi Vina-Rodriguez,2020   1 seq only  in LAB(858)    
+TAGTAGGTAAGACTAAACTTGCCTCAGT
 
 
->Burana.Burana.Burana.f.33 28, 61°C, 1x, very specific
-CACAGGGTAGGACAAAGCTTGACCAGAA
->Burana.r.77 29	  61.7 °C, 8x for Tamdy, Tacheng, Burana, Sakhalin, Kasokero,  
-GGAAAKGCACCRAARGAACACACCATTTC
-
->Burana.Burana.Tacheng.f.34 28 57°C 1x, very specific
-CAACAGGCAAAACCAAAATAATCAAGGT
->Burana.Burana.r.78 64x:use 77? for Burana, Tacheng, Tamdy, Sakhalin, Kasokero, DeraGhazi
-GGAAATGCACCAAAKGARSMMACCATKTC
-
->Burana.Tamdy.f.32 28,54°C,8x, very specific, Works with 77
-CCACAGGTAGAARTAAATTRGARAAGAA
-
->Hughes.Caspiy.f.40 28,57°C,1x, specific
+>Hughes.Caspiy.f.40 Nairo.Hughes.Caspiy Vina-Rodriguez,2020                   28,57°C,      1x, DeraGhazi.DeraGhazi.f.40 !!!!!! specific  in LAB(827)  
 TTGTTGGGAAAACTCACATGATTGAGAC
->Hughes.Caspiy.r.110 29	  63.8 °C	    1x
+>Hughes.Caspiy.r.110 Nairo.Hughes.Caspiy Vina-Rodriguez,2020                  63.8 °C	    1x    29	 in LAB(828)
 GGCACAACACCAAAACAGGCCACCATATC
 
->Hughes.Hughes.Hughes.f.43	    28	  61.6 °C	    8x, for Farallon, PuntaSalinas, Raza too. Use with 106,108,110,109,
+>Hughes.Hughes.Hughes.f.43 Nairo.Hughes.Hughes Vina-Rodriguez,2020 	    28	  61.6 °C	    8x, for Farallon, PuntaSalinas, Raza too. Use with 106,108,110,109,  in LAB(829)  
 TTGTYGGCAAAGCCAAAATGMTGGARAC
 
->Hughes.Hughes.Hughes.r.106 	    29	  61.2 °C	   32x
+>Hughes.Hughes.Hughes.r.106 Nairo.Hughes.Hughes Vina-Rodriguez,2020     29	  61.2 °C	    32x  in LAB(830)  
 GGRACAAYACCAAARCAGGASACCATRTC
->Hughes.Hughes.PuntaSalinas.r.107 	    29	  64.7 °C	    1x
+>Hughes.Hughes.PuntaSalinas.r.107 Nairo.Hughes.PuntaSalinas Vina-Rodriguez,2020 29 64.7°C    1x  in LAB(831)  
 GGCACAATACCGAAGCAGGACACCATGTC
->Hughes.Hughes.Raza.r.108 	    29	  63.8 °C	    1x
+>Hughes.Hughes.Raza.r.108 Nairo.Hughes.Raza Vina-Rodriguez,2020         29	  63.8 °C	     1x  in LAB(832)  
 GGCACAACACCAAAGCAAGAGACCATGTC
 
->Hughes.Hughes.Soldado.f.46	    28	  61.4 °C	    1x
+>Hughes.Hughes.Soldado.f.46 Nairo.Hughes.Soldado Vina-Rodriguez,2020    28	  61.4 °C	    1x  in LAB(833)  
 TTGTTGGCAGAGCACACATGATTGAGAC
->Hughes.Hughes.Soldado.r.109     29	  63.8 °C	    1x
+>Hughes.Hughes.Soldado.r.109 Nairo.Hughes.Soldado Vina-Rodriguez,2020   29	  63.8 °C	    1x  in LAB(834)  
 GGAACAACACCAAAGCATGCCACCATCTC
 
 
-
-
->Issyk-kul.Gossas.f.49	    28	  59.0 °C	    1x, very specific, poor alt: 48, 50 (42gr)
-CAGTTGGAGCTGCCAAAATTGCTAAAAT
->Issyk-kul.Gossas.r.85	    29	  63.7 °C	    1x
-GGGATTGCTCCAAAGCAAGATGCCATGTC
-
->Issyk-kul.Issyk-kul.f.50    28,59°C,16x, for Issyk-kul, UzunAgach, Keterrah,alter: 48, 51	(48-42gr)
-CWGTYGGCAGTGCYAAARTTGACAAAAT
->Issyk-kul.UzunAgach.f.51	    28	  57.4 °C	    1x, for Issyk-kul, UzunAgach, Keterrah, alt: 50
-CAGTTGGCAGTGCTAAAATTGACAAAAT
->Issyk-kul.r.84	    29	  64.4 °C	    4x, for Issyk-kul, UzunAgach, Keterrah, alt: 103 
+>Issyk-kul.f.48 Nairo.Issyk-kul Vina-Rodriguez,2020	                    28	  58.5 °C	    2x, good alter to: 50,51 , use with rev 84  in LAB(840)  
+CAGTTGGCAGTGCYAAAATTGACAAAAT
+>Issyk-kul.r.84 Nairo.Issyk-kul Vina-Rodriguez,2020	   	                29	  64.4 °C	    4x, for Issyk-kul, UzunAgach, Keterrah, alt: 103   in LAB(839)  
 GGAATAGCYCCRAAGCAGGATGCCATGTC
 
-Name	Length	Tm °C	Deg	Description	Beg	End	Seq
+>Issyk-kul.Gossas.f.49 Nairo.Issyk-kul.Gossas Vina-Rodriguez,2020	    28	  59.0 °C	    1x, very specific, poor alt: 48, 50 (42gr)  in LAB(835)  
+CAGTTGGAGCTGCCAAAATTGCTAAAAT
+>Issyk-kul.Gossas.r.85 Nairo.Issyk-kul.Gossas Vina-Rodriguez,2020	    29	  63.7 °C	    1x  in LAB(836)  
+GGGATTGCTCCAAAGCAAGATGCCATGTC
 
->Issyk-kul.f.48	    28	  58.5 °C	    2x, good alter to: 50,51 , use with rev 84
-CAGTTGGCAGTGCYAAAATTGACAAAAT
+>Issyk-kul.Issyk-kul.f.50 Nairo.Issyk-kul.Issyk-kul Vina-Rodriguez,2020 28,   59°C,         16x, for Issyk-kul, UzunAgach, Keterrah,alter: 48, 51	(48-42gr)  in LAB(837)  
+CWGTYGGCAGTGCYAAARTTGACAAAAT
+>Issyk-kul.UzunAgach.f.51 Nairo.Issyk-kul.UzunAgach Vina-Rodriguez,2020	28	  57.4 °C	    1x, for Issyk-kul, UzunAgach, Keterrah, alt: 50  in LAB(838)  
+CAGTTGGCAGTGCTAAAATTGACAAAAT
 
->Kasokero.Kasokero.f.53	    28	  59.3 °C	    1x, very specific, use with rev 102, 95 	
+
+>Kasokero.Kasokero.f.53 Nairo.Kasokero.Kasokero Vina-Rodriguez,2020	    28	  59.3 °C	    1x, very specific, use with rev 102, 95   in LAB(841)  	
 CTATTGGTGCAGCAAAGGTGAATACCAT
 
->Kasokero.LeopardsHill.f.54	    28	  59.5 °C	    4x, very specific, use with rev 84, 95,75 
+>Kasokero.LeopardsHill.f.54 Nairo.Kasokero.LeopardsHill Vina-Rodriguez,2020	28 59.5 °C	    4x, very specific, use with rev 84, 95,75   in LAB(842)  
 CAATTGGYGCTGCYAAAATCAACACAAT
 
->Kasokero.Yogue.f.55	    28	  58.8 °C	    1x, very specific, use with rev 78, 109, 84, 102
+>Kasokero.Yogue.f.55 Nairo.Kasokero.Yogue Vina-Rodriguez	          28	  58.8 °C	    1x, very specific, use with rev 78, 109, 84, 102  in LAB(843)  
 CAATTGGTGCAACCAAGATAAATGCCAT
 
 
->NSD.DGBV.f.26	    28	  57.0 °C	    1x, very specific, alernt to 3, use with rev 88, 9
-CTAGAGGAGGCAAAAAAATGATCAAAGC
->DGBV.f.3	XXX fertig !!!    28	  57.7 °C	    2x, very specific, alernt to 26, use with rev 88, 9
-CTAGAGGAGGCAAAAAAATGATCAARGC
->NSD.DGBV.r.88(c)	    29	  62.2 °C	    1x, alernt to 9
-GGAATAACCCCAAAGCATGCACCCATTTC
->DGBV.r.9(c)	XXX fertig !!!   	    25	  58.6 °C	    4x, alernt to 88
-CAACAGGAATAACYCCRAAGCATGC
 
->NSDV.f.5	XXX fertig !!!   		    28	  57.5 °C	    4x, alernt to 112, 111, use with rev 89, 8, 75
-CCAGAGGRAACAAAAAAATGAAGAARGC
->NSD.NSDV.r.89(c)	    29	  65.5 °C	   16x, altern to 8
-GGRATTGCYCCRAAGCAAACACCRAGCTC
->NSDV.r.8(c)	XXX fertig !!!   	    25	  61.5 °C	    8x, alernt to 89
-CYACTGGRATTGCCCCRAAGCAAAC
-
->NSD.NSDV.Kupe.r.90(c)	    29	  66.7 °C	    1x, very specific, 
-GGCACGACTCCAAAACACGCACCCATCTC
->NSD.NSDV.Kupe.f.114_c	
-AGGGCCTTGATCATCTTTTTTCCACC
-
-
-
->Qalyub.Geran.f.57	    28	  60.8 °C	    1x, very specific, use with rev 91, 94 
+>Qalyub.Geran.f.57	    28	  60.8 °C	    1x, very specific, use with rev 91, 94  in LAB()   
 CAGCAGGTGCCAAGAAAATCTCTGCTAT
->Qalyub.Geran.r.91(c)	    29	  67.4 °C	    1x, 
+>Qalyub.Geran.r.91(c)	    29	  67.4 °C	    1x,   in LAB()  
 GGGAAGAGCCCCAGTGCTGCTGTCATGTC
 
->Qalyub.Qalyub.Qalyub.r.94(c)	    29	  65.3 °C	    1x, alter to 91
+>Qalyub.Qalyub.Qalyub.r.94(c)	    29	  65.3 °C	    1x, alter to 91  in LAB()  
 GGGAAAAGCCCAAAGGCAGCTGTCATGTC
 
->Qalyub.Qalyub.Bandia.f.59	    28	  57.6 °C	    1x, very specific, use with rev 92
+>Qalyub.Qalyub.Bandia.f.59	    28	  57.6 °C	    1x, very specific, use with rev 92  in LAB()  
 CATCTGGTGCCAAAAAAGTATCTGCTAT
->Qalyub.Qalyub.Bandia.r.92(c)	    29	  56.5 °C	    1x, very specific
+>Qalyub.Qalyub.Bandia.r.92(c)	    29	  56.5 °C	    1x, very specific  in LAB()  
 GGAAATAGACCGAATACAGAGGTCATATC
 
 
->Qalyub.Qalyub.Chim.f.60	    28	  59.3 °C	    1x, very specific, use with rev 93
+>Qalyub.Qalyub.Chim.f.60	    28	  59.3 °C	    1x, very specific, use with rev 93  in LAB()  
 CTATTGGTCCGAGAAAGGTGGATGAGAT
->Qalyub.Qalyub.Chim.r.93(c)	    29	  56.9 °C	    1x, very specific, better alter to 9 for Chim
+>Qalyub.Qalyub.Chim.r.93(c)	    29	  56.9 °C	    1x, very specific, better alter to 9 for Chim  in LAB()  
 GGAAAGAGTCCAAAGCATGTTATCATTTC
 
->Qalyub.Qalyub.Qalyub.f.61	    28	  58.3 °C	    1x, very specific, use with rev 94
+>Qalyub.Qalyub.Qalyub.f.61	    28	  58.3 °C	    1x, very specific, use with rev 94  in LAB()  
 CAGCAGGACCAAAAAAAGTTTCTGCTAT
->Qalyub.Qalyub.Qalyub.r.94(c)	    29	  65.3 °C	    1, specific, better alter to 75 for Qalyub
+>Qalyub.Qalyub.Qalyub.r.94(c)	    29	  65.3 °C	    1, specific, better alter to 75 for Qalyub  in LAB()  
 GGGAAAAGCCCAAAGGCAGCTGTCATGTC
 
->Sakhalin.Paramushir.f.63	    28	  59.1 °C	    4x, very specific, use with rev 95, 75, 9,96, 88
+>Sakhalin.Paramushir.f.63	    28	  59.1 °C	    4x, very specific, use with rev 95, 75, 9,96, 88  in LAB()  
 CCAGAGGAAARGAAAAGATGTGCAGYAT
->Sakhalin.Paramushir.r.95(c)	    29	  66.6 °C	    1x, specific, chut better alter to 75 for Paramushir
+>Sakhalin.Paramushir.r.95(c)	    29	  66.6 °C	    1x, specific, chut better alter to 75 for Paramushir  in LAB()  
 GGGAAGGCCCCAAAGCATGCAGCCATATC
 
->Sakhalin.Sakhalin.CloMor.f.64	    28	  60.9 °C	    1x, specific, better alter to 65 for CloMor,use with rev 96, 102, 95, 8, 89, 75, 99, 88
+>Sakhalin.Sakhalin.CloMor.f.64	    28	  60.9 °C	    1x, specific, better alter to 65 for CloMor,use with rev 96, 102, 95, 8, 89, 75, 99, 88  in LAB()  
 CCAGAGGGAAGGAGAAGATGTTCAAGGT
->Sakhalin.Sakhalin.CloMor.r.96(c) 29	  67.9 °C 1x, alter to 102, 95
+>Sakhalin.Sakhalin.CloMor.r.96(c) 29	  67.9 °C 1x, alter to 102, 95  in LAB()  
 GGGAAGGCTCCGAAGCATGCACCCATGTC
 
->Sakhalin.Sakhalin.Sakhalin.f.65 28 59°C 16x, specific, better alter to 67 for Sakhalin, use with rev 97, 99, 78, 8, 102, 75
+>Sakhalin.Sakhalin.Sakhalin.f.65 28 59°C 16x, specific, better alter to 67 for Sakhalin, use with rev 97, 99, 78, 8, 102, 75  in LAB()  
 CCAGRGGRAAGGACAAGATGACYAARAT
->Sakhalin.Sakhalin.Sakhalin.r.97(c)	    29	  69.0 °C 2x, specific, better alter to 99, 78, 8 for Sakhalin
+>Sakhalin.Sakhalin.Sakhalin.r.97(c)	    29	  69.0 °C 2x, specific, better alter to 99, 78, 8 for Sakhalin  in LAB()  
 GGGAATGCACCAAAGGTGGCRCCCAGGTC
 
->Sakhalin.Sakhalin.Taggert.f.66	    28	  55.7 °C	    1x, very specific, use with rev 98, / 75, 99, 94
+>Sakhalin.Sakhalin.Taggert.f.66	    28	  55.7 °C	    1x, very specific, use with rev 98, / 75, 99, 94  in LAB()  
 CTAGAGGAAAGGAGAAGATGACAAGAAT
->Sakhalin.Sakhalin.Taggert.r.98(c)	    29	  66.6 °C	    1x, specific, better alter to 75, 99,94 for Taggert
+>Sakhalin.Sakhalin.Taggert.r.98(c)	    29	  66.6 °C	    1x, specific, better alter to 75, 99,94 for Taggert  in LAB()  
 GGAAAAGCTCCAAAGGCAGCGCCTAGCTC
 
->Sakhalin.Sakhalin.Tillamook.f.67	    28	  60.0 °C	    1x, very specific, altern to 65?, use with rev 99, 97, 102 
+>Sakhalin.Sakhalin.Tillamook.f.67	    28	  60.0 °C	    1x, very specific, altern to 65?, use with rev 99, 97, 102   in LAB()  
 CCAGAGGGAAGGACAAAATGACCAAGAT
->Sakhalin.Sakhalin.Tillamook.r.99(c)	    29	  66.3 °C	    1x, specific, better alter to 97? for Tillamook
+>Sakhalin.Sakhalin.Tillamook.r.99(c)	    29	  66.3 °C	    1x, specific, better alter to 97? for Tillamook  in LAB()  
 GGGAATGCTCCAAAGGCAGCACCCAGATC
 
->Thiafora.Thiafora.Erve.f.69	    28	  58.0 °C	    2x, very specific, use with rev 100
+
+
+
+>Thiafora.Thiafora.Erve.f.69	    28	  58.0 °C	    2x, very specific, use with rev 100  in LAB()  
 CAAGAGGYAGTGCAAAGATCATCAAAAC
->Thiafora.Thiafora.Erve.r.100	    29	  55.7 °C	    1x, very specific
+>Thiafora.Thiafora.Erve.r.100	    29	  55.7 °C	    1x, very specific  in LAB()  
 GAAATGGGTTTATGTTTTGGCATTATACC
 
->Thiafora.Thiafora.Thiafora.f.70	    28	  56.6 °C	    1x, very specific, use with rev 101
+>Thiafora.Thiafora.Thiafora.f.70	    28	  56.6 °C	    1x, very specific, use with rev 101  in LAB()  
 CAAGAGGCAATATAAAGGTTGTAAAGGC
->Thiafora.Thiafora.Thiafora.r.101(c)	    29	  60.3 °C	    1x, very specific
+>Thiafora.Thiafora.Thiafora.r.101(c)	    29	  60.3 °C	    1x, very specific  in LAB()  
 GGTATGATTCCAAAACAAGCCCCCATTTC
 
 
+-------------------- to be added !!!!!!!!!
+
+Qalyub.Geran.f.57 CAGCAGGTGCCAAGAAAATCTCTGCTAT
+Qalyub.Geran.r.91 GGGAAGAGCCCCAGTGCTGCTGTCATGTC
+
+Qalyub.Qalyub.r.94 GGGAAAAGCCCAAAGGCAGCTGTCATGTC
+
+Qalyub.Bandia.f.59 CATCTGGTGCCAAAAAAGTATCTGCTAT
+Qalyub.Bandia.r.92 GGAAATAGACCGAATACAGAGGTCATATC
+
+Qalyub.Chim.f.60 CTATTGGTCCGAGAAAGGTGGATGAGAT
+Qalyub.Chim.r.93 GGAAAGAGTCCAAAGCATGTTATCATTTC
+
+Qalyub.Qalyub.f.61 CAGCAGGACCAAAAAAAGTTTCTGCTAT
+Qalyub.Qalyub.r.94 GGGAAAAGCCCAAAGGCAGCTGTCATGTC
+
+
+>Artashat.f.71 8x, very specific  in LAB()  
+ARGTAGGCACYGGRAAGATGGTGAAAAT
+>Artashat.r.102 4x, and many others: DeraGhazi, Kasokero  in LAB()  
+GGCACTGCTCCRAAGCARGCACCCATGTC
+
+
+>Keterrah.f.72, 1x, for some Issyk-kul too  in LAB()  
+CAGTAGGCAGTGCTAAAATTGATAAAAT
+>Keterrah.r.103 1x, for some Issyk-kul too   in LAB()  
+GGAATAGCTCCAAAGCAAGATGCCATGTC
+
+>Saphire.f.73 1x, very specific  in LAB()  
+CAGTTGGAAAGGTGAAGCTTACATCAGT
+>Saphire.r.105 1x  in LAB()  
+GGCACTGCACCAAAGCAAAGGGTCATGTC
+
+>VinegarHill.f.74 28,61°C,1x  in LAB()  
+TTGTAGGGAAAACAAAGCTGTCCTCCGT
+>VinegarHill.r.104 29,62°C,1	  in LAB()   
+GGGACTGAACCAAATGACAGGACCATGTC
+
+
+>Burana.Burana.Burana.f.33 28, 61°C, 1x, very specific  in LAB()  
+CACAGGGTAGGACAAAGCTTGACCAGAA
+>Burana.r.77 29	  61.7 °C, 8x for Tamdy, Tacheng, Burana, Sakhalin, Kasokero,   in LAB()   
+GGAAAKGCACCRAARGAACACACCATTTC
+
+>Burana.Burana.Tacheng.f.34 28 57°C 1x, very specific  in LAB()  
+CAACAGGCAAAACCAAAATAATCAAGGT
+>Burana.Burana.r.78 64x:use 77? for Burana, Tacheng, Tamdy, Sakhalin, Kasokero, DeraGhazi  in LAB()  
+GGAAATGCACCAAAKGARSMMACCATKTC
+
+>Burana.Tamdy.f.32 28,54°C,8x, very specific, Works with 77  in LAB()  
+CCACAGGTAGAARTAAATTRGARAAGAA
+
+
+------------------- in cart
 
 
 
 
-
->r.75 64x amplify the majority.
+>r.75 64x amplify the majority.  in LAB()  
 CMACAGGRATTGYYCCAAAGCARRC
 
 
->r.76 128x amplify the majority.
+>r.76 128x amplify the majority.  in LAB()  
 GGRATTGYYCCAAAGCARRCWCCCATYTC
 
 
->r.7  4x only CC, more specific ?=r6?
+>r.7  4x only CC, more specific ?=r6?  in LAB()  
 CMACAGGGATTGTYCCAAAGCAGAC
 
->f.113 1000000x
+>f.113 1000000x  in LAB()  
 GGHRVDRMMAARATGRHYRMRRYVCT
->f.112 48x
+>f.112 48x  in LAB()  
 GGBAMCAARAAAATGAAGAARRCACT
->f.111 96x	
+>f.111 96x	  in LAB()  
 CAAGRGGBAMCAARAAAATGAAGAARRC
 
 
 
 
->M13-rev-29		18	53.7	50
+>M13-rev-29		18	53.7	50  in LAB()  
 CAGGAAACAGCTATGACC
 
->M13-uni-21	18	53.7	50	
+>M13-uni-21	18	53.7	50	  in LAB()  
 TGTAAAACGACGGCCAGT
 
->T3		20	53.2	40	
+>T3		20	53.2	40	  in LAB()  
 AATTAACCCTCACTAAAGGG
 
->T7		20	53.2	40	
+>T7		20	53.2	40	  in LAB()  
 TAATACGACTCACTATAGGG

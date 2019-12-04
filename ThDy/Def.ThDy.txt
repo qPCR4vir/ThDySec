@@ -1,6 +1,6 @@
 
 	------	Common parameters for all functions 
-AlignMethd:	TAMeth_Tm		.	Optimized parameter during DynProg
+AlignMethd:	TAMeth_G	.	Optimized parameter during DynProg
 ConcSonden:	1e-07	M	.	Concentration of the probes
 ConcTarget:	1e-07	M	.	Concentration of the targets
 ConcenSalt:	0.05	M	.	Concentration of salt
@@ -10,11 +10,11 @@ FltrRecDir:	false		.	Recursively add all filter PCR primer seq-files from all di
 FltrStrOly:	true		.	Reproduce only the dir struct in filter PCR primer
 LoadNNPara:	false		.	Programs option- Load NN parameter
 MaxSecuLen:	12001	nt	.	Limits of the length of the seq. to be useful. Maximal length
-MaxTgIdent:	99	%	.	Filter Seq Target with more %id
-MinSecuLen:	20	nt	.	Limits of the length of the seq. to be useful. Minimal length
+MaxTgIdent:	99.9	%	.	Filter Seq Target with more %id
+MinSecuLen:	80	    nt	.	Limits of the length of the seq. to be useful. Minimal length
 NonTargetF:	
 						.	Input file for non-Targets
-OutputFile:	..\..\ThDyResults\res1
+OutputFile:	..\..\ThDyResults\res01
 						.	Results output file
 PCRftrFile:	
 						.	Input file with primers for filtering
@@ -28,16 +28,16 @@ SavTmTable:	true		.	Programs option- Save Tm Table
 SaveGTable:	true		.	Program option- Save free Energy Table
 SaveNNPara:	false		.	Programs option- save NN parameter
 Save_Logfi:	false		.	Program option- save a log
-SecBeginng:	1	nt	.	Fragments of seq. to use. Begin
-SecuencEnd:	0	nt	.	Fragments of seq. to use. End
+SecBeginng:	1   	nt	.	Fragments of seq. to use. Begin
+SecuencEnd:	10000	nt	.	Fragments of seq. to use. End
 TOlyDirStr:	true		.	Reproduce only the dir struct in targets
 TRecursDir:	true		.	Recursively add all Target seq-files from all dir
-TargetFile:	..\ThDy\sequences\Virus
+TargetFile:	C:\prog\ThDySec\ThDy\sequences\Virus
 						.	Input file for Targets
-TempAnnelg:	55	°C	.	Temp annealing expected in exp
+TempAnnelg:	55	  °C	.	Temp annealing expected in exp
 iNNParFile:	
 						.	Input file with NN parameters
-nTRecurDir:	true		.	Recursively add all non-Target seq-files from all dir
+nTRecurDir:	false		.	Recursively add all non-Target seq-files from all dir
 nTlyDirStr:	true		.	Reproduce only the dir struct in non-targets
 
 	------	Virtual microarray experiment 
@@ -61,14 +61,14 @@ MaxSd_Tg_G:	10	kcal/mol	.	Significant G probe-target
 MaxSdnTgTm:	10	°C	.	Significant Tm probe-non target
 MaxSondeLn:	35	nt	.	Probe design limits. Length.  Max
 MaxSondeTm:	63	°C	.	Probe design limits. Perf.Match Tm.  Max
-MaxSonde_G:	-1	kcal/mol	.	Probe design limits. Perf.Match dG.  Max
+MaxSonde_G:	1	kcal/mol	.	Probe design limits. Perf.Match dG.  Max
 MinSdSlf_G:	10	kcal/mol	.	Significant self probe G
 MinSd_TgTm:	30	°C	.	Significant Tm probe-target
 MinSdnTg_G:	15	kcal/mol	.	Significant G probe-non target
 MinSondeLn:	20	nt	.	Probe design limits. Length.  Min
-MinSondeTm:	57	°C	.	Probe design limits. Perf.Match Tm.  Min
+MinSondeTm:	50	°C	.	Probe design limits. Perf.Match Tm.  Min
 MinSonde_G:	-5	kcal/mol	.	Probe design limits. Perf.Match dG.  Min
-PercCommon:	100	%	.	Find probes with % of target coverage.  at last of the others (common probes)
+PercCommon:	90	%	.	Find probes with % of target coverage.  at last of the others (common probes)
 PercUnique:	0	%	.	Find probes with % of target coverage.  less than of the others (unique probes)
 
 	------	Tm calculator 
