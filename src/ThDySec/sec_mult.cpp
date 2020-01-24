@@ -173,10 +173,8 @@ int        CMultSec::AddFromFile (std::ifstream& ifile)        // return la cant
             throw std::ios_base::failure(std::string("Could not open the sequence file: ")/*+ file*/ );
         }
 
-        if        (std::string::npos != xml_DOCTYPE.find("DOCTYPE BlastOutput") )
-            return AddFromFileBLAST (ifile);
-        else if (std::string::npos != xml_DOCTYPE.find("DOCTYPE Bioseq-set" ) )
-            return AddFromFileGB (ifile);
+        if      (xml_DOCTYPE.find("DOCTYPE BlastOutput") != std::string::npos)      return AddFromFileBLAST (ifile);
+        else if (xml_DOCTYPE.find("DOCTYPE Bioseq-set" ) != std::string::npos)      return AddFromFileGB (ifile);
         return 0;
     }
     if (c1 =='L' )    // LOCUS ?
@@ -436,21 +434,24 @@ int        CMultSec::AddFromFileGBtxt (std::ifstream &fi) // ----------------  C
                         };*/
         // LOCUS       X14383                  6875 bp    RNA     linear   VRL 30-JUL-1991
         do {
-            if (!(fi >> inf.LOCUS)) return id;   if (inf.LOCUS=="LOCUS") break;
+            if (!(fi >> inf.LOCUS)) return id;   
+            if (inf.LOCUS=="LOCUS") break;
             fi.ignore(all, '\n');
         } while (true);
         if (!(fi>>inf.LOCUS)) return id;     std::cout<< "\nLOCUS: "<<inf.LOCUS<<std::endl;
         if (!(fi>>inf.Seq_inst_length)) continue;         // log error ?
               fi.ignore(all, '\n');
 
-        // Bunyamwera virus L protein RNA, complete cds.
-        if (!(fi>>inf.DEFINITION)) return id;       if ( inf.DEFINITION!="DEFINITION" ) continue; // blank before ? log error ?
-        if (!std::getline(fi, inf.DEFINITION)) return id;  std::cout<< "DEFINITION: "<<inf.DEFINITION<<std::endl;
+        // DEFINITION  Bunyamwera virus L protein RNA, complete cds.
+        if (!(fi>>inf.DEFINITION)) return id;       
+        if ( inf.DEFINITION!="DEFINITION" ) continue; // blank before ? log error ? // fi >> std::skipws;
+        if (!std::getline(fi >> std::ws, inf.DEFINITION)) return id;  std::cout<< "DEFINITION: ."<<inf.DEFINITION<<std::endl;
 
         // ACCESSION   X14383
         do {
-            if (!(fi >> inf.ACCESSION)) return id;   if (inf.ACCESSION=="ACCESSION") break;
-            inf.DEFINITION += " " + inf.ACCESSION;
+            if (!(fi >> inf.ACCESSION)) return id;   
+            if (inf.ACCESSION=="ACCESSION") break;
+            inf.DEFINITION += " " + inf.ACCESSION;  // 2nd line definition?
             if (!std::getline(fi, inf.ACCESSION)) return id;
             inf.DEFINITION += " " + inf.ACCESSION;
         } while (true);
@@ -458,7 +459,8 @@ int        CMultSec::AddFromFileGBtxt (std::ifstream &fi) // ----------------  C
 
         // ORGANISM  Bunyamwera virus
         do {
-            if (!(fi >> inf.ORGANISM)) return id;   if (inf.ORGANISM=="ORGANISM") break;
+            if (!(fi >> inf.ORGANISM)) return id;   
+            if (inf.ORGANISM=="ORGANISM") break;
             fi.ignore(all, '\n');
         } while (true);
         if (!std::getline(fi, inf.ORGANISM)) return id;               std::cout<< "ORGANISM: "<<inf.ORGANISM<<std::endl;

@@ -26,7 +26,7 @@
  class About : public nana::form, public EditableForm
  {
 	 nana::group c_r {*this, "Author:"};
-     nana::label  copy_r{ c_r, " Copyright (C) 2009-2019, Ariel Vina-Rodriguez                ( arielvina@yahoo.es, <bold> qPCR4vir</> at <bold blue url=\"https://qpcr4vir.github.io/\"> GitHub</>)" };
+     nana::label  copy_r{ c_r, " Copyright (C) 2009-2020, Ariel Vina-Rodriguez                ( arielvina@yahoo.es, <bold> qPCR4vir</> at <bold blue url=\"https://qpcr4vir.github.io/\"> GitHub</>)" };
 	 nana::label  comments{ c_r,R"(This work is mentioned in <bold blue url="https://epub.ub.uni-greifswald.de/frontdoor/deliver/index/docId/2175/file/VinaRodriguez.2018.Dissertation.pdf"> my PhD thesis </>.
 
  Program distributed under the <bold blue url="https://www.gnu.org/licenses/"> GNU General Public License</>)" };
@@ -39,7 +39,7 @@
 
      nana::label  GUI_lib{ build, R"(Powered by <bold blue url="http://nanapro.org/en-us/ "> Nana C++ GUI library:</>
                                         <bold blue url="https://github.com/qPCR4vir/nana-docs/wiki"> Wiki:</>
-                      <bold blue url="https://github.com/qPCR4vir/nana/tree/ed04f84d17985adf45fcfcfaac8b17abb5e391dc">  Nana Version: 1.7.2 dev</>)" };
+                      <bold blue url="https://github.com/qPCR4vir/nana/commit/dbf6a7eebac2e4a6412979adaa2f8a2bd7e9b58f">  Nana Version: 1.7.2 develop</>)" };
 
 
 	 
