@@ -24,7 +24,7 @@
 #include "ThDySec/sec_mult.h"
 
 
-const SecPos MAX_SEQ_LEN_ALIGN{ 12501 };     // ?
+const SecPos MAX_SEQ_LEN_ALIGN{ 40001 };     // ?
 
 class CParamSondeLimits: public IBParam  /// \todo Use delegating constructor to limit code duplication
 {   SondeLimits sL;

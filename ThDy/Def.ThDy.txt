@@ -9,8 +9,8 @@ Exp_target:	false		.	Program option- re-export targets
 FltrRecDir:	false		.	Recursively add all filter PCR primer seq-files from all dir
 FltrStrOly:	true		.	Reproduce only the dir struct in filter PCR primer
 LoadNNPara:	false		.	Programs option- Load NN parameter
-MaxSecuLen:	12001	nt	.	Limits of the length of the seq. to be useful. Maximal length
-MaxTgIdent:	99.9	%	.	Filter Seq Target with more %id
+MaxSecuLen:	40001	nt	.	Limits of the length of the seq. to be useful. Maximal length
+MaxTgIdent:	99.99	%	.	Filter Seq Target with more %id
 MinSecuLen:	80	    nt	.	Limits of the length of the seq. to be useful. Minimal length
 NonTargetF:	
 						.	Input file for non-Targets
@@ -29,7 +29,7 @@ SaveGTable:	true		.	Program option- Save free Energy Table
 SaveNNPara:	false		.	Programs option- save NN parameter
 Save_Logfi:	false		.	Program option- save a log
 SecBeginng:	1   	nt	.	Fragments of seq. to use. Begin
-SecuencEnd:	10000	nt	.	Fragments of seq. to use. End
+SecuencEnd:	40000	nt	.	Fragments of seq. to use. End
 TOlyDirStr:	true		.	Reproduce only the dir struct in targets
 TRecursDir:	true		.	Recursively add all Target seq-files from all dir
 TargetFile:	C:\prog\ThDySec\ThDy\sequences\Virus
