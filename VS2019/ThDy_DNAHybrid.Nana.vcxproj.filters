@@ -27,9 +27,6 @@
     <ClCompile Include="..\..\ExtLib\nana.ext\src\EditableForm.cpp">
       <Filter>Source Files\nana.ext</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\ExtLib\nana.ext\src\vplace.cpp">
-      <Filter>Source Files\nana.ext</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\SetupPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -64,9 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\ExtLib\nana.ext\include\EditableForm.hpp">
-      <Filter>Header Files\nana.ext</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ExtLib\nana.ext\include\vplace.hpp">
       <Filter>Header Files\nana.ext</Filter>
     </ClInclude>
     <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\main.Nana.h">

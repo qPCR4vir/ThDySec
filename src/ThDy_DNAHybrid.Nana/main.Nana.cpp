@@ -3,7 +3,7 @@
 *  distributed under the GNU General Public License, see <http://www.gnu.org/licenses/>.
 *
 * @author Ariel Vina-Rodriguez (qPCR4vir)
-* 2012-2019
+* 2012-2020
 *
 * @file  ThDySec\src\ThDy_DNAHybrid.Nana\main.Nana.cpp
 *
@@ -39,7 +39,7 @@
 
      nana::label  GUI_lib{ build, R"(Powered by <bold blue url="http://nanapro.org/en-us/ "> Nana C++ GUI library:</>
                                         <bold blue url="https://github.com/qPCR4vir/nana-docs/wiki"> Wiki:</>
-                      <bold blue url="https://github.com/qPCR4vir/nana/commit/dbf6a7eebac2e4a6412979adaa2f8a2bd7e9b58f">  Nana Version: 1.7.2 develop</>)" };
+                      <bold blue url="https://github.com/cnjinhao/nana/tree/baa64a1461bbfafd947d338e90d9202987150271">  Nana Version: hotfix-1.7.3</>)" };
 
 
 	 

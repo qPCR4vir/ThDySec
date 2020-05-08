@@ -57,7 +57,6 @@
     <ClCompile Include="..\..\ExtLib\nana.ext\src\CompoWidget.cpp" />
     <ClCompile Include="..\..\ExtLib\nana.ext\src\EditableForm.cpp" />
     <ClCompile Include="..\..\ExtLib\nana.ext\src\number.cpp" />
-    <ClCompile Include="..\..\ExtLib\nana.ext\src\vplace.cpp" />
     <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\FindSondenPage.cpp" />
     <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\main.Nana.cpp" />
     <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\SeqExpl.cpp" />
@@ -73,7 +72,6 @@
     <ClInclude Include="..\..\ExtLib\nana.ext\include\EditableForm.hpp" />
     <ClInclude Include="..\..\ExtLib\nana.ext\include\nanaBind.hpp" />
     <ClInclude Include="..\..\ExtLib\nana.ext\include\number.hpp" />
-    <ClInclude Include="..\..\ExtLib\nana.ext\include\vplace.hpp" />
     <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\FindSondenPage.h" />
     <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\main.Nana.h" />
     <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\SeqExpl.h" />
