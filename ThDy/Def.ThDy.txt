@@ -1,4 +1,4 @@
-
+﻿
 	------	Common parameters for all functions 
 AlignMethd:	TAMeth_G	.	Optimized parameter during DynProg
 ConcSonden:	1e-07	M	.	Concentration of the probes
@@ -32,7 +32,7 @@ SecBeginng:	1   	nt	.	Fragments of seq. to use. Begin
 SecuencEnd:	40000	nt	.	Fragments of seq. to use. End
 TOlyDirStr:	true		.	Reproduce only the dir struct in targets
 TRecursDir:	true		.	Recursively add all Target seq-files from all dir
-TargetFile:	C:\prog\ThDySec\ThDy\sequences\Virus
+TargetFile:	C:\prog\ThDySec\ThDy\sequences\targets
 						.	Input file for Targets
 TempAnnelg:	55	  °C	.	Temp annealing expected in exp
 iNNParFile:	
