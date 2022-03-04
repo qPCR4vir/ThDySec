@@ -185,19 +185,19 @@ class TableHybRes  : public nana::form, public EditableForm
         _list.freeze_sort(freeze);
     }
 
-    bool comp(index col, nana::any* row1_, nana::any*row2_, bool reverse)
+    bool comp(index col, std::any* row1_, std::any*row2_, bool reverse)
     {
-                float  v1{ val->val( nana::any_cast<Index>( row1_)->row , col-1) },
-                       v2{ val->val( nana::any_cast<Index>( row2_)->row , col-1) };
+                float  v1{ val->val(std::any_cast<Index>( row1_)->row , col-1) },
+                       v2{ val->val(std::any_cast<Index>( row2_)->row , col-1) };
                 return reverse?  v2<v1 : v1<v2 ;
     }
-    bool comp(nana::any* row, index col1_, index col2_, bool reverse)
+    bool comp(std::any* row, index col1_, index col2_, bool reverse)
     {
-        float  v1{ val->val( nana::any_cast<Index>( row)->row , col1_-1) },
-               v2{ val->val( nana::any_cast<Index>( row)->row , col2_-1) };
+        float  v1{ val->val(std::any_cast<Index>( row)->row , col1_-1) },
+               v2{ val->val(std::any_cast<Index>( row)->row , col2_-1) };
         return reverse?  v2<v1 : v1<v2 ;
     }
-    void order_col(index first_col, index last_col, nana::any* row)
+    void order_col(index first_col, index last_col, std::any* row)
     {
         if (first_col<0 || last_col<=first_col)
             return;
@@ -252,7 +252,7 @@ class TableHybRes  : public nana::form, public EditableForm
         for (index col = 1; col <= _table->totalCol(); ++col)
         {    
             _list.append_header(   _table->TitColumn(col-1)   , 0);
-            _list.set_sort_compare(col,[col,this](const std::string&, nana::any* row1_, const std::string&, nana::any*row2_, bool reverse)
+            _list.set_sort_compare(col,[col,this](const std::string&, std::any* row1_, const std::string&, std::any*row2_, bool reverse)
             {
                  return comp(col,row1_,row2_,reverse);
             });
@@ -329,9 +329,9 @@ class TableHybRes  : public nana::form, public EditableForm
                                     sel[0], true,          // index_pair row, bool reverse ,
                                     [&](const std::string &cell1, List::size_type col1,
                                         const std::string &cell2, List::size_type col2,
-                                        const nana::any *rowval,
+                                        const std::any *rowval,
                                         bool reverse) -> bool {
-                                        const Index *I = nana::any_cast<Index>(rowval);
+                                        const Index *I = std::any_cast<Index>(rowval);
                                         auto &v = *I->table->val;
                                         bool r = (v.val(I->row, col1 - 1) <= v.val(I->row, col2 - 1));
                                         return reverse ? !r : r;

@@ -32,14 +32,14 @@
  Program distributed under the <bold blue url="https://www.gnu.org/licenses/"> GNU General Public License</>)" };
 
      nana::group build {*this, "Programm:"};
-     nana::label  compiled{ build, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.12    )" };
+     nana::label  compiled{ build, R"(Compiled on:   )"  __DATE__   R"( / )"  __TIME__   R"(    Version: v0.02.13    )" };
      nana::label  downloads{ build, R"(Downloads and source code: <bold blue url="https://github.com/qPCR4vir/ThDySec"> github.com/qPCR4vir/ThDySec</>
                                              <bold blue url=" https://github.com/qPCR4vir/ThDySec/wiki "> Wiki:</>
    ________________________________________________________________________________)" };
 
      nana::label  GUI_lib{ build, R"(Powered by <bold blue url="http://nanapro.org/en-us/ "> Nana C++ GUI library:</>
                                         <bold blue url="https://github.com/qPCR4vir/nana-docs/wiki"> Wiki:</>
-                      <bold blue url="https://github.com/cnjinhao/nana/tree/baa64a1461bbfafd947d338e90d9202987150271">  Nana Version: hotfix-1.7.3</>)" };
+                      <bold blue url="https://github.com/cnjinhao/nana/tree/baa64a1461bbfafd947d338e90d9202987150271">  Nana Version: develop-1.8</>)" };
 
 
 	 

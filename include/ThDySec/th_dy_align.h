@@ -322,7 +322,7 @@ class AlignedSecPar : public CHitAligned
 	explicit AlignedSecPar( ISec::sequence s,  ISec::sequence t, std::shared_ptr<CSaltCorrNN>  NNpar ):CHitAligned(s, t, NNpar){};
 	Temperature Tm(){return _Tmr;}
 	float  G(){return _Gr ;}
-		virtual ~AlignedSecPar()  {_sd=_tg=nullptr;}
+		virtual ~AlignedSecPar()  {/*_sd = _tg = nullptr;*/ }
 };
 
 //

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{ac5c58cc-f15d-48f4-b0bc-c7e0c3024472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5add77b6-b55c-4676-9874-374629b6af9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{f7f17b2a-000c-4ddd-889f-1deb4be95b2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nana.ext">
+      <UniqueIdentifier>{9b98498b-a3f3-4163-9836-3870fc538b1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nana.ext">
+      <UniqueIdentifier>{4ddf2969-7587-4c06-9e60-8f02de5a55f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\main.Nana.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ExtLib\nana.ext\src\CompoWidget.cpp">
+      <Filter>Source Files\nana.ext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ExtLib\nana.ext\src\EditableForm.cpp">
+      <Filter>Source Files\nana.ext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\SetupPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\SeqExpl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\FindSondenPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\uArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\TmCalcPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ThDy_DNAHybrid.Nana\TableResults.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ExtLib\nana.ext\src\number.cpp">
+      <Filter>Source Files\nana.ext</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\ThDy_DNAHybrid.Nana\ico.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\src\ThDy_DNAHybrid.Nana\ThDy.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\ExtLib\nana.ext\include\EditableForm.hpp">
+      <Filter>Header Files\nana.ext</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\main.Nana.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\SetupPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\SeqExpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\FindSondenPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\uArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\TmCalcPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ThDy_DNAHybrid.Nana\TableResults.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ExtLib\nana.ext\include\nanaBind.hpp">
+      <Filter>Header Files\nana.ext</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ExtLib\nana.ext\include\number.hpp">
+      <Filter>Header Files\nana.ext</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
