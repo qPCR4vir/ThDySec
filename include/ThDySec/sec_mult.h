@@ -44,7 +44,7 @@ class CMultSec
 
 		std::string			_name ;						///< 
         int					_ID       {NewMS_ID()};		///< Unique ID in each programm run
-        LonSecPosRang       _SecLim   {1,0};			///< \todo: quitar de aqui?. Pertenece a CSec, o a un objeto "AddFromFile" 
+        LonSecPosRang       _SecLim   {0,0};			///< \todo: quitar de aqui?. Pertenece a CSec, o a un objeto "AddFromFile" 
         SecPosRang          _SecLenLim{0,0};            ///< \todo: NumRang<LonSecPos> _SecRange{1,0};// def-unlimited: the range used, not the limits
 		float				_MaxTgId  {100};			///< \todo: quitar de aqui?. Pertenece a CSec, o a un objeto "AddFromFile" 
 		std::shared_ptr<CSaltCorrNN>	_NNPar ;		///< \todo: quitar de aqui?. Pertenece a CSec, o a un objeto "AddFromFile" 

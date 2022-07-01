@@ -274,7 +274,7 @@ int        CMultSec::AddFromFileBLAST (std::ifstream &fi) // ----------------  C
     std::string       li ;  //  xml_line
 
     LonSecPos secBeg = _SecLim.Min()  ;   // here beginig to read, set to 1 if originaly <1
-    if (secBeg < 1) secBeg = 1;
+    if (secBeg < 0) secBeg = 0;
 
     LonSecPos secEnd = _SecLim.Max()  ;   // here end to read, set to 0 to ignore it, and if < secBeg
     if (secEnd <= secBeg) secEnd = 0;
@@ -333,7 +333,7 @@ int        CMultSec::AddFromFileBLAST (std::ifstream &fi) // ----------------  C
 
         if (secHitBeg <= 1)
         {
-            if(lmaxHit)
+            if(secBeg && lmaxHit)
                 lmaxHit += secHitBeg ;
             if(lmaxHit < lmin)
                 continue;

@@ -68,8 +68,8 @@ class SeqExpl : public CompoWidget
 
 	ParamGUIBind::BindGroup    _commPP;
 	nana::NumUnitUpDown numUpDwMaxTgId  {*this, "Max. ident.:",99,50, 100 ,  "%" },
-                        numUpDw_TgBeg   {*this, "Beg.:"       , 0, 0, 100000,"nt"},    /// rev !!
-                        numUpDw_TgEnd   {*this, "End.:"       , 0, 0, 100000,"nt"},    /// rev !!
+                        numUpDw_TgBeg   {*this, "Beg.:"       , 0, 0, 10000000,"nt"},    /// todo: rev !!
+                        numUpDw_TgEnd   {*this, "End.:"       , 0, 0, 10000000,"nt"},    /// todo: rev !!
                         numUpDw_SLenMin {*this, "Min.Len.:"   , 0, 0, 100000,"nt"},
                         numUpDw_SLenMax {*this, "Max.Len.:"   , 0, 0, 100000,"nt"};
 

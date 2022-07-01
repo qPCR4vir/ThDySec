@@ -122,9 +122,9 @@ class ThDyCommProgParam : public CCommProgParam
     ///  Sequence import filtres
 	float			           _MaxTgId {99.0f }  ;			
     CParamNumRange <float>	    MaxTgId {this, "Filter Seq Target with more %id"  ,	"MaxTgIdent",  _MaxTgId,  0.0f,100.0f,  99.0f  ,"%" }  ;	
-	LonSecPosRang	           _SecLim  {1, 0 } ;			
+	LonSecPosRang	           _SecLim  {0, 0 } ;			
     CParamNumMinMax<LonSecPos>  SecLim {this, "Fragments of seq. to use",	_SecLim, 
-													"Begin",						"SecBeginng", 1, std::numeric_limits<LonSecPos>::max(), 1 ,
+													"Begin",						"SecBeginng", 0, std::numeric_limits<LonSecPos>::max(), 0 ,
 													"End",							"SecuencEnd", 0, std::numeric_limits<LonSecPos>::max(), 0 ,		"nt" } ;	
 	SecPosRang			       _SecLenLim {1,0 } ;			
     CParamNumMinMax<SecPos>     SecLenLim {this, "Limits of the length of the seq. to be useful",_SecLenLim ,
