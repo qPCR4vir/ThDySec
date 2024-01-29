@@ -67,3 +67,6 @@ cmake-build*/
 # codelite
 .codelite/
 
+/ThDy/sequences/targets/Virus/Flaviviridae - family/Flavivirus - genus/Flavivirus - genus.gb
+/ThDy/sequences/targets/Virus/Flaviviridae - family/Flavivirus - genus/ZIKV - species.all 2209.sequence.gb
+/ThDy/sequences/targets/Virus/Nidovirales - order/Coronaviridae - family/Betacoronavirus - genus/SARS - specie/SARS-CoV-2/gisaid_hcov-19_2021_11_30_10.fasta
