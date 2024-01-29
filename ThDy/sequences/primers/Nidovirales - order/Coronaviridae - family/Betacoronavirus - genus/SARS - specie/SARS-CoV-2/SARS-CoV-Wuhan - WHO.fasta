@@ -1,3 +1,4 @@
+
 >RdRP_SARSr-F2 RdRP gene, Drosten 2020 15421~pos 15400
 GTGARATGGTCATGTGTGGCGG
 >RdRP_SARSr-P1 RdRP gene Pan Sarbeco-Probe, will detect Wuhan virus, SARS-CoV and bat-SARS-related CoVs	FAM-BBQ 
@@ -9,17 +10,33 @@ CARATGTTAAASACACTATTAGCATA
 
 >E_Sarbeco_F1 E gene, Drosten 2020 	
 ACAGGTACGTTAATAGTTAATAGCGT
+>E_Sarbeco_F2 E gene, Drosten 2020a 
+gCTTTCgTggTATTCTTgCTAg
 >E_Sarbeco_R2 E gene, Drosten 2020	
 ATATTGCAGCAGTACGCACACA
+>E_Sarbeco_R1 E gene, Drosten 2020a
+CAATATTgCAgCAgTACgCACA
 >E_Sarbeco_P1 E gene, Drosten 2020 FAM- BBQ  
 ACACTAGCCATCCTTACTGCGCTTCG
+>E_Sarbeco_P5 E gene, Drosten 2020a Cyan- BBQ  
+CACTAgCCATCCTTACTgCgCTTCg
+>E_Sarbeco_P5M E gene, Drosten 2020a Cyan- BBQ 
+CACTAgCTATCCTTACTgCgCTTC
 
 >N_Sarbeco_F1 N gene, Drosten 2020	
 CACATTGGCACCCGCAATC 
+>N_Sarbeco_NF1 N gene, Drosten 2020a
+CCAAAAggCTTCTACgCAg
+>N_Sarbeco_NF1A N gene, Drosten 2020a
+CCAAAAggCTTCTACgCAgA
 >N_Sarbeco_R1 N gene, Drosten 2020	
 GAGGAACGAGAAGAGGCTTG
+>N_Sarbeco_NR2 N gene, Drosten 2020a
+TgCCTggAgTTgAATTTCTTgA
 >N_Sarbeco_P1 N gene, Drosten 2020 FAM-BBQ  
 ACTTCCTCAAGGAACAACATTGCCA
+>N_Sarbeco_P1L N gene, Drosten 2020a HEX-BBQ 
+TCACgTAgTCgCAACAgTTC
 
 
 
